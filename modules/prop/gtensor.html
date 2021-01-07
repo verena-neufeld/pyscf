@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -197,11 +196,11 @@
     
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../../modules.html">10. Main modules</a> &raquo;</li>
+          <li><a href="../../modules.html"><span class="section-number">10. </span>Main modules</a> &raquo;</li>
         
-          <li><a href="../prop.html">10.22. <code class="xref py py-mod docutils literal notranslate"><span class="pre">prop</span></code> — Molecular properties</a> &raquo;</li>
+          <li><a href="../prop.html"><span class="section-number">10.22. </span><code class="xref py py-mod docutils literal notranslate"><span class="pre">prop</span></code> — Molecular properties</a> &raquo;</li>
         
-      <li>10.22.2. <code class="xref py py-mod docutils literal notranslate"><span class="pre">prop.gtensor</span></code> — EPR g tensors</li>
+      <li><span class="section-number">10.22.2. </span><code class="xref py py-mod docutils literal notranslate"><span class="pre">prop.gtensor</span></code> — EPR g tensors</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -221,15 +220,15 @@
            <div itemprop="articleBody">
             
   <div class="section" id="prop-gtensor-epr-g-tensors">
-<h1>10.22.2. <code class="xref py py-mod docutils literal notranslate"><span class="pre">prop.gtensor</span></code> — EPR g tensors<a class="headerlink" href="#prop-gtensor-epr-g-tensors" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">10.22.2. </span><code class="xref py py-mod docutils literal notranslate"><span class="pre">prop.gtensor</span></code> — EPR g tensors<a class="headerlink" href="#prop-gtensor-epr-g-tensors" title="Permalink to this headline">¶</a></h1>
 <p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">prop.gtensor</span></code> module implements the electron paramagnetic resonance (EPR) g tensors for
 mean-field methods.</p>
 <div class="section" id="examples">
-<h2>10.22.2.1. Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.22.2.1. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference download internal" download="" href="../../_downloads/873ef93040009ed43dfafaf1eb19aaf9/02-g_tensor.py"><code class="xref download docutils literal notranslate"><span class="pre">examples/prop/02-g_tensor.py</span></code></a></p>
 </div>
 <div class="section" id="module-pyscf.prop.gtensor.uhf">
-<span id="program-reference"></span><h2>10.22.2.2. Program reference<a class="headerlink" href="#module-pyscf.prop.gtensor.uhf" title="Permalink to this headline">¶</a></h2>
+<span id="program-reference"></span><h2><span class="section-number">10.22.2.2. </span>Program reference<a class="headerlink" href="#module-pyscf.prop.gtensor.uhf" title="Permalink to this headline">¶</a></h2>
 <p>Non-relativistic unrestricted Hartree-Fock g-tensor</p>
 <dl class="simple">
 <dt>Refs:</dt><dd><p>JPCA 101, 3388 (1997); DOI:10.1021/jp963060t
@@ -239,9 +238,9 @@ JCP 119, 10489 (2003); DOI:10.1063/1.1620497</p>
 </dl>
 <p>Note g-tensor = 1/muB d^2 E/ dB dS
 In some literature, muB is not explicitly presented in the perturbation formula.</p>
-<dl class="class">
+<dl class="py class">
 <dt id="pyscf.prop.gtensor.uhf.GTensor">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.prop.gtensor.uhf.</code><code class="sig-name descname">GTensor</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/prop/gtensor/uhf.html#GTensor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.prop.gtensor.uhf.GTensor" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">pyscf.prop.gtensor.uhf.</code><code class="sig-name descname">GTensor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/prop/gtensor/uhf.html#GTensor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.prop.gtensor.uhf.GTensor" title="Permalink to this definition">¶</a></dt>
 <dd><p>dE = B dot gtensor dot s</p>
 <dl class="simple">
 <dt>Attributes:</dt><dd><dl class="simple">
@@ -260,16 +259,16 @@ diamagnetic term and paramagnetic term.  Default is False.</p>
 </dl>
 </dd>
 </dl>
-<dl class="method">
+<dl class="py method">
 <dt id="pyscf.prop.gtensor.uhf.GTensor.get_fock">
-<code class="sig-name descname">get_fock</code><span class="sig-paren">(</span><em class="sig-param">dm0=None</em>, <em class="sig-param">gauge_orig=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.prop.gtensor.uhf.GTensor.get_fock" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_fock</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dm0</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gauge_orig</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.prop.gtensor.uhf.GTensor.get_fock" title="Permalink to this definition">¶</a></dt>
 <dd><p>First order partial derivatives of Fock matrix wrt external magnetic
 field.  frac{partial F}{partial B}</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="pyscf.prop.gtensor.uhf.GTensor.kernel">
-<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param">mo1=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/prop/gtensor/uhf.html#GTensor.kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.prop.gtensor.uhf.GTensor.kernel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mo1</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/prop/gtensor/uhf.html#GTensor.kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.prop.gtensor.uhf.GTensor.kernel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Kernel function is the main driver of a method.  Every method should
 define the kernel function as the entry of the calculation.  Note the
 return value of kernel function is not strictly defined.  It can be
@@ -277,15 +276,15 @@ anything related to the method (such as the energy, the wave-function,
 the DFT mesh grids etc.).</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="pyscf.prop.gtensor.uhf.GTensor.make_dia_gc2e">
-<code class="sig-name descname">make_dia_gc2e</code><span class="sig-paren">(</span><em class="sig-param">dm0</em>, <em class="sig-param">gauge_orig</em>, <em class="sig-param">sso_qed_fac=1</em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.prop.gtensor.uhf.GTensor.make_dia_gc2e" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">make_dia_gc2e</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dm0</span></em>, <em class="sig-param"><span class="n">gauge_orig</span></em>, <em class="sig-param"><span class="n">sso_qed_fac</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.prop.gtensor.uhf.GTensor.make_dia_gc2e" title="Permalink to this definition">¶</a></dt>
 <dd><p>Note the side effects of set_common_origin</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="pyscf.prop.gtensor.uhf.GTensor.solve_mo1">
-<code class="sig-name descname">solve_mo1</code><span class="sig-paren">(</span><em class="sig-param">mo_energy=None</em>, <em class="sig-param">mo_coeff=None</em>, <em class="sig-param">mo_occ=None</em>, <em class="sig-param">h1=None</em>, <em class="sig-param">s1=None</em>, <em class="sig-param">with_cphf=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.prop.gtensor.uhf.GTensor.solve_mo1" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">solve_mo1</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mo_energy</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mo_coeff</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mo_occ</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">h1</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">s1</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">with_cphf</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.prop.gtensor.uhf.GTensor.solve_mo1" title="Permalink to this definition">¶</a></dt>
 <dd><p>Solve the first order equation</p>
 <dl class="simple">
 <dt>Kwargs:</dt><dd><dl class="simple">
@@ -302,34 +301,34 @@ given function is used to compute induced potential</p>
 
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.prop.gtensor.uhf.align">
-<code class="sig-prename descclassname">pyscf.prop.gtensor.uhf.</code><code class="sig-name descname">align</code><span class="sig-paren">(</span><em class="sig-param">gtensor</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/prop/gtensor/uhf.html#align"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.prop.gtensor.uhf.align" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.prop.gtensor.uhf.</code><code class="sig-name descname">align</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gtensor</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/prop/gtensor/uhf.html#align"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.prop.gtensor.uhf.align" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transform the orientation of g-tensor.
 The new orientations are the eigenvector of G matrix (G=g.gT)</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.prop.gtensor.uhf.dia">
-<code class="sig-prename descclassname">pyscf.prop.gtensor.uhf.</code><code class="sig-name descname">dia</code><span class="sig-paren">(</span><em class="sig-param">gobj</em>, <em class="sig-param">dm0</em>, <em class="sig-param">gauge_orig=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/prop/gtensor/uhf.html#dia"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.prop.gtensor.uhf.dia" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.prop.gtensor.uhf.</code><code class="sig-name descname">dia</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gobj</span></em>, <em class="sig-param"><span class="n">dm0</span></em>, <em class="sig-param"><span class="n">gauge_orig</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/prop/gtensor/uhf.html#dia"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.prop.gtensor.uhf.dia" title="Permalink to this definition">¶</a></dt>
 <dd><p>Note the side effects of set_common_origin</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.prop.gtensor.uhf.get_j_amfi">
-<code class="sig-prename descclassname">pyscf.prop.gtensor.uhf.</code><code class="sig-name descname">get_j_amfi</code><span class="sig-paren">(</span><em class="sig-param">mol</em>, <em class="sig-param">dm0</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/prop/gtensor/uhf.html#get_j_amfi"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.prop.gtensor.uhf.get_j_amfi" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.prop.gtensor.uhf.</code><code class="sig-name descname">get_j_amfi</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">dm0</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/prop/gtensor/uhf.html#get_j_amfi"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.prop.gtensor.uhf.get_j_amfi" title="Permalink to this definition">¶</a></dt>
 <dd><p>Atomic-mean-field approximation</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.prop.gtensor.uhf.get_jk_amfi">
-<code class="sig-prename descclassname">pyscf.prop.gtensor.uhf.</code><code class="sig-name descname">get_jk_amfi</code><span class="sig-paren">(</span><em class="sig-param">mol</em>, <em class="sig-param">dm0</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/prop/gtensor/uhf.html#get_jk_amfi"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.prop.gtensor.uhf.get_jk_amfi" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.prop.gtensor.uhf.</code><code class="sig-name descname">get_jk_amfi</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">dm0</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/prop/gtensor/uhf.html#get_jk_amfi"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.prop.gtensor.uhf.get_jk_amfi" title="Permalink to this definition">¶</a></dt>
 <dd><p>Atomic-mean-field approximation</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.prop.gtensor.uhf.make_dia_gc2e">
-<code class="sig-prename descclassname">pyscf.prop.gtensor.uhf.</code><code class="sig-name descname">make_dia_gc2e</code><span class="sig-paren">(</span><em class="sig-param">gobj</em>, <em class="sig-param">dm0</em>, <em class="sig-param">gauge_orig</em>, <em class="sig-param">sso_qed_fac=1</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/prop/gtensor/uhf.html#make_dia_gc2e"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.prop.gtensor.uhf.make_dia_gc2e" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.prop.gtensor.uhf.</code><code class="sig-name descname">make_dia_gc2e</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gobj</span></em>, <em class="sig-param"><span class="n">dm0</span></em>, <em class="sig-param"><span class="n">gauge_orig</span></em>, <em class="sig-param"><span class="n">sso_qed_fac</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/prop/gtensor/uhf.html#make_dia_gc2e"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.prop.gtensor.uhf.make_dia_gc2e" title="Permalink to this definition">¶</a></dt>
 <dd><p>Note the side effects of set_common_origin</p>
 </dd></dl>
 
@@ -341,13 +340,13 @@ JCP, 115, 11080
 JCP, 119, 10489</p>
 </dd>
 </dl>
-<dl class="class">
+<dl class="py class">
 <dt id="pyscf.prop.gtensor.uks.GTensor">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.prop.gtensor.uks.</code><code class="sig-name descname">GTensor</code><span class="sig-paren">(</span><em class="sig-param">scf_method</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/prop/gtensor/uks.html#GTensor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.prop.gtensor.uks.GTensor" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">pyscf.prop.gtensor.uks.</code><code class="sig-name descname">GTensor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scf_method</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/prop/gtensor/uks.html#GTensor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.prop.gtensor.uks.GTensor" title="Permalink to this definition">¶</a></dt>
 <dd><p>dE = B dot gtensor dot s</p>
-<dl class="method">
+<dl class="py method">
 <dt id="pyscf.prop.gtensor.uks.GTensor.get_fock">
-<code class="sig-name descname">get_fock</code><span class="sig-paren">(</span><em class="sig-param">dm0=None</em>, <em class="sig-param">gauge_orig=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.prop.gtensor.uks.GTensor.get_fock" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_fock</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dm0</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">gauge_orig</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.prop.gtensor.uks.GTensor.get_fock" title="Permalink to this definition">¶</a></dt>
 <dd><p>First order Fock matrix wrt external magnetic field</p>
 </dd></dl>
 
@@ -355,9 +354,9 @@ JCP, 119, 10489</p>
 
 <span class="target" id="module-pyscf.prop.gtensor.dhf"></span><p>Dirac Hartree-Fock g-tensor (In testing)</p>
 <p>Refs: TCA, 129, 715</p>
-<dl class="class">
+<dl class="py class">
 <dt id="pyscf.prop.gtensor.dhf.GTensor">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.prop.gtensor.dhf.</code><code class="sig-name descname">GTensor</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/prop/gtensor/dhf.html#GTensor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.prop.gtensor.dhf.GTensor" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">pyscf.prop.gtensor.dhf.</code><code class="sig-name descname">GTensor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/prop/gtensor/dhf.html#GTensor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.prop.gtensor.dhf.GTensor" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>

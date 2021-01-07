@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -179,19 +178,19 @@
 <span class="c1">#</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">lib</span>
-<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="k">import</span> <span class="n">logger</span>
-<span class="kn">from</span> <span class="nn">pyscf.mcscf</span> <span class="k">import</span> <span class="n">mc1step</span>
-<span class="kn">from</span> <span class="nn">pyscf.mcscf</span> <span class="k">import</span> <span class="n">mc2step</span>
-<span class="kn">from</span> <span class="nn">pyscf.mcscf</span> <span class="k">import</span> <span class="n">casci_symm</span>
-<span class="kn">from</span> <span class="nn">pyscf.mcscf</span> <span class="k">import</span> <span class="n">addons</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">fci</span>
-<span class="kn">from</span> <span class="nn">pyscf.soscf.newton_ah</span> <span class="k">import</span> <span class="n">_force_Ex_Ey_degeneracy_</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">lib</span>
+<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="kn">import</span> <span class="n">logger</span>
+<span class="kn">from</span> <span class="nn">pyscf.mcscf</span> <span class="kn">import</span> <span class="n">mc1step</span>
+<span class="kn">from</span> <span class="nn">pyscf.mcscf</span> <span class="kn">import</span> <span class="n">mc2step</span>
+<span class="kn">from</span> <span class="nn">pyscf.mcscf</span> <span class="kn">import</span> <span class="n">casci_symm</span>
+<span class="kn">from</span> <span class="nn">pyscf.mcscf</span> <span class="kn">import</span> <span class="n">addons</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">fci</span>
+<span class="kn">from</span> <span class="nn">pyscf.soscf.newton_ah</span> <span class="kn">import</span> <span class="n">_force_Ex_Ey_degeneracy_</span>
 
 
 <div class="viewcode-block" id="SymAdaptedCASSCF"><a class="viewcode-back" href="../../../modules/mcscf.html#pyscf.mcscf.mc1step_symm.SymAdaptedCASSCF">[docs]</a><span class="k">class</span> <span class="nc">SymAdaptedCASSCF</span><span class="p">(</span><span class="n">mc1step</span><span class="o">.</span><span class="n">CASSCF</span><span class="p">):</span>
     <span class="vm">__doc__</span> <span class="o">=</span> <span class="n">mc1step</span><span class="o">.</span><span class="n">CASSCF</span><span class="o">.</span><span class="vm">__doc__</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf_or_mol</span><span class="p">,</span> <span class="n">ncas</span><span class="p">,</span> <span class="n">nelecas</span><span class="p">,</span> <span class="n">ncore</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf_or_mol</span><span class="p">,</span> <span class="n">ncas</span><span class="p">,</span> <span class="n">nelecas</span><span class="p">,</span> <span class="n">ncore</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="n">mc1step</span><span class="o">.</span><span class="n">CASSCF</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf_or_mol</span><span class="p">,</span> <span class="n">ncas</span><span class="p">,</span> <span class="n">nelecas</span><span class="p">,</span> <span class="n">ncore</span><span class="p">,</span> <span class="n">frozen</span><span class="p">)</span>
 
         <span class="k">assert</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">symmetry</span><span class="p">)</span>
@@ -269,12 +268,12 @@
                                        <span class="n">cas_irrep_ncore</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span></div>
 
     <span class="k">def</span> <span class="nf">newton</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">pyscf.mcscf</span> <span class="k">import</span> <span class="n">newton_casscf_symm</span>
+        <span class="kn">from</span> <span class="nn">pyscf.mcscf</span> <span class="kn">import</span> <span class="n">newton_casscf_symm</span>
         <span class="n">mc1</span> <span class="o">=</span> <span class="n">newton_casscf_symm</span><span class="o">.</span><span class="n">CASSCF</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_scf</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">ncas</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nelecas</span><span class="p">)</span>
         <span class="n">mc1</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
         <span class="n">mc1</span><span class="o">.</span><span class="n">max_cycle_micro</span> <span class="o">=</span> <span class="mi">10</span>
         <span class="c1"># MRH, 04/08/2019: enable state-average CASSCF second-order algorithm</span>
-        <span class="kn">from</span> <span class="nn">pyscf.mcscf.addons</span> <span class="k">import</span> <span class="n">StateAverageMCSCFSolver</span>
+        <span class="kn">from</span> <span class="nn">pyscf.mcscf.addons</span> <span class="kn">import</span> <span class="n">StateAverageMCSCFSolver</span>
         <span class="k">if</span> <span class="nb">isinstance</span> <span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">StateAverageMCSCFSolver</span><span class="p">):</span>
             <span class="n">mc1</span> <span class="o">=</span> <span class="n">mc1</span><span class="o">.</span><span class="n">state_average_</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">mc1</span></div>
@@ -291,14 +290,14 @@
         <span class="n">_force_Ex_Ey_degeneracy_</span><span class="p">(</span><span class="n">mat1</span><span class="p">,</span> <span class="n">orbsym</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">mat1</span>
 
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">scf</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">scf</span>
 <span class="n">scf</span><span class="o">.</span><span class="n">hf_symm</span><span class="o">.</span><span class="n">RHF</span><span class="o">.</span><span class="n">CASSCF</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">hf_symm</span><span class="o">.</span><span class="n">ROHF</span><span class="o">.</span><span class="n">CASSCF</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">class_as_method</span><span class="p">(</span><span class="n">SymAdaptedCASSCF</span><span class="p">)</span>
 <span class="n">scf</span><span class="o">.</span><span class="n">uhf_symm</span><span class="o">.</span><span class="n">UHF</span><span class="o">.</span><span class="n">CASSCF</span> <span class="o">=</span> <span class="kc">None</span>
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span>
-    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">scf</span>
+    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span>
+    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">scf</span>
     <span class="kn">import</span> <span class="nn">pyscf.fci</span>
 
     <span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">()</span>

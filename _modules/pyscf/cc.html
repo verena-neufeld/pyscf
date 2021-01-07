@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -226,17 +225,17 @@
 <span class="sd">        Lambda amplitudes l1[i,a], l2[i,j,a,b]  (i,j in occ, a,b in virt)</span>
 <span class="sd">&#39;&#39;&#39;</span>
 
-<span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="k">import</span> <span class="n">ccsd</span>
-<span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="k">import</span> <span class="n">ccsd_lambda</span>
-<span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="k">import</span> <span class="n">ccsd_rdm</span>
-<span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="k">import</span> <span class="n">addons</span>
-<span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="k">import</span> <span class="n">rccsd</span>
-<span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="k">import</span> <span class="n">uccsd</span>
-<span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="k">import</span> <span class="n">gccsd</span>
-<span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="k">import</span> <span class="n">eom_rccsd</span>
-<span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="k">import</span> <span class="n">eom_uccsd</span>
-<span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="k">import</span> <span class="n">eom_gccsd</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">scf</span>
+<span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="kn">import</span> <span class="n">ccsd</span>
+<span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="kn">import</span> <span class="n">ccsd_lambda</span>
+<span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="kn">import</span> <span class="n">ccsd_rdm</span>
+<span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="kn">import</span> <span class="n">addons</span>
+<span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="kn">import</span> <span class="n">rccsd</span>
+<span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="kn">import</span> <span class="n">uccsd</span>
+<span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="kn">import</span> <span class="n">gccsd</span>
+<span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="kn">import</span> <span class="n">eom_rccsd</span>
+<span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="kn">import</span> <span class="n">eom_uccsd</span>
+<span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="kn">import</span> <span class="n">eom_gccsd</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">scf</span>
 
 <span class="k">def</span> <span class="nf">CCSD</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mo_occ</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">scf</span><span class="o">.</span><span class="n">uhf</span><span class="o">.</span><span class="n">UHF</span><span class="p">):</span>
@@ -252,9 +251,9 @@
 
 <span class="k">def</span> <span class="nf">RCCSD</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mo_occ</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="kn">import</span> <span class="nn">numpy</span>
-    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">lib</span>
-    <span class="kn">from</span> <span class="nn">pyscf.soscf</span> <span class="k">import</span> <span class="n">newton_ah</span>
-    <span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="k">import</span> <span class="n">dfccsd</span>
+    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">lib</span>
+    <span class="kn">from</span> <span class="nn">pyscf.soscf</span> <span class="kn">import</span> <span class="n">newton_ah</span>
+    <span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="kn">import</span> <span class="n">dfccsd</span>
 
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">scf</span><span class="o">.</span><span class="n">uhf</span><span class="o">.</span><span class="n">UHF</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;RCCSD cannot be used with UHF method.&#39;</span><span class="p">)</span>
@@ -279,7 +278,7 @@
 
 
 <span class="k">def</span> <span class="nf">UCCSD</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mo_occ</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">pyscf.soscf</span> <span class="k">import</span> <span class="n">newton_ah</span>
+    <span class="kn">from</span> <span class="nn">pyscf.soscf</span> <span class="kn">import</span> <span class="n">newton_ah</span>
 
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">newton_ah</span><span class="o">.</span><span class="n">_CIAH_SOSCF</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">scf</span><span class="o">.</span><span class="n">uhf</span><span class="o">.</span><span class="n">UHF</span><span class="p">):</span>
         <span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="n">convert_to_uhf</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span>
@@ -292,7 +291,7 @@
 
 
 <span class="k">def</span> <span class="nf">GCCSD</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mo_occ</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">pyscf.soscf</span> <span class="k">import</span> <span class="n">newton_ah</span>
+    <span class="kn">from</span> <span class="nn">pyscf.soscf</span> <span class="kn">import</span> <span class="n">newton_ah</span>
 
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">newton_ah</span><span class="o">.</span><span class="n">_CIAH_SOSCF</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">scf</span><span class="o">.</span><span class="n">ghf</span><span class="o">.</span><span class="n">GHF</span><span class="p">):</span>
         <span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="n">convert_to_ghf</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span>
@@ -315,14 +314,14 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1">#from pyscf import mp</span>
     <span class="c1">#pt = mp.MP2(mf).set(verbose=0).run()</span>
-    <span class="kn">from</span> <span class="nn">pyscf.mp.mp2</span> <span class="k">import</span> <span class="n">MP2</span>
+    <span class="kn">from</span> <span class="nn">pyscf.mp.mp2</span> <span class="kn">import</span> <span class="n">MP2</span>
     <span class="n">pt</span> <span class="o">=</span> <span class="n">MP2</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
     <span class="n">frozen</span><span class="p">,</span> <span class="n">no_coeff</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">make_fno</span><span class="p">(</span><span class="n">thresh</span><span class="o">=</span><span class="n">thresh</span><span class="p">,</span> <span class="n">pct_occ</span><span class="o">=</span><span class="n">pct_occ</span><span class="p">,</span> <span class="n">nvir_act</span><span class="o">=</span><span class="n">nvir_act</span><span class="p">)</span>
     <span class="c1">#pt_no = mp.MP2(mf, frozen=frozen, mo_coeff=no_coeff).set(verbose=0).run() #avoid DF</span>
     <span class="n">pt_no</span> <span class="o">=</span> <span class="n">MP2</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="n">frozen</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="o">=</span><span class="n">no_coeff</span><span class="p">)</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
     <span class="n">mycc</span> <span class="o">=</span> <span class="n">ccsd</span><span class="o">.</span><span class="n">CCSD</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="n">frozen</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="o">=</span><span class="n">no_coeff</span><span class="p">)</span> <span class="c1">#avoid DF</span>
     <span class="n">mycc</span><span class="o">.</span><span class="n">delta_emp2</span> <span class="o">=</span> <span class="n">pt</span><span class="o">.</span><span class="n">e_corr</span> <span class="o">-</span> <span class="n">pt_no</span><span class="o">.</span><span class="n">e_corr</span>
-    <span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="k">import</span> <span class="n">logger</span>
+    <span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="kn">import</span> <span class="n">logger</span>
     <span class="k">def</span> <span class="nf">_finalize</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;Hook for dumping results and clearing up the object.&#39;&#39;&#39;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">converged</span><span class="p">:</span>

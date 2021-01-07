@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -168,9 +167,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../theory.html">7. Theoretical methods</a> &raquo;</li>
+          <li><a href="../theory.html"><span class="section-number">7. </span>Theoretical methods</a> &raquo;</li>
         
-      <li>7.2. Density functional theory (DFT)</li>
+      <li><span class="section-number">7.2. </span>Density functional theory (DFT)</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -190,16 +189,16 @@
            <div itemprop="articleBody">
             
   <div class="section" id="density-functional-theory-dft">
-<span id="theory-dft"></span><h1>7.2. Density functional theory (DFT)<a class="headerlink" href="#density-functional-theory-dft" title="Permalink to this headline">¶</a></h1>
+<span id="theory-dft"></span><h1><span class="section-number">7.2. </span>Density functional theory (DFT)<a class="headerlink" href="#density-functional-theory-dft" title="Permalink to this headline">¶</a></h1>
 <p><em>Modules</em>: <a class="reference internal" href="../modules/dft.html#dft"><span class="std std-ref">dft</span></a>, <a class="reference internal" href="../modules/pbc/dft.html#pbc-dft"><span class="std std-ref">pbc.dft</span></a></p>
 <div class="section" id="introduction">
-<h2>7.2.1. Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.2.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="theory">
-<h2>7.2.2. Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.2.2. </span>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="predefined-xc-functionals-and-functional-aliases">
-<h2>7.2.3. Predefined XC functionals and functional aliases<a class="headerlink" href="#predefined-xc-functionals-and-functional-aliases" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.2.3. </span>Predefined XC functionals and functional aliases<a class="headerlink" href="#predefined-xc-functionals-and-functional-aliases" title="Permalink to this headline">¶</a></h2>
 <p>There are a number of pure exchange-correlation functional and hybrid
 functionals predefined in the package. Some functionals have aliased names. When
 a functional names is assigned to the attribute <code class="xref py py-attr docutils literal notranslate"><span class="pre">xc</span></code>, the DFT code will
@@ -214,7 +213,7 @@ functional. E.g. xc = ‘b86’ leads to B86 exchange only (without correlation)
 does not support functional alias. Both exchange and correlation have to be
 explicitly assigned. xc = ‘pbe’ gives only the PBE exchange.</p>
 <div class="section" id="libxc">
-<h3>7.2.3.1. libxc<a class="headerlink" href="#libxc" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.2.3.1. </span>libxc<a class="headerlink" href="#libxc" title="Permalink to this headline">¶</a></h3>
 <p>The hybrid functionals and predefined compound functionals for libxc (the
 default XC library) are</p>
 <table class="docutils align-default">
@@ -659,7 +658,7 @@ functionals, such as B86, P88, LYP, VWN, etc.  Please refer to libxc manual
 functionals.</p>
 </div>
 <div class="section" id="xcfun">
-<h3>7.2.3.2. xcfun<a class="headerlink" href="#xcfun" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">7.2.3.2. </span>xcfun<a class="headerlink" href="#xcfun" title="Permalink to this headline">¶</a></h3>
 <p>Another XC functional library that PySCF supports is xcfun
 (<a class="reference external" href="http://dftlibs.org/xcfun/">http://dftlibs.org/xcfun/</a>). Xcfun library can evaluate arbitrary derivatives of
 XC functionals. The predefined compound functionals in xcfun are</p>
@@ -1062,10 +1061,10 @@ SLATERX*1.092 + KTX*-0.004 + OPTXCORR*-0.925452 + LYPC*0.864409</p></td>
 </div>
 </div>
 <div class="section" id="customizing-xc-functionals">
-<h2>7.2.4. Customizing XC functionals<a class="headerlink" href="#customizing-xc-functionals" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.2.4. </span>Customizing XC functionals<a class="headerlink" href="#customizing-xc-functionals" title="Permalink to this headline">¶</a></h2>
 <p>XC functionals of DFT methods can be customized. The simplest way to customize
 the XC functional is to assigned a string expression to <code class="xref py py-attr docutils literal notranslate"><span class="pre">mf.xc</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">dft</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">dft</span>
 <span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;H  0  0  0; F  0.9  0  0&#39;</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;6-31g&#39;</span><span class="p">)</span>
 <span class="n">mf</span> <span class="o">=</span> <span class="n">dft</span><span class="o">.</span><span class="n">RKS</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
 <span class="n">mf</span><span class="o">.</span><span class="n">xc</span> <span class="o">=</span> <span class="s1">&#39;HF*0.2 + .08*LDA + .72*B88, .81*LYP + .19*VWN&#39;</span>

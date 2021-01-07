@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -180,7 +179,7 @@
 <span class="sd">&#39;&#39;&#39;</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">lib</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">lib</span>
 
 <div class="viewcode-block" id="as_pyscf_method"><a class="viewcode-back" href="../../../interface/geomopt.html#pyscf.geomopt.addons.as_pyscf_method">[docs]</a><span class="k">def</span> <span class="nf">as_pyscf_method</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">scan_function</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Creat an wrapper for the given scan_function, to make it work as a</span>
@@ -195,24 +194,24 @@
 <span class="sd">    &gt;&gt;&gt; m = as_pyscf_method(mol, scan_fn)</span>
 <span class="sd">    &gt;&gt;&gt; pyscf.geomopt.berny_solver.kernel(m)</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="kn">from</span> <span class="nn">pyscf.grad.rhf</span> <span class="k">import</span> <span class="n">GradientsBasics</span>
+    <span class="kn">from</span> <span class="nn">pyscf.grad.rhf</span> <span class="kn">import</span> <span class="n">GradientsMixin</span>
     <span class="k">class</span> <span class="nc">OmniGrad</span><span class="p">(</span><span class="n">lib</span><span class="o">.</span><span class="n">GradScanner</span><span class="p">):</span>
-        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">g</span><span class="p">):</span>
+        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">g</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">base</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">base</span>
-        <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
+        <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">e_tot</span><span class="p">,</span> <span class="n">grad</span> <span class="o">=</span> <span class="n">scan_function</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">e_tot</span><span class="p">,</span> <span class="n">grad</span>
         <span class="nd">@property</span>
         <span class="k">def</span> <span class="nf">converged</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="k">return</span> <span class="kc">True</span>
 
-    <span class="k">class</span> <span class="nc">Gradients</span><span class="p">(</span><span class="n">GradientsBasics</span><span class="p">):</span>
+    <span class="k">class</span> <span class="nc">Gradients</span><span class="p">(</span><span class="n">GradientsMixin</span><span class="p">):</span>
         <span class="k">def</span> <span class="nf">as_scanner</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">OmniGrad</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
     <span class="k">class</span> <span class="nc">OmniMethod</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
+        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">mol</span> <span class="o">=</span> <span class="n">mol</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">verbose</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">stdout</span>
@@ -246,7 +245,7 @@
 
 <div class="viewcode-block" id="symmetrize"><a class="viewcode-back" href="../../../interface/geomopt.html#pyscf.geomopt.addons.symmetrize">[docs]</a><span class="k">def</span> <span class="nf">symmetrize</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">coords</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Symmetrize the structure of a molecule.&#39;&#39;&#39;</span>
-    <span class="kn">from</span> <span class="nn">pyscf.grad.rhf</span> <span class="k">import</span> <span class="n">symmetrize</span>
+    <span class="kn">from</span> <span class="nn">pyscf.grad.rhf</span> <span class="kn">import</span> <span class="n">symmetrize</span>
     <span class="c1"># Symmetrizing coordinates is the same to the symmetrization of gradients.</span>
     <span class="k">return</span> <span class="n">symmetrize</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">coords</span><span class="p">)</span></div>
 

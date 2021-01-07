@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -187,18 +186,18 @@
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">tempfile</span>
 <span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">reduce</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
 <span class="kn">import</span> <span class="nn">numpy</span>
 <span class="kn">import</span> <span class="nn">scipy.linalg</span>
 <span class="kn">import</span> <span class="nn">h5py</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">lib</span>
-<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="k">import</span> <span class="n">logger</span>
-<span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="k">import</span> <span class="n">diis</span>
-<span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="k">import</span> <span class="n">_vhf</span>
-<span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="k">import</span> <span class="n">chkfile</span>
-<span class="kn">from</span> <span class="nn">pyscf.data</span> <span class="k">import</span> <span class="n">nist</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">__config__</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">lib</span>
+<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="kn">import</span> <span class="n">logger</span>
+<span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="kn">import</span> <span class="n">diis</span>
+<span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="kn">import</span> <span class="n">_vhf</span>
+<span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="kn">import</span> <span class="n">chkfile</span>
+<span class="kn">from</span> <span class="nn">pyscf.data</span> <span class="kn">import</span> <span class="n">nist</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">__config__</span>
 
 <span class="n">WITH_META_LOWDIN</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">__config__</span><span class="p">,</span> <span class="s1">&#39;scf_analyze_with_meta_lowdin&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
 <span class="n">PRE_ORTH_METHOD</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">__config__</span><span class="p">,</span> <span class="s1">&#39;scf_analyze_pre_orth_method&#39;</span><span class="p">,</span> <span class="s1">&#39;ANO&#39;</span><span class="p">)</span>
@@ -478,7 +477,7 @@
     <span class="k">if</span> <span class="n">mol</span><span class="o">.</span><span class="n">_pseudo</span><span class="p">:</span>
         <span class="c1"># Although mol._pseudo for GTH PP is only available in Cell, GTH PP</span>
         <span class="c1"># may exist if mol is converted from cell object.</span>
-        <span class="kn">from</span> <span class="nn">pyscf.gto</span> <span class="k">import</span> <span class="n">pp_int</span>
+        <span class="kn">from</span> <span class="nn">pyscf.gto</span> <span class="kn">import</span> <span class="n">pp_int</span>
         <span class="n">h</span> <span class="o">+=</span> <span class="n">pp_int</span><span class="o">.</span><span class="n">get_gth_pp</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">h</span><span class="o">+=</span> <span class="n">mol</span><span class="o">.</span><span class="n">intor_symmetric</span><span class="p">(</span><span class="s1">&#39;int1e_nuc&#39;</span><span class="p">)</span>
@@ -509,8 +508,8 @@
 <span class="sd">    array([[ 0.94758917,  0.09227308],</span>
 <span class="sd">           [ 0.09227308,  0.94758917]])</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="k">import</span> <span class="n">atom_hf</span>
-    <span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="k">import</span> <span class="n">addons</span>
+    <span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="kn">import</span> <span class="n">atom_hf</span>
+    <span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="kn">import</span> <span class="n">addons</span>
 
     <span class="k">def</span> <span class="nf">minao_basis</span><span class="p">(</span><span class="n">symb</span><span class="p">,</span> <span class="n">nelec_ecp</span><span class="p">):</span>
         <span class="n">occ</span> <span class="o">=</span> <span class="p">[]</span>
@@ -626,7 +625,7 @@
 <span class="sd">    Returns:</span>
 <span class="sd">        Density matrix, 2D ndarray</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="k">import</span> <span class="n">atom_hf</span>
+    <span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="kn">import</span> <span class="n">atom_hf</span>
     <span class="n">atm_scf</span> <span class="o">=</span> <span class="n">atom_hf</span><span class="o">.</span><span class="n">get_atm_nrhf</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
     <span class="n">aoslice</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">aoslice_by_atom</span><span class="p">()</span>
     <span class="n">atm_dms</span> <span class="o">=</span> <span class="p">[]</span>
@@ -672,7 +671,7 @@
 <span class="sd">    Returns:</span>
 <span class="sd">        An 1D array for Huckel orbital energies and an 2D array for orbital coefficients</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="k">import</span> <span class="n">atom_hf</span>
+    <span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="kn">import</span> <span class="n">atom_hf</span>
     <span class="n">atm_scf</span> <span class="o">=</span> <span class="n">atom_hf</span><span class="o">.</span><span class="n">get_atm_nrhf</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
 
     <span class="c1"># GWH parameter value</span>
@@ -748,7 +747,7 @@
 <span class="sd">    Returns:</span>
 <span class="sd">        Density matrix, 2D ndarray</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="k">import</span> <span class="n">uhf</span>
+    <span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="kn">import</span> <span class="n">uhf</span>
     <span class="n">dm</span> <span class="o">=</span> <span class="n">uhf</span><span class="o">.</span><span class="n">init_guess_by_chkfile</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">chkfile_name</span><span class="p">,</span> <span class="n">project</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">dm</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">dm</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span></div>
 
@@ -1129,8 +1128,8 @@
     <span class="sd">&#39;&#39;&#39;Analyze the given SCF object:  print orbital energies, occupancies;</span>
 <span class="sd">    print orbital coefficients; Mulliken population analysis; Diople moment.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="kn">from</span> <span class="nn">pyscf.lo</span> <span class="k">import</span> <span class="n">orth</span>
-    <span class="kn">from</span> <span class="nn">pyscf.tools</span> <span class="k">import</span> <span class="n">dump_mat</span>
+    <span class="kn">from</span> <span class="nn">pyscf.lo</span> <span class="kn">import</span> <span class="n">orth</span>
+    <span class="kn">from</span> <span class="nn">pyscf.tools</span> <span class="kn">import</span> <span class="n">dump_mat</span>
     <span class="n">mo_energy</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">mo_energy</span>
     <span class="n">mo_occ</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">mo_occ</span>
     <span class="n">mo_coeff</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">mo_coeff</span>
@@ -1258,7 +1257,7 @@
 <span class="sd">        charges : nparray</span>
 <span class="sd">            Mulliken charges</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="kn">from</span> <span class="nn">pyscf.lo</span> <span class="k">import</span> <span class="n">orth</span>
+    <span class="kn">from</span> <span class="nn">pyscf.lo</span> <span class="kn">import</span> <span class="n">orth</span>
     <span class="k">if</span> <span class="n">s</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="n">s</span> <span class="o">=</span> <span class="n">get_ovlp</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
     <span class="n">log</span> <span class="o">=</span> <span class="n">logger</span><span class="o">.</span><span class="n">new_logger</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span>
 
@@ -1416,10 +1415,10 @@
     <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="s1">&#39;Create scanner for </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">mf</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
 
     <span class="k">class</span> <span class="nc">SCF_Scanner</span><span class="p">(</span><span class="n">mf</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">lib</span><span class="o">.</span><span class="n">SinglePointScanner</span><span class="p">):</span>
-        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf_obj</span><span class="p">):</span>
+        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf_obj</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">mf_obj</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
 
-        <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol_or_geom</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol_or_geom</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mol_or_geom</span><span class="p">,</span> <span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">):</span>
                 <span class="n">mol</span> <span class="o">=</span> <span class="n">mol_or_geom</span>
             <span class="k">else</span><span class="p">:</span>
@@ -1562,7 +1561,7 @@
     <span class="n">direct_scf_tol</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">__config__</span><span class="p">,</span> <span class="s1">&#39;scf_hf_SCF_direct_scf_tol&#39;</span><span class="p">,</span> <span class="mf">1e-13</span><span class="p">)</span>
     <span class="n">conv_check</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">__config__</span><span class="p">,</span> <span class="s1">&#39;scf_hf_SCF_conv_check&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">mol</span><span class="o">.</span><span class="n">_built</span><span class="p">:</span>
             <span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Warning: </span><span class="si">%s</span><span class="s1"> must be initialized before calling SCF.</span><span class="se">\n</span><span class="s1">&#39;</span>
                              <span class="s1">&#39;Initialize </span><span class="si">%s</span><span class="s1"> in </span><span class="si">%s</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="bp">self</span><span class="p">))</span>
@@ -1947,7 +1946,7 @@
         <span class="sd">&#39;&#39;&#39;Read attributes from the chkfile then replace the attributes of</span>
 <span class="sd">        current object.  It&#39;s an alias of function update_from_chk_.</span>
 <span class="sd">        &#39;&#39;&#39;</span>
-        <span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="k">import</span> <span class="n">chkfile</span> <span class="k">as</span> <span class="n">chkmod</span>
+        <span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="kn">import</span> <span class="n">chkfile</span> <span class="k">as</span> <span class="n">chkmod</span>
         <span class="k">if</span> <span class="n">chkfile</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="n">chkfile</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">chkfile</span>
         <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">chkmod</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">chkfile</span><span class="p">,</span> <span class="s1">&#39;scf&#39;</span><span class="p">))</span>
         <span class="k">return</span> <span class="bp">self</span></div>
@@ -2000,7 +1999,7 @@
         <span class="k">if</span> <span class="n">callable</span><span class="p">(</span><span class="n">fn</span><span class="p">):</span>
             <span class="k">return</span> <span class="n">lib</span><span class="o">.</span><span class="n">StreamObject</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fn</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">unicode</span><span class="p">)):</span>
-            <span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">mp</span><span class="p">,</span> <span class="n">cc</span><span class="p">,</span> <span class="n">ci</span><span class="p">,</span> <span class="n">mcscf</span><span class="p">,</span> <span class="n">tdscf</span>
+            <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">mp</span><span class="p">,</span> <span class="n">cc</span><span class="p">,</span> <span class="n">ci</span><span class="p">,</span> <span class="n">mcscf</span><span class="p">,</span> <span class="n">tdscf</span>
             <span class="k">for</span> <span class="n">mod</span> <span class="ow">in</span> <span class="p">(</span><span class="n">mp</span><span class="p">,</span> <span class="n">cc</span><span class="p">,</span> <span class="n">ci</span><span class="p">,</span> <span class="n">mcscf</span><span class="p">,</span> <span class="n">tdscf</span><span class="p">):</span>
                 <span class="n">method</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">fn</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span> <span class="kc">None</span><span class="p">)</span>
                 <span class="k">if</span> <span class="n">method</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">callable</span><span class="p">(</span><span class="n">method</span><span class="p">):</span>
@@ -2022,7 +2021,7 @@
 <span class="sd">        The total energy and wave-function are the same as them in the input</span>
 <span class="sd">        mean-field object.</span>
 <span class="sd">        &#39;&#39;&#39;</span>
-        <span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="k">import</span> <span class="n">addons</span>
+        <span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="kn">import</span> <span class="n">addons</span>
         <span class="n">mf</span> <span class="o">=</span> <span class="n">addons</span><span class="o">.</span><span class="n">convert_to_rhf</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">RHF</span><span class="p">):</span>
             <span class="n">mf</span><span class="o">.</span><span class="n">converged</span> <span class="o">=</span> <span class="kc">False</span>
@@ -2035,7 +2034,7 @@
 <span class="sd">        The total energy and wave-function are the same as them in the input</span>
 <span class="sd">        mean-field object.</span>
 <span class="sd">        &#39;&#39;&#39;</span>
-        <span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="k">import</span> <span class="n">addons</span>
+        <span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="kn">import</span> <span class="n">addons</span>
         <span class="k">return</span> <span class="n">addons</span><span class="o">.</span><span class="n">convert_to_uhf</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="SCF.to_ghf"><a class="viewcode-back" href="../../../modules/scf.html#pyscf.pbc.scf.hf.SCF.to_ghf">[docs]</a>    <span class="k">def</span> <span class="nf">to_ghf</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -2045,7 +2044,7 @@
 <span class="sd">        The total energy and wave-function are the same as them in the input</span>
 <span class="sd">        mean-field object.</span>
 <span class="sd">        &#39;&#39;&#39;</span>
-        <span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="k">import</span> <span class="n">addons</span>
+        <span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="kn">import</span> <span class="n">addons</span>
         <span class="k">return</span> <span class="n">addons</span><span class="o">.</span><span class="n">convert_to_ghf</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="SCF.to_rks"><a class="viewcode-back" href="../../../modules/scf.html#pyscf.pbc.scf.hf.SCF.to_rks">[docs]</a>    <span class="k">def</span> <span class="nf">to_rks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">xc</span><span class="o">=</span><span class="s1">&#39;HF&#39;</span><span class="p">):</span>
@@ -2055,7 +2054,7 @@
 <span class="sd">        The total energy and wave-function are the same as them in the input</span>
 <span class="sd">        mean-field object.</span>
 <span class="sd">        &#39;&#39;&#39;</span>
-        <span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">dft</span>
+        <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">dft</span>
         <span class="n">mf</span> <span class="o">=</span> <span class="n">dft</span><span class="o">.</span><span class="n">RKS</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="p">,</span> <span class="n">xc</span><span class="o">=</span><span class="n">xc</span><span class="p">)</span>
         <span class="n">mf</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_rhf</span><span class="p">()</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
         <span class="n">mf</span><span class="o">.</span><span class="n">converged</span> <span class="o">=</span> <span class="kc">False</span>
@@ -2068,7 +2067,7 @@
 <span class="sd">        The total energy and wave-function are the same as them in the input</span>
 <span class="sd">        mean-field object.</span>
 <span class="sd">        &#39;&#39;&#39;</span>
-        <span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">dft</span>
+        <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">dft</span>
         <span class="n">mf</span> <span class="o">=</span> <span class="n">dft</span><span class="o">.</span><span class="n">UKS</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="p">,</span> <span class="n">xc</span><span class="o">=</span><span class="n">xc</span><span class="p">)</span>
         <span class="n">mf</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_uhf</span><span class="p">()</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
         <span class="n">mf</span><span class="o">.</span><span class="n">converged</span> <span class="o">=</span> <span class="kc">False</span>
@@ -2081,7 +2080,7 @@
 <span class="sd">        The total energy and wave-function are the same as them in the input</span>
 <span class="sd">        mean-field object.</span>
 <span class="sd">        &#39;&#39;&#39;</span>
-        <span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">dft</span>
+        <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">dft</span>
         <span class="n">mf</span> <span class="o">=</span> <span class="n">dft</span><span class="o">.</span><span class="n">GKS</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mol</span><span class="p">,</span> <span class="n">xc</span><span class="o">=</span><span class="n">xc</span><span class="p">)</span>
         <span class="n">mf</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_ghf</span><span class="p">()</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
         <span class="n">mf</span><span class="o">.</span><span class="n">converged</span> <span class="o">=</span> <span class="kc">False</span>
@@ -2132,7 +2131,7 @@
 
 <div class="viewcode-block" id="RHF.convert_from_"><a class="viewcode-back" href="../../../modules/scf.html#pyscf.pbc.scf.hf.RHF.convert_from_">[docs]</a>    <span class="k">def</span> <span class="nf">convert_from_</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;Convert the input mean-field object to RHF/ROHF&#39;&#39;&#39;</span>
-        <span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="k">import</span> <span class="n">addons</span>
+        <span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="kn">import</span> <span class="n">addons</span>
         <span class="k">return</span> <span class="n">addons</span><span class="o">.</span><span class="n">convert_to_rhf</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="bp">self</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="RHF.spin_square"><a class="viewcode-back" href="../../../modules/scf.html#pyscf.pbc.scf.hf.RHF.spin_square">[docs]</a>    <span class="k">def</span> <span class="nf">spin_square</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>  <span class="c1"># pragma: no cover</span>
@@ -2160,11 +2159,11 @@
 <span class="sd">            value includes two set of orbitals.  The first corresponds to the</span>
 <span class="sd">            internal stability and the second corresponds to the external stability.</span>
 <span class="sd">        &#39;&#39;&#39;</span>
-        <span class="kn">from</span> <span class="nn">pyscf.scf.stability</span> <span class="k">import</span> <span class="n">rhf_stability</span>
+        <span class="kn">from</span> <span class="nn">pyscf.scf.stability</span> <span class="kn">import</span> <span class="n">rhf_stability</span>
         <span class="k">return</span> <span class="n">rhf_stability</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">internal</span><span class="p">,</span> <span class="n">external</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="RHF.nuc_grad_method"><a class="viewcode-back" href="../../../modules/scf.html#pyscf.pbc.scf.hf.RHF.nuc_grad_method">[docs]</a>    <span class="k">def</span> <span class="nf">nuc_grad_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">pyscf.grad</span> <span class="k">import</span> <span class="n">rhf</span>
+        <span class="kn">from</span> <span class="nn">pyscf.grad</span> <span class="kn">import</span> <span class="n">rhf</span>
         <span class="k">return</span> <span class="n">rhf</span><span class="o">.</span><span class="n">Gradients</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div></div>
 
 
@@ -2172,7 +2171,7 @@
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">scf</span>
+    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">scf</span>
     <span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">()</span>
     <span class="n">mol</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="mi">5</span>
     <span class="n">mol</span><span class="o">.</span><span class="n">output</span> <span class="o">=</span> <span class="kc">None</span>

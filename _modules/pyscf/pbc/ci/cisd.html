@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -174,24 +173,24 @@
 <span class="c1"># See the License for the specific language governing permissions and</span>
 <span class="c1"># limitations under the License.</span>
 
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">lib</span>
-<span class="kn">from</span> <span class="nn">pyscf.ci</span> <span class="k">import</span> <span class="n">cisd</span>
-<span class="kn">from</span> <span class="nn">pyscf.ci</span> <span class="k">import</span> <span class="n">ucisd</span>
-<span class="kn">from</span> <span class="nn">pyscf.ci</span> <span class="k">import</span> <span class="n">gcisd</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="k">import</span> <span class="n">mp</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">lib</span>
+<span class="kn">from</span> <span class="nn">pyscf.ci</span> <span class="kn">import</span> <span class="n">cisd</span>
+<span class="kn">from</span> <span class="nn">pyscf.ci</span> <span class="kn">import</span> <span class="n">ucisd</span>
+<span class="kn">from</span> <span class="nn">pyscf.ci</span> <span class="kn">import</span> <span class="n">gcisd</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="kn">import</span> <span class="n">mp</span>
 
 <div class="viewcode-block" id="RCISD"><a class="viewcode-back" href="../../../../modules/pbc/ci.html#pyscf.pbc.ci.cisd.RCISD">[docs]</a><span class="k">class</span> <span class="nc">RCISD</span><span class="p">(</span><span class="n">cisd</span><span class="o">.</span><span class="n">RCISD</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mo_occ</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mo_occ</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">mf</span><span class="o">.</span><span class="n">kpt</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mf">1e-9</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">NotImplementedError</span>
-        <span class="kn">from</span> <span class="nn">pyscf.pbc.df.df_ao2mo</span> <span class="k">import</span> <span class="n">warn_pbc2d_eri</span>
+        <span class="kn">from</span> <span class="nn">pyscf.pbc.df.df_ao2mo</span> <span class="kn">import</span> <span class="n">warn_pbc2d_eri</span>
         <span class="n">warn_pbc2d_eri</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span>
         <span class="n">cisd</span><span class="o">.</span><span class="n">RCISD</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf</span><span class="p">,</span> <span class="n">frozen</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="p">,</span> <span class="n">mo_occ</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">ao2mo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="k">import</span> <span class="n">rccsd</span>
-        <span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="k">import</span> <span class="n">tools</span>
-        <span class="kn">from</span> <span class="nn">pyscf.pbc.cc.ccsd</span> <span class="k">import</span> <span class="n">_adjust_occ</span>
+        <span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="kn">import</span> <span class="n">rccsd</span>
+        <span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="kn">import</span> <span class="n">tools</span>
+        <span class="kn">from</span> <span class="nn">pyscf.pbc.cc.ccsd</span> <span class="kn">import</span> <span class="n">_adjust_occ</span>
         <span class="n">ao2mofn</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">mp2</span><span class="o">.</span><span class="n">_gen_ao2mofn</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_scf</span><span class="p">)</span>
         <span class="k">with</span> <span class="n">lib</span><span class="o">.</span><span class="n">temporary_env</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_scf</span><span class="p">,</span> <span class="n">exxdiv</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
             <span class="n">eris</span> <span class="o">=</span> <span class="n">rccsd</span><span class="o">.</span><span class="n">_make_eris_incore</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="p">,</span> <span class="n">ao2mofn</span><span class="o">=</span><span class="n">ao2mofn</span><span class="p">)</span>
@@ -204,16 +203,16 @@
         <span class="k">return</span> <span class="n">eris</span></div>
 
 <div class="viewcode-block" id="UCISD"><a class="viewcode-back" href="../../../../modules/pbc/ci.html#pyscf.pbc.ci.cisd.UCISD">[docs]</a><span class="k">class</span> <span class="nc">UCISD</span><span class="p">(</span><span class="n">ucisd</span><span class="o">.</span><span class="n">UCISD</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mo_occ</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mo_occ</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">mf</span><span class="o">.</span><span class="n">kpt</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mf">1e-9</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">NotImplementedError</span>
-        <span class="kn">from</span> <span class="nn">pyscf.pbc.df.df_ao2mo</span> <span class="k">import</span> <span class="n">warn_pbc2d_eri</span>
+        <span class="kn">from</span> <span class="nn">pyscf.pbc.df.df_ao2mo</span> <span class="kn">import</span> <span class="n">warn_pbc2d_eri</span>
         <span class="n">warn_pbc2d_eri</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span>
         <span class="n">ucisd</span><span class="o">.</span><span class="n">UCISD</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf</span><span class="p">,</span> <span class="n">frozen</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="p">,</span> <span class="n">mo_occ</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">ao2mo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="k">import</span> <span class="n">tools</span>
-        <span class="kn">from</span> <span class="nn">pyscf.pbc.cc.ccsd</span> <span class="k">import</span> <span class="n">_adjust_occ</span>
+        <span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="kn">import</span> <span class="n">tools</span>
+        <span class="kn">from</span> <span class="nn">pyscf.pbc.cc.ccsd</span> <span class="kn">import</span> <span class="n">_adjust_occ</span>
         <span class="n">ao2mofn</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">mp2</span><span class="o">.</span><span class="n">_gen_ao2mofn</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_scf</span><span class="p">)</span>
         <span class="k">with</span> <span class="n">lib</span><span class="o">.</span><span class="n">temporary_env</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_scf</span><span class="p">,</span> <span class="n">exxdiv</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
             <span class="n">eris</span> <span class="o">=</span> <span class="n">ucisd</span><span class="o">.</span><span class="n">uccsd</span><span class="o">.</span><span class="n">_make_eris_incore</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="p">,</span> <span class="n">ao2mofn</span><span class="o">=</span><span class="n">ao2mofn</span><span class="p">)</span>
@@ -230,14 +229,14 @@
         <span class="k">return</span> <span class="n">eris</span></div>
 
 <div class="viewcode-block" id="GCISD"><a class="viewcode-back" href="../../../../modules/pbc/ci.html#pyscf.pbc.ci.cisd.GCISD">[docs]</a><span class="k">class</span> <span class="nc">GCISD</span><span class="p">(</span><span class="n">gcisd</span><span class="o">.</span><span class="n">GCISD</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mo_occ</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">pyscf.pbc.df.df_ao2mo</span> <span class="k">import</span> <span class="n">warn_pbc2d_eri</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mo_occ</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="kn">from</span> <span class="nn">pyscf.pbc.df.df_ao2mo</span> <span class="kn">import</span> <span class="n">warn_pbc2d_eri</span>
         <span class="n">warn_pbc2d_eri</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span>
         <span class="n">gcisd</span><span class="o">.</span><span class="n">GCISD</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf</span><span class="p">,</span> <span class="n">frozen</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="p">,</span> <span class="n">mo_occ</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">ao2mo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="k">import</span> <span class="n">tools</span>
-        <span class="kn">from</span> <span class="nn">pyscf.pbc.cc.ccsd</span> <span class="k">import</span> <span class="n">_adjust_occ</span>
+        <span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="kn">import</span> <span class="n">tools</span>
+        <span class="kn">from</span> <span class="nn">pyscf.pbc.cc.ccsd</span> <span class="kn">import</span> <span class="n">_adjust_occ</span>
         <span class="n">with_df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_scf</span><span class="o">.</span><span class="n">with_df</span>
         <span class="n">kpt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_scf</span><span class="o">.</span><span class="n">kpt</span>
         <span class="k">def</span> <span class="nf">ao2mofn</span><span class="p">(</span><span class="n">mo_coeff</span><span class="p">):</span>
@@ -271,7 +270,7 @@
         <span class="k">return</span> <span class="n">eris</span></div>
 
 
-<span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="k">import</span> <span class="n">scf</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="kn">import</span> <span class="n">scf</span>
 <span class="n">scf</span><span class="o">.</span><span class="n">hf</span><span class="o">.</span><span class="n">RHF</span><span class="o">.</span><span class="n">CISD</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">class_as_method</span><span class="p">(</span><span class="n">RCISD</span><span class="p">)</span>
 <span class="n">scf</span><span class="o">.</span><span class="n">uhf</span><span class="o">.</span><span class="n">UHF</span><span class="o">.</span><span class="n">CISD</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">class_as_method</span><span class="p">(</span><span class="n">UCISD</span><span class="p">)</span>
 <span class="n">scf</span><span class="o">.</span><span class="n">ghf</span><span class="o">.</span><span class="n">GHF</span><span class="o">.</span><span class="n">CISD</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">class_as_method</span><span class="p">(</span><span class="n">GCISD</span><span class="p">)</span>

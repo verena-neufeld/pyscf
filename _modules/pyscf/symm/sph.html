@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -181,7 +180,7 @@
 
 <span class="kn">import</span> <span class="nn">numpy</span>
 <span class="kn">import</span> <span class="nn">scipy.linalg</span>
-<span class="kn">from</span> <span class="nn">pyscf.symm.cg</span> <span class="k">import</span> <span class="n">cg_spin</span>
+<span class="kn">from</span> <span class="nn">pyscf.symm.cg</span> <span class="kn">import</span> <span class="n">cg_spin</span>
 
 <div class="viewcode-block" id="real_sph_vec"><a class="viewcode-back" href="../../../modules/symm.html#pyscf.symm.sph.real_sph_vec">[docs]</a><span class="k">def</span> <span class="nf">real_sph_vec</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">lmax</span><span class="p">,</span> <span class="n">reorder_p</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Computes (all) real spherical harmonics up to the angular momentum lmax&#39;&#39;&#39;</span>
@@ -234,7 +233,7 @@
 <span class="sd">        reorder_p : bool</span>
 <span class="sd">            sort dipole to the order (x,y,z)</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span>
+    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span>
 
 <span class="c1"># libcint cart2sph transformation provide the capability to compute</span>
 <span class="c1"># multipole directly.  cart2sph function is fast for low angular moment.</span>
@@ -402,7 +401,7 @@
 
 <div class="viewcode-block" id="cart2spinor"><a class="viewcode-back" href="../../../modules/symm.html#pyscf.symm.sph.cart2spinor">[docs]</a><span class="k">def</span> <span class="nf">cart2spinor</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Cartesian to spinor for angular moment l&#39;&#39;&#39;</span>
-    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span>
+    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span>
     <span class="k">return</span> <span class="n">gto</span><span class="o">.</span><span class="n">cart2spinor_l</span><span class="p">(</span><span class="n">l</span><span class="p">)</span></div>
 
 

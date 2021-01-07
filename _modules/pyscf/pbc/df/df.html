@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -194,29 +193,30 @@
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">copy</span>
+<span class="kn">import</span> <span class="nn">ctypes</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
 <span class="kn">import</span> <span class="nn">tempfile</span>
 <span class="kn">import</span> <span class="nn">numpy</span>
 <span class="kn">import</span> <span class="nn">h5py</span>
 <span class="kn">import</span> <span class="nn">scipy.linalg</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">lib</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span>
-<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="k">import</span> <span class="n">logger</span>
-<span class="kn">from</span> <span class="nn">pyscf.df</span> <span class="k">import</span> <span class="n">addons</span>
-<span class="kn">from</span> <span class="nn">pyscf.df.outcore</span> <span class="k">import</span> <span class="n">_guess_shell_ranges</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.gto.cell</span> <span class="k">import</span> <span class="n">_estimate_rcut</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="k">import</span> <span class="n">tools</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.df</span> <span class="k">import</span> <span class="n">outcore</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.df</span> <span class="k">import</span> <span class="n">ft_ao</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.df</span> <span class="k">import</span> <span class="n">aft</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.df</span> <span class="k">import</span> <span class="n">df_jk</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.df</span> <span class="k">import</span> <span class="n">df_ao2mo</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.df.aft</span> <span class="k">import</span> <span class="n">estimate_eta</span><span class="p">,</span> <span class="n">get_nuc</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.df.df_jk</span> <span class="k">import</span> <span class="n">zdotCN</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.lib.kpts_helper</span> <span class="k">import</span> <span class="p">(</span><span class="n">is_zero</span><span class="p">,</span> <span class="n">gamma_point</span><span class="p">,</span> <span class="n">member</span><span class="p">,</span> <span class="n">unique</span><span class="p">,</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">lib</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span>
+<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="kn">import</span> <span class="n">logger</span>
+<span class="kn">from</span> <span class="nn">pyscf.df</span> <span class="kn">import</span> <span class="n">addons</span>
+<span class="kn">from</span> <span class="nn">pyscf.df.outcore</span> <span class="kn">import</span> <span class="n">_guess_shell_ranges</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.gto.cell</span> <span class="kn">import</span> <span class="n">_estimate_rcut</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="kn">import</span> <span class="n">tools</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.df</span> <span class="kn">import</span> <span class="n">outcore</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.df</span> <span class="kn">import</span> <span class="n">ft_ao</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.df</span> <span class="kn">import</span> <span class="n">aft</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.df</span> <span class="kn">import</span> <span class="n">df_jk</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.df</span> <span class="kn">import</span> <span class="n">df_ao2mo</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.df.aft</span> <span class="kn">import</span> <span class="n">estimate_eta</span><span class="p">,</span> <span class="n">get_nuc</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.df.df_jk</span> <span class="kn">import</span> <span class="n">zdotCN</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.lib.kpts_helper</span> <span class="kn">import</span> <span class="p">(</span><span class="n">is_zero</span><span class="p">,</span> <span class="n">gamma_point</span><span class="p">,</span> <span class="n">member</span><span class="p">,</span> <span class="n">unique</span><span class="p">,</span>
                                        <span class="n">KPT_DIFF_TOL</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.df.aft</span> <span class="k">import</span> <span class="n">_sub_df_jk_</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">__config__</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.df.aft</span> <span class="kn">import</span> <span class="n">_sub_df_jk_</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">__config__</span>
 
 <span class="n">LINEAR_DEP_THR</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">__config__</span><span class="p">,</span> <span class="s1">&#39;pbc_df_df_DF_lindep&#39;</span><span class="p">,</span> <span class="mf">1e-9</span><span class="p">)</span>
 
@@ -272,8 +272,8 @@
     <span class="k">return</span> <span class="n">auxcell</span>
 
 <span class="k">def</span> <span class="nf">make_modchg_basis</span><span class="p">(</span><span class="n">auxcell</span><span class="p">,</span> <span class="n">smooth_eta</span><span class="p">):</span>
-<span class="c1"># * chgcell defines smooth gaussian functions for each angular momentum for</span>
-<span class="c1">#   auxcell. The smooth functions may be used to carry the charge</span>
+    <span class="c1"># * chgcell defines smooth gaussian functions for each angular momentum for</span>
+    <span class="c1">#   auxcell. The smooth functions may be used to carry the charge</span>
     <span class="n">chgcell</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">auxcell</span><span class="p">)</span>  <span class="c1"># smooth model density for coulomb integral to carry charge</span>
     <span class="n">half_sph_norm</span> <span class="o">=</span> <span class="o">.</span><span class="mi">5</span><span class="o">/</span><span class="n">numpy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
     <span class="n">chg_bas</span> <span class="o">=</span> <span class="p">[]</span>
@@ -441,12 +441,38 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="n">Gblksize</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">max_memory</span><span class="o">*.</span><span class="mf">2e6</span><span class="o">/</span><span class="mi">16</span><span class="o">/</span><span class="n">buflen</span><span class="o">/</span><span class="p">(</span><span class="n">nkptj</span><span class="o">+</span><span class="mi">1</span><span class="p">)))</span>
         <span class="n">Gblksize</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">Gblksize</span><span class="p">,</span> <span class="n">ngrids</span><span class="p">,</span> <span class="mi">16384</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="n">aux_slice</span><span class="p">):</span>
+            <span class="n">col0</span><span class="p">,</span> <span class="n">col1</span> <span class="o">=</span> <span class="n">aux_slice</span>
+            <span class="n">j3cR</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">j3cI</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">adapted_ji_idx</span><span class="p">):</span>
+                <span class="n">v</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">fswap</span><span class="p">[</span><span class="s1">&#39;j3c-junk/</span><span class="si">%d</span><span class="s1">/</span><span class="si">%d</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span><span class="n">i</span><span class="p">)][</span><span class="mi">0</span><span class="p">,</span><span class="n">col0</span><span class="p">:</span><span class="n">col1</span><span class="p">]</span><span class="o">.</span><span class="n">T</span>
+                                  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nsegs</span><span class="p">)])</span>
+                <span class="c1"># vbar is the interaction between the background charge</span>
+                <span class="c1"># and the auxiliary basis.  0D, 1D, 2D do not have vbar.</span>
+                <span class="k">if</span> <span class="n">is_zero</span><span class="p">(</span><span class="n">kpt</span><span class="p">)</span> <span class="ow">and</span> <span class="n">cell</span><span class="o">.</span><span class="n">dimension</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">numpy</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">vbar</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)[</span><span class="mi">0</span><span class="p">]:</span>
+                        <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-=</span> <span class="n">vbar</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">ovlp</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">col0</span><span class="p">:</span><span class="n">col1</span><span class="p">]</span>
+                <span class="n">j3cR</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s1">&#39;C&#39;</span><span class="p">))</span>
+                <span class="k">if</span> <span class="n">is_zero</span><span class="p">(</span><span class="n">kpt</span><span class="p">)</span> <span class="ow">and</span> <span class="n">gamma_point</span><span class="p">(</span><span class="n">adapted_kptjs</span><span class="p">[</span><span class="n">k</span><span class="p">]):</span>
+                    <span class="n">j3cI</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">j3cI</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s1">&#39;C&#39;</span><span class="p">))</span>
+                <span class="n">v</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">return</span> <span class="n">j3cR</span><span class="p">,</span> <span class="n">j3cI</span>
+
         <span class="n">pqkRbuf</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">buflen</span><span class="o">*</span><span class="n">Gblksize</span><span class="p">)</span>
         <span class="n">pqkIbuf</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">buflen</span><span class="o">*</span><span class="n">Gblksize</span><span class="p">)</span>
         <span class="c1"># buf for ft_aopair</span>
         <span class="n">buf</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">nkptj</span><span class="o">*</span><span class="n">buflen</span><span class="o">*</span><span class="n">Gblksize</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">complex128</span><span class="p">)</span>
-        <span class="k">def</span> <span class="nf">pw_contract</span><span class="p">(</span><span class="n">istep</span><span class="p">,</span> <span class="n">sh_range</span><span class="p">,</span> <span class="n">j3cR</span><span class="p">,</span> <span class="n">j3cI</span><span class="p">):</span>
-            <span class="n">bstart</span><span class="p">,</span> <span class="n">bend</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="n">sh_range</span>
+        <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">sh_range</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="k">for</span> <span class="n">sh_range</span> <span class="ow">in</span> <span class="n">shranges</span><span class="p">]</span>
+        <span class="n">locs</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">cols</span><span class="p">))</span>
+        <span class="n">tasks</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">(</span><span class="n">locs</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">locs</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+        <span class="k">for</span> <span class="n">istep</span><span class="p">,</span> <span class="p">(</span><span class="n">j3cR</span><span class="p">,</span> <span class="n">j3cI</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lib</span><span class="o">.</span><span class="n">map_with_prefetch</span><span class="p">(</span><span class="n">load</span><span class="p">,</span> <span class="n">tasks</span><span class="p">)):</span>
+            <span class="n">bstart</span><span class="p">,</span> <span class="n">bend</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="n">shranges</span><span class="p">[</span><span class="n">istep</span><span class="p">]</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">debug1</span><span class="p">(</span><span class="s1">&#39;int3c2e [</span><span class="si">%d</span><span class="s1">/</span><span class="si">%d</span><span class="s1">], AO [</span><span class="si">%d</span><span class="s1">:</span><span class="si">%d</span><span class="s1">], ncol = </span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">,</span>
+                       <span class="n">istep</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">shranges</span><span class="p">),</span> <span class="n">bstart</span><span class="p">,</span> <span class="n">bend</span><span class="p">,</span> <span class="n">ncol</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">aosym</span> <span class="o">==</span> <span class="s1">&#39;s2&#39;</span><span class="p">:</span>
                 <span class="n">shls_slice</span> <span class="o">=</span> <span class="p">(</span><span class="n">bstart</span><span class="p">,</span> <span class="n">bend</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">bend</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
@@ -484,31 +510,8 @@
                 <span class="c1"># low-dimension systems</span>
                 <span class="k">if</span> <span class="n">j2c_negative</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                     <span class="n">feri</span><span class="p">[</span><span class="s1">&#39;j3c-/</span><span class="si">%d</span><span class="s1">/</span><span class="si">%d</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">ji</span><span class="p">,</span><span class="n">istep</span><span class="p">)]</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">j2c_negative</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+            <span class="n">j3cR</span> <span class="o">=</span> <span class="n">j3cI</span> <span class="o">=</span> <span class="kc">None</span>
 
-        <span class="k">with</span> <span class="n">lib</span><span class="o">.</span><span class="n">call_in_background</span><span class="p">(</span><span class="n">pw_contract</span><span class="p">)</span> <span class="k">as</span> <span class="n">compute</span><span class="p">:</span>
-            <span class="n">col1</span> <span class="o">=</span> <span class="mi">0</span>
-            <span class="k">for</span> <span class="n">istep</span><span class="p">,</span> <span class="n">sh_range</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">shranges</span><span class="p">):</span>
-                <span class="n">log</span><span class="o">.</span><span class="n">debug1</span><span class="p">(</span><span class="s1">&#39;int3c2e [</span><span class="si">%d</span><span class="s1">/</span><span class="si">%d</span><span class="s1">], AO [</span><span class="si">%d</span><span class="s1">:</span><span class="si">%d</span><span class="s1">], ncol = </span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">,</span>
-                           <span class="n">istep</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">shranges</span><span class="p">),</span> <span class="o">*</span><span class="n">sh_range</span><span class="p">)</span>
-                <span class="n">bstart</span><span class="p">,</span> <span class="n">bend</span><span class="p">,</span> <span class="n">ncol</span> <span class="o">=</span> <span class="n">sh_range</span>
-                <span class="n">col0</span><span class="p">,</span> <span class="n">col1</span> <span class="o">=</span> <span class="n">col1</span><span class="p">,</span> <span class="n">col1</span><span class="o">+</span><span class="n">ncol</span>
-                <span class="n">j3cR</span> <span class="o">=</span> <span class="p">[]</span>
-                <span class="n">j3cI</span> <span class="o">=</span> <span class="p">[]</span>
-                <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">adapted_ji_idx</span><span class="p">):</span>
-                    <span class="n">v</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">fswap</span><span class="p">[</span><span class="s1">&#39;j3c-junk/</span><span class="si">%d</span><span class="s1">/</span><span class="si">%d</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span><span class="n">i</span><span class="p">)][</span><span class="mi">0</span><span class="p">,</span><span class="n">col0</span><span class="p">:</span><span class="n">col1</span><span class="p">]</span><span class="o">.</span><span class="n">T</span>
-                                      <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nsegs</span><span class="p">)])</span>
-                    <span class="c1"># vbar is the interaction between the background charge</span>
-                    <span class="c1"># and the auxiliary basis.  0D, 1D, 2D do not have vbar.</span>
-                    <span class="k">if</span> <span class="n">is_zero</span><span class="p">(</span><span class="n">kpt</span><span class="p">)</span> <span class="ow">and</span> <span class="n">cell</span><span class="o">.</span><span class="n">dimension</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
-                        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">numpy</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">vbar</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)[</span><span class="mi">0</span><span class="p">]:</span>
-                            <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-=</span> <span class="n">vbar</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">ovlp</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">col0</span><span class="p">:</span><span class="n">col1</span><span class="p">]</span>
-                    <span class="n">j3cR</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s1">&#39;C&#39;</span><span class="p">))</span>
-                    <span class="k">if</span> <span class="n">is_zero</span><span class="p">(</span><span class="n">kpt</span><span class="p">)</span> <span class="ow">and</span> <span class="n">gamma_point</span><span class="p">(</span><span class="n">adapted_kptjs</span><span class="p">[</span><span class="n">k</span><span class="p">]):</span>
-                        <span class="n">j3cI</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
-                    <span class="k">else</span><span class="p">:</span>
-                        <span class="n">j3cI</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">v</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s1">&#39;C&#39;</span><span class="p">))</span>
-                <span class="n">v</span> <span class="o">=</span> <span class="kc">None</span>
-                <span class="n">compute</span><span class="p">(</span><span class="n">istep</span><span class="p">,</span> <span class="n">sh_range</span><span class="p">,</span> <span class="n">j3cR</span><span class="p">,</span> <span class="n">j3cI</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">ji</span> <span class="ow">in</span> <span class="n">adapted_ji_idx</span><span class="p">:</span>
             <span class="k">del</span><span class="p">(</span><span class="n">fswap</span><span class="p">[</span><span class="s1">&#39;j3c-junk/</span><span class="si">%d</span><span class="s1">&#39;</span><span class="o">%</span><span class="n">ji</span><span class="p">])</span>
 
@@ -570,7 +573,7 @@
 <div class="viewcode-block" id="GDF"><a class="viewcode-back" href="../../../../modules/pbc/df.html#pyscf.pbc.df.df.GDF">[docs]</a><span class="k">class</span> <span class="nc">GDF</span><span class="p">(</span><span class="n">aft</span><span class="o">.</span><span class="n">AFTDF</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Gaussian density fitting</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cell</span><span class="p">,</span> <span class="n">kpts</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">))):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cell</span><span class="p">,</span> <span class="n">kpts</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">))):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cell</span> <span class="o">=</span> <span class="n">cell</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">stdout</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">verbose</span>
@@ -772,16 +775,16 @@
                 <span class="k">if</span> <span class="n">es</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
                     <span class="n">vbar</span><span class="p">[</span><span class="n">aux_loc</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">es</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
                 <span class="k">else</span><span class="p">:</span>
-<span class="c1"># Remove the normalization to get the primitive contraction coeffcients</span>
+                    <span class="c1"># Remove the normalization to get the primitive contraction coeffcients</span>
                     <span class="n">norms</span> <span class="o">=</span> <span class="n">half_sph_norm</span><span class="o">/</span><span class="n">gto</span><span class="o">.</span><span class="n">gaussian_int</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">es</span><span class="p">)</span>
                     <span class="n">cs</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s1">&#39;i,ij-&gt;ij&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="n">norms</span><span class="p">,</span> <span class="n">fused_cell</span><span class="o">.</span><span class="n">_libcint_ctr_coeff</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
                     <span class="n">vbar</span><span class="p">[</span><span class="n">aux_loc</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span><span class="n">aux_loc</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s1">&#39;in,i-&gt;n&#39;</span><span class="p">,</span> <span class="n">cs</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="n">es</span><span class="p">)</span>
-<span class="c1"># TODO: fused_cell.cart and l%2 == 0: # 6d 10f ...</span>
-<span class="c1"># Normalization coefficients are different in the same shell for cartesian</span>
-<span class="c1"># basis. E.g. the d-type functions, the 5 d-type orbitals are normalized wrt</span>
-<span class="c1"># the integral \int r^2 * r^2 e^{-a r^2} dr.  The s-type 3s orbital should be</span>
-<span class="c1"># normalized wrt the integral \int r^0 * r^2 e^{-a r^2} dr. The different</span>
-<span class="c1"># normalization was not built in the basis.</span>
+        <span class="c1"># TODO: fused_cell.cart and l%2 == 0: # 6d 10f ...</span>
+        <span class="c1"># Normalization coefficients are different in the same shell for cartesian</span>
+        <span class="c1"># basis. E.g. the d-type functions, the 5 d-type orbitals are normalized wrt</span>
+        <span class="c1"># the integral \int r^2 * r^2 e^{-a r^2} dr.  The s-type 3s orbital should be</span>
+        <span class="c1"># normalized wrt the integral \int r^0 * r^2 e^{-a r^2} dr. The different</span>
+        <span class="c1"># normalization was not built in the basis.</span>
         <span class="n">vbar</span> <span class="o">*=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">fused_cell</span><span class="o">.</span><span class="n">vol</span>
         <span class="k">return</span> <span class="n">vbar</span>
 
@@ -797,59 +800,45 @@
         <span class="n">nao</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">nao_nr</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">blksize</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">is_real</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">unpack</span><span class="p">:</span>
-                    <span class="n">blksize</span> <span class="o">=</span> <span class="n">max_memory</span><span class="o">*</span><span class="mf">1e6</span><span class="o">/</span><span class="mi">8</span><span class="o">/</span><span class="p">(</span><span class="n">nao</span><span class="o">*</span><span class="p">(</span><span class="n">nao</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="o">+</span><span class="n">nao</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="n">blksize</span> <span class="o">=</span> <span class="n">max_memory</span><span class="o">*</span><span class="mf">1e6</span><span class="o">/</span><span class="mi">8</span><span class="o">/</span><span class="p">(</span><span class="n">nao</span><span class="o">*</span><span class="p">(</span><span class="n">nao</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+                <span class="n">blksize</span> <span class="o">=</span> <span class="n">max_memory</span><span class="o">*</span><span class="mf">1e6</span><span class="o">/</span><span class="mi">8</span><span class="o">/</span><span class="p">(</span><span class="n">nao</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">blksize</span> <span class="o">=</span> <span class="n">max_memory</span><span class="o">*</span><span class="mf">1e6</span><span class="o">/</span><span class="mi">16</span><span class="o">/</span><span class="p">(</span><span class="n">nao</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+            <span class="n">blksize</span> <span class="o">/=</span> <span class="mi">2</span>  <span class="c1"># For prefetch</span>
             <span class="n">blksize</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">blksize</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">blockdim</span><span class="p">))</span>
             <span class="n">logger</span><span class="o">.</span><span class="n">debug3</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;max_memory </span><span class="si">%d</span><span class="s1"> MB, blksize </span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">max_memory</span><span class="p">,</span> <span class="n">blksize</span><span class="p">)</span>
 
-        <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="n">Lpq</span><span class="p">,</span> <span class="n">b0</span><span class="p">,</span> <span class="n">b1</span><span class="p">,</span> <span class="n">bufR</span><span class="p">,</span> <span class="n">bufI</span><span class="p">):</span>
-            <span class="n">Lpq</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Lpq</span><span class="p">[</span><span class="n">b0</span><span class="p">:</span><span class="n">b1</span><span class="p">])</span>
+        <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="n">aux_slice</span><span class="p">):</span>
+            <span class="n">b0</span><span class="p">,</span> <span class="n">b1</span> <span class="o">=</span> <span class="n">aux_slice</span>
             <span class="k">if</span> <span class="n">is_real</span><span class="p">:</span>
+                <span class="n">LpqR</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">j3c</span><span class="p">[</span><span class="n">b0</span><span class="p">:</span><span class="n">b1</span><span class="p">])</span>
                 <span class="k">if</span> <span class="n">unpack</span><span class="p">:</span>
-                    <span class="n">LpqR</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">unpack_tril</span><span class="p">(</span><span class="n">Lpq</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">bufR</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">nao</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="n">LpqR</span> <span class="o">=</span> <span class="n">Lpq</span>
+                    <span class="n">LpqR</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">unpack_tril</span><span class="p">(</span><span class="n">LpqR</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">nao</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
                 <span class="n">LpqI</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">LpqR</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="n">shape</span> <span class="o">=</span> <span class="n">Lpq</span><span class="o">.</span><span class="n">shape</span>
+                <span class="n">Lpq</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">j3c</span><span class="p">[</span><span class="n">b0</span><span class="p">:</span><span class="n">b1</span><span class="p">])</span>
+                <span class="n">LpqR</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Lpq</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
+                <span class="n">LpqI</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">Lpq</span><span class="o">.</span><span class="n">imag</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
+                <span class="n">Lpq</span> <span class="o">=</span> <span class="kc">None</span>
                 <span class="k">if</span> <span class="n">unpack</span><span class="p">:</span>
-                    <span class="n">tmp</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">buffer</span><span class="o">=</span><span class="n">buf</span><span class="p">)</span>
-                    <span class="n">tmp</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">Lpq</span><span class="o">.</span><span class="n">real</span>
-                    <span class="n">LpqR</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">unpack_tril</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">bufR</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">nao</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-                    <span class="n">tmp</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">Lpq</span><span class="o">.</span><span class="n">imag</span>
-                    <span class="n">LpqI</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">unpack_tril</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">lib</span><span class="o">.</span><span class="n">ANTIHERMI</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">bufI</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">nao</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="n">LpqR</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">buffer</span><span class="o">=</span><span class="n">bufR</span><span class="p">)</span>
-                    <span class="n">LpqR</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">Lpq</span><span class="o">.</span><span class="n">real</span>
-                    <span class="n">LpqI</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">buffer</span><span class="o">=</span><span class="n">bufI</span><span class="p">)</span>
-                    <span class="n">LpqI</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">Lpq</span><span class="o">.</span><span class="n">imag</span>
+                    <span class="n">LpqR</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">unpack_tril</span><span class="p">(</span><span class="n">LpqR</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">nao</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+                    <span class="n">LpqI</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">unpack_tril</span><span class="p">(</span><span class="n">LpqI</span><span class="p">,</span> <span class="n">lib</span><span class="o">.</span><span class="n">ANTIHERMI</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">nao</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">LpqR</span><span class="p">,</span> <span class="n">LpqI</span>
 
-        <span class="n">LpqR</span> <span class="o">=</span> <span class="n">LpqI</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="k">with</span> <span class="n">_load3c</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cderi</span><span class="p">,</span> <span class="s1">&#39;j3c&#39;</span><span class="p">,</span> <span class="n">kpti_kptj</span><span class="p">,</span> <span class="s1">&#39;j3c-kptij&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">j3c</span><span class="p">:</span>
-            <span class="n">naux</span> <span class="o">=</span> <span class="n">j3c</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-            <span class="k">if</span> <span class="n">unpack</span><span class="p">:</span>
-                <span class="n">buf</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="nb">min</span><span class="p">(</span><span class="n">blksize</span><span class="p">,</span> <span class="n">naux</span><span class="p">),</span> <span class="n">nao</span> <span class="o">*</span> <span class="p">(</span><span class="n">nao</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">))</span>
-            <span class="k">for</span> <span class="n">b0</span><span class="p">,</span> <span class="n">b1</span> <span class="ow">in</span> <span class="n">lib</span><span class="o">.</span><span class="n">prange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">naux</span><span class="p">,</span> <span class="n">blksize</span><span class="p">):</span>
-                <span class="n">LpqR</span><span class="p">,</span> <span class="n">LpqI</span> <span class="o">=</span> <span class="n">load</span><span class="p">(</span><span class="n">j3c</span><span class="p">,</span> <span class="n">b0</span><span class="p">,</span> <span class="n">b1</span><span class="p">,</span> <span class="n">LpqR</span><span class="p">,</span> <span class="n">LpqI</span><span class="p">)</span>
+            <span class="n">slices</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">prange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">j3c</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">blksize</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">LpqR</span><span class="p">,</span> <span class="n">LpqI</span> <span class="ow">in</span> <span class="n">lib</span><span class="o">.</span><span class="n">map_with_prefetch</span><span class="p">(</span><span class="n">load</span><span class="p">,</span> <span class="n">slices</span><span class="p">):</span>
                 <span class="k">yield</span> <span class="n">LpqR</span><span class="p">,</span> <span class="n">LpqI</span><span class="p">,</span> <span class="mi">1</span>
+                <span class="n">LpqR</span> <span class="o">=</span> <span class="n">LpqI</span> <span class="o">=</span> <span class="kc">None</span>
 
         <span class="k">if</span> <span class="n">cell</span><span class="o">.</span><span class="n">dimension</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">cell</span><span class="o">.</span><span class="n">low_dim_ft_type</span> <span class="o">!=</span> <span class="s1">&#39;inf_vacuum&#39;</span><span class="p">:</span>
             <span class="c1"># Truncated Coulomb operator is not postive definite. Load the</span>
             <span class="c1"># CDERI tensor of negative part.</span>
-            <span class="n">LpqR</span> <span class="o">=</span> <span class="n">LpqI</span> <span class="o">=</span> <span class="kc">None</span>
             <span class="k">with</span> <span class="n">_load3c</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cderi</span><span class="p">,</span> <span class="s1">&#39;j3c-&#39;</span><span class="p">,</span> <span class="n">kpti_kptj</span><span class="p">,</span> <span class="s1">&#39;j3c-kptij&#39;</span><span class="p">,</span>
                          <span class="n">ignore_key_error</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">j3c</span><span class="p">:</span>
-                <span class="n">naux</span> <span class="o">=</span> <span class="n">j3c</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-                <span class="k">if</span> <span class="n">unpack</span><span class="p">:</span>
-                    <span class="n">buf</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="nb">min</span><span class="p">(</span><span class="n">blksize</span><span class="p">,</span> <span class="n">naux</span><span class="p">),</span> <span class="n">nao</span> <span class="o">*</span> <span class="p">(</span><span class="n">nao</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">))</span>
-                <span class="k">for</span> <span class="n">b0</span><span class="p">,</span> <span class="n">b1</span> <span class="ow">in</span> <span class="n">lib</span><span class="o">.</span><span class="n">prange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">naux</span><span class="p">,</span> <span class="n">blksize</span><span class="p">):</span>
-                    <span class="n">LpqR</span><span class="p">,</span> <span class="n">LpqI</span> <span class="o">=</span> <span class="n">load</span><span class="p">(</span><span class="n">j3c</span><span class="p">,</span> <span class="n">b0</span><span class="p">,</span> <span class="n">b1</span><span class="p">,</span> <span class="n">LpqR</span><span class="p">,</span> <span class="n">LpqI</span><span class="p">)</span>
+                <span class="n">slices</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">prange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">j3c</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">blksize</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">LpqR</span><span class="p">,</span> <span class="n">LpqI</span> <span class="ow">in</span> <span class="n">lib</span><span class="o">.</span><span class="n">map_with_prefetch</span><span class="p">(</span><span class="n">load</span><span class="p">,</span> <span class="n">slices</span><span class="p">):</span>
                     <span class="k">yield</span> <span class="n">LpqR</span><span class="p">,</span> <span class="n">LpqI</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span>
+                    <span class="n">LpqR</span> <span class="o">=</span> <span class="n">LpqI</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="n">weighted_coulG</span> <span class="o">=</span> <span class="n">aft</span><span class="o">.</span><span class="n">weighted_coulG</span>
     <span class="n">_int_nuc_vloc</span> <span class="o">=</span> <span class="n">aft</span><span class="o">.</span><span class="n">_int_nuc_vloc</span>
@@ -914,8 +903,8 @@
         <span class="k">if</span> <span class="n">blksize</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">blksize</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">blockdim</span>
         <span class="k">for</span> <span class="n">LpqR</span><span class="p">,</span> <span class="n">LpqI</span><span class="p">,</span> <span class="n">sign</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">sr_loop</span><span class="p">(</span><span class="n">compact</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">blksize</span><span class="o">=</span><span class="n">blksize</span><span class="p">):</span>
-<span class="c1"># LpqI should be 0 for gamma point DF</span>
-<span class="c1">#            assert(numpy.linalg.norm(LpqI) &lt; 1e-12)</span>
+            <span class="c1"># LpqI should be 0 for gamma point DF</span>
+            <span class="c1"># assert(numpy.linalg.norm(LpqI) &lt; 1e-12)</span>
             <span class="k">yield</span> <span class="n">LpqR</span>
 
     <span class="k">def</span> <span class="nf">get_naoaux</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -964,15 +953,14 @@
         <span class="n">modchg_offset</span><span class="p">[</span><span class="n">ia</span><span class="p">,</span><span class="n">l</span><span class="p">]</span> <span class="o">=</span> <span class="n">smooth_loc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
 
     <span class="k">if</span> <span class="n">auxcell</span><span class="o">.</span><span class="n">cart</span><span class="p">:</span>
-<span class="c1"># Normalization coefficients are different in the same shell for cartesian</span>
-<span class="c1"># basis. E.g. the d-type functions, the 5 d-type orbitals are normalized wrt</span>
-<span class="c1"># the integral \int r^2 * r^2 e^{-a r^2} dr.  The s-type 3s orbital should be</span>
-<span class="c1"># normalized wrt the integral \int r^0 * r^2 e^{-a r^2} dr. The different</span>
-<span class="c1"># normalization was not built in the basis.  There two ways to surmount this</span>
-<span class="c1"># problem.  First is to transform the cartesian basis and scale the 3s (for</span>
-<span class="c1"># d functions), 4p (for f functions) ... then transform back. The second is to</span>
-<span class="c1"># remove the 3s, 4p functions. The function below is the second solution</span>
-        <span class="kn">import</span> <span class="nn">ctypes</span>
+        <span class="c1"># Normalization coefficients are different in the same shell for cartesian</span>
+        <span class="c1"># basis. E.g. the d-type functions, the 5 d-type orbitals are normalized wrt</span>
+        <span class="c1"># the integral \int r^2 * r^2 e^{-a r^2} dr.  The s-type 3s orbital should be</span>
+        <span class="c1"># normalized wrt the integral \int r^0 * r^2 e^{-a r^2} dr. The different</span>
+        <span class="c1"># normalization was not built in the basis.  There two ways to surmount this</span>
+        <span class="c1"># problem.  First is to transform the cartesian basis and scale the 3s (for</span>
+        <span class="c1"># d functions), 4p (for f functions) ... then transform back. The second is to</span>
+        <span class="c1"># remove the 3s, 4p functions. The function below is the second solution</span>
         <span class="n">c2s_fn</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">moleintor</span><span class="o">.</span><span class="n">libcgto</span><span class="o">.</span><span class="n">CINTc2s_ket_sph</span>
         <span class="n">aux_loc_sph</span> <span class="o">=</span> <span class="n">auxcell</span><span class="o">.</span><span class="n">ao_loc_nr</span><span class="p">(</span><span class="n">cart</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
         <span class="n">naux_sph</span> <span class="o">=</span> <span class="n">aux_loc_sph</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
@@ -1022,7 +1010,7 @@
 
 
 <span class="k">class</span> <span class="nc">_load3c</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cderi</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">kpti_kptj</span><span class="p">,</span> <span class="n">kptij_label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cderi</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">kpti_kptj</span><span class="p">,</span> <span class="n">kptij_label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                  <span class="n">ignore_key_error</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cderi</span> <span class="o">=</span> <span class="n">cderi</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">label</span>
@@ -1034,7 +1022,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">feri</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ignore_key_error</span> <span class="o">=</span> <span class="n">ignore_key_error</span>
 
-    <span class="k">def</span> <span class="nf">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">feri</span> <span class="o">=</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cderi</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">feri</span><span class="p">:</span>
             <span class="c1"># Return a size-0 array to skip the loop in sr_loop</span>
@@ -1044,11 +1032,11 @@
                 <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s1">&#39;Key &quot;</span><span class="si">%s</span><span class="s1">&quot; not found&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="p">)</span>
 
         <span class="n">kpti_kptj</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kpti_kptj</span><span class="p">)</span>
-        <span class="n">kptij_lst</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">feri</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">kptij_label</span><span class="p">]</span><span class="o">.</span><span class="n">value</span>
+        <span class="n">kptij_lst</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">feri</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">kptij_label</span><span class="p">][()]</span>
         <span class="k">return</span> <span class="n">_getitem</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">feri</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span><span class="p">,</span> <span class="n">kpti_kptj</span><span class="p">,</span> <span class="n">kptij_lst</span><span class="p">,</span>
                         <span class="bp">self</span><span class="o">.</span><span class="n">ignore_key_error</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">traceback</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">traceback</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">feri</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
 <span class="k">def</span> <span class="nf">_getitem</span><span class="p">(</span><span class="n">h5group</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">kpti_kptj</span><span class="p">,</span> <span class="n">kptij_lst</span><span class="p">,</span> <span class="n">ignore_key_error</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
@@ -1094,9 +1082,9 @@
 
 <span class="k">class</span> <span class="nc">_load_and_unpack</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Load data lazily&#39;&#39;&#39;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dat</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dat</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dat</span> <span class="o">=</span> <span class="n">dat</span>
-    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
         <span class="n">dat</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dat</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dat</span><span class="p">,</span> <span class="n">h5py</span><span class="o">.</span><span class="n">Group</span><span class="p">):</span>
             <span class="n">v</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">dat</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)][</span><span class="n">s</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dat</span><span class="p">))])</span>

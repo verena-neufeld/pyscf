@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -181,9 +180,9 @@
 <span class="c1">#</span>
 
 <span class="kn">import</span> <span class="nn">h5py</span>
-<span class="kn">from</span> <span class="nn">pyscf.lib.chkfile</span> <span class="k">import</span> <span class="n">load_chkfile_key</span><span class="p">,</span> <span class="n">load</span>
-<span class="kn">from</span> <span class="nn">pyscf.lib.chkfile</span> <span class="k">import</span> <span class="n">dump_chkfile_key</span><span class="p">,</span> <span class="n">dump</span><span class="p">,</span> <span class="n">save</span>
-<span class="kn">from</span> <span class="nn">pyscf.lib.chkfile</span> <span class="k">import</span> <span class="n">load_mol</span><span class="p">,</span> <span class="n">save_mol</span>
+<span class="kn">from</span> <span class="nn">pyscf.lib.chkfile</span> <span class="kn">import</span> <span class="n">load_chkfile_key</span><span class="p">,</span> <span class="n">load</span>
+<span class="kn">from</span> <span class="nn">pyscf.lib.chkfile</span> <span class="kn">import</span> <span class="n">dump_chkfile_key</span><span class="p">,</span> <span class="n">dump</span><span class="p">,</span> <span class="n">save</span>
+<span class="kn">from</span> <span class="nn">pyscf.lib.chkfile</span> <span class="kn">import</span> <span class="n">load_mol</span><span class="p">,</span> <span class="n">save_mol</span>
 
 <span class="k">def</span> <span class="nf">load_scf</span><span class="p">(</span><span class="n">chkfile</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">load_mol</span><span class="p">(</span><span class="n">chkfile</span><span class="p">),</span> <span class="n">load</span><span class="p">(</span><span class="n">chkfile</span><span class="p">,</span> <span class="s1">&#39;scf&#39;</span><span class="p">)</span>

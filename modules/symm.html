@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -193,9 +192,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../modules.html">10. Main modules</a> &raquo;</li>
+          <li><a href="../modules.html"><span class="section-number">10. </span>Main modules</a> &raquo;</li>
         
-      <li>10.30. <code class="xref py py-mod docutils literal notranslate"><span class="pre">symm</span></code> – Point group symmetry and spin symmetry</li>
+      <li><span class="section-number">10.30. </span><code class="xref py py-mod docutils literal notranslate"><span class="pre">symm</span></code> – Point group symmetry and spin symmetry</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -215,7 +214,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="module-pyscf.symm">
-<span id="symm-point-group-symmetry-and-spin-symmetry"></span><span id="symm"></span><h1>10.30. <code class="xref py py-mod docutils literal notranslate"><span class="pre">symm</span></code> – Point group symmetry and spin symmetry<a class="headerlink" href="#module-pyscf.symm" title="Permalink to this headline">¶</a></h1>
+<span id="symm-point-group-symmetry-and-spin-symmetry"></span><span id="symm"></span><h1><span class="section-number">10.30. </span><code class="xref py py-mod docutils literal notranslate"><span class="pre">symm</span></code> – Point group symmetry and spin symmetry<a class="headerlink" href="#module-pyscf.symm" title="Permalink to this headline">¶</a></h1>
 <p>This module offers the functions to detect point group symmetry, basis
 symmetriziation, Clebsch-Gordon coefficients.  This module works as a plugin of
 PySCF package.  Symmetry is not hard coded in each method.</p>
@@ -580,7 +579,7 @@ We therefore use the XOR operator ID to assign the irreps (see
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>A’</p></td>
+<tr class="row-even"><td><p>A'</p></td>
 <td><p>0</p></td>
 <td><p>0</p></td>
 <td><p>Ag</p></td>
@@ -590,7 +589,7 @@ We therefore use the XOR operator ID to assign the irreps (see
 <td><p>0</p></td>
 <td><p>0</p></td>
 </tr>
-<tr class="row-odd"><td><p>B”</p></td>
+<tr class="row-odd"><td><p>B&quot;</p></td>
 <td><p>1</p></td>
 <td><p>1</p></td>
 <td><p>Au</p></td>
@@ -822,13 +821,13 @@ achieved by the modular operation <code class="docutils literal notranslate"><sp
 the IDs instead of the irreps’ symbols.  We can use
 <code class="xref py py-func docutils literal notranslate"><span class="pre">symm.addons.irrep_id2name()</span></code> to convert the ID to irreps’ symbol,
 e.g.:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">symm</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">symm</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">symm</span><span class="o">.</span><span class="n">irrep_id2name</span><span class="p">(</span><span class="s1">&#39;Dooh&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">14</span><span class="p">]]</span>
 <span class="go">[&#39;E1ux&#39;, &#39;E1uy&#39;, &#39;A1g&#39;, &#39;E2gx&#39;, &#39;E2gy&#39;, &#39;A1g&#39;, &#39;A1u&#39;, &#39;E1gy&#39;, &#39;E1gx&#39;, &#39;A1u&#39;, &#39;E2ux&#39;, &#39;E2uy&#39;]</span>
 </pre></div>
 </div>
 <div class="section" id="enabling-symmetry-in-other-module">
-<h2>10.30.1. Enabling symmetry in other module<a class="headerlink" href="#enabling-symmetry-in-other-module" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.30.1. </span>Enabling symmetry in other module<a class="headerlink" href="#enabling-symmetry-in-other-module" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p>SCF</p>
 <p>To control the HF determinant symmetry,  one can assign occupancy for
@@ -840,8 +839,8 @@ particular irreps, e.g.</p>
 <span class="c1"># Author: Qiming Sun &lt;osirpt.sun@gmail.com&gt;</span>
 <span class="c1">#</span>
 
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">scf</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">scf</span>
 
 <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">Specify irrep_nelec to control the wave function symmetry</span>
@@ -916,7 +915,7 @@ right symmetry.</p>
 <span class="sd">Active space can be adjusted by specifing the number of orbitals for each irrep.</span>
 <span class="sd">&#39;&#39;&#39;</span>
 
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">mcscf</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">mcscf</span>
 
 <span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">()</span>
 <span class="n">mol</span><span class="o">.</span><span class="n">build</span><span class="p">(</span>
@@ -965,7 +964,7 @@ right symmetry.</p>
 </li>
 </ul>
 <div class="section" id="examples">
-<h3>10.30.1.1. Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.30.1.1. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
 <p>Relevant examples
 <code class="file docutils literal notranslate"><span class="pre">examples/symm/30-guess_symmetry.py</span></code>
 <code class="file docutils literal notranslate"><span class="pre">examples/symm/31-symmetrize_space.py</span></code>
@@ -973,62 +972,62 @@ right symmetry.</p>
 <code class="file docutils literal notranslate"><span class="pre">examples/symm/33-lz_adaption.py</span></code></p>
 </div>
 <div class="section" id="program-reference">
-<h3>10.30.1.2. Program reference<a class="headerlink" href="#program-reference" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.30.1.2. </span>Program reference<a class="headerlink" href="#program-reference" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 <div class="section" id="module-pyscf.symm.geom">
-<span id="geom"></span><h2>10.30.2. geom<a class="headerlink" href="#module-pyscf.symm.geom" title="Permalink to this headline">¶</a></h2>
-<dl class="exception">
+<span id="geom"></span><h2><span class="section-number">10.30.2. </span>geom<a class="headerlink" href="#module-pyscf.symm.geom" title="Permalink to this headline">¶</a></h2>
+<dl class="py exception">
 <dt id="pyscf.symm.geom.RotationAxisNotFound">
 <em class="property">exception </em><code class="sig-prename descclassname">pyscf.symm.geom.</code><code class="sig-name descname">RotationAxisNotFound</code><a class="reference internal" href="../_modules/pyscf/symm/geom.html#RotationAxisNotFound"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.geom.RotationAxisNotFound" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.symm.geom.alias_axes">
-<code class="sig-prename descclassname">pyscf.symm.geom.</code><code class="sig-name descname">alias_axes</code><span class="sig-paren">(</span><em class="sig-param">axes</em>, <em class="sig-param">ref</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/geom.html#alias_axes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.geom.alias_axes" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.symm.geom.</code><code class="sig-name descname">alias_axes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">axes</span></em>, <em class="sig-param"><span class="n">ref</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/geom.html#alias_axes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.geom.alias_axes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rename axes, make it as close as possible to the ref axes</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.symm.geom.detect_symm">
-<code class="sig-prename descclassname">pyscf.symm.geom.</code><code class="sig-name descname">detect_symm</code><span class="sig-paren">(</span><em class="sig-param">atoms</em>, <em class="sig-param">basis=None</em>, <em class="sig-param">verbose=2</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/geom.html#detect_symm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.geom.detect_symm" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.symm.geom.</code><code class="sig-name descname">detect_symm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">atoms</span></em>, <em class="sig-param"><span class="n">basis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">2</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/geom.html#detect_symm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.geom.detect_symm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Detect the point group symmetry for given molecule.</p>
 <p>Return group name, charge center, and nex_axis (three rows for x,y,z)</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.symm.geom.rotation_mat">
-<code class="sig-prename descclassname">pyscf.symm.geom.</code><code class="sig-name descname">rotation_mat</code><span class="sig-paren">(</span><em class="sig-param">vec</em>, <em class="sig-param">theta</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/geom.html#rotation_mat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.geom.rotation_mat" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.symm.geom.</code><code class="sig-name descname">rotation_mat</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vec</span></em>, <em class="sig-param"><span class="n">theta</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/geom.html#rotation_mat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.geom.rotation_mat" title="Permalink to this definition">¶</a></dt>
 <dd><p>rotate angle theta along vec
 new(x,y,z) = R * old(x,y,z)</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.symm.geom.symm_identical_atoms">
-<code class="sig-prename descclassname">pyscf.symm.geom.</code><code class="sig-name descname">symm_identical_atoms</code><span class="sig-paren">(</span><em class="sig-param">gpname</em>, <em class="sig-param">atoms</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/geom.html#symm_identical_atoms"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.geom.symm_identical_atoms" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.symm.geom.</code><code class="sig-name descname">symm_identical_atoms</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gpname</span></em>, <em class="sig-param"><span class="n">atoms</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/geom.html#symm_identical_atoms"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.geom.symm_identical_atoms" title="Permalink to this definition">¶</a></dt>
 <dd><p>Requires</p>
 </dd></dl>
 
 </div>
 <div class="section" id="module-pyscf.symm.basis">
-<span id="symmtry-adapted-basis"></span><h2>10.30.3. Symmtry adapted basis<a class="headerlink" href="#module-pyscf.symm.basis" title="Permalink to this headline">¶</a></h2>
+<span id="symmtry-adapted-basis"></span><h2><span class="section-number">10.30.3. </span>Symmtry adapted basis<a class="headerlink" href="#module-pyscf.symm.basis" title="Permalink to this headline">¶</a></h2>
 <p>Generate symmetry adapted basis</p>
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.symm.basis.linearmole_symm_descent">
-<code class="sig-prename descclassname">pyscf.symm.basis.</code><code class="sig-name descname">linearmole_symm_descent</code><span class="sig-paren">(</span><em class="sig-param">gpname</em>, <em class="sig-param">irrepid</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/basis.html#linearmole_symm_descent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.basis.linearmole_symm_descent" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.symm.basis.</code><code class="sig-name descname">linearmole_symm_descent</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gpname</span></em>, <em class="sig-param"><span class="n">irrepid</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/basis.html#linearmole_symm_descent"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.basis.linearmole_symm_descent" title="Permalink to this definition">¶</a></dt>
 <dd><p>Map irreps to D2h or C2v</p>
 </dd></dl>
 
 </div>
 <div class="section" id="module-pyscf.symm.addons">
-<span id="addons"></span><h2>10.30.4. addons<a class="headerlink" href="#module-pyscf.symm.addons" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<span id="addons"></span><h2><span class="section-number">10.30.4. </span>addons<a class="headerlink" href="#module-pyscf.symm.addons" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
 <dt id="pyscf.symm.addons.eigh">
-<code class="sig-prename descclassname">pyscf.symm.addons.</code><code class="sig-name descname">eigh</code><span class="sig-paren">(</span><em class="sig-param">h</em>, <em class="sig-param">orbsym</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/addons.html#eigh"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.addons.eigh" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.symm.addons.</code><code class="sig-name descname">eigh</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">h</span></em>, <em class="sig-param"><span class="n">orbsym</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/addons.html#eigh"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.addons.eigh" title="Permalink to this definition">¶</a></dt>
 <dd><p>Solve eigenvalue problem based on the symmetry information for basis.
 See also pyscf/lib/linalg_helper.py <code class="xref py py-func docutils literal notranslate"><span class="pre">eigh_by_blocks()</span></code></p>
 <p>Examples:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">symm</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">symm</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;H 0 0 0; H 0 0 1&#39;</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;ccpvdz&#39;</span><span class="p">,</span> <span class="n">symmetry</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">hstack</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">symm_orb</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">vnuc_so</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">dot</span><span class="p">,</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">mol</span><span class="o">.</span><span class="n">intor</span><span class="p">(</span><span class="s1">&#39;int1e_nuc_sph&#39;</span><span class="p">),</span> <span class="n">c</span><span class="p">))</span>
@@ -1041,9 +1040,9 @@ See also pyscf/lib/linalg_helper.py <code class="xref py py-func docutils litera
 </div>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.symm.addons.irrep_id2name">
-<code class="sig-prename descclassname">pyscf.symm.addons.</code><code class="sig-name descname">irrep_id2name</code><span class="sig-paren">(</span><em class="sig-param">gpname</em>, <em class="sig-param">irrep_id</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/addons.html#irrep_id2name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.addons.irrep_id2name" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.symm.addons.</code><code class="sig-name descname">irrep_id2name</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gpname</span></em>, <em class="sig-param"><span class="n">irrep_id</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/addons.html#irrep_id2name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.addons.irrep_id2name" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert the internal irrep ID to irrep symbol</p>
 <dl class="simple">
 <dt>Args:</dt><dd><dl class="simple">
@@ -1058,9 +1057,9 @@ See also pyscf/lib/linalg_helper.py <code class="xref py py-func docutils litera
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.symm.addons.irrep_name2id">
-<code class="sig-prename descclassname">pyscf.symm.addons.</code><code class="sig-name descname">irrep_name2id</code><span class="sig-paren">(</span><em class="sig-param">gpname</em>, <em class="sig-param">symb</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/addons.html#irrep_name2id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.addons.irrep_name2id" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.symm.addons.</code><code class="sig-name descname">irrep_name2id</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gpname</span></em>, <em class="sig-param"><span class="n">symb</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/addons.html#irrep_name2id"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.addons.irrep_name2id" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert the irrep symbol to internal irrep ID</p>
 <dl class="simple">
 <dt>Args:</dt><dd><dl class="simple">
@@ -1075,9 +1074,9 @@ See also pyscf/lib/linalg_helper.py <code class="xref py py-func docutils litera
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.symm.addons.label_orb_symm">
-<code class="sig-prename descclassname">pyscf.symm.addons.</code><code class="sig-name descname">label_orb_symm</code><span class="sig-paren">(</span><em class="sig-param">mol</em>, <em class="sig-param">irrep_name</em>, <em class="sig-param">symm_orb</em>, <em class="sig-param">mo</em>, <em class="sig-param">s=None</em>, <em class="sig-param">check=True</em>, <em class="sig-param">tol=1e-09</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/addons.html#label_orb_symm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.addons.label_orb_symm" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.symm.addons.</code><code class="sig-name descname">label_orb_symm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">irrep_name</span></em>, <em class="sig-param"><span class="n">symm_orb</span></em>, <em class="sig-param"><span class="n">mo</span></em>, <em class="sig-param"><span class="n">s</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">check</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">tol</span><span class="o">=</span><span class="default_value">1e-09</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/addons.html#label_orb_symm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.addons.label_orb_symm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Label the symmetry of given orbitals</p>
 <p>irrep_name can be either the symbol or the ID of the irreducible
 representation.  If the ID is provided, it returns the numeric code
@@ -1099,7 +1098,7 @@ orbitals</p>
 </dd>
 </dl>
 <p>Examples:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">symm</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">symm</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;H 0 0 0; H 0 0 1&#39;</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;ccpvdz&#39;</span><span class="p">,</span><span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">symmetry</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mf</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
@@ -1111,22 +1110,22 @@ orbitals</p>
 </div>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.symm.addons.route">
-<code class="sig-prename descclassname">pyscf.symm.addons.</code><code class="sig-name descname">route</code><span class="sig-paren">(</span><em class="sig-param">target</em>, <em class="sig-param">nelec</em>, <em class="sig-param">orbsym</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/addons.html#route"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.addons.route" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.symm.addons.</code><code class="sig-name descname">route</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">target</span></em>, <em class="sig-param"><span class="n">nelec</span></em>, <em class="sig-param"><span class="n">orbsym</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/addons.html#route"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.addons.route" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pick orbitals to form a determinant which has the right symmetry.
 If solution is not found, return []</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.symm.addons.std_symb">
-<code class="sig-prename descclassname">pyscf.symm.addons.</code><code class="sig-name descname">std_symb</code><span class="sig-paren">(</span><em class="sig-param">gpname</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/addons.html#std_symb"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.addons.std_symb" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.symm.addons.</code><code class="sig-name descname">std_symb</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gpname</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/addons.html#std_symb"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.addons.std_symb" title="Permalink to this definition">¶</a></dt>
 <dd><p>std_symb(‘d2h’) returns D2h; std_symb(‘D2H’) returns D2h</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.symm.addons.symmetrize_orb">
-<code class="sig-prename descclassname">pyscf.symm.addons.</code><code class="sig-name descname">symmetrize_orb</code><span class="sig-paren">(</span><em class="sig-param">mol</em>, <em class="sig-param">mo</em>, <em class="sig-param">orbsym=None</em>, <em class="sig-param">s=None</em>, <em class="sig-param">check=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/addons.html#symmetrize_orb"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.addons.symmetrize_orb" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.symm.addons.</code><code class="sig-name descname">symmetrize_orb</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">mo</span></em>, <em class="sig-param"><span class="n">orbsym</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">s</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">check</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/addons.html#symmetrize_orb"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.addons.symmetrize_orb" title="Permalink to this definition">¶</a></dt>
 <dd><p>Symmetrize the given orbitals.</p>
 <p>This function is different to the <a class="reference internal" href="#pyscf.symm.addons.symmetrize_space" title="pyscf.symm.addons.symmetrize_space"><code class="xref py py-func docutils literal notranslate"><span class="pre">symmetrize_space()</span></code></a>:  In this
 function, each orbital is symmetrized by removing non-symmetric components.
@@ -1154,7 +1153,7 @@ of the input mol.</p>
 </dd>
 </dl>
 <p>Examples:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">symm</span><span class="p">,</span> <span class="n">scf</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">symm</span><span class="p">,</span> <span class="n">scf</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span> <span class="o">=</span> <span class="s1">&#39;C  0  0  0; H  1  1  1; H -1 -1  1; H  1 -1 -1; H -1  1 -1&#39;</span><span class="p">,</span>
 <span class="gp">... </span>            <span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;sto3g&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
@@ -1166,9 +1165,9 @@ of the input mol.</p>
 </div>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.symm.addons.symmetrize_space">
-<code class="sig-prename descclassname">pyscf.symm.addons.</code><code class="sig-name descname">symmetrize_space</code><span class="sig-paren">(</span><em class="sig-param">mol</em>, <em class="sig-param">mo</em>, <em class="sig-param">s=None</em>, <em class="sig-param">check=True</em>, <em class="sig-param">tol=1e-07</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/addons.html#symmetrize_space"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.addons.symmetrize_space" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.symm.addons.</code><code class="sig-name descname">symmetrize_space</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">mo</span></em>, <em class="sig-param"><span class="n">s</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">check</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">tol</span><span class="o">=</span><span class="default_value">1e-07</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/addons.html#symmetrize_space"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.addons.symmetrize_space" title="Permalink to this definition">¶</a></dt>
 <dd><p>Symmetrize the given orbital space.</p>
 <p>This function is different to the <a class="reference internal" href="#pyscf.symm.addons.symmetrize_orb" title="pyscf.symm.addons.symmetrize_orb"><code class="xref py py-func docutils literal notranslate"><span class="pre">symmetrize_orb()</span></code></a>:  In this function,
 the given orbitals are mixed to reveal the symmtery; <a class="reference internal" href="#pyscf.symm.addons.symmetrize_orb" title="pyscf.symm.addons.symmetrize_orb"><code class="xref py py-func docutils literal notranslate"><span class="pre">symmetrize_orb()</span></code></a>
@@ -1188,7 +1187,7 @@ projects out non-symmetric components for each orbital.</p>
 </dd>
 </dl>
 <p>Examples:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">symm</span><span class="p">,</span> <span class="n">scf</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">symm</span><span class="p">,</span> <span class="n">scf</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span> <span class="o">=</span> <span class="s1">&#39;C  0  0  0; H  1  1  1; H -1 -1  1; H  1 -1 -1; H -1  1 -1&#39;</span><span class="p">,</span>
 <span class="gp">... </span>            <span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;sto3g&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
@@ -1202,29 +1201,29 @@ projects out non-symmetric components for each orbital.</p>
 
 </div>
 <div class="section" id="module-pyscf.symm.cg">
-<span id="clebsch-gordon-coefficients"></span><h2>10.30.5. Clebsch Gordon coefficients<a class="headerlink" href="#module-pyscf.symm.cg" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<span id="clebsch-gordon-coefficients"></span><h2><span class="section-number">10.30.5. </span>Clebsch Gordon coefficients<a class="headerlink" href="#module-pyscf.symm.cg" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
 <dt id="pyscf.symm.cg.cg_spin">
-<code class="sig-prename descclassname">pyscf.symm.cg.</code><code class="sig-name descname">cg_spin</code><span class="sig-paren">(</span><em class="sig-param">l</em>, <em class="sig-param">jdouble</em>, <em class="sig-param">mjdouble</em>, <em class="sig-param">spin</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/cg.html#cg_spin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.cg.cg_spin" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.symm.cg.</code><code class="sig-name descname">cg_spin</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">l</span></em>, <em class="sig-param"><span class="n">jdouble</span></em>, <em class="sig-param"><span class="n">mjdouble</span></em>, <em class="sig-param"><span class="n">spin</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/cg.html#cg_spin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.cg.cg_spin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clebsch Gordon coefficient of &lt;l,m,1/2,spin|j,mj&gt;</p>
 </dd></dl>
 
 </div>
 <div class="section" id="module-pyscf.symm.param">
-<span id="parameters"></span><h2>10.30.6. Parameters<a class="headerlink" href="#module-pyscf.symm.param" title="Permalink to this headline">¶</a></h2>
+<span id="parameters"></span><h2><span class="section-number">10.30.6. </span>Parameters<a class="headerlink" href="#module-pyscf.symm.param" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="module-pyscf.symm.sph">
-<span id="spherical-harmonics"></span><h2>10.30.7. Spherical harmonics<a class="headerlink" href="#module-pyscf.symm.sph" title="Permalink to this headline">¶</a></h2>
+<span id="spherical-harmonics"></span><h2><span class="section-number">10.30.7. </span>Spherical harmonics<a class="headerlink" href="#module-pyscf.symm.sph" title="Permalink to this headline">¶</a></h2>
 <p>Spherical harmonics</p>
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.symm.sph.cart2spinor">
-<code class="sig-prename descclassname">pyscf.symm.sph.</code><code class="sig-name descname">cart2spinor</code><span class="sig-paren">(</span><em class="sig-param">l</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/sph.html#cart2spinor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.sph.cart2spinor" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.symm.sph.</code><code class="sig-name descname">cart2spinor</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">l</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/sph.html#cart2spinor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.sph.cart2spinor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Cartesian to spinor for angular moment l</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.symm.sph.multipoles">
-<code class="sig-prename descclassname">pyscf.symm.sph.</code><code class="sig-name descname">multipoles</code><span class="sig-paren">(</span><em class="sig-param">r</em>, <em class="sig-param">lmax</em>, <em class="sig-param">reorder_dipole=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/sph.html#multipoles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.sph.multipoles" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.symm.sph.</code><code class="sig-name descname">multipoles</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">r</span></em>, <em class="sig-param"><span class="n">lmax</span></em>, <em class="sig-param"><span class="n">reorder_dipole</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/sph.html#multipoles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.sph.multipoles" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute all multipoles upto lmax</p>
 <p>rad = numpy.linalg.norm(r, axis=1)
 ylms = real_ylm(r/rad.reshape(-1,1), lmax)
@@ -1238,14 +1237,14 @@ pol = [rad**l*y for l, y in enumerate(ylms)]</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.symm.sph.real2spinor_whole">
-<code class="sig-prename descclassname">pyscf.symm.sph.</code><code class="sig-name descname">real2spinor_whole</code><span class="sig-paren">(</span><em class="sig-param">mol</em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.symm.sph.real2spinor_whole" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.symm.sph.</code><code class="sig-name descname">real2spinor_whole</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.symm.sph.real2spinor_whole" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transformation matrix that transforms real-spherical GTOs to spinor
 GTOs for all basis functions</p>
 <p>Examples:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf.symm</span> <span class="k">import</span> <span class="n">sph</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf.symm</span> <span class="kn">import</span> <span class="n">sph</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;H 0 0 0; F 0 0 1&#39;</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;ccpvtz&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ca</span><span class="p">,</span> <span class="n">cb</span> <span class="o">=</span> <span class="n">sph</span><span class="o">.</span><span class="n">sph2spinor_coeff</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s0</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">intor</span><span class="p">(</span><span class="s1">&#39;int1e_ovlp_spinor&#39;</span><span class="p">)</span>
@@ -1257,20 +1256,20 @@ GTOs for all basis functions</p>
 </div>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.symm.sph.real_sph_vec">
-<code class="sig-prename descclassname">pyscf.symm.sph.</code><code class="sig-name descname">real_sph_vec</code><span class="sig-paren">(</span><em class="sig-param">r</em>, <em class="sig-param">lmax</em>, <em class="sig-param">reorder_p=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/sph.html#real_sph_vec"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.sph.real_sph_vec" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.symm.sph.</code><code class="sig-name descname">real_sph_vec</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">r</span></em>, <em class="sig-param"><span class="n">lmax</span></em>, <em class="sig-param"><span class="n">reorder_p</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/sph.html#real_sph_vec"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.sph.real_sph_vec" title="Permalink to this definition">¶</a></dt>
 <dd><p>Computes (all) real spherical harmonics up to the angular momentum lmax</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.symm.sph.sph2spinor_coeff">
-<code class="sig-prename descclassname">pyscf.symm.sph.</code><code class="sig-name descname">sph2spinor_coeff</code><span class="sig-paren">(</span><em class="sig-param">mol</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/sph.html#sph2spinor_coeff"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.sph.sph2spinor_coeff" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.symm.sph.</code><code class="sig-name descname">sph2spinor_coeff</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/sph.html#sph2spinor_coeff"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.sph.sph2spinor_coeff" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transformation matrix that transforms real-spherical GTOs to spinor
 GTOs for all basis functions</p>
 <p>Examples:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf.symm</span> <span class="k">import</span> <span class="n">sph</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf.symm</span> <span class="kn">import</span> <span class="n">sph</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;H 0 0 0; F 0 0 1&#39;</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;ccpvtz&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ca</span><span class="p">,</span> <span class="n">cb</span> <span class="o">=</span> <span class="n">sph</span><span class="o">.</span><span class="n">sph2spinor_coeff</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">s0</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">intor</span><span class="p">(</span><span class="s1">&#39;int1e_ovlp_spinor&#39;</span><span class="p">)</span>
@@ -1282,9 +1281,9 @@ GTOs for all basis functions</p>
 </div>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.symm.sph.sph_pure2real">
-<code class="sig-prename descclassname">pyscf.symm.sph.</code><code class="sig-name descname">sph_pure2real</code><span class="sig-paren">(</span><em class="sig-param">l</em>, <em class="sig-param">reorder_p=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/sph.html#sph_pure2real"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.sph.sph_pure2real" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.symm.sph.</code><code class="sig-name descname">sph_pure2real</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">l</span></em>, <em class="sig-param"><span class="n">reorder_p</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/sph.html#sph_pure2real"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.sph.sph_pure2real" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transformation matrix: from the pure spherical harmonic functions Y_m to
 the real spherical harmonic functions O_m.</p>
 <blockquote>
@@ -1302,9 +1301,9 @@ O(-2) = i/sqrt(2){Y(-2) - Y(2)};   O(2) = 1/sqrt(2){Y(-2) + Y(2)}</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.symm.sph.sph_real2pure">
-<code class="sig-prename descclassname">pyscf.symm.sph.</code><code class="sig-name descname">sph_real2pure</code><span class="sig-paren">(</span><em class="sig-param">l</em>, <em class="sig-param">reorder_p=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/sph.html#sph_real2pure"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.sph.sph_real2pure" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.symm.sph.</code><code class="sig-name descname">sph_real2pure</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">l</span></em>, <em class="sig-param"><span class="n">reorder_p</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/sph.html#sph_real2pure"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.sph.sph_real2pure" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transformation matrix: from real spherical harmonic functions to the pure
 spherical harmonic functions.</p>
 <dl class="simple">
@@ -1315,11 +1314,11 @@ spherical harmonic functions.</p>
 
 </div>
 <div class="section" id="module-pyscf.symm.Dmatrix">
-<span id="wigner-rotation-dmatrix"></span><h2>10.30.8. Wigner rotation Dmatrix<a class="headerlink" href="#module-pyscf.symm.Dmatrix" title="Permalink to this headline">¶</a></h2>
+<span id="wigner-rotation-dmatrix"></span><h2><span class="section-number">10.30.8. </span>Wigner rotation Dmatrix<a class="headerlink" href="#module-pyscf.symm.Dmatrix" title="Permalink to this headline">¶</a></h2>
 <p>Wigner rotation D-matrix for real spherical harmonics</p>
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.symm.Dmatrix.Dmatrix">
-<code class="sig-prename descclassname">pyscf.symm.Dmatrix.</code><code class="sig-name descname">Dmatrix</code><span class="sig-paren">(</span><em class="sig-param">l</em>, <em class="sig-param">alpha</em>, <em class="sig-param">beta</em>, <em class="sig-param">gamma</em>, <em class="sig-param">reorder_p=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/Dmatrix.html#Dmatrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.Dmatrix.Dmatrix" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.symm.Dmatrix.</code><code class="sig-name descname">Dmatrix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">l</span></em>, <em class="sig-param"><span class="n">alpha</span></em>, <em class="sig-param"><span class="n">beta</span></em>, <em class="sig-param"><span class="n">gamma</span></em>, <em class="sig-param"><span class="n">reorder_p</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/Dmatrix.html#Dmatrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.Dmatrix.Dmatrix" title="Permalink to this definition">¶</a></dt>
 <dd><p>Wigner rotation D-matrix</p>
 <p>D_{mm’} = &lt;lm|R(alpha,beta,gamma)|lm’&gt;
 alpha, beta, gamma are Euler angles (in z-y-z convention)</p>
@@ -1329,15 +1328,15 @@ alpha, beta, gamma are Euler angles (in z-y-z convention)</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.symm.Dmatrix.dmatrix">
-<code class="sig-prename descclassname">pyscf.symm.Dmatrix.</code><code class="sig-name descname">dmatrix</code><span class="sig-paren">(</span><em class="sig-param">l</em>, <em class="sig-param">beta</em>, <em class="sig-param">reorder_p=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/Dmatrix.html#dmatrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.Dmatrix.dmatrix" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.symm.Dmatrix.</code><code class="sig-name descname">dmatrix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">l</span></em>, <em class="sig-param"><span class="n">beta</span></em>, <em class="sig-param"><span class="n">reorder_p</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/Dmatrix.html#dmatrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.Dmatrix.dmatrix" title="Permalink to this definition">¶</a></dt>
 <dd><p>Wigner small-d matrix (in z-y-z convention)</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.symm.Dmatrix.get_euler_angles">
-<code class="sig-prename descclassname">pyscf.symm.Dmatrix.</code><code class="sig-name descname">get_euler_angles</code><span class="sig-paren">(</span><em class="sig-param">c1</em>, <em class="sig-param">c2</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/Dmatrix.html#get_euler_angles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.Dmatrix.get_euler_angles" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.symm.Dmatrix.</code><code class="sig-name descname">get_euler_angles</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">c1</span></em>, <em class="sig-param"><span class="n">c2</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/symm/Dmatrix.html#get_euler_angles"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.symm.Dmatrix.get_euler_angles" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find the three Euler angles (alpha, beta, gamma in z-y-z convention)
 that rotates coordinates c1 to coordinates c2.</p>
 <p>yp  = numpy.einsum(‘j,kj-&gt;k’, c1[1], geom.rotation_mat(c1[2], beta))

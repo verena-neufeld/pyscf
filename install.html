@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -163,7 +162,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>3. Installation</li>
+      <li><span class="section-number">3. </span>Installation</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -183,9 +182,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="installation">
-<span id="installing"></span><h1>3. Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<span id="installing"></span><h1><span class="section-number">3. </span>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="installation-with-pip">
-<h2>3.1. Installation with pip<a class="headerlink" href="#installation-with-pip" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1. </span>Installation with pip<a class="headerlink" href="#installation-with-pip" title="Permalink to this headline">¶</a></h2>
 <p>This is the recommended way to install PySCF:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install pyscf
 </pre></div>
@@ -223,7 +222,7 @@ you need to add –enable-shared flag.</p>
 </div>
 </div>
 <div class="section" id="installation-with-conda">
-<h2>3.2. Installation with conda<a class="headerlink" href="#installation-with-conda" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2. </span>Installation with conda<a class="headerlink" href="#installation-with-conda" title="Permalink to this headline">¶</a></h2>
 <p>If you have <a class="reference external" href="https://conda.io/docs/">Conda</a>
 (or <a class="reference external" href="https://www.continuum.io/downloads#linux">Anaconda</a>)
 environment, PySCF package can be installed with Conda cloud:</p>
@@ -232,7 +231,7 @@ environment, PySCF package can be installed with Conda cloud:</p>
 </div>
 </div>
 <div class="section" id="pyscf-docker-image">
-<h2>3.3. PySCF docker image<a class="headerlink" href="#pyscf-docker-image" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.3. </span>PySCF docker image<a class="headerlink" href="#pyscf-docker-image" title="Permalink to this headline">¶</a></h2>
 <p>The following command starts a container with the jupyter notebook server
 listening for HTTP connections on port 8888:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ docker run -it -p 8888:8888 pyscf/pyscf-1.5.0
@@ -246,7 +245,7 @@ pyscf.</p>
 </div>
 </div>
 <div class="section" id="manual-installation-from-github-repo">
-<h2>3.4. Manual installation from github repo<a class="headerlink" href="#manual-installation-from-github-repo" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.4. </span>Manual installation from github repo<a class="headerlink" href="#manual-installation-from-github-repo" title="Permalink to this headline">¶</a></h2>
 <p>Manual installation requires <a class="reference external" href="http://www.cmake.org">cmake</a>,
 <a class="reference external" href="http://www.numpy.org/">numpy</a>, <a class="reference external" href="http://www.scipy.org/">scipy</a>
 and <a class="reference external" href="http://www.h5py.org/">h5py</a> libraries.
@@ -305,7 +304,7 @@ not specified, the system temporary directory <code class="code docutils literal
 scratch directory.</p>
 </div>
 <div class="section" id="installation-without-network">
-<h2>3.5. Installation without network<a class="headerlink" href="#installation-without-network" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.5. </span>Installation without network<a class="headerlink" href="#installation-without-network" title="Permalink to this headline">¶</a></h2>
 <p>If you have problems to download the external libraries on your computer, you can
 manually build the libraries, as shown in the following instructions.  First,
 you need to install libcint, libxc or xcfun libraries:</p>
@@ -313,10 +312,11 @@ you need to install libcint, libxc or xcfun libraries:</p>
 $ cd libcint
 $ cd .. &amp;&amp; tar czf libcint.tar.gz libcint
 
-$ git clone https://github.com/dftlibs/xcfun.git
+$ # PySCF depends on xcfun version 2.1.0
+$ git clone https://github.com/sunqm/xcfun.git
 $ cd xcfun
-$ # PySCF depends on this version of xcfun
-$ git checkout 8ec13b06e06feccbc9e968665977df14d7bfdff8
+$ # This branch downgrades the required cmake version from 3.14 to 3.5
+$ git checkout cmake-3.5
 $ cd .. &amp;&amp; tar czf xcfun.tar.gz xcfun
 </pre></div>
 </div>
@@ -356,7 +356,7 @@ $ make
 <p>Finally update the <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> environment for Python interpreter.</p>
 </div>
 <div class="section" id="using-optimized-blas">
-<span id="installing-blas"></span><h2>3.6. Using optimized BLAS<a class="headerlink" href="#using-optimized-blas" title="Permalink to this headline">¶</a></h2>
+<span id="installing-blas"></span><h2><span class="section-number">3.6. </span>Using optimized BLAS<a class="headerlink" href="#using-optimized-blas" title="Permalink to this headline">¶</a></h2>
 <p>The default installation tries to find BLAS libraries automatically. This
 automated setup script may link the code to slow BLAS libraries.  You can
 compile the package with other BLAS vendors to improve performance, for example
@@ -406,7 +406,7 @@ It can be solved by preloading MKL core library with:
 </div>
 </div>
 <div class="section" id="using-optimized-integral-library">
-<span id="installing-qcint"></span><h2>3.7. Using optimized integral library<a class="headerlink" href="#using-optimized-integral-library" title="Permalink to this headline">¶</a></h2>
+<span id="installing-qcint"></span><h2><span class="section-number">3.7. </span>Using optimized integral library<a class="headerlink" href="#using-optimized-integral-library" title="Permalink to this headline">¶</a></h2>
 <p>The default integral library used by PySCF is
 libcint (<a class="reference external" href="https://github.com/sunqm/libcint">https://github.com/sunqm/libcint</a>).  This integral library was
 implemented in the model that ensures the compatibility on various high
@@ -423,7 +423,7 @@ of the integral library in lib/CMakeLists.txt file:</p>
 </div>
 </div>
 <div class="section" id="cmake-config-file">
-<h2>3.8. Cmake config file<a class="headerlink" href="#cmake-config-file" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.8. </span>Cmake config file<a class="headerlink" href="#cmake-config-file" title="Permalink to this headline">¶</a></h2>
 <p>Cmake options can be saved in a config file <code class="docutils literal notranslate"><span class="pre">pyscf/lib/cmake.arch.inc</span></code>.
 Settings in this config file will be automatically loaded and overwritten the
 default cmake options during compilation.  For example, you can put
@@ -441,9 +441,9 @@ flags:</p>
 <code class="docutils literal notranslate"><span class="pre">pyscf/lib/cmake_arch_config</span></code>.</p>
 </div>
 <div class="section" id="plugins">
-<span id="installing-plugin"></span><h2>3.9. Plugins<a class="headerlink" href="#plugins" title="Permalink to this headline">¶</a></h2>
+<span id="installing-plugin"></span><h2><span class="section-number">3.9. </span>Plugins<a class="headerlink" href="#plugins" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="nao">
-<h3>3.9.1. NAO<a class="headerlink" href="#nao" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.9.1. </span>NAO<a class="headerlink" href="#nao" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">nao</span></code> module includes the basic functions of numerical atomic orbitals
 (NAO) and the (nao based) TDDFT methods.  This module was contributed by Marc
 Barbry and Peter Koval.  You can enable this module with a cmake flag:</p>
@@ -453,7 +453,7 @@ Barbry and Peter Koval.  You can enable this module with a cmake flag:</p>
 <p>More information of the compilation can be found in <code class="file docutils literal notranslate"><span class="pre">pyscf/lib/nao/README.md</span></code>.</p>
 </div>
 <div class="section" id="dmrg-solver">
-<h3>3.9.2. DMRG solver<a class="headerlink" href="#dmrg-solver" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.9.2. </span>DMRG solver<a class="headerlink" href="#dmrg-solver" title="Permalink to this headline">¶</a></h3>
 <p>Density matrix renormalization group (DMRG) implementations Block
 (<a class="reference external" href="https://sanshar.github.io/Block">https://sanshar.github.io/Block</a>) and
 CheMPS2 (<a class="reference external" href="http://sebwouters.github.io/CheMPS2/index.html">http://sebwouters.github.io/CheMPS2/index.html</a>)
@@ -467,20 +467,20 @@ Before using the Block or CheMPS2, you need create a configuration file
 the path where the DMRG solver was installed.</p>
 </div>
 <div class="section" id="id1">
-<h3>3.9.3. Libxc<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.9.3. </span>Libxc<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>By default, building PySCF will automatically download and install
 <a class="reference external" href="http://www.tddft.org/programs/octopus/wiki/index.php/Libxc:download">Libxc 3.0.0</a>.
 <a class="reference internal" href="modules/dft.html#module-pyscf.dft.libxc" title="pyscf.dft.libxc"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyscf.dft.libxc</span></code></a> module provided a general interface to access Libxc functionals.</p>
 </div>
 <div class="section" id="id2">
-<h3>3.9.4. Xcfun<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.9.4. </span>Xcfun<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>By default, building PySCF will automatically download and install
 latest xcfun code from <a class="reference external" href="https://github.com/dftlibs/xcfun">https://github.com/dftlibs/xcfun</a>.
 <a class="reference internal" href="modules/dft.html#module-pyscf.dft.xcfun" title="pyscf.dft.xcfun"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyscf.dft.xcfun</span></code></a> module provided a general interface to access Libxc
 functionals.</p>
 </div>
 <div class="section" id="tblis">
-<h3>3.9.5. TBLIS<a class="headerlink" href="#tblis" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.9.5. </span>TBLIS<a class="headerlink" href="#tblis" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://github.com/devinamatthews/tblis">TBLIS</a> provides a native algorithm
 to perform tensor contraction for arbitrary high dimensional tensors. The native
 algorithm does not need to transform tensors into matrices then call the BLAS
@@ -496,7 +496,7 @@ To enable the tlibs-einsum plugin, you can set the cmake flags
 5.2 to compile this plugin.</p>
 </div>
 <div class="section" id="pyberny">
-<h3>3.9.6. Pyberny<a class="headerlink" href="#pyberny" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.9.6. </span>Pyberny<a class="headerlink" href="#pyberny" title="Permalink to this headline">¶</a></h3>
 <p>The geometry optimizer <a class="reference external" href="https://github.com/jhrmnn/pyberny">Pyberny</a> provides an
 independent implementation that supports various geometry optimization
 techniques (comprising redundant internal coordinates, iterative Hessian
@@ -504,7 +504,7 @@ estimate, trust region, line search, and coordinate weighing etc.).  It can take
 the output of PySCF Gradients <a class="reference internal" href="overview.html#scanner"><span class="std std-ref">Scanner</span></a> and generate new geometry to feed
 back to PySCF program.  The geometry optimization <code class="xref py py-mod docutils literal notranslate"><span class="pre">geomopt</span></code> exposes a
 wrapper function to simplify the geometry optimization setup:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">geomopt</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">geomopt</span>
 <span class="n">mf</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;H 0 0 0; H 0 0 1.&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">)</span>
 <span class="n">mol_eq</span> <span class="o">=</span> <span class="n">geomopt</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span>
 </pre></div>

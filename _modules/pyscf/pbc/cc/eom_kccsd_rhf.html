@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -180,16 +179,16 @@
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">lib</span>
-<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="k">import</span> <span class="n">logger</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.cc.kccsd_rhf</span> <span class="k">import</span> <span class="n">vector_to_nested</span><span class="p">,</span> <span class="n">nested_to_vector</span>
-<span class="kn">from</span> <span class="nn">pyscf.lib.parameters</span> <span class="k">import</span> <span class="n">LOOSE_ZERO_TOL</span><span class="p">,</span> <span class="n">LARGE_DENOM</span>  <span class="c1"># noqa</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.cc</span> <span class="k">import</span> <span class="n">eom_kccsd_ghf</span> <span class="k">as</span> <span class="n">eom_kgccsd</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.cc</span> <span class="k">import</span> <span class="n">kintermediates_rhf</span> <span class="k">as</span> <span class="n">imdk</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.cc.kccsd_rhf</span> <span class="k">import</span> <span class="n">_get_epq</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.cc.kccsd_t_rhf</span> <span class="k">import</span> <span class="n">_get_epqr</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.lib</span> <span class="k">import</span> <span class="n">kpts_helper</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.mp.kmp2</span> <span class="k">import</span> <span class="p">(</span><span class="n">get_frozen_mask</span><span class="p">,</span> <span class="n">get_nocc</span><span class="p">,</span> <span class="n">get_nmo</span><span class="p">,</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">lib</span>
+<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="kn">import</span> <span class="n">logger</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.cc.kccsd_rhf</span> <span class="kn">import</span> <span class="n">vector_to_nested</span><span class="p">,</span> <span class="n">nested_to_vector</span>
+<span class="kn">from</span> <span class="nn">pyscf.lib.parameters</span> <span class="kn">import</span> <span class="n">LOOSE_ZERO_TOL</span><span class="p">,</span> <span class="n">LARGE_DENOM</span>  <span class="c1"># noqa</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.cc</span> <span class="kn">import</span> <span class="n">eom_kccsd_ghf</span> <span class="k">as</span> <span class="n">eom_kgccsd</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.cc</span> <span class="kn">import</span> <span class="n">kintermediates_rhf</span> <span class="k">as</span> <span class="n">imdk</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.cc.kccsd_rhf</span> <span class="kn">import</span> <span class="n">_get_epq</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.cc.kccsd_t_rhf</span> <span class="kn">import</span> <span class="n">_get_epqr</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.lib</span> <span class="kn">import</span> <span class="n">kpts_helper</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.mp.kmp2</span> <span class="kn">import</span> <span class="p">(</span><span class="n">get_frozen_mask</span><span class="p">,</span> <span class="n">get_nocc</span><span class="p">,</span> <span class="n">get_nmo</span><span class="p">,</span>
                                <span class="n">padded_mo_coeff</span><span class="p">,</span> <span class="n">padding_k_idx</span><span class="p">)</span>  <span class="c1"># noqa</span>
 
 <span class="n">einsum</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">einsum</span>
@@ -1661,7 +1660,7 @@
 
 <span class="k">class</span> <span class="nc">_IMDS</span><span class="p">:</span>
     <span class="c1"># Identical to molecular rccsd_slow</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cc</span><span class="p">,</span> <span class="n">eris</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cc</span><span class="p">,</span> <span class="n">eris</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">verbose</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">stdout</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">t1</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">t1</span>

@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -183,9 +182,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../modules.html">10. Main modules</a> &raquo;</li>
+          <li><a href="../modules.html"><span class="section-number">10. </span>Main modules</a> &raquo;</li>
         
-      <li>10.31. <code class="xref py py-mod docutils literal notranslate"><span class="pre">tdscf</span></code> — TDHF and TDDFT</li>
+      <li><span class="section-number">10.31. </span><code class="xref py py-mod docutils literal notranslate"><span class="pre">tdscf</span></code> — TDHF and TDDFT</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -205,11 +204,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="tdscf-tdhf-and-tddft">
-<span id="tdscf"></span><h1>10.31. <code class="xref py py-mod docutils literal notranslate"><span class="pre">tdscf</span></code> — TDHF and TDDFT<a class="headerlink" href="#tdscf-tdhf-and-tddft" title="Permalink to this headline">¶</a></h1>
+<span id="tdscf"></span><h1><span class="section-number">10.31. </span><code class="xref py py-mod docutils literal notranslate"><span class="pre">tdscf</span></code> — TDHF and TDDFT<a class="headerlink" href="#tdscf-tdhf-and-tddft" title="Permalink to this headline">¶</a></h1>
 <p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">tdscf</span></code> module implements the time-dependent Hartree-Fock and
 time-dependent density functional theory.</p>
 <p>An example to run a TDDFT calculation:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">dft</span><span class="p">,</span> <span class="n">tddft</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">dft</span><span class="p">,</span> <span class="n">tddft</span>
 <span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">()</span>
 <span class="n">mol</span><span class="o">.</span><span class="n">build</span><span class="p">(</span>
     <span class="n">atom</span> <span class="o">=</span> <span class="s1">&#39;H 0 0 0; F 0 0 1.1&#39;</span><span class="p">,</span>
@@ -231,7 +230,7 @@ time-dependent density functional theory.</p>
 </pre></div>
 </div>
 <div class="section" id="examples">
-<h2>10.31.1. Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.31.1. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference download internal" download="" href="../_downloads/fcbeecb28a6e43c6df0aca4fa09cb081/00-simple_tddft.py"><code class="xref download docutils literal notranslate"><span class="pre">examples/tddft/00-simple_tddft.py</span></code></a>
 <a class="reference download internal" download="" href="../_downloads/df43799518e8dff0fbbbdf6f1ef26127/01-nto_analysis.py"><code class="xref download docutils literal notranslate"><span class="pre">examples/tddft/01-nto_analysis.py</span></code></a>
 <a class="reference download internal" download="" href="../_downloads/30aaa9c6666a38f68e8de26fe43b4a83/21-matrix_A_B.py"><code class="xref download docutils literal notranslate"><span class="pre">examples/tddft/21-matrix_A_B.py</span></code></a>
@@ -240,22 +239,22 @@ time-dependent density functional theory.</p>
 <a class="reference download internal" download="" href="../_downloads/9defe8521985b2eac5a263c766884598/31-energy_transfer_coupling_matrix.py"><code class="xref download docutils literal notranslate"><span class="pre">examples/tddft/31-energy_transfer_coupling_matrix.py</span></code></a></p>
 </div>
 <div class="section" id="module-pyscf.tdscf">
-<span id="program-reference"></span><h2>10.31.2. Program reference<a class="headerlink" href="#module-pyscf.tdscf" title="Permalink to this headline">¶</a></h2>
-<span class="target" id="module-pyscf.tdscf.rhf"></span><dl class="attribute">
+<span id="program-reference"></span><h2><span class="section-number">10.31.2. </span>Program reference<a class="headerlink" href="#module-pyscf.tdscf" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-pyscf.tdscf.rhf"></span><dl class="py attribute">
 <dt id="pyscf.tdscf.rhf.CIS">
 <code class="sig-prename descclassname">pyscf.tdscf.rhf.</code><code class="sig-name descname">CIS</code><a class="headerlink" href="#pyscf.tdscf.rhf.CIS" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#pyscf.tdscf.rhf.TDA" title="pyscf.tdscf.rhf.TDA"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.tdscf.rhf.TDA</span></code></a></p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="pyscf.tdscf.rhf.RPA">
 <code class="sig-prename descclassname">pyscf.tdscf.rhf.</code><code class="sig-name descname">RPA</code><a class="headerlink" href="#pyscf.tdscf.rhf.RPA" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#pyscf.tdscf.rhf.TDHF" title="pyscf.tdscf.rhf.TDHF"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.tdscf.rhf.TDHF</span></code></a></p>
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="pyscf.tdscf.rhf.TDA">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.tdscf.rhf.</code><code class="sig-name descname">TDA</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#TDA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.TDA" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">pyscf.tdscf.rhf.</code><code class="sig-name descname">TDA</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#TDA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.TDA" title="Permalink to this definition">¶</a></dt>
 <dd><p>Tamm-Dancoff approximation</p>
 <dl class="simple">
 <dt>Attributes:</dt><dd><dl class="simple">
@@ -280,7 +279,7 @@ normalized to 1 for UHF/UKS methods. In the TDA calculation, Y = 0.</p>
 </dd>
 </dl>
 </div></blockquote>
-<dl class="method">
+<dl class="py method">
 <dt id="pyscf.tdscf.rhf.TDA.as_scanner">
 <code class="sig-name descname">as_scanner</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.tdscf.rhf.TDA.as_scanner" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generating a scanner/solver for TDA/TDHF/TDDFT PES.</p>
@@ -293,7 +292,7 @@ automatically applied in the solver.</p>
 <p>Note scanner has side effects.  It may change many underlying objects
 (_scf, with_df, with_x2c, …) during calculation.</p>
 <p>Examples:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">tdscf</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">tdscf</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;H 0 0 0; F 0 0 1&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">td_scanner</span> <span class="o">=</span> <span class="n">tdscf</span><span class="o">.</span><span class="n">TDHF</span><span class="p">(</span><span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mol</span><span class="p">))</span><span class="o">.</span><span class="n">as_scanner</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">de</span> <span class="o">=</span> <span class="n">td_scanner</span><span class="p">(</span><span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;H 0 0 0; F 0 0 1.1&#39;</span><span class="p">))</span>
@@ -304,7 +303,7 @@ automatically applied in the solver.</p>
 [ 0.14844013  0.14844013  0.47641829]</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="pyscf.tdscf.rhf.TDA.check_sanity">
 <code class="sig-name descname">check_sanity</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#TDA.check_sanity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.TDA.check_sanity" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check input of class/object attributes, check whether a class method is
@@ -314,29 +313,29 @@ return value of method set is the object itself.  This allows a series
 of functions/methods to be executed in pipe.</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="pyscf.tdscf.rhf.TDA.e_tot">
 <em class="property">property </em><code class="sig-name descname">e_tot</code><a class="headerlink" href="#pyscf.tdscf.rhf.TDA.e_tot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Excited state energies</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="pyscf.tdscf.rhf.TDA.gen_vind">
-<code class="sig-name descname">gen_vind</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#TDA.gen_vind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.TDA.gen_vind" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">gen_vind</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#TDA.gen_vind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.TDA.gen_vind" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute Ax</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="pyscf.tdscf.rhf.TDA.get_ab">
-<code class="sig-name descname">get_ab</code><span class="sig-paren">(</span><em class="sig-param">mf=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#TDA.get_ab"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.TDA.get_ab" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_ab</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#TDA.get_ab"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.TDA.get_ab" title="Permalink to this definition">¶</a></dt>
 <dd><p>A and B matrices for TDDFT response function.</p>
 <p>A[i,a,j,b] = delta_{ab}delta_{ij}(E_a - E_i) + (ia||bj)
 B[i,a,j,b] = (ia||jb)</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="pyscf.tdscf.rhf.TDA.get_nto">
-<code class="sig-name descname">get_nto</code><span class="sig-paren">(</span><em class="sig-param">state=1</em>, <em class="sig-param">threshold=0.3</em>, <em class="sig-param">verbose=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.tdscf.rhf.TDA.get_nto" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_nto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">state</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">threshold</span><span class="o">=</span><span class="default_value">0.3</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.tdscf.rhf.TDA.get_nto" title="Permalink to this definition">¶</a></dt>
 <dd><p>Natural transition orbital analysis.</p>
 <p>The natural transition density matrix between ground state and excited
 state <span class="math notranslate nohighlight">\(Tia = \langle \Psi_{ex} | i a^\dagger | \Psi_0 \rangle\)</span> can
@@ -368,65 +367,65 @@ NTOs.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="pyscf.tdscf.rhf.TDA.kernel">
-<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param">x0=None</em>, <em class="sig-param">nstates=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#TDA.kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.TDA.kernel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x0</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">nstates</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#TDA.kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.TDA.kernel" title="Permalink to this definition">¶</a></dt>
 <dd><p>TDA diagonalization solver</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="pyscf.tdscf.rhf.TDA.transition_dipole">
-<code class="sig-name descname">transition_dipole</code><span class="sig-paren">(</span><em class="sig-param">xy=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.tdscf.rhf.TDA.transition_dipole" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">transition_dipole</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">xy</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.tdscf.rhf.TDA.transition_dipole" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transition dipole moments in the length gauge</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="pyscf.tdscf.rhf.TDA.transition_magnetic_dipole">
-<code class="sig-name descname">transition_magnetic_dipole</code><span class="sig-paren">(</span><em class="sig-param">xy=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.tdscf.rhf.TDA.transition_magnetic_dipole" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">transition_magnetic_dipole</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">xy</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.tdscf.rhf.TDA.transition_magnetic_dipole" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transition magnetic dipole moments (imaginary part only)</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="pyscf.tdscf.rhf.TDA.transition_magnetic_quadrupole">
-<code class="sig-name descname">transition_magnetic_quadrupole</code><span class="sig-paren">(</span><em class="sig-param">xy=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.tdscf.rhf.TDA.transition_magnetic_quadrupole" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">transition_magnetic_quadrupole</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">xy</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.tdscf.rhf.TDA.transition_magnetic_quadrupole" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transition magnetic quadrupole moments (imaginary part only)</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="pyscf.tdscf.rhf.TDA.transition_octupole">
-<code class="sig-name descname">transition_octupole</code><span class="sig-paren">(</span><em class="sig-param">xy=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.tdscf.rhf.TDA.transition_octupole" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">transition_octupole</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">xy</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.tdscf.rhf.TDA.transition_octupole" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transition octupole moments in the length gauge</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="pyscf.tdscf.rhf.TDA.transition_quadrupole">
-<code class="sig-name descname">transition_quadrupole</code><span class="sig-paren">(</span><em class="sig-param">xy=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.tdscf.rhf.TDA.transition_quadrupole" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">transition_quadrupole</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">xy</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.tdscf.rhf.TDA.transition_quadrupole" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transition quadrupole moments in the length gauge</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="pyscf.tdscf.rhf.TDA.transition_velocity_dipole">
-<code class="sig-name descname">transition_velocity_dipole</code><span class="sig-paren">(</span><em class="sig-param">xy=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.tdscf.rhf.TDA.transition_velocity_dipole" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">transition_velocity_dipole</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">xy</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.tdscf.rhf.TDA.transition_velocity_dipole" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transition dipole moments in the velocity gauge (imaginary part only)</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="pyscf.tdscf.rhf.TDA.transition_velocity_octupole">
-<code class="sig-name descname">transition_velocity_octupole</code><span class="sig-paren">(</span><em class="sig-param">xy=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.tdscf.rhf.TDA.transition_velocity_octupole" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">transition_velocity_octupole</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">xy</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.tdscf.rhf.TDA.transition_velocity_octupole" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transition octupole moments in the velocity gauge (imaginary part only)</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="pyscf.tdscf.rhf.TDA.transition_velocity_quadrupole">
-<code class="sig-name descname">transition_velocity_quadrupole</code><span class="sig-paren">(</span><em class="sig-param">xy=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.tdscf.rhf.TDA.transition_velocity_quadrupole" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">transition_velocity_quadrupole</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">xy</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.tdscf.rhf.TDA.transition_velocity_quadrupole" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transition quadrupole moments in the velocity gauge (imaginary part only)</p>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="pyscf.tdscf.rhf.TDHF">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.tdscf.rhf.</code><code class="sig-name descname">TDHF</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#TDHF"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.TDHF" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">pyscf.tdscf.rhf.</code><code class="sig-name descname">TDHF</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#TDHF"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.TDHF" title="Permalink to this definition">¶</a></dt>
 <dd><p>Time-dependent Hartree-Fock</p>
 <dl class="simple">
 <dt>Attributes:</dt><dd><dl class="simple">
@@ -451,37 +450,37 @@ normalized to 1 for UHF/UKS methods. In the TDA calculation, Y = 0.</p>
 </dd>
 </dl>
 </div></blockquote>
-<dl class="method">
+<dl class="py method">
 <dt id="pyscf.tdscf.rhf.TDHF.gen_vind">
-<code class="sig-name descname">gen_vind</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#TDHF.gen_vind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.TDHF.gen_vind" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">gen_vind</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#TDHF.gen_vind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.TDHF.gen_vind" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate function to compute</p>
 <p>[ A  B][X]
 [-B -A][Y]</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="pyscf.tdscf.rhf.TDHF.kernel">
-<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param">x0=None</em>, <em class="sig-param">nstates=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#TDHF.kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.TDHF.kernel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x0</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">nstates</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#TDHF.kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.TDHF.kernel" title="Permalink to this definition">¶</a></dt>
 <dd><p>TDHF diagonalization with non-Hermitian eigenvalue solver</p>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="pyscf.tdscf.rhf.TDRHF">
 <code class="sig-prename descclassname">pyscf.tdscf.rhf.</code><code class="sig-name descname">TDRHF</code><a class="headerlink" href="#pyscf.tdscf.rhf.TDRHF" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#pyscf.tdscf.rhf.TDHF" title="pyscf.tdscf.rhf.TDHF"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.tdscf.rhf.TDHF</span></code></a></p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.rhf.analyze_wfnsym">
-<code class="sig-prename descclassname">pyscf.tdscf.rhf.</code><code class="sig-name descname">analyze_wfnsym</code><span class="sig-paren">(</span><em class="sig-param">tdobj</em>, <em class="sig-param">x_sym</em>, <em class="sig-param">x</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#analyze_wfnsym"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.analyze_wfnsym" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.rhf.</code><code class="sig-name descname">analyze_wfnsym</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdobj</span></em>, <em class="sig-param"><span class="n">x_sym</span></em>, <em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#analyze_wfnsym"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.analyze_wfnsym" title="Permalink to this definition">¶</a></dt>
 <dd><p>Guess the wfn symmetry of TDDFT X amplitude</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.rhf.as_scanner">
-<code class="sig-prename descclassname">pyscf.tdscf.rhf.</code><code class="sig-name descname">as_scanner</code><span class="sig-paren">(</span><em class="sig-param">td</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#as_scanner"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.as_scanner" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.rhf.</code><code class="sig-name descname">as_scanner</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">td</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#as_scanner"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.as_scanner" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generating a scanner/solver for TDA/TDHF/TDDFT PES.</p>
 <p>The returned solver is a function. This function requires one argument
 “mol” as input and returns total TDA/TDHF/TDDFT energy.</p>
@@ -492,7 +491,7 @@ automatically applied in the solver.</p>
 <p>Note scanner has side effects.  It may change many underlying objects
 (_scf, with_df, with_x2c, …) during calculation.</p>
 <p>Examples:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">tdscf</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">tdscf</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;H 0 0 0; F 0 0 1&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">td_scanner</span> <span class="o">=</span> <span class="n">tdscf</span><span class="o">.</span><span class="n">TDHF</span><span class="p">(</span><span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mol</span><span class="p">))</span><span class="o">.</span><span class="n">as_scanner</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">de</span> <span class="o">=</span> <span class="n">td_scanner</span><span class="p">(</span><span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;H 0 0 0; F 0 0 1.1&#39;</span><span class="p">))</span>
@@ -503,9 +502,9 @@ automatically applied in the solver.</p>
 [ 0.14844013  0.14844013  0.47641829]</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.rhf.gen_tda_hop">
-<code class="sig-prename descclassname">pyscf.tdscf.rhf.</code><code class="sig-name descname">gen_tda_hop</code><span class="sig-paren">(</span><em class="sig-param">mf</em>, <em class="sig-param">fock_ao=None</em>, <em class="sig-param">singlet=True</em>, <em class="sig-param">wfnsym=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.tdscf.rhf.gen_tda_hop" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.rhf.</code><code class="sig-name descname">gen_tda_hop</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em>, <em class="sig-param"><span class="n">fock_ao</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">singlet</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">wfnsym</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.tdscf.rhf.gen_tda_hop" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate function to compute (A+B)x</p>
 <dl class="simple">
 <dt>Kwargs:</dt><dd><dl class="simple">
@@ -516,9 +515,9 @@ automatically applied in the solver.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.rhf.gen_tda_operation">
-<code class="sig-prename descclassname">pyscf.tdscf.rhf.</code><code class="sig-name descname">gen_tda_operation</code><span class="sig-paren">(</span><em class="sig-param">mf</em>, <em class="sig-param">fock_ao=None</em>, <em class="sig-param">singlet=True</em>, <em class="sig-param">wfnsym=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#gen_tda_operation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.gen_tda_operation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.rhf.</code><code class="sig-name descname">gen_tda_operation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em>, <em class="sig-param"><span class="n">fock_ao</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">singlet</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">wfnsym</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#gen_tda_operation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.gen_tda_operation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate function to compute (A+B)x</p>
 <dl class="simple">
 <dt>Kwargs:</dt><dd><dl class="simple">
@@ -529,25 +528,25 @@ automatically applied in the solver.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.rhf.gen_tdhf_operation">
-<code class="sig-prename descclassname">pyscf.tdscf.rhf.</code><code class="sig-name descname">gen_tdhf_operation</code><span class="sig-paren">(</span><em class="sig-param">mf</em>, <em class="sig-param">fock_ao=None</em>, <em class="sig-param">singlet=True</em>, <em class="sig-param">wfnsym=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#gen_tdhf_operation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.gen_tdhf_operation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.rhf.</code><code class="sig-name descname">gen_tdhf_operation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em>, <em class="sig-param"><span class="n">fock_ao</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">singlet</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">wfnsym</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#gen_tdhf_operation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.gen_tdhf_operation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate function to compute</p>
 <p>[ A  B][X]
 [-B -A][Y]</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.rhf.get_ab">
-<code class="sig-prename descclassname">pyscf.tdscf.rhf.</code><code class="sig-name descname">get_ab</code><span class="sig-paren">(</span><em class="sig-param">mf</em>, <em class="sig-param">mo_energy=None</em>, <em class="sig-param">mo_coeff=None</em>, <em class="sig-param">mo_occ=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#get_ab"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.get_ab" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.rhf.</code><code class="sig-name descname">get_ab</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em>, <em class="sig-param"><span class="n">mo_energy</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mo_coeff</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mo_occ</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#get_ab"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.get_ab" title="Permalink to this definition">¶</a></dt>
 <dd><p>A and B matrices for TDDFT response function.</p>
 <p>A[i,a,j,b] = delta_{ab}delta_{ij}(E_a - E_i) + (ia||bj)
 B[i,a,j,b] = (ia||jb)</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.rhf.get_nto">
-<code class="sig-prename descclassname">pyscf.tdscf.rhf.</code><code class="sig-name descname">get_nto</code><span class="sig-paren">(</span><em class="sig-param">tdobj</em>, <em class="sig-param">state=1</em>, <em class="sig-param">threshold=0.3</em>, <em class="sig-param">verbose=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#get_nto"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.get_nto" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.rhf.</code><code class="sig-name descname">get_nto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdobj</span></em>, <em class="sig-param"><span class="n">state</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">threshold</span><span class="o">=</span><span class="default_value">0.3</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#get_nto"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.get_nto" title="Permalink to this definition">¶</a></dt>
 <dd><p>Natural transition orbital analysis.</p>
 <p>The natural transition density matrix between ground state and excited
 state <span class="math notranslate nohighlight">\(Tia = \langle \Psi_{ex} | i a^\dagger | \Psi_0 \rangle\)</span> can
@@ -579,78 +578,78 @@ NTOs.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.rhf.transition_dipole">
-<code class="sig-prename descclassname">pyscf.tdscf.rhf.</code><code class="sig-name descname">transition_dipole</code><span class="sig-paren">(</span><em class="sig-param">tdobj</em>, <em class="sig-param">xy=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#transition_dipole"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.transition_dipole" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.rhf.</code><code class="sig-name descname">transition_dipole</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdobj</span></em>, <em class="sig-param"><span class="n">xy</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#transition_dipole"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.transition_dipole" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transition dipole moments in the length gauge</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.rhf.transition_magnetic_dipole">
-<code class="sig-prename descclassname">pyscf.tdscf.rhf.</code><code class="sig-name descname">transition_magnetic_dipole</code><span class="sig-paren">(</span><em class="sig-param">tdobj</em>, <em class="sig-param">xy=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#transition_magnetic_dipole"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.transition_magnetic_dipole" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.rhf.</code><code class="sig-name descname">transition_magnetic_dipole</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdobj</span></em>, <em class="sig-param"><span class="n">xy</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#transition_magnetic_dipole"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.transition_magnetic_dipole" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transition magnetic dipole moments (imaginary part only)</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.rhf.transition_magnetic_quadrupole">
-<code class="sig-prename descclassname">pyscf.tdscf.rhf.</code><code class="sig-name descname">transition_magnetic_quadrupole</code><span class="sig-paren">(</span><em class="sig-param">tdobj</em>, <em class="sig-param">xy=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#transition_magnetic_quadrupole"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.transition_magnetic_quadrupole" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.rhf.</code><code class="sig-name descname">transition_magnetic_quadrupole</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdobj</span></em>, <em class="sig-param"><span class="n">xy</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#transition_magnetic_quadrupole"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.transition_magnetic_quadrupole" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transition magnetic quadrupole moments (imaginary part only)</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.rhf.transition_octupole">
-<code class="sig-prename descclassname">pyscf.tdscf.rhf.</code><code class="sig-name descname">transition_octupole</code><span class="sig-paren">(</span><em class="sig-param">tdobj</em>, <em class="sig-param">xy=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#transition_octupole"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.transition_octupole" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.rhf.</code><code class="sig-name descname">transition_octupole</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdobj</span></em>, <em class="sig-param"><span class="n">xy</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#transition_octupole"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.transition_octupole" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transition octupole moments in the length gauge</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.rhf.transition_quadrupole">
-<code class="sig-prename descclassname">pyscf.tdscf.rhf.</code><code class="sig-name descname">transition_quadrupole</code><span class="sig-paren">(</span><em class="sig-param">tdobj</em>, <em class="sig-param">xy=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#transition_quadrupole"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.transition_quadrupole" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.rhf.</code><code class="sig-name descname">transition_quadrupole</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdobj</span></em>, <em class="sig-param"><span class="n">xy</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#transition_quadrupole"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.transition_quadrupole" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transition quadrupole moments in the length gauge</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.rhf.transition_velocity_dipole">
-<code class="sig-prename descclassname">pyscf.tdscf.rhf.</code><code class="sig-name descname">transition_velocity_dipole</code><span class="sig-paren">(</span><em class="sig-param">tdobj</em>, <em class="sig-param">xy=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#transition_velocity_dipole"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.transition_velocity_dipole" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.rhf.</code><code class="sig-name descname">transition_velocity_dipole</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdobj</span></em>, <em class="sig-param"><span class="n">xy</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#transition_velocity_dipole"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.transition_velocity_dipole" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transition dipole moments in the velocity gauge (imaginary part only)</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.rhf.transition_velocity_octupole">
-<code class="sig-prename descclassname">pyscf.tdscf.rhf.</code><code class="sig-name descname">transition_velocity_octupole</code><span class="sig-paren">(</span><em class="sig-param">tdobj</em>, <em class="sig-param">xy=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#transition_velocity_octupole"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.transition_velocity_octupole" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.rhf.</code><code class="sig-name descname">transition_velocity_octupole</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdobj</span></em>, <em class="sig-param"><span class="n">xy</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#transition_velocity_octupole"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.transition_velocity_octupole" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transition octupole moments in the velocity gauge (imaginary part only)</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.rhf.transition_velocity_quadrupole">
-<code class="sig-prename descclassname">pyscf.tdscf.rhf.</code><code class="sig-name descname">transition_velocity_quadrupole</code><span class="sig-paren">(</span><em class="sig-param">tdobj</em>, <em class="sig-param">xy=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#transition_velocity_quadrupole"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.transition_velocity_quadrupole" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.rhf.</code><code class="sig-name descname">transition_velocity_quadrupole</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdobj</span></em>, <em class="sig-param"><span class="n">xy</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf.html#transition_velocity_quadrupole"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf.transition_velocity_quadrupole" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transition quadrupole moments in the velocity gauge (imaginary part only)</p>
 </dd></dl>
 
-<span class="target" id="module-pyscf.tdscf.uhf"></span><dl class="attribute">
+<span class="target" id="module-pyscf.tdscf.uhf"></span><dl class="py attribute">
 <dt id="pyscf.tdscf.uhf.CIS">
 <code class="sig-prename descclassname">pyscf.tdscf.uhf.</code><code class="sig-name descname">CIS</code><a class="headerlink" href="#pyscf.tdscf.uhf.CIS" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#pyscf.tdscf.uhf.TDA" title="pyscf.tdscf.uhf.TDA"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.tdscf.uhf.TDA</span></code></a></p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="pyscf.tdscf.uhf.RPA">
 <code class="sig-prename descclassname">pyscf.tdscf.uhf.</code><code class="sig-name descname">RPA</code><a class="headerlink" href="#pyscf.tdscf.uhf.RPA" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#pyscf.tdscf.uhf.TDHF" title="pyscf.tdscf.uhf.TDHF"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.tdscf.uhf.TDHF</span></code></a></p>
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="pyscf.tdscf.uhf.TDA">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.tdscf.uhf.</code><code class="sig-name descname">TDA</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/uhf.html#TDA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.uhf.TDA" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
+<em class="property">class </em><code class="sig-prename descclassname">pyscf.tdscf.uhf.</code><code class="sig-name descname">TDA</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/uhf.html#TDA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.uhf.TDA" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
 <dt id="pyscf.tdscf.uhf.TDA.gen_vind">
-<code class="sig-name descname">gen_vind</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/uhf.html#TDA.gen_vind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.uhf.TDA.gen_vind" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">gen_vind</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/uhf.html#TDA.gen_vind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.uhf.TDA.gen_vind" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute Ax</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="pyscf.tdscf.uhf.TDA.get_ab">
-<code class="sig-name descname">get_ab</code><span class="sig-paren">(</span><em class="sig-param">mf=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/uhf.html#TDA.get_ab"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.uhf.TDA.get_ab" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_ab</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/uhf.html#TDA.get_ab"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.uhf.TDA.get_ab" title="Permalink to this definition">¶</a></dt>
 <dd><p>A and B matrices for TDDFT response function.</p>
 <p>A[i,a,j,b] = delta_{ab}delta_{ij}(E_a - E_i) + (ia||bj)
 B[i,a,j,b] = (ia||jb)</p>
@@ -660,9 +659,9 @@ B has three items: (B_aaaa, B_aabb, B_bbbb).
 B_bbaa = B_aabb.transpose(2,3,0,1).</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="pyscf.tdscf.uhf.TDA.get_nto">
-<code class="sig-name descname">get_nto</code><span class="sig-paren">(</span><em class="sig-param">state=1</em>, <em class="sig-param">threshold=0.3</em>, <em class="sig-param">verbose=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.tdscf.uhf.TDA.get_nto" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_nto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">state</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">threshold</span><span class="o">=</span><span class="default_value">0.3</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.tdscf.uhf.TDA.get_nto" title="Permalink to this definition">¶</a></dt>
 <dd><p>Natural transition orbital analysis.</p>
 <p>The natural transition density matrix between ground state and excited
 state <span class="math notranslate nohighlight">\(Tia = \langle \Psi_{ex} | i a^\dagger | \Psi_0 \rangle\)</span> can
@@ -693,42 +692,42 @@ NTOs.</p>
 </dl>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="pyscf.tdscf.uhf.TDA.kernel">
-<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param">x0=None</em>, <em class="sig-param">nstates=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/uhf.html#TDA.kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.uhf.TDA.kernel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x0</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">nstates</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/uhf.html#TDA.kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.uhf.TDA.kernel" title="Permalink to this definition">¶</a></dt>
 <dd><p>TDA diagonalization solver</p>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="pyscf.tdscf.uhf.TDHF">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.tdscf.uhf.</code><code class="sig-name descname">TDHF</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/uhf.html#TDHF"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.uhf.TDHF" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
+<em class="property">class </em><code class="sig-prename descclassname">pyscf.tdscf.uhf.</code><code class="sig-name descname">TDHF</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/uhf.html#TDHF"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.uhf.TDHF" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
 <dt id="pyscf.tdscf.uhf.TDHF.gen_vind">
-<code class="sig-name descname">gen_vind</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/uhf.html#TDHF.gen_vind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.uhf.TDHF.gen_vind" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">gen_vind</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/uhf.html#TDHF.gen_vind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.uhf.TDHF.gen_vind" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate function to compute</p>
 <p>[ A  B][X]
 [-B -A][Y]</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="pyscf.tdscf.uhf.TDHF.kernel">
-<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param">x0=None</em>, <em class="sig-param">nstates=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/uhf.html#TDHF.kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.uhf.TDHF.kernel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x0</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">nstates</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/uhf.html#TDHF.kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.uhf.TDHF.kernel" title="Permalink to this definition">¶</a></dt>
 <dd><p>TDHF diagonalization with non-Hermitian eigenvalue solver</p>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="pyscf.tdscf.uhf.TDUHF">
 <code class="sig-prename descclassname">pyscf.tdscf.uhf.</code><code class="sig-name descname">TDUHF</code><a class="headerlink" href="#pyscf.tdscf.uhf.TDUHF" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#pyscf.tdscf.uhf.TDHF" title="pyscf.tdscf.uhf.TDHF"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.tdscf.uhf.TDHF</span></code></a></p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.uhf.gen_tda_hop">
-<code class="sig-prename descclassname">pyscf.tdscf.uhf.</code><code class="sig-name descname">gen_tda_hop</code><span class="sig-paren">(</span><em class="sig-param">mf</em>, <em class="sig-param">fock_ao=None</em>, <em class="sig-param">wfnsym=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.tdscf.uhf.gen_tda_hop" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.uhf.</code><code class="sig-name descname">gen_tda_hop</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em>, <em class="sig-param"><span class="n">fock_ao</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">wfnsym</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.tdscf.uhf.gen_tda_hop" title="Permalink to this definition">¶</a></dt>
 <dd><p>(A+B)x</p>
 <dl class="simple">
 <dt>Kwargs:</dt><dd><dl class="simple">
@@ -739,9 +738,9 @@ NTOs.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.uhf.gen_tda_operation">
-<code class="sig-prename descclassname">pyscf.tdscf.uhf.</code><code class="sig-name descname">gen_tda_operation</code><span class="sig-paren">(</span><em class="sig-param">mf</em>, <em class="sig-param">fock_ao=None</em>, <em class="sig-param">wfnsym=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/uhf.html#gen_tda_operation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.uhf.gen_tda_operation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.uhf.</code><code class="sig-name descname">gen_tda_operation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em>, <em class="sig-param"><span class="n">fock_ao</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">wfnsym</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/uhf.html#gen_tda_operation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.uhf.gen_tda_operation" title="Permalink to this definition">¶</a></dt>
 <dd><p>(A+B)x</p>
 <dl class="simple">
 <dt>Kwargs:</dt><dd><dl class="simple">
@@ -752,17 +751,17 @@ NTOs.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.uhf.gen_tdhf_operation">
-<code class="sig-prename descclassname">pyscf.tdscf.uhf.</code><code class="sig-name descname">gen_tdhf_operation</code><span class="sig-paren">(</span><em class="sig-param">mf</em>, <em class="sig-param">fock_ao=None</em>, <em class="sig-param">singlet=True</em>, <em class="sig-param">wfnsym=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/uhf.html#gen_tdhf_operation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.uhf.gen_tdhf_operation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.uhf.</code><code class="sig-name descname">gen_tdhf_operation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em>, <em class="sig-param"><span class="n">fock_ao</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">singlet</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">wfnsym</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/uhf.html#gen_tdhf_operation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.uhf.gen_tdhf_operation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate function to compute</p>
 <p>[ A  B][X]
 [-B -A][Y]</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.uhf.get_ab">
-<code class="sig-prename descclassname">pyscf.tdscf.uhf.</code><code class="sig-name descname">get_ab</code><span class="sig-paren">(</span><em class="sig-param">mf</em>, <em class="sig-param">mo_energy=None</em>, <em class="sig-param">mo_coeff=None</em>, <em class="sig-param">mo_occ=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/uhf.html#get_ab"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.uhf.get_ab" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.uhf.</code><code class="sig-name descname">get_ab</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em>, <em class="sig-param"><span class="n">mo_energy</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mo_coeff</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mo_occ</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/uhf.html#get_ab"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.uhf.get_ab" title="Permalink to this definition">¶</a></dt>
 <dd><p>A and B matrices for TDDFT response function.</p>
 <p>A[i,a,j,b] = delta_{ab}delta_{ij}(E_a - E_i) + (ia||bj)
 B[i,a,j,b] = (ia||jb)</p>
@@ -772,9 +771,9 @@ B has three items: (B_aaaa, B_aabb, B_bbbb).
 B_bbaa = B_aabb.transpose(2,3,0,1).</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.uhf.get_nto">
-<code class="sig-prename descclassname">pyscf.tdscf.uhf.</code><code class="sig-name descname">get_nto</code><span class="sig-paren">(</span><em class="sig-param">tdobj</em>, <em class="sig-param">state=1</em>, <em class="sig-param">threshold=0.3</em>, <em class="sig-param">verbose=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/uhf.html#get_nto"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.uhf.get_nto" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.uhf.</code><code class="sig-name descname">get_nto</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tdobj</span></em>, <em class="sig-param"><span class="n">state</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">threshold</span><span class="o">=</span><span class="default_value">0.3</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/uhf.html#get_nto"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.uhf.get_nto" title="Permalink to this definition">¶</a></dt>
 <dd><p>Natural transition orbital analysis.</p>
 <p>The natural transition density matrix between ground state and excited
 state <span class="math notranslate nohighlight">\(Tia = \langle \Psi_{ex} | i a^\dagger | \Psi_0 \rangle\)</span> can
@@ -805,121 +804,121 @@ NTOs.</p>
 </dl>
 </dd></dl>
 
-<span class="target" id="module-pyscf.tdscf.rks"></span><dl class="attribute">
+<span class="target" id="module-pyscf.tdscf.rks"></span><dl class="py attribute">
 <dt id="pyscf.tdscf.rks.RPA">
 <code class="sig-prename descclassname">pyscf.tdscf.rks.</code><code class="sig-name descname">RPA</code><a class="headerlink" href="#pyscf.tdscf.rks.RPA" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#pyscf.tdscf.rks.TDDFT" title="pyscf.tdscf.rks.TDDFT"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.tdscf.rks.TDDFT</span></code></a></p>
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="pyscf.tdscf.rks.TDA">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.tdscf.rks.</code><code class="sig-name descname">TDA</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rks.html#TDA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rks.TDA" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">pyscf.tdscf.rks.</code><code class="sig-name descname">TDA</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rks.html#TDA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rks.TDA" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="pyscf.tdscf.rks.TDDFT">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.tdscf.rks.</code><code class="sig-name descname">TDDFT</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rks.html#TDDFT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rks.TDDFT" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">pyscf.tdscf.rks.</code><code class="sig-name descname">TDDFT</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rks.html#TDDFT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rks.TDDFT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="pyscf.tdscf.rks.TDDFTNoHybrid">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.tdscf.rks.</code><code class="sig-name descname">TDDFTNoHybrid</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rks.html#TDDFTNoHybrid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rks.TDDFTNoHybrid" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">pyscf.tdscf.rks.</code><code class="sig-name descname">TDDFTNoHybrid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rks.html#TDDFTNoHybrid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rks.TDDFTNoHybrid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Solve (A-B)(A+B)(X+Y) = (X+Y)w^2</p>
-<dl class="method">
+<dl class="py method">
 <dt id="pyscf.tdscf.rks.TDDFTNoHybrid.gen_vind">
-<code class="sig-name descname">gen_vind</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rks.html#TDDFTNoHybrid.gen_vind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rks.TDDFTNoHybrid.gen_vind" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">gen_vind</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rks.html#TDDFTNoHybrid.gen_vind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rks.TDDFTNoHybrid.gen_vind" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute Ax</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="pyscf.tdscf.rks.TDDFTNoHybrid.kernel">
-<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param">x0=None</em>, <em class="sig-param">nstates=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rks.html#TDDFTNoHybrid.kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rks.TDDFTNoHybrid.kernel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x0</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">nstates</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rks.html#TDDFTNoHybrid.kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rks.TDDFTNoHybrid.kernel" title="Permalink to this definition">¶</a></dt>
 <dd><p>TDDFT diagonalization solver</p>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="pyscf.tdscf.rks.TDH">
 <code class="sig-prename descclassname">pyscf.tdscf.rks.</code><code class="sig-name descname">TDH</code><a class="headerlink" href="#pyscf.tdscf.rks.TDH" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#pyscf.tdscf.rks.dRPA" title="pyscf.tdscf.rks.dRPA"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.tdscf.rks.dRPA</span></code></a></p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="pyscf.tdscf.rks.TDRKS">
 <code class="sig-prename descclassname">pyscf.tdscf.rks.</code><code class="sig-name descname">TDRKS</code><a class="headerlink" href="#pyscf.tdscf.rks.TDRKS" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#pyscf.tdscf.rks.TDDFT" title="pyscf.tdscf.rks.TDDFT"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.tdscf.rks.TDDFT</span></code></a></p>
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="pyscf.tdscf.rks.dRPA">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.tdscf.rks.</code><code class="sig-name descname">dRPA</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rks.html#dRPA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rks.dRPA" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">pyscf.tdscf.rks.</code><code class="sig-name descname">dRPA</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rks.html#dRPA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rks.dRPA" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="pyscf.tdscf.rks.dTDA">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.tdscf.rks.</code><code class="sig-name descname">dTDA</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rks.html#dTDA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rks.dTDA" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">pyscf.tdscf.rks.</code><code class="sig-name descname">dTDA</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rks.html#dTDA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rks.dTDA" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.rks.tddft">
-<code class="sig-prename descclassname">pyscf.tdscf.rks.</code><code class="sig-name descname">tddft</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rks.html#tddft"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rks.tddft" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.rks.</code><code class="sig-name descname">tddft</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rks.html#tddft"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rks.tddft" title="Permalink to this definition">¶</a></dt>
 <dd><p>Driver to create TDDFT or TDDFTNoHybrid object</p>
 </dd></dl>
 
-<span class="target" id="module-pyscf.tdscf.uks"></span><dl class="attribute">
+<span class="target" id="module-pyscf.tdscf.uks"></span><dl class="py attribute">
 <dt id="pyscf.tdscf.uks.RPA">
 <code class="sig-prename descclassname">pyscf.tdscf.uks.</code><code class="sig-name descname">RPA</code><a class="headerlink" href="#pyscf.tdscf.uks.RPA" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#pyscf.tdscf.uks.TDDFT" title="pyscf.tdscf.uks.TDDFT"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.tdscf.uks.TDDFT</span></code></a></p>
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="pyscf.tdscf.uks.TDA">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.tdscf.uks.</code><code class="sig-name descname">TDA</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/uks.html#TDA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.uks.TDA" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">pyscf.tdscf.uks.</code><code class="sig-name descname">TDA</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/uks.html#TDA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.uks.TDA" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="pyscf.tdscf.uks.TDDFT">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.tdscf.uks.</code><code class="sig-name descname">TDDFT</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/uks.html#TDDFT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.uks.TDDFT" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">pyscf.tdscf.uks.</code><code class="sig-name descname">TDDFT</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/uks.html#TDDFT"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.uks.TDDFT" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="pyscf.tdscf.uks.TDDFTNoHybrid">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.tdscf.uks.</code><code class="sig-name descname">TDDFTNoHybrid</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/uks.html#TDDFTNoHybrid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.uks.TDDFTNoHybrid" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">pyscf.tdscf.uks.</code><code class="sig-name descname">TDDFTNoHybrid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/uks.html#TDDFTNoHybrid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.uks.TDDFTNoHybrid" title="Permalink to this definition">¶</a></dt>
 <dd><p>Solve (A-B)(A+B)(X+Y) = (X+Y)w^2</p>
-<dl class="method">
+<dl class="py method">
 <dt id="pyscf.tdscf.uks.TDDFTNoHybrid.kernel">
-<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param">x0=None</em>, <em class="sig-param">nstates=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/uks.html#TDDFTNoHybrid.kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.uks.TDDFTNoHybrid.kernel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x0</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">nstates</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/uks.html#TDDFTNoHybrid.kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.uks.TDDFTNoHybrid.kernel" title="Permalink to this definition">¶</a></dt>
 <dd><p>TDDFT diagonalization solver</p>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="pyscf.tdscf.uks.TDH">
 <code class="sig-prename descclassname">pyscf.tdscf.uks.</code><code class="sig-name descname">TDH</code><a class="headerlink" href="#pyscf.tdscf.uks.TDH" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#pyscf.tdscf.uks.dRPA" title="pyscf.tdscf.uks.dRPA"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.tdscf.uks.dRPA</span></code></a></p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="pyscf.tdscf.uks.TDUKS">
 <code class="sig-prename descclassname">pyscf.tdscf.uks.</code><code class="sig-name descname">TDUKS</code><a class="headerlink" href="#pyscf.tdscf.uks.TDUKS" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#pyscf.tdscf.uks.TDDFT" title="pyscf.tdscf.uks.TDDFT"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.tdscf.uks.TDDFT</span></code></a></p>
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="pyscf.tdscf.uks.dRPA">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.tdscf.uks.</code><code class="sig-name descname">dRPA</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/uks.html#dRPA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.uks.dRPA" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">pyscf.tdscf.uks.</code><code class="sig-name descname">dRPA</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/uks.html#dRPA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.uks.dRPA" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="pyscf.tdscf.uks.dTDA">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.tdscf.uks.</code><code class="sig-name descname">dTDA</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/uks.html#dTDA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.uks.dTDA" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">pyscf.tdscf.uks.</code><code class="sig-name descname">dTDA</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/uks.html#dTDA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.uks.dTDA" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.uks.tddft">
-<code class="sig-prename descclassname">pyscf.tdscf.uks.</code><code class="sig-name descname">tddft</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/uks.html#tddft"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.uks.tddft" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.uks.</code><code class="sig-name descname">tddft</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/uks.html#tddft"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.uks.tddft" title="Permalink to this definition">¶</a></dt>
 <dd><p>Driver to create TDDFT or TDDFTNoHybrid object</p>
 </dd></dl>
 
@@ -928,9 +927,9 @@ that, unlike other ‘fast’ routines with an implicit construction of the eige
 TDHF matrices explicitly. As a result, regular <cite>numpy.linalg.eig</cite> can be used to retrieve TDHF roots in a reliable
 fashion without any issues related to the Davidson procedure.</p>
 <p>This is a helper module defining basic interfaces.</p>
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.common_slow.ab2full">
-<code class="sig-prename descclassname">pyscf.tdscf.common_slow.</code><code class="sig-name descname">ab2full</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">b</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/common_slow.html#ab2full"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.common_slow.ab2full" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.common_slow.</code><code class="sig-name descname">ab2full</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">a</span></em>, <em class="sig-param"><span class="n">b</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/common_slow.html#ab2full"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.common_slow.ab2full" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transforms A and B TD matrices into a full matrix.
 Args:</p>
 <blockquote>
@@ -943,9 +942,9 @@ b (numpy.ndarray): TD B-matrix;</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.common_slow.ab2mkk">
-<code class="sig-prename descclassname">pyscf.tdscf.common_slow.</code><code class="sig-name descname">ab2mkk</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">b</em>, <em class="sig-param">tolerance=1e-12</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/common_slow.html#ab2mkk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.common_slow.ab2mkk" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.common_slow.</code><code class="sig-name descname">ab2mkk</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">a</span></em>, <em class="sig-param"><span class="n">b</span></em>, <em class="sig-param"><span class="n">tolerance</span><span class="o">=</span><span class="default_value">1e-12</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/common_slow.html#ab2mkk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.common_slow.ab2mkk" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transforms A and B TD matrices into MK and K matrices.
 Args:</p>
 <blockquote>
@@ -959,9 +958,9 @@ tolerance (float): a tolerance for checking whether the input matrices are real;
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.common_slow.eig">
-<code class="sig-prename descclassname">pyscf.tdscf.common_slow.</code><code class="sig-name descname">eig</code><span class="sig-paren">(</span><em class="sig-param">m</em>, <em class="sig-param">driver=None</em>, <em class="sig-param">nroots=None</em>, <em class="sig-param">half=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/common_slow.html#eig"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.common_slow.eig" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.common_slow.</code><code class="sig-name descname">eig</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">m</span></em>, <em class="sig-param"><span class="n">driver</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">nroots</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">half</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/common_slow.html#eig"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.common_slow.eig" title="Permalink to this definition">¶</a></dt>
 <dd><p>Eigenvalue problem solver.
 Args:</p>
 <blockquote>
@@ -973,9 +972,9 @@ half (bool): if True, implies spectrum symmetry and takes only a half of eigenva
 <p>Returns:</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.common_slow.format_frozen_k">
-<code class="sig-prename descclassname">pyscf.tdscf.common_slow.</code><code class="sig-name descname">format_frozen_k</code><span class="sig-paren">(</span><em class="sig-param">frozen</em>, <em class="sig-param">nmo</em>, <em class="sig-param">nk</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/common_slow.html#format_frozen_k"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.common_slow.format_frozen_k" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.common_slow.</code><code class="sig-name descname">format_frozen_k</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">frozen</span></em>, <em class="sig-param"><span class="n">nmo</span></em>, <em class="sig-param"><span class="n">nk</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/common_slow.html#format_frozen_k"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.common_slow.format_frozen_k" title="Permalink to this definition">¶</a></dt>
 <dd><p>Formats the argument into a mask array of bools where False values correspond to frozen orbitals for each k-point.
 Args:</p>
 <blockquote>
@@ -990,9 +989,9 @@ nk (int): the total number of k-points;</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.common_slow.format_frozen_mol">
-<code class="sig-prename descclassname">pyscf.tdscf.common_slow.</code><code class="sig-name descname">format_frozen_mol</code><span class="sig-paren">(</span><em class="sig-param">frozen</em>, <em class="sig-param">nmo</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/common_slow.html#format_frozen_mol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.common_slow.format_frozen_mol" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.common_slow.</code><code class="sig-name descname">format_frozen_mol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">frozen</span></em>, <em class="sig-param"><span class="n">nmo</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/common_slow.html#format_frozen_mol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.common_slow.format_frozen_mol" title="Permalink to this definition">¶</a></dt>
 <dd><p>Formats the argument into a mask array of bools where False values correspond to frozen molecular orbitals.
 Args:</p>
 <blockquote>
@@ -1005,9 +1004,9 @@ nmo (int): the total number of molecular orbitals;</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.common_slow.format_mask">
-<code class="sig-prename descclassname">pyscf.tdscf.common_slow.</code><code class="sig-name descname">format_mask</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/common_slow.html#format_mask"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.common_slow.format_mask" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.common_slow.</code><code class="sig-name descname">format_mask</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/common_slow.html#format_mask"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.common_slow.format_mask" title="Permalink to this definition">¶</a></dt>
 <dd><p>Formats a mask into a readable string.
 Args:</p>
 <blockquote>
@@ -1019,9 +1018,9 @@ Args:</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.common_slow.full2ab">
-<code class="sig-prename descclassname">pyscf.tdscf.common_slow.</code><code class="sig-name descname">full2ab</code><span class="sig-paren">(</span><em class="sig-param">full</em>, <em class="sig-param">tolerance=1e-12</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/common_slow.html#full2ab"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.common_slow.full2ab" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.common_slow.</code><code class="sig-name descname">full2ab</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">full</span></em>, <em class="sig-param"><span class="n">tolerance</span><span class="o">=</span><span class="default_value">1e-12</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/common_slow.html#full2ab"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.common_slow.full2ab" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transforms a full TD matrix into A and B parts.
 Args:</p>
 <blockquote>
@@ -1034,9 +1033,9 @@ tolerance (float): a tolerance for checking whether the full matrix is in the AB
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.common_slow.full2mkk">
-<code class="sig-prename descclassname">pyscf.tdscf.common_slow.</code><code class="sig-name descname">full2mkk</code><span class="sig-paren">(</span><em class="sig-param">full</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/common_slow.html#full2mkk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.common_slow.full2mkk" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.common_slow.</code><code class="sig-name descname">full2mkk</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">full</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/common_slow.html#full2mkk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.common_slow.full2mkk" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transforms a full TD matrix into MK and K parts.
 Args:</p>
 <blockquote>
@@ -1048,9 +1047,9 @@ Args:</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.common_slow.k_nmo">
-<code class="sig-prename descclassname">pyscf.tdscf.common_slow.</code><code class="sig-name descname">k_nmo</code><span class="sig-paren">(</span><em class="sig-param">model</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/common_slow.html#k_nmo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.common_slow.k_nmo" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.common_slow.</code><code class="sig-name descname">k_nmo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/common_slow.html#k_nmo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.common_slow.k_nmo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieves number of AOs per k-point.
 Args:</p>
 <blockquote>
@@ -1062,9 +1061,9 @@ Args:</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.common_slow.k_nocc">
-<code class="sig-prename descclassname">pyscf.tdscf.common_slow.</code><code class="sig-name descname">k_nocc</code><span class="sig-paren">(</span><em class="sig-param">model</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/common_slow.html#k_nocc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.common_slow.k_nocc" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.common_slow.</code><code class="sig-name descname">k_nocc</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/common_slow.html#k_nocc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.common_slow.k_nocc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieves occupation numbers.
 Args:</p>
 <blockquote>
@@ -1076,9 +1075,9 @@ Args:</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.common_slow.kernel">
-<code class="sig-prename descclassname">pyscf.tdscf.common_slow.</code><code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param">eri</em>, <em class="sig-param">driver=None</em>, <em class="sig-param">fast=True</em>, <em class="sig-param">nroots=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/common_slow.html#kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.common_slow.kernel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.common_slow.</code><code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">eri</span></em>, <em class="sig-param"><span class="n">driver</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">fast</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">nroots</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/common_slow.html#kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.common_slow.kernel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates eigenstates and eigenvalues of the TDHF problem.
 Args:</p>
 <blockquote>
@@ -1094,9 +1093,9 @@ nroots (int): the number of roots to calculate;
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.common_slow.mkk2ab">
-<code class="sig-prename descclassname">pyscf.tdscf.common_slow.</code><code class="sig-name descname">mkk2ab</code><span class="sig-paren">(</span><em class="sig-param">mk</em>, <em class="sig-param">k</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/common_slow.html#mkk2ab"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.common_slow.mkk2ab" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.common_slow.</code><code class="sig-name descname">mkk2ab</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mk</span></em>, <em class="sig-param"><span class="n">k</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/common_slow.html#mkk2ab"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.common_slow.mkk2ab" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transforms MK and M TD matrices into A and B matrices.
 Args:</p>
 <blockquote>
@@ -1109,9 +1108,9 @@ k (numpy.ndarray): TD K-matrix;</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.common_slow.mkk2full">
-<code class="sig-prename descclassname">pyscf.tdscf.common_slow.</code><code class="sig-name descname">mkk2full</code><span class="sig-paren">(</span><em class="sig-param">mk</em>, <em class="sig-param">k</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/common_slow.html#mkk2full"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.common_slow.mkk2full" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.common_slow.</code><code class="sig-name descname">mkk2full</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mk</span></em>, <em class="sig-param"><span class="n">k</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/common_slow.html#mkk2full"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.common_slow.mkk2full" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transforms MK and M TD matrices into a full TD matrix.
 Args:</p>
 <blockquote>
@@ -1124,9 +1123,9 @@ k (numpy.ndarray): TD K-matrix;</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.common_slow.mknj2i">
-<code class="sig-prename descclassname">pyscf.tdscf.common_slow.</code><code class="sig-name descname">mknj2i</code><span class="sig-paren">(</span><em class="sig-param">item</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/common_slow.html#mknj2i"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.common_slow.mknj2i" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.common_slow.</code><code class="sig-name descname">mknj2i</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/common_slow.html#mknj2i"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.common_slow.mknj2i" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transforms “mknj” notation into tensor index order for the ERI.
 Args:</p>
 <blockquote>
@@ -1138,9 +1137,9 @@ Args:</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.common_slow.msize">
-<code class="sig-prename descclassname">pyscf.tdscf.common_slow.</code><code class="sig-name descname">msize</code><span class="sig-paren">(</span><em class="sig-param">m</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/common_slow.html#msize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.common_slow.msize" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.common_slow.</code><code class="sig-name descname">msize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">m</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/common_slow.html#msize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.common_slow.msize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks whether the matrix is square and returns its size.
 Args:</p>
 <blockquote>
@@ -1171,9 +1170,9 @@ corresponding to collective oscillations without momentum transfer;</p></li>
 an arbitrary number of k-points and employs k-point conservation (diagonalizes matrix blocks separately).</p></li>
 </ul>
 </div></blockquote>
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.rhf_slow.vector_to_amplitudes">
-<code class="sig-prename descclassname">pyscf.tdscf.rhf_slow.</code><code class="sig-name descname">vector_to_amplitudes</code><span class="sig-paren">(</span><em class="sig-param">vectors</em>, <em class="sig-param">nocc</em>, <em class="sig-param">nmo</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf_slow.html#vector_to_amplitudes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf_slow.vector_to_amplitudes" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.rhf_slow.</code><code class="sig-name descname">vector_to_amplitudes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vectors</span></em>, <em class="sig-param"><span class="n">nocc</span></em>, <em class="sig-param"><span class="n">nmo</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/rhf_slow.html#vector_to_amplitudes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.rhf_slow.vector_to_amplitudes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transforms (reshapes) and normalizes vectors into amplitudes.
 Args:</p>
 <blockquote>
@@ -1204,9 +1203,9 @@ time reversal invariant (TRI) models: i.e. the k-point grid has to be aligned an
 matrices (the performance gain is the total number of k-points in the model).</p></li>
 </ul>
 </div></blockquote>
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.proxy.mk_make_canonic">
-<code class="sig-prename descclassname">pyscf.tdscf.proxy.</code><code class="sig-name descname">mk_make_canonic</code><span class="sig-paren">(</span><em class="sig-param">m</em>, <em class="sig-param">o</em>, <em class="sig-param">v</em>, <em class="sig-param">return_ov=False</em>, <em class="sig-param">space_ov=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/proxy.html#mk_make_canonic"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.proxy.mk_make_canonic" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.proxy.</code><code class="sig-name descname">mk_make_canonic</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">m</span></em>, <em class="sig-param"><span class="n">o</span></em>, <em class="sig-param"><span class="n">v</span></em>, <em class="sig-param"><span class="n">return_ov</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">space_ov</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/proxy.html#mk_make_canonic"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.proxy.mk_make_canonic" title="Permalink to this definition">¶</a></dt>
 <dd><p>Makes the output of pyscf TDDFT matrix (MK form) to be canonic.
 Args:</p>
 <blockquote>
@@ -1222,9 +1221,9 @@ space_ov (ndarray): an optional ov space;</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.proxy.molecular_response">
-<code class="sig-prename descclassname">pyscf.tdscf.proxy.</code><code class="sig-name descname">molecular_response</code><span class="sig-paren">(</span><em class="sig-param">vind</em>, <em class="sig-param">space</em>, <em class="sig-param">nocc</em>, <em class="sig-param">nmo</em>, <em class="sig-param">double</em>, <em class="sig-param">log_dest</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/proxy.html#molecular_response"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.proxy.molecular_response" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.proxy.</code><code class="sig-name descname">molecular_response</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vind</span></em>, <em class="sig-param"><span class="n">space</span></em>, <em class="sig-param"><span class="n">nocc</span></em>, <em class="sig-param"><span class="n">nmo</span></em>, <em class="sig-param"><span class="n">double</span></em>, <em class="sig-param"><span class="n">log_dest</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/proxy.html#molecular_response"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.proxy.molecular_response" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieves a raw response matrix.
 Args:</p>
 <blockquote>
@@ -1242,9 +1241,9 @@ log_dest (object): pyscf logging;</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.proxy.molecular_response_ov">
-<code class="sig-prename descclassname">pyscf.tdscf.proxy.</code><code class="sig-name descname">molecular_response_ov</code><span class="sig-paren">(</span><em class="sig-param">vind</em>, <em class="sig-param">space_ov</em>, <em class="sig-param">nocc</em>, <em class="sig-param">nmo</em>, <em class="sig-param">double</em>, <em class="sig-param">log_dest</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/proxy.html#molecular_response_ov"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.proxy.molecular_response_ov" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.proxy.</code><code class="sig-name descname">molecular_response_ov</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vind</span></em>, <em class="sig-param"><span class="n">space_ov</span></em>, <em class="sig-param"><span class="n">nocc</span></em>, <em class="sig-param"><span class="n">nmo</span></em>, <em class="sig-param"><span class="n">double</span></em>, <em class="sig-param"><span class="n">log_dest</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/proxy.html#molecular_response_ov"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.proxy.molecular_response_ov" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieves a raw response matrix.
 Args:</p>
 <blockquote>
@@ -1264,9 +1263,9 @@ log_dest (object): pyscf logging;</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.tdscf.proxy.orb2ov">
-<code class="sig-prename descclassname">pyscf.tdscf.proxy.</code><code class="sig-name descname">orb2ov</code><span class="sig-paren">(</span><em class="sig-param">space</em>, <em class="sig-param">nocc</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/proxy.html#orb2ov"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.proxy.orb2ov" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.tdscf.proxy.</code><code class="sig-name descname">orb2ov</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">space</span></em>, <em class="sig-param"><span class="n">nocc</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tdscf/proxy.html#orb2ov"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.tdscf.proxy.orb2ov" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts orbital active space specification into ov-pairs space spec.
 Args:</p>
 <blockquote>

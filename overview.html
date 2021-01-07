@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -155,7 +154,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>1. An overview of PySCF</li>
+      <li><span class="section-number">1. </span>An overview of PySCF</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -175,7 +174,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="an-overview-of-pyscf">
-<h1>1. An overview of PySCF<a class="headerlink" href="#an-overview-of-pyscf" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">1. </span>An overview of PySCF<a class="headerlink" href="#an-overview-of-pyscf" title="Permalink to this headline">¶</a></h1>
 <p>Python-based simulations of chemistry framework (PySCF) is a general-purpose
 electronic structure platform designed from the ground up to emphasize code
 simplicity, so as to facilitate new method development and enable flexible
@@ -189,7 +188,7 @@ implemented with heavily optimized C routines. Using this combined Python/C
 implementation, the package is as efficient as the best existing C or Fortran-
 based quantum chemistry programs.</p>
 <div class="section" id="how-to-cite">
-<h2>1.1. How to cite<a class="headerlink" href="#how-to-cite" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.1. </span>How to cite<a class="headerlink" href="#how-to-cite" title="Permalink to this headline">¶</a></h2>
 <p>Bibtex entries:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>@article{PYSCF,
   title = {PySCF: the Python‐based simulations of chemistry framework},
@@ -222,7 +221,7 @@ based quantum chemistry programs.</p>
 <p>“Libcint: An efficient general integral library for Gaussian basis functions”, Q. Sun, J. Comp. Chem. 36, 1664 (2015).</p>
 </div>
 <div class="section" id="features">
-<h2>1.2. Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.2. </span>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Hartree-Fock</p>
 <ul>
@@ -480,9 +479,9 @@ geometry optimizer</p></li>
 </ul>
 </div>
 <div class="section" id="designs">
-<h2>1.3. Designs<a class="headerlink" href="#designs" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.3. </span>Designs<a class="headerlink" href="#designs" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="kernel-and-stream-functions">
-<h3>1.3.1. Kernel and Stream functions<a class="headerlink" href="#kernel-and-stream-functions" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.3.1. </span>Kernel and Stream functions<a class="headerlink" href="#kernel-and-stream-functions" title="Permalink to this headline">¶</a></h3>
 <p>Every class has the <code class="docutils literal notranslate"><span class="pre">kernel</span></code> method which serves as the entry or the driver of
 the method. Once an object of one method was created, you can always call
 <code class="docutils literal notranslate"><span class="pre">.kernel()</span></code> to start or restart a calculation.</p>
@@ -539,13 +538,13 @@ line of code:</p>
 </div>
 </div>
 <div class="section" id="pure-function-and-class">
-<h3>1.3.2. Pure function and Class<a class="headerlink" href="#pure-function-and-class" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">1.3.2. </span>Pure function and Class<a class="headerlink" href="#pure-function-and-class" title="Permalink to this headline">¶</a></h3>
 <p>Class are designed to hold only the final results and the control parameters
 such as maximum number of iterations, convergence threshold, etc.
 Intermediates are NOT saved in the class.  After calling the <code class="docutils literal notranslate"><span class="pre">.kernel()</span></code> or
 <code class="docutils literal notranslate"><span class="pre">.run()</span></code> method, results will be generated and saved in the object. For
 example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">ccsd</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">ccsd</span>
 <span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;H 0 0 0; H 0 0 1.1&#39;</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;ccpvtz&#39;</span><span class="p">)</span>
 <span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 <span class="n">mycc</span> <span class="o">=</span> <span class="n">ccsd</span><span class="o">.</span><span class="n">CCSD</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
@@ -573,7 +572,7 @@ changed or overwritten by the <code class="docutils literal notranslate"><span c
 taken when you see the functions or methods with ugly suffices.</p>
 </div>
 <div class="section" id="global-configurations">
-<span id="global-config"></span><h3>1.3.3. Global configurations<a class="headerlink" href="#global-configurations" title="Permalink to this headline">¶</a></h3>
+<span id="global-config"></span><h3><span class="section-number">1.3.3. </span>Global configurations<a class="headerlink" href="#global-configurations" title="Permalink to this headline">¶</a></h3>
 <p>Global configuration file is a Python script that contains PySCF configurations.
 When importing <code class="docutils literal notranslate"><span class="pre">pyscf</span></code> module in a Python program (or Python interpreter), the
 package will preload the global configuration file and take the configurations
@@ -605,14 +604,14 @@ none of the configuration file exists, the program will use the built-in
 configurations which are generally conservative settings.</p>
 <p>In the source code, global configurations are loaded by importing
 <code class="xref py py-mod docutils literal notranslate"><span class="pre">pyscf.__config__</span></code> module:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">__config__</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">__config__</span>
 <span class="n">MAX_MEMORY</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">__config__</span><span class="p">,</span> <span class="s1">&#39;MAX_MEMORY&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Please refer to the source code for the available configurations.</p>
 </div>
 <div class="section" id="scanner">
-<span id="id1"></span><h3>1.3.4. Scanner<a class="headerlink" href="#scanner" title="Permalink to this headline">¶</a></h3>
+<span id="id1"></span><h3><span class="section-number">1.3.4. </span>Scanner<a class="headerlink" href="#scanner" title="Permalink to this headline">¶</a></h3>
 <p>Scanner is a function that takes an <code class="docutils literal notranslate"><span class="pre">Mole</span></code> (or <code class="docutils literal notranslate"><span class="pre">Cell</span></code>) object as input and
 return the energy or nuclear gradients of the given <code class="docutils literal notranslate"><span class="pre">Mole</span></code> (or <code class="docutils literal notranslate"><span class="pre">Cell</span></code>)
 object.  Scanner can be considered as a shortcut function for a sequence of

@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -184,21 +183,21 @@
 <span class="c1">#</span>
 
 <span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">reduce</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">h5py</span>
 
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">lib</span>
-<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="k">import</span> <span class="n">logger</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="k">import</span> <span class="n">scf</span>
-<span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="k">import</span> <span class="n">uccsd</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.lib</span> <span class="k">import</span> <span class="n">kpts_helper</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.lib.kpts_helper</span> <span class="k">import</span> <span class="n">gamma_point</span>
-<span class="kn">from</span> <span class="nn">pyscf.lib.parameters</span> <span class="k">import</span> <span class="n">LOOSE_ZERO_TOL</span><span class="p">,</span> <span class="n">LARGE_DENOM</span>  <span class="c1"># noqa</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.mp.kump2</span> <span class="k">import</span> <span class="p">(</span><span class="n">get_frozen_mask</span><span class="p">,</span> <span class="n">get_nocc</span><span class="p">,</span> <span class="n">get_nmo</span><span class="p">,</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">lib</span>
+<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="kn">import</span> <span class="n">logger</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="kn">import</span> <span class="n">scf</span>
+<span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="kn">import</span> <span class="n">uccsd</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.lib</span> <span class="kn">import</span> <span class="n">kpts_helper</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.lib.kpts_helper</span> <span class="kn">import</span> <span class="n">gamma_point</span>
+<span class="kn">from</span> <span class="nn">pyscf.lib.parameters</span> <span class="kn">import</span> <span class="n">LOOSE_ZERO_TOL</span><span class="p">,</span> <span class="n">LARGE_DENOM</span>  <span class="c1"># noqa</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.mp.kump2</span> <span class="kn">import</span> <span class="p">(</span><span class="n">get_frozen_mask</span><span class="p">,</span> <span class="n">get_nocc</span><span class="p">,</span> <span class="n">get_nmo</span><span class="p">,</span>
                                 <span class="n">padded_mo_coeff</span><span class="p">,</span> <span class="n">padding_k_idx</span><span class="p">)</span>  <span class="c1"># noqa</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.cc</span> <span class="k">import</span> <span class="n">kintermediates_uhf</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">__config__</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.cc</span> <span class="kn">import</span> <span class="n">kintermediates_uhf</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">__config__</span>
 
 <span class="n">einsum</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">einsum</span>
 
@@ -801,7 +800,7 @@
 
     <span class="n">max_space</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">__config__</span><span class="p">,</span> <span class="s1">&#39;pbc_cc_kccsd_uhf_KUCCSD_max_space&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mo_occ</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mo_occ</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">scf</span><span class="o">.</span><span class="n">khf</span><span class="o">.</span><span class="n">KSCF</span><span class="p">))</span>
         <span class="n">uccsd</span><span class="o">.</span><span class="n">UCCSD</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf</span><span class="p">,</span> <span class="n">frozen</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="p">,</span> <span class="n">mo_occ</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">kpts</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">kpts</span>
@@ -828,7 +827,7 @@
         <span class="k">return</span> <span class="n">uccsd</span><span class="o">.</span><span class="n">UCCSD</span><span class="o">.</span><span class="n">dump_flags</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">verbose</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">ao2mo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">pyscf.pbc.df.df</span> <span class="k">import</span> <span class="n">GDF</span>
+        <span class="kn">from</span> <span class="nn">pyscf.pbc.df.df</span> <span class="kn">import</span> <span class="n">GDF</span>
         <span class="n">cell</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_scf</span><span class="o">.</span><span class="n">cell</span>
         <span class="n">nkpts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nkpts</span>
         <span class="n">nmoa</span><span class="p">,</span> <span class="n">nmob</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nmo</span>
@@ -997,8 +996,8 @@
     <span class="k">return</span> <span class="n">eris</span>
 
 <span class="k">def</span> <span class="nf">_kuccsd_eris_common_</span><span class="p">(</span><span class="n">cc</span><span class="p">,</span> <span class="n">eris</span><span class="p">,</span> <span class="n">buf</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="k">import</span> <span class="n">tools</span>
-    <span class="kn">from</span> <span class="nn">pyscf.pbc.cc.ccsd</span> <span class="k">import</span> <span class="n">_adjust_occ</span>
+    <span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="kn">import</span> <span class="n">tools</span>
+    <span class="kn">from</span> <span class="nn">pyscf.pbc.cc.ccsd</span> <span class="kn">import</span> <span class="n">_adjust_occ</span>
     <span class="c1">#if not (cc.frozen is None or cc.frozen == 0):</span>
     <span class="c1">#    raise NotImplementedError(&#39;cc.frozen = %s&#39; % str(cc.frozen))</span>
 
@@ -1177,8 +1176,8 @@
     <span class="k">return</span> <span class="n">eris</span>
 
 <span class="k">def</span> <span class="nf">_make_df_eris</span><span class="p">(</span><span class="n">cc</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">pyscf.pbc.df</span> <span class="k">import</span> <span class="n">df</span>
-    <span class="kn">from</span> <span class="nn">pyscf.ao2mo</span> <span class="k">import</span> <span class="n">_ao2mo</span>
+    <span class="kn">from</span> <span class="nn">pyscf.pbc.df</span> <span class="kn">import</span> <span class="n">df</span>
+    <span class="kn">from</span> <span class="nn">pyscf.ao2mo</span> <span class="kn">import</span> <span class="n">_ao2mo</span>
     <span class="n">cell</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">_scf</span><span class="o">.</span><span class="n">cell</span>
     <span class="k">if</span> <span class="n">cell</span><span class="o">.</span><span class="n">dimension</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span>
@@ -1250,7 +1249,7 @@
     <span class="n">eris</span><span class="o">.</span><span class="n">Lpv</span> <span class="o">=</span> <span class="n">Lpv</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">nkpts</span><span class="p">,</span><span class="n">nkpts</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
     <span class="n">eris</span><span class="o">.</span><span class="n">LPV</span> <span class="o">=</span> <span class="n">LPV</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">nkpts</span><span class="p">,</span><span class="n">nkpts</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
     <span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span><span class="n">thisdf</span><span class="o">.</span><span class="n">_cderi</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-        <span class="n">kptij_lst</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;j3c-kptij&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value</span>
+        <span class="n">kptij_lst</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="s1">&#39;j3c-kptij&#39;</span><span class="p">][:]</span>
         <span class="n">tao</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="n">ao_loc</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="k">for</span> <span class="n">ki</span><span class="p">,</span> <span class="n">kpti</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">kpts</span><span class="p">):</span>
@@ -1281,8 +1280,8 @@
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="k">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">cc</span>
-    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">lo</span>
+    <span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">cc</span>
+    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">lo</span>
 
     <span class="n">cell</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">Cell</span><span class="p">()</span>
     <span class="n">cell</span><span class="o">.</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;&#39;&#39;</span>
@@ -1372,7 +1371,7 @@
     <span class="nb">print</span><span class="p">(</span><span class="n">lib</span><span class="o">.</span><span class="n">finger</span><span class="p">(</span><span class="n">Ht2</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">-</span> <span class="p">(</span><span class="mf">23085.044505825954</span><span class="o">-</span><span class="mf">11527.802302550244</span><span class="n">j</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">lib</span><span class="o">.</span><span class="n">finger</span><span class="p">(</span><span class="n">Ht2</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">-</span> <span class="p">(</span><span class="mf">115.57932548288559</span><span class="o">-</span><span class="mf">40.888597453928604</span><span class="n">j</span><span class="p">))</span>
 
-    <span class="kn">from</span> <span class="nn">pyscf.pbc.cc</span> <span class="k">import</span> <span class="n">kccsd</span>
+    <span class="kn">from</span> <span class="nn">pyscf.pbc.cc</span> <span class="kn">import</span> <span class="n">kccsd</span>
     <span class="n">kgcc</span> <span class="o">=</span> <span class="n">kccsd</span><span class="o">.</span><span class="n">GCCSD</span><span class="p">(</span><span class="n">scf</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="n">convert_to_ghf</span><span class="p">(</span><span class="n">kmf</span><span class="p">))</span>
     <span class="n">kccsd_eris</span> <span class="o">=</span> <span class="n">kccsd</span><span class="o">.</span><span class="n">_make_eris_incore</span><span class="p">(</span><span class="n">kgcc</span><span class="p">,</span> <span class="n">kgcc</span><span class="o">.</span><span class="n">_scf</span><span class="o">.</span><span class="n">mo_coeff</span><span class="p">)</span>
     <span class="n">r1</span> <span class="o">=</span> <span class="n">kgcc</span><span class="o">.</span><span class="n">spatial2spin</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>

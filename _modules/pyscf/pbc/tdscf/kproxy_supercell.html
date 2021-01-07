@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -183,17 +182,17 @@
 <span class="c1"># * vector_to_amplitudes reshapes and normalizes the solution</span>
 <span class="c1"># * TDProxy provides a container</span>
 
-<span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">reduce</span>
-<span class="kn">from</span> <span class="nn">pyscf.tdscf.common_slow</span> <span class="k">import</span> <span class="n">TDProxyMatrixBlocks</span><span class="p">,</span> <span class="n">PeriodicMFMixin</span>
-<span class="kn">from</span> <span class="nn">pyscf.tdscf</span> <span class="k">import</span> <span class="n">proxy</span> <span class="k">as</span> <span class="n">mol_proxy</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.tdscf</span> <span class="k">import</span> <span class="n">krhf_slow_supercell</span><span class="p">,</span> <span class="n">KTDDFT</span><span class="p">,</span> <span class="n">KTDHF</span>
-<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="k">import</span> <span class="n">einsum</span><span class="p">,</span> <span class="n">cartesian_prod</span><span class="p">,</span> <span class="n">norm</span><span class="p">,</span> <span class="n">logger</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.tools.pbc</span> <span class="k">import</span> <span class="n">super_cell</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
+<span class="kn">from</span> <span class="nn">pyscf.tdscf.common_slow</span> <span class="kn">import</span> <span class="n">TDProxyMatrixBlocks</span><span class="p">,</span> <span class="n">PeriodicMFMixin</span>
+<span class="kn">from</span> <span class="nn">pyscf.tdscf</span> <span class="kn">import</span> <span class="n">proxy</span> <span class="k">as</span> <span class="n">mol_proxy</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.tdscf</span> <span class="kn">import</span> <span class="n">krhf_slow_supercell</span><span class="p">,</span> <span class="n">KTDDFT</span><span class="p">,</span> <span class="n">KTDHF</span>
+<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="kn">import</span> <span class="n">einsum</span><span class="p">,</span> <span class="n">cartesian_prod</span><span class="p">,</span> <span class="n">norm</span><span class="p">,</span> <span class="n">logger</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.tools.pbc</span> <span class="kn">import</span> <span class="n">super_cell</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">sparse</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">sparse</span>
 
-<span class="kn">from</span> <span class="nn">warnings</span> <span class="k">import</span> <span class="n">warn</span>
+<span class="kn">from</span> <span class="nn">warnings</span> <span class="kn">import</span> <span class="n">warn</span>
 
 
 <div class="viewcode-block" id="minus_k"><a class="viewcode-back" href="../../../../modules/pbc/tdscf.html#pyscf.pbc.tdscf.kproxy_supercell.minus_k">[docs]</a><span class="k">def</span> <span class="nf">minus_k</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">degeneracy_threshold</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -709,7 +708,7 @@
         <span class="s2">&quot;dft&quot;</span><span class="p">:</span> <span class="n">KTDDFT</span><span class="p">,</span>
     <span class="p">}</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">mf_constructor</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">mf_constructor</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        A proxy class for calculating TD matrix blocks (supercell version).</span>
 
@@ -791,7 +790,7 @@
     <span class="n">v2a</span> <span class="o">=</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">vector_to_amplitudes</span><span class="p">)</span>
     <span class="n">proxy_eri</span> <span class="o">=</span> <span class="n">PhysERI</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">mf_constructor</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf</span><span class="p">,</span> <span class="n">proxy</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">mf_constructor</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Performs TD calculation. Roots and eigenvectors are stored in `self.e`, `self.xy`.</span>
 <span class="sd">        Args:</span>

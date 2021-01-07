@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -163,9 +162,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../theory.html">7. Theoretical methods</a> &raquo;</li>
+          <li><a href="../theory.html"><span class="section-number">7. </span>Theoretical methods</a> &raquo;</li>
         
-      <li>7.7. Algebraic diagrammatic construction (ADC) scheme</li>
+      <li><span class="section-number">7.7. </span>Algebraic diagrammatic construction (ADC) scheme</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -185,10 +184,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="algebraic-diagrammatic-construction-adc-scheme">
-<span id="theory-adc"></span><h1>7.7. Algebraic diagrammatic construction (ADC) scheme<a class="headerlink" href="#algebraic-diagrammatic-construction-adc-scheme" title="Permalink to this headline">¶</a></h1>
+<span id="theory-adc"></span><h1><span class="section-number">7.7. </span>Algebraic diagrammatic construction (ADC) scheme<a class="headerlink" href="#algebraic-diagrammatic-construction-adc-scheme" title="Permalink to this headline">¶</a></h1>
 <p><em>Modules</em>: <a class="reference internal" href="../modules/adc.html#adc"><span class="std std-ref">adc</span></a></p>
 <div class="section" id="background-propagator-theory">
-<h2>7.7.1. Background: Propagator Theory<a class="headerlink" href="#background-propagator-theory" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.7.1. </span>Background: Propagator Theory<a class="headerlink" href="#background-propagator-theory" title="Permalink to this headline">¶</a></h2>
 <p>The algebraic diagrammatic construction (ADC) theory has a close connection with the propagator theory, where the central object of interest is a propagator of the many-body system.
 The general expression for a retarded propagator that describes response of a many-electron system to an external perturbation with frequency <span class="math notranslate nohighlight">\(\omega\)</span> is:</p>
 <div class="math notranslate nohighlight">
@@ -217,7 +216,7 @@ with energies <span class="math notranslate nohighlight">\(E_{n}^{N+1} (E_{n}^{N
 <p>where <span class="math notranslate nohighlight">\(\boldsymbol{\tilde{\Omega}}_{\pm}\)</span> are diagonal matrices of the transition energies (<span class="math notranslate nohighlight">\(\omega_{n}\)</span>) and <span class="math notranslate nohighlight">\(\mathbf{\tilde{X}}_{\pm}\)</span> are matrices of the transition amplitudes. For example, for the one-electron Green’s function, <span class="math notranslate nohighlight">\(\boldsymbol{\tilde{\Omega}}_{\pm}\)</span> correspond to vertical attachment/ionization energies, while transition amplitudes are defined as <span class="math notranslate nohighlight">\(\tilde{X}_{+pn} = \langle\Psi_{0}^{N}|a_{p}|\Psi_{n}^{N+1}\rangle\)</span> and <span class="math notranslate nohighlight">\(\tilde{X}_{-qn} = \langle\Psi_{0}^{N}|a_{q}^{\dagger}|\Psi_{n}^{N-1}\rangle\)</span>.</p>
 </div>
 <div class="section" id="algebraic-diagrammatic-construction">
-<h2>7.7.2. Algebraic diagrammatic construction<a class="headerlink" href="#algebraic-diagrammatic-construction" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.7.2. </span>Algebraic diagrammatic construction<a class="headerlink" href="#algebraic-diagrammatic-construction" title="Permalink to this headline">¶</a></h2>
 <p>The propagator <span class="math notranslate nohighlight">\(\textbf{G}_{\pm}(\omega)\)</span> shown above is exact if expressed using the exact eigenstates of the system.
 However, computing the exact propagator is computationally very expensive and many approximations have been introduced to reduce the computational cost.
 In the ADC theory, <span class="math notranslate nohighlight">\(\textbf{G}_{\pm}(\omega)\)</span> is expressed in a basis of many-electron wavefunctions where the matrix representation of the Hamiltonian <span class="math notranslate nohighlight">\(H\)</span>
@@ -244,7 +243,7 @@ Using <span class="math notranslate nohighlight">\(\boldsymbol{\Omega}_{\pm}\)</
 A(\omega) &amp;= -\frac{1}{\pi} \mathrm{Im} \left[ \mathrm{Tr} \, \mathbf{G}_{\pm}(\omega) \right]\end{split}\]</div>
 </div>
 <div class="section" id="methods">
-<h2>7.7.3. Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.7.3. </span>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <p>At the present moment, the ADC implementation in Pyscf can be used to perform calculations of electron affinities (EA) and ionization potentials (IP) for closed- and open-shell molecules starting with the RHF, ROHF, or UHF reference SCF wavefunctions. Three ADC approximations are currently available: ADC(2), ADC(3), as well as the extended second-order approximation ADC(2)-X. The capabilities of the ADC module at present are summarized in the following table:</p>
 <table class="docutils align-default">
 <colgroup>

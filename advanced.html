@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -153,7 +152,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>8. Miscellaneous</li>
+      <li><span class="section-number">8. </span>Miscellaneous</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -173,11 +172,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="miscellaneous">
-<span id="advanced"></span><h1>8. Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permalink to this headline">¶</a></h1>
+<span id="advanced"></span><h1><span class="section-number">8. </span>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="decoration-pipe">
-<h2>8.1. Decoration pipe<a class="headerlink" href="#decoration-pipe" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.1. </span>Decoration pipe<a class="headerlink" href="#decoration-pipe" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="scf">
-<h3>8.1.1. SCF<a class="headerlink" href="#scf" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.1.1. </span>SCF<a class="headerlink" href="#scf" title="Permalink to this headline">¶</a></h3>
 <p>There are three decoration function for Hartree-Fock class
 <code class="xref py py-func docutils literal notranslate"><span class="pre">density_fit()</span></code>, <code class="xref py py-func docutils literal notranslate"><span class="pre">sfx2c()</span></code>, <code class="xref py py-func docutils literal notranslate"><span class="pre">newton()</span></code> to apply density
 fitting, scalar relativistic correction and second order SCF.
@@ -189,8 +188,8 @@ effects.  For example</p>
 <span class="c1">#</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">scf</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">scf</span>
 
 <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">Mixing decoration, for density fitting, scalar relativistic effects, and</span>
@@ -299,13 +298,13 @@ effects.  For example</p>
 </div>
 </div>
 <div class="section" id="fci">
-<h3>8.1.2. FCI<a class="headerlink" href="#fci" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.1.2. </span>FCI<a class="headerlink" href="#fci" title="Permalink to this headline">¶</a></h3>
 <p>Direct FCI solver cannot guarantee the CI wave function to be the spin
 eigenfunction.  Decoration function <code class="xref py py-func docutils literal notranslate"><span class="pre">fci.addons.fix_spin_()</span></code> can
 fix this issue.</p>
 </div>
 <div class="section" id="casscf">
-<h3>8.1.3. CASSCF<a class="headerlink" href="#casscf" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">8.1.3. </span>CASSCF<a class="headerlink" href="#casscf" title="Permalink to this headline">¶</a></h3>
 <p><code class="xref py py-func docutils literal notranslate"><span class="pre">mcscf.density_fit()</span></code>, and <code class="xref py py-func docutils literal notranslate"><span class="pre">scf.sfx2c()</span></code> can be used to decorate
 CASSCF/CASCI class.  Like the ordering problem in SCF decoration
 operation, the density fitting for CASSCF solver only affect the CASSCF
@@ -316,7 +315,7 @@ Hamiltonian.  For example</p>
 <span class="c1"># Author: Qiming Sun &lt;osirpt.sun@gmail.com&gt;</span>
 <span class="c1">#</span>
 
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">mcscf</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">mcscf</span>
 
 <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">Density fitting for orbital optimzation.</span>
@@ -370,7 +369,7 @@ Hamiltonian.  For example</p>
 </div>
 </div>
 <div class="section" id="customizing-hamiltonian">
-<h2>8.2. Customizing Hamiltonian<a class="headerlink" href="#customizing-hamiltonian" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">8.2. </span>Customizing Hamiltonian<a class="headerlink" href="#customizing-hamiltonian" title="Permalink to this headline">¶</a></h2>
 <p>PySCF supports user-defined Hamiltonian for many modules.  To customize
 Hamiltonian for Hartree-Fock, CASSCF, MP2, CCSD, etc, one need to replace the
 methods <code class="xref py py-func docutils literal notranslate"><span class="pre">get_hcore()</span></code>, <code class="xref py py-func docutils literal notranslate"><span class="pre">get_ovlp()</span></code> and attribute <code class="xref py py-attr docutils literal notranslate"><span class="pre">_eri</span></code> of SCF class for
@@ -382,7 +381,7 @@ Hamiltonian for Hartree-Fock</p>
 <span class="c1">#</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">ao2mo</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">ao2mo</span>
 
 <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">Customizing Hamiltonian for SCF module.</span>
@@ -437,7 +436,7 @@ Hamiltonian for Hartree-Fock</p>
 <span class="c1">#</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">ao2mo</span><span class="p">,</span> <span class="n">mcscf</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">ao2mo</span><span class="p">,</span> <span class="n">mcscf</span>
 
 <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">User-defined Hamiltonian for CASSCF module.</span>

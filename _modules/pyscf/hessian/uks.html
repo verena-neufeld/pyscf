@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -184,13 +183,13 @@
 
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">numpy</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">lib</span>
-<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="k">import</span> <span class="n">logger</span>
-<span class="kn">from</span> <span class="nn">pyscf.grad</span> <span class="k">import</span> <span class="n">rks</span> <span class="k">as</span> <span class="n">rks_grad</span>
-<span class="kn">from</span> <span class="nn">pyscf.hessian</span> <span class="k">import</span> <span class="n">rhf</span> <span class="k">as</span> <span class="n">rhf_hess</span>
-<span class="kn">from</span> <span class="nn">pyscf.hessian</span> <span class="k">import</span> <span class="n">uhf</span> <span class="k">as</span> <span class="n">uhf_hess</span>
-<span class="kn">from</span> <span class="nn">pyscf.hessian</span> <span class="k">import</span> <span class="n">rks</span> <span class="k">as</span> <span class="n">rks_hess</span>
-<span class="kn">from</span> <span class="nn">pyscf.dft</span> <span class="k">import</span> <span class="n">numint</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">lib</span>
+<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="kn">import</span> <span class="n">logger</span>
+<span class="kn">from</span> <span class="nn">pyscf.grad</span> <span class="kn">import</span> <span class="n">rks</span> <span class="k">as</span> <span class="n">rks_grad</span>
+<span class="kn">from</span> <span class="nn">pyscf.hessian</span> <span class="kn">import</span> <span class="n">rhf</span> <span class="k">as</span> <span class="n">rhf_hess</span>
+<span class="kn">from</span> <span class="nn">pyscf.hessian</span> <span class="kn">import</span> <span class="n">uhf</span> <span class="k">as</span> <span class="n">uhf_hess</span>
+<span class="kn">from</span> <span class="nn">pyscf.hessian</span> <span class="kn">import</span> <span class="n">rks</span> <span class="k">as</span> <span class="n">rks_hess</span>
+<span class="kn">from</span> <span class="nn">pyscf.dft</span> <span class="kn">import</span> <span class="n">numint</span>
 <span class="n">_get_jk</span> <span class="o">=</span> <span class="n">rhf_hess</span><span class="o">.</span><span class="n">_get_jk</span>
 
 
@@ -665,7 +664,7 @@
 
 <div class="viewcode-block" id="Hessian"><a class="viewcode-back" href="../../../modules/hessian.html#pyscf.dft.uks.Hessian">[docs]</a><span class="k">class</span> <span class="nc">Hessian</span><span class="p">(</span><span class="n">uhf_hess</span><span class="o">.</span><span class="n">Hessian</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Non-relativistic UKS hessian&#39;&#39;&#39;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf</span><span class="p">):</span>
         <span class="n">uhf_hess</span><span class="o">.</span><span class="n">Hessian</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">grids</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">grid_response</span> <span class="o">=</span> <span class="kc">False</span>
@@ -674,13 +673,13 @@
     <span class="n">partial_hess_elec</span> <span class="o">=</span> <span class="n">partial_hess_elec</span>
     <span class="n">make_h1</span> <span class="o">=</span> <span class="n">make_h1</span></div>
 
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">dft</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">dft</span>
 <span class="n">dft</span><span class="o">.</span><span class="n">uks</span><span class="o">.</span><span class="n">UKS</span><span class="o">.</span><span class="n">Hessian</span> <span class="o">=</span> <span class="n">dft</span><span class="o">.</span><span class="n">uks_symm</span><span class="o">.</span><span class="n">UKS</span><span class="o">.</span><span class="n">Hessian</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">class_as_method</span><span class="p">(</span><span class="n">Hessian</span><span class="p">)</span>
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span>
-    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">dft</span>
+    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span>
+    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">dft</span>
 
     <span class="c1">#xc_code = &#39;lda,vwn&#39;</span>
     <span class="n">xc_code</span> <span class="o">=</span> <span class="s1">&#39;wb97x&#39;</span>

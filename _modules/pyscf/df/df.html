@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -187,18 +186,18 @@
 <span class="kn">import</span> <span class="nn">tempfile</span>
 <span class="kn">import</span> <span class="nn">numpy</span>
 <span class="kn">import</span> <span class="nn">h5py</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">lib</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">ao2mo</span>
-<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="k">import</span> <span class="n">logger</span>
-<span class="kn">from</span> <span class="nn">pyscf.df</span> <span class="k">import</span> <span class="n">incore</span>
-<span class="kn">from</span> <span class="nn">pyscf.df</span> <span class="k">import</span> <span class="n">outcore</span>
-<span class="kn">from</span> <span class="nn">pyscf.df</span> <span class="k">import</span> <span class="n">r_incore</span>
-<span class="kn">from</span> <span class="nn">pyscf.df</span> <span class="k">import</span> <span class="n">addons</span>
-<span class="kn">from</span> <span class="nn">pyscf.df</span> <span class="k">import</span> <span class="n">df_jk</span>
-<span class="kn">from</span> <span class="nn">pyscf.ao2mo</span> <span class="k">import</span> <span class="n">_ao2mo</span>
-<span class="kn">from</span> <span class="nn">pyscf.ao2mo.incore</span> <span class="k">import</span> <span class="n">_conc_mos</span><span class="p">,</span> <span class="n">iden_coeffs</span>
-<span class="kn">from</span> <span class="nn">pyscf.ao2mo.outcore</span> <span class="k">import</span> <span class="n">_load_from_h5g</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">__config__</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">lib</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">ao2mo</span>
+<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="kn">import</span> <span class="n">logger</span>
+<span class="kn">from</span> <span class="nn">pyscf.df</span> <span class="kn">import</span> <span class="n">incore</span>
+<span class="kn">from</span> <span class="nn">pyscf.df</span> <span class="kn">import</span> <span class="n">outcore</span>
+<span class="kn">from</span> <span class="nn">pyscf.df</span> <span class="kn">import</span> <span class="n">r_incore</span>
+<span class="kn">from</span> <span class="nn">pyscf.df</span> <span class="kn">import</span> <span class="n">addons</span>
+<span class="kn">from</span> <span class="nn">pyscf.df</span> <span class="kn">import</span> <span class="n">df_jk</span>
+<span class="kn">from</span> <span class="nn">pyscf.ao2mo</span> <span class="kn">import</span> <span class="n">_ao2mo</span>
+<span class="kn">from</span> <span class="nn">pyscf.ao2mo.incore</span> <span class="kn">import</span> <span class="n">_conc_mos</span><span class="p">,</span> <span class="n">iden_coeffs</span>
+<span class="kn">from</span> <span class="nn">pyscf.ao2mo.outcore</span> <span class="kn">import</span> <span class="n">_load_from_h5g</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">__config__</span>
 
 <div class="viewcode-block" id="DF"><a class="viewcode-back" href="../../../modules/df.html#pyscf.df.df.DF">[docs]</a><span class="k">class</span> <span class="nc">DF</span><span class="p">(</span><span class="n">lib</span><span class="o">.</span><span class="n">StreamObject</span><span class="p">):</span>
     <span class="sa">r</span><span class="sd">&#39;&#39;&#39;</span>
@@ -240,7 +239,7 @@
     <span class="c1"># Store DF tensor in a format compatible to pyscf-1.1 - pyscf-1.6</span>
     <span class="n">_compatible_format</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">__config__</span><span class="p">,</span> <span class="s1">&#39;df_df_DF_compatible_format&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">auxbasis</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">auxbasis</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mol</span> <span class="o">=</span> <span class="n">mol</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">stdout</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">verbose</span>
@@ -362,30 +361,26 @@
                     <span class="c1"># starting from pyscf-1.7, DF tensor may be stored in</span>
                     <span class="c1"># block format</span>
                     <span class="n">naoaux</span> <span class="o">=</span> <span class="n">feri</span><span class="p">[</span><span class="s1">&#39;0&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-                    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="n">b0</span><span class="p">,</span> <span class="n">b1</span><span class="p">,</span> <span class="n">prefetch</span><span class="p">):</span>
-                        <span class="n">prefetch</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">_load_from_h5g</span><span class="p">(</span><span class="n">feri</span><span class="p">,</span> <span class="n">b0</span><span class="p">,</span> <span class="n">b1</span><span class="p">)</span>
+                    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="n">aux_slice</span><span class="p">):</span>
+                        <span class="n">b0</span><span class="p">,</span> <span class="n">b1</span> <span class="o">=</span> <span class="n">aux_slice</span>
+                        <span class="k">return</span> <span class="n">_load_from_h5g</span><span class="p">(</span><span class="n">feri</span><span class="p">,</span> <span class="n">b0</span><span class="p">,</span> <span class="n">b1</span><span class="p">)</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="n">naoaux</span> <span class="o">=</span> <span class="n">feri</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-                    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="n">b0</span><span class="p">,</span> <span class="n">b1</span><span class="p">,</span> <span class="n">prefetch</span><span class="p">):</span>
-                        <span class="n">prefetch</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">feri</span><span class="p">[</span><span class="n">b0</span><span class="p">:</span><span class="n">b1</span><span class="p">])</span>
+                    <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="n">aux_slice</span><span class="p">):</span>
+                        <span class="n">b0</span><span class="p">,</span> <span class="n">b1</span> <span class="o">=</span> <span class="n">aux_slice</span>
+                        <span class="k">return</span> <span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">feri</span><span class="p">[</span><span class="n">b0</span><span class="p">:</span><span class="n">b1</span><span class="p">])</span>
 
-                <span class="n">dat</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span>
-                <span class="n">prefetch</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span>
-                <span class="k">with</span> <span class="n">lib</span><span class="o">.</span><span class="n">call_in_background</span><span class="p">(</span><span class="n">load</span><span class="p">)</span> <span class="k">as</span> <span class="n">bload</span><span class="p">:</span>
-                    <span class="n">bload</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">blksize</span><span class="p">,</span> <span class="n">naoaux</span><span class="p">),</span> <span class="n">prefetch</span><span class="p">)</span>
-                    <span class="k">for</span> <span class="n">b0</span><span class="p">,</span> <span class="n">b1</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">prange</span><span class="p">(</span><span class="n">blksize</span><span class="p">,</span> <span class="n">naoaux</span><span class="p">,</span> <span class="n">blksize</span><span class="p">):</span>
-                        <span class="n">dat</span><span class="p">,</span> <span class="n">prefetch</span> <span class="o">=</span> <span class="n">prefetch</span><span class="p">,</span> <span class="n">dat</span>
-                        <span class="n">bload</span><span class="p">(</span><span class="n">b0</span><span class="p">,</span> <span class="n">b1</span><span class="p">,</span> <span class="n">prefetch</span><span class="p">)</span>
-                        <span class="k">yield</span> <span class="n">dat</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-                <span class="k">yield</span> <span class="n">prefetch</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="k">for</span> <span class="n">dat</span> <span class="ow">in</span> <span class="n">lib</span><span class="o">.</span><span class="n">map_with_prefetch</span><span class="p">(</span><span class="n">load</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">prange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">naoaux</span><span class="p">,</span> <span class="n">blksize</span><span class="p">)):</span>
+                    <span class="k">yield</span> <span class="n">dat</span>
+                    <span class="n">dat</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="k">def</span> <span class="nf">prange</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">step</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">step</span><span class="p">):</span>
             <span class="k">yield</span> <span class="n">i</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">step</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">get_naoaux</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="c1"># determine naoaux with self._cderi, because DF object may be used as CD</span>
-<span class="c1"># object when self._cderi is provided.</span>
+        <span class="c1"># determine naoaux with self._cderi, because DF object may be used as CD</span>
+        <span class="c1"># object when self._cderi is provided.</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cderi</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
         <span class="k">with</span> <span class="n">addons</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cderi</span><span class="p">,</span> <span class="s1">&#39;j3c&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">feri</span><span class="p">:</span>

@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -187,15 +186,15 @@
 <span class="sd">&#39;&#39;&#39;</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">lib</span>
-<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="k">import</span> <span class="n">logger</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span>
-<span class="kn">from</span> <span class="nn">pyscf.dft</span> <span class="k">import</span> <span class="n">gen_grid</span>
-<span class="kn">from</span> <span class="nn">pyscf.data</span> <span class="k">import</span> <span class="n">radii</span>
-<span class="kn">from</span> <span class="nn">pyscf.solvent</span> <span class="k">import</span> <span class="n">ddcosmo</span>
-<span class="kn">from</span> <span class="nn">pyscf.symm</span> <span class="k">import</span> <span class="n">sph</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">lib</span>
+<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="kn">import</span> <span class="n">logger</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span>
+<span class="kn">from</span> <span class="nn">pyscf.dft</span> <span class="kn">import</span> <span class="n">gen_grid</span>
+<span class="kn">from</span> <span class="nn">pyscf.data</span> <span class="kn">import</span> <span class="n">radii</span>
+<span class="kn">from</span> <span class="nn">pyscf.solvent</span> <span class="kn">import</span> <span class="n">ddcosmo</span>
+<span class="kn">from</span> <span class="nn">pyscf.symm</span> <span class="kn">import</span> <span class="n">sph</span>
 
-<span class="kn">from</span> <span class="nn">pyscf.solvent</span> <span class="k">import</span> <span class="n">_attach_solvent</span>
+<span class="kn">from</span> <span class="nn">pyscf.solvent</span> <span class="kn">import</span> <span class="n">_attach_solvent</span>
 
 <div class="viewcode-block" id="ddpcm_for_scf"><a class="viewcode-back" href="../../../modules/solvent.html#pyscf.solvent.ddpcm.ddpcm_for_scf">[docs]</a><span class="nd">@lib</span><span class="o">.</span><span class="n">with_doc</span><span class="p">(</span><span class="n">_attach_solvent</span><span class="o">.</span><span class="n">_for_scf</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">ddpcm_for_scf</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">solvent_obj</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dm</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -241,10 +240,10 @@
 
 
 <span class="c1"># Inject ddPCM to other methods</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">scf</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">mcscf</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">mp</span><span class="p">,</span> <span class="n">ci</span><span class="p">,</span> <span class="n">cc</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">tdscf</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">scf</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">mcscf</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">mp</span><span class="p">,</span> <span class="n">ci</span><span class="p">,</span> <span class="n">cc</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">tdscf</span>
 <span class="n">scf</span><span class="o">.</span><span class="n">hf</span><span class="o">.</span><span class="n">SCF</span><span class="o">.</span><span class="n">ddPCM</span>    <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">hf</span><span class="o">.</span><span class="n">SCF</span><span class="o">.</span><span class="n">DDPCM</span>    <span class="o">=</span> <span class="n">ddpcm_for_scf</span>
 <span class="n">mcscf</span><span class="o">.</span><span class="n">casci</span><span class="o">.</span><span class="n">ddPCM</span>   <span class="o">=</span> <span class="n">mcscf</span><span class="o">.</span><span class="n">casci</span><span class="o">.</span><span class="n">DDPCM</span>   <span class="o">=</span> <span class="n">ddpcm_for_casci</span>
 <span class="n">mcscf</span><span class="o">.</span><span class="n">mc1step</span><span class="o">.</span><span class="n">ddPCM</span> <span class="o">=</span> <span class="n">mcscf</span><span class="o">.</span><span class="n">mc1step</span><span class="o">.</span><span class="n">DDPCM</span> <span class="o">=</span> <span class="n">ddpcm_for_casscf</span>
@@ -357,7 +356,7 @@
     <span class="k">return</span> <span class="n">Amat</span>
 
 <div class="viewcode-block" id="DDPCM"><a class="viewcode-back" href="../../../modules/solvent.html#pyscf.solvent.ddpcm.DDPCM">[docs]</a><span class="k">class</span> <span class="nc">DDPCM</span><span class="p">(</span><span class="n">ddcosmo</span><span class="o">.</span><span class="n">DDCOSMO</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">):</span>
         <span class="n">ddcosmo</span><span class="o">.</span><span class="n">DDCOSMO</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">dump_flags</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -496,7 +495,7 @@
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">scf</span>
+    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">scf</span>
     <span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;H 0 0 0; H 0 1 1.2; H 1. .1 0; H .5 .5 1&#39;</span><span class="p">)</span>
     <span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 

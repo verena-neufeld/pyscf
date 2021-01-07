@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -180,9 +179,9 @@
 <span class="sd">   an arbitrary number of k-points and employs k-point conservation (diagonalizes matrix blocks separately).</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
-<span class="kn">from</span> <span class="nn">pyscf.pbc.tdscf</span> <span class="k">import</span> <span class="n">krhf_slow_supercell</span> <span class="k">as</span> <span class="n">td</span>
-<span class="kn">from</span> <span class="nn">pyscf.tdscf</span> <span class="k">import</span> <span class="n">rhf_slow</span>
-<span class="kn">from</span> <span class="nn">pyscf.tdscf.common_slow</span> <span class="k">import</span> <span class="n">mknj2i</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.tdscf</span> <span class="kn">import</span> <span class="n">krhf_slow_supercell</span> <span class="k">as</span> <span class="n">td</span>
+<span class="kn">from</span> <span class="nn">pyscf.tdscf</span> <span class="kn">import</span> <span class="n">rhf_slow</span>
+<span class="kn">from</span> <span class="nn">pyscf.tdscf.common_slow</span> <span class="kn">import</span> <span class="n">mknj2i</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span>
 
@@ -197,7 +196,7 @@
 <span class="k">class</span> <span class="nc">PhysERI</span><span class="p">(</span><span class="n">td</span><span class="o">.</span><span class="n">PhysERI</span><span class="p">):</span>
     <span class="n">primary_driver</span> <span class="o">=</span> <span class="s2">&quot;full&quot;</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        The TDHF ERI implementation performing a full transformation of integrals to Bloch functions. No symmetries are</span>
 <span class="sd">        employed in this class. The ERIs are returned in blocks of k-points.</span>
@@ -285,7 +284,7 @@
 
 <span class="k">class</span> <span class="nc">PhysERI4</span><span class="p">(</span><span class="n">PhysERI</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        The TDHF ERI implementation performing partial transformations of integrals to Bloch functions. A 4-fold</span>
 <span class="sd">        symmetry of complex-valued functions is employed in this class. The ERIs are returned in blocks of k-points.</span>
@@ -315,7 +314,7 @@
 
 
 <span class="k">class</span> <span class="nc">PhysERI8</span><span class="p">(</span><span class="n">PhysERI4</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        The TDHF ERI implementation performing partial transformations of integrals to Bloch functions. An 8-fold</span>
 <span class="sd">        symmetry of real-valued functions is employed in this class. The ERIs are returned in blocks of k-points.</span>
@@ -428,7 +427,7 @@
     <span class="n">eri8</span> <span class="o">=</span> <span class="n">PhysERI8</span>
     <span class="n">v2a</span> <span class="o">=</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">vector_to_amplitudes</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Performs TDHF calculation. Roots and eigenvectors are stored in `self.e`, `self.xy`.</span>
 <span class="sd">        Args:</span>

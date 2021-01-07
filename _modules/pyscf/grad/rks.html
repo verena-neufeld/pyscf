@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -182,12 +181,12 @@
 
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">numpy</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">lib</span>
-<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="k">import</span> <span class="n">logger</span>
-<span class="kn">from</span> <span class="nn">pyscf.grad</span> <span class="k">import</span> <span class="n">rhf</span> <span class="k">as</span> <span class="n">rhf_grad</span>
-<span class="kn">from</span> <span class="nn">pyscf.dft</span> <span class="k">import</span> <span class="n">numint</span><span class="p">,</span> <span class="n">radi</span><span class="p">,</span> <span class="n">gen_grid</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">__config__</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">lib</span>
+<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="kn">import</span> <span class="n">logger</span>
+<span class="kn">from</span> <span class="nn">pyscf.grad</span> <span class="kn">import</span> <span class="n">rhf</span> <span class="k">as</span> <span class="n">rhf_grad</span>
+<span class="kn">from</span> <span class="nn">pyscf.dft</span> <span class="kn">import</span> <span class="n">numint</span><span class="p">,</span> <span class="n">radi</span><span class="p">,</span> <span class="n">gen_grid</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">__config__</span>
 
 
 <div class="viewcode-block" id="get_veff"><a class="viewcode-back" href="../../../modules/grad.html#pyscf.grad.rks.get_veff">[docs]</a><span class="k">def</span> <span class="nf">get_veff</span><span class="p">(</span><span class="n">ks_grad</span><span class="p">,</span> <span class="n">mol</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dm</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -330,7 +329,6 @@
         <span class="n">ao_deriv</span> <span class="o">=</span> <span class="mi">1</span>
         <span class="n">vtmp</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="n">nao</span><span class="p">,</span><span class="n">nao</span><span class="p">))</span>
         <span class="k">for</span> <span class="n">atm_id</span><span class="p">,</span> <span class="p">(</span><span class="n">coords</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">weight1</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">grids_response_cc</span><span class="p">(</span><span class="n">grids</span><span class="p">)):</span>
-            <span class="n">ngrids</span> <span class="o">=</span> <span class="n">weight</span><span class="o">.</span><span class="n">size</span>
             <span class="n">mask</span> <span class="o">=</span> <span class="n">gen_grid</span><span class="o">.</span><span class="n">make_mask</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">coords</span><span class="p">)</span>
             <span class="n">ao</span> <span class="o">=</span> <span class="n">ni</span><span class="o">.</span><span class="n">eval_ao</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">coords</span><span class="p">,</span> <span class="n">deriv</span><span class="o">=</span><span class="n">ao_deriv</span><span class="p">,</span> <span class="n">non0tab</span><span class="o">=</span><span class="n">mask</span><span class="p">)</span>
             <span class="n">rho</span> <span class="o">=</span> <span class="n">make_rho</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">ao</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">mask</span><span class="p">,</span> <span class="s1">&#39;LDA&#39;</span><span class="p">)</span>
@@ -493,15 +491,15 @@
 
 <div class="viewcode-block" id="Gradients"><a class="viewcode-back" href="../../../modules/grad.html#pyscf.grad.rks.Gradients">[docs]</a><span class="k">class</span> <span class="nc">Gradients</span><span class="p">(</span><span class="n">rhf_grad</span><span class="o">.</span><span class="n">Gradients</span><span class="p">):</span>
 
-<span class="c1"># This parameter has no effects for HF gradients. Add this attribute so that</span>
-<span class="c1"># the kernel function can be reused in the DFT gradients code.</span>
+    <span class="c1"># This parameter has no effects for HF gradients. Add this attribute so that</span>
+    <span class="c1"># the kernel function can be reused in the DFT gradients code.</span>
     <span class="n">grid_response</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">__config__</span><span class="p">,</span> <span class="s1">&#39;grad_rks_Gradients_grid_response&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf</span><span class="p">):</span>
         <span class="n">rhf_grad</span><span class="o">.</span><span class="n">Gradients</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">grids</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="c1"># This parameter has no effects for HF gradients. Add this attribute so that</span>
-<span class="c1"># the kernel function can be reused in the DFT gradients code.</span>
+        <span class="c1"># This parameter has no effects for HF gradients. Add this attribute so that</span>
+        <span class="c1"># the kernel function can be reused in the DFT gradients code.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">grid_response</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_keys</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_keys</span><span class="o">.</span><span class="n">union</span><span class="p">([</span><span class="s1">&#39;grid_response&#39;</span><span class="p">,</span> <span class="s1">&#39;grids&#39;</span><span class="p">])</span>
 
@@ -534,12 +532,12 @@
 
 <span class="n">Grad</span> <span class="o">=</span> <span class="n">Gradients</span>
 
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">dft</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">dft</span>
 <span class="n">dft</span><span class="o">.</span><span class="n">rks</span><span class="o">.</span><span class="n">RKS</span><span class="o">.</span><span class="n">Gradients</span> <span class="o">=</span> <span class="n">dft</span><span class="o">.</span><span class="n">rks_symm</span><span class="o">.</span><span class="n">RKS</span><span class="o">.</span><span class="n">Gradients</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">class_as_method</span><span class="p">(</span><span class="n">Gradients</span><span class="p">)</span>
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">dft</span>
+    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">dft</span>
 
     <span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">()</span>
     <span class="n">mol</span><span class="o">.</span><span class="n">atom</span> <span class="o">=</span> <span class="p">[</span>
@@ -559,6 +557,9 @@
 <span class="c1"># [  6.34069238e-17  -2.81979579e-02  -1.05137653e-02]]</span>
     <span class="n">g</span><span class="o">.</span><span class="n">grid_response</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">lib</span><span class="o">.</span><span class="n">finger</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">kernel</span><span class="p">())</span> <span class="o">-</span> <span class="o">-</span><span class="mf">0.049891265876709084</span><span class="p">)</span>
+<span class="c1"># O     0.0000000000    -0.0000000000     0.0210225191</span>
+<span class="c1"># H     0.0000000000     0.0281984036    -0.0105112595</span>
+<span class="c1"># H    -0.0000000000    -0.0281984036    -0.0105112595</span>
 
     <span class="n">mf</span><span class="o">.</span><span class="n">xc</span> <span class="o">=</span> <span class="s1">&#39;b88,p86&#39;</span>
     <span class="n">e0</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">scf</span><span class="p">()</span>

@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -181,12 +180,12 @@
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">time</span>
-<span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">product</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">lib</span>
-<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="k">import</span> <span class="n">logger</span>
-<span class="kn">from</span> <span class="nn">pyscf.lib.parameters</span> <span class="k">import</span> <span class="n">LOOSE_ZERO_TOL</span><span class="p">,</span> <span class="n">LARGE_DENOM</span>  <span class="c1"># noqa</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.lib</span> <span class="k">import</span> <span class="n">kpts_helper</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.mp.kmp2</span> <span class="k">import</span> <span class="p">(</span><span class="n">get_frozen_mask</span><span class="p">,</span> <span class="n">get_nocc</span><span class="p">,</span> <span class="n">get_nmo</span><span class="p">,</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">product</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">lib</span>
+<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="kn">import</span> <span class="n">logger</span>
+<span class="kn">from</span> <span class="nn">pyscf.lib.parameters</span> <span class="kn">import</span> <span class="n">LOOSE_ZERO_TOL</span><span class="p">,</span> <span class="n">LARGE_DENOM</span>  <span class="c1"># noqa</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.lib</span> <span class="kn">import</span> <span class="n">kpts_helper</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.mp.kmp2</span> <span class="kn">import</span> <span class="p">(</span><span class="n">get_frozen_mask</span><span class="p">,</span> <span class="n">get_nocc</span><span class="p">,</span> <span class="n">get_nmo</span><span class="p">,</span>
                                <span class="n">padded_mo_coeff</span><span class="p">,</span> <span class="n">padding_k_idx</span><span class="p">)</span>  <span class="c1"># noqa</span>
 
 <span class="c1">#einsum = np.einsum</span>
@@ -628,7 +627,7 @@
     <span class="sd">&quot;&quot;&quot;For a description of arguments, see `get_t3p2_imds_slow` in</span>
 <span class="sd">    the corresponding `kintermediates.py`.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">from</span> <span class="nn">pyscf.pbc.cc.kccsd_t_rhf</span> <span class="k">import</span> <span class="n">_get_epqr</span>
+    <span class="kn">from</span> <span class="nn">pyscf.pbc.cc.kccsd_t_rhf</span> <span class="kn">import</span> <span class="n">_get_epqr</span>
     <span class="k">if</span> <span class="n">eris</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">eris</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">ao2mo</span><span class="p">()</span>
     <span class="n">fock</span> <span class="o">=</span> <span class="n">eris</span><span class="o">.</span><span class="n">fock</span>
@@ -658,7 +657,7 @@
         <span class="n">t3p2_ea_out</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">nkpts</span><span class="p">,</span><span class="n">nkpts</span><span class="p">,</span><span class="n">nkpts</span><span class="p">,</span><span class="n">nvir</span><span class="p">,</span><span class="n">nvir</span><span class="p">,</span><span class="n">nvir</span><span class="p">,</span><span class="n">nocc</span><span class="p">),</span><span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
     <span class="n">Wacek</span> <span class="o">=</span> <span class="n">t3p2_ea_out</span>
 
-    <span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">product</span>
+    <span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">product</span>
     <span class="n">tmp_t3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">nkpts</span><span class="p">,</span> <span class="n">nkpts</span><span class="p">,</span> <span class="n">nkpts</span><span class="p">,</span> <span class="n">nkpts</span><span class="p">,</span> <span class="n">nkpts</span><span class="p">,</span> <span class="n">nocc</span><span class="p">,</span> <span class="n">nocc</span><span class="p">,</span> <span class="n">nocc</span><span class="p">,</span> <span class="n">nvir</span><span class="p">,</span> <span class="n">nvir</span><span class="p">,</span> <span class="n">nvir</span><span class="p">),</span>
                       <span class="n">dtype</span> <span class="o">=</span> <span class="n">t2</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
 
@@ -866,7 +865,7 @@
     <span class="sd">&quot;&quot;&quot;For a description of arguments, see `get_t3p2_imds_slow` in</span>
 <span class="sd">    the corresponding `kintermediates.py`.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">from</span> <span class="nn">pyscf.pbc.cc.kccsd_t_rhf</span> <span class="k">import</span> <span class="n">_get_epqr</span>
+    <span class="kn">from</span> <span class="nn">pyscf.pbc.cc.kccsd_t_rhf</span> <span class="kn">import</span> <span class="n">_get_epqr</span>
     <span class="n">cpu1</span> <span class="o">=</span> <span class="n">cpu0</span> <span class="o">=</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">(),</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
     <span class="k">if</span> <span class="n">eris</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">eris</span> <span class="o">=</span> <span class="n">mycc</span><span class="o">.</span><span class="n">ao2mo</span><span class="p">()</span>
@@ -897,7 +896,7 @@
     <span class="n">Wacek</span> <span class="o">=</span> <span class="n">t3p2_ea_out</span>
 
     <span class="c1"># Create necessary temporary eris for fast read</span>
-    <span class="kn">from</span> <span class="nn">pyscf.pbc.cc.kccsd_t_rhf</span> <span class="k">import</span> <span class="n">create_t3_eris</span><span class="p">,</span> <span class="n">get_data_slices</span>
+    <span class="kn">from</span> <span class="nn">pyscf.pbc.cc.kccsd_t_rhf</span> <span class="kn">import</span> <span class="n">create_t3_eris</span><span class="p">,</span> <span class="n">get_data_slices</span>
     <span class="n">feri_tmp</span><span class="p">,</span> <span class="n">t2T</span><span class="p">,</span> <span class="n">eris_vvop</span><span class="p">,</span> <span class="n">eris_vooo_C</span> <span class="o">=</span> <span class="n">create_t3_eris</span><span class="p">(</span><span class="n">mycc</span><span class="p">,</span> <span class="n">kconserv</span><span class="p">,</span> <span class="p">[</span><span class="n">eris</span><span class="o">.</span><span class="n">vovv</span><span class="p">,</span> <span class="n">eris</span><span class="o">.</span><span class="n">oovv</span><span class="p">,</span> <span class="n">eris</span><span class="o">.</span><span class="n">ooov</span><span class="p">,</span> <span class="n">t2</span><span class="p">])</span>
     <span class="c1">#t1T = np.array([x.T for x in t1], dtype=np.complex, order=&#39;C&#39;)</span>
     <span class="c1">#fvo = np.array([x.T for x in fov], dtype=np.complex, order=&#39;C&#39;)</span>

@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -187,9 +186,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../modules.html">10. Main modules</a> &raquo;</li>
+          <li><a href="../modules.html"><span class="section-number">10. </span>Main modules</a> &raquo;</li>
         
-      <li>10.1. <code class="xref py py-mod docutils literal notranslate"><span class="pre">adc</span></code> — Algebraic diagrammatic construction (ADC) scheme</li>
+      <li><span class="section-number">10.1. </span><code class="xref py py-mod docutils literal notranslate"><span class="pre">adc</span></code> — Algebraic diagrammatic construction (ADC) scheme</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -209,7 +208,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="module-adc">
-<span id="adc-algebraic-diagrammatic-construction-adc-scheme"></span><span id="adc"></span><h1>10.1. <a class="reference internal" href="#module-adc" title="adc: Algebraic diagrammatic construction energies and propties"><code class="xref py py-mod docutils literal notranslate"><span class="pre">adc</span></code></a> — Algebraic diagrammatic construction (ADC) scheme<a class="headerlink" href="#module-adc" title="Permalink to this headline">¶</a></h1>
+<span id="adc-algebraic-diagrammatic-construction-adc-scheme"></span><span id="adc"></span><h1><span class="section-number">10.1. </span><a class="reference internal" href="#module-adc" title="adc: Algebraic diagrammatic construction energies and propties"><code class="xref py py-mod docutils literal notranslate"><span class="pre">adc</span></code></a> — Algebraic diagrammatic construction (ADC) scheme<a class="headerlink" href="#module-adc" title="Permalink to this headline">¶</a></h1>
 <p>The <a class="reference internal" href="#module-adc" title="adc: Algebraic diagrammatic construction energies and propties"><code class="xref py py-mod docutils literal notranslate"><span class="pre">adc</span></code></a> module is an implementation of algebraic diagrammatic construction theory for computation of spectroscopic properties. At the present moment the <a class="reference internal" href="#module-adc" title="adc: Algebraic diagrammatic construction energies and propties"><code class="xref py py-mod docutils literal notranslate"><span class="pre">adc</span></code></a> module supports computation of ionization potentials (IP) and electron affinties (EA) using three ADC approximations: ADC(2), ADC(2)-X, and ADC(3).</p>
 <p>Computations using the <a class="reference internal" href="#module-adc" title="adc: Algebraic diagrammatic construction energies and propties"><code class="xref py py-mod docutils literal notranslate"><span class="pre">adc</span></code></a> module should be performed in three steps:</p>
 <ol class="arabic simple">
@@ -220,7 +219,7 @@ correspond to those of the <span class="math notranslate nohighlight">\(n\)</spa
 and the corrresponding transition intensities)</p></li>
 </ol>
 <p>An example of IP and EA computation using the default ADC method (ADC(2)) is shown below:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">adc</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">adc</span>
 <span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;H 0 0 0; F 0 0 1&#39;</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;ccpvdz&#39;</span><span class="p">)</span>
 <span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 <span class="n">myadc</span> <span class="o">=</span> <span class="n">adc</span><span class="o">.</span><span class="n">ADC</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span>
@@ -232,7 +231,7 @@ and the corrresponding transition intensities)</p></li>
 <p>Here, the kernel() function executes computation of the ADC(2) ground-state energy and amplitudes,
 which are used to perform calculation of the three lowest-energy IP and EA.
 Other methods of the ADC family can be requested by setting the method variable to <code class="docutils literal notranslate"><span class="pre">ADC(2)-X</span></code> or <code class="docutils literal notranslate"><span class="pre">ADC(3)</span></code>, e.g.:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">adc</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">adc</span>
 <span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;H 0 0 0; F 0 0 1&#39;</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;ccpvdz&#39;</span><span class="p">)</span>
 <span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 <span class="n">myadc</span> <span class="o">=</span> <span class="n">adc</span><span class="o">.</span><span class="n">ADC</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span>
@@ -252,7 +251,7 @@ Other methods of the ADC family can be requested by setting the method variable 
 </pre></div>
 </div>
 <p>The ADC implementation in Pyscf can be used to perform calculations of electron affinities (EA) and ionization potentials (IP) for closed- and open-shell molecules starting with the RHF, ROHF, or UHF reference SCF wavefunctions, e.g.:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">adc</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">adc</span>
 <span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;H 0 0 0; F 0 0 1&#39;</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;ccpvdz&#39;</span><span class="p">,</span> <span class="n">charge</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">spin</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">UHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 <span class="n">myadc</span> <span class="o">=</span> <span class="n">adc</span><span class="o">.</span><span class="n">ADC</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span>
@@ -264,18 +263,18 @@ Other methods of the ADC family can be requested by setting the method variable 
 </div>
 <p>When using results of this code for publications, please cite the following paper: “Third-order algebraic diagrammatic construction theory for electron attachment and ionization energies: Conventional and Green’s function implementation”, S. Banerjee and A.Y. Sokolov, J. Chem. Phys. 151, 224112 (2019).</p>
 <div class="section" id="examples">
-<h2>10.1.1. Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<p><code class="xref download docutils literal notranslate"><span class="pre">examples/adc/01-closed_shell.py</span></code>
-<code class="xref download docutils literal notranslate"><span class="pre">examples/adc/02-open_shell.py</span></code>
-<code class="xref download docutils literal notranslate"><span class="pre">examples/adc/03-closed_shell_different_setup.py</span></code></p>
+<h2><span class="section-number">10.1.1. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference download internal" download="" href="../_downloads/faaae1a38b249ab11eb59d00bb0e2e8c/01-closed_shell.py"><code class="xref download docutils literal notranslate"><span class="pre">examples/adc/01-closed_shell.py</span></code></a>
+<a class="reference download internal" download="" href="../_downloads/38fc932373cc2af2df164e04ce9b4690/02-open_shell.py"><code class="xref download docutils literal notranslate"><span class="pre">examples/adc/02-open_shell.py</span></code></a>
+<a class="reference download internal" download="" href="../_downloads/5959d67ce1c554107a3a0fc44e7d325f/03-closed_shell_different_setup.py"><code class="xref download docutils literal notranslate"><span class="pre">examples/adc/03-closed_shell_different_setup.py</span></code></a></p>
 </div>
 <div class="section" id="module-pyscf.adc">
-<span id="program-reference"></span><h2>10.1.2. Program reference<a class="headerlink" href="#module-pyscf.adc" title="Permalink to this headline">¶</a></h2>
+<span id="program-reference"></span><h2><span class="section-number">10.1.2. </span>Program reference<a class="headerlink" href="#module-pyscf.adc" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="algebraic-diagrammatic-construction">
-<h3>10.1.2.1. Algebraic Diagrammatic Construction<a class="headerlink" href="#algebraic-diagrammatic-construction" title="Permalink to this headline">¶</a></h3>
-<dl class="function">
+<h3><span class="section-number">10.1.2.1. </span>Algebraic Diagrammatic Construction<a class="headerlink" href="#algebraic-diagrammatic-construction" title="Permalink to this headline">¶</a></h3>
+<dl class="py function">
 <dt id="pyscf.adc.ADC">
-<code class="sig-prename descclassname">pyscf.adc.</code><code class="sig-name descname">ADC</code><span class="sig-paren">(</span><em class="sig-param">mf</em>, <em class="sig-param">frozen=None</em>, <em class="sig-param">mo_coeff=None</em>, <em class="sig-param">mo_occ=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/adc.html#ADC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.adc.ADC" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.adc.</code><code class="sig-name descname">ADC</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em>, <em class="sig-param"><span class="n">frozen</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mo_coeff</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mo_occ</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/adc.html#ADC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.adc.ADC" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ground state calculations</p>
 <dl>
 <dt>Attributes:</dt><dd><dl>
@@ -286,7 +285,7 @@ Other methods of the ADC family can be requested by setting the method variable 
 <dt>incore_complete<span class="classifier">bool</span></dt><dd><p>Avoid all I/O. Default is False.</p>
 </dd>
 <dt>method<span class="classifier">string</span></dt><dd><p>nth-order ADC method. Options are : ADC(2), ADC(2)-X, ADC(3). Default is ADC(2).</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span> <span class="o">=</span> <span class="s1">&#39;H 0 0 0; F 0 0 1.1&#39;</span><span class="p">,</span> <span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;ccpvdz&#39;</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span> <span class="o">=</span> <span class="s1">&#39;H 0 0 0; F 0 0 1.1&#39;</span><span class="p">,</span> <span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;ccpvdz&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myadc</span> <span class="o">=</span> <span class="n">adc</span><span class="o">.</span><span class="n">UADC</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
@@ -308,9 +307,9 @@ Other methods of the ADC family can be requested by setting the method variable 
 </div></blockquote>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.adc.UADC">
-<code class="sig-prename descclassname">pyscf.adc.</code><code class="sig-name descname">UADC</code><span class="sig-paren">(</span><em class="sig-param">mf</em>, <em class="sig-param">frozen=None</em>, <em class="sig-param">mo_coeff=None</em>, <em class="sig-param">mo_occ=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/adc.html#UADC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.adc.UADC" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.adc.</code><code class="sig-name descname">UADC</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em>, <em class="sig-param"><span class="n">frozen</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mo_coeff</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mo_occ</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/adc.html#UADC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.adc.UADC" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ground state calculations</p>
 <dl>
 <dt>Attributes:</dt><dd><dl>
@@ -321,7 +320,7 @@ Other methods of the ADC family can be requested by setting the method variable 
 <dt>incore_complete<span class="classifier">bool</span></dt><dd><p>Avoid all I/O. Default is False.</p>
 </dd>
 <dt>method<span class="classifier">string</span></dt><dd><p>nth-order ADC method. Options are : ADC(2), ADC(2)-X, ADC(3). Default is ADC(2).</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span> <span class="o">=</span> <span class="s1">&#39;H 0 0 0; F 0 0 1.1&#39;</span><span class="p">,</span> <span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;ccpvdz&#39;</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span> <span class="o">=</span> <span class="s1">&#39;H 0 0 0; F 0 0 1.1&#39;</span><span class="p">,</span> <span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;ccpvdz&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myadc</span> <span class="o">=</span> <span class="n">adc</span><span class="o">.</span><span class="n">UADC</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
@@ -345,13 +344,13 @@ Other methods of the ADC family can be requested by setting the method variable 
 
 </div>
 <div class="section" id="adc-uadc-module-and-uadc-class">
-<h3>10.1.2.2. adc.uadc module and UADC class<a class="headerlink" href="#adc-uadc-module-and-uadc-class" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.1.2.2. </span>adc.uadc module and UADC class<a class="headerlink" href="#adc-uadc-module-and-uadc-class" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference internal" href="#pyscf.adc.uadc.UADC" title="pyscf.adc.uadc.UADC"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.adc.uadc.UADC</span></code></a> class is the object to hold the unrestricted ADC environment
 attributes and results. The environment attributes are the parameters for the ground state as well as the excited state calculations.</p>
 <span class="target" id="module-pyscf.adc.uadc"></span><p>Unrestricted algebraic diagrammatic construction</p>
-<dl class="class">
+<dl class="py class">
 <dt id="pyscf.adc.uadc.UADC">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.adc.uadc.</code><code class="sig-name descname">UADC</code><span class="sig-paren">(</span><em class="sig-param">mf</em>, <em class="sig-param">frozen=None</em>, <em class="sig-param">mo_coeff=None</em>, <em class="sig-param">mo_occ=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/adc/uadc.html#UADC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.adc.uadc.UADC" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">pyscf.adc.uadc.</code><code class="sig-name descname">UADC</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em>, <em class="sig-param"><span class="n">frozen</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mo_coeff</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mo_occ</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/adc/uadc.html#UADC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.adc.uadc.UADC" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ground state calculations</p>
 <dl>
 <dt>Attributes:</dt><dd><dl>
@@ -362,7 +361,7 @@ attributes and results. The environment attributes are the parameters for the gr
 <dt>incore_complete<span class="classifier">bool</span></dt><dd><p>Avoid all I/O. Default is False.</p>
 </dd>
 <dt>method<span class="classifier">string</span></dt><dd><p>nth-order ADC method. Options are : ADC(2), ADC(2)-X, ADC(3). Default is ADC(2).</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span> <span class="o">=</span> <span class="s1">&#39;H 0 0 0; F 0 0 1.1&#39;</span><span class="p">,</span> <span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;ccpvdz&#39;</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span> <span class="o">=</span> <span class="s1">&#39;H 0 0 0; F 0 0 1.1&#39;</span><span class="p">,</span> <span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;ccpvdz&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myadc</span> <span class="o">=</span> <span class="n">adc</span><span class="o">.</span><span class="n">UADC</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
@@ -382,7 +381,7 @@ attributes and results. The environment attributes are the parameters for the gr
 </dd>
 </dl>
 </div></blockquote>
-<dl class="method">
+<dl class="py method">
 <dt id="pyscf.adc.uadc.UADC.kernel">
 <code class="sig-name descname">kernel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/adc/uadc.html#UADC.kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.adc.uadc.UADC.kernel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Kernel function is the main driver of a method.  Every method should
@@ -394,9 +393,9 @@ the DFT mesh grids etc.).</p>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="pyscf.adc.uadc.UADCEA">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.adc.uadc.</code><code class="sig-name descname">UADCEA</code><span class="sig-paren">(</span><em class="sig-param">adc</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/adc/uadc.html#UADCEA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.adc.uadc.UADCEA" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">pyscf.adc.uadc.</code><code class="sig-name descname">UADCEA</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adc</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/adc/uadc.html#UADCEA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.adc.uadc.UADCEA" title="Permalink to this definition">¶</a></dt>
 <dd><p>unrestricted ADC for EA energies and spectroscopic amplitudes</p>
 <dl>
 <dt>Attributes:</dt><dd><dl class="simple">
@@ -418,7 +417,7 @@ the DFT mesh grids etc.).</p>
 </dd>
 <dt>Kwargs:</dt><dd><dl>
 <dt>nroots<span class="classifier">int</span></dt><dd><p>Number of roots (eigenvalues) requested. Default value is 1.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myadc</span> <span class="o">=</span> <span class="n">adc</span><span class="o">.</span><span class="n">UADC</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myadc</span> <span class="o">=</span> <span class="n">adc</span><span class="o">.</span><span class="n">UADC</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myadcea</span> <span class="o">=</span> <span class="n">adc</span><span class="o">.</span><span class="n">UADC</span><span class="p">(</span><span class="n">myadc</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -439,9 +438,9 @@ the DFT mesh grids etc.).</p>
 </div></blockquote>
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="pyscf.adc.uadc.UADCIP">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.adc.uadc.</code><code class="sig-name descname">UADCIP</code><span class="sig-paren">(</span><em class="sig-param">adc</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/adc/uadc.html#UADCIP"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.adc.uadc.UADCIP" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">pyscf.adc.uadc.</code><code class="sig-name descname">UADCIP</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">adc</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/adc/uadc.html#UADCIP"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.adc.uadc.UADCIP" title="Permalink to this definition">¶</a></dt>
 <dd><p>unrestricted ADC for IP energies and spectroscopic amplitudes</p>
 <dl>
 <dt>Attributes:</dt><dd><dl class="simple">
@@ -463,7 +462,7 @@ the DFT mesh grids etc.).</p>
 </dd>
 <dt>Kwargs:</dt><dd><dl>
 <dt>nroots<span class="classifier">int</span></dt><dd><p>Number of roots (eigenvalues) requested. Default value is 1.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myadc</span> <span class="o">=</span> <span class="n">adc</span><span class="o">.</span><span class="n">UADC</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myadc</span> <span class="o">=</span> <span class="n">adc</span><span class="o">.</span><span class="n">UADC</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myadcip</span> <span class="o">=</span> <span class="n">adc</span><span class="o">.</span><span class="n">UADC</span><span class="p">(</span><span class="n">myadc</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
 </div>

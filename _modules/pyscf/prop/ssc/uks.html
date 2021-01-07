@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -183,8 +182,8 @@
 <span class="sd">(In testing)</span>
 <span class="sd">&#39;&#39;&#39;</span>
 
-<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="k">import</span> <span class="n">logger</span>
-<span class="kn">from</span> <span class="nn">pyscf.prop.ssc</span> <span class="k">import</span> <span class="n">uhf</span> <span class="k">as</span> <span class="n">uhf_ssc</span>
+<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="kn">import</span> <span class="n">logger</span>
+<span class="kn">from</span> <span class="nn">pyscf.prop.ssc</span> <span class="kn">import</span> <span class="n">uhf</span> <span class="k">as</span> <span class="n">uhf_ssc</span>
 
 
 <div class="viewcode-block" id="SpinSpinCoupling"><a class="viewcode-back" href="../../../../modules/prop/ssc.html#pyscf.prop.ssc.uks.SpinSpinCoupling">[docs]</a><span class="k">class</span> <span class="nc">SpinSpinCoupling</span><span class="p">(</span><span class="n">uhf_ssc</span><span class="o">.</span><span class="n">SpinSpinCoupling</span><span class="p">):</span>
@@ -210,14 +209,14 @@
 
 <span class="n">SSC</span> <span class="o">=</span> <span class="n">SpinSpinCoupling</span>
 
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">lib</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">dft</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">lib</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">dft</span>
 <span class="n">dft</span><span class="o">.</span><span class="n">uks</span><span class="o">.</span><span class="n">UKS</span><span class="o">.</span><span class="n">SSC</span> <span class="o">=</span> <span class="n">dft</span><span class="o">.</span><span class="n">uks</span><span class="o">.</span><span class="n">UKS</span><span class="o">.</span><span class="n">SpinSpinCoupling</span> <span class="o">=</span> \
 <span class="n">dft</span><span class="o">.</span><span class="n">uks_symm</span><span class="o">.</span><span class="n">UKS</span><span class="o">.</span><span class="n">SSC</span> <span class="o">=</span> <span class="n">dft</span><span class="o">.</span><span class="n">uks_symm</span><span class="o">.</span><span class="n">UKS</span><span class="o">.</span><span class="n">SpinSpinCoupling</span> <span class="o">=</span> \
         <span class="n">lib</span><span class="o">.</span><span class="n">class_as_method</span><span class="p">(</span><span class="n">SSC</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">lib</span><span class="p">,</span> <span class="n">gto</span><span class="p">,</span> <span class="n">dft</span>
+    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">lib</span><span class="p">,</span> <span class="n">gto</span><span class="p">,</span> <span class="n">dft</span>
 
     <span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;&#39;&#39;</span>
 <span class="s1">                O 0 0      0</span>
@@ -231,7 +230,7 @@
     <span class="n">ssc</span><span class="o">.</span><span class="n">with_fcsd</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="n">jj</span> <span class="o">=</span> <span class="n">ssc</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
 
-    <span class="kn">from</span> <span class="nn">pyscf.prop.ssc</span> <span class="k">import</span> <span class="n">rks</span>
+    <span class="kn">from</span> <span class="nn">pyscf.prop.ssc</span> <span class="kn">import</span> <span class="n">rks</span>
     <span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;&#39;&#39;</span>
 <span class="s1">                O 0 0      0</span>
 <span class="s1">                H 0 -0.757 0.587</span>

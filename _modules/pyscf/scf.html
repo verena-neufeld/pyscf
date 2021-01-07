@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -263,23 +262,23 @@
 
 <span class="sd">&#39;&#39;&#39;</span>
 
-<span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="k">import</span> <span class="n">hf</span>
+<span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="kn">import</span> <span class="n">hf</span>
 <span class="n">rhf</span> <span class="o">=</span> <span class="n">hf</span>
-<span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="k">import</span> <span class="n">rohf</span>
-<span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="k">import</span> <span class="n">hf_symm</span>
+<span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="kn">import</span> <span class="n">rohf</span>
+<span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="kn">import</span> <span class="n">hf_symm</span>
 <span class="n">rhf_symm</span> <span class="o">=</span> <span class="n">hf_symm</span>
-<span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="k">import</span> <span class="n">uhf</span>
-<span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="k">import</span> <span class="n">uhf_symm</span>
-<span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="k">import</span> <span class="n">ghf</span>
-<span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="k">import</span> <span class="n">ghf_symm</span>
-<span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="k">import</span> <span class="n">dhf</span>
-<span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="k">import</span> <span class="n">chkfile</span>
-<span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="k">import</span> <span class="n">addons</span>
-<span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="k">import</span> <span class="n">diis</span>
-<span class="kn">from</span> <span class="nn">pyscf.scf.diis</span> <span class="k">import</span> <span class="n">DIIS</span><span class="p">,</span> <span class="n">CDIIS</span><span class="p">,</span> <span class="n">EDIIS</span><span class="p">,</span> <span class="n">ADIIS</span>
-<span class="kn">from</span> <span class="nn">pyscf.scf.uhf</span> <span class="k">import</span> <span class="n">spin_square</span>
-<span class="kn">from</span> <span class="nn">pyscf.scf.hf</span> <span class="k">import</span> <span class="n">get_init_guess</span>
-<span class="kn">from</span> <span class="nn">pyscf.scf.addons</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="kn">import</span> <span class="n">uhf</span>
+<span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="kn">import</span> <span class="n">uhf_symm</span>
+<span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="kn">import</span> <span class="n">ghf</span>
+<span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="kn">import</span> <span class="n">ghf_symm</span>
+<span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="kn">import</span> <span class="n">dhf</span>
+<span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="kn">import</span> <span class="n">chkfile</span>
+<span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="kn">import</span> <span class="n">addons</span>
+<span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="kn">import</span> <span class="n">diis</span>
+<span class="kn">from</span> <span class="nn">pyscf.scf.diis</span> <span class="kn">import</span> <span class="n">DIIS</span><span class="p">,</span> <span class="n">CDIIS</span><span class="p">,</span> <span class="n">EDIIS</span><span class="p">,</span> <span class="n">ADIIS</span>
+<span class="kn">from</span> <span class="nn">pyscf.scf.uhf</span> <span class="kn">import</span> <span class="n">spin_square</span>
+<span class="kn">from</span> <span class="nn">pyscf.scf.hf</span> <span class="kn">import</span> <span class="n">get_init_guess</span>
+<span class="kn">from</span> <span class="nn">pyscf.scf.addons</span> <span class="kn">import</span> <span class="o">*</span>
 
 
 <div class="viewcode-block" id="HF"><a class="viewcode-back" href="../../modules/scf.html#pyscf.scf.HF">[docs]</a><span class="k">def</span> <span class="nf">HF</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
@@ -347,7 +346,7 @@
 
 <div class="viewcode-block" id="X2C"><a class="viewcode-back" href="../../modules/scf.html#pyscf.scf.X2C">[docs]</a><span class="k">def</span> <span class="nf">X2C</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;X2C UHF (in testing)&#39;&#39;&#39;</span>
-    <span class="kn">from</span> <span class="nn">pyscf.x2c</span> <span class="k">import</span> <span class="n">x2c</span>
+    <span class="kn">from</span> <span class="nn">pyscf.x2c</span> <span class="kn">import</span> <span class="n">x2c</span>
     <span class="k">return</span> <span class="n">x2c</span><span class="o">.</span><span class="n">UHF</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span></div>
 
 <span class="k">def</span> <span class="nf">sfx2c1e</span><span class="p">(</span><span class="n">mf</span><span class="p">):</span>
@@ -358,33 +357,33 @@
     <span class="k">return</span> <span class="n">mf</span><span class="o">.</span><span class="n">density_fit</span><span class="p">(</span><span class="n">auxbasis</span><span class="p">,</span> <span class="n">with_df</span><span class="p">,</span> <span class="n">only_dfj</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">newton</span><span class="p">(</span><span class="n">mf</span><span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">pyscf.soscf</span> <span class="k">import</span> <span class="n">newton_ah</span>
+    <span class="kn">from</span> <span class="nn">pyscf.soscf</span> <span class="kn">import</span> <span class="n">newton_ah</span>
     <span class="k">return</span> <span class="n">newton_ah</span><span class="o">.</span><span class="n">newton</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span>
 
 <span class="n">fast_newton</span> <span class="o">=</span> <span class="n">addons</span><span class="o">.</span><span class="n">fast_newton</span>
 
 <span class="k">def</span> <span class="nf">KS</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">dft</span>
+    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">dft</span>
     <span class="k">return</span> <span class="n">dft</span><span class="o">.</span><span class="n">KS</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">RKS</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">dft</span>
+    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">dft</span>
     <span class="k">return</span> <span class="n">dft</span><span class="o">.</span><span class="n">RKS</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">ROKS</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">dft</span>
+    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">dft</span>
     <span class="k">return</span> <span class="n">dft</span><span class="o">.</span><span class="n">ROKS</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">UKS</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">dft</span>
+    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">dft</span>
     <span class="k">return</span> <span class="n">dft</span><span class="o">.</span><span class="n">UKS</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">GKS</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">dft</span>
+    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">dft</span>
     <span class="k">return</span> <span class="n">dft</span><span class="o">.</span><span class="n">GKS</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">DKS</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">dft</span>
+    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">dft</span>
     <span class="k">return</span> <span class="n">dft</span><span class="o">.</span><span class="n">DKS</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">)</span>
 </pre></div>
 

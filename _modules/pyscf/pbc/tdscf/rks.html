@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -178,10 +177,10 @@
 <span class="c1"># Author: Qiming Sun &lt;osirpt.sun@gmail.com&gt;</span>
 <span class="c1">#</span>
 
-<span class="kn">from</span> <span class="nn">pyscf.tdscf</span> <span class="k">import</span> <span class="n">rks</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.tdscf.rhf</span> <span class="k">import</span> <span class="n">TDA</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.tdscf.rhf</span> <span class="k">import</span> <span class="n">TDHF</span> <span class="k">as</span> <span class="n">TDDFT</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">lib</span>
+<span class="kn">from</span> <span class="nn">pyscf.tdscf</span> <span class="kn">import</span> <span class="n">rks</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.tdscf.rhf</span> <span class="kn">import</span> <span class="n">TDA</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.tdscf.rhf</span> <span class="kn">import</span> <span class="n">TDHF</span> <span class="k">as</span> <span class="n">TDDFT</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">lib</span>
 
 <span class="n">RPA</span> <span class="o">=</span> <span class="n">TDRKS</span> <span class="o">=</span> <span class="n">TDDFT</span>
 
@@ -203,7 +202,7 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">TDDFTNoHybrid</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span></div>
 
-<span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="k">import</span> <span class="n">dft</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="kn">import</span> <span class="n">dft</span>
 <span class="n">dft</span><span class="o">.</span><span class="n">rks</span><span class="o">.</span><span class="n">RKS</span><span class="o">.</span><span class="n">TDA</span>           <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">class_as_method</span><span class="p">(</span><span class="n">TDA</span><span class="p">)</span>
 <span class="n">dft</span><span class="o">.</span><span class="n">rks</span><span class="o">.</span><span class="n">RKS</span><span class="o">.</span><span class="n">TDHF</span>          <span class="o">=</span> <span class="kc">None</span>
 <span class="n">dft</span><span class="o">.</span><span class="n">rks</span><span class="o">.</span><span class="n">RKS</span><span class="o">.</span><span class="n">TDDFT</span>         <span class="o">=</span> <span class="n">tddft</span>

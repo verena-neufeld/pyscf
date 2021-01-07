@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -176,7 +175,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>6. Tutorial</li>
+      <li><span class="section-number">6. </span>Tutorial</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -196,13 +195,13 @@
            <div itemprop="articleBody">
             
   <div class="section" id="tutorial">
-<span id="getting-started"></span><h1>6. Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h1>
+<span id="getting-started"></span><h1><span class="section-number">6. </span>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h1>
 <p>This tutorial shows how to use PySCF package in the perspective of method
 development. It involves some knowledge of coding in Python.  An Ipython
 notebook of user-guide can be found in
 <a class="reference external" href="https://github.com/nmardirossian/PySCF_Tutorial">https://github.com/nmardirossian/PySCF_Tutorial</a>.</p>
 <div class="section" id="quick-setup">
-<h2>6.1. Quick setup<a class="headerlink" href="#quick-setup" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.1. </span>Quick setup<a class="headerlink" href="#quick-setup" title="Permalink to this headline">¶</a></h2>
 <p>You can install PySCF from github repo:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo apt-get install python-h5py python-scipy cmake
 $ git clone https://github.com/sunqm/pyscf
@@ -227,9 +226,9 @@ Please see <a class="reference internal" href="install.html#installing"><span cl
 </div>
 </div>
 <div class="section" id="a-simple-example">
-<h2>6.2. A simple example<a class="headerlink" href="#a-simple-example" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.2. </span>A simple example<a class="headerlink" href="#a-simple-example" title="Permalink to this headline">¶</a></h2>
 <p>Here is an example to run HF calculation for hydrogen molecule:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;H 0 0 0; H 0 0 1.2&#39;</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;ccpvdz&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mf</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
@@ -239,10 +238,10 @@ Please see <a class="reference internal" href="install.html#installing"><span cl
 </div>
 </div>
 <div class="section" id="initializing-a-molecule">
-<h2>6.3. Initializing a molecule<a class="headerlink" href="#initializing-a-molecule" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.3. </span>Initializing a molecule<a class="headerlink" href="#initializing-a-molecule" title="Permalink to this headline">¶</a></h2>
 <p>There are three ways to define and initialize a molecule.  The first is to use
 the keyword arguments of <code class="xref py py-func docutils literal notranslate"><span class="pre">Mole.build()</span></code> to initialize a molecule:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span><span class="o">.</span><span class="n">build</span><span class="p">(</span>
 <span class="gp">... </span>    <span class="n">atom</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;O 0 0 0; H  0 1 0; H 0 0 1&#39;&#39;&#39;</span><span class="p">,</span>
@@ -260,7 +259,7 @@ molecule:</p>
 </div>
 <p>The third way is to use the shortcut function <code class="xref py py-func docutils literal notranslate"><span class="pre">Mole.M()</span></code>.  This
 function pass all arguments to <code class="xref py py-func docutils literal notranslate"><span class="pre">Mole.build()</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span>
 <span class="gp">... </span>    <span class="n">atom</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;O 0 0 0; H  0 1 0; H 0 0 1&#39;&#39;&#39;</span><span class="p">,</span>
 <span class="gp">... </span>    <span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;sto-3g&#39;</span><span class="p">)</span>
@@ -270,7 +269,7 @@ function pass all arguments to <code class="xref py py-func docutils literal not
 They are used to hold the molecular geometry and basis sets.</p>
 <p>For more examples, see <a class="reference internal" href="modules/gto.html#gto"><span class="std std-ref">gto — Molecular structure and GTO basis</span></a>.</p>
 <div class="section" id="geometry">
-<h3>6.3.1. Geometry<a class="headerlink" href="#geometry" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.1. </span>Geometry<a class="headerlink" href="#geometry" title="Permalink to this headline">¶</a></h3>
 <p>Molecular geometry can be input in Cartesian format:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span><span class="o">.</span><span class="n">atom</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;O 0, 0, 0</span>
@@ -301,7 +300,7 @@ specify different basis sets, or masses, or nuclear models for different atoms:<
 </div>
 </div>
 <div class="section" id="basis-set">
-<h3>6.3.2. Basis set<a class="headerlink" href="#basis-set" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.2. </span>Basis set<a class="headerlink" href="#basis-set" title="Permalink to this headline">¶</a></h3>
 <p>The simplest way is to assign a string of basis name to <code class="xref py py-attr docutils literal notranslate"><span class="pre">mol.basis</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mol</span><span class="o">.</span><span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;sto3g&#39;</span>
 </pre></div>
@@ -317,7 +316,7 @@ elements,  a python <code class="docutils literal notranslate"><span class="pre"
 <code class="file docutils literal notranslate"><span class="pre">examples/gto/04-input_basis.py</span></code>.</p>
 </div>
 <div class="section" id="other-parameters">
-<h3>6.3.3. Other parameters<a class="headerlink" href="#other-parameters" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.3. </span>Other parameters<a class="headerlink" href="#other-parameters" title="Permalink to this headline">¶</a></h3>
 <p>You can assign more informations to the molecular object:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mol</span><span class="o">.</span><span class="n">symmetry</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">mol</span><span class="o">.</span><span class="n">charge</span> <span class="o">=</span> <span class="mi">1</span>
@@ -356,11 +355,11 @@ line:</p>
 </div>
 </div>
 <div class="section" id="initializing-a-crystal">
-<h2>6.4. Initializing a crystal<a class="headerlink" href="#initializing-a-crystal" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.4. </span>Initializing a crystal<a class="headerlink" href="#initializing-a-crystal" title="Permalink to this headline">¶</a></h2>
 <p>Initialization a crystal unit cell is very similar to the initialization
 molecular object.  Here, <a class="reference internal" href="modules/pbc/gto.html#pyscf.pbc.gto.Cell" title="pyscf.pbc.gto.Cell"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.pbc.gto.Cell</span></code></a> class should be used
 instead of the <code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.gto.Mole</span></code> class:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="k">import</span> <span class="n">gto</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="kn">import</span> <span class="n">gto</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">Cell</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span><span class="o">.</span><span class="n">atom</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;H  0 0 0; H 1 1 1&#39;&#39;&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span><span class="o">.</span><span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;gth-dzvp&#39;</span>
@@ -378,10 +377,10 @@ object.  The other attributes of <code class="xref py py-class docutils literal 
 More details of the crystal <code class="xref py py-class docutils literal notranslate"><span class="pre">Cell</span></code> object and the relevant input
 parameters are documented in <a class="reference internal" href="modules/pbc/gto.html#pbc-gto"><span class="std std-ref">pbc.gto — Crystal cell structure</span></a>.</p>
 <div class="section" id="d-and-2d-systems">
-<h3>6.4.1. 1D and 2D systems<a class="headerlink" href="#d-and-2d-systems" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.4.1. </span>1D and 2D systems<a class="headerlink" href="#d-and-2d-systems" title="Permalink to this headline">¶</a></h3>
 <p>PySCF PBC module supports the low-dimensional PBC systems.  You can initialize
 the attribute <code class="xref py py-attr docutils literal notranslate"><span class="pre">cell.dimension</span></code> to specify the dimension of the system:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="k">import</span> <span class="n">gto</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="kn">import</span> <span class="n">gto</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">Cell</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span><span class="o">.</span><span class="n">atom</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;H  0 0 0; H 1 1 0&#39;&#39;&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span><span class="o">.</span><span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;sto3g&#39;</span>
@@ -400,12 +399,12 @@ actually the same to the molecular system.</p>
 </div>
 </div>
 <div class="section" id="hf-mp2-mcscf">
-<h2>6.5. HF, MP2, MCSCF<a class="headerlink" href="#hf-mp2-mcscf" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.5. </span>HF, MP2, MCSCF<a class="headerlink" href="#hf-mp2-mcscf" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="hartree-fock">
-<h3>6.5.1. Hartree-Fock<a class="headerlink" href="#hartree-fock" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.5.1. </span>Hartree-Fock<a class="headerlink" href="#hartree-fock" title="Permalink to this headline">¶</a></h3>
 <p>Now we are ready to study electronic structure theory with pyscf.  Let’s
 take oxygen molecule as the first example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span><span class="o">.</span><span class="n">output</span> <span class="o">=</span> <span class="s1">&#39;o2.log&#39;</span>
@@ -415,7 +414,7 @@ take oxygen molecule as the first example:</p>
 </pre></div>
 </div>
 <p>Apply non-relativistic Hartree-Fock:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">scf</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">scf</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">m</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;E(HF) = </span><span class="si">%g</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">m</span><span class="o">.</span><span class="n">kernel</span><span class="p">())</span>
 <span class="go">E(HF) = -149.544214749</span>
@@ -454,7 +453,7 @@ You can impose symmetry:</p>
 symmetry information, symmetry adapted orbitals.  We can check the occupancy for
 each irreducible representations:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">symm</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">symm</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">myocc</span><span class="p">(</span><span class="n">mf</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="n">mol</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">mol</span>
 <span class="gp">... </span>    <span class="n">irrep_id</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">irrep_id</span>
@@ -496,9 +495,9 @@ function by assigning the number of alpha electrons and beta electrons
 <p>More informations of the calculation can be found in the output file <code class="docutils literal notranslate"><span class="pre">o2.log</span></code>.</p>
 </div>
 <div class="section" id="mp2-and-mo-integral-transformation">
-<h3>6.5.2. MP2 and MO integral transformation<a class="headerlink" href="#mp2-and-mo-integral-transformation" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.5.2. </span>MP2 and MO integral transformation<a class="headerlink" href="#mp2-and-mo-integral-transformation" title="Permalink to this headline">¶</a></h3>
 <p>Next, we compute the correlation energy with <code class="xref py py-mod docutils literal notranslate"><span class="pre">mp.mp2</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">mp</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">mp</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mp2</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">MP2</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;E(MP2) = </span><span class="si">%.9g</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">mp2</span><span class="o">.</span><span class="n">kernel</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
 <span class="go">E(MP2) = -0.379359288</span>
@@ -535,7 +534,7 @@ state, we can write a function to compute the correlation energy</p>
     <span class="k">return</span> <span class="n">emp2</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="s1">&#39;E(UMP2) = </span><span class="si">%.9g</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">myump2</span><span class="p">(</span><span class="n">uhf3</span><span class="p">))</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;E(UMP2) = </span><span class="si">%.9g</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">myump2</span><span class="p">(</span><span class="n">uhf3</span><span class="p">))</span>
 <span class="go">-0.346926068</span>
 </pre></div>
 </div>
@@ -545,7 +544,7 @@ integrals of different spin.  Here, the <a class="reference internal" href="modu
 2-electron MO integral transformation.  Using this module, you are able to do
 <em>arbitrary</em> integral transformation for <em>arbitrary</em> integrals. For example, the
 following code gives the <code class="docutils literal notranslate"><span class="pre">(ov|vv)</span></code> type integrals:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">ao2mo</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">ao2mo</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">h5py</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mocc</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">mo_coeff</span><span class="p">[:,</span><span class="n">m</span><span class="o">.</span><span class="n">mo_occ</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mvir</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">mo_coeff</span><span class="p">[:,</span><span class="n">m</span><span class="o">.</span><span class="n">mo_occ</span><span class="o">==</span><span class="mi">0</span><span class="p">]</span>
@@ -572,16 +571,16 @@ analytical gradients of 2-electron integrals</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nvir</span> <span class="o">=</span> <span class="n">cv</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">eri</span> <span class="o">=</span> <span class="n">ao2mo</span><span class="o">.</span><span class="n">general</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="p">(</span><span class="n">co</span><span class="p">,</span><span class="n">cv</span><span class="p">,</span><span class="n">co</span><span class="p">,</span><span class="n">cv</span><span class="p">),</span> <span class="n">intor</span><span class="o">=</span><span class="s1">&#39;int2e_ip1_sph&#39;</span><span class="p">,</span> <span class="n">comp</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">eri</span> <span class="o">=</span> <span class="n">eri</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">nocc</span><span class="p">,</span> <span class="n">nvir</span><span class="p">,</span> <span class="n">nocc</span><span class="p">,</span> <span class="n">nvir</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">eri</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">eri</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="go">(3, 8, 20, 8, 20)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="casci-and-casscf">
-<h3>6.5.3. CASCI and CASSCF<a class="headerlink" href="#casci-and-casscf" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.5.3. </span>CASCI and CASSCF<a class="headerlink" href="#casci-and-casscf" title="Permalink to this headline">¶</a></h3>
 <p>The two classes <code class="xref py py-class docutils literal notranslate"><span class="pre">mcscf.CASCI</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">mcscf.CASSCF</span></code> provided
 by <code class="xref py py-mod docutils literal notranslate"><span class="pre">mcscf</span></code> have the same initialization interface:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">mcscf</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">mcscf</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span> <span class="o">=</span> <span class="n">mcscf</span><span class="o">.</span><span class="n">CASCI</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;E(CASCI) = </span><span class="si">%.9g</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">mc</span><span class="o">.</span><span class="n">casci</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
 <span class="go">E(CASCI) = -149.601051</span>
@@ -627,12 +626,12 @@ ROHF ground state, we have:</p>
 </div>
 </div>
 <div class="section" id="restore-an-old-calculation">
-<h2>6.6. Restore an old calculation<a class="headerlink" href="#restore-an-old-calculation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.6. </span>Restore an old calculation<a class="headerlink" href="#restore-an-old-calculation" title="Permalink to this headline">¶</a></h2>
 <p>There is no <cite>restart</cite> mechanism available in PySCF package.  Calculations can be
 “restarted” by the proper initial guess.  For SCF, the initial guess can be
 prepared in many ways.  One is to read the <code class="docutils literal notranslate"><span class="pre">chkpoint</span></code> file
 which is generated in the previous or other calculations:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">scf</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">scf</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mf</span><span class="o">.</span><span class="n">chkfile</span> <span class="o">=</span> <span class="s1">&#39;/path/to/chkfile&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mf</span><span class="o">.</span><span class="n">init_guess</span> <span class="o">=</span> <span class="s1">&#39;chkfile&#39;</span>
@@ -649,7 +648,7 @@ initial guess.</p>
 <p>Initial guess can be fed to the calculation directly.  For example, we can read
 the initial guess form a chkfile and achieve the same effects as the on in the
 previous example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">scf</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">scf</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dm</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">hf</span><span class="o">.</span><span class="n">from_chk</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="s1">&#39;/path/to/chkfile&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mf</span><span class="o">.</span><span class="n">kernel</span><span class="p">(</span><span class="n">dm</span><span class="p">)</span>
@@ -671,8 +670,8 @@ both.  For example:</p>
 <span class="c1">#</span>
 
 <span class="kn">import</span> <span class="nn">tempfile</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">mcscf</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">lib</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">mcscf</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">lib</span>
 
 <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">Restart CASSCF from previous calculation.</span>
@@ -719,15 +718,15 @@ both.  For example:</p>
 </div>
 </div>
 <div class="section" id="access-ao-integrals">
-<h2>6.7. Access AO integrals<a class="headerlink" href="#access-ao-integrals" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.7. </span>Access AO integrals<a class="headerlink" href="#access-ao-integrals" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="molecular-integrals">
-<h3>6.7.1. molecular integrals<a class="headerlink" href="#molecular-integrals" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.7.1. </span>molecular integrals<a class="headerlink" href="#molecular-integrals" title="Permalink to this headline">¶</a></h3>
 <p>PySCF uses <a class="reference external" href="https://github.com/sunqm/libcint">Libcint</a> library as the AO
 integral engine.  It provides simple interface function <code class="xref py py-func docutils literal notranslate"><span class="pre">getints_by_shell()</span></code>
 to evaluate integrals.  The following example evaluates 3-center 2-electron
 integrals with this function:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">df</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">df</span>
 <span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;O 0 0 0; h 0 -0.757 0.587; h 0 0.757 0.587&#39;</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;cc-pvdz&#39;</span><span class="p">)</span>
 <span class="n">auxmol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;O 0 0 0; h 0 -0.757 0.587; h 0 0.757 0.587&#39;</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;weigend&#39;</span><span class="p">)</span>
 <span class="n">pmol</span> <span class="o">=</span> <span class="n">mol</span> <span class="o">+</span> <span class="n">auxmol</span>
@@ -784,7 +783,7 @@ the density fitting Hartree-Fock code.</p>
 <span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
 <span class="n">mf</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">mf</span><span class="o">.</span><span class="n">get_veff</span> <span class="o">=</span> <span class="n">get_vhf</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;E(DF-HF) = </span><span class="si">%.12f</span><span class="s1">, ref = </span><span class="si">%.12f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">mf</span><span class="o">.</span><span class="n">kernel</span><span class="p">(),</span> <span class="n">scf</span><span class="o">.</span><span class="n">density_fit</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span><span class="o">.</span><span class="n">kernel</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;E(DF-HF) = </span><span class="si">%.12f</span><span class="s1">, ref = </span><span class="si">%.12f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">mf</span><span class="o">.</span><span class="n">kernel</span><span class="p">(),</span> <span class="n">scf</span><span class="o">.</span><span class="n">density_fit</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span><span class="o">.</span><span class="n">kernel</span><span class="p">()))</span>
 </pre></div>
 </div>
 <p>Your screen should output</p>
@@ -811,12 +810,12 @@ two-electron integrals:</p>
 <p>There is a long list of supported AO integrals.  See <a class="reference internal" href="modules/gto.html#gto-moleintor"><span class="std std-ref">moleintor</span></a>.</p>
 </div>
 <div class="section" id="pbc-ao-integrals">
-<h3>6.7.2. PBC AO integrals<a class="headerlink" href="#pbc-ao-integrals" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.7.2. </span>PBC AO integrals<a class="headerlink" href="#pbc-ao-integrals" title="Permalink to this headline">¶</a></h3>
 <p><code class="xref py py-func docutils literal notranslate"><span class="pre">mol.intor()</span></code> can only be used to evaluate the integrals with open boundary
 conditions.  When the periodic boundary conditions of crystal systems are
 studied, you need to use <code class="xref py py-func docutils literal notranslate"><span class="pre">pbc.Cell.pbc_intor()</span></code> function to evaluate the
 integrals of short-range operators, such as the overlap, kinetic matrix:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="k">import</span> <span class="n">gto</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="kn">import</span> <span class="n">gto</span>
 <span class="n">cell</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">Cell</span><span class="p">()</span>
 <span class="n">cell</span><span class="o">.</span><span class="n">atom</span> <span class="o">=</span> <span class="s1">&#39;H 0 0 0; H 1 1 1&#39;</span>
 <span class="n">cell</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="mf">2.</span>
@@ -839,7 +838,7 @@ long-range operator such as nuclear attraction integrals, Coulomb integrals.</p>
 </div>
 <p>The two-electron Coulomb integrals can be evaluated with PBC density fitting
 methods:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="k">import</span> <span class="n">df</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="kn">import</span> <span class="n">df</span>
 <span class="n">eri</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">DF</span><span class="p">(</span><span class="n">cell</span><span class="p">)</span><span class="o">.</span><span class="n">get_eri</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -847,16 +846,16 @@ methods:</p>
 </div>
 </div>
 <div class="section" id="other-features">
-<h2>6.8. Other features<a class="headerlink" href="#other-features" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.8. </span>Other features<a class="headerlink" href="#other-features" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="density-fitting">
-<h3>6.8.1. Density fitting<a class="headerlink" href="#density-fitting" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.8.1. </span>Density fitting<a class="headerlink" href="#density-fitting" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 <span class="c1">#</span>
 <span class="c1"># Author: Qiming Sun &lt;osirpt.sun@gmail.com&gt;</span>
 <span class="c1">#</span>
 
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">scf</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">scf</span>
 
 <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">Density fitting method by decorating the scf object with scf.density_fit function.</span>
@@ -917,14 +916,14 @@ methods:</p>
 </div>
 </div>
 <div class="section" id="customizing-hamiltonian">
-<h3>6.8.2. Customizing Hamiltonian<a class="headerlink" href="#customizing-hamiltonian" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.8.2. </span>Customizing Hamiltonian<a class="headerlink" href="#customizing-hamiltonian" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 <span class="c1">#</span>
 <span class="c1"># Author: Qiming Sun &lt;osirpt.sun@gmail.com&gt;</span>
 <span class="c1">#</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">ao2mo</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">ao2mo</span>
 
 <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">Customizing Hamiltonian for SCF module.</span>
@@ -974,13 +973,13 @@ methods:</p>
 </div>
 </div>
 <div class="section" id="symmetry-in-casscf">
-<h3>6.8.3. Symmetry in CASSCF<a class="headerlink" href="#symmetry-in-casscf" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.8.3. </span>Symmetry in CASSCF<a class="headerlink" href="#symmetry-in-casscf" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 <span class="c1">#</span>
 <span class="c1"># Author: Qiming Sun &lt;osirpt.sun@gmail.com&gt;</span>
 <span class="c1">#</span>
 
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">mcscf</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">mcscf</span>
 
 <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">Symmetry is not immutable</span>

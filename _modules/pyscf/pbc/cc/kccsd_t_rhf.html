@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -172,13 +171,13 @@
 <span class="kn">import</span> <span class="nn">pyscf.pbc.cc.kccsd_rhf</span>
 <span class="kn">import</span> <span class="nn">time</span>
 
-<span class="kn">from</span> <span class="nn">itertools</span> <span class="k">import</span> <span class="n">product</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">lib</span>
-<span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="k">import</span> <span class="n">_ccsd</span>
-<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="k">import</span> <span class="n">logger</span>
-<span class="kn">from</span> <span class="nn">pyscf.lib.parameters</span> <span class="k">import</span> <span class="n">LARGE_DENOM</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.lib</span> <span class="k">import</span> <span class="n">kpts_helper</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.mp.kmp2</span> <span class="k">import</span> <span class="p">(</span><span class="n">get_frozen_mask</span><span class="p">,</span> <span class="n">get_nocc</span><span class="p">,</span> <span class="n">get_nmo</span><span class="p">,</span>
+<span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">product</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">lib</span>
+<span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="kn">import</span> <span class="n">_ccsd</span>
+<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="kn">import</span> <span class="n">logger</span>
+<span class="kn">from</span> <span class="nn">pyscf.lib.parameters</span> <span class="kn">import</span> <span class="n">LARGE_DENOM</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.lib</span> <span class="kn">import</span> <span class="n">kpts_helper</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.mp.kmp2</span> <span class="kn">import</span> <span class="p">(</span><span class="n">get_frozen_mask</span><span class="p">,</span> <span class="n">get_nocc</span><span class="p">,</span> <span class="n">get_nmo</span><span class="p">,</span>
                                <span class="n">padded_mo_coeff</span><span class="p">,</span> <span class="n">padding_k_idx</span><span class="p">)</span>  <span class="c1"># noqa</span>
 
 <span class="c1">#einsum = np.einsum</span>
@@ -748,9 +747,9 @@
     <span class="k">return</span> <span class="n">epqr</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="k">import</span> <span class="n">gto</span>
-    <span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="k">import</span> <span class="n">scf</span>
-    <span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="k">import</span> <span class="n">cc</span>
+    <span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="kn">import</span> <span class="n">gto</span>
+    <span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="kn">import</span> <span class="n">scf</span>
+    <span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="kn">import</span> <span class="n">cc</span>
 
     <span class="n">cell</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">Cell</span><span class="p">()</span>
     <span class="n">cell</span><span class="o">.</span><span class="n">atom</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;</span>
@@ -783,7 +782,7 @@
     <span class="n">energy_t</span> <span class="o">=</span> <span class="n">kernel</span><span class="p">(</span><span class="n">mycc</span><span class="p">,</span> <span class="n">eris</span><span class="o">=</span><span class="n">eris</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">9</span><span class="p">)</span>
 
     <span class="c1"># Start of supercell calculations</span>
-    <span class="kn">from</span> <span class="nn">pyscf.pbc.tools.pbc</span> <span class="k">import</span> <span class="n">super_cell</span>
+    <span class="kn">from</span> <span class="nn">pyscf.pbc.tools.pbc</span> <span class="kn">import</span> <span class="n">super_cell</span>
     <span class="n">supcell</span> <span class="o">=</span> <span class="n">super_cell</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="n">nmp</span><span class="p">)</span>
     <span class="n">supcell</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
     <span class="n">kmf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">supcell</span><span class="p">,</span> <span class="n">exxdiv</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>

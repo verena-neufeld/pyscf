@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -182,11 +181,11 @@
 <span class="sd">Generate symmetry adapted basis</span>
 <span class="sd">&#39;&#39;&#39;</span>
 
-<span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">reduce</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
 <span class="kn">import</span> <span class="nn">numpy</span>
-<span class="kn">from</span> <span class="nn">pyscf.data.elements</span> <span class="k">import</span> <span class="n">_symbol</span><span class="p">,</span> <span class="n">_rm_digit</span>
-<span class="kn">from</span> <span class="nn">pyscf.symm</span> <span class="k">import</span> <span class="n">geom</span>
-<span class="kn">from</span> <span class="nn">pyscf.symm</span> <span class="k">import</span> <span class="n">param</span>
+<span class="kn">from</span> <span class="nn">pyscf.data.elements</span> <span class="kn">import</span> <span class="n">_symbol</span><span class="p">,</span> <span class="n">_rm_digit</span>
+<span class="kn">from</span> <span class="nn">pyscf.symm</span> <span class="kn">import</span> <span class="n">geom</span>
+<span class="kn">from</span> <span class="nn">pyscf.symm</span> <span class="kn">import</span> <span class="n">param</span>
 
 <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;tot_parity_odd&#39;</span><span class="p">,</span>
            <span class="s1">&#39;symm_adapted_basis&#39;</span><span class="p">,</span>
@@ -307,8 +306,8 @@
 
 <span class="k">def</span> <span class="nf">_ao_rotation_matrices</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">axes</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Cache the rotation matrices&#39;&#39;&#39;</span>
-    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">lib</span>
-    <span class="kn">from</span> <span class="nn">pyscf.symm.Dmatrix</span> <span class="k">import</span> <span class="n">Dmatrix</span><span class="p">,</span> <span class="n">get_euler_angles</span>
+    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">lib</span>
+    <span class="kn">from</span> <span class="nn">pyscf.symm.Dmatrix</span> <span class="kn">import</span> <span class="n">Dmatrix</span><span class="p">,</span> <span class="n">get_euler_angles</span>
     <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">gamma</span> <span class="o">=</span> <span class="n">get_euler_angles</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">axes</span><span class="p">)</span>
     <span class="n">ANG_OF</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">l_max</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">_bas</span><span class="p">[:,</span><span class="n">ANG_OF</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
@@ -684,7 +683,7 @@
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span>
+    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span>
     <span class="n">h2o</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">()</span>
     <span class="n">h2o</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">h2o</span><span class="o">.</span><span class="n">output</span> <span class="o">=</span> <span class="kc">None</span>

@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -186,27 +185,27 @@
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">scipy.linalg</span>
 <span class="k">try</span><span class="p">:</span>
-  <span class="kn">from</span> <span class="nn">scipy.special</span> <span class="k">import</span> <span class="n">factorial2</span>
+  <span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">factorial2</span>
 <span class="k">except</span><span class="p">:</span>
-  <span class="kn">from</span> <span class="nn">scipy.misc</span> <span class="k">import</span> <span class="n">factorial2</span>
-<span class="kn">from</span> <span class="nn">scipy.special</span> <span class="k">import</span> <span class="n">erf</span><span class="p">,</span> <span class="n">erfc</span>
+  <span class="kn">from</span> <span class="nn">scipy.misc</span> <span class="kn">import</span> <span class="n">factorial2</span>
+<span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">erf</span><span class="p">,</span> <span class="n">erfc</span>
 <span class="kn">import</span> <span class="nn">scipy.optimize</span>
 <span class="kn">import</span> <span class="nn">pyscf.lib.parameters</span> <span class="k">as</span> <span class="nn">param</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">lib</span>
-<span class="kn">from</span> <span class="nn">pyscf.dft</span> <span class="k">import</span> <span class="n">radi</span>
-<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="k">import</span> <span class="n">logger</span>
-<span class="kn">from</span> <span class="nn">pyscf.gto</span> <span class="k">import</span> <span class="n">mole</span>
-<span class="kn">from</span> <span class="nn">pyscf.gto</span> <span class="k">import</span> <span class="n">moleintor</span>
-<span class="kn">from</span> <span class="nn">pyscf.gto.mole</span> <span class="k">import</span> <span class="p">(</span><span class="n">_symbol</span><span class="p">,</span> <span class="n">_rm_digit</span><span class="p">,</span> <span class="n">_atom_symbol</span><span class="p">,</span> <span class="n">_std_symbol</span><span class="p">,</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">lib</span>
+<span class="kn">from</span> <span class="nn">pyscf.dft</span> <span class="kn">import</span> <span class="n">radi</span>
+<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="kn">import</span> <span class="n">logger</span>
+<span class="kn">from</span> <span class="nn">pyscf.gto</span> <span class="kn">import</span> <span class="n">mole</span>
+<span class="kn">from</span> <span class="nn">pyscf.gto</span> <span class="kn">import</span> <span class="n">moleintor</span>
+<span class="kn">from</span> <span class="nn">pyscf.gto.mole</span> <span class="kn">import</span> <span class="p">(</span><span class="n">_symbol</span><span class="p">,</span> <span class="n">_rm_digit</span><span class="p">,</span> <span class="n">_atom_symbol</span><span class="p">,</span> <span class="n">_std_symbol</span><span class="p">,</span>
                             <span class="n">_std_symbol_without_ghost</span><span class="p">,</span> <span class="n">charge</span><span class="p">,</span> <span class="n">is_ghost_atom</span><span class="p">)</span> <span class="c1"># noqa</span>
-<span class="kn">from</span> <span class="nn">pyscf.gto.mole</span> <span class="k">import</span> <span class="n">conc_env</span><span class="p">,</span> <span class="n">uncontract</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.gto</span> <span class="k">import</span> <span class="n">basis</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.gto</span> <span class="k">import</span> <span class="n">pseudo</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.gto</span> <span class="k">import</span> <span class="n">_pbcintor</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.gto.eval_gto</span> <span class="k">import</span> <span class="n">eval_gto</span> <span class="k">as</span> <span class="n">pbc_eval_gto</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.tools</span> <span class="k">import</span> <span class="n">pbc</span> <span class="k">as</span> <span class="n">pbctools</span>
-<span class="kn">from</span> <span class="nn">pyscf.gto.basis</span> <span class="k">import</span> <span class="n">ALIAS</span> <span class="k">as</span> <span class="n">MOLE_ALIAS</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">__config__</span>
+<span class="kn">from</span> <span class="nn">pyscf.gto.mole</span> <span class="kn">import</span> <span class="n">conc_env</span><span class="p">,</span> <span class="n">uncontract</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.gto</span> <span class="kn">import</span> <span class="n">basis</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.gto</span> <span class="kn">import</span> <span class="n">pseudo</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.gto</span> <span class="kn">import</span> <span class="n">_pbcintor</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.gto.eval_gto</span> <span class="kn">import</span> <span class="n">eval_gto</span> <span class="k">as</span> <span class="n">pbc_eval_gto</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.tools</span> <span class="kn">import</span> <span class="n">pbc</span> <span class="k">as</span> <span class="n">pbctools</span>
+<span class="kn">from</span> <span class="nn">pyscf.gto.basis</span> <span class="kn">import</span> <span class="n">ALIAS</span> <span class="k">as</span> <span class="n">MOLE_ALIAS</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">__config__</span>
 
 <span class="n">INTEGRAL_PRECISION</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">__config__</span><span class="p">,</span> <span class="s1">&#39;pbc_gto_cell_Cell_precision&#39;</span><span class="p">,</span> <span class="mf">1e-8</span><span class="p">)</span>
 <span class="n">WRAP_AROUND</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">__config__</span><span class="p">,</span> <span class="s1">&#39;pbc_gto_cell_make_kpts_wrap_around&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
@@ -409,7 +408,7 @@
 <span class="k">def</span> <span class="nf">loads</span><span class="p">(</span><span class="n">cellstr</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Deserialize a str containing a JSON document to a Cell object.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="kn">from</span> <span class="nn">numpy</span> <span class="k">import</span> <span class="n">array</span>  <span class="c1"># noqa</span>
+    <span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">array</span>  <span class="c1"># noqa</span>
     <span class="n">celldic</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">cellstr</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">3</span><span class="p">,):</span>
 <span class="c1"># Convert to utf8 because JSON loads fucntion returns unicode.</span>
@@ -1233,7 +1232,7 @@
     <span class="n">precision</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">__config__</span><span class="p">,</span> <span class="s1">&#39;pbc_gto_cell_Cell_precision&#39;</span><span class="p">,</span> <span class="mf">1e-8</span><span class="p">)</span>
     <span class="n">exp_to_discard</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">__config__</span><span class="p">,</span> <span class="s1">&#39;pbc_gto_cell_Cell_exp_to_discard&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="n">mole</span><span class="o">.</span><span class="n">Mole</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># lattice vectors, (a1,a2,a3)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ke_cutoff</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># if set, defines a spherical cutoff</span>
@@ -1305,7 +1304,7 @@
                               <span class="s1">&#39;in unit cell</span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">ne</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">spin</span><span class="p">))</span>
             <span class="k">return</span> <span class="n">nalpha</span><span class="p">,</span> <span class="n">nbeta</span>
 
-    <span class="k">def</span> <span class="nf">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;To support accessing methods (cell.HF, cell.KKS, cell.KUCCSD, ...)</span>
 <span class="sd">        from Cell object.</span>
 <span class="sd">        &#39;&#39;&#39;</span>
@@ -1319,9 +1318,9 @@
 
         <span class="c1"># Import all available modules. Some methods are registered to other</span>
         <span class="c1"># classes/modules when importing modules in __all__.</span>
-        <span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="k">import</span> <span class="n">__all__</span>  <span class="c1"># noqa</span>
-        <span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="k">import</span> <span class="n">scf</span><span class="p">,</span> <span class="n">dft</span>
-        <span class="kn">from</span> <span class="nn">pyscf.dft</span> <span class="k">import</span> <span class="n">XC</span>
+        <span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="kn">import</span> <span class="n">__all__</span>  <span class="c1"># noqa</span>
+        <span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="kn">import</span> <span class="n">scf</span><span class="p">,</span> <span class="n">dft</span>
+        <span class="kn">from</span> <span class="nn">pyscf.dft</span> <span class="kn">import</span> <span class="n">XC</span>
         <span class="k">for</span> <span class="n">mod</span> <span class="ow">in</span> <span class="p">(</span><span class="n">scf</span><span class="p">,</span> <span class="n">dft</span><span class="p">):</span>
             <span class="n">method</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">mod</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">callable</span><span class="p">(</span><span class="n">method</span><span class="p">):</span>
@@ -1844,7 +1843,7 @@
 <span class="sd">        &gt;&gt;&gt; from ase.lattice import bulk</span>
 <span class="sd">        &gt;&gt;&gt; cell.from_ase(bulk(&#39;C&#39;, &#39;diamond&#39;, a=LATTICE_CONST))</span>
 <span class="sd">        &#39;&#39;&#39;</span>
-        <span class="kn">from</span> <span class="nn">pyscf.pbc.tools</span> <span class="k">import</span> <span class="n">pyscf_ase</span>
+        <span class="kn">from</span> <span class="nn">pyscf.pbc.tools</span> <span class="kn">import</span> <span class="n">pyscf_ase</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">ase_atom</span><span class="o">.</span><span class="n">cell</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">atom</span> <span class="o">=</span> <span class="n">pyscf_ase</span><span class="o">.</span><span class="n">ase_atoms_to_pyscf</span><span class="p">(</span><span class="n">ase_atom</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span></div>

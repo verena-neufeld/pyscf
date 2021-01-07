@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -164,13 +163,13 @@
     
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../../../interface.html">9. Interfaces</a> &raquo;</li>
+          <li><a href="../../../interface.html"><span class="section-number">9. </span>Interfaces</a> &raquo;</li>
         
-          <li><a href="../../nao.html">9.8. <code class="xref py py-mod docutils literal notranslate"><span class="pre">nao</span></code> — Numerical Atomic Orbitals</a> &raquo;</li>
+          <li><a href="../../nao.html"><span class="section-number">9.8. </span><code class="xref py py-mod docutils literal notranslate"><span class="pre">nao</span></code> — Numerical Atomic Orbitals</a> &raquo;</li>
         
-          <li><a href="../examples.html">9.8.4. nao.examples — NAO Examples</a> &raquo;</li>
+          <li><a href="../examples.html"><span class="section-number">9.8.4. </span>nao.examples — NAO Examples</a> &raquo;</li>
         
-      <li>9.8.4.2.1. nao.examples.qmd_C60 — NAO Examples: QMD C60</li>
+      <li><span class="section-number">9.8.4.2.1. </span>nao.examples.qmd_C60 — NAO Examples: QMD C60</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -190,7 +189,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="nao-examples-qmd-c60-nao-examples-qmd-c60">
-<span id="nao-examples-qmd-c60"></span><h1>9.8.4.2.1. nao.examples.qmd_C60 — NAO Examples: QMD C60<a class="headerlink" href="#nao-examples-qmd-c60-nao-examples-qmd-c60" title="Permalink to this headline">¶</a></h1>
+<span id="nao-examples-qmd-c60"></span><h1><span class="section-number">9.8.4.2.1. </span>nao.examples.qmd_C60 — NAO Examples: QMD C60<a class="headerlink" href="#nao-examples-qmd-c60-nao-examples-qmd-c60" title="Permalink to this headline">¶</a></h1>
 <p>A demonstration of the Nao module used to calculate the polarizability
 of C60 at rooms temperature using Quantum Molecular Dynamic (QMD).
 The relaxation and the ground state calculations are done using the Siesta
@@ -284,13 +283,13 @@ generate the fdf geometries file for siesta:</p>
 </div>
 <p><a class="reference external" href="xyz2fdf.py">xyz2fdf.py</a> is a small python script that will generate the geometries for 200 calculations
 from the 5000 previous geometries because 5000 is a bit too much. The script look like,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">division</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">ase.io</span> <span class="k">as</span> <span class="nn">io</span>
 <span class="kn">import</span> <span class="nn">subprocess</span>
 
 <span class="k">def</span> <span class="nf">write_geofdf</span><span class="p">(</span><span class="n">atoms</span><span class="p">,</span> <span class="n">fname</span><span class="o">=</span><span class="s2">&quot;geo.fdf&quot;</span><span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">ase.data</span> <span class="k">import</span> <span class="n">chemical_symbols</span>
+    <span class="kn">from</span> <span class="nn">ase.data</span> <span class="kn">import</span> <span class="n">chemical_symbols</span>
 
     <span class="n">f</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;NumberOfAtoms   </span><span class="si">{0}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">atoms</span><span class="p">)))</span>
@@ -401,7 +400,7 @@ the Torque managing system. We will use two python script to perform the calcula
 script <em>calc_polarizability.py</em>. This second script will perform the siesta and nao calculations
 for each configurations.</p>
 <p>submit_jobs.py:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">division</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">subprocess</span>
 
@@ -492,14 +491,14 @@ for each configurations.</p>
 </div>
 <p>calc_polarizability.py</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/Path/To/Python/binary</span>
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">print_function</span><span class="p">,</span> <span class="n">division</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span><span class="p">,</span> <span class="n">division</span>
 <span class="kn">import</span> <span class="nn">os</span><span class="o">,</span><span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">pyscf.nao</span> <span class="k">import</span> <span class="n">tddft_iter</span>
+<span class="kn">from</span> <span class="nn">pyscf.nao</span> <span class="kn">import</span> <span class="n">tddft_iter</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">argparse</span>
-<span class="kn">from</span> <span class="nn">ase.units</span> <span class="k">import</span> <span class="n">Ry</span><span class="p">,</span> <span class="n">eV</span><span class="p">,</span> <span class="n">Ha</span>
+<span class="kn">from</span> <span class="nn">ase.units</span> <span class="kn">import</span> <span class="n">Ry</span><span class="p">,</span> <span class="n">eV</span><span class="p">,</span> <span class="n">Ha</span>
 <span class="kn">import</span> <span class="nn">subprocess</span>
-<span class="kn">from</span> <span class="nn">timeit</span> <span class="k">import</span> <span class="n">default_timer</span> <span class="k">as</span> <span class="n">timer</span>
+<span class="kn">from</span> <span class="nn">timeit</span> <span class="kn">import</span> <span class="n">default_timer</span> <span class="k">as</span> <span class="n">timer</span>
 
 <span class="k">def</span> <span class="nf">run_tddft_iter</span><span class="p">():</span>
   <span class="n">t1</span> <span class="o">=</span> <span class="n">timer</span><span class="p">()</span>

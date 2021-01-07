@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -148,7 +147,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>4. Code standard</li>
+      <li><span class="section-number">4. </span>Code standard</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -168,7 +167,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="code-standard">
-<span id="code-stand"></span><h1>4. Code standard<a class="headerlink" href="#code-standard" title="Permalink to this headline">¶</a></h1>
+<span id="code-stand"></span><h1><span class="section-number">4. </span>Code standard<a class="headerlink" href="#code-standard" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><p>Code at least should work under python-2.7, gcc-4.8.</p></li>
 <li><p>90/10 functional/OOP, unless performance critical, functions are pure.</p></li>
@@ -196,7 +195,7 @@ have minimal effects on the other modules.</p></li>
 - Using ctypes to bridge C/python functions</p></li>
 </ul>
 <div class="section" id="name-convention">
-<h2>4.1. Name convention<a class="headerlink" href="#name-convention" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.1. </span>Name convention<a class="headerlink" href="#name-convention" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>The prefix or suffix underscore in the function names have special meanings</p>
 <ul>
@@ -212,7 +211,7 @@ members), or module definitions (global variables or functions) etc.</p></li>
 </ul>
 </div>
 <div class="section" id="api-convention">
-<h2>4.2. API convention<a class="headerlink" href="#api-convention" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">4.2. </span>API convention<a class="headerlink" href="#api-convention" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">gto.Mole</span></code> holds all global parameters, like the log level, the
 max memory usage etc.  They are used as the default value for all
@@ -226,7 +225,7 @@ local instance for that method class.  In the following example,
 <code class="docutils literal notranslate"><span class="pre">mf.verbose</span></code> mutes the noises produced by <code class="xref py py-class docutils literal notranslate"><span class="pre">RHF</span></code>
 method, and the output of <code class="xref py py-class docutils literal notranslate"><span class="pre">MP2</span></code> is written in the log file
 <code class="docutils literal notranslate"><span class="pre">example.log</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">mp</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">mp</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;H 0 0 0; H 0 0 1&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mf</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="mi">0</span>

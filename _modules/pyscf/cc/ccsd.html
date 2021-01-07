@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -188,16 +187,16 @@
 
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">ctypes</span>
-<span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">reduce</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
 <span class="kn">import</span> <span class="nn">numpy</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">lib</span>
-<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="k">import</span> <span class="n">logger</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">ao2mo</span>
-<span class="kn">from</span> <span class="nn">pyscf.ao2mo</span> <span class="k">import</span> <span class="n">_ao2mo</span>
-<span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="k">import</span> <span class="n">_ccsd</span>
-<span class="kn">from</span> <span class="nn">pyscf.mp.mp2</span> <span class="k">import</span> <span class="n">get_nocc</span><span class="p">,</span> <span class="n">get_nmo</span><span class="p">,</span> <span class="n">get_frozen_mask</span><span class="p">,</span> <span class="n">_mo_without_core</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">__config__</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">lib</span>
+<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="kn">import</span> <span class="n">logger</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">ao2mo</span>
+<span class="kn">from</span> <span class="nn">pyscf.ao2mo</span> <span class="kn">import</span> <span class="n">_ao2mo</span>
+<span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="kn">import</span> <span class="n">_ccsd</span>
+<span class="kn">from</span> <span class="nn">pyscf.mp.mp2</span> <span class="kn">import</span> <span class="n">get_nocc</span><span class="p">,</span> <span class="n">get_nmo</span><span class="p">,</span> <span class="n">get_frozen_mask</span><span class="p">,</span> <span class="n">_mo_without_core</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">__config__</span>
 
 <span class="n">BLKMIN</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">__config__</span><span class="p">,</span> <span class="s1">&#39;cc_ccsd_blkmin&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="n">MEMORYMIN</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">__config__</span><span class="p">,</span> <span class="s1">&#39;cc_ccsd_memorymin&#39;</span><span class="p">,</span> <span class="mi">2000</span><span class="p">)</span>
@@ -724,16 +723,29 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="n">nvir_pair</span> <span class="o">=</span> <span class="n">nvirb</span> <span class="o">*</span> <span class="p">(</span><span class="n">nvirb</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
         <span class="n">unit</span> <span class="o">=</span> <span class="n">nvira</span><span class="o">*</span><span class="n">nvir_pair</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="n">nvirb</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">nvira</span><span class="o">/</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">1</span>
+
+        <span class="k">if</span> <span class="n">mycc</span><span class="o">.</span><span class="n">async_io</span><span class="p">:</span>
+            <span class="n">fmap</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">map_with_prefetch</span>
+            <span class="n">unit</span> <span class="o">+=</span> <span class="n">nvira</span><span class="o">*</span><span class="n">nvir_pair</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">fmap</span> <span class="o">=</span> <span class="nb">map</span>
+
         <span class="n">blksize</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">BLKMIN</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">max_memory</span><span class="o">*.</span><span class="mf">95e6</span><span class="o">/</span><span class="mi">8</span><span class="o">/</span><span class="n">unit</span><span class="p">))</span>
         <span class="n">blksize</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">min</span><span class="p">((</span><span class="n">nvira</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span> <span class="n">blksize</span><span class="p">))</span>
 
-        <span class="n">tril2sq</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">square_mat_in_trilu_indices</span><span class="p">(</span><span class="n">nvira</span><span class="p">)</span>
-        <span class="n">loadbuf</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">blksize</span><span class="p">,</span><span class="n">blksize</span><span class="p">,</span><span class="n">nvirb</span><span class="p">,</span><span class="n">nvirb</span><span class="p">))</span>
-        <span class="k">def</span> <span class="nf">block_contract</span><span class="p">(</span><span class="n">i0</span><span class="p">,</span> <span class="n">i1</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="n">v_slice</span><span class="p">):</span>
+            <span class="n">i0</span><span class="p">,</span> <span class="n">i1</span> <span class="o">=</span> <span class="n">v_slice</span>
             <span class="n">off0</span> <span class="o">=</span> <span class="n">i0</span><span class="o">*</span><span class="p">(</span><span class="n">i0</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
             <span class="n">off1</span> <span class="o">=</span> <span class="n">i1</span><span class="o">*</span><span class="p">(</span><span class="n">i1</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
-            <span class="c1"># TODO: prefetch vvvv</span>
-            <span class="n">wwbuf</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">vvvv</span><span class="p">[</span><span class="n">off0</span><span class="p">:</span><span class="n">off1</span><span class="p">],</span> <span class="n">order</span><span class="o">=</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">vvvv</span><span class="p">[</span><span class="n">off0</span><span class="p">:</span><span class="n">off1</span><span class="p">],</span> <span class="n">order</span><span class="o">=</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
+
+        <span class="n">tril2sq</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">square_mat_in_trilu_indices</span><span class="p">(</span><span class="n">nvira</span><span class="p">)</span>
+        <span class="n">loadbuf</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">blksize</span><span class="p">,</span><span class="n">blksize</span><span class="p">,</span><span class="n">nvirb</span><span class="p">,</span><span class="n">nvirb</span><span class="p">))</span>
+
+        <span class="n">slices</span> <span class="o">=</span> <span class="p">[(</span><span class="n">i0</span><span class="p">,</span> <span class="n">i1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i0</span><span class="p">,</span> <span class="n">i1</span> <span class="ow">in</span> <span class="n">lib</span><span class="o">.</span><span class="n">prange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">nvira</span><span class="p">,</span> <span class="n">blksize</span><span class="p">)]</span>
+        <span class="k">for</span> <span class="n">istep</span><span class="p">,</span> <span class="n">wwbuf</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">fmap</span><span class="p">(</span><span class="n">load</span><span class="p">,</span> <span class="n">lib</span><span class="o">.</span><span class="n">prange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">nvira</span><span class="p">,</span> <span class="n">blksize</span><span class="p">))):</span>
+            <span class="n">i0</span><span class="p">,</span> <span class="n">i1</span> <span class="o">=</span> <span class="n">slices</span><span class="p">[</span><span class="n">istep</span><span class="p">]</span>
+            <span class="n">off0</span> <span class="o">=</span> <span class="n">i0</span><span class="o">*</span><span class="p">(</span><span class="n">i0</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span>
             <span class="k">for</span> <span class="n">j0</span><span class="p">,</span> <span class="n">j1</span> <span class="ow">in</span> <span class="n">lib</span><span class="o">.</span><span class="n">prange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">i1</span><span class="p">,</span> <span class="n">blksize</span><span class="p">):</span>
                 <span class="n">eri</span> <span class="o">=</span> <span class="n">wwbuf</span><span class="p">[</span><span class="n">tril2sq</span><span class="p">[</span><span class="n">i0</span><span class="p">:</span><span class="n">i1</span><span class="p">,</span><span class="n">j0</span><span class="p">:</span><span class="n">j1</span><span class="p">]</span><span class="o">-</span><span class="n">off0</span><span class="p">]</span>
                 <span class="n">tmp</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="p">((</span><span class="n">i1</span><span class="o">-</span><span class="n">i0</span><span class="p">,</span><span class="n">nvirb</span><span class="p">,</span><span class="n">j1</span><span class="o">-</span><span class="n">j0</span><span class="p">,</span><span class="n">nvirb</span><span class="p">),</span> <span class="n">buffer</span><span class="o">=</span><span class="n">loadbuf</span><span class="p">)</span>
@@ -742,11 +754,8 @@
                                        <span class="p">(</span><span class="n">ctypes</span><span class="o">.</span><span class="n">c_int</span><span class="o">*</span><span class="mi">4</span><span class="p">)(</span><span class="n">i0</span><span class="p">,</span> <span class="n">i1</span><span class="p">,</span> <span class="n">j0</span><span class="p">,</span> <span class="n">j1</span><span class="p">),</span>
                                        <span class="n">ctypes</span><span class="o">.</span><span class="n">c_int</span><span class="p">(</span><span class="n">nvirb</span><span class="p">))</span>
                 <span class="n">contract_blk_</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">i0</span><span class="p">,</span> <span class="n">i1</span><span class="p">,</span> <span class="n">j0</span><span class="p">,</span> <span class="n">j1</span><span class="p">)</span>
-
-        <span class="k">with</span> <span class="n">lib</span><span class="o">.</span><span class="n">call_in_background</span><span class="p">(</span><span class="n">block_contract</span><span class="p">,</span> <span class="n">sync</span><span class="o">=</span><span class="ow">not</span> <span class="n">mycc</span><span class="o">.</span><span class="n">async_io</span><span class="p">)</span> <span class="k">as</span> <span class="n">bcontract</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">p0</span><span class="p">,</span> <span class="n">p1</span> <span class="ow">in</span> <span class="n">lib</span><span class="o">.</span><span class="n">prange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">nvira</span><span class="p">,</span> <span class="n">blksize</span><span class="p">):</span>
-                <span class="n">bcontract</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span> <span class="n">p1</span><span class="p">)</span>
-                <span class="n">time0</span> <span class="o">=</span> <span class="n">log</span><span class="o">.</span><span class="n">timer_debug1</span><span class="p">(</span><span class="s1">&#39;vvvv [</span><span class="si">%d</span><span class="s1">:</span><span class="si">%d</span><span class="s1">]&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">p0</span><span class="p">,</span><span class="n">p1</span><span class="p">),</span> <span class="o">*</span><span class="n">time0</span><span class="p">)</span>
+            <span class="n">wwbuf</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">time0</span> <span class="o">=</span> <span class="n">log</span><span class="o">.</span><span class="n">timer_debug1</span><span class="p">(</span><span class="s1">&#39;vvvv [</span><span class="si">%d</span><span class="s1">:</span><span class="si">%d</span><span class="s1">]&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">i0</span><span class="p">,</span><span class="n">i1</span><span class="p">),</span> <span class="o">*</span><span class="n">time0</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">Ht2</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">t2</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">_contract_s1vvvv_t2</span><span class="p">(</span><span class="n">mycc</span><span class="p">,</span> <span class="n">mol</span><span class="p">,</span> <span class="n">vvvv</span><span class="p">,</span> <span class="n">t2</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -943,10 +952,10 @@
     <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">cc</span><span class="p">,</span> <span class="s1">&#39;Set </span><span class="si">%s</span><span class="s1"> as a scanner&#39;</span><span class="p">,</span> <span class="n">cc</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
 
     <span class="k">class</span> <span class="nc">CCSD_Scanner</span><span class="p">(</span><span class="n">cc</span><span class="o">.</span><span class="vm">__class__</span><span class="p">,</span> <span class="n">lib</span><span class="o">.</span><span class="n">SinglePointScanner</span><span class="p">):</span>
-        <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cc</span><span class="p">):</span>
+        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cc</span><span class="p">):</span>
             <span class="bp">self</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">cc</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_scf</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">_scf</span><span class="o">.</span><span class="n">as_scanner</span><span class="p">()</span>
-        <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol_or_geom</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol_or_geom</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mol_or_geom</span><span class="p">,</span> <span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">):</span>
                 <span class="n">mol</span> <span class="o">=</span> <span class="n">mol_or_geom</span>
             <span class="k">else</span><span class="p">:</span>
@@ -1041,7 +1050,7 @@
     <span class="n">incore_complete</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">__config__</span><span class="p">,</span> <span class="s1">&#39;cc_ccsd_CCSD_incore_complete&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
     <span class="n">cc2</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">__config__</span><span class="p">,</span> <span class="s1">&#39;cc_ccsd_CCSD_cc2&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mo_occ</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mo_occ</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
 <span class="s1">You see this error message because of the API updates in pyscf v0.10.</span>
@@ -1225,7 +1234,7 @@
 
     <span class="k">def</span> <span class="nf">solve_lambda</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">t2</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">l1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">l2</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                      <span class="n">eris</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="k">import</span> <span class="n">ccsd_lambda</span>
+        <span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="kn">import</span> <span class="n">ccsd_lambda</span>
         <span class="k">if</span> <span class="n">t1</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="n">t1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">t1</span>
         <span class="k">if</span> <span class="n">t2</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="n">t2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">t2</span>
         <span class="k">if</span> <span class="n">eris</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="n">eris</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ao2mo</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mo_coeff</span><span class="p">)</span>
@@ -1237,7 +1246,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">l1</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">l2</span>
 
     <span class="k">def</span> <span class="nf">ccsd_t</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">t2</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">eris</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="k">import</span> <span class="n">ccsd_t</span>
+        <span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="kn">import</span> <span class="n">ccsd_t</span>
         <span class="k">if</span> <span class="n">t1</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="n">t1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">t1</span>
         <span class="k">if</span> <span class="n">t2</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="n">t2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">t2</span>
         <span class="k">if</span> <span class="n">eris</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="n">eris</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ao2mo</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mo_coeff</span><span class="p">)</span>
@@ -1245,47 +1254,47 @@
 
     <span class="k">def</span> <span class="nf">ipccsd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nroots</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">koopmans</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">guess</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                <span class="n">partition</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">eris</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="k">import</span> <span class="n">eom_rccsd</span>
+        <span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="kn">import</span> <span class="n">eom_rccsd</span>
         <span class="k">return</span> <span class="n">eom_rccsd</span><span class="o">.</span><span class="n">EOMIP</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">kernel</span><span class="p">(</span><span class="n">nroots</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">koopmans</span><span class="p">,</span> <span class="n">guess</span><span class="p">,</span>
                                             <span class="n">partition</span><span class="p">,</span> <span class="n">eris</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">eaccsd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nroots</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">koopmans</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">guess</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                <span class="n">partition</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">eris</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="k">import</span> <span class="n">eom_rccsd</span>
+        <span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="kn">import</span> <span class="n">eom_rccsd</span>
         <span class="k">return</span> <span class="n">eom_rccsd</span><span class="o">.</span><span class="n">EOMEA</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">kernel</span><span class="p">(</span><span class="n">nroots</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">koopmans</span><span class="p">,</span> <span class="n">guess</span><span class="p">,</span>
                                             <span class="n">partition</span><span class="p">,</span> <span class="n">eris</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">eeccsd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nroots</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">koopmans</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">guess</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">eris</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="k">import</span> <span class="n">eom_rccsd</span>
+        <span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="kn">import</span> <span class="n">eom_rccsd</span>
         <span class="k">return</span> <span class="n">eom_rccsd</span><span class="o">.</span><span class="n">EOMEE</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">kernel</span><span class="p">(</span><span class="n">nroots</span><span class="p">,</span> <span class="n">koopmans</span><span class="p">,</span> <span class="n">guess</span><span class="p">,</span> <span class="n">eris</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">eomee_ccsd_singlet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nroots</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">koopmans</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">guess</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">eris</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="k">import</span> <span class="n">eom_rccsd</span>
+        <span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="kn">import</span> <span class="n">eom_rccsd</span>
         <span class="k">return</span> <span class="n">eom_rccsd</span><span class="o">.</span><span class="n">EOMEESinglet</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">kernel</span><span class="p">(</span><span class="n">nroots</span><span class="p">,</span> <span class="n">koopmans</span><span class="p">,</span> <span class="n">guess</span><span class="p">,</span> <span class="n">eris</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">eomee_ccsd_triplet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nroots</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">koopmans</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">guess</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">eris</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="k">import</span> <span class="n">eom_rccsd</span>
+        <span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="kn">import</span> <span class="n">eom_rccsd</span>
         <span class="k">return</span> <span class="n">eom_rccsd</span><span class="o">.</span><span class="n">EOMEETriplet</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">kernel</span><span class="p">(</span><span class="n">nroots</span><span class="p">,</span> <span class="n">koopmans</span><span class="p">,</span> <span class="n">guess</span><span class="p">,</span> <span class="n">eris</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">eomsf_ccsd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nroots</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">koopmans</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">guess</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">eris</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="k">import</span> <span class="n">eom_rccsd</span>
+        <span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="kn">import</span> <span class="n">eom_rccsd</span>
         <span class="k">return</span> <span class="n">eom_rccsd</span><span class="o">.</span><span class="n">EOMEESpinFlip</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">kernel</span><span class="p">(</span><span class="n">nroots</span><span class="p">,</span> <span class="n">koopmans</span><span class="p">,</span> <span class="n">guess</span><span class="p">,</span> <span class="n">eris</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">eomip_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="k">import</span> <span class="n">eom_rccsd</span>
+        <span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="kn">import</span> <span class="n">eom_rccsd</span>
         <span class="k">return</span> <span class="n">eom_rccsd</span><span class="o">.</span><span class="n">EOMIP</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">eomea_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="k">import</span> <span class="n">eom_rccsd</span>
+        <span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="kn">import</span> <span class="n">eom_rccsd</span>
         <span class="k">return</span> <span class="n">eom_rccsd</span><span class="o">.</span><span class="n">EOMEA</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">eomee_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="k">import</span> <span class="n">eom_rccsd</span>
+        <span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="kn">import</span> <span class="n">eom_rccsd</span>
         <span class="k">return</span> <span class="n">eom_rccsd</span><span class="o">.</span><span class="n">EOMEE</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
 <div class="viewcode-block" id="CCSD.make_rdm1"><a class="viewcode-back" href="../../../modules/cc.html#pyscf.cc.ccsd.CCSD.make_rdm1">[docs]</a>    <span class="k">def</span> <span class="nf">make_rdm1</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">t2</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">l1</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">l2</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ao_repr</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;Un-relaxed 1-particle density matrix in MO space&#39;&#39;&#39;</span>
-        <span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="k">import</span> <span class="n">ccsd_rdm</span>
+        <span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="kn">import</span> <span class="n">ccsd_rdm</span>
         <span class="k">if</span> <span class="n">t1</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="n">t1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">t1</span>
         <span class="k">if</span> <span class="n">t2</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="n">t2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">t2</span>
         <span class="k">if</span> <span class="n">l1</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="n">l1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">l1</span>
@@ -1299,7 +1308,7 @@
 
 <span class="sd">        dm2[p,r,q,s] = &lt;p^+ q^+ s r&gt;</span>
 <span class="sd">        &#39;&#39;&#39;</span>
-        <span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="k">import</span> <span class="n">ccsd_rdm</span>
+        <span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="kn">import</span> <span class="n">ccsd_rdm</span>
         <span class="k">if</span> <span class="n">t1</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="n">t1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">t1</span>
         <span class="k">if</span> <span class="n">t2</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="n">t2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">t2</span>
         <span class="k">if</span> <span class="n">l1</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="n">l1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">l1</span>
@@ -1394,7 +1403,7 @@
         <span class="n">lib</span><span class="o">.</span><span class="n">chkfile</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">chkfile</span><span class="p">,</span> <span class="s1">&#39;ccsd&#39;</span><span class="p">,</span> <span class="n">cc_chk</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">density_fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">auxbasis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">with_df</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="k">import</span> <span class="n">dfccsd</span>
+        <span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="kn">import</span> <span class="n">dfccsd</span>
         <span class="n">mycc</span> <span class="o">=</span> <span class="n">dfccsd</span><span class="o">.</span><span class="n">RCCSD</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_scf</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">frozen</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mo_coeff</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mo_occ</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">with_df</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">mycc</span><span class="o">.</span><span class="n">with_df</span> <span class="o">=</span> <span class="n">with_df</span>
@@ -1405,7 +1414,7 @@
         <span class="k">return</span> <span class="n">mycc</span>
 
     <span class="k">def</span> <span class="nf">nuc_grad_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="kn">from</span> <span class="nn">pyscf.grad</span> <span class="k">import</span> <span class="n">ccsd</span>
+        <span class="kn">from</span> <span class="nn">pyscf.grad</span> <span class="kn">import</span> <span class="n">ccsd</span>
         <span class="k">return</span> <span class="n">ccsd</span><span class="o">.</span><span class="n">Gradients</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">get_t1_diagnostic</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t1</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -1426,7 +1435,7 @@
 
 <span class="k">class</span> <span class="nc">_ChemistsERIs</span><span class="p">:</span>
     <span class="sd">&#39;&#39;&#39;(pq|rs)&#39;&#39;&#39;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mol</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mol</span> <span class="o">=</span> <span class="n">mol</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mo_coeff</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">nocc</span> <span class="o">=</span> <span class="kc">None</span>
@@ -1710,7 +1719,7 @@
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">scf</span>
+    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">scf</span>
 
     <span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">()</span>
     <span class="n">mol</span><span class="o">.</span><span class="n">atom</span> <span class="o">=</span> <span class="p">[</span>

@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -164,13 +163,13 @@
     
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../../../interface.html">9. Interfaces</a> &raquo;</li>
+          <li><a href="../../../interface.html"><span class="section-number">9. </span>Interfaces</a> &raquo;</li>
         
-          <li><a href="../../nao.html">9.8. <code class="xref py py-mod docutils literal notranslate"><span class="pre">nao</span></code> — Numerical Atomic Orbitals</a> &raquo;</li>
+          <li><a href="../../nao.html"><span class="section-number">9.8. </span><code class="xref py py-mod docutils literal notranslate"><span class="pre">nao</span></code> — Numerical Atomic Orbitals</a> &raquo;</li>
         
-          <li><a href="../examples.html">9.8.4. nao.examples — NAO Examples</a> &raquo;</li>
+          <li><a href="../examples.html"><span class="section-number">9.8.4. </span>nao.examples — NAO Examples</a> &raquo;</li>
         
-      <li>9.8.4.1.1. Interfacing with ASE and Siesta</li>
+      <li><span class="section-number">9.8.4.1.1. </span>Interfacing with ASE and Siesta</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -190,21 +189,21 @@
            <div itemprop="articleBody">
             
   <div class="section" id="interfacing-with-ase-and-siesta">
-<span id="nao-examples-qmd-c60"></span><h1>9.8.4.1.1. Interfacing with ASE and Siesta<a class="headerlink" href="#interfacing-with-ase-and-siesta" title="Permalink to this headline">¶</a></h1>
+<span id="nao-examples-qmd-c60"></span><h1><span class="section-number">9.8.4.1.1. </span>Interfacing with ASE and Siesta<a class="headerlink" href="#interfacing-with-ase-and-siesta" title="Permalink to this headline">¶</a></h1>
 <p>The Atomic Simulation Environment (<a class="reference external" href="https://wiki.fysik.dtu.dk/ase/index.html">ASE</a>)
 Greatly simplify the scripting of your problem and combine calculations
 from the ground state with <a class="reference external" href="https://departments.icmab.es/leem/siesta/">Siesta</a>
 and excited states with PYSCF-NAO.</p>
 <div class="section" id="simple-polarizability-caculation">
-<h2>9.8.4.1.1.1. Simple Polarizability Caculation<a class="headerlink" href="#simple-polarizability-caculation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.8.4.1.1.1. </span>Simple Polarizability Caculation<a class="headerlink" href="#simple-polarizability-caculation" title="Permalink to this headline">¶</a></h2>
 <p>To perform a simple calculation returning the polariazbility of the system
 one just need the following script,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Example, in order to run you must place a pseudopotential &#39;Na.psf&#39; in</span>
 <span class="sd">the folder&quot;&quot;&quot;</span>
 
-<span class="kn">from</span> <span class="nn">ase.units</span> <span class="k">import</span> <span class="n">Ry</span><span class="p">,</span> <span class="n">eV</span><span class="p">,</span> <span class="n">Ha</span>
-<span class="kn">from</span> <span class="nn">ase.calculators.siesta</span> <span class="k">import</span> <span class="n">Siesta</span>
-<span class="kn">from</span> <span class="nn">ase</span> <span class="k">import</span> <span class="n">Atoms</span>
+<span class="kn">from</span> <span class="nn">ase.units</span> <span class="kn">import</span> <span class="n">Ry</span><span class="p">,</span> <span class="n">eV</span><span class="p">,</span> <span class="n">Ha</span>
+<span class="kn">from</span> <span class="nn">ase.calculators.siesta</span> <span class="kn">import</span> <span class="n">Siesta</span>
+<span class="kn">from</span> <span class="nn">ase</span> <span class="kn">import</span> <span class="n">Atoms</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
@@ -253,16 +252,16 @@ one just need the following script,</p>
 Siesta and ASE. Everything is explain on the <a class="reference external" href="https://wiki.fysik.dtu.dk/ase/ase/calculators/siesta.html#module-ase.calculators.siesta">Siesta webpage of ASE</a></p>
 </div>
 <div class="section" id="non-resonant-raman-spectra">
-<h2>9.8.4.1.1.2. Non-Resonant Raman Spectra<a class="headerlink" href="#non-resonant-raman-spectra" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.8.4.1.1.2. </span>Non-Resonant Raman Spectra<a class="headerlink" href="#non-resonant-raman-spectra" title="Permalink to this headline">¶</a></h2>
 <p>In ASE there is also the possibility to calculate Non-Resonnant Raman spectra
 using the Siesta calculator together with PYSCF,</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Example, in order to run you must place a pseudopotential &#39;Na.psf&#39; in</span>
 <span class="sd">the folder&quot;&quot;&quot;</span>
 
-<span class="kn">from</span> <span class="nn">ase.units</span> <span class="k">import</span> <span class="n">Ry</span><span class="p">,</span> <span class="n">eV</span><span class="p">,</span> <span class="n">Ha</span>
-<span class="kn">from</span> <span class="nn">ase.calculators.siesta</span> <span class="k">import</span> <span class="n">Siesta</span>
-<span class="kn">from</span> <span class="nn">ase.calculators.siesta.siesta_raman</span> <span class="k">import</span> <span class="n">SiestaRaman</span>
-<span class="kn">from</span> <span class="nn">ase</span> <span class="k">import</span> <span class="n">Atoms</span>
+<span class="kn">from</span> <span class="nn">ase.units</span> <span class="kn">import</span> <span class="n">Ry</span><span class="p">,</span> <span class="n">eV</span><span class="p">,</span> <span class="n">Ha</span>
+<span class="kn">from</span> <span class="nn">ase.calculators.siesta</span> <span class="kn">import</span> <span class="n">Siesta</span>
+<span class="kn">from</span> <span class="nn">ase.calculators.siesta.siesta_raman</span> <span class="kn">import</span> <span class="n">SiestaRaman</span>
+<span class="kn">from</span> <span class="nn">ase</span> <span class="kn">import</span> <span class="n">Atoms</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="c1"># Define the systems</span>

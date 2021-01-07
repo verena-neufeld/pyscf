@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../" src="../../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -186,15 +185,15 @@
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">lib</span>
-<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="k">import</span> <span class="n">logger</span>
-<span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="k">import</span> <span class="n">eom_rccsd</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.lib</span> <span class="k">import</span> <span class="n">kpts_helper</span>
-<span class="kn">from</span> <span class="nn">pyscf.lib.parameters</span> <span class="k">import</span> <span class="n">LOOSE_ZERO_TOL</span><span class="p">,</span> <span class="n">LARGE_DENOM</span>  <span class="c1"># noqa</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.cc</span> <span class="k">import</span> <span class="n">kintermediates</span> <span class="k">as</span> <span class="n">imd</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.cc.kccsd_rhf</span> <span class="k">import</span> <span class="n">_get_epq</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.cc.kccsd_t_rhf</span> <span class="k">import</span> <span class="n">_get_epqr</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.mp.kmp2</span> <span class="k">import</span> <span class="p">(</span><span class="n">get_frozen_mask</span><span class="p">,</span> <span class="n">get_nocc</span><span class="p">,</span> <span class="n">get_nmo</span><span class="p">,</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">lib</span>
+<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="kn">import</span> <span class="n">logger</span>
+<span class="kn">from</span> <span class="nn">pyscf.cc</span> <span class="kn">import</span> <span class="n">eom_rccsd</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.lib</span> <span class="kn">import</span> <span class="n">kpts_helper</span>
+<span class="kn">from</span> <span class="nn">pyscf.lib.parameters</span> <span class="kn">import</span> <span class="n">LOOSE_ZERO_TOL</span><span class="p">,</span> <span class="n">LARGE_DENOM</span>  <span class="c1"># noqa</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.cc</span> <span class="kn">import</span> <span class="n">kintermediates</span> <span class="k">as</span> <span class="n">imd</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.cc.kccsd_rhf</span> <span class="kn">import</span> <span class="n">_get_epq</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.cc.kccsd_t_rhf</span> <span class="kn">import</span> <span class="n">_get_epqr</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.mp.kmp2</span> <span class="kn">import</span> <span class="p">(</span><span class="n">get_frozen_mask</span><span class="p">,</span> <span class="n">get_nocc</span><span class="p">,</span> <span class="n">get_nmo</span><span class="p">,</span>
                                <span class="n">padded_mo_coeff</span><span class="p">,</span> <span class="n">padding_k_idx</span><span class="p">)</span>  <span class="c1"># noqa</span>
 
 <span class="n">einsum</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">einsum</span>
@@ -791,7 +790,7 @@
                           <span class="n">kptlist</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Wrapper for running perturbative excited-states that require both left</span>
 <span class="sd">    and right amplitudes.&#39;&#39;&#39;</span>
-    <span class="kn">from</span> <span class="nn">pyscf.cc.eom_rccsd</span> <span class="k">import</span> <span class="n">_sort_left_right_eigensystem</span>
+    <span class="kn">from</span> <span class="nn">pyscf.cc.eom_rccsd</span> <span class="kn">import</span> <span class="n">_sort_left_right_eigensystem</span>
     <span class="k">if</span> <span class="n">imds</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">imds</span> <span class="o">=</span> <span class="n">eom</span><span class="o">.</span><span class="n">make_imds</span><span class="p">(</span><span class="n">eris</span><span class="o">=</span><span class="n">eris</span><span class="p">)</span>
 
@@ -846,7 +845,7 @@
     <span class="k">return</span> <span class="n">eom</span><span class="o">.</span><span class="n">amplitudes_to_vector</span><span class="p">(</span><span class="n">new_r1</span><span class="p">,</span> <span class="n">new_r2</span><span class="p">,</span> <span class="n">kshift</span><span class="p">,</span> <span class="n">kconserv</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="EOMIP"><a class="viewcode-back" href="../../../../modules/pbc/cc.html#pyscf.pbc.cc.eom_kccsd_ghf.EOMIP">[docs]</a><span class="k">class</span> <span class="nc">EOMIP</span><span class="p">(</span><span class="n">eom_rccsd</span><span class="o">.</span><span class="n">EOMIP</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cc</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cc</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">kpts</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">kpts</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">nonzero_opadding</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nonzero_vpadding</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_padding_k_idx</span><span class="p">(</span><span class="n">cc</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">kconserv</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">khelper</span><span class="o">.</span><span class="n">kconserv</span>
@@ -1365,7 +1364,7 @@
     <span class="k">return</span> <span class="n">eom</span><span class="o">.</span><span class="n">amplitudes_to_vector</span><span class="p">(</span><span class="n">new_r1</span><span class="p">,</span> <span class="n">new_r2</span><span class="p">,</span> <span class="n">kshift</span><span class="p">,</span> <span class="n">kconserv</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="EOMEA"><a class="viewcode-back" href="../../../../modules/pbc/cc.html#pyscf.pbc.cc.eom_kccsd_ghf.EOMEA">[docs]</a><span class="k">class</span> <span class="nc">EOMEA</span><span class="p">(</span><span class="n">eom_rccsd</span><span class="o">.</span><span class="n">EOMEA</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cc</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cc</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">kpts</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">kpts</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">nonzero_opadding</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">nonzero_vpadding</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_padding_k_idx</span><span class="p">(</span><span class="n">cc</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">kconserv</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">khelper</span><span class="o">.</span><span class="n">kconserv</span>
@@ -1855,7 +1854,7 @@
 
 
 <div class="viewcode-block" id="EOMEE"><a class="viewcode-back" href="../../../../modules/pbc/cc.html#pyscf.pbc.cc.eom_kccsd_ghf.EOMEE">[docs]</a><span class="k">class</span> <span class="nc">EOMEE</span><span class="p">(</span><span class="n">eom_rccsd</span><span class="o">.</span><span class="n">EOM</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cc</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cc</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">kpts</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">kpts</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">kconserv</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">khelper</span><span class="o">.</span><span class="n">kconserv</span>
         <span class="c1"># debug</span>
@@ -2009,7 +2008,7 @@
     <span class="c1"># -- rintermediates --&gt; gintermediates</span>
     <span class="c1"># -- Loo, Lvv, cc_Fov --&gt; Foo, Fvv, Fov</span>
     <span class="c1"># -- One less 2-virtual intermediate</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cc</span><span class="p">,</span> <span class="n">eris</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cc</span><span class="p">,</span> <span class="n">eris</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_cc</span> <span class="o">=</span> <span class="n">cc</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">verbose</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">kconserv</span> <span class="o">=</span> <span class="n">kpts_helper</span><span class="o">.</span><span class="n">get_kconserv</span><span class="p">(</span><span class="n">cc</span><span class="o">.</span><span class="n">_scf</span><span class="o">.</span><span class="n">cell</span><span class="p">,</span> <span class="n">cc</span><span class="o">.</span><span class="n">kpts</span><span class="p">)</span>
@@ -2139,7 +2138,7 @@
         <span class="k">return</span> <span class="bp">self</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="k">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">cc</span>
+    <span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">cc</span>
 
     <span class="n">cell</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">Cell</span><span class="p">()</span>
     <span class="n">cell</span><span class="o">.</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;&#39;&#39;</span>

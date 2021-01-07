@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -178,13 +177,13 @@
 <span class="c1"># Author: Qiming Sun &lt;osirpt.sun@gmail.com&gt;</span>
 <span class="c1">#</span>
 
-<span class="kn">from</span> <span class="nn">functools</span> <span class="k">import</span> <span class="n">reduce</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
 <span class="kn">import</span> <span class="nn">numpy</span>
 <span class="kn">import</span> <span class="nn">scipy.linalg</span>
-<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="k">import</span> <span class="n">param</span>
-<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="k">import</span> <span class="n">logger</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">__config__</span>
+<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="kn">import</span> <span class="n">param</span>
+<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="kn">import</span> <span class="n">logger</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">__config__</span>
 
 <span class="n">REF_BASIS</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">__config__</span><span class="p">,</span> <span class="s1">&#39;lo_orth_pre_orth_ao_method&#39;</span><span class="p">,</span> <span class="s1">&#39;ANO&#39;</span><span class="p">)</span>
 <span class="n">ORTH_METHOD</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">__config__</span><span class="p">,</span> <span class="s1">&#39;lo_orth_orth_ao_method&#39;</span><span class="p">,</span> <span class="s1">&#39;meta_lowdin&#39;</span><span class="p">)</span>
@@ -236,9 +235,9 @@
 <div class="viewcode-block" id="project_to_atomic_orbitals"><a class="viewcode-back" href="../../../modules/lo.html#pyscf.lo.orth.project_to_atomic_orbitals">[docs]</a><span class="k">def</span> <span class="nf">project_to_atomic_orbitals</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">basname</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;projected AO = |bas&gt;&lt;bas|ANO&gt;</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="kn">from</span> <span class="nn">pyscf.scf.addons</span> <span class="k">import</span> <span class="n">project_mo_nr2nr</span>
-    <span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="k">import</span> <span class="n">atom_hf</span>
-    <span class="kn">from</span> <span class="nn">pyscf.gto.ecp</span> <span class="k">import</span> <span class="n">core_configuration</span>
+    <span class="kn">from</span> <span class="nn">pyscf.scf.addons</span> <span class="kn">import</span> <span class="n">project_mo_nr2nr</span>
+    <span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="kn">import</span> <span class="n">atom_hf</span>
+    <span class="kn">from</span> <span class="nn">pyscf.gto.ecp</span> <span class="kn">import</span> <span class="n">core_configuration</span>
 
     <span class="k">def</span> <span class="nf">search_atm_l</span><span class="p">(</span><span class="n">atm</span><span class="p">,</span> <span class="n">l</span><span class="p">):</span>
         <span class="n">bas_ang</span> <span class="o">=</span> <span class="n">atm</span><span class="o">.</span><span class="n">_bas</span><span class="p">[:,</span><span class="n">gto</span><span class="o">.</span><span class="n">ANG_OF</span><span class="p">]</span>
@@ -398,7 +397,7 @@
 
 <span class="k">def</span> <span class="nf">pre_orth_ao_atm_scf</span><span class="p">(</span><span class="n">mol</span><span class="p">):</span>
     <span class="k">assert</span><span class="p">(</span><span class="ow">not</span> <span class="n">mol</span><span class="o">.</span><span class="n">cart</span><span class="p">)</span>
-    <span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="k">import</span> <span class="n">atom_hf</span>
+    <span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="kn">import</span> <span class="n">atom_hf</span>
     <span class="n">atm_scf</span> <span class="o">=</span> <span class="n">atom_hf</span><span class="o">.</span><span class="n">get_atm_nrhf</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
     <span class="n">aoslice</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">aoslice_by_atom</span><span class="p">()</span>
     <span class="n">coeff</span> <span class="o">=</span> <span class="p">[]</span>
@@ -432,7 +431,7 @@
 <span class="sd">            given, the coefficients are generated based on ANO basis. You can</span>
 <span class="sd">            skip this by setting pre_orth_ao to identity matrix, e.g.  np.eye(mol.nao).</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="kn">from</span> <span class="nn">pyscf.lo</span> <span class="k">import</span> <span class="n">nao</span>
+    <span class="kn">from</span> <span class="nn">pyscf.lo</span> <span class="kn">import</span> <span class="n">nao</span>
     <span class="n">mf</span> <span class="o">=</span> <span class="n">scf_method</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mf_or_mol</span><span class="p">,</span> <span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">):</span>
         <span class="n">mol</span> <span class="o">=</span> <span class="n">mf_or_mol</span>
@@ -471,8 +470,8 @@
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">scf</span>
-    <span class="kn">from</span> <span class="nn">pyscf.lo</span> <span class="k">import</span> <span class="n">nao</span>
+    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">scf</span>
+    <span class="kn">from</span> <span class="nn">pyscf.lo</span> <span class="kn">import</span> <span class="n">nao</span>
     <span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">()</span>
     <span class="n">mol</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">mol</span><span class="o">.</span><span class="n">output</span> <span class="o">=</span> <span class="s1">&#39;out_orth&#39;</span>

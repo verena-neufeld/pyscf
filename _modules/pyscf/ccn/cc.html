@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -183,10 +182,10 @@
 <span class="c1"># Initial implementation includes ground-state, lambda, IP-EOM and EA-EOM kernels for CCS, CCSD, CCD and CCSDT</span>
 <span class="c1"># unrestricted (general) theory.</span>
 
-<span class="kn">from</span> <span class="nn">.equations</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">.pyscf_helpers</span> <span class="k">import</span> <span class="n">kernel_solve</span><span class="p">,</span> <span class="n">kernel_eig</span><span class="p">,</span> <span class="n">eris_hamiltonian</span><span class="p">,</span> <span class="n">koopmans_guess_ip</span><span class="p">,</span> <span class="n">koopmans_guess_ea</span>
+<span class="kn">from</span> <span class="nn">.equations</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.pyscf_helpers</span> <span class="kn">import</span> <span class="n">kernel_solve</span><span class="p">,</span> <span class="n">kernel_eig</span><span class="p">,</span> <span class="n">eris_hamiltonian</span><span class="p">,</span> <span class="n">koopmans_guess_ip</span><span class="p">,</span> <span class="n">koopmans_guess_ea</span>
 
-<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">OrderedDict</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
 
 
 <div class="viewcode-block" id="kernel_ground_state_s"><a class="viewcode-back" href="../../../modules/ccn.html#pyscf.ccn.cc.kernel_ground_state_s">[docs]</a><span class="k">def</span> <span class="nf">kernel_ground_state_s</span><span class="p">(</span><span class="n">cc</span><span class="p">,</span> <span class="n">tolerance</span><span class="o">=</span><span class="mf">1e-10</span><span class="p">,</span> <span class="n">maxiter</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
@@ -539,7 +538,7 @@
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">scf</span><span class="p">,</span> <span class="n">gto</span><span class="p">,</span> <span class="n">cc</span>
+    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">scf</span><span class="p">,</span> <span class="n">gto</span><span class="p">,</span> <span class="n">cc</span>
     <span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">()</span>
     <span class="n">mol</span><span class="o">.</span><span class="n">atom</span> <span class="o">=</span> <span class="s2">&quot;O 0 0 0; H  0.758602  0.000000  0.504284; H  0.758602  0.000000  -0.504284&quot;</span>
     <span class="n">mol</span><span class="o">.</span><span class="n">unit</span> <span class="o">=</span> <span class="s2">&quot;angstrom&quot;</span>

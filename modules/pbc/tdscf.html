@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -121,7 +120,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../pbc.html">10.21. <code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc</span></code> — Periodic boundary conditions</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="gto.html">10.21.1. pbc.gto — Crystal cell structure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ao2mo.html">10.21.2. pbc.ao2mo — Integral transformations for crystalline Gaussian type orbitals</a></li>
-<li class="toctree-l3"><a class="reference internal" href="scf.html">10.21.3. pbc.scf — Self-consistent field with periodic boundary conditions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scf.html">10.21.3. <code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc.scf</span></code> — Self-consistent field with periodic boundary conditions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dft.html">10.21.4. pbc.dft  — DFT with PBCs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="df.html">10.21.5. pbc.df — PBC denisty fitting</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">10.21.6. pbc.tdscf — TDHF and TDDFT with PBCs</a><ul>
@@ -200,11 +199,11 @@
     
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../../modules.html">10. Main modules</a> &raquo;</li>
+          <li><a href="../../modules.html"><span class="section-number">10. </span>Main modules</a> &raquo;</li>
         
-          <li><a href="../pbc.html">10.21. <code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc</span></code> — Periodic boundary conditions</a> &raquo;</li>
+          <li><a href="../pbc.html"><span class="section-number">10.21. </span><code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc</span></code> — Periodic boundary conditions</a> &raquo;</li>
         
-      <li>10.21.6. pbc.tdscf — TDHF and TDDFT with PBCs</li>
+      <li><span class="section-number">10.21.6. </span>pbc.tdscf — TDHF and TDDFT with PBCs</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -224,44 +223,44 @@
            <div itemprop="articleBody">
             
   <div class="section" id="pbc-tdscf-tdhf-and-tddft-with-pbcs">
-<span id="pbc-tdscf"></span><h1>10.21.6. pbc.tdscf — TDHF and TDDFT with PBCs<a class="headerlink" href="#pbc-tdscf-tdhf-and-tddft-with-pbcs" title="Permalink to this headline">¶</a></h1>
+<span id="pbc-tdscf"></span><h1><span class="section-number">10.21.6. </span>pbc.tdscf — TDHF and TDDFT with PBCs<a class="headerlink" href="#pbc-tdscf-tdhf-and-tddft-with-pbcs" title="Permalink to this headline">¶</a></h1>
 <p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc.tdscf</span></code> implements the time-dependent Hartree-Fock and time-dependent density functional theory with
 periodic boundary conditions. It is analogous to the <code class="xref py py-mod docutils literal notranslate"><span class="pre">tddft</span></code> module.</p>
 <div class="section" id="examples">
-<h2>10.21.6.1. Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.21.6.1. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference download internal" download="" href="../../_downloads/c507236dc2128439507a11c19c60b46a/22-k_points_tddft.py"><code class="xref download docutils literal notranslate"><span class="pre">examples/pbc/22-k_points_tddft.py</span></code></a></p>
 </div>
 <div class="section" id="module-pyscf.pbc.tdscf">
-<span id="program-reference"></span><h2>10.21.6.2. Program reference<a class="headerlink" href="#module-pyscf.pbc.tdscf" title="Permalink to this headline">¶</a></h2>
-<span class="target" id="module-pyscf.pbc.tdscf.rhf"></span><dl class="attribute">
+<span id="program-reference"></span><h2><span class="section-number">10.21.6.2. </span>Program reference<a class="headerlink" href="#module-pyscf.pbc.tdscf" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="module-pyscf.pbc.tdscf.rhf"></span><dl class="py attribute">
 <dt id="pyscf.pbc.tdscf.rhf.CIS">
 <code class="sig-prename descclassname">pyscf.pbc.tdscf.rhf.</code><code class="sig-name descname">CIS</code><a class="headerlink" href="#pyscf.pbc.tdscf.rhf.CIS" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#pyscf.pbc.tdscf.rhf.TDA" title="pyscf.pbc.tdscf.rhf.TDA"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.pbc.tdscf.rhf.TDA</span></code></a></p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="pyscf.pbc.tdscf.rhf.RPA">
 <code class="sig-prename descclassname">pyscf.pbc.tdscf.rhf.</code><code class="sig-name descname">RPA</code><a class="headerlink" href="#pyscf.pbc.tdscf.rhf.RPA" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#pyscf.pbc.tdscf.rhf.TDHF" title="pyscf.pbc.tdscf.rhf.TDHF"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.pbc.tdscf.rhf.TDHF</span></code></a></p>
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="pyscf.pbc.tdscf.rhf.TDA">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.pbc.tdscf.rhf.</code><code class="sig-name descname">TDA</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/rhf.html#TDA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.rhf.TDA" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
+<em class="property">class </em><code class="sig-prename descclassname">pyscf.pbc.tdscf.rhf.</code><code class="sig-name descname">TDA</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/rhf.html#TDA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.rhf.TDA" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
 <dt id="pyscf.pbc.tdscf.rhf.TDA.gen_vind">
-<code class="sig-name descname">gen_vind</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/rhf.html#TDA.gen_vind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.rhf.TDA.gen_vind" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">gen_vind</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/rhf.html#TDA.gen_vind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.rhf.TDA.gen_vind" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute Ax</p>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="pyscf.pbc.tdscf.rhf.TDHF">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.pbc.tdscf.rhf.</code><code class="sig-name descname">TDHF</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/rhf.html#TDHF"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.rhf.TDHF" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
+<em class="property">class </em><code class="sig-prename descclassname">pyscf.pbc.tdscf.rhf.</code><code class="sig-name descname">TDHF</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/rhf.html#TDHF"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.rhf.TDHF" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
 <dt id="pyscf.pbc.tdscf.rhf.TDHF.gen_vind">
-<code class="sig-name descname">gen_vind</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/rhf.html#TDHF.gen_vind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.rhf.TDHF.gen_vind" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">gen_vind</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/rhf.html#TDHF.gen_vind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.rhf.TDHF.gen_vind" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate function to compute</p>
 <p>[ A  B][X]
 [-B -A][Y]</p>
@@ -269,7 +268,7 @@ periodic boundary conditions. It is analogous to the <code class="xref py py-mod
 
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="pyscf.pbc.tdscf.rhf.TDRHF">
 <code class="sig-prename descclassname">pyscf.pbc.tdscf.rhf.</code><code class="sig-name descname">TDRHF</code><a class="headerlink" href="#pyscf.pbc.tdscf.rhf.TDRHF" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#pyscf.pbc.tdscf.rhf.TDHF" title="pyscf.pbc.tdscf.rhf.TDHF"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.pbc.tdscf.rhf.TDHF</span></code></a></p>
@@ -294,52 +293,52 @@ corresponding to collective oscillations without momentum transfer;</p></li>
 an arbitrary number of k-points and employs k-point conservation (diagonalizes matrix blocks separately).</p></li>
 </ul>
 </div></blockquote>
-<span class="target" id="module-pyscf.pbc.tdscf.rks"></span><dl class="class">
+<span class="target" id="module-pyscf.pbc.tdscf.rks"></span><dl class="py class">
 <dt id="pyscf.pbc.tdscf.rks.TDDFTNoHybrid">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.pbc.tdscf.rks.</code><code class="sig-name descname">TDDFTNoHybrid</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/rks.html#TDDFTNoHybrid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.rks.TDDFTNoHybrid" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
+<em class="property">class </em><code class="sig-prename descclassname">pyscf.pbc.tdscf.rks.</code><code class="sig-name descname">TDDFTNoHybrid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/rks.html#TDDFTNoHybrid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.rks.TDDFTNoHybrid" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
 <dt id="pyscf.pbc.tdscf.rks.TDDFTNoHybrid.gen_vind">
-<code class="sig-name descname">gen_vind</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/rks.html#TDDFTNoHybrid.gen_vind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.rks.TDDFTNoHybrid.gen_vind" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">gen_vind</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/rks.html#TDDFTNoHybrid.gen_vind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.rks.TDDFTNoHybrid.gen_vind" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute Ax</p>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.pbc.tdscf.rks.tddft">
-<code class="sig-prename descclassname">pyscf.pbc.tdscf.rks.</code><code class="sig-name descname">tddft</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/rks.html#tddft"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.rks.tddft" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.pbc.tdscf.rks.</code><code class="sig-name descname">tddft</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/rks.html#tddft"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.rks.tddft" title="Permalink to this definition">¶</a></dt>
 <dd><p>Driver to create TDDFT or TDDFTNoHybrid object</p>
 </dd></dl>
 
-<span class="target" id="module-pyscf.pbc.tdscf.uhf"></span><dl class="attribute">
+<span class="target" id="module-pyscf.pbc.tdscf.uhf"></span><dl class="py attribute">
 <dt id="pyscf.pbc.tdscf.uhf.CIS">
 <code class="sig-prename descclassname">pyscf.pbc.tdscf.uhf.</code><code class="sig-name descname">CIS</code><a class="headerlink" href="#pyscf.pbc.tdscf.uhf.CIS" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#pyscf.pbc.tdscf.uhf.TDA" title="pyscf.pbc.tdscf.uhf.TDA"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.pbc.tdscf.uhf.TDA</span></code></a></p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="pyscf.pbc.tdscf.uhf.RPA">
 <code class="sig-prename descclassname">pyscf.pbc.tdscf.uhf.</code><code class="sig-name descname">RPA</code><a class="headerlink" href="#pyscf.pbc.tdscf.uhf.RPA" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#pyscf.pbc.tdscf.uhf.TDHF" title="pyscf.pbc.tdscf.uhf.TDHF"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.pbc.tdscf.uhf.TDHF</span></code></a></p>
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="pyscf.pbc.tdscf.uhf.TDA">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.pbc.tdscf.uhf.</code><code class="sig-name descname">TDA</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/uhf.html#TDA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.uhf.TDA" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
+<em class="property">class </em><code class="sig-prename descclassname">pyscf.pbc.tdscf.uhf.</code><code class="sig-name descname">TDA</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/uhf.html#TDA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.uhf.TDA" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
 <dt id="pyscf.pbc.tdscf.uhf.TDA.gen_vind">
-<code class="sig-name descname">gen_vind</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/uhf.html#TDA.gen_vind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.uhf.TDA.gen_vind" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">gen_vind</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/uhf.html#TDA.gen_vind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.uhf.TDA.gen_vind" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute Ax</p>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="pyscf.pbc.tdscf.uhf.TDHF">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.pbc.tdscf.uhf.</code><code class="sig-name descname">TDHF</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/uhf.html#TDHF"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.uhf.TDHF" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
+<em class="property">class </em><code class="sig-prename descclassname">pyscf.pbc.tdscf.uhf.</code><code class="sig-name descname">TDHF</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/uhf.html#TDHF"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.uhf.TDHF" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
 <dt id="pyscf.pbc.tdscf.uhf.TDHF.gen_vind">
-<code class="sig-name descname">gen_vind</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/uhf.html#TDHF.gen_vind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.uhf.TDHF.gen_vind" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">gen_vind</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/uhf.html#TDHF.gen_vind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.uhf.TDHF.gen_vind" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate function to compute</p>
 <p>[ A  B][X]
 [-B -A][Y]</p>
@@ -347,83 +346,83 @@ an arbitrary number of k-points and employs k-point conservation (diagonalizes m
 
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="pyscf.pbc.tdscf.uhf.TDUHF">
 <code class="sig-prename descclassname">pyscf.pbc.tdscf.uhf.</code><code class="sig-name descname">TDUHF</code><a class="headerlink" href="#pyscf.pbc.tdscf.uhf.TDUHF" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#pyscf.pbc.tdscf.uhf.TDHF" title="pyscf.pbc.tdscf.uhf.TDHF"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.pbc.tdscf.uhf.TDHF</span></code></a></p>
 </dd></dl>
 
-<span class="target" id="module-pyscf.pbc.tdscf.uks"></span><dl class="class">
+<span class="target" id="module-pyscf.pbc.tdscf.uks"></span><dl class="py class">
 <dt id="pyscf.pbc.tdscf.uks.TDDFTNoHybrid">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.pbc.tdscf.uks.</code><code class="sig-name descname">TDDFTNoHybrid</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/uks.html#TDDFTNoHybrid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.uks.TDDFTNoHybrid" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
+<em class="property">class </em><code class="sig-prename descclassname">pyscf.pbc.tdscf.uks.</code><code class="sig-name descname">TDDFTNoHybrid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/uks.html#TDDFTNoHybrid"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.uks.TDDFTNoHybrid" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
 <dt id="pyscf.pbc.tdscf.uks.TDDFTNoHybrid.gen_vind">
-<code class="sig-name descname">gen_vind</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/uks.html#TDDFTNoHybrid.gen_vind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.uks.TDDFTNoHybrid.gen_vind" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">gen_vind</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/uks.html#TDDFTNoHybrid.gen_vind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.uks.TDDFTNoHybrid.gen_vind" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute Ax</p>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.pbc.tdscf.uks.tddft">
-<code class="sig-prename descclassname">pyscf.pbc.tdscf.uks.</code><code class="sig-name descname">tddft</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/uks.html#tddft"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.uks.tddft" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.pbc.tdscf.uks.</code><code class="sig-name descname">tddft</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/uks.html#tddft"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.uks.tddft" title="Permalink to this definition">¶</a></dt>
 <dd><p>Driver to create TDDFT or TDDFTNoHybrid object</p>
 </dd></dl>
 
-<span class="target" id="module-pyscf.pbc.tdscf.krhf"></span><dl class="attribute">
+<span class="target" id="module-pyscf.pbc.tdscf.krhf"></span><dl class="py attribute">
 <dt id="pyscf.pbc.tdscf.krhf.CIS">
 <code class="sig-prename descclassname">pyscf.pbc.tdscf.krhf.</code><code class="sig-name descname">CIS</code><a class="headerlink" href="#pyscf.pbc.tdscf.krhf.CIS" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#pyscf.pbc.tdscf.krhf.TDA" title="pyscf.pbc.tdscf.krhf.TDA"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.pbc.tdscf.krhf.TDA</span></code></a></p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="pyscf.pbc.tdscf.krhf.KTDA">
 <code class="sig-prename descclassname">pyscf.pbc.tdscf.krhf.</code><code class="sig-name descname">KTDA</code><a class="headerlink" href="#pyscf.pbc.tdscf.krhf.KTDA" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#pyscf.pbc.tdscf.krhf.TDA" title="pyscf.pbc.tdscf.krhf.TDA"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.pbc.tdscf.krhf.TDA</span></code></a></p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="pyscf.pbc.tdscf.krhf.KTDHF">
 <code class="sig-prename descclassname">pyscf.pbc.tdscf.krhf.</code><code class="sig-name descname">KTDHF</code><a class="headerlink" href="#pyscf.pbc.tdscf.krhf.KTDHF" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#pyscf.pbc.tdscf.krhf.TDHF" title="pyscf.pbc.tdscf.krhf.TDHF"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.pbc.tdscf.krhf.TDHF</span></code></a></p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="pyscf.pbc.tdscf.krhf.RPA">
 <code class="sig-prename descclassname">pyscf.pbc.tdscf.krhf.</code><code class="sig-name descname">RPA</code><a class="headerlink" href="#pyscf.pbc.tdscf.krhf.RPA" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#pyscf.pbc.tdscf.krhf.TDHF" title="pyscf.pbc.tdscf.krhf.TDHF"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.pbc.tdscf.krhf.TDHF</span></code></a></p>
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="pyscf.pbc.tdscf.krhf.TDA">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.pbc.tdscf.krhf.</code><code class="sig-name descname">TDA</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/krhf.html#TDA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.krhf.TDA" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
+<em class="property">class </em><code class="sig-prename descclassname">pyscf.pbc.tdscf.krhf.</code><code class="sig-name descname">TDA</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/krhf.html#TDA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.krhf.TDA" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
 <dt id="pyscf.pbc.tdscf.krhf.TDA.gen_vind">
-<code class="sig-name descname">gen_vind</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/krhf.html#TDA.gen_vind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.krhf.TDA.gen_vind" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">gen_vind</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/krhf.html#TDA.gen_vind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.krhf.TDA.gen_vind" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute Ax</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="pyscf.pbc.tdscf.krhf.TDA.kernel">
-<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param">x0=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/krhf.html#TDA.kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.krhf.TDA.kernel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x0</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/krhf.html#TDA.kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.krhf.TDA.kernel" title="Permalink to this definition">¶</a></dt>
 <dd><p>TDA diagonalization solver</p>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="pyscf.pbc.tdscf.krhf.TDHF">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.pbc.tdscf.krhf.</code><code class="sig-name descname">TDHF</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/krhf.html#TDHF"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.krhf.TDHF" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
+<em class="property">class </em><code class="sig-prename descclassname">pyscf.pbc.tdscf.krhf.</code><code class="sig-name descname">TDHF</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/krhf.html#TDHF"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.krhf.TDHF" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
 <dt id="pyscf.pbc.tdscf.krhf.TDHF.gen_vind">
-<code class="sig-name descname">gen_vind</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/krhf.html#TDHF.gen_vind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.krhf.TDHF.gen_vind" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">gen_vind</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/krhf.html#TDHF.gen_vind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.krhf.TDHF.gen_vind" title="Permalink to this definition">¶</a></dt>
 <dd><p>[ A   B ][X]
 [-B* -A*][Y]</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="pyscf.pbc.tdscf.krhf.TDHF.kernel">
-<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param">x0=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/krhf.html#TDHF.kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.krhf.TDHF.kernel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x0</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/krhf.html#TDHF.kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.krhf.TDHF.kernel" title="Permalink to this definition">¶</a></dt>
 <dd><p>TDHF diagonalization with non-Hermitian eigenvalue solver</p>
 </dd></dl>
 
@@ -448,9 +447,9 @@ corresponding to collective oscillations without momentum transfer;</p></li>
 an arbitrary number of k-points and employs k-point conservation (diagonalizes matrix blocks separately).</p></li>
 </ul>
 </div></blockquote>
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.pbc.tdscf.krhf_slow.get_block_k_ix">
-<code class="sig-prename descclassname">pyscf.pbc.tdscf.krhf_slow.</code><code class="sig-name descname">get_block_k_ix</code><span class="sig-paren">(</span><em class="sig-param">eri</em>, <em class="sig-param">k</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/krhf_slow.html#get_block_k_ix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.krhf_slow.get_block_k_ix" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.pbc.tdscf.krhf_slow.</code><code class="sig-name descname">get_block_k_ix</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">eri</span></em>, <em class="sig-param"><span class="n">k</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/krhf_slow.html#get_block_k_ix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.krhf_slow.get_block_k_ix" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieves k indexes of the block with a specific momentum transfer.
 Args:</p>
 <blockquote>
@@ -509,9 +508,9 @@ vector or a single integer with the second index assuming the first index being 
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.pbc.tdscf.krhf_slow.vector_to_amplitudes">
-<code class="sig-prename descclassname">pyscf.pbc.tdscf.krhf_slow.</code><code class="sig-name descname">vector_to_amplitudes</code><span class="sig-paren">(</span><em class="sig-param">vectors</em>, <em class="sig-param">nocc</em>, <em class="sig-param">nmo</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/krhf_slow.html#vector_to_amplitudes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.krhf_slow.vector_to_amplitudes" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.pbc.tdscf.krhf_slow.</code><code class="sig-name descname">vector_to_amplitudes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vectors</span></em>, <em class="sig-param"><span class="n">nocc</span></em>, <em class="sig-param"><span class="n">nmo</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/krhf_slow.html#vector_to_amplitudes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.krhf_slow.vector_to_amplitudes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transforms (reshapes) and normalizes vectors into amplitudes.
 Args:</p>
 <blockquote>
@@ -545,9 +544,9 @@ corresponding to collective oscillations without momentum transfer;</p></li>
 an arbitrary number of k-points and employs k-point conservation (diagonalizes matrix blocks separately).</p></li>
 </ul>
 </div></blockquote>
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.pbc.tdscf.krhf_slow_gamma.vector_to_amplitudes">
-<code class="sig-prename descclassname">pyscf.pbc.tdscf.krhf_slow_gamma.</code><code class="sig-name descname">vector_to_amplitudes</code><span class="sig-paren">(</span><em class="sig-param">vectors</em>, <em class="sig-param">nocc</em>, <em class="sig-param">nmo</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/krhf_slow_gamma.html#vector_to_amplitudes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.krhf_slow_gamma.vector_to_amplitudes" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.pbc.tdscf.krhf_slow_gamma.</code><code class="sig-name descname">vector_to_amplitudes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vectors</span></em>, <em class="sig-param"><span class="n">nocc</span></em>, <em class="sig-param"><span class="n">nmo</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/krhf_slow_gamma.html#vector_to_amplitudes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.krhf_slow_gamma.vector_to_amplitudes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transforms (reshapes) and normalizes vectors into amplitudes.
 Args:</p>
 <blockquote>
@@ -581,9 +580,9 @@ corresponding to collective oscillations without momentum transfer;</p></li>
 an arbitrary number of k-points and employs k-point conservation (diagonalizes matrix blocks separately).</p></li>
 </ul>
 </div></blockquote>
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.pbc.tdscf.krhf_slow_supercell.vector_to_amplitudes">
-<code class="sig-prename descclassname">pyscf.pbc.tdscf.krhf_slow_supercell.</code><code class="sig-name descname">vector_to_amplitudes</code><span class="sig-paren">(</span><em class="sig-param">vectors</em>, <em class="sig-param">nocc</em>, <em class="sig-param">nmo</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/krhf_slow_supercell.html#vector_to_amplitudes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.krhf_slow_supercell.vector_to_amplitudes" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.pbc.tdscf.krhf_slow_supercell.</code><code class="sig-name descname">vector_to_amplitudes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vectors</span></em>, <em class="sig-param"><span class="n">nocc</span></em>, <em class="sig-param"><span class="n">nmo</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/krhf_slow_supercell.html#vector_to_amplitudes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.krhf_slow_supercell.vector_to_amplitudes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transforms (reshapes) and normalizes vectors into amplitudes.
 Args:</p>
 <blockquote>
@@ -598,73 +597,73 @@ nmo (tuple): the total numbers of AOs per k-point;</p>
 </dl>
 </dd></dl>
 
-<span class="target" id="module-pyscf.pbc.tdscf.krks"></span><dl class="function">
+<span class="target" id="module-pyscf.pbc.tdscf.krks"></span><dl class="py function">
 <dt id="pyscf.pbc.tdscf.krks.tddft">
-<code class="sig-prename descclassname">pyscf.pbc.tdscf.krks.</code><code class="sig-name descname">tddft</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/krks.html#tddft"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.krks.tddft" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.pbc.tdscf.krks.</code><code class="sig-name descname">tddft</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/krks.html#tddft"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.krks.tddft" title="Permalink to this definition">¶</a></dt>
 <dd><p>Driver to create TDDFT or TDDFTNoHybrid object</p>
 </dd></dl>
 
-<span class="target" id="module-pyscf.pbc.tdscf.kuhf"></span><dl class="attribute">
+<span class="target" id="module-pyscf.pbc.tdscf.kuhf"></span><dl class="py attribute">
 <dt id="pyscf.pbc.tdscf.kuhf.CIS">
 <code class="sig-prename descclassname">pyscf.pbc.tdscf.kuhf.</code><code class="sig-name descname">CIS</code><a class="headerlink" href="#pyscf.pbc.tdscf.kuhf.CIS" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#pyscf.pbc.tdscf.kuhf.TDA" title="pyscf.pbc.tdscf.kuhf.TDA"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.pbc.tdscf.kuhf.TDA</span></code></a></p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="pyscf.pbc.tdscf.kuhf.KTDA">
 <code class="sig-prename descclassname">pyscf.pbc.tdscf.kuhf.</code><code class="sig-name descname">KTDA</code><a class="headerlink" href="#pyscf.pbc.tdscf.kuhf.KTDA" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#pyscf.pbc.tdscf.kuhf.TDA" title="pyscf.pbc.tdscf.kuhf.TDA"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.pbc.tdscf.kuhf.TDA</span></code></a></p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="pyscf.pbc.tdscf.kuhf.KTDHF">
 <code class="sig-prename descclassname">pyscf.pbc.tdscf.kuhf.</code><code class="sig-name descname">KTDHF</code><a class="headerlink" href="#pyscf.pbc.tdscf.kuhf.KTDHF" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#pyscf.pbc.tdscf.kuhf.TDHF" title="pyscf.pbc.tdscf.kuhf.TDHF"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.pbc.tdscf.kuhf.TDHF</span></code></a></p>
 </dd></dl>
 
-<dl class="attribute">
+<dl class="py attribute">
 <dt id="pyscf.pbc.tdscf.kuhf.RPA">
 <code class="sig-prename descclassname">pyscf.pbc.tdscf.kuhf.</code><code class="sig-name descname">RPA</code><a class="headerlink" href="#pyscf.pbc.tdscf.kuhf.RPA" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#pyscf.pbc.tdscf.kuhf.TDHF" title="pyscf.pbc.tdscf.kuhf.TDHF"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.pbc.tdscf.kuhf.TDHF</span></code></a></p>
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="pyscf.pbc.tdscf.kuhf.TDA">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.pbc.tdscf.kuhf.</code><code class="sig-name descname">TDA</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kuhf.html#TDA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kuhf.TDA" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
+<em class="property">class </em><code class="sig-prename descclassname">pyscf.pbc.tdscf.kuhf.</code><code class="sig-name descname">TDA</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kuhf.html#TDA"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kuhf.TDA" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
 <dt id="pyscf.pbc.tdscf.kuhf.TDA.gen_vind">
-<code class="sig-name descname">gen_vind</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kuhf.html#TDA.gen_vind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kuhf.TDA.gen_vind" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">gen_vind</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kuhf.html#TDA.gen_vind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kuhf.TDA.gen_vind" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute Ax</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="pyscf.pbc.tdscf.kuhf.TDA.kernel">
-<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param">x0=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kuhf.html#TDA.kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kuhf.TDA.kernel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x0</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kuhf.html#TDA.kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kuhf.TDA.kernel" title="Permalink to this definition">¶</a></dt>
 <dd><p>TDA diagonalization solver</p>
 </dd></dl>
 
 </dd></dl>
 
-<dl class="class">
+<dl class="py class">
 <dt id="pyscf.pbc.tdscf.kuhf.TDHF">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.pbc.tdscf.kuhf.</code><code class="sig-name descname">TDHF</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kuhf.html#TDHF"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kuhf.TDHF" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="method">
+<em class="property">class </em><code class="sig-prename descclassname">pyscf.pbc.tdscf.kuhf.</code><code class="sig-name descname">TDHF</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kuhf.html#TDHF"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kuhf.TDHF" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
 <dt id="pyscf.pbc.tdscf.kuhf.TDHF.gen_vind">
-<code class="sig-name descname">gen_vind</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kuhf.html#TDHF.gen_vind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kuhf.TDHF.gen_vind" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">gen_vind</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kuhf.html#TDHF.gen_vind"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kuhf.TDHF.gen_vind" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute Ax</p>
 </dd></dl>
 
-<dl class="method">
+<dl class="py method">
 <dt id="pyscf.pbc.tdscf.kuhf.TDHF.kernel">
-<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param">x0=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kuhf.html#TDHF.kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kuhf.TDHF.kernel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x0</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kuhf.html#TDHF.kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kuhf.TDHF.kernel" title="Permalink to this definition">¶</a></dt>
 <dd><p>TDHF diagonalization with non-Hermitian eigenvalue solver</p>
 </dd></dl>
 
 </dd></dl>
 
-<span class="target" id="module-pyscf.pbc.tdscf.kuks"></span><dl class="function">
+<span class="target" id="module-pyscf.pbc.tdscf.kuks"></span><dl class="py function">
 <dt id="pyscf.pbc.tdscf.kuks.tddft">
-<code class="sig-prename descclassname">pyscf.pbc.tdscf.kuks.</code><code class="sig-name descname">tddft</code><span class="sig-paren">(</span><em class="sig-param">mf</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kuks.html#tddft"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kuks.tddft" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.pbc.tdscf.kuks.</code><code class="sig-name descname">tddft</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kuks.html#tddft"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kuks.tddft" title="Permalink to this definition">¶</a></dt>
 <dd><p>Driver to create TDDFT or TDDFTNoHybrid object</p>
 </dd></dl>
 
@@ -702,9 +701,9 @@ time reversal invariant (TRI) models: i.e. the k-point grid has to be aligned an
 matrices (the performance gain is the total number of k-points in the model).</p></li>
 </ul>
 </div></blockquote>
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.pbc.tdscf.kproxy_supercell.assert_scf_converged">
-<code class="sig-prename descclassname">pyscf.pbc.tdscf.kproxy_supercell.</code><code class="sig-name descname">assert_scf_converged</code><span class="sig-paren">(</span><em class="sig-param">model</em>, <em class="sig-param">threshold=1e-07</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kproxy_supercell.html#assert_scf_converged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kproxy_supercell.assert_scf_converged" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.pbc.tdscf.kproxy_supercell.</code><code class="sig-name descname">assert_scf_converged</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">threshold</span><span class="o">=</span><span class="default_value">1e-07</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kproxy_supercell.html#assert_scf_converged"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kproxy_supercell.assert_scf_converged" title="Permalink to this definition">¶</a></dt>
 <dd><p>Tests if scf is converged.
 Args:</p>
 <blockquote>
@@ -717,9 +716,9 @@ threshold (float): threshold for eigenvalue comparison;</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.pbc.tdscf.kproxy_supercell.get_sparse_ov_transform">
-<code class="sig-prename descclassname">pyscf.pbc.tdscf.kproxy_supercell.</code><code class="sig-name descname">get_sparse_ov_transform</code><span class="sig-paren">(</span><em class="sig-param">oo</em>, <em class="sig-param">vv</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kproxy_supercell.html#get_sparse_ov_transform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kproxy_supercell.get_sparse_ov_transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.pbc.tdscf.kproxy_supercell.</code><code class="sig-name descname">get_sparse_ov_transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">oo</span></em>, <em class="sig-param"><span class="n">vv</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kproxy_supercell.html#get_sparse_ov_transform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kproxy_supercell.get_sparse_ov_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieves a sparse <cite>ovov</cite> transform out of sparse <cite>oo</cite> and <cite>vv</cite> transforms.
 Args:</p>
 <blockquote>
@@ -732,9 +731,9 @@ vv (ndarray): the transformation in the virtual space;</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.pbc.tdscf.kproxy_supercell.k2s">
-<code class="sig-prename descclassname">pyscf.pbc.tdscf.kproxy_supercell.</code><code class="sig-name descname">k2s</code><span class="sig-paren">(</span><em class="sig-param">model</em>, <em class="sig-param">grid_spec</em>, <em class="sig-param">mf_constructor</em>, <em class="sig-param">threshold=None</em>, <em class="sig-param">degeneracy_threshold=None</em>, <em class="sig-param">imaginary_threshold=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kproxy_supercell.html#k2s"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kproxy_supercell.k2s" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.pbc.tdscf.kproxy_supercell.</code><code class="sig-name descname">k2s</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">grid_spec</span></em>, <em class="sig-param"><span class="n">mf_constructor</span></em>, <em class="sig-param"><span class="n">threshold</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">degeneracy_threshold</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">imaginary_threshold</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kproxy_supercell.html#k2s"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kproxy_supercell.k2s" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts k-point model into a supercell with real orbitals.
 Args:</p>
 <blockquote>
@@ -751,9 +750,9 @@ imaginary_threshold (float): a threshold for asserting real-valued supercell orb
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.pbc.tdscf.kproxy_supercell.ko_mask">
-<code class="sig-prename descclassname">pyscf.pbc.tdscf.kproxy_supercell.</code><code class="sig-name descname">ko_mask</code><span class="sig-paren">(</span><em class="sig-param">nocc</em>, <em class="sig-param">nmo</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kproxy_supercell.html#ko_mask"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kproxy_supercell.ko_mask" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.pbc.tdscf.kproxy_supercell.</code><code class="sig-name descname">ko_mask</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nocc</span></em>, <em class="sig-param"><span class="n">nmo</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kproxy_supercell.html#ko_mask"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kproxy_supercell.ko_mask" title="Permalink to this definition">¶</a></dt>
 <dd><p>Prepares a mask of an occupied space.
 Args:</p>
 <blockquote>
@@ -766,9 +765,9 @@ nmo (Iterable): numbers of orbitals per k-point;</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.pbc.tdscf.kproxy_supercell.minus_k">
-<code class="sig-prename descclassname">pyscf.pbc.tdscf.kproxy_supercell.</code><code class="sig-name descname">minus_k</code><span class="sig-paren">(</span><em class="sig-param">model</em>, <em class="sig-param">threshold=None</em>, <em class="sig-param">degeneracy_threshold=None</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kproxy_supercell.html#minus_k"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kproxy_supercell.minus_k" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.pbc.tdscf.kproxy_supercell.</code><code class="sig-name descname">minus_k</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">threshold</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">degeneracy_threshold</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kproxy_supercell.html#minus_k"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kproxy_supercell.minus_k" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieves an array of indexes of negative k.
 Args:</p>
 <blockquote>
@@ -782,9 +781,9 @@ degeneracy_threshold (float): a threshold for assuming degeneracy;</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.pbc.tdscf.kproxy_supercell.orb2ov">
-<code class="sig-prename descclassname">pyscf.pbc.tdscf.kproxy_supercell.</code><code class="sig-name descname">orb2ov</code><span class="sig-paren">(</span><em class="sig-param">space</em>, <em class="sig-param">nocc</em>, <em class="sig-param">nmo</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kproxy_supercell.html#orb2ov"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kproxy_supercell.orb2ov" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.pbc.tdscf.kproxy_supercell.</code><code class="sig-name descname">orb2ov</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">space</span></em>, <em class="sig-param"><span class="n">nocc</span></em>, <em class="sig-param"><span class="n">nmo</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kproxy_supercell.html#orb2ov"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kproxy_supercell.orb2ov" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts orbital active space specification into ov-pairs space spec.
 Args:</p>
 <blockquote>
@@ -798,9 +797,9 @@ nmo (Iterable): the total numbers of orbitals per k-point;</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.pbc.tdscf.kproxy_supercell.ov2orb">
-<code class="sig-prename descclassname">pyscf.pbc.tdscf.kproxy_supercell.</code><code class="sig-name descname">ov2orb</code><span class="sig-paren">(</span><em class="sig-param">space</em>, <em class="sig-param">nocc</em>, <em class="sig-param">nmo</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kproxy_supercell.html#ov2orb"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kproxy_supercell.ov2orb" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.pbc.tdscf.kproxy_supercell.</code><code class="sig-name descname">ov2orb</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">space</span></em>, <em class="sig-param"><span class="n">nocc</span></em>, <em class="sig-param"><span class="n">nmo</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kproxy_supercell.html#ov2orb"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kproxy_supercell.ov2orb" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts ov-pairs active space specification into orbital space spec.
 Args:</p>
 <blockquote>
@@ -814,9 +813,9 @@ nmo (Iterable): the total numbers of orbitals per k-point;</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.pbc.tdscf.kproxy_supercell.sparse_transform">
-<code class="sig-prename descclassname">pyscf.pbc.tdscf.kproxy_supercell.</code><code class="sig-name descname">sparse_transform</code><span class="sig-paren">(</span><em class="sig-param">m</em>, <em class="sig-param">*args</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kproxy_supercell.html#sparse_transform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kproxy_supercell.sparse_transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.pbc.tdscf.kproxy_supercell.</code><code class="sig-name descname">sparse_transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">m</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kproxy_supercell.html#sparse_transform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kproxy_supercell.sparse_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Performs a sparse transform of a dense tensor.
 Args:</p>
 <blockquote>
@@ -829,9 +828,9 @@ Args:</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.pbc.tdscf.kproxy_supercell.split_transform">
-<code class="sig-prename descclassname">pyscf.pbc.tdscf.kproxy_supercell.</code><code class="sig-name descname">split_transform</code><span class="sig-paren">(</span><em class="sig-param">transform</em>, <em class="sig-param">nocc</em>, <em class="sig-param">nmo</em>, <em class="sig-param">tolerance=1e-14</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kproxy_supercell.html#split_transform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kproxy_supercell.split_transform" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.pbc.tdscf.kproxy_supercell.</code><code class="sig-name descname">split_transform</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">transform</span></em>, <em class="sig-param"><span class="n">nocc</span></em>, <em class="sig-param"><span class="n">nmo</span></em>, <em class="sig-param"><span class="n">tolerance</span><span class="o">=</span><span class="default_value">1e-14</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kproxy_supercell.html#split_transform"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kproxy_supercell.split_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Splits the transform into <cite>oo</cite> and <cite>vv</cite> blocks.
 Args:</p>
 <blockquote>
@@ -846,9 +845,9 @@ tolerance (float): tolerance to check zeros at the <cite>ov</cite> block;</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.pbc.tdscf.kproxy_supercell.supercell_response">
-<code class="sig-prename descclassname">pyscf.pbc.tdscf.kproxy_supercell.</code><code class="sig-name descname">supercell_response</code><span class="sig-paren">(</span><em class="sig-param">vind</em>, <em class="sig-param">space</em>, <em class="sig-param">nocc</em>, <em class="sig-param">nmo</em>, <em class="sig-param">double</em>, <em class="sig-param">rot_bloch</em>, <em class="sig-param">log_dest</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kproxy_supercell.html#supercell_response"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kproxy_supercell.supercell_response" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.pbc.tdscf.kproxy_supercell.</code><code class="sig-name descname">supercell_response</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vind</span></em>, <em class="sig-param"><span class="n">space</span></em>, <em class="sig-param"><span class="n">nocc</span></em>, <em class="sig-param"><span class="n">nmo</span></em>, <em class="sig-param"><span class="n">double</span></em>, <em class="sig-param"><span class="n">rot_bloch</span></em>, <em class="sig-param"><span class="n">log_dest</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kproxy_supercell.html#supercell_response"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kproxy_supercell.supercell_response" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieves a raw response matrix.
 Args:</p>
 <blockquote>
@@ -868,9 +867,9 @@ log_dest (object): pyscf logging;</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.pbc.tdscf.kproxy_supercell.supercell_response_ov">
-<code class="sig-prename descclassname">pyscf.pbc.tdscf.kproxy_supercell.</code><code class="sig-name descname">supercell_response_ov</code><span class="sig-paren">(</span><em class="sig-param">vind</em>, <em class="sig-param">space_ov</em>, <em class="sig-param">nocc</em>, <em class="sig-param">nmo</em>, <em class="sig-param">double</em>, <em class="sig-param">rot_bloch</em>, <em class="sig-param">log_dest</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kproxy_supercell.html#supercell_response_ov"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kproxy_supercell.supercell_response_ov" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.pbc.tdscf.kproxy_supercell.</code><code class="sig-name descname">supercell_response_ov</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vind</span></em>, <em class="sig-param"><span class="n">space_ov</span></em>, <em class="sig-param"><span class="n">nocc</span></em>, <em class="sig-param"><span class="n">nmo</span></em>, <em class="sig-param"><span class="n">double</span></em>, <em class="sig-param"><span class="n">rot_bloch</span></em>, <em class="sig-param"><span class="n">log_dest</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kproxy_supercell.html#supercell_response_ov"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kproxy_supercell.supercell_response_ov" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieves a raw response matrix.
 Args:</p>
 <blockquote>
@@ -890,9 +889,9 @@ log_dest (object): pyscf logging;</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.pbc.tdscf.kproxy_supercell.supercell_space_required">
-<code class="sig-prename descclassname">pyscf.pbc.tdscf.kproxy_supercell.</code><code class="sig-name descname">supercell_space_required</code><span class="sig-paren">(</span><em class="sig-param">transform_oo</em>, <em class="sig-param">transform_vv</em>, <em class="sig-param">final_space</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kproxy_supercell.html#supercell_space_required"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kproxy_supercell.supercell_space_required" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.pbc.tdscf.kproxy_supercell.</code><code class="sig-name descname">supercell_space_required</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">transform_oo</span></em>, <em class="sig-param"><span class="n">transform_vv</span></em>, <em class="sig-param"><span class="n">final_space</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/tdscf/kproxy_supercell.html#supercell_space_required"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.tdscf.kproxy_supercell.supercell_space_required" title="Permalink to this definition">¶</a></dt>
 <dd><p>For a given orbital transformation and a given <cite>ov</cite> mask in the transformed space, calculates a minimal <cite>ov</cite> mask
 in the original space required to achieve this transform.
 Args:</p>

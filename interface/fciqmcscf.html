@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -157,9 +156,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../interface.html">9. Interfaces</a> &raquo;</li>
+          <li><a href="../interface.html"><span class="section-number">9. </span>Interfaces</a> &raquo;</li>
         
-      <li>9.4. <code class="xref py py-mod docutils literal notranslate"><span class="pre">fciqmcscf</span></code> — Full configuration interaction quantum Monte Carlo (FCIQMC)</li>
+      <li><span class="section-number">9.4. </span><code class="xref py py-mod docutils literal notranslate"><span class="pre">fciqmcscf</span></code> — Full configuration interaction quantum Monte Carlo (FCIQMC)</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -179,29 +178,29 @@
            <div itemprop="articleBody">
             
   <div class="section" id="fciqmcscf-full-configuration-interaction-quantum-monte-carlo-fciqmc">
-<span id="fciqmcscf"></span><h1>9.4. <code class="xref py py-mod docutils literal notranslate"><span class="pre">fciqmcscf</span></code> — Full configuration interaction quantum Monte Carlo (FCIQMC)<a class="headerlink" href="#fciqmcscf-full-configuration-interaction-quantum-monte-carlo-fciqmc" title="Permalink to this headline">¶</a></h1>
+<span id="fciqmcscf"></span><h1><span class="section-number">9.4. </span><code class="xref py py-mod docutils literal notranslate"><span class="pre">fciqmcscf</span></code> — Full configuration interaction quantum Monte Carlo (FCIQMC)<a class="headerlink" href="#fciqmcscf-full-configuration-interaction-quantum-monte-carlo-fciqmc" title="Permalink to this headline">¶</a></h1>
 <p>An interface to the <a class="reference external" href="https://github.com/ghb24/NECI_STABLE">NECI</a> FCIQMC solver.
 To use NECI, you need create a config file
 <code class="docutils literal notranslate"><span class="pre">pyscf/fciqmcscf/settings.py</span></code> to store the path where NECI was installed.</p>
 <div class="section" id="module-pyscf.fciqmcscf.fciqmc">
-<span id="program-reference"></span><h2>9.4.1. Program reference<a class="headerlink" href="#module-pyscf.fciqmcscf.fciqmc" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
+<span id="program-reference"></span><h2><span class="section-number">9.4.1. </span>Program reference<a class="headerlink" href="#module-pyscf.fciqmcscf.fciqmc" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
 <dt id="pyscf.fciqmcscf.fciqmc.add_inactive_space_to_rdm">
-<code class="sig-prename descclassname">pyscf.fciqmcscf.fciqmc.</code><code class="sig-name descname">add_inactive_space_to_rdm</code><span class="sig-paren">(</span><em class="sig-param">mol</em>, <em class="sig-param">mo_coeff</em>, <em class="sig-param">one_pdm</em>, <em class="sig-param">two_pdm</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/fciqmcscf/fciqmc.html#add_inactive_space_to_rdm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.fciqmcscf.fciqmc.add_inactive_space_to_rdm" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.fciqmcscf.fciqmc.</code><code class="sig-name descname">add_inactive_space_to_rdm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">mo_coeff</span></em>, <em class="sig-param"><span class="n">one_pdm</span></em>, <em class="sig-param"><span class="n">two_pdm</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/fciqmcscf/fciqmc.html#add_inactive_space_to_rdm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.fciqmcscf.fciqmc.add_inactive_space_to_rdm" title="Permalink to this definition">¶</a></dt>
 <dd><p>If a CASSCF calculation has been done, the final RDMs from neci will
 not contain the doubly occupied inactive orbitals. This function will add
 them and return the full density matrices.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.fciqmcscf.fciqmc.add_spinned_core_rdms">
-<code class="sig-prename descclassname">pyscf.fciqmcscf.fciqmc.</code><code class="sig-name descname">add_spinned_core_rdms</code><span class="sig-paren">(</span><em class="sig-param">mf</em>, <em class="sig-param">ncore</em>, <em class="sig-param">dm1a_act</em>, <em class="sig-param">dm1b_act</em>, <em class="sig-param">dm2aa_act</em>, <em class="sig-param">dm2ab_act</em>, <em class="sig-param">dm2bb_act</em>, <em class="sig-param">reorder=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/fciqmcscf/fciqmc.html#add_spinned_core_rdms"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.fciqmcscf.fciqmc.add_spinned_core_rdms" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.fciqmcscf.fciqmc.</code><code class="sig-name descname">add_spinned_core_rdms</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em>, <em class="sig-param"><span class="n">ncore</span></em>, <em class="sig-param"><span class="n">dm1a_act</span></em>, <em class="sig-param"><span class="n">dm1b_act</span></em>, <em class="sig-param"><span class="n">dm2aa_act</span></em>, <em class="sig-param"><span class="n">dm2ab_act</span></em>, <em class="sig-param"><span class="n">dm2bb_act</span></em>, <em class="sig-param"><span class="n">reorder</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/fciqmcscf/fciqmc.html#add_spinned_core_rdms"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.fciqmcscf.fciqmc.add_spinned_core_rdms" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add an RHF core to the rdms in the MO basis to the 1 and 2 RDMs</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.fciqmcscf.fciqmc.calc_dipole">
-<code class="sig-prename descclassname">pyscf.fciqmcscf.fciqmc.</code><code class="sig-name descname">calc_dipole</code><span class="sig-paren">(</span><em class="sig-param">mol</em>, <em class="sig-param">mo_coeff</em>, <em class="sig-param">one_pdm</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/fciqmcscf/fciqmc.html#calc_dipole"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.fciqmcscf.fciqmc.calc_dipole" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.fciqmcscf.fciqmc.</code><code class="sig-name descname">calc_dipole</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">mo_coeff</span></em>, <em class="sig-param"><span class="n">one_pdm</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/fciqmcscf/fciqmc.html#calc_dipole"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.fciqmcscf.fciqmc.calc_dipole" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate and return the dipole moment for a given molecule, set of
 molecular orbital coefficients and a 1-rdm.</p>
 <dl>
@@ -226,9 +225,9 @@ molecular orbital coefficients and a 1-rdm.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.fciqmcscf.fciqmc.calc_energy_from_rdms">
-<code class="sig-prename descclassname">pyscf.fciqmcscf.fciqmc.</code><code class="sig-name descname">calc_energy_from_rdms</code><span class="sig-paren">(</span><em class="sig-param">mol</em>, <em class="sig-param">mo_coeff</em>, <em class="sig-param">one_rdm</em>, <em class="sig-param">two_rdm</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/fciqmcscf/fciqmc.html#calc_energy_from_rdms"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.fciqmcscf.fciqmc.calc_energy_from_rdms" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.fciqmcscf.fciqmc.</code><code class="sig-name descname">calc_energy_from_rdms</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">mo_coeff</span></em>, <em class="sig-param"><span class="n">one_rdm</span></em>, <em class="sig-param"><span class="n">two_rdm</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/fciqmcscf/fciqmc.html#calc_energy_from_rdms"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.fciqmcscf.fciqmc.calc_energy_from_rdms" title="Permalink to this definition">¶</a></dt>
 <dd><p>From the full density matrices, calculate the energy.</p>
 <dl>
 <dt>Args:</dt><dd><dl>
@@ -245,9 +244,9 @@ molecular orbital coefficients and a 1-rdm.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.fciqmcscf.fciqmc.execute_fciqmc">
-<code class="sig-prename descclassname">pyscf.fciqmcscf.fciqmc.</code><code class="sig-name descname">execute_fciqmc</code><span class="sig-paren">(</span><em class="sig-param">fciqmcci</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/fciqmcscf/fciqmc.html#execute_fciqmc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.fciqmcscf.fciqmc.execute_fciqmc" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.fciqmcscf.fciqmc.</code><code class="sig-name descname">execute_fciqmc</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fciqmcci</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/fciqmcscf/fciqmc.html#execute_fciqmc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.fciqmcscf.fciqmc.execute_fciqmc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Call the external FCIQMC program.</p>
 <dl>
 <dt>Args:</dt><dd><dl>
@@ -258,17 +257,17 @@ molecular orbital coefficients and a 1-rdm.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.fciqmcscf.fciqmc.find_full_casscf_12rdm">
-<code class="sig-prename descclassname">pyscf.fciqmcscf.fciqmc.</code><code class="sig-name descname">find_full_casscf_12rdm</code><span class="sig-paren">(</span><em class="sig-param">fciqmcci</em>, <em class="sig-param">mo_coeff</em>, <em class="sig-param">filename</em>, <em class="sig-param">norbcas</em>, <em class="sig-param">neleccas</em>, <em class="sig-param">directory='.'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/fciqmcscf/fciqmc.html#find_full_casscf_12rdm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.fciqmcscf.fciqmc.find_full_casscf_12rdm" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.fciqmcscf.fciqmc.</code><code class="sig-name descname">find_full_casscf_12rdm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fciqmcci</span></em>, <em class="sig-param"><span class="n">mo_coeff</span></em>, <em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">norbcas</span></em>, <em class="sig-param"><span class="n">neleccas</span></em>, <em class="sig-param"><span class="n">directory</span><span class="o">=</span><span class="default_value">'.'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/fciqmcscf/fciqmc.html#find_full_casscf_12rdm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.fciqmcscf.fciqmc.find_full_casscf_12rdm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the 1 and 2 full RDMs after a CASSCF calculation, by adding
 on the contributions from the inactive spaces. Requires the cas space to
 be given, as we as a set of mo coefficients in the complete space.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.fciqmcscf.fciqmc.one_from_two_pdm">
-<code class="sig-prename descclassname">pyscf.fciqmcscf.fciqmc.</code><code class="sig-name descname">one_from_two_pdm</code><span class="sig-paren">(</span><em class="sig-param">two_pdm</em>, <em class="sig-param">nelec</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/fciqmcscf/fciqmc.html#one_from_two_pdm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.fciqmcscf.fciqmc.one_from_two_pdm" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.fciqmcscf.fciqmc.</code><code class="sig-name descname">one_from_two_pdm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">two_pdm</span></em>, <em class="sig-param"><span class="n">nelec</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/fciqmcscf/fciqmc.html#one_from_two_pdm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.fciqmcscf.fciqmc.one_from_two_pdm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a 1-rdm, given a 2-rdm to contract.</p>
 <dl class="simple">
 <dt>Args:</dt><dd><dl class="simple">
@@ -286,9 +285,9 @@ be given, as we as a set of mo coefficients in the complete space.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.fciqmcscf.fciqmc.read_energy">
-<code class="sig-prename descclassname">pyscf.fciqmcscf.fciqmc.</code><code class="sig-name descname">read_energy</code><span class="sig-paren">(</span><em class="sig-param">fciqmcci</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/fciqmcscf/fciqmc.html#read_energy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.fciqmcscf.fciqmc.read_energy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.fciqmcscf.fciqmc.</code><code class="sig-name descname">read_energy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fciqmcci</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/fciqmcscf/fciqmc.html#read_energy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.fciqmcscf.fciqmc.read_energy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read and return the final RDM energy from a NECI output file.</p>
 <dl>
 <dt>Args:</dt><dd><dl>
@@ -305,15 +304,15 @@ file.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.fciqmcscf.fciqmc.read_neci_1dms">
-<code class="sig-prename descclassname">pyscf.fciqmcscf.fciqmc.</code><code class="sig-name descname">read_neci_1dms</code><span class="sig-paren">(</span><em class="sig-param">fciqmcci</em>, <em class="sig-param">norb</em>, <em class="sig-param">nelec</em>, <em class="sig-param">filename='OneRDM.1'</em>, <em class="sig-param">directory='.'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/fciqmcscf/fciqmc.html#read_neci_1dms"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.fciqmcscf.fciqmc.read_neci_1dms" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.fciqmcscf.fciqmc.</code><code class="sig-name descname">read_neci_1dms</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fciqmcci</span></em>, <em class="sig-param"><span class="n">norb</span></em>, <em class="sig-param"><span class="n">nelec</span></em>, <em class="sig-param"><span class="n">filename</span><span class="o">=</span><span class="default_value">'OneRDM.1'</span></em>, <em class="sig-param"><span class="n">directory</span><span class="o">=</span><span class="default_value">'.'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/fciqmcscf/fciqmc.html#read_neci_1dms"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.fciqmcscf.fciqmc.read_neci_1dms" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read spinned rdms, as they are in the neci output</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.fciqmcscf.fciqmc.read_neci_2dms">
-<code class="sig-prename descclassname">pyscf.fciqmcscf.fciqmc.</code><code class="sig-name descname">read_neci_2dms</code><span class="sig-paren">(</span><em class="sig-param">fciqmcci</em>, <em class="sig-param">norb</em>, <em class="sig-param">nelec</em>, <em class="sig-param">filename_aa='TwoRDM_aaaa.1'</em>, <em class="sig-param">filename_abba='TwoRDM_abba.1'</em>, <em class="sig-param">filename_abab='TwoRDM_abab.1'</em>, <em class="sig-param">directory='.'</em>, <em class="sig-param">reorder=True</em>, <em class="sig-param">dm1a=None</em>, <em class="sig-param">dm1b=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/fciqmcscf/fciqmc.html#read_neci_2dms"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.fciqmcscf.fciqmc.read_neci_2dms" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.fciqmcscf.fciqmc.</code><code class="sig-name descname">read_neci_2dms</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fciqmcci</span></em>, <em class="sig-param"><span class="n">norb</span></em>, <em class="sig-param"><span class="n">nelec</span></em>, <em class="sig-param"><span class="n">filename_aa</span><span class="o">=</span><span class="default_value">'TwoRDM_aaaa.1'</span></em>, <em class="sig-param"><span class="n">filename_abba</span><span class="o">=</span><span class="default_value">'TwoRDM_abba.1'</span></em>, <em class="sig-param"><span class="n">filename_abab</span><span class="o">=</span><span class="default_value">'TwoRDM_abab.1'</span></em>, <em class="sig-param"><span class="n">directory</span><span class="o">=</span><span class="default_value">'.'</span></em>, <em class="sig-param"><span class="n">reorder</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">dm1a</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dm1b</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/fciqmcscf/fciqmc.html#read_neci_2dms"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.fciqmcscf.fciqmc.read_neci_2dms" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find spinned RDMs (assuming a/b symmetry). Return in pyscf form that
 you would get from the e.g. direct_spin1.make_rdm12s routine, with Reorder=True.</p>
 <p>This means (assuming reorder = True):
@@ -330,9 +329,9 @@ dm2ab unchanged</p>
 <p>Note that the spin-free RDMs are just dm2aa + dm2bb + 2*dm2ab if reorder = True</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.fciqmcscf.fciqmc.read_neci_one_pdm">
-<code class="sig-prename descclassname">pyscf.fciqmcscf.fciqmc.</code><code class="sig-name descname">read_neci_one_pdm</code><span class="sig-paren">(</span><em class="sig-param">fciqmcci</em>, <em class="sig-param">filename</em>, <em class="sig-param">norb</em>, <em class="sig-param">nelec</em>, <em class="sig-param">directory='.'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/fciqmcscf/fciqmc.html#read_neci_one_pdm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.fciqmcscf.fciqmc.read_neci_one_pdm" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.fciqmcscf.fciqmc.</code><code class="sig-name descname">read_neci_one_pdm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fciqmcci</span></em>, <em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">norb</span></em>, <em class="sig-param"><span class="n">nelec</span></em>, <em class="sig-param"><span class="n">directory</span><span class="o">=</span><span class="default_value">'.'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/fciqmcscf/fciqmc.html#read_neci_one_pdm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.fciqmcscf.fciqmc.read_neci_one_pdm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Obtain the spin-free 1RDM from neci by reading in the spin free 2RDM.
 If core orbitals have been indicated as frozen in neci, this core contribution
 will be explicitly added back in to the RDM. Therefore, the norb parameter
@@ -341,9 +340,9 @@ nelec is the total number of electrons (inc. frozen), but not inactive if runnin
 through CASSCF.</p>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.fciqmcscf.fciqmc.read_neci_two_pdm">
-<code class="sig-prename descclassname">pyscf.fciqmcscf.fciqmc.</code><code class="sig-name descname">read_neci_two_pdm</code><span class="sig-paren">(</span><em class="sig-param">fciqmcci</em>, <em class="sig-param">filename</em>, <em class="sig-param">norb</em>, <em class="sig-param">directory='.'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/fciqmcscf/fciqmc.html#read_neci_two_pdm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.fciqmcscf.fciqmc.read_neci_two_pdm" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.fciqmcscf.fciqmc.</code><code class="sig-name descname">read_neci_two_pdm</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fciqmcci</span></em>, <em class="sig-param"><span class="n">filename</span></em>, <em class="sig-param"><span class="n">norb</span></em>, <em class="sig-param"><span class="n">directory</span><span class="o">=</span><span class="default_value">'.'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/fciqmcscf/fciqmc.html#read_neci_two_pdm"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.fciqmcscf.fciqmc.read_neci_two_pdm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read a spin-free 2-rdm output from a NECI calculation, and return it in
 a form supported by pyscf. Note that the RDMs in neci are written in
 as RDM_ijkl = &lt; a^+_is a^+_jt a_lt a_ks &gt;. In pyscf, the correlated _after
@@ -372,9 +371,9 @@ number of values each 2-rdm index can take.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.fciqmcscf.fciqmc.run_standalone">
-<code class="sig-prename descclassname">pyscf.fciqmcscf.fciqmc.</code><code class="sig-name descname">run_standalone</code><span class="sig-paren">(</span><em class="sig-param">fciqmcci</em>, <em class="sig-param">scf_obj</em>, <em class="sig-param">orbs=None</em>, <em class="sig-param">restart=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/fciqmcscf/fciqmc.html#run_standalone"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.fciqmcscf.fciqmc.run_standalone" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.fciqmcscf.fciqmc.</code><code class="sig-name descname">run_standalone</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fciqmcci</span></em>, <em class="sig-param"><span class="n">scf_obj</span></em>, <em class="sig-param"><span class="n">orbs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">restart</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/fciqmcscf/fciqmc.html#run_standalone"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.fciqmcscf.fciqmc.run_standalone" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run a standalone NECI calculation for the molecule listed in the
 FCIQMCCI object. The basis to run this calculation in is given by the
 orbs array.</p>
@@ -397,9 +396,9 @@ run.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.fciqmcscf.fciqmc.write_fciqmc_config_file">
-<code class="sig-prename descclassname">pyscf.fciqmcscf.fciqmc.</code><code class="sig-name descname">write_fciqmc_config_file</code><span class="sig-paren">(</span><em class="sig-param">fciqmcci</em>, <em class="sig-param">neleca</em>, <em class="sig-param">nelecb</em>, <em class="sig-param">restart</em>, <em class="sig-param">tUHF=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/fciqmcscf/fciqmc.html#write_fciqmc_config_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.fciqmcscf.fciqmc.write_fciqmc_config_file" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.fciqmcscf.fciqmc.</code><code class="sig-name descname">write_fciqmc_config_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fciqmcci</span></em>, <em class="sig-param"><span class="n">neleca</span></em>, <em class="sig-param"><span class="n">nelecb</span></em>, <em class="sig-param"><span class="n">restart</span></em>, <em class="sig-param"><span class="n">tUHF</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/fciqmcscf/fciqmc.html#write_fciqmc_config_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.fciqmcscf.fciqmc.write_fciqmc_config_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write an input file for a NECI calculation.</p>
 <dl>
 <dt>Args:</dt><dd><dl>
@@ -416,9 +415,9 @@ run.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.fciqmcscf.fciqmc.write_integrals_file">
-<code class="sig-prename descclassname">pyscf.fciqmcscf.fciqmc.</code><code class="sig-name descname">write_integrals_file</code><span class="sig-paren">(</span><em class="sig-param">h1e</em>, <em class="sig-param">eri</em>, <em class="sig-param">norb</em>, <em class="sig-param">neleca</em>, <em class="sig-param">nelecb</em>, <em class="sig-param">fciqmcci</em>, <em class="sig-param">ecore=0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/fciqmcscf/fciqmc.html#write_integrals_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.fciqmcscf.fciqmc.write_integrals_file" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.fciqmcscf.fciqmc.</code><code class="sig-name descname">write_integrals_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">h1e</span></em>, <em class="sig-param"><span class="n">eri</span></em>, <em class="sig-param"><span class="n">norb</span></em>, <em class="sig-param"><span class="n">neleca</span></em>, <em class="sig-param"><span class="n">nelecb</span></em>, <em class="sig-param"><span class="n">fciqmcci</span></em>, <em class="sig-param"><span class="n">ecore</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/fciqmcscf/fciqmc.html#write_integrals_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.fciqmcscf.fciqmc.write_integrals_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write an integral dump file, based on the integrals provided.</p>
 <dl>
 <dt>Args:</dt><dd><dl>
@@ -440,9 +439,9 @@ some symmetry properties.</p>
 </dl>
 </dd></dl>
 
-<dl class="function">
+<dl class="py function">
 <dt id="pyscf.fciqmcscf.fciqmc.write_uhf_integrals_neci">
-<code class="sig-prename descclassname">pyscf.fciqmcscf.fciqmc.</code><code class="sig-name descname">write_uhf_integrals_neci</code><span class="sig-paren">(</span><em class="sig-param">fciqmcci</em>, <em class="sig-param">scf_obj</em>, <em class="sig-param">nmo</em>, <em class="sig-param">nelec</em>, <em class="sig-param">orbs</em>, <em class="sig-param">orbsym</em>, <em class="sig-param">tol=1e-15</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/fciqmcscf/fciqmc.html#write_uhf_integrals_neci"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.fciqmcscf.fciqmc.write_uhf_integrals_neci" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.fciqmcscf.fciqmc.</code><code class="sig-name descname">write_uhf_integrals_neci</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fciqmcci</span></em>, <em class="sig-param"><span class="n">scf_obj</span></em>, <em class="sig-param"><span class="n">nmo</span></em>, <em class="sig-param"><span class="n">nelec</span></em>, <em class="sig-param"><span class="n">orbs</span></em>, <em class="sig-param"><span class="n">orbsym</span></em>, <em class="sig-param"><span class="n">tol</span><span class="o">=</span><span class="default_value">1e-15</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/fciqmcscf/fciqmc.html#write_uhf_integrals_neci"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.fciqmcscf.fciqmc.write_uhf_integrals_neci" title="Permalink to this definition">¶</a></dt>
 <dd><p>nmo is number of MO orbitals per spin channel
 note that ordering is abababa…</p>
 </dd></dl>

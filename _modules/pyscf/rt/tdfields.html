@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -174,11 +173,11 @@
 <span class="c1"># See the License for the specific language governing permissions and</span>
 <span class="c1"># limitations under the License.</span>
 
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">lib</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">lib</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">scipy</span>
 <span class="kn">import</span> <span class="nn">math</span>
-<span class="kn">from</span> <span class="nn">pyscf.rt</span> <span class="k">import</span> <span class="n">tdscf</span>
+<span class="kn">from</span> <span class="nn">pyscf.rt</span> <span class="kn">import</span> <span class="n">tdscf</span>
 
 <div class="viewcode-block" id="FIELDS"><a class="viewcode-back" href="../../../modules/rt.html#pyscf.rt.tdfields.FIELDS">[docs]</a><span class="k">class</span> <span class="nc">FIELDS</span><span class="p">(</span><span class="n">lib</span><span class="o">.</span><span class="n">StreamObject</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -195,7 +194,7 @@
 <span class="sd">            Field amplitude value at which it is considered no field</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">rt</span><span class="p">,</span> <span class="n">prm</span><span class="p">,</span> <span class="n">field_tol</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**-</span><span class="mf">9.0</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">rt</span><span class="p">,</span> <span class="n">prm</span><span class="p">,</span> <span class="n">field_tol</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**-</span><span class="mf">9.0</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">dip_ints</span> <span class="o">=</span> <span class="n">rt</span><span class="o">.</span><span class="n">ks</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">intor</span><span class="p">(</span><span class="s2">&quot;cint1e_r_sph&quot;</span><span class="p">,</span> <span class="n">comp</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># AO dipole integrals.</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">field_tol</span> <span class="o">=</span> <span class="n">field_tol</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">fieldamp</span> <span class="o">=</span> <span class="n">prm</span><span class="p">[</span><span class="s2">&quot;FieldAmplitude&quot;</span><span class="p">]</span>

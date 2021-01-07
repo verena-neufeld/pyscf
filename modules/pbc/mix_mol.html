@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -121,7 +120,7 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../pbc.html">10.21. <code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc</span></code> — Periodic boundary conditions</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="gto.html">10.21.1. pbc.gto — Crystal cell structure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ao2mo.html">10.21.2. pbc.ao2mo — Integral transformations for crystalline Gaussian type orbitals</a></li>
-<li class="toctree-l3"><a class="reference internal" href="scf.html">10.21.3. pbc.scf — Self-consistent field with periodic boundary conditions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scf.html">10.21.3. <code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc.scf</span></code> — Self-consistent field with periodic boundary conditions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dft.html">10.21.4. pbc.dft  — DFT with PBCs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="df.html">10.21.5. pbc.df — PBC denisty fitting</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tdscf.html">10.21.6. pbc.tdscf — TDHF and TDDFT with PBCs</a></li>
@@ -199,11 +198,11 @@
     
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../../modules.html">10. Main modules</a> &raquo;</li>
+          <li><a href="../../modules.html"><span class="section-number">10. </span>Main modules</a> &raquo;</li>
         
-          <li><a href="../pbc.html">10.21. <code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc</span></code> — Periodic boundary conditions</a> &raquo;</li>
+          <li><a href="../pbc.html"><span class="section-number">10.21. </span><code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc</span></code> — Periodic boundary conditions</a> &raquo;</li>
         
-      <li>10.21.12. Mixing PBC and molecular modules</li>
+      <li><span class="section-number">10.21.12. </span>Mixing PBC and molecular modules</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -223,7 +222,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="mixing-pbc-and-molecular-modules">
-<span id="mix-mol"></span><h1>10.21.12. Mixing PBC and molecular modules<a class="headerlink" href="#mixing-pbc-and-molecular-modules" title="Permalink to this headline">¶</a></h1>
+<span id="mix-mol"></span><h1><span class="section-number">10.21.12. </span>Mixing PBC and molecular modules<a class="headerlink" href="#mixing-pbc-and-molecular-modules" title="Permalink to this headline">¶</a></h1>
 <p>Post-HF methods, as standalone numerical solvers, do not require
 knowledge of the boundary conditions.  Calculations on finite-sized systems
 and extended systems are distinguished by the boundary conditions of the integrals (and
@@ -259,7 +258,7 @@ required by the post-HF solver.  They are <code class="xref py py-meth docutils 
 the numerical integration of DFT exchange-correlation functionals.  These are all
 overloaded in the PBC mean-field object to produce the PBC integrals.</p>
 <div class="section" id="examples">
-<h2>10.21.12.1. Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.21.12.1. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 
 <span class="sd">&#39;&#39;&#39;</span>
@@ -269,7 +268,7 @@ overloaded in the PBC mean-field object to produce the PBC integrals.</p>
 <span class="sd">&#39;&#39;&#39;</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="k">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span>
 
 <span class="n">cell</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span>
     <span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="mf">3.5668</span><span class="p">,</span>
@@ -292,7 +291,7 @@ overloaded in the PBC mean-field object to produce the PBC integrals.</p>
 <span class="c1">#</span>
 <span class="c1"># Import CC, TDDFT module from the molecular implementations</span>
 <span class="c1">#</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">cc</span><span class="p">,</span> <span class="n">tddft</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">cc</span><span class="p">,</span> <span class="n">tddft</span>
 <span class="n">mycc</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">CCSD</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span>
 <span class="n">mycc</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
 

@@ -26,11 +26,10 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../../_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -202,11 +201,11 @@
 <span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">import</span> <span class="nn">numpy</span>
 <span class="kn">import</span> <span class="nn">scipy.linalg</span>
-<span class="kn">from</span> <span class="nn">pyscf.gto</span> <span class="k">import</span> <span class="n">mole</span>
-<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="k">import</span> <span class="n">norm</span>
-<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="k">import</span> <span class="n">logger</span>
-<span class="kn">from</span> <span class="nn">pyscf.symm.param</span> <span class="k">import</span> <span class="n">OPERATOR_TABLE</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">__config__</span>
+<span class="kn">from</span> <span class="nn">pyscf.gto</span> <span class="kn">import</span> <span class="n">mole</span>
+<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="kn">import</span> <span class="n">norm</span>
+<span class="kn">from</span> <span class="nn">pyscf.lib</span> <span class="kn">import</span> <span class="n">logger</span>
+<span class="kn">from</span> <span class="nn">pyscf.symm.param</span> <span class="kn">import</span> <span class="n">OPERATOR_TABLE</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">__config__</span>
 
 <span class="n">TOLERANCE</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">__config__</span><span class="p">,</span> <span class="s1">&#39;symm_geom_tol&#39;</span><span class="p">,</span> <span class="mf">1e-5</span><span class="p">)</span>
 
@@ -257,9 +256,15 @@
 
 <span class="k">def</span> <span class="nf">closest_axes</span><span class="p">(</span><span class="n">axes</span><span class="p">,</span> <span class="n">ref</span><span class="p">):</span>
     <span class="n">xcomp</span><span class="p">,</span> <span class="n">ycomp</span><span class="p">,</span> <span class="n">zcomp</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s1">&#39;ix,jx-&gt;ji&#39;</span><span class="p">,</span> <span class="n">axes</span><span class="p">,</span> <span class="n">ref</span><span class="p">)</span>
-    <span class="n">z_id</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">zcomp</span><span class="p">))</span>
+    <span class="n">zmax</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">zcomp</span><span class="p">))</span>
+    <span class="n">zmax_idx</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">zcomp</span><span class="p">)</span><span class="o">-</span><span class="n">zmax</span><span class="p">)</span><span class="o">&lt;</span><span class="n">TOLERANCE</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">z_id</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">zmax_idx</span><span class="p">)</span>
+    <span class="c1">#z_id = numpy.argmax(abs(zcomp))</span>
     <span class="n">xcomp</span><span class="p">[</span><span class="n">z_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">ycomp</span><span class="p">[</span><span class="n">z_id</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>       <span class="c1"># remove z</span>
-    <span class="n">x_id</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">xcomp</span><span class="p">))</span>
+    <span class="n">xmax</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">xcomp</span><span class="p">))</span>
+    <span class="n">xmax_idx</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">xcomp</span><span class="p">)</span><span class="o">-</span><span class="n">xmax</span><span class="p">)</span><span class="o">&lt;</span><span class="n">TOLERANCE</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">x_id</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">xmax_idx</span><span class="p">)</span>
+    <span class="c1">#x_id = numpy.argmax(abs(xcomp))</span>
     <span class="n">ycomp</span><span class="p">[</span><span class="n">x_id</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>                     <span class="c1"># remove x</span>
     <span class="n">y_id</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">ycomp</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">x_id</span><span class="p">,</span> <span class="n">y_id</span><span class="p">,</span> <span class="n">z_id</span>
@@ -503,8 +508,8 @@
 <span class="n">subgroup</span> <span class="o">=</span> <span class="n">get_subgroup</span>
 
 <span class="k">def</span> <span class="nf">as_subgroup</span><span class="p">(</span><span class="n">topgroup</span><span class="p">,</span> <span class="n">axes</span><span class="p">,</span> <span class="n">subgroup</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="kn">from</span> <span class="nn">pyscf.symm</span> <span class="k">import</span> <span class="n">std_symb</span>
-    <span class="kn">from</span> <span class="nn">pyscf.symm.param</span> <span class="k">import</span> <span class="n">SUBGROUP</span>
+    <span class="kn">from</span> <span class="nn">pyscf.symm</span> <span class="kn">import</span> <span class="n">std_symb</span>
+    <span class="kn">from</span> <span class="nn">pyscf.symm.param</span> <span class="kn">import</span> <span class="n">SUBGROUP</span>
 
     <span class="n">groupname</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">get_subgroup</span><span class="p">(</span><span class="n">topgroup</span><span class="p">,</span> <span class="n">axes</span><span class="p">)</span>
 
@@ -561,7 +566,7 @@
 
 <div class="viewcode-block" id="symm_identical_atoms"><a class="viewcode-back" href="../../../modules/symm.html#pyscf.symm.geom.symm_identical_atoms">[docs]</a><span class="k">def</span> <span class="nf">symm_identical_atoms</span><span class="p">(</span><span class="n">gpname</span><span class="p">,</span> <span class="n">atoms</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39; Requires &#39;&#39;&#39;</span>
-    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="k">import</span> <span class="n">gto</span>
+    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span>
     <span class="c1"># Dooh Coov for linear molecule</span>
     <span class="k">if</span> <span class="n">gpname</span> <span class="o">==</span> <span class="s1">&#39;Dooh&#39;</span><span class="p">:</span>
         <span class="n">coords</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">atoms</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
@@ -646,7 +651,7 @@
     <span class="k">pass</span></div>
 
 <span class="k">class</span> <span class="nc">SymmSys</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">atoms</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">atoms</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">atomtypes</span> <span class="o">=</span> <span class="n">mole</span><span class="o">.</span><span class="n">atom_types</span><span class="p">(</span><span class="n">atoms</span><span class="p">,</span> <span class="n">basis</span><span class="p">)</span>
         <span class="c1"># fake systems, which treates the atoms of different basis as different atoms.</span>
         <span class="c1"># the fake systems do not have the same symmetry as the potential</span>
