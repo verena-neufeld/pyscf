@@ -280,6 +280,32 @@ normalized to 1 for UHF/UKS methods. In the TDA calculation, Y = 0.</p>
 </dl>
 </div></blockquote>
 <dl class="py method">
+<dt id="pyscf.tdscf.rhf.TDA.DDCOSMO">
+<code class="sig-name descname">DDCOSMO</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">solvent_obj</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dm</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.tdscf.rhf.TDA.DDCOSMO" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add solvent model in TDDFT calculations.</p>
+<dl class="simple">
+<dt>Kwargs:</dt><dd><dl class="simple">
+<dt>dm<span class="classifier">if given, solvent does not respond to the change of density</span></dt><dd><p>matrix. A frozen ddCOSMO potential is added to the results.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.tdscf.rhf.TDA.DDPCM">
+<code class="sig-name descname">DDPCM</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">solvent_obj</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dm</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.tdscf.rhf.TDA.DDPCM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add solvent model in TDDFT calculations.</p>
+<dl class="simple">
+<dt>Kwargs:</dt><dd><dl class="simple">
+<dt>dm<span class="classifier">if given, solvent does not respond to the change of density</span></dt><dd><p>matrix. A frozen ddCOSMO potential is added to the results.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="pyscf.tdscf.rhf.TDA.as_scanner">
 <code class="sig-name descname">as_scanner</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.tdscf.rhf.TDA.as_scanner" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generating a scanner/solver for TDA/TDHF/TDDFT PES.</p>
@@ -311,6 +337,32 @@ overwritten.  It does not check the attributes which are prefixed with
 “_”.  The
 return value of method set is the object itself.  This allows a series
 of functions/methods to be executed in pipe.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.tdscf.rhf.TDA.ddCOSMO">
+<code class="sig-name descname">ddCOSMO</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">solvent_obj</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dm</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.tdscf.rhf.TDA.ddCOSMO" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add solvent model in TDDFT calculations.</p>
+<dl class="simple">
+<dt>Kwargs:</dt><dd><dl class="simple">
+<dt>dm<span class="classifier">if given, solvent does not respond to the change of density</span></dt><dd><p>matrix. A frozen ddCOSMO potential is added to the results.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.tdscf.rhf.TDA.ddPCM">
+<code class="sig-name descname">ddPCM</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">solvent_obj</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dm</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.tdscf.rhf.TDA.ddPCM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add solvent model in TDDFT calculations.</p>
+<dl class="simple">
+<dt>Kwargs:</dt><dd><dl class="simple">
+<dt>dm<span class="classifier">if given, solvent does not respond to the change of density</span></dt><dd><p>matrix. A frozen ddCOSMO potential is added to the results.</p>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
