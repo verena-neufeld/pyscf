@@ -204,7 +204,8 @@
             
   <div class="section" id="qmmm-qm-mm-interface">
 <span id="qmmm"></span><h1><span class="section-number">10.23. </span><code class="xref py py-mod docutils literal notranslate"><span class="pre">qmmm</span></code> — QM/MM interface<a class="headerlink" href="#qmmm-qm-mm-interface" title="Permalink to this headline">¶</a></h1>
-<p>To run HF with background charges, one could follow the following example:</p>
+<p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">qmmm</span></code> module implements a generic interface for use with MM programs.
+To run HF with background charges, one could follow the following example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
 <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">qmmm</span>
 <span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;&#39;&#39;</span>
@@ -230,20 +231,22 @@
 </div>
 <div class="section" id="examples">
 <h2><span class="section-number">10.23.1. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<p>Relevant examples
-<code class="file docutils literal notranslate"><span class="pre">examples/qmmm/00-hf.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/qmmm/01-dft.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/qmmm/02-mcscf.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/qmmm/03-ccsd.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/qmmm/04-cisd.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/qmmm/05-mp2.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/qmmm/06-tddft.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/qmmm/10-x2c.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/qmmm/11-newton.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/qmmm/11-soscf.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/qmmm/20-grad.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/qmmm/21-geom_opt.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/qmmm/30-force_on_mm_particles.py</span></code></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/qmmm/00-hf.py">examples/qmmm/00-hf.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/qmmm/01-dft.py">examples/qmmm/01-dft.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/qmmm/02-mcscf.py">examples/qmmm/02-mcscf.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/qmmm/03-ccsd.py">examples/qmmm/03-ccsd.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/qmmm/04-cisd.py">examples/qmmm/04-cisd.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/qmmm/05-mp2.py">examples/qmmm/05-mp2.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/qmmm/06-tddft.py">examples/qmmm/06-tddft.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/qmmm/10-x2c.py">examples/qmmm/10-x2c.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/qmmm/11-newton.py">examples/qmmm/11-newton.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/qmmm/11-soscf.py">examples/qmmm/11-soscf.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/qmmm/20-grad.py">examples/qmmm/20-grad.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/qmmm/21-geom_opt.py">examples/qmmm/21-geom_opt.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/qmmm/22-with_solvent.py">examples/qmmm/22-with_solvent.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/qmmm/30-force_on_mm_particles.py">examples/qmmm/30-force_on_mm_particles.py</a></p></li>
+</ul>
 <span class="target" id="module-pyscf.qmmm.itrf"></span><p>QM/MM helper functions that modify the QM methods.</p>
 <dl class="py function">
 <dt id="pyscf.qmmm.itrf.add_mm_charges">
@@ -425,8 +428,6 @@ method then generate the corresponding QM/MM method for the QM system.</p>
 generate the corresponding QM/MM gradients method for the QM system.</p>
 </dd></dl>
 
-<p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">qmmm</span></code> module implements a generic interface for use with MM
-programs.</p>
 </div>
 </div>
 

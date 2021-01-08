@@ -116,7 +116,7 @@
 <li class="toctree-l2"><a class="reference internal" href="lo.html">10.17. <code class="xref py py-mod docutils literal notranslate"><span class="pre">lo</span></code> — Orbital localization and analysis tools</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">10.18. <code class="xref py py-mod docutils literal notranslate"><span class="pre">mcscf</span></code> — Multi-configurational self-consistent field</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#examples">10.18.1. Examples</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#casscf-active-space-solver">10.18.2. CASSCF active space solver</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.mcscf">10.18.2. CASSCF active space solver</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#dmrg-solver">10.18.2.1. DMRG solver</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#fciqmc-solver">10.18.2.2. FCIQMC solver</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#state-average-fci-solver">10.18.2.3. State-average FCI solver</a></li>
@@ -258,50 +258,54 @@ with many different solvers, such as DMRG and selected CI solvers.
 Optimized orbitals are stored in the attribute <code class="xref py py-attr docutils literal notranslate"><span class="pre">mycas.mo_coeff</span></code>.</p>
 <div class="section" id="examples">
 <h2><span class="section-number">10.18.1. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<p>Relevant examples
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/00-simple_casci.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/00-simple_casscf.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/01-for_expensive_fci.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/03-natural_orbital.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/04-density_matrix.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/10-define_cas_space.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/11-casscf_with_uhf_uks.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/12-c2_triplet_from_singlet_hf.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/13-load_chkfile.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/13-restart.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/14-project_init_guess.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/15-state_average.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/15-state_specific.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/15-transition_dm.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/16-density_fitting.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/17-approx_orbital_hessian.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/18-o2_spatial_spin_symmetry.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/18-spatial_spin_symmetry.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/19-frozen_core.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/20-change_symmetry.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/21-active_space_symmetry.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/21-nosymhf_then_symcasscf.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/22-x2c.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/23-local_spin.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/33-make_init_guess</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/34-init_guess_localization.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/40-customizing_hamiltonian.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/41-mcscf_custom_df_hamiltonian.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/41-state_average.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/42-compare_cas_space.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/43-avas.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/43-dmet_cas.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/44-mcscf_active_space_hamiltonian.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/50-casscf_then_dmrgscf.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/50-casscf_with_selected_ci.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/50-cornell_shci_casscf.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/50-dmrgscf_with_block.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/51-o2_triplet_by_various_fci.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/60-uhf_based_ucasscf.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/61-rcas_vs_ucas</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/70-casscf_hot_tuning.py</span></code>
-<code class="file docutils literal notranslate"><span class="pre">examples/mcscf/70-casscf_optimize_scheduler.py</span></code></p>
-<span class="target" id="module-pyscf.mcscf"></span><p>CASCI and CASSCF</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/00-simple_casci.py">examples/mcscf/00-simple_casci.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/00-simple_casscf.py">examples/mcscf/00-simple_casscf.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/01-for_expensive_fci.py">examples/mcscf/01-for_expensive_fci.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/03-natural_orbital.py">examples/mcscf/03-natural_orbital.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/04-density_matrix.py">examples/mcscf/04-density_matrix.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/10-define_cas_space.py">examples/mcscf/10-define_cas_space.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/11-casscf_with_uhf_uks.py">examples/mcscf/11-casscf_with_uhf_uks.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/12-c2_triplet_from_singlet_hf.py">examples/mcscf/12-c2_triplet_from_singlet_hf.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/13-load_chkfile.py">examples/mcscf/13-load_chkfile.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/13-restart.py">examples/mcscf/13-restart.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/14-project_init_guess.py">examples/mcscf/14-project_init_guess.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/15-state_average.py">examples/mcscf/15-state_average.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/15-state_specific.py">examples/mcscf/15-state_specific.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/15-transition_dm.py">examples/mcscf/15-transition_dm.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/16-density_fitting.py">examples/mcscf/16-density_fitting.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/17-approx_orbital_hessian.py">examples/mcscf/17-approx_orbital_hessian.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/18-o2_spatial_spin_symmetry.py">examples/mcscf/18-o2_spatial_spin_symmetry.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/18-spatial_spin_symmetry.py">examples/mcscf/18-spatial_spin_symmetry.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/19-frozen_core.py">examples/mcscf/19-frozen_core.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/20-change_symmetry.py">examples/mcscf/20-change_symmetry.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/21-active_space_symmetry.py">examples/mcscf/21-active_space_symmetry.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/21-nosymhf_then_symcasscf.py">examples/mcscf/21-nosymhf_then_symcasscf.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/22-x2c.py">examples/mcscf/22-x2c.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/23-local_spin.py">examples/mcscf/23-local_spin.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/24-callback.py">examples/mcscf/24-callback.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/34-init_guess_localization.py">examples/mcscf/34-init_guess_localization.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/40-customizing_hamiltonian.py">examples/mcscf/40-customizing_hamiltonian.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/41-mcscf_custom_df_hamiltonian.py">examples/mcscf/41-mcscf_custom_df_hamiltonian.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/41-state_average.py">examples/mcscf/41-state_average.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/41-state_average_custom_fci.py">examples/mcscf/41-state_average_custom_fci.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/42-compare_cas_space.py">examples/mcscf/42-compare_cas_space.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/43-PiOS-C8H10.py">examples/mcscf/43-PiOS-C8H10.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/43-avas.py">examples/mcscf/43-avas.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/43-dmet_cas.py">examples/mcscf/43-dmet_cas.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/44-mcscf_active_space_hamiltonian.py">examples/mcscf/44-mcscf_active_space_hamiltonian.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/50-casscf_then_dmrgscf.py">examples/mcscf/50-casscf_then_dmrgscf.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/50-casscf_with_selected_ci.py">examples/mcscf/50-casscf_with_selected_ci.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/50-cornell_shci_casscf.py">examples/mcscf/50-cornell_shci_casscf.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/50-dmrgscf_with_block.py">examples/mcscf/50-dmrgscf_with_block.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/51-o2_triplet_by_various_fci.py">examples/mcscf/51-o2_triplet_by_various_fci.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/60-uhf_based_ucasscf.py">examples/mcscf/60-uhf_based_ucasscf.py</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mcscf/70-casscf_optimize_scheduler.py">examples/mcscf/70-casscf_optimize_scheduler.py</a></p></li>
+</ul>
+</div>
+<div class="section" id="module-pyscf.mcscf">
+<span id="casscf-active-space-solver"></span><h2><span class="section-number">10.18.2. </span>CASSCF active space solver<a class="headerlink" href="#module-pyscf.mcscf" title="Permalink to this headline">¶</a></h2>
+<p>CASCI and CASSCF</p>
 <p>When using results of this code for publications, please cite the following paper:
 “A general second order complete active space self-consistent-field solver for large-scale systems”, Q. Sun, J. Yang, and G. K.-L. Chan, Chem. Phys. Lett. 683, 291 (2017).</p>
 <p>Simple usage:</p>
@@ -465,9 +469,6 @@ inbuilt methods to convert the mo_coeff to natural orbitals.
 </dd>
 </dl>
 </div></blockquote>
-</div>
-<div class="section" id="casscf-active-space-solver">
-<h2><span class="section-number">10.18.2. </span>CASSCF active space solver<a class="headerlink" href="#casscf-active-space-solver" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="dmrg-solver">
 <h3><span class="section-number">10.18.2.1. </span>DMRG solver<a class="headerlink" href="#dmrg-solver" title="Permalink to this headline">¶</a></h3>
 </div>

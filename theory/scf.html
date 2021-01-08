@@ -271,9 +271,9 @@ This is appropriate for open-shell systems when unrestricted calculations give l
 <p>where <span class="math notranslate nohighlight">\(\psi_\alpha(r)\)</span> and <span class="math notranslate nohighlight">\(\psi_\beta(r)\)</span> are complex spatial orbitals, and
 <span class="math notranslate nohighlight">\(\alpha(\xi)\)</span> and <span class="math notranslate nohighlight">\(\beta(\xi)\)</span> are eigenfunctions of the <span class="math notranslate nohighlight">\(\hat{S}_z\)</span> operator.
 This is useful when the previous methods do not provide stable solutions
-(see <a class="reference external" href="../_static/scf/17-stability.py">examples/scf/17-stability.py</a>)
+(see <a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/scf/17-stability.py">examples/scf/17-stability.py</a>)
 or when spin-orbit coupling is considered
-(see <a class="reference external" href="../_static/scf/44-soc_ecp.py">examples/scf/44-soc_ecp.py</a>).</p>
+(see <a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/scf/44-soc_ecp.py">examples/scf/44-soc_ecp.py</a>).</p>
 </div></blockquote>
 </li>
 </ul>
@@ -286,10 +286,10 @@ or when spin-orbit coupling is considered
 </pre></div>
 </div>
 <p>More examples can be found in
-<a class="reference external" href="../_static/scf/00-simple_hf.py">examples/scf/00-simple_hf.py</a>,
-<a class="reference external" href="../_static/scf/01-h2o.py">examples/scf/01-h2o.py</a>,
-<a class="reference external" href="../_static/scf/02-rohf_uhf.py">examples/scf/02-rohf_uhf.py</a>, and
-<a class="reference external" href="../_static/scf/02-ghf.py">examples/scf/02-ghf.py</a>.</p>
+<a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/scf/00-simple_hf.py">examples/scf/00-simple_hf.py</a>,
+<a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/scf/01-h2o.py">examples/scf/01-h2o.py</a>,
+<a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/scf/02-rohf_uhf.py">examples/scf/02-rohf_uhf.py</a>, and
+<a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/scf/02-ghf.py">examples/scf/02-ghf.py</a>.</p>
 </div>
 <div class="section" id="controllable-parameters">
 <h2><span class="section-number">7.1.4. </span>Controllable parameters<a class="headerlink" href="#controllable-parameters" title="Permalink to this headline">¶</a></h2>
@@ -359,8 +359,8 @@ which is then used as the initial guess for the HF calculation of <span class="m
 </pre></div>
 </div>
 <p>More examples can be found in
-<a class="reference external" href="../_static/scf/15-initial_guess.py">examples/scf/15-initial_guess.py</a>, and
-<a class="reference external" href="../_static/scf/31-cr_atom_rohf_tune_init_guess.py">examples/scf/31-cr_atom_rohf_tune_init_guess.py</a>.</p>
+<a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/scf/15-initial_guess.py">examples/scf/15-initial_guess.py</a>, and
+<a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/scf/31-cr_atom_rohf_tune_init_guess.py">examples/scf/31-cr_atom_rohf_tune_init_guess.py</a>.</p>
 </div>
 <div class="section" id="converging-scf-iterations">
 <h3><span class="section-number">7.1.4.2. </span>Converging SCF iterations<a class="headerlink" href="#converging-scf-iterations" title="Permalink to this headline">¶</a></h3>
@@ -375,7 +375,7 @@ Two variants of DIIS are also implemented in PySCF, namely, EDIIS <a class="bibt
 and ADIIS <a class="bibtex reference internal" href="#huyan2010" id="id8">[8]</a>, where the objective functions to be minimized
 are expressed as energy funtions.
 Examples of selecting different DIIS schemes can be found in
-<a class="reference external" href="../_static/scf/24-tune_diis.py">examples/scf/24-tune_diis.py</a>.</p>
+<a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/scf/24-tune_diis.py">examples/scf/24-tune_diis.py</a>.</p>
 </div></blockquote>
 </li>
 <li><dl>
@@ -387,7 +387,7 @@ This can be invoked by decorating the SCF objects with the <a class="reference i
 </pre></div>
 </div>
 <p>More examples can be found in
-<a class="reference external" href="../_static/scf/22-newton.py">examples/scf/22-newton.py</a>.</p>
+<a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/scf/22-newton.py">examples/scf/22-newton.py</a>.</p>
 </dd>
 </dl>
 </li>
@@ -409,15 +409,15 @@ and that the Fock matrix is dampped at the first cycle.</p>
 <div><p>Applying level shift can help converge SCF for small gap systems.
 This is invoked by setting the attribute <code class="xref py py-attr docutils literal notranslate"><span class="pre">level_shift</span></code>.
 See examples in
-<a class="reference external" href="../_static/scf/03-level_shift.py">examples/scf/03-level_shift.py</a>, and
-<a class="reference external" href="../_static/scf/52-dynamically_control_level_shift.py">examples/scf/52-dynamically_control_level_shift.py</a>.</p>
+<a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/scf/03-level_shift.py">examples/scf/03-level_shift.py</a>, and
+<a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/scf/52-dynamically_control_level_shift.py">examples/scf/52-dynamically_control_level_shift.py</a>.</p>
 </div></blockquote>
 </li>
 <li><p>Fractional occupation</p>
 <blockquote>
 <div><p>Fractional occupation can be invoked to converge SCF for small gap systems.
 See examples in
-<a class="reference external" href="../_static/scf/54-fractional_occupancy.py">examples/scf/54-fractional_occupancy.py</a>.</p>
+<a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/scf/54-fractional_occupancy.py">examples/scf/54-fractional_occupancy.py</a>.</p>
 </div></blockquote>
 </li>
 </ul>
@@ -427,7 +427,7 @@ See examples in
 <h2><span class="section-number">7.1.5. </span>Stability analysis<a class="headerlink" href="#stability-analysis" title="Permalink to this headline">¶</a></h2>
 <p>PySCF allows detection of both internal and external instabilities
 for a given SCF calculation. See examples in
-<a class="reference external" href="../_static/scf/17-stability.py">examples/scf/17-stability.py</a>.</p>
+<a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/scf/17-stability.py">examples/scf/17-stability.py</a>.</p>
 </div>
 <div class="section" id="property-calculation">
 <h2><span class="section-number">7.1.6. </span>Property calculation<a class="headerlink" href="#property-calculation" title="Permalink to this headline">¶</a></h2>
