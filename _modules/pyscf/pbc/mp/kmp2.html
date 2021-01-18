@@ -176,6 +176,7 @@
 <span class="c1">#</span>
 <span class="c1"># Author: Timothy Berkelbach &lt;tim.berkelbach@gmail.com&gt;</span>
 <span class="c1">#         James McClain &lt;jdmcclain47@gmail.com&gt;</span>
+<span class="c1">#         Xing Zhang &lt;zhangxing.nju@gmail.com&gt;</span>
 <span class="c1">#</span>
 
 
@@ -697,7 +698,7 @@
                     <span class="n">ks</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">khelper</span><span class="o">.</span><span class="n">kconserv</span><span class="p">[</span><span class="n">kp</span><span class="p">,</span> <span class="n">kq</span><span class="p">,</span> <span class="n">kr</span><span class="p">]</span>
                     <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dm2</span><span class="p">[</span><span class="n">kp</span><span class="p">,</span><span class="n">kq</span><span class="p">,</span><span class="n">kr</span><span class="p">][</span><span class="n">np</span><span class="o">.</span><span class="n">ix_</span><span class="p">(</span><span class="n">idx</span><span class="p">[</span><span class="n">kp</span><span class="p">],</span><span class="n">idx</span><span class="p">[</span><span class="n">kq</span><span class="p">],</span><span class="n">idx</span><span class="p">[</span><span class="n">kr</span><span class="p">],</span><span class="n">idx</span><span class="p">[</span><span class="n">ks</span><span class="p">])])</span>
         <span class="k">return</span> <span class="n">result</span>
- 
+
 
 <span class="k">def</span> <span class="nf">_gamma1_intermediates</span><span class="p">(</span><span class="n">mp</span><span class="p">,</span> <span class="n">t2</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="c1"># Memory optimization should be here</span>
@@ -743,11 +744,19 @@
 <span class="c1">##################################################</span>
 <span class="c1"># don&#39;t modify the following attributes, they are not input options</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">kpts</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">kpts</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">mo_energy</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">mo_energy</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">nkpts</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kpts</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">khelper</span> <span class="o">=</span> <span class="n">kpts_helper</span><span class="o">.</span><span class="n">KptsHelper</span><span class="p">(</span><span class="n">mf</span><span class="o">.</span><span class="n">cell</span><span class="p">,</span> <span class="n">mf</span><span class="o">.</span><span class="n">kpts</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">mo_coeff</span> <span class="o">=</span> <span class="n">mo_coeff</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">mo_occ</span> <span class="o">=</span> <span class="n">mo_occ</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kpts</span><span class="p">,</span> <span class="s2">&quot;kpts&quot;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">nkpts</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kpts</span><span class="o">.</span><span class="n">nkpts</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">khelper</span> <span class="o">=</span> <span class="n">kpts_helper</span><span class="o">.</span><span class="n">KptsHelper</span><span class="p">(</span><span class="n">mf</span><span class="o">.</span><span class="n">cell</span><span class="p">,</span> <span class="n">mf</span><span class="o">.</span><span class="n">kpts</span><span class="o">.</span><span class="n">kpts</span><span class="p">)</span>
+            <span class="c1">#padding has to be after transformation</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">mo_energy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kpts</span><span class="o">.</span><span class="n">transform_mo_energy</span><span class="p">(</span><span class="n">mf</span><span class="o">.</span><span class="n">mo_energy</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">mo_coeff</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kpts</span><span class="o">.</span><span class="n">transform_mo_coeff</span><span class="p">(</span><span class="n">mo_coeff</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">mo_occ</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kpts</span><span class="o">.</span><span class="n">transform_mo_occ</span><span class="p">(</span><span class="n">mo_occ</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">nkpts</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">kpts</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">khelper</span> <span class="o">=</span> <span class="n">kpts_helper</span><span class="o">.</span><span class="n">KptsHelper</span><span class="p">(</span><span class="n">mf</span><span class="o">.</span><span class="n">cell</span><span class="p">,</span> <span class="n">mf</span><span class="o">.</span><span class="n">kpts</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">mo_energy</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">mo_energy</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">mo_coeff</span> <span class="o">=</span> <span class="n">mo_coeff</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">mo_occ</span> <span class="o">=</span> <span class="n">mo_occ</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_nocc</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_nmo</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">e_corr</span> <span class="o">=</span> <span class="kc">None</span>

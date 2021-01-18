@@ -104,6 +104,8 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#customizing-xc-functionals">7.2.4. Customizing XC functionals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#numerical-integration-grids">7.2.5. Numerical integration grids</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#references">7.2.6. References</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="mp.html">7.3. Møller-Plesset perturbation theory</a></li>
@@ -190,12 +192,59 @@
             
   <div class="section" id="density-functional-theory-dft">
 <span id="theory-dft"></span><h1><span class="section-number">7.2. </span>Density functional theory (DFT)<a class="headerlink" href="#density-functional-theory-dft" title="Permalink to this headline">¶</a></h1>
-<p><em>Modules</em>: <a class="reference internal" href="../modules/dft.html#dft"><span class="std std-ref">dft</span></a>, <a class="reference internal" href="../modules/pbc/dft.html#pbc-dft"><span class="std std-ref">pbc.dft</span></a></p>
+<p><em>Modules</em>: <a class="reference internal" href="../modules/dft.html#module-dft" title="dft: Density functional theory"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dft</span></code></a>, <a class="reference internal" href="../modules/pbc/dft.html#module-pbc.dft" title="pbc.dft: Density functional theory with periodic boundary conditions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc.dft</span></code></a></p>
 <div class="section" id="introduction">
 <h2><span class="section-number">7.2.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The Kohn-Sham density functional theory (KS-DFT) is implemented as derived
+classes of the <a class="reference internal" href="../modules/scf.html#pyscf.scf.hf.SCF" title="pyscf.scf.hf.SCF"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.scf.hf.SCF</span></code></a> class, thus, the methods and capabilities introduced in
+<a class="reference internal" href="scf.html#theory-scf"><span class="std std-numref">Section 7.1</span></a> also apply to the <a class="reference internal" href="../modules/dft.html#module-dft" title="dft: Density functional theory"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dft</span></code></a> module.</p>
+<p>A minimal example of using the <a class="reference internal" href="../modules/dft.html#module-dft" title="dft: Density functional theory"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dft</span></code></a> module is as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span>
+<span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span>
+    <span class="n">atom</span> <span class="o">=</span> <span class="s1">&#39;H 0 0 0; F 0 0 1.1&#39;</span><span class="p">,</span>  <span class="c1"># in Angstrom</span>
+    <span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;ccpvdz&#39;</span><span class="p">,</span>
+    <span class="n">symmetry</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RKS</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+<span class="n">mf</span><span class="o">.</span><span class="n">xc</span> <span class="o">=</span> <span class="s1">&#39;lda,vwn&#39;</span> <span class="c1">#default functional</span>
+<span class="n">mf</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This will run a restricted closed-shell DFT calculation with the default LDA functional.</p>
 </div>
 <div class="section" id="theory">
 <h2><span class="section-number">7.2.2. </span>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
+<p>The Hohenberg-Kohn theorems state that
+for an interacting inhomogeneous electron gas in a static external potential <span class="math notranslate nohighlight">\(v_{\rm ext}(\mathbf{r})\)</span>,
+(1) the potential <span class="math notranslate nohighlight">\(v_{\rm ext}(\mathbf{r})\)</span>, and hence the total energy are unique functionals of the
+electron density <span class="math notranslate nohighlight">\(\rho(\mathbf{r})\)</span>;
+(2) the electron density that minimizes the total energy is the exact ground-state density <a class="bibtex reference internal" href="#hohkoh1964" id="id1">[1]</a>.
+This implies that the many-body problem of <span class="math notranslate nohighlight">\(N\)</span> electrons with <span class="math notranslate nohighlight">\(3N\)</span> spatial coordinates
+can be reduced to the problem of solving for the electron density
+with only 3 spatial coordinates. Such an approach, which is often called the orbital-free DFT,
+however, is in practice challenging due to the difficulty of constructing accurate kinetic energy functionals.
+In contrast, KS-DFT, which was firstly proposed by Kohn and Sham <a class="bibtex reference internal" href="#kohsha1965" id="id2">[2]</a>,
+uses the electron density of a reference noninteracting system
+to represent the density of the true interacting system.
+As a result, KS-DFT can be formulated similarly as Hartree-Fock (HF) theory.
+KS-DFT defines the total electronic energy as follows</p>
+<div class="math notranslate nohighlight">
+\[E = E_{T_{s}}[\rho] + E_{\rm ext}[\rho] + E_J[\rho] + E_{\rm xc}[\rho] \;,\]</div>
+<p>where <span class="math notranslate nohighlight">\(E_{T_s}\)</span> is the noninteracting kinetic energy,
+<span class="math notranslate nohighlight">\(E_{\rm ext}\)</span> is the energy due to external potentials,
+<span class="math notranslate nohighlight">\(E_J\)</span> is the Coulomb energy, and
+<span class="math notranslate nohighlight">\(E_{\rm xc}\)</span> is the exchange-correlation (XC) energy.
+Note that the exact functional form of <span class="math notranslate nohighlight">\(E_{\rm xc}\)</span> is unknown,
+thus it has to be approximated, which leads to various density functional approximations.
+These include local density approximation (LDA; XC energy only depends on electron densities),
+generalized gradient approximation (GGA; XC energy also depends on density gradients),
+meta-GGA (XC energy also depends on density laplacians),
+non-local correlation functionals (the correlation potential has a non-local form),
+hybrid density functionals (a fraction of exact exchange is also included), and
+long-range corrected density functionals (long-range part of the exchange energy is repalaced by the exact exchange energy), etc.
+Variationally minimizing the total energy leads to the same Fock equations as in <a class="reference internal" href="scf.html#theory-scf"><span class="std std-numref">Section 7.1</span></a>,
+but with the exact exchange <span class="math notranslate nohighlight">\(\hat{K}\)</span> replaced by the XC potential <span class="math notranslate nohighlight">\(\hat{v}_{\rm xc}\)</span>,
+which is the functional derivative of <span class="math notranslate nohighlight">\(E_{\rm xc}\)</span>.</p>
 </div>
 <div class="section" id="predefined-xc-functionals-and-functional-aliases">
 <h2><span class="section-number">7.2.3. </span>Predefined XC functionals and functional aliases<a class="headerlink" href="#predefined-xc-functionals-and-functional-aliases" title="Permalink to this headline">¶</a></h2>
@@ -211,7 +260,11 @@ the compound functional table, the functional will be treated as exchange
 functional. E.g. xc = ‘b86’ leads to B86 exchange only (without correlation).</p>
 <p>Note that in the early PySCF DFT implementations (1.5.0 or earlier), the program
 does not support functional alias. Both exchange and correlation have to be
-explicitly assigned. xc = ‘pbe’ gives only the PBE exchange.</p>
+explicitly assigned. xc = ‘pbe’ gives only the PBE exchange.
+See more examples in
+<a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/dft/00-simple_dft.py">examples/dft/00-simple_dft.py</a>,
+<a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/dft/32-xcfun_as_default.py">examples/dft/32-xcfun_as_default.py</a>, and
+<a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/dft/33-nlc_functionals.py">examples/dft/33-nlc_functionals.py</a>.</p>
 <div class="section" id="libxc">
 <h3><span class="section-number">7.2.3.1. </span>libxc<a class="headerlink" href="#libxc" title="Permalink to this headline">¶</a></h3>
 <p>The hybrid functionals and predefined compound functionals for libxc (the
@@ -800,31 +853,35 @@ SLATERX*1.092 + KTX*-0.004 + OPTXCORR*-0.925452 + LYPC*0.864409</p></td>
 <td><p>REVTPSS</p></td>
 <td><p>REVTPSS</p></td>
 </tr>
-<tr class="row-even"><td><p>BLOC</p></td>
+<tr class="row-even"><td><p>SCAN</p></td>
+<td><p>SCAN</p></td>
+<td><p>SCAN</p></td>
+</tr>
+<tr class="row-odd"><td><p>BLOC</p></td>
 <td><p>BLOC</p></td>
 <td><p>TPSSLOC</p></td>
 </tr>
-<tr class="row-odd"><td><p>OLYP</p></td>
+<tr class="row-even"><td><p>OLYP</p></td>
 <td><p>OPTX</p></td>
 <td><p>LYP</p></td>
 </tr>
-<tr class="row-even"><td><p>RPBE</p></td>
+<tr class="row-odd"><td><p>RPBE</p></td>
 <td><p>RPBE</p></td>
 <td><p>PBE</p></td>
 </tr>
-<tr class="row-odd"><td><p>BPBE</p></td>
+<tr class="row-even"><td><p>BPBE</p></td>
 <td><p>B88</p></td>
 <td><p>PBE</p></td>
 </tr>
-<tr class="row-even"><td><p>SVWN</p></td>
+<tr class="row-odd"><td><p>SVWN</p></td>
 <td><p>SLATER</p></td>
 <td><p>VWN5</p></td>
 </tr>
-<tr class="row-odd"><td><p>KT1</p></td>
+<tr class="row-even"><td><p>KT1</p></td>
 <td><p>KT1</p></td>
 <td><p>VWN</p></td>
 </tr>
-<tr class="row-even"><td><p>M06-L</p></td>
+<tr class="row-odd"><td><p>M06-L</p></td>
 <td><p>M06L</p></td>
 <td><p>M06L</p></td>
 </tr>
@@ -912,37 +969,52 @@ SLATERX*1.092 + KTX*-0.004 + OPTXCORR*-0.925452 + LYPC*0.864409</p></td>
 <tr class="row-odd"><td><p>REVTPSS</p></td>
 <td><p>Reviewed TPSS exchange functional</p></td>
 </tr>
-<tr class="row-even"><td><p>B97</p></td>
+<tr class="row-even"><td><p>SCAN</p></td>
+<td><p>SCAN exchange functional</p></td>
+</tr>
+<tr class="row-odd"><td><p>RSCAN</p></td>
+<td><p>rSCAN exchange functional</p></td>
+</tr>
+<tr class="row-even"><td><p>RPPSCAN</p></td>
+<td><p>r++SCAN exchange functional</p></td>
+</tr>
+<tr class="row-odd"><td><p>R2SCAN</p></td>
+<td><p>r2SCAN exchange functional</p></td>
+</tr>
+<tr class="row-even"><td><p>R4SCAN</p></td>
+<td><p>r4SCAN exchange functional</p></td>
+</tr>
+<tr class="row-odd"><td><p>B97</p></td>
 <td><p>B97 exchange</p></td>
 </tr>
-<tr class="row-odd"><td><p>B97_1</p></td>
+<tr class="row-even"><td><p>B97_1</p></td>
 <td><p>B97-1 exchange</p></td>
 </tr>
-<tr class="row-even"><td><p>B97_2</p></td>
+<tr class="row-odd"><td><p>B97_2</p></td>
 <td><p>B97-2 exchange</p></td>
 </tr>
-<tr class="row-odd"><td><p>APBE</p></td>
+<tr class="row-even"><td><p>APBE</p></td>
 <td><p>APBE Exchange Functional</p></td>
 </tr>
-<tr class="row-even"><td><p>BLOC</p></td>
+<tr class="row-odd"><td><p>BLOC</p></td>
 <td><p>BLOC exchange functional</p></td>
 </tr>
-<tr class="row-odd"><td><p>PBEINT</p></td>
+<tr class="row-even"><td><p>PBEINT</p></td>
 <td><p>PBEint Exchange Functional</p></td>
 </tr>
-<tr class="row-even"><td><p>PBESOL</p></td>
+<tr class="row-odd"><td><p>PBESOL</p></td>
 <td><p>PBEsol Exchange Functional</p></td>
 </tr>
-<tr class="row-odd"><td><p>TF</p></td>
+<tr class="row-even"><td><p>TF</p></td>
 <td><p>Thomas-Fermi Kinetic Energy Functional</p></td>
 </tr>
-<tr class="row-even"><td><p>BT</p></td>
+<tr class="row-odd"><td><p>BT</p></td>
 <td><p>Borgoo-Tozer TS</p></td>
 </tr>
-<tr class="row-odd"><td><p>VW</p></td>
+<tr class="row-even"><td><p>VW</p></td>
 <td><p>von Weizsaecker kinetic energy</p></td>
 </tr>
-<tr class="row-even"><td><p>TW</p></td>
+<tr class="row-odd"><td><p>TW</p></td>
 <td><p>von Weizsacker Kinetic Energy Functional</p></td>
 </tr>
 </tbody>
@@ -1017,43 +1089,58 @@ SLATERX*1.092 + KTX*-0.004 + OPTXCORR*-0.925452 + LYPC*0.864409</p></td>
 <tr class="row-odd"><td><p>REVTPSS</p></td>
 <td><p>Revised TPSS correlation functional</p></td>
 </tr>
-<tr class="row-even"><td><p>PZ81</p></td>
+<tr class="row-even"><td><p>SCAN</p></td>
+<td><p>SCAN correlation functional</p></td>
+</tr>
+<tr class="row-odd"><td><p>RSCAN</p></td>
+<td><p>rSCAN correlation functional</p></td>
+</tr>
+<tr class="row-even"><td><p>RPPSCAN</p></td>
+<td><p>r++SCAN correlation functional</p></td>
+</tr>
+<tr class="row-odd"><td><p>R2SCAN</p></td>
+<td><p>r2SCAN correlation functional</p></td>
+</tr>
+<tr class="row-even"><td><p>R4SCAN</p></td>
+<td><p>r4SCAN correlation functional</p></td>
+</tr>
+<tr class="row-odd"><td><p>PZ81</p></td>
 <td><p>PZ81 LDA correlation</p></td>
 </tr>
-<tr class="row-odd"><td><p>P86</p></td>
+<tr class="row-even"><td><p>P86</p></td>
 <td><p>P86C GGA correlation</p></td>
 </tr>
-<tr class="row-even"><td><p>B97</p></td>
+<tr class="row-odd"><td><p>B97</p></td>
 <td><p>B97 correlation</p></td>
 </tr>
-<tr class="row-odd"><td><p>B97_1</p></td>
+<tr class="row-even"><td><p>B97_1</p></td>
 <td><p>B97-1 correlation</p></td>
 </tr>
-<tr class="row-even"><td><p>B97_2</p></td>
+<tr class="row-odd"><td><p>B97_2</p></td>
 <td><p>B97-2 correlation</p></td>
 </tr>
-<tr class="row-odd"><td><p>CS</p></td>
+<tr class="row-even"><td><p>CS</p></td>
 <td><p>Colle-Salvetti correlation functional</p></td>
 </tr>
-<tr class="row-even"><td><p>APBE</p></td>
+<tr class="row-odd"><td><p>APBE</p></td>
 <td><p>APBE correlation functional.</p></td>
 </tr>
-<tr class="row-odd"><td><p>ZVPBESOL</p></td>
+<tr class="row-even"><td><p>ZVPBESOL</p></td>
 <td><p>zvPBEsol correlation Functional</p></td>
 </tr>
-<tr class="row-even"><td><p>PBEINT</p></td>
+<tr class="row-odd"><td><p>PBEINT</p></td>
 <td><p>PBEint correlation Functional</p></td>
 </tr>
-<tr class="row-odd"><td><p>PBELOC</p></td>
+<tr class="row-even"><td><p>PBELOC</p></td>
 <td><p>PBEloc correlation functional.</p></td>
 </tr>
-<tr class="row-even"><td><p>TPSSLOC</p></td>
+<tr class="row-odd"><td><p>TPSSLOC</p></td>
 <td><p>TPSSloc correlation functional</p></td>
 </tr>
-<tr class="row-odd"><td><p>ZVPBEINT</p></td>
+<tr class="row-even"><td><p>ZVPBEINT</p></td>
 <td><p>zvPBEint correlation Functional</p></td>
 </tr>
-<tr class="row-even"><td><p>PW91</p></td>
+<tr class="row-odd"><td><p>PW91</p></td>
 <td><p>PW91 Correlation</p></td>
 </tr>
 </tbody>
@@ -1063,7 +1150,7 @@ SLATERX*1.092 + KTX*-0.004 + OPTXCORR*-0.925452 + LYPC*0.864409</p></td>
 <div class="section" id="customizing-xc-functionals">
 <h2><span class="section-number">7.2.4. </span>Customizing XC functionals<a class="headerlink" href="#customizing-xc-functionals" title="Permalink to this headline">¶</a></h2>
 <p>XC functionals of DFT methods can be customized. The simplest way to customize
-the XC functional is to assigned a string expression to <code class="xref py py-attr docutils literal notranslate"><span class="pre">mf.xc</span></code>:</p>
+the XC functional is to assign a string expression to <code class="xref py py-attr docutils literal notranslate"><span class="pre">mf.xc</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">dft</span>
 <span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;H  0  0  0; F  0.9  0  0&#39;</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;6-31g&#39;</span><span class="p">)</span>
 <span class="n">mf</span> <span class="o">=</span> <span class="n">dft</span><span class="o">.</span><span class="n">RKS</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
@@ -1146,6 +1233,41 @@ dynamically.</p>
 <p>More examples of DFT XC functional customization can be found in
 <a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/dft/24-custom_xc_functional.py">examples/dft/24-custom_xc_functional.py</a> and
 <a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/dft/24-define_xc_functional.py">examples/dft/24-define_xc_functional.py</a>.</p>
+</div>
+<div class="section" id="numerical-integration-grids">
+<h2><span class="section-number">7.2.5. </span>Numerical integration grids<a class="headerlink" href="#numerical-integration-grids" title="Permalink to this headline">¶</a></h2>
+<p>PySCF implements several numerical integration grids,
+which can be tuned in DFT calculations following the examples in
+<a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/dft/11-grid_scheme.py">examples/dft/11-grid_scheme.py</a>.
+In addition, these grids can be used for general numerical evaluations of
+basis functions, electron densities, and integrals.
+Some examples can be found in
+<a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/dft/30-ao_value_on_grid.py">examples/dft/30-ao_value_on_grid.py</a>, and
+<a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/dft/31-xc_value_on_grid.py">examples/dft/31-xc_value_on_grid.py</a>.
+Following is an example of computing the nonnegative kinetic energy density</p>
+<div class="math notranslate nohighlight">
+\[t_s(\mathbf{r}) = \frac{1}{2} \sum_{i\in occ} |\nabla\psi_i(\mathbf{r})|^2 \;.\]</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyscf.dft</span> <span class="kn">import</span> <span class="n">gen_grid</span><span class="p">,</span> <span class="n">numint</span>
+<span class="n">orbo</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">mo_coeff</span><span class="p">[:,</span><span class="n">mf</span><span class="o">.</span><span class="n">mo_occ</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">grids</span> <span class="o">=</span> <span class="n">gen_grid</span><span class="o">.</span><span class="n">Grids</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+<span class="n">grids</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">with_non0tab</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">weights</span> <span class="o">=</span> <span class="n">grids</span><span class="o">.</span><span class="n">weights</span>
+<span class="n">ao1</span> <span class="o">=</span> <span class="n">numint</span><span class="o">.</span><span class="n">eval_ao</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">grids</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">deriv</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">non0tab</span><span class="o">=</span><span class="n">grids</span><span class="o">.</span><span class="n">non0tab</span><span class="p">)</span>
+<span class="n">ts</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s1">&#39;g,xgp,pi,xgq,qi-&gt;&#39;</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">ao1</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">orbo</span><span class="p">,</span> <span class="n">ao1</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">orbo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="references">
+<h2><span class="section-number">7.2.6. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p id="bibtex-bibliography-theory/dft-0"><dl class="citation">
+<dt class="bibtex label" id="hohkoh1964"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Pierre Hohenberg and Walter Kohn. Inhomogeneous electron gas. <em>Physical review</em>, 136(3B):B864, 1964.</p>
+</dd>
+<dt class="bibtex label" id="kohsha1965"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Walter Kohn and Lu Jeu Sham. Self-consistent equations including exchange and correlation effects. <em>Physical review</em>, 140(4A):A1133, 1965.</p>
+</dd>
+</dl>
+</p>
 </div>
 </div>
 

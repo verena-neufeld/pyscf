@@ -226,13 +226,16 @@ of molecular orbitals (MOs) <span class="math notranslate nohighlight">\(\psi\)<
 \end{vmatrix} \;.\end{split}\]</div>
 <p>In this way, the electron correlation is treated equivalently as a mean-field Coulomb repulsion.
 The total electronic energy <span class="math notranslate nohighlight">\(E=\langle\Psi_0|\hat{H}|\Psi_0\rangle\)</span>
-is then minimized by solving the Hartree-Fock equations</p>
+is then minimized by solving a set of Fock equations</p>
 <div class="math notranslate nohighlight">
-\[\mathbf{FC} = \mathbf{SC\varepsilon} \;\]</div>
-<p>with <span class="math notranslate nohighlight">\(\mathbf{F}\)</span>, <span class="math notranslate nohighlight">\(\mathbf{C}\)</span>, and <span class="math notranslate nohighlight">\(\mathbf{S}\)</span>
-denoting the Fock matrix,
-the expansion coefficients of MOs,
-and the overlaps among basis functions, respectively. <a class="bibtex reference internal" href="#pop1954" id="id1">[1]</a></p>
+\[\hat{f} \psi_i(\mathbf{r}) = \varepsilon_i \psi_i(\mathbf{r})\]</div>
+<p>with the Fock operator <span class="math notranslate nohighlight">\(\hat{f}\)</span> defined as</p>
+<div class="math notranslate nohighlight">
+\[\hat{f} = \hat{T}_s + \hat{v}_{\rm ext} + \hat{J} + \hat{K} \;,\]</div>
+<p>where <span class="math notranslate nohighlight">\(\hat{T}_s\)</span> is the noninteracting kinetic energy operator,
+<span class="math notranslate nohighlight">\(\hat{v}_{\rm ext}\)</span> is the external potential,
+<span class="math notranslate nohighlight">\(\hat{J}\)</span> is the Coulomb operator, and
+<span class="math notranslate nohighlight">\(\hat{K}\)</span> is the exact exchange operator. <a class="bibtex reference internal" href="#szaost2012" id="id1">[1]</a></p>
 </div>
 <div class="section" id="methods">
 <h2><span class="section-number">7.1.3. </span>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
@@ -278,11 +281,14 @@ or when spin-orbit coupling is considered
 </li>
 </ul>
 <p>Calculations with these methods can be invoked by creating an instance of the corresponding class:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
-<span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">UHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
-<span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">ROHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
-<span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">GHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
-<span class="n">mf</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">UHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">ROHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">GHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RKS</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">UKS</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">ROKS</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">GKS</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>More examples can be found in
@@ -296,8 +302,9 @@ or when spin-orbit coupling is considered
 <div class="section" id="initial-guess">
 <h3><span class="section-number">7.1.4.1. </span>Initial guess<a class="headerlink" href="#initial-guess" title="Permalink to this headline">¶</a></h3>
 <p>PySCF provides several options as the initial guesses for solving the
-SCF problem. These can be specified by setting the attribute <code class="xref py py-attr docutils literal notranslate"><span class="pre">init_guess</span></code>
-to the following values:</p>
+SCF problem; see <a class="bibtex reference internal" href="#leh2019" id="id4">[4]</a> for a review and assessment of
+initial guesses. These can be specified by setting the attribute
+<code class="xref py py-attr docutils literal notranslate"><span class="pre">init_guess</span></code> to the following values:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">'minao'</span></code> (default)</p>
 <blockquote>
@@ -306,22 +313,22 @@ to the following values:</p>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">'1e'</span></code></p>
 <blockquote>
-<div><p>The core Hamiltonian is diagonalized to get the initial MOs.</p>
+<div><p>The core Hamiltonian is diagonalized to get the initial MOs. The use of the 1e guess is not recommended, because the guess is very bad.</p>
 </div></blockquote>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">'atom'</span></code></p>
 <blockquote>
-<div><p>Superposition of atomic HF density matrix.</p>
+<div><p>Superposition of atomic HF density matrix. The atomic HF calculations are spin-restricted and employ spherically averaged occupations with ground states determined in <a class="bibtex reference internal" href="#leh2020" id="id5">[5]</a>.</p>
 </div></blockquote>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">'huckel'</span></code></p>
 <blockquote>
-<div><p>A Hückel guess based on on-the-fly atomic HF calculations. <a class="bibtex reference internal" href="#leh2019" id="id4">[4]</a></p>
+<div><p>A Hückel guess based on on-the-fly atomic HF calculations like in <code class="docutils literal notranslate"><span class="pre">'atom'</span></code>. <a class="bibtex reference internal" href="#leh2019" id="id6">[4]</a></p>
 </div></blockquote>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">'vsap'</span></code></p>
 <blockquote>
-<div><p>Superposition of atomic potentials. Note this is only available for DFT calculations.</p>
+<div><p>Superposition of atomic potentials. Note this is only available for DFT calculations. <a class="bibtex reference internal" href="#leh2019" id="id7">[4]</a></p>
 </div></blockquote>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">'chk'</span></code></p>
@@ -370,9 +377,9 @@ direct Inversion in the iterative subspace (DIIS) and second-order SCF (SOSCF).<
 <li><p>DIIS (default)</p>
 <blockquote>
 <div><p>With DIIS, the Fock matrix at each iteration is extrapolated using the Fock matrices from the previous iterations,
-by minimizing the norm of the commutator <span class="math notranslate nohighlight">\([\mathbf{F},\mathbf{PS}]\)</span>. <a class="bibtex reference internal" href="#pul1980" id="id5">[5]</a><a class="bibtex reference internal" href="#pul1982" id="id6">[6]</a>
-Two variants of DIIS are also implemented in PySCF, namely, EDIIS <a class="bibtex reference internal" href="#kudscucan2002" id="id7">[7]</a>
-and ADIIS <a class="bibtex reference internal" href="#huyan2010" id="id8">[8]</a>, where the objective functions to be minimized
+by minimizing the norm of the commutator <span class="math notranslate nohighlight">\([\mathbf{F},\mathbf{PS}]\)</span>. <a class="bibtex reference internal" href="#pul1980" id="id8">[6]</a><a class="bibtex reference internal" href="#pul1982" id="id9">[7]</a>
+Two variants of DIIS are also implemented in PySCF, namely, EDIIS <a class="bibtex reference internal" href="#kudscucan2002" id="id10">[8]</a>
+and ADIIS <a class="bibtex reference internal" href="#huyan2010" id="id11">[9]</a>, where the objective functions to be minimized
 are expressed as energy funtions.
 Examples of selecting different DIIS schemes can be found in
 <a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/scf/24-tune_diis.py">examples/scf/24-tune_diis.py</a>.</p>
@@ -381,7 +388,7 @@ Examples of selecting different DIIS schemes can be found in
 <li><dl>
 <dt>SOSCF</dt><dd><p>To achieve quadratic convergence for orbital optimizations,
 PySCF implements a general second-order solver called the
-Co-iterative augmented hessian (CIAH) method. <a class="bibtex reference internal" href="#sun2016" id="id9">[9]</a><a class="bibtex reference internal" href="#sun2017" id="id10">[10]</a>
+Co-iterative augmented hessian (CIAH) method. <a class="bibtex reference internal" href="#sun2016" id="id12">[10]</a><a class="bibtex reference internal" href="#sun2017" id="id13">[11]</a>
 This can be invoked by decorating the SCF objects with the <a class="reference internal" href="../modules/soscf.html#pyscf.soscf.newton_ah.newton" title="pyscf.soscf.newton_ah.newton"><code class="xref py py-func docutils literal notranslate"><span class="pre">newton()</span></code></a> method:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span><span class="o">.</span><span class="n">newton</span><span class="p">()</span>
 </pre></div>
@@ -438,8 +445,8 @@ and Mülliken population (<a class="reference internal" href="../modules/scf.htm
 <div class="section" id="references">
 <h2><span class="section-number">7.1.7. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <p id="bibtex-bibliography-theory/scf-0"><dl class="citation">
-<dt class="bibtex label" id="pop1954"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>JA Pople and R_K Nesbet. Self-consistent orbitals for radicals. <em>The Journal of Chemical Physics</em>, 22(3):571–572, 1954.</p>
+<dt class="bibtex label" id="szaost2012"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Attila Szabo and Neil S Ostlund. <em>Modern quantum chemistry: introduction to advanced electronic structure theory</em>. Courier Corporation, 2012.</p>
 </dd>
 <dt class="bibtex label" id="roo1960"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
 <dd><p>CCJ Roothaan. Self-consistent field theory for open shells of electronic systems. <em>Reviews of modern physics</em>, 32(2):179, 1960.</p>
@@ -447,25 +454,28 @@ and Mülliken population (<a class="reference internal" href="../modules/scf.htm
 <dt class="bibtex label" id="seepop1977"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
 <dd><p>Rolf Seeger and John A Pople. Self-consistent molecular orbital methods. xviii. constraints and stability in hartree–fock theory. <em>The Journal of Chemical Physics</em>, 66(7):3045–3050, 1977.</p>
 </dd>
-<dt class="bibtex label" id="leh2019"><span class="brackets"><a class="fn-backref" href="#id4">4</a></span></dt>
+<dt class="bibtex label" id="leh2019"><span class="brackets">4</span><span class="fn-backref">(<a href="#id4">1</a>,<a href="#id6">2</a>,<a href="#id7">3</a>)</span></dt>
 <dd><p>Susi Lehtola. Assessment of initial guesses for self-consistent field calculations. superposition of atomic potentials: simple yet efficient. <em>Journal of chemical theory and computation</em>, 15(3):1593–1604, 2019.</p>
 </dd>
-<dt class="bibtex label" id="pul1980"><span class="brackets"><a class="fn-backref" href="#id5">5</a></span></dt>
+<dt class="bibtex label" id="leh2020"><span class="brackets"><a class="fn-backref" href="#id5">5</a></span></dt>
+<dd><p>Susi Lehtola. Fully numerical calculations on atoms with fractional occupations and range-separated exchange functionals. <em>Phys. Rev. A</em>, 101:012516, Jan 2020. URL: <a class="reference external" href="https://link.aps.org/doi/10.1103/PhysRevA.101.012516">https://link.aps.org/doi/10.1103/PhysRevA.101.012516</a>, <a class="reference external" href="https://doi.org/10.1103/PhysRevA.101.012516">doi:10.1103/PhysRevA.101.012516</a>.</p>
+</dd>
+<dt class="bibtex label" id="pul1980"><span class="brackets"><a class="fn-backref" href="#id8">6</a></span></dt>
 <dd><p>Péter Pulay. Convergence acceleration of iterative sequences. the case of scf iteration. <em>Chemical Physics Letters</em>, 73(2):393–398, 1980.</p>
 </dd>
-<dt class="bibtex label" id="pul1982"><span class="brackets"><a class="fn-backref" href="#id6">6</a></span></dt>
+<dt class="bibtex label" id="pul1982"><span class="brackets"><a class="fn-backref" href="#id9">7</a></span></dt>
 <dd><p>Peter Pulay. Improved scf convergence acceleration. <em>Journal of Computational Chemistry</em>, 3(4):556–560, 1982.</p>
 </dd>
-<dt class="bibtex label" id="kudscucan2002"><span class="brackets"><a class="fn-backref" href="#id7">7</a></span></dt>
+<dt class="bibtex label" id="kudscucan2002"><span class="brackets"><a class="fn-backref" href="#id10">8</a></span></dt>
 <dd><p>Konstantin N Kudin, Gustavo E Scuseria, and Eric Cances. A black-box self-consistent field convergence algorithm: one step closer. <em>The Journal of chemical physics</em>, 116(19):8255–8261, 2002.</p>
 </dd>
-<dt class="bibtex label" id="huyan2010"><span class="brackets"><a class="fn-backref" href="#id8">8</a></span></dt>
+<dt class="bibtex label" id="huyan2010"><span class="brackets"><a class="fn-backref" href="#id11">9</a></span></dt>
 <dd><p>Xiangqian Hu and Weitao Yang. Accelerating self-consistent field convergence with the augmented roothaan–hall energy function. <em>The Journal of chemical physics</em>, 132(5):054109, 2010.</p>
 </dd>
-<dt class="bibtex label" id="sun2016"><span class="brackets"><a class="fn-backref" href="#id9">9</a></span></dt>
+<dt class="bibtex label" id="sun2016"><span class="brackets"><a class="fn-backref" href="#id12">10</a></span></dt>
 <dd><p>Qiming Sun. Co-iterative augmented hessian method for orbital optimization. <em>arXiv preprint arXiv:1610.08423</em>, 2016.</p>
 </dd>
-<dt class="bibtex label" id="sun2017"><span class="brackets"><a class="fn-backref" href="#id10">10</a></span></dt>
+<dt class="bibtex label" id="sun2017"><span class="brackets"><a class="fn-backref" href="#id13">11</a></span></dt>
 <dd><p>Qiming Sun, Jun Yang, and Garnet Kin-Lic Chan. A general second order complete active space self-consistent-field solver for large-scale systems. <em>Chemical Physics Letters</em>, 683:291–299, 2017.</p>
 </dd>
 </dl>

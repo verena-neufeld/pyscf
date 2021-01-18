@@ -934,7 +934,7 @@ factors only)</p>
 
 <dl class="py method">
 <dt id="pyscf.pbc.gto.Cell.get_kpts">
-<code class="sig-name descname">get_kpts</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nks</span></em>, <em class="sig-param"><span class="n">wrap_around</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">with_gamma_point</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">scaled_center</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.pbc.gto.Cell.get_kpts" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_kpts</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nks</span></em>, <em class="sig-param"><span class="n">wrap_around</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">with_gamma_point</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">scaled_center</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">space_group_symmetry</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">time_reversal_symmetry</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">symmorphic</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.pbc.gto.Cell.get_kpts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given number of kpoints along x,y,z , generate kpoints</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>nks : (3,) ndarray</p>
@@ -949,10 +949,15 @@ scaled_center, given as the zeroth index of the returned kpts.
 Scaled meaning that the k-points are scaled to a grid from 
 [-1,1] x [-1,1] x [-1,1]</p>
 </dd>
+<dt>space_group_symmetry<span class="classifier">bool</span></dt><dd><p>Whether to consider space group symmetry</p>
+</dd>
+<dt>time_reversal_symmetry<span class="classifier">bool</span></dt><dd><p>Whether to consider time reversal symmetry</p>
+</dd>
 </dl>
 </dd>
 <dt>Returns:</dt><dd><p>kpts in absolute value (unit 1/Bohr).  Gamma point is placed at the
-first place in the k-points list</p>
+first place in the k-points list;
+instance of <code class="xref py py-class docutils literal notranslate"><span class="pre">KPoints</span></code> if k-point symmetry is considered</p>
 </dd>
 </dl>
 <p>Examples:</p>
@@ -982,14 +987,25 @@ it adds one additional lattice vector to be safe.</p>
 
 <dl class="py method">
 <dt id="pyscf.pbc.gto.Cell.get_scaled_kpts">
-<code class="sig-name descname">get_scaled_kpts</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">abs_kpts</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/gto/cell.html#Cell.get_scaled_kpts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.gto.Cell.get_scaled_kpts" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_scaled_kpts</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">abs_kpts</span></em>, <em class="sig-param"><span class="n">kpts_in_ibz</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/gto/cell.html#Cell.get_scaled_kpts"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.gto.Cell.get_scaled_kpts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get scaled k-points, given absolute k-points in 1/Bohr.</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>abs_kpts : (nkpts, 3) ndarray of floats</p>
+<dl>
+<dt>Args:</dt><dd><p>abs_kpts : (nkpts, 3) ndarray of floats or <code class="xref py py-class docutils literal notranslate"><span class="pre">KPoints</span></code> object
+kpts_in_ibz : bool</p>
+<blockquote>
+<div><p>If True, return k-points in IBZ; otherwise, return k-points in BZ.
+Default value is True.</p>
+</div></blockquote>
 </dd>
 <dt>Returns:</dt><dd><p>scaled_kpts : (nkpts, 3) ndarray of floats</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.get_scaled_positions">
+<code class="sig-name descname">get_scaled_positions</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/gto/cell.html#Cell.get_scaled_positions"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.gto.Cell.get_scaled_positions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get scaled atom positions.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1083,7 +1099,7 @@ lattice vectors (unit in Bohr)</p>
 
 <dl class="py method">
 <dt id="pyscf.pbc.gto.Cell.make_kpts">
-<code class="sig-name descname">make_kpts</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nks</span></em>, <em class="sig-param"><span class="n">wrap_around</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">with_gamma_point</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">scaled_center</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.pbc.gto.Cell.make_kpts" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">make_kpts</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nks</span></em>, <em class="sig-param"><span class="n">wrap_around</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">with_gamma_point</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">scaled_center</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">space_group_symmetry</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">time_reversal_symmetry</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">symmorphic</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.pbc.gto.Cell.make_kpts" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given number of kpoints along x,y,z , generate kpoints</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>nks : (3,) ndarray</p>
@@ -1098,10 +1114,15 @@ scaled_center, given as the zeroth index of the returned kpts.
 Scaled meaning that the k-points are scaled to a grid from 
 [-1,1] x [-1,1] x [-1,1]</p>
 </dd>
+<dt>space_group_symmetry<span class="classifier">bool</span></dt><dd><p>Whether to consider space group symmetry</p>
+</dd>
+<dt>time_reversal_symmetry<span class="classifier">bool</span></dt><dd><p>Whether to consider time reversal symmetry</p>
+</dd>
 </dl>
 </dd>
 <dt>Returns:</dt><dd><p>kpts in absolute value (unit 1/Bohr).  Gamma point is placed at the
-first place in the k-points list</p>
+first place in the k-points list;
+instance of <code class="xref py py-class docutils literal notranslate"><span class="pre">KPoints</span></code> if k-point symmetry is considered</p>
 </dd>
 </dl>
 <p>Examples:</p>

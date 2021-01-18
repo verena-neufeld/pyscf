@@ -180,14 +180,34 @@
 <span class="kn">from</span> <span class="nn">pyscf.pbc.dft</span> <span class="kn">import</span> <span class="n">krks</span>
 <span class="kn">from</span> <span class="nn">pyscf.pbc.dft</span> <span class="kn">import</span> <span class="n">kuks</span>
 <span class="kn">from</span> <span class="nn">pyscf.pbc.dft</span> <span class="kn">import</span> <span class="n">kroks</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.dft</span> <span class="kn">import</span> <span class="n">krks_ksymm</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc.dft</span> <span class="kn">import</span> <span class="n">kuks_ksymm</span>
 <span class="kn">from</span> <span class="nn">pyscf.pbc.dft</span> <span class="kn">import</span> <span class="n">krkspu</span>
 <span class="kn">from</span> <span class="nn">pyscf.pbc.dft</span> <span class="kn">import</span> <span class="n">kukspu</span>
 
 <span class="n">UKS</span> <span class="o">=</span> <span class="n">uks</span><span class="o">.</span><span class="n">UKS</span>
 <span class="n">ROKS</span> <span class="o">=</span> <span class="n">roks</span><span class="o">.</span><span class="n">ROKS</span>
 
-<span class="n">KRKS</span> <span class="o">=</span> <span class="n">krks</span><span class="o">.</span><span class="n">KRKS</span>
-<span class="n">KUKS</span> <span class="o">=</span> <span class="n">kuks</span><span class="o">.</span><span class="n">KUKS</span>
+<span class="c1">#KRKS = krks.KRKS</span>
+<span class="k">def</span> <span class="nf">KRKS</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="s2">&quot;kpts_ibz&quot;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">krks_ksymm</span><span class="o">.</span><span class="n">KRKS</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">if</span> <span class="s1">&#39;kpts&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;kpts&#39;</span><span class="p">],</span> <span class="s2">&quot;kpts_ibz&quot;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">krks_ksymm</span><span class="o">.</span><span class="n">KRKS</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">krks</span><span class="o">.</span><span class="n">KRKS</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="c1">#KUKS = kuks.KUKS</span>
+<span class="k">def</span> <span class="nf">KUKS</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="s2">&quot;kpts_ibz&quot;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">kuks_ksymm</span><span class="o">.</span><span class="n">KUKS</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">if</span> <span class="s1">&#39;kpts&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;kpts&#39;</span><span class="p">],</span> <span class="s2">&quot;kpts_ibz&quot;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">kuks_ksymm</span><span class="o">.</span><span class="n">KUKS</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">kuks</span><span class="o">.</span><span class="n">KUKS</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
 <span class="n">KROKS</span> <span class="o">=</span> <span class="n">kroks</span><span class="o">.</span><span class="n">KROKS</span>
 
 <span class="n">KRKSpU</span> <span class="o">=</span> <span class="n">krkspu</span><span class="o">.</span><span class="n">KRKSpU</span>

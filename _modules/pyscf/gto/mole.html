@@ -414,7 +414,7 @@
     <span class="sd">&#39;&#39;&#39;Real spherical to spinor transformation matrix for angular moment l&#39;&#39;&#39;</span>
     <span class="k">return</span> <span class="n">sph2spinor_kappa</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="atom_types"><a class="viewcode-back" href="../../../modules/gto.html#pyscf.gto.mole.atom_types">[docs]</a><span class="k">def</span> <span class="nf">atom_types</span><span class="p">(</span><span class="n">atoms</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="atom_types"><a class="viewcode-back" href="../../../modules/gto.html#pyscf.gto.mole.atom_types">[docs]</a><span class="k">def</span> <span class="nf">atom_types</span><span class="p">(</span><span class="n">atoms</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">magmom</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;symmetry inequivalent atoms&#39;&#39;&#39;</span>
     <span class="n">atmgroup</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">ia</span><span class="p">,</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">atoms</span><span class="p">):</span>
@@ -438,6 +438,22 @@
                 <span class="n">atmgroup</span><span class="p">[</span><span class="n">stdsymb</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ia</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">atmgroup</span><span class="p">[</span><span class="n">stdsymb</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">ia</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">magmom</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">atmgroup_new</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">suffix</span> <span class="o">=</span> <span class="p">{</span><span class="mf">1.0</span><span class="p">:</span><span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">:</span><span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">:</span><span class="s1">&#39;o&#39;</span><span class="p">}</span>
+        <span class="n">magmom</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">magmom</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">elem</span><span class="p">,</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">atmgroup</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">uniq_mag</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">magmom</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">uniq_mag</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">mag</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">uniq_mag</span><span class="p">):</span>
+                    <span class="n">subgrp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">idx</span><span class="p">)[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">magmom</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">==</span> <span class="n">mag</span><span class="p">)[</span><span class="mi">0</span><span class="p">]]</span>
+                    <span class="k">if</span> <span class="n">mag</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">suffix</span><span class="p">:</span>
+                        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Magmom should be chosen from [-1., 0., 1.], but </span><span class="si">%s</span><span class="s2"> is given&quot;</span> <span class="o">%</span> <span class="n">mag</span><span class="p">)</span>
+                    <span class="n">atmgroup_new</span><span class="p">[</span><span class="n">elem</span><span class="o">+</span><span class="s1">&#39;_&#39;</span><span class="o">+</span><span class="n">suffix</span><span class="p">[</span><span class="n">mag</span><span class="p">]]</span> <span class="o">=</span> <span class="n">subgrp</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">atmgroup_new</span><span class="p">[</span><span class="n">elem</span><span class="p">]</span> <span class="o">=</span> <span class="n">idx</span>
+        <span class="n">atmgroup</span> <span class="o">=</span> <span class="n">atmgroup_new</span> 
     <span class="k">return</span> <span class="n">atmgroup</span></div>
 
 
@@ -2150,6 +2166,8 @@
 <span class="sd">            It is needed by pyscf.prop module and submodules.</span>
 <span class="sd">        cart : boolean</span>
 <span class="sd">            Using Cartesian GTO basis and integrals (6d,10f,15g)</span>
+<span class="sd">        magmom : list</span>
+<span class="sd">            Collinear spin of each atom. Default is [0.0,]*natm</span>
 
 <span class="sd">        ** Following attributes are generated by :func:`Mole.build` **</span>
 
@@ -2249,6 +2267,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">ecp</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="c1"># Nuclear property. self.nucprop = {atom_symbol: {key: value}}</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">nucprop</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="c1"># Collinear spin of each atom. self.magmom = [0., ...]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">magmom</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="c1">##################################################</span>
 <span class="c1"># don&#39;t modify the following private variables, they are not input options</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_atm</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
@@ -2412,7 +2432,7 @@
               <span class="n">verbose</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">output</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">max_memory</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
               <span class="n">atom</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nucmod</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ecp</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
               <span class="n">charge</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">spin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">symmetry</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">symmetry_subgroup</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-              <span class="n">cart</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+              <span class="n">cart</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">magmom</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;Setup moleclue and initialize some control parameters.  Whenever you</span>
 <span class="sd">        change the value of the attributes of :class:`Mole`, you need call</span>
 <span class="sd">        this function to refresh the internal data of Mole.</span>
@@ -2445,6 +2465,8 @@
 <span class="sd">            symmetry : bool or str</span>
 <span class="sd">                Whether to use symmetry.  If given a string of point group</span>
 <span class="sd">                name, the given point group symmetry will be used.</span>
+<span class="sd">            magmom : list</span>
+<span class="sd">                Collinear spin of each atom. Default is [0.0,]*natm</span>
 
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="n">gc</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>  <span class="c1"># To release circular referred objects</span>
@@ -2467,6 +2489,7 @@
         <span class="k">if</span> <span class="n">symmetry</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">symmetry</span> <span class="o">=</span> <span class="n">symmetry</span>
         <span class="k">if</span> <span class="n">symmetry_subgroup</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">symmetry_subgroup</span> <span class="o">=</span> <span class="n">symmetry_subgroup</span>
         <span class="k">if</span> <span class="n">cart</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">cart</span> <span class="o">=</span> <span class="n">cart</span>
+        <span class="k">if</span> <span class="n">magmom</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">magmom</span> <span class="o">=</span> <span class="n">magmom</span>
 
         <span class="k">if</span> <span class="n">parse_arg</span><span class="p">:</span>
             <span class="n">_update_from_cmdargs_</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
@@ -2534,6 +2557,12 @@
             <span class="c1"># Access self.nelec in which the code checks whether the spin and</span>
             <span class="c1"># number of electrons are consistent.</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">nelec</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">magmom</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">magmom</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.</span><span class="p">,]</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">natm</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">spin</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="nb">abs</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">magmom</span><span class="p">))</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">spin</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">1e-6</span><span class="p">:</span>
+            <span class="c1">#don&#39;t check for unrestricted calcs.</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;mol.magmom is set incorrectly.&quot;</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">symmetry</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_build_symmetry</span><span class="p">()</span>
@@ -2712,12 +2741,32 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">cart</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;[INPUT] Cartesian GTO integrals (6d 10f)</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 
+        <span class="n">xyzstring</span> <span class="o">=</span> <span class="s2">&quot;[INPUT] Symbol&quot;</span>
+        <span class="n">xyzstring</span> <span class="o">=</span> <span class="n">xyzstring</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">xyzstring</span><span class="p">)</span><span class="o">+</span><span class="mi">11</span><span class="p">)</span>
+        <span class="n">xyzstring</span> <span class="o">+=</span> <span class="s2">&quot;X&quot;</span>
+        <span class="n">xyzstring</span> <span class="o">=</span> <span class="n">xyzstring</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">xyzstring</span><span class="p">)</span><span class="o">+</span><span class="mi">16</span><span class="p">)</span>
+        <span class="n">xyzstring</span> <span class="o">+=</span> <span class="s2">&quot;Y&quot;</span>
+        <span class="n">xyzstring</span> <span class="o">=</span> <span class="n">xyzstring</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">xyzstring</span><span class="p">)</span><span class="o">+</span><span class="mi">16</span><span class="p">)</span>
+        <span class="n">xyzstring</span> <span class="o">+=</span> <span class="s2">&quot;Z&quot;</span>
+        <span class="n">xyzstring</span> <span class="o">=</span> <span class="n">xyzstring</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">xyzstring</span><span class="p">)</span><span class="o">+</span><span class="mi">6</span><span class="p">)</span>
+        <span class="n">xyzstring</span> <span class="o">+=</span> <span class="s2">&quot;unit&quot;</span>
+        <span class="n">xyzstring</span> <span class="o">=</span> <span class="n">xyzstring</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">xyzstring</span><span class="p">)</span><span class="o">+</span><span class="mi">10</span><span class="p">)</span>
+        <span class="n">xyzstring</span> <span class="o">+=</span> <span class="s2">&quot;X&quot;</span>
+        <span class="n">xyzstring</span> <span class="o">=</span> <span class="n">xyzstring</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">xyzstring</span><span class="p">)</span><span class="o">+</span><span class="mi">16</span><span class="p">)</span>
+        <span class="n">xyzstring</span> <span class="o">+=</span> <span class="s2">&quot;Y&quot;</span>
+        <span class="n">xyzstring</span> <span class="o">=</span> <span class="n">xyzstring</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">xyzstring</span><span class="p">)</span><span class="o">+</span><span class="mi">16</span><span class="p">)</span>
+        <span class="n">xyzstring</span> <span class="o">+=</span> <span class="s2">&quot;Z&quot;</span>
+        <span class="n">xyzstring</span> <span class="o">=</span> <span class="n">xyzstring</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">xyzstring</span><span class="p">)</span><span class="o">+</span><span class="mi">7</span><span class="p">)</span>
+        <span class="n">xyzstring</span> <span class="o">+=</span> <span class="s2">&quot;unit&quot;</span>
+        <span class="n">xyzstring</span> <span class="o">+=</span> <span class="s2">&quot;  Magmom</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">xyzstring</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">ia</span><span class="p">,</span><span class="n">atom</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_atom</span><span class="p">):</span>
             <span class="n">coorda</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">([</span><span class="n">x</span> <span class="o">*</span> <span class="n">param</span><span class="o">.</span><span class="n">BOHR</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">atom</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
             <span class="n">coordb</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">atom</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;[INPUT]</span><span class="si">%3d</span><span class="s1"> </span><span class="si">%-4s</span><span class="s1"> </span><span class="si">%16.12f</span><span class="s1"> </span><span class="si">%16.12f</span><span class="s1"> </span><span class="si">%16.12f</span><span class="s1"> AA  &#39;</span>
-                              <span class="s1">&#39;</span><span class="si">%16.12f</span><span class="s1"> </span><span class="si">%16.12f</span><span class="s1"> </span><span class="si">%16.12f</span><span class="s1"> Bohr</span><span class="se">\n</span><span class="s1">&#39;</span>
-                              <span class="o">%</span> <span class="p">((</span><span class="n">ia</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">_symbol</span><span class="p">(</span><span class="n">atom</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="o">+</span> <span class="n">coorda</span> <span class="o">+</span> <span class="n">coordb</span><span class="p">))</span>
+            <span class="n">magmom</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">magmom</span><span class="p">[</span><span class="n">ia</span><span class="p">]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;[INPUT]</span><span class="si">%3d</span><span class="s1"> </span><span class="si">%-4s</span><span class="s1"> </span><span class="si">%16.12f</span><span class="s1"> </span><span class="si">%16.12f</span><span class="s1"> </span><span class="si">%16.12f</span><span class="s1"> AA  &#39;</span>\
+                              <span class="s1">&#39;</span><span class="si">%16.12f</span><span class="s1"> </span><span class="si">%16.12f</span><span class="s1"> </span><span class="si">%16.12f</span><span class="s1"> Bohr  </span><span class="si">%4.1f</span><span class="se">\n</span><span class="s1">&#39;</span> \
+                              <span class="o">%</span> <span class="p">((</span><span class="n">ia</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">_symbol</span><span class="p">(</span><span class="n">atom</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="o">+</span> <span class="n">coorda</span> <span class="o">+</span> <span class="n">coordb</span> <span class="o">+</span> <span class="p">(</span><span class="n">magmom</span><span class="p">,)))</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">nucmod</span><span class="p">:</span>
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nucmod</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="n">unicode</span><span class="p">,</span>
                                         <span class="n">types</span><span class="o">.</span><span class="n">FunctionType</span><span class="p">)):</span>
