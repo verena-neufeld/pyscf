@@ -1244,16 +1244,24 @@ basis functions, electron densities, and integrals.
 Some examples can be found in
 <a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/dft/30-ao_value_on_grid.py">examples/dft/30-ao_value_on_grid.py</a>, and
 <a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/dft/31-xc_value_on_grid.py">examples/dft/31-xc_value_on_grid.py</a>.
-Following is an example of computing the nonnegative kinetic energy density</p>
+Following is an example of computing the kinetic energy from the
+nonnegative kinetic energy density</p>
 <div class="math notranslate nohighlight">
-\[t_s(\mathbf{r}) = \frac{1}{2} \sum_{i\in occ} |\nabla\psi_i(\mathbf{r})|^2 \;.\]</div>
+\[t_s(\mathbf{r}) = \frac{1}{2} \sum_{i\in occ} |\nabla\psi_i(\mathbf{r})|^2 \;,\]</div>
+<div class="math notranslate nohighlight">
+\[T_s = \int d\mathbf{r} t_s(\mathbf{r}) \;.\]</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyscf.dft</span> <span class="kn">import</span> <span class="n">gen_grid</span><span class="p">,</span> <span class="n">numint</span>
 <span class="n">orbo</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">mo_coeff</span><span class="p">[:,</span><span class="n">mf</span><span class="o">.</span><span class="n">mo_occ</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">grids</span> <span class="o">=</span> <span class="n">gen_grid</span><span class="o">.</span><span class="n">Grids</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
 <span class="n">grids</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">with_non0tab</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">weights</span> <span class="o">=</span> <span class="n">grids</span><span class="o">.</span><span class="n">weights</span>
 <span class="n">ao1</span> <span class="o">=</span> <span class="n">numint</span><span class="o">.</span><span class="n">eval_ao</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">grids</span><span class="o">.</span><span class="n">coords</span><span class="p">,</span> <span class="n">deriv</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">non0tab</span><span class="o">=</span><span class="n">grids</span><span class="o">.</span><span class="n">non0tab</span><span class="p">)</span>
-<span class="n">ts</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s1">&#39;g,xgp,pi,xgq,qi-&gt;&#39;</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">ao1</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">orbo</span><span class="p">,</span> <span class="n">ao1</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">orbo</span><span class="p">)</span>
+<span class="n">ts</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">numpy</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s1">&#39;xgp,pi,xgq,qi-&gt;g&#39;</span><span class="p">,</span> <span class="n">ao1</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">orbo</span><span class="p">,</span> <span class="n">ao1</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">orbo</span><span class="p">)</span>
+<span class="n">Ts</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s1">&#39;g,g-&gt;&#39;</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">ts</span><span class="p">)</span>
+
+<span class="n">Ts_ao</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">intor</span><span class="p">(</span><span class="s2">&quot;int1e_kin&quot;</span><span class="p">)</span>
+<span class="n">Ts_anal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s2">&quot;ui,uv,vi-&gt;&quot;</span><span class="p">,</span> <span class="n">orbo</span><span class="p">,</span> <span class="n">Ts_ao</span><span class="p">,</span> <span class="n">orbo</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">Ts</span> <span class="o">-</span> <span class="n">Ts_anal</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
