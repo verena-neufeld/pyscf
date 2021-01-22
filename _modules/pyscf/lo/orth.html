@@ -225,15 +225,19 @@
 <div class="viewcode-block" id="pre_orth_ao"><a class="viewcode-back" href="../../../modules/lo.html#pyscf.lo.orth.pre_orth_ao">[docs]</a><span class="k">def</span> <span class="nf">pre_orth_ao</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="n">REF_BASIS</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Restore AO characters.  Possible methods include the ANO/MINAO</span>
 <span class="sd">    projection or fraction-averaged atomic RHF calculation&#39;&#39;&#39;</span>
-    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">method</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;ANO&#39;</span><span class="p">,</span> <span class="s1">&#39;MINAO&#39;</span><span class="p">):</span>
-        <span class="c1"># Use ANO/MINAO basis to define the strongly occupied set</span>
-        <span class="k">return</span> <span class="n">project_to_atomic_orbitals</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">method</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="n">method</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;SCF&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">pre_orth_ao_atm_scf</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">pre_orth_ao_atm_scf</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span></div>
+        <span class="c1"># Use ANO/MINAO basis to define the strongly occupied set</span>
+        <span class="k">return</span> <span class="n">project_to_atomic_orbitals</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span></div>
 <span class="n">restore_ao_character</span> <span class="o">=</span> <span class="n">pre_orth_ao</span>
 
-<div class="viewcode-block" id="project_to_atomic_orbitals"><a class="viewcode-back" href="../../../modules/lo.html#pyscf.lo.orth.project_to_atomic_orbitals">[docs]</a><span class="k">def</span> <span class="nf">project_to_atomic_orbitals</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">basname</span><span class="p">):</span>
+<div class="viewcode-block" id="project_to_atomic_orbitals"><a class="viewcode-back" href="../../../modules/lo.html#pyscf.lo.orth.project_to_atomic_orbitals">[docs]</a><span class="k">def</span> <span class="nf">project_to_atomic_orbitals</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">ref_basis</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;projected AO = |bas&gt;&lt;bas|ANO&gt;</span>
+
+<span class="sd">    args:</span>
+<span class="sd">        ref_basis : str or basis dict</span>
+<span class="sd">            Name, or filename, or a dict of reference basis set</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="kn">from</span> <span class="nn">pyscf.scf.addons</span> <span class="kn">import</span> <span class="n">project_mo_nr2nr</span>
     <span class="kn">from</span> <span class="nn">pyscf.scf</span> <span class="kn">import</span> <span class="n">atom_hf</span>
@@ -302,6 +306,7 @@
         <span class="k">if</span> <span class="n">symb</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">nelec_ecp_dic</span><span class="p">:</span>
             <span class="n">nelec_ecp_dic</span><span class="p">[</span><span class="n">symb</span><span class="p">]</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">atom_nelec_core</span><span class="p">(</span><span class="n">ia</span><span class="p">)</span>
 
+    <span class="n">basis_converter</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">mole</span><span class="o">.</span><span class="n">_generate_basis_converter</span><span class="p">()</span>
     <span class="n">aos</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="n">atm</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">()</span>
     <span class="n">atmp</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">()</span>
@@ -317,7 +322,14 @@
             <span class="n">aos</span><span class="p">[</span><span class="n">symb</span><span class="p">]</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="n">numpy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">s0</span><span class="o">.</span><span class="n">diagonal</span><span class="p">()))</span>
             <span class="k">continue</span>
 
-        <span class="n">basis_add</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">basis</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">basname</span><span class="p">,</span> <span class="n">stdsymb</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ref_basis</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">symb</span> <span class="ow">in</span> <span class="n">ref_basis</span><span class="p">:</span>
+                <span class="n">basis_add</span> <span class="o">=</span> <span class="n">basis_converter</span><span class="p">(</span><span class="n">stdsymb</span><span class="p">,</span> <span class="n">ref_basis</span><span class="p">[</span><span class="n">symb</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">basis_add</span> <span class="o">=</span> <span class="n">basis_converter</span><span class="p">(</span><span class="n">stdsymb</span><span class="p">,</span> <span class="n">ref_basis</span><span class="p">[</span><span class="n">stdsymb</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">basis_add</span> <span class="o">=</span> <span class="n">basis_converter</span><span class="p">(</span><span class="n">symb</span><span class="p">,</span> <span class="n">ref_basis</span><span class="p">)</span>
+
         <span class="n">atmp</span><span class="o">.</span><span class="n">_atm</span><span class="p">,</span> <span class="n">atmp</span><span class="o">.</span><span class="n">_bas</span><span class="p">,</span> <span class="n">atmp</span><span class="o">.</span><span class="n">_env</span> <span class="o">=</span> \
                 <span class="n">atmp</span><span class="o">.</span><span class="n">make_env</span><span class="p">([[</span><span class="n">stdsymb</span><span class="p">,(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)]],</span> <span class="p">{</span><span class="n">stdsymb</span><span class="p">:</span><span class="n">basis_add</span><span class="p">},</span> <span class="p">[])</span>
         <span class="n">atmp</span><span class="o">.</span><span class="n">cart</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">cart</span>
@@ -341,7 +353,7 @@
             <span class="n">ecpcore</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">4</span>
 
         <span class="c1"># MINAO for heavier elements needs to be used with pseudo potential</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">basname</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;MINAO&#39;</span> <span class="ow">and</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">ref_basis</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;MINAO&#39;</span> <span class="ow">and</span>
             <span class="n">gto</span><span class="o">.</span><span class="n">charge</span><span class="p">(</span><span class="n">stdsymb</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">36</span> <span class="ow">and</span> <span class="n">symb</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">nelec_ecp_dic</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;Basis MINAO has to be used with ecp for heavy elements&#39;</span><span class="p">)</span>
 
@@ -415,8 +427,7 @@
     <span class="k">return</span> <span class="n">scipy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">block_diag</span><span class="p">(</span><span class="o">*</span><span class="n">coeff</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="orth_ao"><a class="viewcode-back" href="../../../modules/lo.html#pyscf.lo.orth.orth_ao">[docs]</a><span class="k">def</span> <span class="nf">orth_ao</span><span class="p">(</span><span class="n">mf_or_mol</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="n">ORTH_METHOD</span><span class="p">,</span> <span class="n">pre_orth_ao</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">scf_method</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-            <span class="n">s</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="orth_ao"><a class="viewcode-back" href="../../../modules/lo.html#pyscf.lo.orth.orth_ao">[docs]</a><span class="k">def</span> <span class="nf">orth_ao</span><span class="p">(</span><span class="n">mf_or_mol</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="n">ORTH_METHOD</span><span class="p">,</span> <span class="n">pre_orth_ao</span><span class="o">=</span><span class="n">REF_BASIS</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Orthogonalize AOs</span>
 
 <span class="sd">    Kwargs:</span>
@@ -426,19 +437,24 @@
 <span class="sd">            | meta-lowdin : Lowdin orth within core, valence, virtual space separately (JCTC, 10, 3784)</span>
 <span class="sd">            | NAO</span>
 
-<span class="sd">        pre_orth_ao: numpy.ndarray</span>
-<span class="sd">            Coefficients to restore AO characters for arbitrary basis. If not</span>
-<span class="sd">            given, the coefficients are generated based on ANO basis. You can</span>
-<span class="sd">            skip this by setting pre_orth_ao to identity matrix, e.g.  np.eye(mol.nao).</span>
+<span class="sd">        pre_orth_ao: numpy.ndarray or basis str or basis dict</span>
+<span class="sd">            Basis functions may not have AO characters. This variable is the</span>
+<span class="sd">            coefficients to restore AO characters for arbitrary basis. If a</span>
+<span class="sd">            string of basis name (can be the filename of a basis set) or a</span>
+<span class="sd">            dict of basis sets are given, they are interpreted as the</span>
+<span class="sd">            reference basis (by default ANO basis) that the projection</span>
+<span class="sd">            coefficients are generated based on.  Skip this projection step by</span>
+<span class="sd">            setting this variable to None.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
+    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">scf</span>
     <span class="kn">from</span> <span class="nn">pyscf.lo</span> <span class="kn">import</span> <span class="n">nao</span>
-    <span class="n">mf</span> <span class="o">=</span> <span class="n">scf_method</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mf_or_mol</span><span class="p">,</span> <span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">):</span>
         <span class="n">mol</span> <span class="o">=</span> <span class="n">mf_or_mol</span>
+        <span class="n">mf</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="k">else</span><span class="p">:</span>
+        <span class="k">assert</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">mf_or_mol</span><span class="p">,</span> <span class="n">scf</span><span class="o">.</span><span class="n">hf</span><span class="o">.</span><span class="n">SCF</span><span class="p">))</span>
         <span class="n">mol</span> <span class="o">=</span> <span class="n">mf_or_mol</span><span class="o">.</span><span class="n">mol</span>
-        <span class="k">if</span> <span class="n">mf</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">mf</span> <span class="o">=</span> <span class="n">mf_or_mol</span>
+        <span class="n">mf</span> <span class="o">=</span> <span class="n">mf_or_mol</span>
 
     <span class="k">if</span> <span class="n">s</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="s1">&#39;pbc_intor&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">):</span>  <span class="c1"># whether mol object is a cell</span>
@@ -446,20 +462,28 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="n">s</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">intor_symmetric</span><span class="p">(</span><span class="s1">&#39;int1e_ovlp&#39;</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="n">pre_orth_ao</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">pre_orth_ao</span> <span class="o">=</span> <span class="n">project_to_atomic_orbitals</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">REF_BASIS</span><span class="p">)</span>
-
     <span class="k">if</span> <span class="n">method</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;lowdin&#39;</span><span class="p">:</span>
-        <span class="n">s1</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">dot</span><span class="p">,</span> <span class="p">(</span><span class="n">pre_orth_ao</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">pre_orth_ao</span><span class="p">))</span>
-        <span class="n">c_orth</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">pre_orth_ao</span><span class="p">,</span> <span class="n">lowdin</span><span class="p">(</span><span class="n">s1</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">pre_orth_ao</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">c_orth</span> <span class="o">=</span> <span class="n">lowdin</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pre_orth_ao</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+                <span class="n">pre_orth_ao</span> <span class="o">=</span> <span class="n">restore_ao_character</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">pre_orth_ao</span><span class="p">)</span>
+            <span class="n">s1</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">dot</span><span class="p">,</span> <span class="p">(</span><span class="n">pre_orth_ao</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">pre_orth_ao</span><span class="p">))</span>
+            <span class="n">c_orth</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">pre_orth_ao</span><span class="p">,</span> <span class="n">lowdin</span><span class="p">(</span><span class="n">s1</span><span class="p">))</span>
+
     <span class="k">elif</span> <span class="n">method</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;nao&#39;</span><span class="p">:</span>
         <span class="k">assert</span><span class="p">(</span><span class="n">mf</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">)</span>
         <span class="n">c_orth</span> <span class="o">=</span> <span class="n">nao</span><span class="o">.</span><span class="n">nao</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">mf</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="c1"># meta_lowdin: partition AOs into core, valence and Rydberg sets,</span>
-        <span class="c1"># orthogonalizing within each set</span>
+
+    <span class="k">else</span><span class="p">:</span> <span class="c1"># meta_lowdin: partition AOs into core, valence and Rydberg sets,</span>
+          <span class="c1"># orthogonalizing within each set</span>
+        <span class="k">if</span> <span class="n">pre_orth_ao</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">pre_orth_ao</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">nao</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pre_orth_ao</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+            <span class="n">pre_orth_ao</span> <span class="o">=</span> <span class="n">restore_ao_character</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">pre_orth_ao</span><span class="p">)</span>
         <span class="n">weight</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">pre_orth_ao</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
         <span class="n">c_orth</span> <span class="o">=</span> <span class="n">nao</span><span class="o">.</span><span class="n">_nao_sub</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">pre_orth_ao</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+
     <span class="c1"># adjust phase</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">c_orth</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
         <span class="k">if</span> <span class="n">c_orth</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
@@ -505,7 +529,7 @@
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2015-2020, The PySCF Developers
+        &copy; Copyright 2015-2021, The PySCF Developers
 
     </p>
   </div>

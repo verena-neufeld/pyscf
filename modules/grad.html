@@ -145,7 +145,7 @@
 <li class="toctree-l2"><a class="reference internal" href="lib.html">10.16. <code class="xref py py-mod docutils literal notranslate"><span class="pre">lib</span></code> — Helper functions, parameters, and C extensions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lo.html">10.17. <code class="xref py py-mod docutils literal notranslate"><span class="pre">lo</span></code> — Orbital localization and analysis tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mcscf.html">10.18. <code class="xref py py-mod docutils literal notranslate"><span class="pre">mcscf</span></code> — Multi-configurational self-consistent field</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mp.html">10.19. <code class="xref py py-mod docutils literal notranslate"><span class="pre">mp</span></code> — MP2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mp.html">10.19. <code class="xref py py-mod docutils literal notranslate"><span class="pre">mp</span></code> — Second-Order Møller–Plesset Perturbation Theory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mrpt.html">10.20. <code class="xref py py-mod docutils literal notranslate"><span class="pre">mrpt</span></code> — Multi-reference perturbation theory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pbc.html">10.21. <code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc</span></code> — Periodic boundary conditions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="prop.html">10.22. <code class="xref py py-mod docutils literal notranslate"><span class="pre">prop</span></code> — Molecular properties</a></li>
@@ -349,6 +349,10 @@ automatically applied in the solver.</p>
 <p>CASSCF analytical nuclear gradients</p>
 <p>Ref.
 J. Comput. Chem., 5, 589</p>
+<p>MRH: copied from pyscf.grad.casscf.py on 12/07/2019
+Contains my modifications for SA-CASSCF gradients
+1. Generalized Fock has nonzero i-&gt;a and u-&gt;a
+2. Memory footprint for differentiated eris bugfix</p>
 <dl class="py attribute">
 <dt id="pyscf.grad.casscf.Grad">
 <code class="sig-prename descclassname">pyscf.grad.casscf.</code><code class="sig-name descname">Grad</code><a class="headerlink" href="#pyscf.grad.casscf.Grad" title="Permalink to this definition">¶</a></dt>
@@ -1380,7 +1384,7 @@ TDA energy gradients.</p>
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2015-2020, The PySCF Developers
+        &copy; Copyright 2015-2021, The PySCF Developers
 
     </p>
   </div>

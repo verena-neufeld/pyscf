@@ -184,6 +184,7 @@
 <span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
 <span class="kn">import</span> <span class="nn">numpy</span>
 <span class="kn">from</span> <span class="nn">pyscf.data.elements</span> <span class="kn">import</span> <span class="n">_symbol</span><span class="p">,</span> <span class="n">_rm_digit</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span>
 <span class="kn">from</span> <span class="nn">pyscf.symm</span> <span class="kn">import</span> <span class="n">geom</span>
 <span class="kn">from</span> <span class="nn">pyscf.symm</span> <span class="kn">import</span> <span class="n">param</span>
 
@@ -195,6 +196,8 @@
            <span class="s1">&#39;linearmole_irrep_symb2id&#39;</span><span class="p">,</span>
            <span class="s1">&#39;linearmole_irrep_id2symb&#39;</span><span class="p">,</span>
            <span class="s1">&#39;linearmole_symm_adapted_basis&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;so3_irrep_symb2id&#39;</span><span class="p">,</span>
+           <span class="s1">&#39;so3_irrep_id2symb&#39;</span><span class="p">,</span>
           <span class="p">]</span>
 
 <span class="n">OP_PARITY_ODD</span> <span class="o">=</span> <span class="p">{</span>
@@ -217,7 +220,9 @@
         <span class="k">return</span> <span class="p">(</span><span class="n">ox</span> <span class="ow">and</span> <span class="n">gx</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="n">oy</span> <span class="ow">and</span> <span class="n">gy</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="n">oz</span> <span class="ow">and</span> <span class="n">gz</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">symm_adapted_basis</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">gpname</span><span class="p">,</span> <span class="n">orig</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">coordinates</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">gpname</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;Dooh&#39;</span><span class="p">,</span> <span class="s1">&#39;Coov&#39;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">gpname</span> <span class="o">==</span> <span class="s1">&#39;SO3&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">so3_symm_adapted_basis</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">gpname</span><span class="p">,</span> <span class="n">orig</span><span class="p">,</span> <span class="n">coordinates</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">gpname</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;Dooh&#39;</span><span class="p">,</span> <span class="s1">&#39;Coov&#39;</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">linearmole_symm_adapted_basis</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">gpname</span><span class="p">,</span> <span class="n">orig</span><span class="p">,</span> <span class="n">coordinates</span><span class="p">)</span>
 
     <span class="c1"># prop_atoms are the atoms relocated wrt the charge center with proper</span>
@@ -367,6 +372,131 @@
     <span class="k">else</span><span class="p">:</span>
         <span class="n">nctr</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">basis</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">-</span> <span class="mi">1</span>
     <span class="k">return</span> <span class="n">nctr</span>
+
+<span class="c1">###############################</span>
+<span class="c1"># SO3 (real spherical harmonics)</span>
+<span class="c1"># Irreps ID maps</span>
+<span class="c1"># SO3       -&gt;  Dooh</span>
+<span class="c1"># s       0 -&gt;  A1g   0</span>
+
+<span class="c1"># pz    105 -&gt;  A1u   5</span>
+<span class="c1"># py    106 -&gt;  E1uy  6</span>
+<span class="c1"># px    107 -&gt;  E1ux  7</span>
+
+<span class="c1"># dz2   200 -&gt;  A1g   0</span>
+<span class="c1"># dyz   203 -&gt;  E1gy  3</span>
+<span class="c1"># dxz   202 -&gt;  E1gx  2</span>
+<span class="c1"># dxy   211 -&gt;  E2gy  11</span>
+<span class="c1"># dx2y2 210 -&gt;  E2gx  10</span>
+
+<span class="c1"># f0    305 -&gt;  A1u   5</span>
+<span class="c1"># f-1   306 -&gt;  E1uy  6</span>
+<span class="c1"># f+1   307 -&gt;  E1ux  7</span>
+<span class="c1"># f-2   314 -&gt;  E2uy  14</span>
+<span class="c1"># f+2   315 -&gt;  E2ux  15</span>
+<span class="c1"># f-3   316 -&gt;  E3uy  16</span>
+<span class="c1"># f+3   317 -&gt;  E3ux  17</span>
+
+<span class="c1"># g0    400 -&gt;  A1g   0</span>
+<span class="c1"># g-1   403 -&gt;  E1gy  3</span>
+<span class="c1"># g+1   402 -&gt;  E1gx  2</span>
+<span class="c1"># g-2   411 -&gt;  E2gy  11</span>
+<span class="c1"># g+2   410 -&gt;  E2gx  10</span>
+<span class="c1"># g-3   413 -&gt;  E3gy  13</span>
+<span class="c1"># g+3   412 -&gt;  E3gx  12</span>
+<span class="c1"># g-4   421 -&gt;  E4gy  21</span>
+<span class="c1"># g+4   420 -&gt;  E4gx  20</span>
+<span class="n">_SO3_SYMB2ID</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;s+0&#39;</span> <span class="p">:</span>     <span class="mi">0</span><span class="p">,</span>
+    <span class="s1">&#39;p-1&#39;</span><span class="p">:</span>    <span class="mi">106</span><span class="p">,</span>
+    <span class="s1">&#39;p+0&#39;</span><span class="p">:</span>    <span class="mi">105</span><span class="p">,</span>
+    <span class="s1">&#39;p+1&#39;</span><span class="p">:</span>    <span class="mi">107</span><span class="p">,</span>
+    <span class="s1">&#39;d-2&#39;</span><span class="p">:</span>    <span class="mi">211</span><span class="p">,</span>
+    <span class="s1">&#39;d-1&#39;</span><span class="p">:</span>    <span class="mi">203</span><span class="p">,</span>
+    <span class="s1">&#39;d+0&#39;</span><span class="p">:</span>    <span class="mi">200</span><span class="p">,</span>
+    <span class="s1">&#39;d+1&#39;</span><span class="p">:</span>    <span class="mi">202</span><span class="p">,</span>
+    <span class="s1">&#39;d+2&#39;</span><span class="p">:</span>    <span class="mi">210</span><span class="p">,</span>
+    <span class="s1">&#39;f-3&#39;</span><span class="p">:</span>    <span class="mi">316</span><span class="p">,</span>
+    <span class="s1">&#39;f-2&#39;</span><span class="p">:</span>    <span class="mi">314</span><span class="p">,</span>
+    <span class="s1">&#39;f-1&#39;</span><span class="p">:</span>    <span class="mi">306</span><span class="p">,</span>
+    <span class="s1">&#39;f+0&#39;</span><span class="p">:</span>    <span class="mi">305</span><span class="p">,</span>
+    <span class="s1">&#39;f+1&#39;</span><span class="p">:</span>    <span class="mi">307</span><span class="p">,</span>
+    <span class="s1">&#39;f+2&#39;</span><span class="p">:</span>    <span class="mi">315</span><span class="p">,</span>
+    <span class="s1">&#39;f+3&#39;</span><span class="p">:</span>    <span class="mi">317</span><span class="p">,</span>
+    <span class="s1">&#39;g-4&#39;</span><span class="p">:</span>    <span class="mi">421</span><span class="p">,</span>
+    <span class="s1">&#39;g-3&#39;</span><span class="p">:</span>    <span class="mi">413</span><span class="p">,</span>
+    <span class="s1">&#39;g-2&#39;</span><span class="p">:</span>    <span class="mi">411</span><span class="p">,</span>
+    <span class="s1">&#39;g-1&#39;</span><span class="p">:</span>    <span class="mi">403</span><span class="p">,</span>
+    <span class="s1">&#39;g+0&#39;</span><span class="p">:</span>    <span class="mi">400</span><span class="p">,</span>
+    <span class="s1">&#39;g+1&#39;</span><span class="p">:</span>    <span class="mi">402</span><span class="p">,</span>
+    <span class="s1">&#39;g+2&#39;</span><span class="p">:</span>    <span class="mi">410</span><span class="p">,</span>
+    <span class="s1">&#39;g+3&#39;</span><span class="p">:</span>    <span class="mi">412</span><span class="p">,</span>
+    <span class="s1">&#39;g+4&#39;</span><span class="p">:</span>    <span class="mi">420</span><span class="p">,</span>
+    <span class="s1">&#39;h-5&#39;</span><span class="p">:</span>    <span class="mi">526</span><span class="p">,</span>
+    <span class="s1">&#39;h-4&#39;</span><span class="p">:</span>    <span class="mi">524</span><span class="p">,</span>
+    <span class="s1">&#39;h-3&#39;</span><span class="p">:</span>    <span class="mi">516</span><span class="p">,</span>
+    <span class="s1">&#39;h-2&#39;</span><span class="p">:</span>    <span class="mi">514</span><span class="p">,</span>
+    <span class="s1">&#39;h-1&#39;</span><span class="p">:</span>    <span class="mi">506</span><span class="p">,</span>
+    <span class="s1">&#39;h+0&#39;</span><span class="p">:</span>    <span class="mi">505</span><span class="p">,</span>
+    <span class="s1">&#39;h+1&#39;</span><span class="p">:</span>    <span class="mi">507</span><span class="p">,</span>
+    <span class="s1">&#39;h+2&#39;</span><span class="p">:</span>    <span class="mi">515</span><span class="p">,</span>
+    <span class="s1">&#39;h+3&#39;</span><span class="p">:</span>    <span class="mi">517</span><span class="p">,</span>
+    <span class="s1">&#39;h+4&#39;</span><span class="p">:</span>    <span class="mi">525</span><span class="p">,</span>
+    <span class="s1">&#39;h+5&#39;</span><span class="p">:</span>    <span class="mi">527</span><span class="p">,</span>
+    <span class="s1">&#39;i-6&#39;</span><span class="p">:</span>    <span class="mi">631</span><span class="p">,</span>
+    <span class="s1">&#39;i-5&#39;</span><span class="p">:</span>    <span class="mi">623</span><span class="p">,</span>
+    <span class="s1">&#39;i-4&#39;</span><span class="p">:</span>    <span class="mi">621</span><span class="p">,</span>
+    <span class="s1">&#39;i-3&#39;</span><span class="p">:</span>    <span class="mi">613</span><span class="p">,</span>
+    <span class="s1">&#39;i-2&#39;</span><span class="p">:</span>    <span class="mi">611</span><span class="p">,</span>
+    <span class="s1">&#39;i-1&#39;</span><span class="p">:</span>    <span class="mi">603</span><span class="p">,</span>
+    <span class="s1">&#39;i+0&#39;</span><span class="p">:</span>    <span class="mi">600</span><span class="p">,</span>
+    <span class="s1">&#39;i+1&#39;</span><span class="p">:</span>    <span class="mi">602</span><span class="p">,</span>
+    <span class="s1">&#39;i+2&#39;</span><span class="p">:</span>    <span class="mi">610</span><span class="p">,</span>
+    <span class="s1">&#39;i+3&#39;</span><span class="p">:</span>    <span class="mi">612</span><span class="p">,</span>
+    <span class="s1">&#39;i+4&#39;</span><span class="p">:</span>    <span class="mi">620</span><span class="p">,</span>
+    <span class="s1">&#39;i+5&#39;</span><span class="p">:</span>    <span class="mi">622</span><span class="p">,</span>
+    <span class="s1">&#39;i+6&#39;</span><span class="p">:</span>    <span class="mi">630</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">_SO3_ID2SYMB</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="n">v</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">_SO3_SYMB2ID</span><span class="o">.</span><span class="n">items</span><span class="p">()])</span>
+<span class="n">_ANGULAR</span> <span class="o">=</span> <span class="s1">&#39;spdfghik&#39;</span>
+
+<span class="k">def</span> <span class="nf">so3_irrep_symb2id</span><span class="p">(</span><span class="n">symb</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">_SO3_SYMB2ID</span><span class="p">[</span><span class="n">symb</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>
+
+<span class="k">def</span> <span class="nf">so3_irrep_id2symb</span><span class="p">(</span><span class="n">irrep_id</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">_SO3_ID2SYMB</span><span class="p">[</span><span class="n">irrep_id</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">so3_symm_adapted_basis</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">gpname</span><span class="p">,</span> <span class="n">orig</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">coordinates</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="n">gpname</span> <span class="o">==</span> <span class="s1">&#39;SO3&#39;</span>
+    <span class="k">assert</span> <span class="n">mol</span><span class="o">.</span><span class="n">natm</span> <span class="o">==</span> <span class="mi">1</span>
+
+    <span class="n">ao_loc</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">ao_loc_nr</span><span class="p">(</span><span class="n">cart</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">nao_sph</span> <span class="o">=</span> <span class="n">ao_loc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">mol</span><span class="o">.</span><span class="n">cart</span><span class="p">:</span>
+        <span class="n">coeff</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">cart2sph</span><span class="p">(</span><span class="n">normalized</span><span class="o">=</span><span class="s1">&#39;sp&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">coeff</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">nao_sph</span><span class="p">)</span>
+    <span class="n">nao</span> <span class="o">=</span> <span class="n">coeff</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">lmax</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">_bas</span><span class="p">[:,</span><span class="n">gto</span><span class="o">.</span><span class="n">ANG_OF</span><span class="p">])</span>
+    <span class="n">so</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">irrep_names</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">lmax</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">bas_idx</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">_bas</span><span class="p">[:,</span><span class="n">gto</span><span class="o">.</span><span class="n">ANG_OF</span><span class="p">]</span> <span class="o">==</span> <span class="n">l</span>
+        <span class="n">cs</span> <span class="o">=</span> <span class="p">[</span><span class="n">coeff</span><span class="p">[:,</span><span class="n">p0</span><span class="p">:</span><span class="n">p1</span><span class="p">]</span>
+              <span class="k">for</span> <span class="n">p0</span><span class="p">,</span> <span class="n">p1</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">ao_loc</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">bas_idx</span><span class="p">],</span> <span class="n">ao_loc</span><span class="p">[</span><span class="mi">1</span><span class="p">:][</span><span class="n">bas_idx</span><span class="p">])]</span>
+        <span class="n">c_groups</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">hstack</span><span class="p">(</span><span class="n">cs</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">nao</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">l</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">l</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">so</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">c_groups</span><span class="p">[:,:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c_groups</span><span class="p">[:,:,</span><span class="mi">2</span><span class="p">],</span> <span class="n">c_groups</span><span class="p">[:,:,</span><span class="mi">0</span><span class="p">]])</span>
+            <span class="n">irrep_names</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s1">&#39;p-1&#39;</span><span class="p">,</span> <span class="s1">&#39;p+0&#39;</span><span class="p">,</span> <span class="s1">&#39;p+1&#39;</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="n">l</span><span class="p">,</span> <span class="n">l</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+                <span class="n">so</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c_groups</span><span class="p">[:,:,</span><span class="n">l</span><span class="o">+</span><span class="n">m</span><span class="p">])</span>
+                <span class="n">irrep_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s%+d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">_ANGULAR</span><span class="p">[</span><span class="n">l</span><span class="p">],</span> <span class="n">m</span><span class="p">))</span>
+
+    <span class="n">irrep_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">so3_irrep_symb2id</span><span class="p">(</span><span class="n">ir</span><span class="p">)</span> <span class="k">for</span> <span class="n">ir</span> <span class="ow">in</span> <span class="n">irrep_names</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">so</span><span class="p">,</span> <span class="n">irrep_ids</span>
 
 
 <span class="c1">###############################</span>
@@ -683,7 +813,6 @@
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span>
     <span class="n">h2o</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">()</span>
     <span class="n">h2o</span><span class="o">.</span><span class="n">verbose</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">h2o</span><span class="o">.</span><span class="n">output</span> <span class="o">=</span> <span class="kc">None</span>
@@ -732,7 +861,7 @@
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2015-2020, The PySCF Developers
+        &copy; Copyright 2015-2021, The PySCF Developers
 
     </p>
   </div>

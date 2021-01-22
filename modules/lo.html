@@ -492,7 +492,7 @@ localization of site-based population for hubbard model.</p>
 
 <dl class="py function">
 <dt id="pyscf.lo.orth.orth_ao">
-<code class="sig-prename descclassname">pyscf.lo.orth.</code><code class="sig-name descname">orth_ao</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf_or_mol</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'meta_lowdin'</span></em>, <em class="sig-param"><span class="n">pre_orth_ao</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">scf_method</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">s</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/orth.html#orth_ao"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.lo.orth.orth_ao" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.lo.orth.</code><code class="sig-name descname">orth_ao</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf_or_mol</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'meta_lowdin'</span></em>, <em class="sig-param"><span class="n">pre_orth_ao</span><span class="o">=</span><span class="default_value">'ANO'</span></em>, <em class="sig-param"><span class="n">s</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/orth.html#orth_ao"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.lo.orth.orth_ao" title="Permalink to this definition">¶</a></dt>
 <dd><p>Orthogonalize AOs</p>
 <dl class="simple">
 <dt>Kwargs:</dt><dd><dl class="simple">
@@ -501,9 +501,13 @@ localization of site-based population for hubbard model.</p>
 | meta-lowdin : Lowdin orth within core, valence, virtual space separately (JCTC, 10, 3784)
 | NAO</p>
 </dd>
-<dt>pre_orth_ao: numpy.ndarray</dt><dd><p>Coefficients to restore AO characters for arbitrary basis. If not
-given, the coefficients are generated based on ANO basis. You can
-skip this by setting pre_orth_ao to identity matrix, e.g.  np.eye(mol.nao).</p>
+<dt>pre_orth_ao: numpy.ndarray or basis str or basis dict</dt><dd><p>Basis functions may not have AO characters. This variable is the
+coefficients to restore AO characters for arbitrary basis. If a
+string of basis name (can be the filename of a basis set) or a
+dict of basis sets are given, they are interpreted as the
+reference basis (by default ANO basis) that the projection
+coefficients are generated based on.  Skip this projection step by
+setting this variable to None.</p>
 </dd>
 </dl>
 </dd>
@@ -519,14 +523,28 @@ projection or fraction-averaged atomic RHF calculation</p>
 
 <dl class="py function">
 <dt id="pyscf.lo.orth.pre_orth_project_ano">
-<code class="sig-prename descclassname">pyscf.lo.orth.</code><code class="sig-name descname">pre_orth_project_ano</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">basname</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.lo.orth.pre_orth_project_ano" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.lo.orth.</code><code class="sig-name descname">pre_orth_project_ano</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">ref_basis</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.lo.orth.pre_orth_project_ano" title="Permalink to this definition">¶</a></dt>
 <dd><p>projected AO = <a href="#id7"><span class="problematic" id="id8">|</span></a>bas&gt;&lt;bas|ANO&gt;</p>
+<dl class="simple">
+<dt>args:</dt><dd><dl class="simple">
+<dt>ref_basis<span class="classifier">str or basis dict</span></dt><dd><p>Name, or filename, or a dict of reference basis set</p>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
 <dt id="pyscf.lo.orth.project_to_atomic_orbitals">
-<code class="sig-prename descclassname">pyscf.lo.orth.</code><code class="sig-name descname">project_to_atomic_orbitals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">basname</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/orth.html#project_to_atomic_orbitals"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.lo.orth.project_to_atomic_orbitals" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.lo.orth.</code><code class="sig-name descname">project_to_atomic_orbitals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">ref_basis</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/orth.html#project_to_atomic_orbitals"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.lo.orth.project_to_atomic_orbitals" title="Permalink to this definition">¶</a></dt>
 <dd><p>projected AO = <a href="#id9"><span class="problematic" id="id10">|</span></a>bas&gt;&lt;bas|ANO&gt;</p>
+<dl class="simple">
+<dt>args:</dt><dd><dl class="simple">
+<dt>ref_basis<span class="classifier">str or basis dict</span></dt><dd><p>Name, or filename, or a dict of reference basis set</p>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
@@ -799,7 +817,7 @@ module was used to maximize the IAO Mulliken charges.</p>
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2015-2020, The PySCF Developers
+        &copy; Copyright 2015-2021, The PySCF Developers
 
     </p>
   </div>

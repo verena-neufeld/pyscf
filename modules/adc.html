@@ -310,6 +310,41 @@ Other methods of the ADC family can be requested by setting the method variable 
 </dd></dl>
 
 <dl class="py function">
+<dt id="pyscf.adc.RADC">
+<code class="sig-prename descclassname">pyscf.adc.</code><code class="sig-name descname">RADC</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em>, <em class="sig-param"><span class="n">frozen</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mo_coeff</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mo_occ</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/adc.html#RADC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.adc.RADC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ground state calculations</p>
+<dl>
+<dt>Attributes:</dt><dd><dl>
+<dt>verbose<span class="classifier">int</span></dt><dd><p>Print level.  Default value equals to <code class="xref py py-class docutils literal notranslate"><span class="pre">Mole.verbose</span></code></p>
+</dd>
+<dt>max_memory<span class="classifier">float or int</span></dt><dd><p>Allowed memory in MB.  Default value equals to <code class="xref py py-class docutils literal notranslate"><span class="pre">Mole.max_memory</span></code></p>
+</dd>
+<dt>incore_complete<span class="classifier">bool</span></dt><dd><p>Avoid all I/O. Default is False.</p>
+</dd>
+<dt>method<span class="classifier">string</span></dt><dd><p>nth-order ADC method. Options are : ADC(2), ADC(2)-X, ADC(3). Default is ADC(2).</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span> <span class="o">=</span> <span class="s1">&#39;H 0 0 0; F 0 0 1.1&#39;</span><span class="p">,</span> <span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;ccpvdz&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myadc</span> <span class="o">=</span> <span class="n">adc</span><span class="o">.</span><span class="n">RADC</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>Saved results</p>
+<blockquote>
+<div><dl class="simple">
+<dt>e_corr<span class="classifier">float</span></dt><dd><p>MPn correlation correction</p>
+</dd>
+<dt>e_tot<span class="classifier">float</span></dt><dd><p>Total energy (HF + correlation)</p>
+</dd>
+<dt>t1, t2 :</dt><dd><p>T amplitudes t1[i,a], t2[i,j,a,b]  (i,j in occ, a,b in virt)</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py function">
 <dt id="pyscf.adc.UADC">
 <code class="sig-prename descclassname">pyscf.adc.</code><code class="sig-name descname">UADC</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em>, <em class="sig-param"><span class="n">frozen</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mo_coeff</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mo_occ</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/adc.html#UADC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.adc.UADC" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ground state calculations</p>
@@ -385,7 +420,7 @@ attributes and results. The environment attributes are the parameters for the gr
 </div></blockquote>
 <dl class="py method">
 <dt id="pyscf.adc.uadc.UADC.kernel">
-<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/adc/uadc.html#UADC.kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.adc.uadc.UADC.kernel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nroots</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">guess</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">eris</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/adc/uadc.html#UADC.kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.adc.uadc.UADC.kernel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Kernel function is the main driver of a method.  Every method should
 define the kernel function as the entry of the calculation.  Note the
 return value of kernel function is not strictly defined.  It can be
@@ -510,7 +545,7 @@ the DFT mesh grids etc.).</p>
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2015-2020, The PySCF Developers
+        &copy; Copyright 2015-2021, The PySCF Developers
 
     </p>
   </div>

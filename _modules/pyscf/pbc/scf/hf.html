@@ -508,10 +508,10 @@
                 <span class="k">break</span>
             <span class="n">log</span><span class="o">.</span><span class="n">debug1</span><span class="p">(</span><span class="s1">&#39;iter </span><span class="si">%d</span><span class="s1">: origin </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">origin</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-    <span class="c1"># If the grids are non-cubic grids, regenerating the grids is expensive if</span>
-    <span class="c1"># the position or the shape of the unit cell is changed. The position of</span>
-    <span class="c1"># the unit cell is not optimized. The gauge origin is set to the nuclear</span>
-    <span class="c1"># charge center of the original unit cell.</span>
+        <span class="c1"># If the grids are non-cubic grids, regenerating the grids is expensive if</span>
+        <span class="c1"># the position or the shape of the unit cell is changed. The position of</span>
+        <span class="c1"># the unit cell is not optimized. The gauge origin is set to the nuclear</span>
+        <span class="c1"># charge center of the original unit cell.</span>
         <span class="k">pass</span>
 
     <span class="k">return</span> <span class="n">origin</span>
@@ -947,11 +947,11 @@
         <span class="n">ne</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s1">&#39;xij,ji-&gt;&#39;</span><span class="p">,</span> <span class="n">dm</span><span class="p">,</span> <span class="n">mf</span><span class="o">.</span><span class="n">get_ovlp</span><span class="p">(</span><span class="n">cell</span><span class="p">))</span><span class="o">.</span><span class="n">real</span>
     <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">ne</span> <span class="o">-</span> <span class="n">cell</span><span class="o">.</span><span class="n">nelectron</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mf">1e-7</span><span class="p">:</span>
         <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="s1">&#39;Big error detected in the electron number &#39;</span>
-                    <span class="s1">&#39;of initial guess density matrix (Ne/cell = </span><span class="si">%g</span><span class="s1">)!</span><span class="se">\n</span><span class="s1">&#39;</span>
-                    <span class="s1">&#39;  This can cause huge error in Fock matrix and &#39;</span>
-                    <span class="s1">&#39;lead to instability in SCF for low-dimensional &#39;</span>
-                    <span class="s1">&#39;systems.</span><span class="se">\n</span><span class="s1">  DM is normalized wrt the number &#39;</span>
-                    <span class="s1">&#39;of electrons </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">ne</span><span class="p">,</span> <span class="n">cell</span><span class="o">.</span><span class="n">nelectron</span><span class="p">)</span>
+                     <span class="s1">&#39;of initial guess density matrix (Ne/cell = </span><span class="si">%g</span><span class="s1">)!</span><span class="se">\n</span><span class="s1">&#39;</span>
+                     <span class="s1">&#39;  This can cause huge error in Fock matrix and &#39;</span>
+                     <span class="s1">&#39;lead to instability in SCF for low-dimensional &#39;</span>
+                     <span class="s1">&#39;systems.</span><span class="se">\n</span><span class="s1">  DM is normalized wrt the number &#39;</span>
+                     <span class="s1">&#39;of electrons </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">ne</span><span class="p">,</span> <span class="n">cell</span><span class="o">.</span><span class="n">nelectron</span><span class="p">)</span>
         <span class="n">dm</span> <span class="o">*=</span> <span class="n">cell</span><span class="o">.</span><span class="n">nelectron</span> <span class="o">/</span> <span class="n">ne</span>
     <span class="k">return</span> <span class="n">dm</span></div>
 </pre></div>
@@ -967,7 +967,7 @@
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2015-2020, The PySCF Developers
+        &copy; Copyright 2015-2021, The PySCF Developers
 
     </p>
   </div>

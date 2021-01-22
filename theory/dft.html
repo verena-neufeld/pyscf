@@ -105,7 +105,8 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#customizing-xc-functionals">7.2.4. Customizing XC functionals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#numerical-integration-grids">7.2.5. Numerical integration grids</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#references">7.2.6. References</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dispersion-corrections">7.2.6. Dispersion corrections</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#references">7.2.7. References</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="mp.html">7.3. Møller-Plesset perturbation theory</a></li>
@@ -114,7 +115,7 @@
 <li class="toctree-l2"><a class="reference internal" href="cc.html">7.6. Coupled cluster (CC)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="adc.html">7.7. Algebraic diagrammatic construction (ADC) scheme</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mcscf.html">7.8. Multi-configurational self-consistent field (MCSCF)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tddft.html">7.9. Time-dependent density functional theory (TDDFT)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tddft.html">7.9. Time-dependent Hartree-Fock and Density Functional Theory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="rt.html">7.10. Real-time time-dependent density functional theory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="eomcc.html">7.11. Equation-of-motion coupled cluster (EOM-CC)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pbc.html">7.12. Periodic boundary conditions</a></li>
@@ -198,7 +199,7 @@
 <p>The Kohn-Sham density functional theory (KS-DFT) is implemented as derived
 classes of the <a class="reference internal" href="../modules/scf.html#pyscf.scf.hf.SCF" title="pyscf.scf.hf.SCF"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.scf.hf.SCF</span></code></a> class, thus, the methods and capabilities introduced in
 <a class="reference internal" href="scf.html#theory-scf"><span class="std std-numref">Section 7.1</span></a> also apply to the <a class="reference internal" href="../modules/dft.html#module-dft" title="dft: Density functional theory"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dft</span></code></a> module.</p>
-<p>A minimal example of using the <a class="reference internal" href="../modules/dft.html#module-dft" title="dft: Density functional theory"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dft</span></code></a> module is as follows:</p>
+<p>A minimal example of using the <a class="reference internal" href="../modules/dft.html#module-dft" title="dft: Density functional theory"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dft</span></code></a> module is as follows.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span>
 <span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span>
     <span class="n">atom</span> <span class="o">=</span> <span class="s1">&#39;H 0 0 0; F 0 0 1.1&#39;</span><span class="p">,</span>  <span class="c1"># in Angstrom</span>
@@ -214,11 +215,11 @@ classes of the <a class="reference internal" href="../modules/scf.html#pyscf.scf
 </div>
 <div class="section" id="theory">
 <h2><span class="section-number">7.2.2. </span>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
-<p>The Hohenberg-Kohn theorems state that
+<p>The Hohenberg-Kohn theorems <a class="bibtex reference internal" href="#hohkoh1964" id="id1">[1]</a> state that
 for an interacting inhomogeneous electron gas in a static external potential <span class="math notranslate nohighlight">\(v_{\rm ext}(\mathbf{r})\)</span>,
 (1) the potential <span class="math notranslate nohighlight">\(v_{\rm ext}(\mathbf{r})\)</span>, and hence the total energy are unique functionals of the
 electron density <span class="math notranslate nohighlight">\(\rho(\mathbf{r})\)</span>;
-(2) the electron density that minimizes the total energy is the exact ground-state density <a class="bibtex reference internal" href="#hohkoh1964" id="id1">[1]</a>.
+(2) the electron density that minimizes the total energy is the exact ground-state density.
 This implies that the many-body problem of <span class="math notranslate nohighlight">\(N\)</span> electrons with <span class="math notranslate nohighlight">\(3N\)</span> spatial coordinates
 can be reduced to the problem of solving for the electron density
 with only 3 spatial coordinates. Such an approach, which is often called the orbital-free DFT,
@@ -238,7 +239,7 @@ Note that the exact functional form of <span class="math notranslate nohighlight
 thus it has to be approximated, which leads to various density functional approximations.
 These include local density approximation (LDA; XC energy only depends on electron densities),
 generalized gradient approximation (GGA; XC energy also depends on density gradients),
-meta-GGA (XC energy also depends on density laplacians),
+meta-GGA (XC energy also depends on kinetic energy densities),
 non-local correlation functionals (the correlation potential has a non-local form),
 hybrid density functionals (a fraction of exact exchange is also included), and
 long-range corrected density functionals (long-range part of the exchange energy is repalaced by the exact exchange energy), etc.
@@ -1265,14 +1266,23 @@ nonnegative kinetic energy density</p>
 </pre></div>
 </div>
 </div>
+<div class="section" id="dispersion-corrections">
+<h2><span class="section-number">7.2.6. </span>Dispersion corrections<a class="headerlink" href="#dispersion-corrections" title="Permalink to this headline">¶</a></h2>
+<p>Grimme’s “D3” dispersion correction <a class="bibtex reference internal" href="#dftd3" id="id3">[3]</a> can be added with
+an interface to the external library <a class="reference external" href="https://github.com/cuanto/libdftd3">libdftd3</a>.
+See <a class="reference internal" href="../interface/dftd3.html#dftd3"><span class="std std-numref">Section 9.1</span></a>.</p>
+</div>
 <div class="section" id="references">
-<h2><span class="section-number">7.2.6. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.2.7. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <p id="bibtex-bibliography-theory/dft-0"><dl class="citation">
 <dt class="bibtex label" id="hohkoh1964"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>Pierre Hohenberg and Walter Kohn. Inhomogeneous electron gas. <em>Physical review</em>, 136(3B):B864, 1964.</p>
 </dd>
 <dt class="bibtex label" id="kohsha1965"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
 <dd><p>Walter Kohn and Lu Jeu Sham. Self-consistent equations including exchange and correlation effects. <em>Physical review</em>, 140(4A):A1133, 1965.</p>
+</dd>
+<dt class="bibtex label" id="dftd3"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>Stefan Grimme, Jens Antony, Stephan Ehrlich, and Helge Krieg. A consistent and accurate ab initio parametrization of density functional dispersion correction (dft-d) for the 94 elements h-pu. <em>The Journal of chemical physics</em>, 132(15):154104, 2010.</p>
 </dd>
 </dl>
 </p>
@@ -1300,7 +1310,7 @@ nonnegative kinetic energy density</p>
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2015-2020, The PySCF Developers
+        &copy; Copyright 2015-2021, The PySCF Developers
 
     </p>
   </div>

@@ -209,7 +209,7 @@
              <span class="s1">&#39;C1&#39;</span> <span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,)}</span>
 
 <span class="k">def</span> <span class="nf">d2h_subgroup</span><span class="p">(</span><span class="n">gpname</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">gpname</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;dooh&#39;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">gpname</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;dooh&#39;</span><span class="p">,</span> <span class="s1">&#39;so3&#39;</span><span class="p">):</span>
         <span class="n">gpname</span> <span class="o">=</span> <span class="s1">&#39;D2h&#39;</span>
     <span class="k">elif</span> <span class="n">gpname</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;coov&#39;</span><span class="p">:</span>
         <span class="n">gpname</span> <span class="o">=</span> <span class="s1">&#39;C2v&#39;</span>
@@ -225,7 +225,7 @@
 <div class="viewcode-block" id="convert_orbsym"><a class="viewcode-back" href="../../../interface/dmrgscf.html#pyscf.dmrgscf.dmrg_sym.convert_orbsym">[docs]</a><span class="k">def</span> <span class="nf">convert_orbsym</span><span class="p">(</span><span class="n">gpname</span><span class="p">,</span> <span class="n">orbsym</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Convert orbital symmetry irrep_id to Block internal irrep_id</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="k">if</span> <span class="n">gpname</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;dooh&#39;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">gpname</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;dooh&#39;</span><span class="p">,</span> <span class="s1">&#39;so3&#39;</span><span class="p">):</span>
         <span class="n">orbsym</span> <span class="o">=</span> <span class="p">[</span><span class="n">IRREP_MAP</span><span class="p">[</span><span class="s1">&#39;D2h&#39;</span><span class="p">][</span><span class="n">i</span> <span class="o">%</span> <span class="mi">10</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">orbsym</span><span class="p">]</span>
     <span class="k">elif</span> <span class="n">gpname</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;coov&#39;</span><span class="p">:</span>
         <span class="n">orbsym</span> <span class="o">=</span> <span class="p">[</span><span class="n">IRREP_MAP</span><span class="p">[</span><span class="s1">&#39;C2h&#39;</span><span class="p">][</span><span class="n">i</span> <span class="o">%</span> <span class="mi">10</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">orbsym</span><span class="p">]</span>
@@ -269,7 +269,9 @@
 <div class="viewcode-block" id="convert_lzsym"><a class="viewcode-back" href="../../../interface/dmrgscf.html#pyscf.dmrgscf.dmrg_sym.convert_lzsym">[docs]</a><span class="k">def</span> <span class="nf">convert_lzsym</span><span class="p">(</span><span class="n">gpname</span><span class="p">,</span> <span class="n">orbsym</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Convert orbital symmetry irrep_id to Block internal irrep_id</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="k">if</span> <span class="n">gpname</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;dooh&#39;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">gpname</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;so3&#39;</span><span class="p">:</span>
+        <span class="n">orbsym</span> <span class="o">=</span> <span class="p">[</span><span class="n">LZSYM_MAP</span><span class="p">[</span><span class="n">i</span> <span class="o">%</span> <span class="mi">100</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">orbsym</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="n">gpname</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="s1">&#39;dooh&#39;</span><span class="p">:</span>
         <span class="n">orbsym</span> <span class="o">=</span> <span class="p">[</span><span class="n">LZSYM_MAP</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">orbsym</span><span class="p">]</span>
     <span class="k">elif</span> <span class="n">gpname</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;coov&#39;</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span>
@@ -290,7 +292,7 @@
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2015-2020, The PySCF Developers
+        &copy; Copyright 2015-2021, The PySCF Developers
 
     </p>
   </div>

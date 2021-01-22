@@ -492,10 +492,11 @@
                     <span class="n">log</span><span class="o">.</span><span class="n">debug1</span><span class="p">(</span><span class="s1">&#39;step 2 [</span><span class="si">%d</span><span class="s1">/</span><span class="si">%d</span><span class="s1">] CPU time: </span><span class="si">%9.2f</span><span class="s1">, Wall time: </span><span class="si">%9.2f</span><span class="s1">&#39;</span><span class="p">,</span>
                                <span class="n">istep</span><span class="p">,</span> <span class="n">ijmoblks</span><span class="p">,</span> <span class="n">ti1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">ti0</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ti1</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">ti0</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
                     <span class="n">ti0</span> <span class="o">=</span> <span class="n">ti1</span>
+
     <span class="n">fswap</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">erifile</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
         <span class="n">feri</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-
+       
     <span class="n">log</span><span class="o">.</span><span class="n">timer</span><span class="p">(</span><span class="s1">&#39;AO-&gt;MO transformation for </span><span class="si">%s</span><span class="s1"> 2 pass&#39;</span><span class="o">%</span><span class="n">intor</span><span class="p">,</span> <span class="o">*</span><span class="n">time_1pass</span><span class="p">)</span>
     <span class="n">log</span><span class="o">.</span><span class="n">timer</span><span class="p">(</span><span class="s1">&#39;AO-&gt;MO transformation for </span><span class="si">%s</span><span class="s1"> &#39;</span><span class="o">%</span><span class="n">intor</span><span class="p">,</span> <span class="o">*</span><span class="n">time_0pass</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">erifile</span></div>
@@ -997,7 +998,7 @@
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2015-2020, The PySCF Developers
+        &copy; Copyright 2015-2021, The PySCF Developers
 
     </p>
   </div>

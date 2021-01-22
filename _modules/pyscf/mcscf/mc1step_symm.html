@@ -185,7 +185,7 @@
 <span class="kn">from</span> <span class="nn">pyscf.mcscf</span> <span class="kn">import</span> <span class="n">casci_symm</span>
 <span class="kn">from</span> <span class="nn">pyscf.mcscf</span> <span class="kn">import</span> <span class="n">addons</span>
 <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">fci</span>
-<span class="kn">from</span> <span class="nn">pyscf.soscf.newton_ah</span> <span class="kn">import</span> <span class="n">_force_Ex_Ey_degeneracy_</span>
+<span class="kn">from</span> <span class="nn">pyscf.soscf.newton_ah</span> <span class="kn">import</span> <span class="n">_force_SO3_degeneracy_</span><span class="p">,</span> <span class="n">_force_Ex_Ey_degeneracy_</span>
 
 
 <div class="viewcode-block" id="SymAdaptedCASSCF"><a class="viewcode-back" href="../../../modules/mcscf.html#pyscf.mcscf.mc1step_symm.SymAdaptedCASSCF">[docs]</a><span class="k">class</span> <span class="nc">SymAdaptedCASSCF</span><span class="p">(</span><span class="n">mc1step</span><span class="o">.</span><span class="n">CASSCF</span><span class="p">):</span>
@@ -286,7 +286,9 @@
     <span class="n">allowed</span> <span class="o">=</span> <span class="n">orbsym</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="n">orbsym</span>
     <span class="n">mat1</span><span class="p">[</span><span class="n">allowed</span><span class="p">]</span> <span class="o">=</span> <span class="n">mat</span><span class="p">[</span><span class="n">allowed</span><span class="p">]</span>
 
-    <span class="k">if</span> <span class="n">groupname</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;Dooh&#39;</span><span class="p">,</span> <span class="s1">&#39;Coov&#39;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">groupname</span> <span class="o">==</span> <span class="s1">&#39;SO3&#39;</span><span class="p">:</span>
+        <span class="n">_force_SO3_degeneracy_</span><span class="p">(</span><span class="n">mat1</span><span class="p">,</span> <span class="n">orbsym</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">groupname</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;Dooh&#39;</span><span class="p">,</span> <span class="s1">&#39;Coov&#39;</span><span class="p">):</span>
         <span class="n">_force_Ex_Ey_degeneracy_</span><span class="p">(</span><span class="n">mat1</span><span class="p">,</span> <span class="n">orbsym</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">mat1</span>
 
@@ -349,7 +351,7 @@
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2015-2020, The PySCF Developers
+        &copy; Copyright 2015-2021, The PySCF Developers
 
     </p>
   </div>

@@ -186,16 +186,23 @@
 
 <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">scf</span>
 <span class="kn">from</span> <span class="nn">pyscf.adc</span> <span class="kn">import</span> <span class="n">uadc</span>
+<span class="kn">from</span> <span class="nn">pyscf.adc</span> <span class="kn">import</span> <span class="n">radc</span>
 
 <div class="viewcode-block" id="ADC"><a class="viewcode-back" href="../../modules/adc.html#pyscf.adc.ADC">[docs]</a><span class="k">def</span> <span class="nf">ADC</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mo_occ</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">frozen</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">frozen</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 
-    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">scf</span><span class="o">.</span><span class="n">uhf</span><span class="o">.</span><span class="n">UHF</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">scf</span><span class="o">.</span><span class="n">rhf</span><span class="o">.</span><span class="n">RHF</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">RADC</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">frozen</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="p">,</span> <span class="n">mo_occ</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">scf</span><span class="o">.</span><span class="n">uhf</span><span class="o">.</span><span class="n">UHF</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">UADC</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">frozen</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="p">,</span> <span class="n">mo_occ</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
+    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">scf</span><span class="o">.</span><span class="n">rhf</span><span class="o">.</span><span class="n">ROHF</span><span class="p">):</span>
+        <span class="n">lib</span><span class="o">.</span><span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="s1">&#39;RADC method does not support ROHF reference. ROHF object &#39;</span>
+                        <span class="s1">&#39;is converted to UHF object and UADC method is called.&#39;</span><span class="p">)</span>
         <span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="n">convert_to_uhf</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">UADC</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">frozen</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="p">,</span> <span class="n">mo_occ</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">UADC</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">frozen</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="p">,</span> <span class="n">mo_occ</span><span class="p">)</span>
+    <span class="k">else</span> <span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;ADC code only supports RHF, ROHF, and UHF references&#39;</span><span class="p">)</span></div>
 
 <span class="n">ADC</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">uadc</span><span class="o">.</span><span class="n">UADC</span><span class="o">.</span><span class="vm">__doc__</span>
 
@@ -209,12 +216,24 @@
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">newton_ah</span><span class="o">.</span><span class="n">_CIAH_SOSCF</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">scf</span><span class="o">.</span><span class="n">uhf</span><span class="o">.</span><span class="n">UHF</span><span class="p">):</span>
         <span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="n">convert_to_uhf</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="s1">&#39;with_df&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;DF-UADC&#39;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">uadc</span><span class="o">.</span><span class="n">UADC</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">frozen</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="p">,</span> <span class="n">mo_occ</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">uadc</span><span class="o">.</span><span class="n">UADC</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">frozen</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="p">,</span> <span class="n">mo_occ</span><span class="p">)</span></div>
 
 <span class="n">UADC</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">uadc</span><span class="o">.</span><span class="n">UADC</span><span class="o">.</span><span class="vm">__doc__</span>
+
+<div class="viewcode-block" id="RADC"><a class="viewcode-back" href="../../modules/adc.html#pyscf.adc.RADC">[docs]</a><span class="k">def</span> <span class="nf">RADC</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mo_occ</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="vm">__doc__</span> <span class="o">=</span> <span class="n">radc</span><span class="o">.</span><span class="n">RADC</span><span class="o">.</span><span class="vm">__doc__</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">frozen</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">frozen</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+    <span class="kn">from</span> <span class="nn">pyscf.soscf</span> <span class="kn">import</span> <span class="n">newton_ah</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">newton_ah</span><span class="o">.</span><span class="n">_CIAH_SOSCF</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">scf</span><span class="o">.</span><span class="n">rhf</span><span class="o">.</span><span class="n">RHF</span><span class="p">):</span>
+        <span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">addons</span><span class="o">.</span><span class="n">convert_to_rhf</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">radc</span><span class="o">.</span><span class="n">RADC</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">frozen</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="p">,</span> <span class="n">mo_occ</span><span class="p">)</span></div>
+
+<span class="n">RADC</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">radc</span><span class="o">.</span><span class="n">RADC</span><span class="o">.</span><span class="vm">__doc__</span>
 </pre></div>
 
            </div>
@@ -228,7 +247,7 @@
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2015-2020, The PySCF Developers
+        &copy; Copyright 2015-2021, The PySCF Developers
 
     </p>
   </div>

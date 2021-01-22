@@ -1,6 +1,71 @@
+.. _theory_tdscf:
+
+Time-dependent Hartree-Fock and Density Functional Theory
+*********************************************************
+
+*Modules*: :mod:`tdscf`, :mod:`pbc.tdscf`
+
+Introduction
+============
+PySCF implements the time-dependent Hartree-Fock (TDHF) and 
+time-dependent density fuctional theory (TDDFT) to compute excite-state energies 
+and transition properties in the :mod:`tdscf` module.
+A minimal example of running a TDDFT calculation is as follows ::
+
+    from pyscf import gto, scf, dft, tddft
+    mol = gto.Mole()
+    mol.build(
+        atom = 'H 0 0 0; F 0 0 1.1',  # in Angstrom
+        basis = '631g',
+        verbose = 4,
+    )
+
+    mf = dft.RKS(mol)
+    mf.xc = 'b3lyp'
+    mf.kernel()
+
+    mytd = tddft.TDDFT(mf)
+    mytd.nstates = 10
+    mytd.kernel()
+    mytd.analyze()
+
+The example above computes the excitation energies, oscillator strengths
+and transition dipole moments of the ten lowest singlet exicted states.
+
+Theory
+======
+By applying first-order time-dependent perturbation theory to the reference 
+HF or KS-DFT state, one can derive a set of non-Hermitian eigenvalue equations
+:cite:`DreHea2005`:
+
+.. math::
+
+    \left(\!\!\begin{array}{ll} 
+        \mathbf{A} & \mathbf{B} \\
+        \mathbf{B}^\ast & \mathbf{A}^\ast
+    \end{array}\!\!\right)
+    \left(\!\!\begin{array}{c}
+        \mathbf{X} \\ \mathbf{Y}
+    \end{array}\!\!\right) = \omega 
+    \left(\!\!\begin{array}{lr}
+        \mathbf{1} & \mathbf{0} \\
+        \mathbf{0} & -\mathbf{1}
+    \end{array}\!\!\right)
+    \left(\!\!\begin{array}{c}
+        \mathbf{X} \\ \mathbf{Y}
+    \end{array}\!\!\right) \;,
+    
+where :math:`\mathbf{A}` and :math:`\mathbf{B}` are the orbital
+hessians which also appear in the stability analysis for reference states (see :numref:`stability_analysis`),
+:math:`\omega` is the excitation energy, and 
+:math:`\mathbf{X}` and :math:`\mathbf{Y}` represent the response of the density matrix.
+
+instability
+
+TDA
 
 
-Time-dependent density functional theory (TDDFT)
-************************************************
-
-*Modules*: :ref:`tdscf <tdscf>`, :ref:`pbc.tdscf <pbc_tdscf>`
+References
+==========
+.. bibliography:: ref_tddft.bib
+   :style: unsrt

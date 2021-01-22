@@ -726,8 +726,8 @@ It is needed by pyscf.prop module and submodules.</p>
 </dd>
 <dt>topgroup<span class="classifier">str</span></dt><dd><p>Point group of the system.</p>
 </dd>
-<dt>groupname<span class="classifier">str</span></dt><dd><p>The supported subgroup of the point group. It can be one of Dooh,
-Coov, D2h, C2h, C2v, D2, Cs, Ci, C2, C1</p>
+<dt>groupname<span class="classifier">str</span></dt><dd><p>The supported subgroup of the point group. It can be one of SO3,
+Dooh, Coov, D2h, C2h, C2v, D2, Cs, Ci, C2, C1</p>
 </dd>
 <dt>nelectron<span class="classifier">int</span></dt><dd><p>sum of nuclear charges - <code class="xref py py-attr docutils literal notranslate"><span class="pre">Mole.charge</span></code></p>
 </dd>
@@ -1343,9 +1343,9 @@ or formatted strings based on the argument “fmt”</p>
 
 <dl class="py method">
 <dt id="pyscf.gto.mole.Mole.condense_to_shell">
-<code class="sig-name descname">condense_to_shell</code><span class="sig-paren">(</span><em class="sig-param">mat</em>, <em class="sig-param">compressor=&lt;function amax&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.gto.mole.Mole.condense_to_shell" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">condense_to_shell</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mat</span></em>, <em class="sig-param"><span class="n">compressor</span><span class="o">=</span><span class="default_value">'max'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.gto.mole.Mole.condense_to_shell" title="Permalink to this definition">¶</a></dt>
 <dd><p>The given matrix is first partitioned to blocks, based on AO shell as
-delimiter.  Then call compressor function to abstract each block.</p>
+delimiter. Then call compressor function to abstract each block.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -2911,9 +2911,9 @@ to construct the environment for cross integrals like</p>
 
 <dl class="py function">
 <dt id="pyscf.gto.mole.condense_to_shell">
-<code class="sig-prename descclassname">pyscf.gto.mole.</code><code class="sig-name descname">condense_to_shell</code><span class="sig-paren">(</span><em class="sig-param">mol</em>, <em class="sig-param">mat</em>, <em class="sig-param">compressor=&lt;function amax&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/gto/mole.html#condense_to_shell"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.gto.mole.condense_to_shell" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.gto.mole.</code><code class="sig-name descname">condense_to_shell</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">mat</span></em>, <em class="sig-param"><span class="n">compressor</span><span class="o">=</span><span class="default_value">'max'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/gto/mole.html#condense_to_shell"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.gto.mole.condense_to_shell" title="Permalink to this definition">¶</a></dt>
 <dd><p>The given matrix is first partitioned to blocks, based on AO shell as
-delimiter.  Then call compressor function to abstract each block.</p>
+delimiter. Then call compressor function to abstract each block.</p>
 </dd></dl>
 
 <dl class="py function">
@@ -3809,8 +3809,8 @@ It is needed by pyscf.prop module and submodules.</p>
 </dd>
 <dt>topgroup<span class="classifier">str</span></dt><dd><p>Point group of the system.</p>
 </dd>
-<dt>groupname<span class="classifier">str</span></dt><dd><p>The supported subgroup of the point group. It can be one of Dooh,
-Coov, D2h, C2h, C2v, D2, Cs, Ci, C2, C1</p>
+<dt>groupname<span class="classifier">str</span></dt><dd><p>The supported subgroup of the point group. It can be one of SO3,
+Dooh, Coov, D2h, C2h, C2v, D2, Cs, Ci, C2, C1</p>
 </dd>
 <dt>nelectron<span class="classifier">int</span></dt><dd><p>sum of nuclear charges - <code class="xref py py-attr docutils literal notranslate"><span class="pre">Mole.charge</span></code></p>
 </dd>
@@ -4426,9 +4426,9 @@ or formatted strings based on the argument “fmt”</p>
 
 <dl class="py method">
 <dt id="id78">
-<code class="sig-name descname">condense_to_shell</code><span class="sig-paren">(</span><em class="sig-param">mat</em>, <em class="sig-param">compressor=&lt;function amax&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#id78" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">condense_to_shell</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mat</span></em>, <em class="sig-param"><span class="n">compressor</span><span class="o">=</span><span class="default_value">'max'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#id78" title="Permalink to this definition">¶</a></dt>
 <dd><p>The given matrix is first partitioned to blocks, based on AO shell as
-delimiter.  Then call compressor function to abstract each block.</p>
+delimiter. Then call compressor function to abstract each block.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -6411,7 +6411,7 @@ Empty lines, or the lines started with #, or the lines of “BASIS SET” and
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2015-2020, The PySCF Developers
+        &copy; Copyright 2015-2021, The PySCF Developers
 
     </p>
   </div>

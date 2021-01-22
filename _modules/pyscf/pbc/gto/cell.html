@@ -185,9 +185,9 @@
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">scipy.linalg</span>
 <span class="k">try</span><span class="p">:</span>
-  <span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">factorial2</span>
+    <span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">factorial2</span>
 <span class="k">except</span><span class="p">:</span>
-  <span class="kn">from</span> <span class="nn">scipy.misc</span> <span class="kn">import</span> <span class="n">factorial2</span>
+    <span class="kn">from</span> <span class="nn">scipy.misc</span> <span class="kn">import</span> <span class="n">factorial2</span>
 <span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">erf</span><span class="p">,</span> <span class="n">erfc</span>
 <span class="kn">import</span> <span class="nn">scipy.optimize</span>
 <span class="kn">import</span> <span class="nn">pyscf.lib.parameters</span> <span class="k">as</span> <span class="nn">param</span>
@@ -754,21 +754,7 @@
 <span class="sd">        Gv : (ngrids, 3) ndarray of floats</span>
 <span class="sd">            The array of G-vectors.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="k">if</span> <span class="n">mesh</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-        <span class="n">mesh</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">mesh</span>
-    <span class="k">if</span> <span class="s1">&#39;gs&#39;</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">:</span>
-        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;cell.gs is deprecated.  It is replaced by cell.mesh,&#39;</span>
-                      <span class="s1">&#39;the number of PWs (=2*gs+1) along each direction.&#39;</span><span class="p">)</span>
-        <span class="n">mesh</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="p">[</span><span class="s1">&#39;gs&#39;</span><span class="p">]]</span>
-
-    <span class="n">gx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="n">mesh</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mf">1.</span><span class="o">/</span><span class="n">mesh</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-    <span class="n">gy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="n">mesh</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mf">1.</span><span class="o">/</span><span class="n">mesh</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-    <span class="n">gz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fft</span><span class="o">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="n">mesh</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="mf">1.</span><span class="o">/</span><span class="n">mesh</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-    <span class="n">gxyz</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">cartesian_prod</span><span class="p">((</span><span class="n">gx</span><span class="p">,</span> <span class="n">gy</span><span class="p">,</span> <span class="n">gz</span><span class="p">))</span>
-
-    <span class="n">b</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">reciprocal_vectors</span><span class="p">()</span>
-    <span class="n">Gv</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">ddot</span><span class="p">(</span><span class="n">gxyz</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">Gv</span>
+    <span class="k">return</span> <span class="n">get_Gv_weights</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="n">mesh</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="k">def</span> <span class="nf">get_Gv_weights</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="n">mesh</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Calculate G-vectors and weights.</span>
@@ -1910,7 +1896,7 @@
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2015-2020, The PySCF Developers
+        &copy; Copyright 2015-2021, The PySCF Developers
 
     </p>
   </div>

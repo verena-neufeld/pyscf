@@ -443,7 +443,7 @@
         <span class="k">return</span> <span class="n">gpname</span><span class="p">,</span> <span class="n">axes</span>
     <span class="k">elif</span> <span class="n">gpname</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;SO3&#39;</span><span class="p">,):</span>
         <span class="c1">#return &#39;D2h&#39;, alias_axes(axes, numpy.eye(3))</span>
-        <span class="k">return</span> <span class="s1">&#39;Dooh&#39;</span><span class="p">,</span> <span class="n">axes</span>
+        <span class="k">return</span> <span class="s1">&#39;SO3&#39;</span><span class="p">,</span> <span class="n">axes</span>
     <span class="k">elif</span> <span class="n">gpname</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;Dooh&#39;</span><span class="p">,):</span>
         <span class="c1">#return &#39;D2h&#39;, alias_axes(axes, numpy.eye(3))</span>
         <span class="k">return</span> <span class="s1">&#39;Dooh&#39;</span><span class="p">,</span> <span class="n">axes</span>
@@ -1012,7 +1012,7 @@
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2015-2020, The PySCF Developers
+        &copy; Copyright 2015-2021, The PySCF Developers
 
     </p>
   </div>
