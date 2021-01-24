@@ -192,12 +192,12 @@
             
   <div class="section" id="time-dependent-hartree-fock-and-density-functional-theory">
 <span id="theory-tdscf"></span><h1><span class="section-number">7.9. </span>Time-dependent Hartree-Fock and Density Functional Theory<a class="headerlink" href="#time-dependent-hartree-fock-and-density-functional-theory" title="Permalink to this headline">¶</a></h1>
-<p><em>Modules</em>: <code class="xref py py-mod docutils literal notranslate"><span class="pre">tdscf</span></code>, <a class="reference internal" href="../modules/pbc/tdscf.html#module-pbc.tdscf" title="pbc.tdscf: TDHF and TDDFT with periodic boundary conditions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc.tdscf</span></code></a></p>
+<p><em>Modules</em>: <a class="reference internal" href="../modules/tdscf.html#module-tdscf" title="tdscf: time-dependent Hartree-Fock and density functional theory"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tdscf</span></code></a>, <a class="reference internal" href="../modules/pbc/tdscf.html#module-pbc.tdscf" title="pbc.tdscf: TDHF and TDDFT with periodic boundary conditions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc.tdscf</span></code></a></p>
 <div class="section" id="introduction">
 <h2><span class="section-number">7.9.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>PySCF implements the time-dependent Hartree-Fock (TDHF) and
 time-dependent density fuctional theory (TDDFT) to compute excite-state energies
-and transition properties in the <code class="xref py py-mod docutils literal notranslate"><span class="pre">tdscf</span></code> module.
+and transition properties in the <a class="reference internal" href="../modules/tdscf.html#module-tdscf" title="tdscf: time-dependent Hartree-Fock and density functional theory"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tdscf</span></code></a> module.
 A minimal example of running a TDDFT calculation is as follows</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">dft</span><span class="p">,</span> <span class="n">tddft</span>
 <span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">()</span>
@@ -273,7 +273,7 @@ attribute <code class="xref py py-attr docutils literal notranslate"><span class
 <span class="n">mytd</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>One can also perform symmety analysis by calling the <a class="reference internal" href="../modules/scf.html#pyscf.scf.hf.analyze" title="pyscf.scf.hf.analyze"><code class="xref py py-func docutils literal notranslate"><span class="pre">analyze()</span></code></a> method,
+<p>One can also perform symmety analysis by calling the <a class="reference internal" href="../modules/pbc/scf.html#pyscf.pbc.scf.khf.analyze" title="pyscf.pbc.scf.khf.analyze"><code class="xref py py-func docutils literal notranslate"><span class="pre">analyze()</span></code></a> method,
 which also computes the oscillator strengths and dipole moments:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mytd</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
