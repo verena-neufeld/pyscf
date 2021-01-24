@@ -110,6 +110,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#oscillator-strengths">7.9.4.1. Oscillator strengths</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#transition-moments">7.9.4.2. Transition moments</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#nuclear-gradients">7.9.4.3. Nuclear gradients</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#natural-transition-orbital-analysis">7.9.4.4. Natural transition orbital analysis</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#references">7.9.5. References</a></li>
@@ -331,6 +332,17 @@ and they can be computed as follows:</p>
 <span class="n">g2</span> <span class="o">=</span> <span class="n">tdg</span><span class="o">.</span><span class="n">kernel</span><span class="p">(</span><span class="n">state</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1">#second excited state</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="natural-transition-orbital-analysis">
+<h3><span class="section-number">7.9.4.4. </span>Natural transition orbital analysis<a class="headerlink" href="#natural-transition-orbital-analysis" title="Permalink to this headline">¶</a></h3>
+<p>Natural transition orbitals (NTOs) can be computed by
+singular value decomposition of the transition density matrix.
+In PySCF, these orbitals can be obtained as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">weights</span><span class="p">,</span> <span class="n">nto_coeff</span> <span class="o">=</span> <span class="n">mytd</span><span class="o">.</span><span class="n">get_nto</span><span class="p">(</span><span class="n">state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">nto_coeff</span></code> are the coefficients for NTOs represented in AO basis,
+and they are ordered as occupied orbitals followed by virtual orbitals.</p>
 </div>
 </div>
 <div class="section" id="references">

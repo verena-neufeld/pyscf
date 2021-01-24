@@ -439,8 +439,19 @@ for a given SCF calculation. See examples in
 <div class="section" id="property-calculation">
 <h2><span class="section-number">7.1.6. </span>Property calculation<a class="headerlink" href="#property-calculation" title="Permalink to this headline">¶</a></h2>
 <p>Various properties can be computed by calling the corresponding functions,
-<em>e.g.</em>, dipole moment (<a class="reference internal" href="../modules/pbc/scf.html#pyscf.pbc.scf.hf.dip_moment" title="pyscf.pbc.scf.hf.dip_moment"><code class="xref py py-func docutils literal notranslate"><span class="pre">dip_moment()</span></code></a>), nuclear gradients (<code class="xref py py-func docutils literal notranslate"><span class="pre">nuc_grad_method()</span></code>),
-and Mülliken population (<a class="reference internal" href="../modules/scf.html#pyscf.scf.hf.mulliken_pop" title="pyscf.scf.hf.mulliken_pop"><code class="xref py py-func docutils literal notranslate"><span class="pre">mulliken_pop()</span></code></a>), <em>etc.</em></p>
+for example,</p>
+<ul>
+<li><p>dipole moment:</p>
+<p>mf.dip_moment()</p>
+</li>
+<li><p>Mülliken population:</p>
+<p>mf.mulliken_pop()</p>
+</li>
+<li><p>nuclear gradients:</p>
+<p>g = mf.Gradients()
+g.kernel()</p>
+</li>
+</ul>
 </div>
 <div class="section" id="references">
 <h2><span class="section-number">7.1.7. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
