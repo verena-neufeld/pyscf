@@ -519,7 +519,7 @@ nonnegative kinetic energy density
 
     Ts_ao = mol.intor("int1e_kin")
     Ts_anal = np.einsum("ui,uv,vi->", orbo, Ts_ao, orbo)
-    print(numpy.linalg.norm(Ts - Ts_anal))
+    print(asb(Ts - Ts_anal))
 
 Dispersion corrections
 ======================

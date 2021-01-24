@@ -36,7 +36,7 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="7.3. Møller-Plesset perturbation theory" href="mp.html" />
+    <link rel="next" title="7.3. Second-Order Møller–Plesset Perturbation Theory" href="mp.html" />
     <link rel="prev" title="7.1. Self-consistent field (SCF) methods" href="scf.html" /> 
 </head>
 
@@ -109,7 +109,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#references">7.2.7. References</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="mp.html">7.3. Møller-Plesset perturbation theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mp.html">7.3. Second-Order Møller–Plesset Perturbation Theory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gw.html">7.4. GW method</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ci.html">7.5. Configuration interaction (CI)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cc.html">7.6. Coupled cluster (CC)</a></li>
@@ -1262,7 +1262,7 @@ nonnegative kinetic energy density</p>
 
 <span class="n">Ts_ao</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">intor</span><span class="p">(</span><span class="s2">&quot;int1e_kin&quot;</span><span class="p">)</span>
 <span class="n">Ts_anal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s2">&quot;ui,uv,vi-&gt;&quot;</span><span class="p">,</span> <span class="n">orbo</span><span class="p">,</span> <span class="n">Ts_ao</span><span class="p">,</span> <span class="n">orbo</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">Ts</span> <span class="o">-</span> <span class="n">Ts_anal</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">asb</span><span class="p">(</span><span class="n">Ts</span> <span class="o">-</span> <span class="n">Ts_anal</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1297,7 +1297,7 @@ See <a class="reference internal" href="../interface/dftd3.html#dftd3"><span cla
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="mp.html" class="btn btn-neutral float-right" title="7.3. Møller-Plesset perturbation theory" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mp.html" class="btn btn-neutral float-right" title="7.3. Second-Order Møller–Plesset Perturbation Theory" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="scf.html" class="btn btn-neutral float-left" title="7.1. Self-consistent field (SCF) methods" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

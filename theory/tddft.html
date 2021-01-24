@@ -105,7 +105,14 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">7.9. Time-dependent Hartree-Fock and Density Functional Theory</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#introduction">7.9.1. Introduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#theory">7.9.2. Theory</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#references">7.9.3. References</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#methods">7.9.3. Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#property-calculation">7.9.4. Property calculation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#oscillator-strengths">7.9.4.1. Oscillator strengths</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#transition-moments">7.9.4.2. Transition moments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nuclear-gradients">7.9.4.3. Nuclear gradients</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#references">7.9.5. References</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="rt.html">7.10. Real-time time-dependent density functional theory</a></li>
@@ -197,6 +204,7 @@ A minimal example of running a TDDFT calculation is as follows</p>
 <span class="n">mol</span><span class="o">.</span><span class="n">build</span><span class="p">(</span>
     <span class="n">atom</span> <span class="o">=</span> <span class="s1">&#39;H 0 0 0; F 0 0 1.1&#39;</span><span class="p">,</span>  <span class="c1"># in Angstrom</span>
     <span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;631g&#39;</span><span class="p">,</span>
+    <span class="n">symmetry</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="n">verbose</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>
 <span class="p">)</span>
 
@@ -216,7 +224,7 @@ and transition dipole moments of the ten lowest singlet exicted states.</p>
 <div class="section" id="theory">
 <h2><span class="section-number">7.9.2. </span>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
 <p>By applying first-order time-dependent perturbation theory to the reference
-HF or KS-DFT state, one can derive a set of non-Hermitian eigenvalue equations
+HF or KS-DFT state, one can derive the non-Hermitian TDHF or TDDFT equations
 <a class="bibtex reference internal" href="#drehea2005" id="id1">[1]</a>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\left(\!\!\begin{array}{ll}
@@ -236,15 +244,106 @@ HF or KS-DFT state, one can derive a set of non-Hermitian eigenvalue equations
 <p>where <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> are the orbital
 hessians which also appear in the stability analysis for reference states (see <a class="reference internal" href="scf.html#stability-analysis"><span class="std std-numref">Section 7.1.5</span></a>),
 <span class="math notranslate nohighlight">\(\omega\)</span> is the excitation energy, and
-<span class="math notranslate nohighlight">\(\mathbf{X}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{Y}\)</span> represent the response of the density matrix.</p>
-<p>instability</p>
-<p>TDA</p>
+<span class="math notranslate nohighlight">\(\mathbf{X}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{Y}\)</span> represent the response of the density matrix.
+In the cases where the system possesses
+degenerate ground states or triplet instabilities, the algorithms used to solve the
+above equations may be unstable. This can be solved by applying the Tamm-Dancoff approximation (TDA) <a class="bibtex reference internal" href="#hirhea1999" id="id2">[2]</a>,
+which simply neglects the <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{Y}\)</span> matrices and leads to a
+Hermitian eigenvalue problem</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{AX} = \omega\mathbf{X} \;.\]</div>
+<p>Note that when TDA is applied, TDHF reduces to the same formalism as configuration interaction singles (CIS),
+because the Coulomb operator projected onto the space of singly-excited Slater determinants
+yields terms that are equivalent to the linear response of the HF exchange and Coulomb potentials.
+However, in the case of TDDFT, linear response of the exchange-correlation (XC) potential leads to 2nd order derivative of
+the XC functional, which does not appear in the ground-state DFT.</p>
+</div>
+<div class="section" id="methods">
+<h2><span class="section-number">7.9.3. </span>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<p>For TDHF or TDDFT calculations,
+the reference state can be either restricted or unrestricted:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mytd</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">RKS</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span><span class="o">.</span><span class="n">TDDFT</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">mytd</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">UKS</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span><span class="o">.</span><span class="n">TDDFT</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>By default, only singlet excited states are computed.
+In order to compute triplet excited states, one needs to set the
+attribute <code class="xref py py-attr docutils literal notranslate"><span class="pre">singlet</span></code> to <code class="docutils literal notranslate"><span class="pre">False</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mytd</span><span class="o">.</span><span class="n">singlet</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">mytd</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>One can also perform symmety analysis by calling the <a class="reference internal" href="../modules/scf.html#pyscf.scf.hf.analyze" title="pyscf.scf.hf.analyze"><code class="xref py py-func docutils literal notranslate"><span class="pre">analyze()</span></code></a> method,
+which also computes the oscillator strengths and dipole moments:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mytd</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="property-calculation">
+<h2><span class="section-number">7.9.4. </span>Property calculation<a class="headerlink" href="#property-calculation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="oscillator-strengths">
+<h3><span class="section-number">7.9.4.1. </span>Oscillator strengths<a class="headerlink" href="#oscillator-strengths" title="Permalink to this headline">¶</a></h3>
+<p>Oscillator strengths for each excited state can be computed in
+both length and velocity gauges:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mytd</span><span class="o">.</span><span class="n">oscillator_strength</span><span class="p">(</span><span class="n">gauge</span><span class="o">=</span><span class="s1">&#39;length&#39;</span><span class="p">)</span>
+<span class="n">mytd</span><span class="o">.</span><span class="n">oscillator_strength</span><span class="p">(</span><span class="n">gauge</span><span class="o">=</span><span class="s1">&#39;velocity&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Higer order corrections <a class="bibtex reference internal" href="#lesegili2015" id="id3">[3]</a>
+to the oscillator strength can also be included:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include corrections due to magnetic dipole and electric quadruple</span>
+<span class="n">mytd</span><span class="o">.</span><span class="n">oscillator_strength</span><span class="p">(</span><span class="n">gauge</span><span class="o">=</span><span class="s1">&#39;velocity&#39;</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1">#also include corrections due to magnetic quadruple and electric octupole</span>
+<span class="n">mytd</span><span class="o">.</span><span class="n">oscillator_strength</span><span class="p">(</span><span class="n">gauge</span><span class="o">=</span><span class="s1">&#39;velocity&#39;</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="transition-moments">
+<h3><span class="section-number">7.9.4.2. </span>Transition moments<a class="headerlink" href="#transition-moments" title="Permalink to this headline">¶</a></h3>
+<p>PySCF implements various types of transition moments between the reference SCF state and
+the TDHF or TDDFT excited states. These include:</p>
+<ul>
+<li><p>electric dipole, quadrupole and octupole transition moments in both length and velocity gauges:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mytd</span><span class="o">.</span><span class="n">transition_dipole</span><span class="p">()</span>
+<span class="n">mytd</span><span class="o">.</span><span class="n">transition_velocity_dipole</span><span class="p">()</span>
+<span class="n">mytd</span><span class="o">.</span><span class="n">transition_quadrupole</span><span class="p">()</span>
+<span class="n">mytd</span><span class="o">.</span><span class="n">transition_velocity_quadrupole</span><span class="p">()</span>
+<span class="n">mytd</span><span class="o">.</span><span class="n">transition_octupole</span><span class="p">()</span>
+<span class="n">mytd</span><span class="o">.</span><span class="n">transition_velocity_octupole</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>magnetic dipole and quadrupole transition moments:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mytd</span><span class="o">.</span><span class="n">transition_magnetic_dipole</span><span class="p">()</span>
+<span class="n">mytd</span><span class="o">.</span><span class="n">transition_magnetic_quadrupole</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="section" id="nuclear-gradients">
+<h3><span class="section-number">7.9.4.3. </span>Nuclear gradients<a class="headerlink" href="#nuclear-gradients" title="Permalink to this headline">¶</a></h3>
+<p>Analytic nuclear gradients are available for TDHF and TDDFT,
+and they can be computed as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tdg</span> <span class="o">=</span> <span class="n">mytd</span><span class="o">.</span><span class="n">Gradients</span><span class="p">()</span>
+<span class="n">g1</span> <span class="o">=</span> <span class="n">tdg</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span> <span class="c1">#default will compute the gradients of first excited state</span>
+<span class="n">g1</span> <span class="o">=</span> <span class="n">tdg</span><span class="o">.</span><span class="n">kernel</span><span class="p">(</span><span class="n">state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#first excited state</span>
+<span class="n">g2</span> <span class="o">=</span> <span class="n">tdg</span><span class="o">.</span><span class="n">kernel</span><span class="p">(</span><span class="n">state</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span> <span class="c1">#second excited state</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="references">
-<h2><span class="section-number">7.9.3. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.9.5. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <p id="bibtex-bibliography-theory/tddft-0"><dl class="citation">
 <dt class="bibtex label" id="drehea2005"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>Andreas Dreuw and Martin Head-Gordon. Single-reference ab initio methods for the calculation of excited states of large molecules. <em>Chemical reviews</em>, 105(11):4009–4037, 2005.</p>
+</dd>
+<dt class="bibtex label" id="hirhea1999"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>So Hirata and Martin Head-Gordon. Time-dependent density functional theory within the tamm–dancoff approximation. <em>Chemical Physics Letters</em>, 314(3-4):291–299, 1999.</p>
+</dd>
+<dt class="bibtex label" id="lesegili2015"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>Patrick J Lestrange, Franco Egidi, and Xiaosong Li. The consequences of improperly describing oscillator strengths beyond the electric dipole approximation. <em>The Journal of chemical physics</em>, 143(23):234103, 2015.</p>
 </dd>
 </dl>
 </p>
