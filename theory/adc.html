@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>7.7. Algebraic diagrammatic construction (ADC) scheme &mdash; PySCF 1.7.5 documentation</title>
+  <title>6.7. Algebraic diagrammatic construction (ADC) scheme &mdash; PySCF 1.7.6 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="7.8. Multi-configurational self-consistent field (MCSCF)" href="mcscf.html" />
-    <link rel="prev" title="7.6. Coupled cluster (CC)" href="cc.html" /> 
+    <link rel="next" title="6.8. Multi-configuration self-consistent field (MCSCF)" href="mcscf.html" />
+    <link rel="prev" title="6.6. Coupled cluster Methods" href="cc.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,36 +86,44 @@
               
             
             
-              <ul class="current">
+              <p class="caption"><span class="caption-text">User documentation</span></p>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">1. An overview of PySCF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../version.html">2. Version history</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../code-rule.html">4. Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../benchmark.html">5. Benchmark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">6. Tutorial</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../theory.html">7. Theoretical methods</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="scf.html">7.1. Self-consistent field (SCF) methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dft.html">7.2. Density functional theory (DFT)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mp.html">7.3. Second-Order Møller–Plesset Perturbation Theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gw.html">7.4. GW method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ci.html">7.5. Configuration interaction (CI)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cc.html">7.6. Coupled cluster (CC)</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">7.7. Algebraic diagrammatic construction (ADC) scheme</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#background-propagator-theory">7.7.1. Background: Propagator Theory</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#algebraic-diagrammatic-construction">7.7.2. Algebraic diagrammatic construction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#methods">7.7.3. Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../benchmark.html">4. Benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">5. Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../theory.html">6. Theoretical methods</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="scf.html">6.1. Self-consistent field (SCF) methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dft.html">6.2. Density functional theory (DFT)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mp.html">6.3. Second-Order Møller–Plesset Perturbation Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gw.html">6.4. GW methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci.html">6.5. Configuration interaction (CI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc.html">6.6. Coupled cluster Methods</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.7. Algebraic diagrammatic construction (ADC) scheme</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#background-propagator-theory">6.7.1. Background: Propagator Theory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#algebraic-diagrammatic-construction">6.7.2. Algebraic diagrammatic construction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#methods">6.7.3. Methods</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="mcscf.html">7.8. Multi-configurational self-consistent field (MCSCF)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tddft.html">7.9. Time-dependent Hartree-Fock and Density Functional Theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rt.html">7.10. Real-time time-dependent density functional theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="eomcc.html">7.11. Equation-of-motion coupled cluster (EOM-CC)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pbc.html">7.12. Periodic boundary conditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mcscf.html">6.8. Multi-configuration self-consistent field (MCSCF)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tddft.html">6.9. Time-dependent Hartree-Fock and Density Functional Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rt.html">6.10. Real-time time-dependent density functional theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pbc.html">6.11. Periodic boundary conditions</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced.html">8. Miscellaneous</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../interface.html">9. Interfaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules.html">10. Main modules</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../code-rule.html">Code standard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop/scf_developer.html">Self-consistent field (SCF) methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop/dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced.html">Miscellaneous</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">Main modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interface.html">Interfaces</a></li>
 </ul>
 
             
@@ -162,9 +170,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../theory.html"><span class="section-number">7. </span>Theoretical methods</a> &raquo;</li>
+          <li><a href="../theory.html"><span class="section-number">6. </span>Theoretical methods</a> &raquo;</li>
         
-      <li><span class="section-number">7.7. </span>Algebraic diagrammatic construction (ADC) scheme</li>
+      <li><span class="section-number">6.7. </span>Algebraic diagrammatic construction (ADC) scheme</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -184,10 +192,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="algebraic-diagrammatic-construction-adc-scheme">
-<span id="theory-adc"></span><h1><span class="section-number">7.7. </span>Algebraic diagrammatic construction (ADC) scheme<a class="headerlink" href="#algebraic-diagrammatic-construction-adc-scheme" title="Permalink to this headline">¶</a></h1>
+<span id="theory-adc"></span><h1><span class="section-number">6.7. </span>Algebraic diagrammatic construction (ADC) scheme<a class="headerlink" href="#algebraic-diagrammatic-construction-adc-scheme" title="Permalink to this headline">¶</a></h1>
 <p><em>Modules</em>: <a class="reference internal" href="../modules/adc.html#module-adc" title="adc: Algebraic diagrammatic construction energies and propties"><code class="xref py py-mod docutils literal notranslate"><span class="pre">adc</span></code></a></p>
 <div class="section" id="background-propagator-theory">
-<h2><span class="section-number">7.7.1. </span>Background: Propagator Theory<a class="headerlink" href="#background-propagator-theory" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.7.1. </span>Background: Propagator Theory<a class="headerlink" href="#background-propagator-theory" title="Permalink to this headline">¶</a></h2>
 <p>The algebraic diagrammatic construction (ADC) theory has a close connection with the propagator theory, where the central object of interest is a propagator of the many-body system.
 The general expression for a retarded propagator that describes response of a many-electron system to an external perturbation with frequency <span class="math notranslate nohighlight">\(\omega\)</span> is:</p>
 <div class="math notranslate nohighlight">
@@ -216,7 +224,7 @@ with energies <span class="math notranslate nohighlight">\(E_{n}^{N+1} (E_{n}^{N
 <p>where <span class="math notranslate nohighlight">\(\boldsymbol{\tilde{\Omega}}_{\pm}\)</span> are diagonal matrices of the transition energies (<span class="math notranslate nohighlight">\(\omega_{n}\)</span>) and <span class="math notranslate nohighlight">\(\mathbf{\tilde{X}}_{\pm}\)</span> are matrices of the transition amplitudes. For example, for the one-electron Green’s function, <span class="math notranslate nohighlight">\(\boldsymbol{\tilde{\Omega}}_{\pm}\)</span> correspond to vertical attachment/ionization energies, while transition amplitudes are defined as <span class="math notranslate nohighlight">\(\tilde{X}_{+pn} = \langle\Psi_{0}^{N}|a_{p}|\Psi_{n}^{N+1}\rangle\)</span> and <span class="math notranslate nohighlight">\(\tilde{X}_{-qn} = \langle\Psi_{0}^{N}|a_{q}^{\dagger}|\Psi_{n}^{N-1}\rangle\)</span>.</p>
 </div>
 <div class="section" id="algebraic-diagrammatic-construction">
-<h2><span class="section-number">7.7.2. </span>Algebraic diagrammatic construction<a class="headerlink" href="#algebraic-diagrammatic-construction" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.7.2. </span>Algebraic diagrammatic construction<a class="headerlink" href="#algebraic-diagrammatic-construction" title="Permalink to this headline">¶</a></h2>
 <p>The propagator <span class="math notranslate nohighlight">\(\textbf{G}_{\pm}(\omega)\)</span> shown above is exact if expressed using the exact eigenstates of the system.
 However, computing the exact propagator is computationally very expensive and many approximations have been introduced to reduce the computational cost.
 In the ADC theory, <span class="math notranslate nohighlight">\(\textbf{G}_{\pm}(\omega)\)</span> is expressed in a basis of many-electron wavefunctions where the matrix representation of the Hamiltonian <span class="math notranslate nohighlight">\(H\)</span>
@@ -243,7 +251,7 @@ Using <span class="math notranslate nohighlight">\(\boldsymbol{\Omega}_{\pm}\)</
 A(\omega) &amp;= -\frac{1}{\pi} \mathrm{Im} \left[ \mathrm{Tr} \, \mathbf{G}_{\pm}(\omega) \right]\end{split}\]</div>
 </div>
 <div class="section" id="methods">
-<h2><span class="section-number">7.7.3. </span>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.7.3. </span>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <p>At the present moment, the ADC implementation in Pyscf can be used to perform calculations of electron affinities (EA) and ionization potentials (IP) for closed- and open-shell molecules starting with the RHF, ROHF, or UHF reference SCF wavefunctions. Three ADC approximations are currently available: ADC(2), ADC(3), as well as the extended second-order approximation ADC(2)-X. The capabilities of the ADC module at present are summarized in the following table:</p>
 <table class="docutils align-default">
 <colgroup>
@@ -287,10 +295,10 @@ A(\omega) &amp;= -\frac{1}{\pi} \mathrm{Im} \left[ \mathrm{Tr} \, \mathbf{G}_{\p
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="mcscf.html" class="btn btn-neutral float-right" title="7.8. Multi-configurational self-consistent field (MCSCF)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="mcscf.html" class="btn btn-neutral float-right" title="6.8. Multi-configuration self-consistent field (MCSCF)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="cc.html" class="btn btn-neutral float-left" title="7.6. Coupled cluster (CC)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="cc.html" class="btn btn-neutral float-left" title="6.6. Coupled cluster Methods" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

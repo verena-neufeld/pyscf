@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyscf.pbc.dft.krks &mdash; PySCF 1.7.5 documentation</title>
+  <title>pyscf.pbc.dft.krks &mdash; PySCF 1.7.6 documentation</title>
   
 
   
@@ -84,17 +84,26 @@
               
             
             
-              <ul>
+              <p class="caption"><span class="caption-text">User documentation</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../overview.html">1. An overview of PySCF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../version.html">2. Version history</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../install.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../code-rule.html">4. Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../benchmark.html">5. Benchmark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../tutorial.html">6. Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../theory.html">7. Theoretical methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../advanced.html">8. Miscellaneous</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../interface.html">9. Interfaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../modules.html">10. Main modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../benchmark.html">4. Benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorial.html">5. Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../theory.html">6. Theoretical methods</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../code-rule.html">Code standard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../develop/scf_developer.html">Self-consistent field (SCF) methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../develop/dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced.html">Miscellaneous</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../modules.html">Main modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../interface.html">Interfaces</a></li>
 </ul>
 
             
@@ -292,7 +301,7 @@
     <span class="k">return</span> <span class="n">rho</span></div>
 
 
-<div class="viewcode-block" id="KRKS"><a class="viewcode-back" href="../../../../modules/pbc/dft.html#pyscf.pbc.dft.krks.KRKS">[docs]</a><span class="k">class</span> <span class="nc">KRKS</span><span class="p">(</span><span class="n">khf</span><span class="o">.</span><span class="n">KRHF</span><span class="p">,</span> <span class="n">rks</span><span class="o">.</span><span class="n">KohnShamDFT</span><span class="p">):</span>
+<div class="viewcode-block" id="KRKS"><a class="viewcode-back" href="../../../../modules/pbc/dft.html#pyscf.pbc.dft.krks.KRKS">[docs]</a><span class="k">class</span> <span class="nc">KRKS</span><span class="p">(</span><span class="n">rks</span><span class="o">.</span><span class="n">KohnShamDFT</span><span class="p">,</span> <span class="n">khf</span><span class="o">.</span><span class="n">KRHF</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;RKS class adapted for PBCs with k-point sampling.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cell</span><span class="p">,</span> <span class="n">kpts</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)),</span> <span class="n">xc</span><span class="o">=</span><span class="s1">&#39;LDA,VWN&#39;</span><span class="p">,</span>

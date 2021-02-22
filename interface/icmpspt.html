@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>9.7. icmpspt — Internal-contracted MPS perturbation method &mdash; PySCF 1.7.5 documentation</title>
+  <title>icmpspt — Internal-contracted MPS perturbation method &mdash; PySCF 1.7.6 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="9.8. nao — Numerical Atomic Orbitals" href="nao.html" />
-    <link rel="prev" title="9.6. shciscf — Semistochastic heat bath configuration interaction (SHCI)" href="shciscf.html" /> 
+    <link rel="next" title="nao — Numerical Atomic Orbitals" href="nao.html" />
+    <link rel="prev" title="shciscf — Semistochastic heat bath configuration interaction (SHCI)" href="shciscf.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,30 +86,39 @@
               
             
             
-              <ul class="current">
+              <p class="caption"><span class="caption-text">User documentation</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">1. An overview of PySCF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../version.html">2. Version history</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../code-rule.html">4. Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../benchmark.html">5. Benchmark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">6. Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../theory.html">7. Theoretical methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced.html">8. Miscellaneous</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../interface.html">9. Interfaces</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="dftd3.html">9.1. <code class="xref py py-mod docutils literal notranslate"><span class="pre">dftd3</span></code> — DFT with D3 dispersion correction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="geomopt.html">9.2. <code class="xref py py-mod docutils literal notranslate"><span class="pre">geomopt</span></code> — Geometry optimization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dmrgscf.html">9.3. <code class="xref py py-mod docutils literal notranslate"><span class="pre">dmrgscf</span></code> — DMRG and DMRG-SCF/CASSCF</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fciqmcscf.html">9.4. <code class="xref py py-mod docutils literal notranslate"><span class="pre">fciqmcscf</span></code> — Full configuration interaction quantum Monte Carlo (FCIQMC)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cornell_shci.html">9.5. <code class="xref py py-mod docutils literal notranslate"><span class="pre">cornell_shci</span></code> — Semistochastic heat-bath configuration interaction (SHCI)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="shciscf.html">9.6. <code class="xref py py-mod docutils literal notranslate"><span class="pre">shciscf</span></code> — Semistochastic heat bath configuration interaction (SHCI)</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">9.7. <code class="xref py py-mod docutils literal notranslate"><span class="pre">icmpspt</span></code> — Internal-contracted MPS perturbation method</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#program-reference">9.7.1. Program reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../benchmark.html">4. Benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">5. Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../theory.html">6. Theoretical methods</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../code-rule.html">Code standard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop/scf_developer.html">Self-consistent field (SCF) methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop/dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced.html">Miscellaneous</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">Main modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../interface.html">Interfaces</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dftd3.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dftd3</span></code> — DFT with D3 dispersion correction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geomopt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">geomopt</span></code> — Geometry optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dmrgscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dmrgscf</span></code> — DMRG and DMRG-SCF/CASSCF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fciqmcscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fciqmcscf</span></code> — Full configuration interaction quantum Monte Carlo (FCIQMC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cornell_shci.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cornell_shci</span></code> — Semistochastic heat-bath configuration interaction (SHCI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shciscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">shciscf</span></code> — Semistochastic heat bath configuration interaction (SHCI)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">icmpspt</span></code> — Internal-contracted MPS perturbation method</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#program-reference">Program reference</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="nao.html">9.8. <code class="xref py py-mod docutils literal notranslate"><span class="pre">nao</span></code> — Numerical Atomic Orbitals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nao.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nao</span></code> — Numerical Atomic Orbitals</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../modules.html">10. Main modules</a></li>
 </ul>
 
             
@@ -156,9 +165,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../interface.html"><span class="section-number">9. </span>Interfaces</a> &raquo;</li>
+          <li><a href="../interface.html">Interfaces</a> &raquo;</li>
         
-      <li><span class="section-number">9.7. </span><code class="xref py py-mod docutils literal notranslate"><span class="pre">icmpspt</span></code> — Internal-contracted MPS perturbation method</li>
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">icmpspt</span></code> — Internal-contracted MPS perturbation method</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -178,10 +187,10 @@
            <div itemprop="articleBody">
             
   <div class="section" id="icmpspt-internal-contracted-mps-perturbation-method">
-<span id="icmpspt"></span><h1><span class="section-number">9.7. </span><code class="xref py py-mod docutils literal notranslate"><span class="pre">icmpspt</span></code> — Internal-contracted MPS perturbation method<a class="headerlink" href="#icmpspt-internal-contracted-mps-perturbation-method" title="Permalink to this headline">¶</a></h1>
+<span id="icmpspt"></span><h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">icmpspt</span></code> — Internal-contracted MPS perturbation method<a class="headerlink" href="#icmpspt-internal-contracted-mps-perturbation-method" title="Permalink to this headline">¶</a></h1>
 <p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">icmpspt</span></code> module is an interface to a multi-reference perturbation method that uses DMRG (MPS) wavefunctions as the zeroth order wavefunction.  The DMRG wavefunction needs to be generated using the <code class="xref py py-mod docutils literal notranslate"><span class="pre">dmrgscf</span></code> solver. The ic-MPSPT solver can be obtained from Sandeep Sharma (<a class="reference external" href="mailto:sanshar&#37;&#52;&#48;gmail&#46;com">sanshar<span>&#64;</span>gmail<span>&#46;</span>com</a>).</p>
 <div class="section" id="program-reference">
-<h2><span class="section-number">9.7.1. </span>Program reference<a class="headerlink" href="#program-reference" title="Permalink to this headline">¶</a></h2>
+<h2>Program reference<a class="headerlink" href="#program-reference" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -193,10 +202,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="nao.html" class="btn btn-neutral float-right" title="9.8. nao — Numerical Atomic Orbitals" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="nao.html" class="btn btn-neutral float-right" title="nao — Numerical Atomic Orbitals" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="shciscf.html" class="btn btn-neutral float-left" title="9.6. shciscf — Semistochastic heat bath configuration interaction (SHCI)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="shciscf.html" class="btn btn-neutral float-left" title="shciscf — Semistochastic heat bath configuration interaction (SHCI)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

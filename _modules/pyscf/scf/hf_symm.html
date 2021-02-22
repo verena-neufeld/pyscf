@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyscf.scf.hf_symm &mdash; PySCF 1.7.5 documentation</title>
+  <title>pyscf.scf.hf_symm &mdash; PySCF 1.7.6 documentation</title>
   
 
   
@@ -84,17 +84,26 @@
               
             
             
-              <ul>
+              <p class="caption"><span class="caption-text">User documentation</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../overview.html">1. An overview of PySCF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../version.html">2. Version history</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../install.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../code-rule.html">4. Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../benchmark.html">5. Benchmark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../tutorial.html">6. Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../theory.html">7. Theoretical methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../advanced.html">8. Miscellaneous</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../interface.html">9. Interfaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">10. Main modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../benchmark.html">4. Benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial.html">5. Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../theory.html">6. Theoretical methods</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../code-rule.html">Code standard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../develop/scf_developer.html">Self-consistent field (SCF) methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../develop/dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced.html">Miscellaneous</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">Main modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface.html">Interfaces</a></li>
 </ul>
 
             
@@ -230,7 +239,8 @@
         <span class="n">wfnsym</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="n">noccs</span> <span class="o">=</span> <span class="p">[</span><span class="nb">sum</span><span class="p">(</span><span class="n">orbsym</span><span class="p">[</span><span class="n">mo_occ</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="n">ir</span><span class="p">)</span> <span class="k">for</span> <span class="n">ir</span> <span class="ow">in</span> <span class="n">mol</span><span class="o">.</span><span class="n">irrep_id</span><span class="p">]</span>
         <span class="k">if</span> <span class="n">mol</span><span class="o">.</span><span class="n">groupname</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;SO3&#39;</span><span class="p">,</span> <span class="s1">&#39;Dooh&#39;</span><span class="p">,</span> <span class="s1">&#39;Coov&#39;</span><span class="p">):</span>
-            <span class="n">log</span><span class="o">.</span><span class="n">note</span><span class="p">(</span><span class="s1">&#39;TODO: total wave-function symmetry for </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">mol</span><span class="o">.</span><span class="n">groupname</span><span class="p">)</span>
+            <span class="c1"># TODO: check wave function symmetry</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">note</span><span class="p">(</span><span class="s1">&#39;Wave-function symmetry = </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">mol</span><span class="o">.</span><span class="n">groupname</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">log</span><span class="o">.</span><span class="n">note</span><span class="p">(</span><span class="s1">&#39;Wave-function symmetry = </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span>
                      <span class="n">symm</span><span class="o">.</span><span class="n">irrep_id2name</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">groupname</span><span class="p">,</span> <span class="n">wfnsym</span><span class="p">))</span>
@@ -452,7 +462,8 @@
                     <span class="n">mol</span><span class="o">.</span><span class="n">nelectron</span><span class="o">-</span><span class="n">fix_ne</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">float_irname</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">fix_na</span><span class="p">,</span> <span class="n">fix_nb</span><span class="p">,</span> <span class="n">float_irname</span>
 
-<span class="c1">#TODO: force E1gx/E1gy ... use the same coefficients</span>
+<span class="c1">#TODO: force Dooh, Doov orbitals E1gx/E1gy ... using the same coefficients</span>
+<span class="c1">#TODO: force SO3 orbitals p+0,p-1,p+1, ... using the same coefficients</span>
 <div class="viewcode-block" id="eig"><a class="viewcode-back" href="../../../modules/scf.html#pyscf.scf.hf_symm.eig">[docs]</a><span class="k">def</span> <span class="nf">eig</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Solve generalized eigenvalue problem, for each irrep.  The</span>
 <span class="sd">    eigenvalues and eigenvectors are not sorted to ascending order.</span>
@@ -902,17 +913,19 @@
 
             <span class="n">nirrep</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">irrep_id</span><span class="p">)</span>
             <span class="n">orbsym</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_orbsym</span><span class="p">(</span><span class="n">mo_coeff</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_ovlp</span><span class="p">())</span>
-            <span class="n">orbsym_in_d2h</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">orbsym</span><span class="p">)</span> <span class="o">%</span> <span class="mi">10</span>  <span class="c1"># convert to D2h irreps</span>
+            <span class="n">irreps</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">irrep_id</span><span class="p">)</span>
+            <span class="n">ndoccs</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">irreps</span><span class="p">[:,</span><span class="kc">None</span><span class="p">]</span> <span class="o">==</span> <span class="n">orbsym</span><span class="p">[</span><span class="n">mo_occ</span><span class="o">==</span><span class="mi">2</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">nsoccs</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">irreps</span><span class="p">[:,</span><span class="kc">None</span><span class="p">]</span> <span class="o">==</span> <span class="n">orbsym</span><span class="p">[</span><span class="n">mo_occ</span><span class="o">==</span><span class="mi">1</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
             <span class="n">wfnsym</span> <span class="o">=</span> <span class="mi">0</span>
-            <span class="n">ndoccs</span> <span class="o">=</span> <span class="p">[]</span>
-            <span class="n">nsoccs</span> <span class="o">=</span> <span class="p">[]</span>
-            <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">ir</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">irrep_id</span><span class="p">):</span>
-                <span class="n">ndoccs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">orbsym_in_d2h</span><span class="p">[</span><span class="n">mo_occ</span><span class="o">==</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="n">ir</span><span class="p">))</span>
-                <span class="n">nsoccs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">orbsym_in_d2h</span><span class="p">[</span><span class="n">mo_occ</span><span class="o">==</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">ir</span><span class="p">))</span>
-                <span class="k">if</span> <span class="n">nsoccs</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-                    <span class="n">wfnsym</span> <span class="o">^=</span> <span class="n">ir</span>
+            <span class="c1"># wfn symmetry is determined by the odd number of electrons in each irrep</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">numpy</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">nsoccs</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]:</span>
+                <span class="n">ir_in_d2h</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">irrep_id</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">%</span> <span class="mi">10</span>  <span class="c1"># convert to D2h irreps</span>
+                <span class="n">wfnsym</span> <span class="o">^=</span> <span class="n">ir_in_d2h</span>
+
             <span class="k">if</span> <span class="n">mol</span><span class="o">.</span><span class="n">groupname</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;SO3&#39;</span><span class="p">,</span> <span class="s1">&#39;Dooh&#39;</span><span class="p">,</span> <span class="s1">&#39;Coov&#39;</span><span class="p">):</span>
-                <span class="n">log</span><span class="o">.</span><span class="n">note</span><span class="p">(</span><span class="s1">&#39;TODO: total wave-function symmetry for </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">mol</span><span class="o">.</span><span class="n">groupname</span><span class="p">)</span>
+                <span class="c1"># TODO: check wave function symmetry</span>
+                <span class="n">log</span><span class="o">.</span><span class="n">note</span><span class="p">(</span><span class="s1">&#39;Wave-function symmetry = </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">mol</span><span class="o">.</span><span class="n">groupname</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">log</span><span class="o">.</span><span class="n">note</span><span class="p">(</span><span class="s1">&#39;Wave-function symmetry = </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span>
                          <span class="n">symm</span><span class="o">.</span><span class="n">irrep_id2name</span><span class="p">(</span><span class="n">mol</span><span class="o">.</span><span class="n">groupname</span><span class="p">,</span> <span class="n">wfnsym</span><span class="p">))</span>

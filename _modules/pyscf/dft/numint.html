@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyscf.dft.numint &mdash; PySCF 1.7.5 documentation</title>
+  <title>pyscf.dft.numint &mdash; PySCF 1.7.6 documentation</title>
   
 
   
@@ -84,17 +84,26 @@
               
             
             
-              <ul>
+              <p class="caption"><span class="caption-text">User documentation</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../overview.html">1. An overview of PySCF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../version.html">2. Version history</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../install.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../code-rule.html">4. Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../benchmark.html">5. Benchmark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../tutorial.html">6. Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../theory.html">7. Theoretical methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../advanced.html">8. Miscellaneous</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../interface.html">9. Interfaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">10. Main modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../benchmark.html">4. Benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial.html">5. Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../theory.html">6. Theoretical methods</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../code-rule.html">Code standard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../develop/scf_developer.html">Self-consistent field (SCF) methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../develop/dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced.html">Miscellaneous</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">Main modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface.html">Interfaces</a></li>
 </ul>
 
             
@@ -191,9 +200,7 @@
         <span class="kn">from</span> <span class="nn">pyscf.dft</span> <span class="kn">import</span> <span class="n">xcfun</span>
         <span class="n">libxc</span> <span class="o">=</span> <span class="n">xcfun</span>
     <span class="k">except</span> <span class="p">(</span><span class="ne">ImportError</span><span class="p">,</span> <span class="ne">OSError</span><span class="p">):</span>
-        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;XC functional libraries (libxc or XCfun) are not available.&#39;</span><span class="p">)</span>
-        <span class="kn">from</span> <span class="nn">pyscf.dft</span> <span class="kn">import</span> <span class="n">xc</span>
-        <span class="n">libxc</span> <span class="o">=</span> <span class="n">xc</span>
+        <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span><span class="s1">&#39;XC functional libraries (libxc or XCfun) are not available.&#39;</span><span class="p">)</span>
 
 <span class="kn">from</span> <span class="nn">pyscf.dft.gen_grid</span> <span class="kn">import</span> <span class="n">make_mask</span><span class="p">,</span> <span class="n">BLKSIZE</span>
 <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">__config__</span>

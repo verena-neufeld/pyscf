@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyscf.pbc.dft.rks &mdash; PySCF 1.7.5 documentation</title>
+  <title>pyscf.pbc.dft.rks &mdash; PySCF 1.7.6 documentation</title>
   
 
   
@@ -84,17 +84,26 @@
               
             
             
-              <ul>
+              <p class="caption"><span class="caption-text">User documentation</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../overview.html">1. An overview of PySCF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../version.html">2. Version history</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../install.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../code-rule.html">4. Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../benchmark.html">5. Benchmark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../tutorial.html">6. Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../theory.html">7. Theoretical methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../advanced.html">8. Miscellaneous</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../interface.html">9. Interfaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../modules.html">10. Main modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../benchmark.html">4. Benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorial.html">5. Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../theory.html">6. Theoretical methods</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../code-rule.html">Code standard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../develop/scf_developer.html">Self-consistent field (SCF) methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../develop/dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced.html">Miscellaneous</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../modules.html">Main modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../interface.html">Interfaces</a></li>
 </ul>
 
             
@@ -328,10 +337,7 @@
 <span class="c1"># don&#39;t modify the following attributes, they are not input options</span>
     <span class="c1"># Note Do not refer to .with_df._numint because mesh/coords may be different</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">khf</span><span class="o">.</span><span class="n">KSCF</span><span class="p">):</span>
-        <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">mf</span><span class="o">.</span><span class="n">kpts</span><span class="p">,</span> <span class="s1">&#39;kpts&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">mf</span><span class="o">.</span><span class="n">_numint</span> <span class="o">=</span> <span class="n">numint</span><span class="o">.</span><span class="n">KNumInt</span><span class="p">(</span><span class="n">mf</span><span class="o">.</span><span class="n">kpts</span><span class="o">.</span><span class="n">kpts</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">mf</span><span class="o">.</span><span class="n">_numint</span> <span class="o">=</span> <span class="n">numint</span><span class="o">.</span><span class="n">KNumInt</span><span class="p">(</span><span class="n">mf</span><span class="o">.</span><span class="n">kpts</span><span class="p">)</span>
+        <span class="n">mf</span><span class="o">.</span><span class="n">_numint</span> <span class="o">=</span> <span class="n">numint</span><span class="o">.</span><span class="n">KNumInt</span><span class="p">(</span><span class="n">mf</span><span class="o">.</span><span class="n">kpts</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">mf</span><span class="o">.</span><span class="n">_numint</span> <span class="o">=</span> <span class="n">numint</span><span class="o">.</span><span class="n">NumInt</span><span class="p">()</span>
     <span class="n">mf</span><span class="o">.</span><span class="n">_keys</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">_keys</span><span class="o">.</span><span class="n">union</span><span class="p">([</span><span class="s1">&#39;xc&#39;</span><span class="p">,</span> <span class="s1">&#39;grids&#39;</span><span class="p">,</span> <span class="s1">&#39;small_rho_cutoff&#39;</span><span class="p">])</span>

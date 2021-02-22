@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyscf.soscf.newton_ah &mdash; PySCF 1.7.5 documentation</title>
+  <title>pyscf.soscf.newton_ah &mdash; PySCF 1.7.6 documentation</title>
   
 
   
@@ -84,17 +84,26 @@
               
             
             
-              <ul>
+              <p class="caption"><span class="caption-text">User documentation</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../overview.html">1. An overview of PySCF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../version.html">2. Version history</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../install.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../code-rule.html">4. Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../benchmark.html">5. Benchmark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../tutorial.html">6. Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../theory.html">7. Theoretical methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../advanced.html">8. Miscellaneous</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../interface.html">9. Interfaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">10. Main modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../benchmark.html">4. Benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial.html">5. Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../theory.html">6. Theoretical methods</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../code-rule.html">Code standard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../develop/scf_developer.html">Self-consistent field (SCF) methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../develop/dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced.html">Miscellaneous</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">Main modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface.html">Interfaces</a></li>
 </ul>
 
             
@@ -1096,20 +1105,20 @@
 <span class="k">def</span> <span class="nf">_force_SO3_degeneracy_</span><span class="p">(</span><span class="n">dr</span><span class="p">,</span> <span class="n">orbsym</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Force orbitals of same angular momentum to use the same rotation matrix&#39;&#39;&#39;</span>
     <span class="n">orbsym</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">orbsym</span><span class="p">)</span>
-    <span class="n">orbsym_l</span> <span class="o">=</span> <span class="n">orbsym</span> <span class="o">%</span> <span class="mi">100</span>
+    <span class="n">orbsym_l</span> <span class="o">=</span> <span class="n">orbsym</span> <span class="o">//</span> <span class="mi">100</span>
     <span class="n">lmax</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">orbsym_l</span><span class="p">)</span>
 
     <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">lmax</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
         <span class="n">idx_l</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">orbsym_l</span> <span class="o">==</span> <span class="n">l</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">nso_l</span> <span class="o">=</span> <span class="n">dix_l</span><span class="o">.</span><span class="n">size</span>
+        <span class="n">nso_l</span> <span class="o">=</span> <span class="n">idx_l</span><span class="o">.</span><span class="n">size</span>
         <span class="k">if</span> <span class="n">nso_l</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">degen</span> <span class="o">=</span> <span class="n">l</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span>
-            <span class="n">nso_m</span> <span class="o">=</span> <span class="n">nso_l</span> <span class="o">/</span> <span class="n">degen</span>
-            <span class="n">dr_l</span> <span class="o">=</span> <span class="n">dr</span><span class="p">[</span><span class="n">idx</span><span class="p">[:,</span><span class="kc">None</span><span class="p">],</span><span class="n">idx</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">degen</span><span class="p">,</span> <span class="n">nso_m</span><span class="p">,</span> <span class="n">degen</span><span class="p">,</span> <span class="n">nso_m</span><span class="p">)</span>
+            <span class="n">nso_m</span> <span class="o">=</span> <span class="n">nso_l</span> <span class="o">//</span> <span class="n">degen</span>
+            <span class="n">dr_l</span> <span class="o">=</span> <span class="n">dr</span><span class="p">[</span><span class="n">idx_l</span><span class="p">[:,</span><span class="kc">None</span><span class="p">],</span><span class="n">idx_l</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">degen</span><span class="p">,</span> <span class="n">nso_m</span><span class="p">,</span> <span class="n">degen</span><span class="p">,</span> <span class="n">nso_m</span><span class="p">)</span>
             <span class="n">dr_avg</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s1">&#39;ipiq-&gt;pq&#39;</span><span class="p">,</span> <span class="n">dr_l</span><span class="p">)</span> <span class="o">/</span> <span class="n">degen</span>
             <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">degen</span><span class="p">):</span>
                 <span class="n">dr_l</span><span class="p">[</span><span class="n">m</span><span class="p">,:,</span><span class="n">m</span><span class="p">,:]</span> <span class="o">=</span> <span class="n">dr_avg</span>
-            <span class="n">dr</span><span class="p">[</span><span class="n">idx</span><span class="p">[:,</span><span class="kc">None</span><span class="p">],</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">dr_l</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">nso_l</span><span class="p">,</span> <span class="n">nso_l</span><span class="p">)</span>
+            <span class="n">dr</span><span class="p">[</span><span class="n">idx_l</span><span class="p">[:,</span><span class="kc">None</span><span class="p">],</span><span class="n">idx_l</span><span class="p">]</span> <span class="o">=</span> <span class="n">dr_l</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">nso_l</span><span class="p">,</span> <span class="n">nso_l</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">dr</span>
 
 <span class="k">def</span> <span class="nf">_force_Ex_Ey_degeneracy_</span><span class="p">(</span><span class="n">dr</span><span class="p">,</span> <span class="n">orbsym</span><span class="p">):</span>

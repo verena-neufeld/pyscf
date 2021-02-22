@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pyscf.pbc.gto.cell &mdash; PySCF 1.7.5 documentation</title>
+  <title>pyscf.pbc.gto.cell &mdash; PySCF 1.7.6 documentation</title>
   
 
   
@@ -84,17 +84,26 @@
               
             
             
-              <ul>
+              <p class="caption"><span class="caption-text">User documentation</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../overview.html">1. An overview of PySCF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../version.html">2. Version history</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../install.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../code-rule.html">4. Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../benchmark.html">5. Benchmark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../tutorial.html">6. Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../theory.html">7. Theoretical methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../advanced.html">8. Miscellaneous</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../interface.html">9. Interfaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../modules.html">10. Main modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../benchmark.html">4. Benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tutorial.html">5. Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../theory.html">6. Theoretical methods</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../code-rule.html">Code standard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../develop/scf_developer.html">Self-consistent field (SCF) methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../develop/dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../advanced.html">Miscellaneous</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../modules.html">Main modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../interface.html">Interfaces</a></li>
 </ul>
 
             
@@ -205,7 +214,6 @@
 <span class="kn">from</span> <span class="nn">pyscf.pbc.gto.eval_gto</span> <span class="kn">import</span> <span class="n">eval_gto</span> <span class="k">as</span> <span class="n">pbc_eval_gto</span>
 <span class="kn">from</span> <span class="nn">pyscf.pbc.tools</span> <span class="kn">import</span> <span class="n">pbc</span> <span class="k">as</span> <span class="n">pbctools</span>
 <span class="kn">from</span> <span class="nn">pyscf.gto.basis</span> <span class="kn">import</span> <span class="n">ALIAS</span> <span class="k">as</span> <span class="n">MOLE_ALIAS</span>
-<span class="kn">from</span> <span class="nn">pyscf.pbc.lib</span> <span class="kn">import</span> <span class="n">kpts</span> <span class="k">as</span> <span class="n">libkpts</span>
 <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">__config__</span>
 
 <span class="n">INTEGRAL_PRECISION</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">__config__</span><span class="p">,</span> <span class="s1">&#39;pbc_gto_cell_Cell_precision&#39;</span><span class="p">,</span> <span class="mf">1e-8</span><span class="p">)</span>
@@ -370,7 +378,7 @@
 <span class="k">def</span> <span class="nf">dumps</span><span class="p">(</span><span class="n">cell</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Serialize Cell object to a JSON formatted str.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="n">exclude_keys</span> <span class="o">=</span> <span class="nb">set</span><span class="p">((</span><span class="s1">&#39;output&#39;</span><span class="p">,</span> <span class="s1">&#39;stdout&#39;</span><span class="p">,</span> <span class="s1">&#39;_keys&#39;</span><span class="p">,</span> <span class="s1">&#39;symm_orb&#39;</span><span class="p">,</span> <span class="s1">&#39;irrep_id&#39;</span><span class="p">,</span> <span class="s1">&#39;irrep_name&#39;</span><span class="p">))</span>
+    <span class="n">exclude_keys</span> <span class="o">=</span> <span class="nb">set</span><span class="p">((</span><span class="s1">&#39;output&#39;</span><span class="p">,</span> <span class="s1">&#39;stdout&#39;</span><span class="p">,</span> <span class="s1">&#39;_keys&#39;</span><span class="p">))</span>
 
     <span class="n">celldic</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">cell</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">exclude_keys</span><span class="p">:</span>
@@ -998,9 +1006,7 @@
 <span class="n">energy_nuc</span> <span class="o">=</span> <span class="n">ewald</span>
 
 <span class="k">def</span> <span class="nf">make_kpts</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="n">nks</span><span class="p">,</span> <span class="n">wrap_around</span><span class="o">=</span><span class="n">WRAP_AROUND</span><span class="p">,</span> <span class="n">with_gamma_point</span><span class="o">=</span><span class="n">WITH_GAMMA</span><span class="p">,</span>
-              <span class="n">scaled_center</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
-              <span class="n">space_group_symmetry</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">time_reversal_symmetry</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-              <span class="n">symmorphic</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+              <span class="n">scaled_center</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Given number of kpoints along x,y,z , generate kpoints</span>
 
 <span class="sd">    Args:</span>
@@ -1016,15 +1022,10 @@
 <span class="sd">            scaled_center, given as the zeroth index of the returned kpts.</span>
 <span class="sd">            Scaled meaning that the k-points are scaled to a grid from </span>
 <span class="sd">            [-1,1] x [-1,1] x [-1,1]</span>
-<span class="sd">        space_group_symmetry : bool</span>
-<span class="sd">            Whether to consider space group symmetry</span>
-<span class="sd">        time_reversal_symmetry : bool</span>
-<span class="sd">            Whether to consider time reversal symmetry</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        kpts in absolute value (unit 1/Bohr).  Gamma point is placed at the</span>
-<span class="sd">        first place in the k-points list;</span>
-<span class="sd">        instance of :class:`KPoints` if k-point symmetry is considered</span>
+<span class="sd">        first place in the k-points list</span>
 
 <span class="sd">    Examples:</span>
 
@@ -1044,8 +1045,6 @@
     <span class="n">scaled_kpts</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">cartesian_prod</span><span class="p">(</span><span class="n">ks_each_axis</span><span class="p">)</span>
     <span class="n">scaled_kpts</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">scaled_center</span><span class="p">)</span>
     <span class="n">kpts</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">get_abs_kpts</span><span class="p">(</span><span class="n">scaled_kpts</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">space_group_symmetry</span> <span class="ow">or</span> <span class="n">time_reversal_symmetry</span><span class="p">:</span>
-        <span class="n">kpts</span> <span class="o">=</span> <span class="n">libkpts</span><span class="o">.</span><span class="n">make_kpts</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="n">kpts</span><span class="p">,</span> <span class="n">space_group_symmetry</span><span class="p">,</span> <span class="n">time_reversal_symmetry</span><span class="p">,</span> <span class="n">symmorphic</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">kpts</span>
 
 <span class="k">def</span> <span class="nf">get_uniform_grids</span><span class="p">(</span><span class="n">cell</span><span class="p">,</span> <span class="n">mesh</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -1707,14 +1706,6 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">a</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">unit</span></div>
 
-<div class="viewcode-block" id="Cell.get_scaled_positions"><a class="viewcode-back" href="../../../../modules/pbc/gto.html#pyscf.pbc.gto.Cell.get_scaled_positions">[docs]</a>    <span class="k">def</span> <span class="nf">get_scaled_positions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39; Get scaled atom positions.</span>
-<span class="sd">        &#39;&#39;&#39;</span>
-        <span class="n">a</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lattice_vectors</span><span class="p">()</span>
-        <span class="n">atm_pos</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">atom_coords</span><span class="p">()</span>
-        <span class="n">scaled_atm_pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">atm_pos</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">scaled_atm_pos</span></div>
-
 <div class="viewcode-block" id="Cell.reciprocal_vectors"><a class="viewcode-back" href="../../../../modules/pbc/gto.html#pyscf.pbc.gto.Cell.reciprocal_vectors">[docs]</a>    <span class="k">def</span> <span class="nf">reciprocal_vectors</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">norm_to</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">):</span>
         <span class="sa">r</span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        .. math::</span>
@@ -1749,23 +1740,15 @@
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">scaled_kpts</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">reciprocal_vectors</span><span class="p">())</span></div>
 
-<div class="viewcode-block" id="Cell.get_scaled_kpts"><a class="viewcode-back" href="../../../../modules/pbc/gto.html#pyscf.pbc.gto.Cell.get_scaled_kpts">[docs]</a>    <span class="k">def</span> <span class="nf">get_scaled_kpts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">abs_kpts</span><span class="p">,</span> <span class="n">kpts_in_ibz</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<div class="viewcode-block" id="Cell.get_scaled_kpts"><a class="viewcode-back" href="../../../../modules/pbc/gto.html#pyscf.pbc.gto.Cell.get_scaled_kpts">[docs]</a>    <span class="k">def</span> <span class="nf">get_scaled_kpts</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">abs_kpts</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;Get scaled k-points, given absolute k-points in 1/Bohr.</span>
 
 <span class="sd">        Args:</span>
-<span class="sd">            abs_kpts : (nkpts, 3) ndarray of floats or :class:`KPoints` object</span>
-<span class="sd">            kpts_in_ibz : bool</span>
-<span class="sd">                If True, return k-points in IBZ; otherwise, return k-points in BZ.</span>
-<span class="sd">                Default value is True.</span>
+<span class="sd">            abs_kpts : (nkpts, 3) ndarray of floats </span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            scaled_kpts : (nkpts, 3) ndarray of floats</span>
 <span class="sd">        &#39;&#39;&#39;</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">abs_kpts</span><span class="p">,</span> <span class="n">libkpts</span><span class="o">.</span><span class="n">KPoints</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">kpts_in_ibz</span><span class="p">:</span>
-                <span class="k">return</span> <span class="n">abs_kpts</span><span class="o">.</span><span class="n">kpts_scaled_ibz</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="k">return</span> <span class="n">abs_kpts</span><span class="o">.</span><span class="n">kpts_scaled</span>
         <span class="k">return</span> <span class="mf">1.</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">abs_kpts</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">lattice_vectors</span><span class="p">()</span><span class="o">.</span><span class="n">T</span><span class="p">)</span></div>
 
     <span class="n">make_kpts</span> <span class="o">=</span> <span class="n">get_kpts</span> <span class="o">=</span> <span class="n">make_kpts</span>

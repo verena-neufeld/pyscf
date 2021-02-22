@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>10.21.5. pbc.df — PBC denisty fitting &mdash; PySCF 1.7.5 documentation</title>
+  <title>pbc.df — PBC denisty fitting &mdash; PySCF 1.7.6 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="10.21.6. pbc.tdscf — TDHF and TDDFT with periodic boundary conditions" href="tdscf.html" />
-    <link rel="prev" title="10.21.4. pbc.dft — DFT with PBCs" href="dft.html" /> 
+    <link rel="next" title="pbc.tdscf — TDHF and TDDFT with periodic boundary conditions" href="tdscf.html" />
+    <link rel="prev" title="pbc.dft — DFT with PBCs" href="dft.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,76 +86,84 @@
               
             
             
-              <ul class="current">
+              <p class="caption"><span class="caption-text">User documentation</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../overview.html">1. An overview of PySCF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../version.html">2. Version history</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../code-rule.html">4. Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../benchmark.html">5. Benchmark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">6. Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../theory.html">7. Theoretical methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../advanced.html">8. Miscellaneous</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../interface.html">9. Interfaces</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../modules.html">10. Main modules</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../adc.html">10.1. <code class="xref py py-mod docutils literal notranslate"><span class="pre">adc</span></code> — Algebraic diagrammatic construction (ADC) scheme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ao2mo.html">10.2. <code class="xref py py-mod docutils literal notranslate"><span class="pre">ao2mo</span></code> — Integral transformations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cc.html">10.3. <code class="xref py py-mod docutils literal notranslate"><span class="pre">cc</span></code> — Coupled cluster</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ccn.html">10.4. <code class="xref py py-mod docutils literal notranslate"><span class="pre">ccn</span></code> — Auto-generated coupled cluster of arbitrary order</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ci.html">10.5. <code class="xref py py-mod docutils literal notranslate"><span class="pre">ci</span></code> — Configuration interaction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../data.html">10.6. <code class="xref py py-mod docutils literal notranslate"><span class="pre">data</span></code> — Data for constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../df.html">10.7. <code class="xref py py-mod docutils literal notranslate"><span class="pre">df</span></code> — Density fitting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dft.html">10.8. <code class="xref py py-mod docutils literal notranslate"><span class="pre">dft</span></code> — Density functional theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../doci.html">10.9. <code class="xref py py-mod docutils literal notranslate"><span class="pre">doci</span></code> — Doubly occupied configuration interaction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../fci.html">10.10. <code class="xref py py-mod docutils literal notranslate"><span class="pre">fci</span></code> — Full configuration interaction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../grad.html">10.11. <code class="xref py py-mod docutils literal notranslate"><span class="pre">grad</span></code> — Analytical nuclear gradients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gto.html">10.12. <code class="xref py py-mod docutils literal notranslate"><span class="pre">gto</span></code> — Molecular structure and GTO basis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gw.html">10.13. <code class="xref py py-mod docutils literal notranslate"><span class="pre">gw</span></code> — Molecular G0W0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hci.html">10.14. <code class="xref py py-mod docutils literal notranslate"><span class="pre">hci</span></code> — Heat-bath selected CI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hessian.html">10.15. <code class="xref py py-mod docutils literal notranslate"><span class="pre">hessian</span></code> — Analytical nuclear Hessian</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lib.html">10.16. <code class="xref py py-mod docutils literal notranslate"><span class="pre">lib</span></code> — Helper functions, parameters, and C extensions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lo.html">10.17. <code class="xref py py-mod docutils literal notranslate"><span class="pre">lo</span></code> — Orbital localization and analysis tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../mcscf.html">10.18. <code class="xref py py-mod docutils literal notranslate"><span class="pre">mcscf</span></code> — Multi-configurational self-consistent field</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../mp.html">10.19. <code class="xref py py-mod docutils literal notranslate"><span class="pre">mp</span></code> — Second-Order Møller–Plesset Perturbation Theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../mrpt.html">10.20. <code class="xref py py-mod docutils literal notranslate"><span class="pre">mrpt</span></code> — Multi-reference perturbation theory</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../pbc.html">10.21. <code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc</span></code> — Periodic boundary conditions</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="gto.html">10.21.1. pbc.gto — Crystal cell structure</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ao2mo.html">10.21.2. pbc.ao2mo — Integral transformations for crystalline Gaussian type orbitals</a></li>
-<li class="toctree-l3"><a class="reference internal" href="scf.html">10.21.3. <code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc.scf</span></code> — Self-consistent field with periodic boundary conditions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="dft.html">10.21.4. pbc.dft  — DFT with PBCs</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">10.21.5. pbc.df — PBC denisty fitting</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#introduction">10.21.5.1. Introduction</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#interface-to-molecular-df-post-hf-methods">10.21.5.2. Interface to molecular DF-post-HF methods</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#examples">10.21.5.3. Examples</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#program-reference">10.21.5.4. Program reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../benchmark.html">4. Benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">5. Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theory.html">6. Theoretical methods</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../code-rule.html">Code standard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../develop/scf_developer.html">Self-consistent field (SCF) methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../develop/dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced.html">Miscellaneous</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../modules.html">Main modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../adc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">adc</span></code> — Algebraic diagrammatic construction (ADC) scheme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ao2mo.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ao2mo</span></code> — Integral transformations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cc</span></code> — Coupled cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ccn.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ccn</span></code> — Auto-generated coupled cluster of arbitrary order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ci.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ci</span></code> — Configuration interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">data</span></code> — Data for constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../df.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">df</span></code> — Density fitting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dft.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dft</span></code> — Density functional theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../doci.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">doci</span></code> — Doubly occupied configuration interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fci.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fci</span></code> — Full configuration interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grad.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">grad</span></code> — Analytical nuclear gradients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gto</span></code> — Molecular structure and GTO basis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gw.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gw</span></code> — Molecular G0W0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hci.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hci</span></code> — Heat-bath selected CI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hessian.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hessian</span></code> — Analytical nuclear Hessian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lib.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">lib</span></code> — Helper functions, parameters, and C extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lo.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">lo</span></code> — Orbital localization and analysis tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mcscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mcscf</span></code> — Multi-configurational self-consistent field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mp</span></code> — Second-Order Møller–Plesset Perturbation Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mrpt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mrpt</span></code> — Multi-reference perturbation theory</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pbc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc</span></code> — Periodic boundary conditions</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="gto.html">pbc.gto — Crystal cell structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ao2mo.html">pbc.ao2mo — Integral transformations for crystalline Gaussian type orbitals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc.scf</span></code> — Self-consistent field with periodic boundary conditions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dft.html">pbc.dft  — DFT with PBCs</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">pbc.df — PBC denisty fitting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#interface-to-molecular-df-post-hf-methods">Interface to molecular DF-post-HF methods</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#examples">Examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#program-reference">Program reference</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="tdscf.html">10.21.6. <code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc.tdscf</span></code> — TDHF and TDDFT with periodic boundary conditions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mp.html">10.21.7. pbc.mp — MP2 with periodic boundary conditions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ci.html">10.21.8. pbc.ci — CISD with PBCs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="cc.html">10.21.9. pbc.cc — Coupled cluster with PBCs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mpicc.html">10.21.10. pbc.mpicc — PBC coupled cluster for MPI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tools.html">10.21.11. pbc.tools — PBC tools</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mix_mol.html">10.21.12. Mixing PBC and molecular modules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="prop.html">10.21.13. pbc.prop — PBC property</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gw.html">10.21.14. pbc.gw — GW with PBC</a></li>
-<li class="toctree-l3"><a class="reference internal" href="x2c.html">10.21.15. pbc.x2c — Exact Two-Component Method</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../pbc.html#examples">10.21.16. Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tdscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc.tdscf</span></code> — TDHF and TDDFT with periodic boundary conditions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mp.html">pbc.mp — MP2 with periodic boundary conditions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ci.html">pbc.ci — CISD with PBCs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cc.html">pbc.cc — Coupled cluster with PBCs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mpicc.html">pbc.mpicc — PBC coupled cluster for MPI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tools.html">pbc.tools — PBC tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="prop.html">pbc.prop — PBC property</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gw.html">pbc.gw — GW with PBC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="x2c.html">pbc.x2c — Exact Two-Component Method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pbc.html#examples">Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../prop.html">10.22. <code class="xref py py-mod docutils literal notranslate"><span class="pre">prop</span></code> — Molecular properties</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qmmm.html">10.23. <code class="xref py py-mod docutils literal notranslate"><span class="pre">qmmm</span></code> — QM/MM interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../rt.html">10.24. <code class="xref py py-mod docutils literal notranslate"><span class="pre">rt</span></code> — Real-time time-dependent density functional theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../scf.html">10.25. <code class="xref py py-mod docutils literal notranslate"><span class="pre">scf</span></code> — Self-consistent field methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../semiempirical.html">10.26. <code class="xref py py-mod docutils literal notranslate"><span class="pre">semiempirical</span></code> — Semiempirical methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sgx.html">10.27. <code class="xref py py-mod docutils literal notranslate"><span class="pre">sgx</span></code> — Pseudo-spectral methods (COSX, PS, SN-K)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../solvent.html">10.28. <code class="xref py py-mod docutils literal notranslate"><span class="pre">solvent</span></code> — Solvent methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../soscf.html">10.29. <code class="xref py py-mod docutils literal notranslate"><span class="pre">soscf</span></code> — Second order SCF solver</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../symm.html">10.30. <code class="xref py py-mod docutils literal notranslate"><span class="pre">symm</span></code> – Point group symmetry and spin symmetry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tdscf.html">10.31. <code class="xref py py-mod docutils literal notranslate"><span class="pre">tdscf</span></code> — TDHF and TDDFT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tools.html">10.32. <code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> — Useful tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../x2c.html">10.33. <code class="xref py py-mod docutils literal notranslate"><span class="pre">x2c</span></code> — exact-two-component approach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prop.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">prop</span></code> — Molecular properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qmmm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">qmmm</span></code> — QM/MM interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">rt</span></code> — Real-time time-dependent density functional theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scf</span></code> — Self-consistent field methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../semiempirical.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">semiempirical</span></code> — Semiempirical methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sgx.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sgx</span></code> — Pseudo-spectral methods (COSX, PS, SN-K)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solvent.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">solvent</span></code> — Solvent methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../soscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">soscf</span></code> — Second order SCF solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../symm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">symm</span></code> – Point group symmetry and spin symmetry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tdscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tdscf</span></code> — TDHF and TDDFT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> — Useful tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2c.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">x2c</span></code> — exact-two-component approach</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface.html">Interfaces</a></li>
 </ul>
 
             
@@ -202,11 +210,11 @@
     
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../../modules.html"><span class="section-number">10. </span>Main modules</a> &raquo;</li>
+          <li><a href="../../modules.html">Main modules</a> &raquo;</li>
         
-          <li><a href="../pbc.html"><span class="section-number">10.21. </span><code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc</span></code> — Periodic boundary conditions</a> &raquo;</li>
+          <li><a href="../pbc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc</span></code> — Periodic boundary conditions</a> &raquo;</li>
         
-      <li><span class="section-number">10.21.5. </span>pbc.df — PBC denisty fitting</li>
+      <li>pbc.df — PBC denisty fitting</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -226,9 +234,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="module-pbc.df">
-<span id="pbc-df-pbc-denisty-fitting"></span><span id="pbc-df"></span><h1><span class="section-number">10.21.5. </span>pbc.df — PBC denisty fitting<a class="headerlink" href="#module-pbc.df" title="Permalink to this headline">¶</a></h1>
+<span id="pbc-df-pbc-denisty-fitting"></span><span id="pbc-df"></span><h1>pbc.df — PBC denisty fitting<a class="headerlink" href="#module-pbc.df" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
-<h2><span class="section-number">10.21.5.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference internal" href="#module-pbc.df" title="pbc.df: Density fitting and RI approximation with periodic boundary conditions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc.df</span></code></a> module provides the fundamental functions to handle the
 density fitting (DF) integral tensors required by the gamma-point and k-point
 PBC calculations.  There are four types of DF methods available for PBC
@@ -292,7 +300,7 @@ are all computed with DF technique.  The default scheme is FFTDF.</p>
 </tbody>
 </table>
 <div class="section" id="fftdf-fft-based-density-fitting">
-<span id="fftdf"></span><h3><span class="section-number">10.21.5.1.1. </span>FFTDF — FFT-based density fitting<a class="headerlink" href="#fftdf-fft-based-density-fitting" title="Permalink to this headline">¶</a></h3>
+<span id="fftdf"></span><h3>FFTDF — FFT-based density fitting<a class="headerlink" href="#fftdf-fft-based-density-fitting" title="Permalink to this headline">¶</a></h3>
 <p>FFTDF represents the method to compute electron repulsion integrals in
 reciprocal space with the Fourier transformed Coulomb kernel</p>
 <div class="math notranslate nohighlight">
@@ -316,7 +324,7 @@ reciprocal space with the Fourier transformed Coulomb kernel</p>
 <p>As the default integral scheme of PBC calculations, FFTDF is created when
 initializing the PBC mean-field object and held in the attribute <code class="xref py py-attr docutils literal notranslate"><span class="pre">with_df</span></code>.</p>
 <div class="section" id="nuclear-type-integrals">
-<h4><span class="section-number">10.21.5.1.1.1. </span>Nuclear type integrals<a class="headerlink" href="#nuclear-type-integrals" title="Permalink to this headline">¶</a></h4>
+<h4>Nuclear type integrals<a class="headerlink" href="#nuclear-type-integrals" title="Permalink to this headline">¶</a></h4>
 <p>PBC nuclear-electron interaction and pseudo-potential (PP) integrals can be
 computed with the FFTDF methods <code class="xref py py-func docutils literal notranslate"><span class="pre">FFTDF.get_nuc()</span></code> and <code class="xref py py-func docutils literal notranslate"><span class="pre">FFTDF.get_pp()</span></code>.
 <code class="xref py py-func docutils literal notranslate"><span class="pre">FFTDF.get_nuc()</span></code> function only evaluates the integral of the point charge.
@@ -341,7 +349,7 @@ nuclear-type integrals of Gamma point:</p>
 </div>
 </div>
 <div class="section" id="hartree-fock-coulomb-and-exchange">
-<h4><span class="section-number">10.21.5.1.1.2. </span>Hartree-Fock Coulomb and exchange<a class="headerlink" href="#hartree-fock-coulomb-and-exchange" title="Permalink to this headline">¶</a></h4>
+<h4>Hartree-Fock Coulomb and exchange<a class="headerlink" href="#hartree-fock-coulomb-and-exchange" title="Permalink to this headline">¶</a></h4>
 <p><code class="xref py py-class docutils literal notranslate"><span class="pre">FFTDF</span></code> class provides a method <code class="xref py py-func docutils literal notranslate"><span class="pre">FFTDF.get_jk()</span></code> to compute
 Hartree-Fock Coulomb matrix (J) and exchange matrix (K).  This method can take
 one density matrix or a list of density matrices as input and return the J and K
@@ -371,7 +379,7 @@ shape that matches the number of k-points:</p>
 </div>
 </div>
 <div class="section" id="index-eri-tensor-and-integral-transformation">
-<h4><span class="section-number">10.21.5.1.1.3. </span>4-index ERI tensor and integral transformation<a class="headerlink" href="#index-eri-tensor-and-integral-transformation" title="Permalink to this headline">¶</a></h4>
+<h4>4-index ERI tensor and integral transformation<a class="headerlink" href="#index-eri-tensor-and-integral-transformation" title="Permalink to this headline">¶</a></h4>
 <p>4-index electron repulsion integrals can be computed with <code class="xref py py-func docutils literal notranslate"><span class="pre">FFTDF.get_eri()</span></code>
 and <code class="xref py py-func docutils literal notranslate"><span class="pre">FFTDF.ao2mo()</span></code> methods.  Given 4 k-points(s) (corresponding to the 4
 AO indices), <code class="xref py py-func docutils literal notranslate"><span class="pre">FFTDF.get_eri()</span></code> method produce the regular 4-index ERIs
@@ -402,7 +410,7 @@ returned integral tensor is shaped to a 2D array:</p>
 </div>
 </div>
 <div class="section" id="kinetic-energy-cutoff">
-<h4><span class="section-number">10.21.5.1.1.4. </span>Kinetic energy cutoff<a class="headerlink" href="#kinetic-energy-cutoff" title="Permalink to this headline">¶</a></h4>
+<h4>Kinetic energy cutoff<a class="headerlink" href="#kinetic-energy-cutoff" title="Permalink to this headline">¶</a></h4>
 <p>The accuracy of FFTDF integrals are affected by the kinetic energy cutoff.  The
 default kinetic energy cutoff is a conservative estimation based on the basis
 set and the lattice parameter.  You can adjust the attribute <code class="xref py py-attr docutils literal notranslate"><span class="pre">FFTDF.gs</span></code>
@@ -421,7 +429,7 @@ The overall computational error may be varied by 1 - 2 orders of magnitude.</p>
 </div>
 </div>
 <div class="section" id="aftdf-aft-based-density-fitting">
-<h3><span class="section-number">10.21.5.1.2. </span>AFTDF — AFT-based density fitting<a class="headerlink" href="#aftdf-aft-based-density-fitting" title="Permalink to this headline">¶</a></h3>
+<h3>AFTDF — AFT-based density fitting<a class="headerlink" href="#aftdf-aft-based-density-fitting" title="Permalink to this headline">¶</a></h3>
 <p>AFTDF mans that the Fourier transform of the orbital pair is computed
 analytically</p>
 <div class="math notranslate nohighlight">
@@ -446,7 +454,7 @@ integrals and integral transformation can be computed with functions
 <code class="xref py py-func docutils literal notranslate"><span class="pre">AFTDF.get_eri()</span></code> and <code class="xref py py-func docutils literal notranslate"><span class="pre">AFTDF.ao2mo()</span></code> using the same calling APIs as the
 analogy functions in <a class="reference internal" href="../../theory/pbc/df.html#fftdf"><span class="std std-ref">FFTDF — Fast Fourier transform based density fitting</span></a>.</p>
 <div class="section" id="id1">
-<h4><span class="section-number">10.21.5.1.2.1. </span>Kinetic energy cutoff<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<h4>Kinetic energy cutoff<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
 <p><code class="xref py py-class docutils literal notranslate"><span class="pre">AFTDF</span></code> also makes estimation on the kinetic energy cutoff.  When the
 any values of <code class="xref py py-attr docutils literal notranslate"><span class="pre">AFTDF.gs</span></code> are too small for required accuracy
 <code class="xref py py-attr docutils literal notranslate"><span class="pre">cell.precision</span></code>, this class also outputs the
@@ -454,7 +462,7 @@ any values of <code class="xref py py-attr docutils literal notranslate"><span c
 </div>
 </div>
 <div class="section" id="gdf-gaussian-density-fitting">
-<span id="pbc-gdf"></span><h3><span class="section-number">10.21.5.1.3. </span>GDF — Gaussian density fitting<a class="headerlink" href="#gdf-gaussian-density-fitting" title="Permalink to this headline">¶</a></h3>
+<span id="pbc-gdf"></span><h3>GDF — Gaussian density fitting<a class="headerlink" href="#gdf-gaussian-density-fitting" title="Permalink to this headline">¶</a></h3>
 <p>GDF is an analogy of the conventional density fitting method with periodic
 boundary condition.  The auxiliary fitting basis in PBC GDF is periodic Gaussian
 function (To ensure the long range Coulomb integrals converging in the real
@@ -533,7 +541,7 @@ can be saved and loaded the same way as we did for the molecular DF method (see
 </pre></div>
 </div>
 <div class="section" id="auxiliary-gaussian-basis">
-<h4><span class="section-number">10.21.5.1.3.1. </span>Auxiliary Gaussian basis<a class="headerlink" href="#auxiliary-gaussian-basis" title="Permalink to this headline">¶</a></h4>
+<h4>Auxiliary Gaussian basis<a class="headerlink" href="#auxiliary-gaussian-basis" title="Permalink to this headline">¶</a></h4>
 <p>GDF method requires a set of Gaussian functions as the density fitting auxiliary basis.
 See also <a class="reference internal" href="../df.html#df-auxbasis"><span class="std std-ref">DF auxiliary basis</span></a> and <a class="reference internal" href="../df.html#df-etb-auxbasis"><span class="std std-ref">Even-tempered auxiliary Gaussian basis</span></a> for the choices of DF auxiliary
 basis in PySCF GDF code.  There are not many optimized auxiliary basis sets available
@@ -549,7 +557,7 @@ auxiliary basis in the PBC GDF method:</p>
 </div>
 </div>
 <div class="section" id="id2">
-<h4><span class="section-number">10.21.5.1.3.2. </span>Kinetic energy cutoff<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<h4>Kinetic energy cutoff<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <p>GDF method does not require the specification of kinetic energy cutoff.
 <code class="xref py py-attr docutils literal notranslate"><span class="pre">cell.ke_cutoff</span></code> and <code class="xref py py-attr docutils literal notranslate"><span class="pre">cell.gs</span></code> are ignored in the <code class="xref py py-class docutils literal notranslate"><span class="pre">GDF</span></code>
 class.  Internally, a small set of planewaves is used in the GDF method to
@@ -559,7 +567,7 @@ the attribute <code class="xref py py-class docutils literal notranslate"><span 
 </div>
 </div>
 <div class="section" id="mdf-mixed-density-fitting">
-<span id="pbc-mdf"></span><h3><span class="section-number">10.21.5.1.4. </span>MDF — mixed density fitting<a class="headerlink" href="#mdf-mixed-density-fitting" title="Permalink to this headline">¶</a></h3>
+<span id="pbc-mdf"></span><h3>MDF — mixed density fitting<a class="headerlink" href="#mdf-mixed-density-fitting" title="Permalink to this headline">¶</a></h3>
 <p>MDF method combines the AFTDF and GDF in the same framework.  The MDF auxiliary
 basis is Gaussian and plane-wave mixed basis.  <code class="xref py py-class docutils literal notranslate"><span class="pre">MDF</span></code> object can be
 created in two ways:</p>
@@ -605,7 +613,7 @@ be cached in a file and loaded to <code class="xref py py-class docutils literal
 </div>
 </div>
 <div class="section" id="all-electron-calculation">
-<h3><span class="section-number">10.21.5.1.5. </span>All-electron calculation<a class="headerlink" href="#all-electron-calculation" title="Permalink to this headline">¶</a></h3>
+<h3>All-electron calculation<a class="headerlink" href="#all-electron-calculation" title="Permalink to this headline">¶</a></h3>
 <p>All-electron calculations with FFTDF or AFTDF methods requires high energy cutoff
 for most elements.  It is recommended to use GDF or MDF methods in the
 all-electron calculations.  In fact, GDF and MDF can also be used in PP
@@ -613,7 +621,7 @@ calculations to reduce the number of planewave basis if steep functions are
 existed in the AO basis.</p>
 </div>
 <div class="section" id="low-dimension-system">
-<h3><span class="section-number">10.21.5.1.6. </span>Low-dimension system<a class="headerlink" href="#low-dimension-system" title="Permalink to this headline">¶</a></h3>
+<h3>Low-dimension system<a class="headerlink" href="#low-dimension-system" title="Permalink to this headline">¶</a></h3>
 <p><code class="xref py py-class docutils literal notranslate"><span class="pre">AFTDF</span></code> supports the systems with 0D (molecule), 1D and 2D periodic
 boundary conditions.  When computing the integrals of low-dimension systems, an
 infinite vacuum is placed on the free boundary.  You can set the
@@ -640,7 +648,7 @@ the low-dimension systems:</p>
 </div>
 </div>
 <div class="section" id="interface-to-molecular-df-post-hf-methods">
-<h2><span class="section-number">10.21.5.2. </span>Interface to molecular DF-post-HF methods<a class="headerlink" href="#interface-to-molecular-df-post-hf-methods" title="Permalink to this headline">¶</a></h2>
+<h2>Interface to molecular DF-post-HF methods<a class="headerlink" href="#interface-to-molecular-df-post-hf-methods" title="Permalink to this headline">¶</a></h2>
 <p>PBC DF object is compatible to the molecular DF object.  The
 <span class="math notranslate nohighlight">\(\Gamma\)</span>-point PBC SCF object can be directly passed to molecular DF
 post-HF methods for an electron correlation calculations in PBC:</p>
@@ -654,7 +662,7 @@ post-HF methods for an electron correlation calculations in PBC:</p>
 </div>
 </div>
 <div class="section" id="examples">
-<h2><span class="section-number">10.21.5.3. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/pbc/10-gamma_point_scf.py">examples/pbc/10-gamma_point_scf.py</a></p></li>
 <li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/pbc/10-gamma_point_scf.py">examples/pbc/10-gamma_point_scf.py</a></p></li>
@@ -669,9 +677,9 @@ post-HF methods for an electron correlation calculations in PBC:</p>
 </ul>
 </div>
 <div class="section" id="program-reference">
-<h2><span class="section-number">10.21.5.4. </span>Program reference<a class="headerlink" href="#program-reference" title="Permalink to this headline">¶</a></h2>
+<h2>Program reference<a class="headerlink" href="#program-reference" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="fftdf-class">
-<h3><span class="section-number">10.21.5.4.1. </span>FFTDF class<a class="headerlink" href="#fftdf-class" title="Permalink to this headline">¶</a></h3>
+<h3>FFTDF class<a class="headerlink" href="#fftdf-class" title="Permalink to this headline">¶</a></h3>
 <dl class="py class">
 <dt id="pyscf.pbc.df.fft.FFTDF">
 <em class="property">class </em><code class="sig-prename descclassname">pyscf.pbc.df.fft.</code><code class="sig-name descname">FFTDF</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cell</span></em>, <em class="sig-param"><span class="n">kpts</span><span class="o">=</span><span class="default_value">array([[0.0, 0.0, 0.0]])</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/df/fft.html#FFTDF"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.df.fft.FFTDF" title="Permalink to this definition">¶</a></dt>
@@ -680,7 +688,7 @@ post-HF methods for an electron correlation calculations in PBC:</p>
 
 </div>
 <div class="section" id="module-pyscf.pbc.df.fft_jk">
-<span id="fftdf-helper-functions"></span><h3><span class="section-number">10.21.5.4.2. </span>FFTDF helper functions<a class="headerlink" href="#module-pyscf.pbc.df.fft_jk" title="Permalink to this headline">¶</a></h3>
+<span id="fftdf-helper-functions"></span><h3>FFTDF helper functions<a class="headerlink" href="#module-pyscf.pbc.df.fft_jk" title="Permalink to this headline">¶</a></h3>
 <p>JK with discrete Fourier transformation</p>
 <span class="target" id="module-pyscf.pbc.df.fft_ao2mo"></span><p>Integral transformation with FFT</p>
 <dl class="simple">
@@ -698,7 +706,7 @@ post-HF methods for an electron correlation calculations in PBC:</p>
 </dl>
 </div>
 <div class="section" id="aftdf-class">
-<h3><span class="section-number">10.21.5.4.3. </span>AFTDF class<a class="headerlink" href="#aftdf-class" title="Permalink to this headline">¶</a></h3>
+<h3>AFTDF class<a class="headerlink" href="#aftdf-class" title="Permalink to this headline">¶</a></h3>
 <dl class="py class">
 <dt id="pyscf.pbc.df.aft.AFTDF">
 <em class="property">class </em><code class="sig-prename descclassname">pyscf.pbc.df.aft.</code><code class="sig-name descname">AFTDF</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cell</span></em>, <em class="sig-param"><span class="n">kpts</span><span class="o">=</span><span class="default_value">array([[0.0, 0.0, 0.0]])</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/df/aft.html#AFTDF"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.df.aft.AFTDF" title="Permalink to this definition">¶</a></dt>
@@ -707,12 +715,12 @@ post-HF methods for an electron correlation calculations in PBC:</p>
 
 </div>
 <div class="section" id="module-pyscf.pbc.df.aft_jk">
-<span id="aftdf-helper-functions"></span><h3><span class="section-number">10.21.5.4.4. </span>AFTDF helper functions<a class="headerlink" href="#module-pyscf.pbc.df.aft_jk" title="Permalink to this headline">¶</a></h3>
+<span id="aftdf-helper-functions"></span><h3>AFTDF helper functions<a class="headerlink" href="#module-pyscf.pbc.df.aft_jk" title="Permalink to this headline">¶</a></h3>
 <p>JK with analytic Fourier transformation</p>
 <span class="target" id="module-pyscf.pbc.df.aft_ao2mo"></span><p>Integral transformation with analytic Fourier transformation</p>
 </div>
 <div class="section" id="gdf-class">
-<h3><span class="section-number">10.21.5.4.5. </span>GDF class<a class="headerlink" href="#gdf-class" title="Permalink to this headline">¶</a></h3>
+<h3>GDF class<a class="headerlink" href="#gdf-class" title="Permalink to this headline">¶</a></h3>
 <dl class="py class">
 <dt id="pyscf.pbc.df.df.GDF">
 <em class="property">class </em><code class="sig-prename descclassname">pyscf.pbc.df.df.</code><code class="sig-name descname">GDF</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cell</span></em>, <em class="sig-param"><span class="n">kpts</span><span class="o">=</span><span class="default_value">array([[0.0, 0.0, 0.0]])</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/df/df.html#GDF"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.df.df.GDF" title="Permalink to this definition">¶</a></dt>
@@ -721,13 +729,55 @@ post-HF methods for an electron correlation calculations in PBC:</p>
 
 </div>
 <div class="section" id="module-pyscf.pbc.df.df_jk">
-<span id="gdf-helper-functions"></span><h3><span class="section-number">10.21.5.4.6. </span>GDF helper functions<a class="headerlink" href="#module-pyscf.pbc.df.df_jk" title="Permalink to this headline">¶</a></h3>
+<span id="gdf-helper-functions"></span><h3>GDF helper functions<a class="headerlink" href="#module-pyscf.pbc.df.df_jk" title="Permalink to this headline">¶</a></h3>
 <p>Density fitting with Gaussian basis
 Ref:
 J. Chem. Phys. 147, 164119 (2017)</p>
+<dl class="py function">
+<dt id="pyscf.pbc.df.df_jk.density_fit">
+<code class="sig-prename descclassname">pyscf.pbc.df.df_jk.</code><code class="sig-name descname">density_fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em>, <em class="sig-param"><span class="n">auxbasis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mesh</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">with_df</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/df/df_jk.html#density_fit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.df.df_jk.density_fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generte density-fitting SCF object</p>
+<dl>
+<dt>Args:</dt><dd><dl class="simple">
+<dt>auxbasis<span class="classifier">str or basis dict</span></dt><dd><p>Same format to the input attribute mol.basis.  If auxbasis is
+None, auxiliary basis based on AO basis (if possible) or
+even-tempered Gaussian basis will be used.</p>
+</dd>
+<dt>mesh<span class="classifier">tuple</span></dt><dd><p>number of grids in each direction</p>
+</dd>
+</dl>
+<p>with_df : DF object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyscf.pbc.df.df_jk.get_jk">
+<code class="sig-prename descclassname">pyscf.pbc.df.df_jk.</code><code class="sig-name descname">get_jk</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mydf</span></em>, <em class="sig-param"><span class="n">dm</span></em>, <em class="sig-param"><span class="n">hermi</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">kpt</span><span class="o">=</span><span class="default_value">array([0.0, 0.0, 0.0])</span></em>, <em class="sig-param"><span class="n">kpts_band</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">with_j</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">with_k</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">exxdiv</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/df/df_jk.html#get_jk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.df.df_jk.get_jk" title="Permalink to this definition">¶</a></dt>
+<dd><p>JK for given k-point</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyscf.pbc.df.df_jk.zdotCN">
+<code class="sig-prename descclassname">pyscf.pbc.df.df_jk.</code><code class="sig-name descname">zdotCN</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">aR</span></em>, <em class="sig-param"><span class="n">aI</span></em>, <em class="sig-param"><span class="n">bR</span></em>, <em class="sig-param"><span class="n">bI</span></em>, <em class="sig-param"><span class="n">alpha</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">cR</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cI</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">beta</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/df/df_jk.html#zdotCN"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.df.df_jk.zdotCN" title="Permalink to this definition">¶</a></dt>
+<dd><p>c = a.conj()*b</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyscf.pbc.df.df_jk.zdotNC">
+<code class="sig-prename descclassname">pyscf.pbc.df.df_jk.</code><code class="sig-name descname">zdotNC</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">aR</span></em>, <em class="sig-param"><span class="n">aI</span></em>, <em class="sig-param"><span class="n">bR</span></em>, <em class="sig-param"><span class="n">bI</span></em>, <em class="sig-param"><span class="n">alpha</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">cR</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cI</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">beta</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/df/df_jk.html#zdotNC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.df.df_jk.zdotNC" title="Permalink to this definition">¶</a></dt>
+<dd><p>c = a*b.conj()</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pyscf.pbc.df.df_jk.zdotNN">
+<code class="sig-prename descclassname">pyscf.pbc.df.df_jk.</code><code class="sig-name descname">zdotNN</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">aR</span></em>, <em class="sig-param"><span class="n">aI</span></em>, <em class="sig-param"><span class="n">bR</span></em>, <em class="sig-param"><span class="n">bI</span></em>, <em class="sig-param"><span class="n">alpha</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">cR</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cI</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">beta</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/df/df_jk.html#zdotNN"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.df.df_jk.zdotNN" title="Permalink to this definition">¶</a></dt>
+<dd><p>c = a*b</p>
+</dd></dl>
+
 <span class="target" id="module-pyscf.pbc.df.df_ao2mo"></span></div>
 <div class="section" id="mdf-class">
-<h3><span class="section-number">10.21.5.4.7. </span>MDF class<a class="headerlink" href="#mdf-class" title="Permalink to this headline">¶</a></h3>
+<h3>MDF class<a class="headerlink" href="#mdf-class" title="Permalink to this headline">¶</a></h3>
 <dl class="py class">
 <dt id="pyscf.pbc.df.mdf.MDF">
 <em class="property">class </em><code class="sig-prename descclassname">pyscf.pbc.df.mdf.</code><code class="sig-name descname">MDF</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cell</span></em>, <em class="sig-param"><span class="n">kpts</span><span class="o">=</span><span class="default_value">array([[0.0, 0.0, 0.0]])</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/df/mdf.html#MDF"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.df.mdf.MDF" title="Permalink to this definition">¶</a></dt>
@@ -736,7 +786,7 @@ J. Chem. Phys. 147, 164119 (2017)</p>
 
 </div>
 <div class="section" id="module-pyscf.pbc.df.mdf_jk">
-<span id="mdf-helper-functions"></span><h3><span class="section-number">10.21.5.4.8. </span>MDF helper functions<a class="headerlink" href="#module-pyscf.pbc.df.mdf_jk" title="Permalink to this headline">¶</a></h3>
+<span id="mdf-helper-functions"></span><h3>MDF helper functions<a class="headerlink" href="#module-pyscf.pbc.df.mdf_jk" title="Permalink to this headline">¶</a></h3>
 <p>Exact density fitting with Gaussian and planewaves
 Ref:
 J. Chem. Phys. 147, 164119 (2017)</p>
@@ -752,10 +802,10 @@ J. Chem. Phys. 147, 164119 (2017)</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="tdscf.html" class="btn btn-neutral float-right" title="10.21.6. pbc.tdscf — TDHF and TDDFT with periodic boundary conditions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="tdscf.html" class="btn btn-neutral float-right" title="pbc.tdscf — TDHF and TDDFT with periodic boundary conditions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="dft.html" class="btn btn-neutral float-left" title="10.21.4. pbc.dft — DFT with PBCs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="dft.html" class="btn btn-neutral float-left" title="pbc.dft — DFT with PBCs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

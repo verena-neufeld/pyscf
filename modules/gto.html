@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>10.12. gto — Molecular structure and GTO basis &mdash; PySCF 1.7.5 documentation</title>
+  <title>gto — Molecular structure and GTO basis &mdash; PySCF 1.7.6 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="10.13. gw — Molecular G0W0" href="gw.html" />
-    <link rel="prev" title="10.11. grad — Analytical nuclear gradients" href="grad.html" /> 
+    <link rel="next" title="gw — Molecular G0W0" href="gw.html" />
+    <link rel="prev" title="grad — Analytical nuclear gradients" href="grad.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,70 +86,79 @@
               
             
             
-              <ul class="current">
+              <p class="caption"><span class="caption-text">User documentation</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">1. An overview of PySCF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../version.html">2. Version history</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../code-rule.html">4. Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../benchmark.html">5. Benchmark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">6. Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../theory.html">7. Theoretical methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced.html">8. Miscellaneous</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../interface.html">9. Interfaces</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../modules.html">10. Main modules</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="adc.html">10.1. <code class="xref py py-mod docutils literal notranslate"><span class="pre">adc</span></code> — Algebraic diagrammatic construction (ADC) scheme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ao2mo.html">10.2. <code class="xref py py-mod docutils literal notranslate"><span class="pre">ao2mo</span></code> — Integral transformations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cc.html">10.3. <code class="xref py py-mod docutils literal notranslate"><span class="pre">cc</span></code> — Coupled cluster</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ccn.html">10.4. <code class="xref py py-mod docutils literal notranslate"><span class="pre">ccn</span></code> — Auto-generated coupled cluster of arbitrary order</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ci.html">10.5. <code class="xref py py-mod docutils literal notranslate"><span class="pre">ci</span></code> — Configuration interaction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data.html">10.6. <code class="xref py py-mod docutils literal notranslate"><span class="pre">data</span></code> — Data for constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="df.html">10.7. <code class="xref py py-mod docutils literal notranslate"><span class="pre">df</span></code> — Density fitting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dft.html">10.8. <code class="xref py py-mod docutils literal notranslate"><span class="pre">dft</span></code> — Density functional theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="doci.html">10.9. <code class="xref py py-mod docutils literal notranslate"><span class="pre">doci</span></code> — Doubly occupied configuration interaction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fci.html">10.10. <code class="xref py py-mod docutils literal notranslate"><span class="pre">fci</span></code> — Full configuration interaction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="grad.html">10.11. <code class="xref py py-mod docutils literal notranslate"><span class="pre">grad</span></code> — Analytical nuclear gradients</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">10.12. <code class="xref py py-mod docutils literal notranslate"><span class="pre">gto</span></code> — Molecular structure and GTO basis</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#examples">10.12.1. Examples</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#input">10.12.2. Input</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#geometry">10.12.2.1. Geometry</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#input-basis">10.12.2.2. Input Basis</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ecp">10.12.2.3. ECP</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#command-line">10.12.2.4. Command line</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#spin-and-charge">10.12.2.5. Spin and charge</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#symmetry">10.12.2.6. Symmetry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../benchmark.html">4. Benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">5. Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../theory.html">6. Theoretical methods</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../code-rule.html">Code standard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop/scf_developer.html">Self-consistent field (SCF) methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop/dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced.html">Miscellaneous</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../modules.html">Main modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="adc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">adc</span></code> — Algebraic diagrammatic construction (ADC) scheme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ao2mo.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ao2mo</span></code> — Integral transformations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cc</span></code> — Coupled cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ccn.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ccn</span></code> — Auto-generated coupled cluster of arbitrary order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ci</span></code> — Configuration interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">data</span></code> — Data for constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="df.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">df</span></code> — Density fitting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dft.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dft</span></code> — Density functional theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doci.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">doci</span></code> — Doubly occupied configuration interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fci.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fci</span></code> — Full configuration interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grad.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">grad</span></code> — Analytical nuclear gradients</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gto</span></code> — Molecular structure and GTO basis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#input">Input</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#geometry">Geometry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#input-basis">Input Basis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ecp">ECP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#command-line">Command line</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#spin-and-charge">Spin and charge</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#symmetry">Symmetry</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#program-reference">10.12.3. Program reference</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#mole">10.12.3.1. mole</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.gto.moleintor">10.12.3.2. moleintor</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#basis">10.12.3.3. basis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#program-reference">Program reference</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mole">mole</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.gto.moleintor">moleintor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#basis">basis</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="gw.html">10.13. <code class="xref py py-mod docutils literal notranslate"><span class="pre">gw</span></code> — Molecular G0W0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hci.html">10.14. <code class="xref py py-mod docutils literal notranslate"><span class="pre">hci</span></code> — Heat-bath selected CI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hessian.html">10.15. <code class="xref py py-mod docutils literal notranslate"><span class="pre">hessian</span></code> — Analytical nuclear Hessian</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lib.html">10.16. <code class="xref py py-mod docutils literal notranslate"><span class="pre">lib</span></code> — Helper functions, parameters, and C extensions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lo.html">10.17. <code class="xref py py-mod docutils literal notranslate"><span class="pre">lo</span></code> — Orbital localization and analysis tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mcscf.html">10.18. <code class="xref py py-mod docutils literal notranslate"><span class="pre">mcscf</span></code> — Multi-configurational self-consistent field</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mp.html">10.19. <code class="xref py py-mod docutils literal notranslate"><span class="pre">mp</span></code> — Second-Order Møller–Plesset Perturbation Theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mrpt.html">10.20. <code class="xref py py-mod docutils literal notranslate"><span class="pre">mrpt</span></code> — Multi-reference perturbation theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pbc.html">10.21. <code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc</span></code> — Periodic boundary conditions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="prop.html">10.22. <code class="xref py py-mod docutils literal notranslate"><span class="pre">prop</span></code> — Molecular properties</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qmmm.html">10.23. <code class="xref py py-mod docutils literal notranslate"><span class="pre">qmmm</span></code> — QM/MM interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rt.html">10.24. <code class="xref py py-mod docutils literal notranslate"><span class="pre">rt</span></code> — Real-time time-dependent density functional theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="scf.html">10.25. <code class="xref py py-mod docutils literal notranslate"><span class="pre">scf</span></code> — Self-consistent field methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="semiempirical.html">10.26. <code class="xref py py-mod docutils literal notranslate"><span class="pre">semiempirical</span></code> — Semiempirical methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sgx.html">10.27. <code class="xref py py-mod docutils literal notranslate"><span class="pre">sgx</span></code> — Pseudo-spectral methods (COSX, PS, SN-K)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="solvent.html">10.28. <code class="xref py py-mod docutils literal notranslate"><span class="pre">solvent</span></code> — Solvent methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="soscf.html">10.29. <code class="xref py py-mod docutils literal notranslate"><span class="pre">soscf</span></code> — Second order SCF solver</a></li>
-<li class="toctree-l2"><a class="reference internal" href="symm.html">10.30. <code class="xref py py-mod docutils literal notranslate"><span class="pre">symm</span></code> – Point group symmetry and spin symmetry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tdscf.html">10.31. <code class="xref py py-mod docutils literal notranslate"><span class="pre">tdscf</span></code> — TDHF and TDDFT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tools.html">10.32. <code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> — Useful tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="x2c.html">10.33. <code class="xref py py-mod docutils literal notranslate"><span class="pre">x2c</span></code> — exact-two-component approach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gw.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gw</span></code> — Molecular G0W0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hci.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hci</span></code> — Heat-bath selected CI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hessian.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hessian</span></code> — Analytical nuclear Hessian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">lib</span></code> — Helper functions, parameters, and C extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lo.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">lo</span></code> — Orbital localization and analysis tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mcscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mcscf</span></code> — Multi-configurational self-consistent field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mp</span></code> — Second-Order Møller–Plesset Perturbation Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mrpt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mrpt</span></code> — Multi-reference perturbation theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pbc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc</span></code> — Periodic boundary conditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prop.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">prop</span></code> — Molecular properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qmmm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">qmmm</span></code> — QM/MM interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">rt</span></code> — Real-time time-dependent density functional theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scf</span></code> — Self-consistent field methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="semiempirical.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">semiempirical</span></code> — Semiempirical methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sgx.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sgx</span></code> — Pseudo-spectral methods (COSX, PS, SN-K)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="solvent.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">solvent</span></code> — Solvent methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">soscf</span></code> — Second order SCF solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">symm</span></code> – Point group symmetry and spin symmetry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tdscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tdscf</span></code> — TDHF and TDDFT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> — Useful tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x2c.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">x2c</span></code> — exact-two-component approach</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../interface.html">Interfaces</a></li>
 </ul>
 
             
@@ -196,9 +205,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../modules.html"><span class="section-number">10. </span>Main modules</a> &raquo;</li>
+          <li><a href="../modules.html">Main modules</a> &raquo;</li>
         
-      <li><span class="section-number">10.12. </span><code class="xref py py-mod docutils literal notranslate"><span class="pre">gto</span></code> — Molecular structure and GTO basis</li>
+      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">gto</span></code> — Molecular structure and GTO basis</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -218,14 +227,14 @@
            <div itemprop="articleBody">
             
   <div class="section" id="gto-molecular-structure-and-gto-basis">
-<span id="gto"></span><h1><span class="section-number">10.12. </span><code class="xref py py-mod docutils literal notranslate"><span class="pre">gto</span></code> — Molecular structure and GTO basis<a class="headerlink" href="#gto-molecular-structure-and-gto-basis" title="Permalink to this headline">¶</a></h1>
+<span id="gto"></span><h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">gto</span></code> — Molecular structure and GTO basis<a class="headerlink" href="#gto-molecular-structure-and-gto-basis" title="Permalink to this headline">¶</a></h1>
 <p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">gto</span></code> module provides the functions to parse the command line options,
 the molecular geometry and format the basic functions for <code class="docutils literal notranslate"><span class="pre">libcint</span></code>
 integral library.  In <code class="xref py py-mod docutils literal notranslate"><span class="pre">gto.mole</span></code>, a basic class <code class="xref py py-class docutils literal notranslate"><span class="pre">Mole</span></code> is
 defined to hold the global parameters, which will be used throughout the
 package.</p>
 <div class="section" id="examples">
-<h2><span class="section-number">10.12.1. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/gto/00-input_mole.py">examples/gto/00-input_mole.py</a></p></li>
 <li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/gto/01-input_geometry.py">examples/gto/01-input_geometry.py</a></p></li>
@@ -253,9 +262,9 @@ package.</p>
 </ul>
 </div>
 <div class="section" id="input">
-<h2><span class="section-number">10.12.2. </span>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<h2>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="geometry">
-<h3><span class="section-number">10.12.2.1. </span>Geometry<a class="headerlink" href="#geometry" title="Permalink to this headline">¶</a></h3>
+<h3>Geometry<a class="headerlink" href="#geometry" title="Permalink to this headline">¶</a></h3>
 <p>There are multiple ways to input molecular geometry. The internal format of
 <code class="xref py py-attr docutils literal notranslate"><span class="pre">Mole.atom</span></code> is a python list:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">atom</span> <span class="o">=</span> <span class="p">[[</span><span class="n">atom1</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)],</span>
@@ -341,7 +350,7 @@ each atom:</p>
 </div>
 </div>
 <div class="section" id="input-basis">
-<span id="id1"></span><h3><span class="section-number">10.12.2.2. </span>Input Basis<a class="headerlink" href="#input-basis" title="Permalink to this headline">¶</a></h3>
+<span id="id1"></span><h3>Input Basis<a class="headerlink" href="#input-basis" title="Permalink to this headline">¶</a></h3>
 <p>There are various ways to input basis sets.  Besides the input of universal
 basis string and basis <code class="docutils literal notranslate"><span class="pre">dict</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mol</span><span class="o">.</span><span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;sto3g&#39;</span>
@@ -391,7 +400,7 @@ the third atom:</p>
 </div>
 </div>
 <div class="section" id="ecp">
-<h3><span class="section-number">10.12.2.3. </span>ECP<a class="headerlink" href="#ecp" title="Permalink to this headline">¶</a></h3>
+<h3>ECP<a class="headerlink" href="#ecp" title="Permalink to this headline">¶</a></h3>
 <p>Effective core potential (ECP) can be specified with the attribute <code class="xref py py-attr docutils literal notranslate"><span class="pre">ecp</span></code>
 of <code class="xref py py-attr docutils literal notranslate"><span class="pre">Mole</span></code>. Scalar type ECP is available for all molecular and crystal
 methods. The built-in scalar ECP datasets include</p>
@@ -508,7 +517,7 @@ and <a class="reference external" href="https://nwchemgit.github.io/ECP.html">NW
 </div>
 </div>
 <div class="section" id="command-line">
-<h3><span class="section-number">10.12.2.4. </span>Command line<a class="headerlink" href="#command-line" title="Permalink to this headline">¶</a></h3>
+<h3>Command line<a class="headerlink" href="#command-line" title="Permalink to this headline">¶</a></h3>
 <p>Some of the input variables can be passed from command line:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python example.py -o /path/to/my_log.txt -m 1000
 </pre></div>
@@ -525,7 +534,7 @@ make the input parser ignore the command line arguments, you can call the
 second 0 prevent <code class="xref py py-func docutils literal notranslate"><span class="pre">build()</span></code> parsing command line.</p>
 </div>
 <div class="section" id="spin-and-charge">
-<h3><span class="section-number">10.12.2.5. </span>Spin and charge<a class="headerlink" href="#spin-and-charge" title="Permalink to this headline">¶</a></h3>
+<h3>Spin and charge<a class="headerlink" href="#spin-and-charge" title="Permalink to this headline">¶</a></h3>
 <p>Charge and spin multiplicity can be assigned to <code class="xref py py-class docutils literal notranslate"><span class="pre">Mole</span></code> object:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mol</span><span class="o">.</span><span class="n">charge</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">mol</span><span class="o">.</span><span class="n">spin</span> <span class="o">=</span> <span class="mi">1</span>
@@ -557,7 +566,7 @@ of electrons needs to be defined directly:</p>
 </div>
 </div>
 <div class="section" id="symmetry">
-<h3><span class="section-number">10.12.2.6. </span>Symmetry<a class="headerlink" href="#symmetry" title="Permalink to this headline">¶</a></h3>
+<h3>Symmetry<a class="headerlink" href="#symmetry" title="Permalink to this headline">¶</a></h3>
 <p>Point group symmetry information is held in <code class="xref py py-class docutils literal notranslate"><span class="pre">Mole</span></code> object.  The symmetry
 module (<a class="reference internal" href="symm.html#symm"><span class="std std-ref">symm – Point group symmetry and spin symmetry</span></a>) of PySCF program can detect arbitrary point groups. In the
 SCF calculations, PySCF program supports linear molecular symmetry
@@ -636,9 +645,9 @@ in <a class="reference internal" href="symm.html#symm"><span class="std std-ref"
 </div>
 </div>
 <div class="section" id="program-reference">
-<h2><span class="section-number">10.12.3. </span>Program reference<a class="headerlink" href="#program-reference" title="Permalink to this headline">¶</a></h2>
+<h2>Program reference<a class="headerlink" href="#program-reference" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="mole">
-<h3><span class="section-number">10.12.3.1. </span>mole<a class="headerlink" href="#mole" title="Permalink to this headline">¶</a></h3>
+<h3>mole<a class="headerlink" href="#mole" title="Permalink to this headline">¶</a></h3>
 <p><code class="xref py py-class docutils literal notranslate"><span class="pre">Mole</span></code> class handles three layers: input, internal format, libcint arguments.
 The relationship of the three layers are:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">atom</span> <span class="p">(</span><span class="nb">input</span><span class="p">)</span>  <span class="o">&lt;=&gt;</span>  <span class="o">.</span><span class="n">_atom</span> <span class="p">(</span><span class="k">for</span> <span class="n">python</span><span class="p">)</span> <span class="o">&lt;=&gt;</span> <span class="o">.</span><span class="n">_atm</span> <span class="p">(</span><span class="k">for</span> <span class="n">libcint</span><span class="p">)</span>
@@ -716,8 +725,6 @@ Default is point nuclear model.</p>
 It is needed by pyscf.prop module and submodules.</p>
 </dd>
 <dt>cart<span class="classifier">boolean</span></dt><dd><p>Using Cartesian GTO basis and integrals (6d,10f,15g)</p>
-</dd>
-<dt>magmom<span class="classifier">list</span></dt><dd><p>Collinear spin of each atom. Default is [0.0,]*natm</p>
 </dd>
 </dl>
 <p>** Following attributes are generated by <a class="reference internal" href="#id75" title="pyscf.gto.mole.Mole.build"><code class="xref py py-func docutils literal notranslate"><span class="pre">Mole.build()</span></code></a> **</p>
@@ -1256,7 +1263,7 @@ If kappa is 0, return 4l+2</p>
 
 <dl class="py method">
 <dt id="pyscf.gto.mole.Mole.build">
-<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dump_input</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">parse_arg</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_memory</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">atom</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">basis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">nucmod</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ecp</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">charge</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">spin</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">symmetry</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">symmetry_subgroup</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cart</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">magmom</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/gto/mole.html#Mole.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.gto.mole.Mole.build" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dump_input</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">parse_arg</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_memory</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">atom</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">basis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">nucmod</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ecp</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">charge</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">spin</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">symmetry</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">symmetry_subgroup</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cart</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/gto/mole.html#Mole.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.gto.mole.Mole.build" title="Permalink to this definition">¶</a></dt>
 <dd><p>Setup moleclue and initialize some control parameters.  Whenever you
 change the value of the attributes of <a class="reference internal" href="#id0" title="pyscf.gto.mole.Mole"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mole</span></code></a>, you need call
 this function to refresh the internal data of Mole.</p>
@@ -1288,8 +1295,6 @@ If given, overwrite <code class="xref py py-attr docutils literal notranslate"><
 </dd>
 <dt>symmetry<span class="classifier">bool or str</span></dt><dd><p>Whether to use symmetry.  If given a string of point group
 name, the given point group symmetry will be used.</p>
-</dd>
-<dt>magmom<span class="classifier">list</span></dt><dd><p>Collinear spin of each atom. Default is [0.0,]*natm</p>
 </dd>
 </dl>
 </dd>
@@ -1976,7 +1981,7 @@ complete list of available 1-electron integral names</p>
 
 <dl class="py method">
 <dt id="pyscf.gto.mole.Mole.kernel">
-<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dump_input</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">parse_arg</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_memory</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">atom</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">basis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">nucmod</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ecp</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">charge</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">spin</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">symmetry</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">symmetry_subgroup</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cart</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">magmom</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.gto.mole.Mole.kernel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dump_input</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">parse_arg</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_memory</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">atom</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">basis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">nucmod</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ecp</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">charge</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">spin</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">symmetry</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">symmetry_subgroup</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cart</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.gto.mole.Mole.kernel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Setup moleclue and initialize some control parameters.  Whenever you
 change the value of the attributes of <a class="reference internal" href="#id0" title="pyscf.gto.mole.Mole"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mole</span></code></a>, you need call
 this function to refresh the internal data of Mole.</p>
@@ -2008,8 +2013,6 @@ If given, overwrite <code class="xref py py-attr docutils literal notranslate"><
 </dd>
 <dt>symmetry<span class="classifier">bool or str</span></dt><dd><p>Whether to use symmetry.  If given a string of point group
 name, the given point group symmetry will be used.</p>
-</dd>
-<dt>magmom<span class="classifier">list</span></dt><dd><p>Collinear spin of each atom. Default is [0.0,]*natm</p>
 </dd>
 </dl>
 </dd>
@@ -2760,7 +2763,7 @@ or formatted strings based on the argument “fmt”</p>
 
 <dl class="py function">
 <dt id="pyscf.gto.mole.atom_types">
-<code class="sig-prename descclassname">pyscf.gto.mole.</code><code class="sig-name descname">atom_types</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">atoms</span></em>, <em class="sig-param"><span class="n">basis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">magmom</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/gto/mole.html#atom_types"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.gto.mole.atom_types" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">pyscf.gto.mole.</code><code class="sig-name descname">atom_types</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">atoms</span></em>, <em class="sig-param"><span class="n">basis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/gto/mole.html#atom_types"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.gto.mole.atom_types" title="Permalink to this definition">¶</a></dt>
 <dd><p>symmetry inequivalent atoms</p>
 </dd></dl>
 
@@ -3800,8 +3803,6 @@ It is needed by pyscf.prop module and submodules.</p>
 </dd>
 <dt>cart<span class="classifier">boolean</span></dt><dd><p>Using Cartesian GTO basis and integrals (6d,10f,15g)</p>
 </dd>
-<dt>magmom<span class="classifier">list</span></dt><dd><p>Collinear spin of each atom. Default is [0.0,]*natm</p>
-</dd>
 </dl>
 <p>** Following attributes are generated by <a class="reference internal" href="#id75" title="pyscf.gto.mole.Mole.build"><code class="xref py py-func docutils literal notranslate"><span class="pre">Mole.build()</span></code></a> **</p>
 <dl class="simple">
@@ -4339,7 +4340,7 @@ If kappa is 0, return 4l+2</p>
 
 <dl class="py method">
 <dt id="id75">
-<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dump_input</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">parse_arg</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_memory</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">atom</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">basis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">nucmod</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ecp</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">charge</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">spin</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">symmetry</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">symmetry_subgroup</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cart</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">magmom</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/gto/mole.html#Mole.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id75" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">build</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dump_input</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">parse_arg</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_memory</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">atom</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">basis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">nucmod</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ecp</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">charge</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">spin</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">symmetry</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">symmetry_subgroup</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cart</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/gto/mole.html#Mole.build"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id75" title="Permalink to this definition">¶</a></dt>
 <dd><p>Setup moleclue and initialize some control parameters.  Whenever you
 change the value of the attributes of <a class="reference internal" href="#id0" title="pyscf.gto.mole.Mole"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mole</span></code></a>, you need call
 this function to refresh the internal data of Mole.</p>
@@ -4371,8 +4372,6 @@ If given, overwrite <code class="xref py py-attr docutils literal notranslate"><
 </dd>
 <dt>symmetry<span class="classifier">bool or str</span></dt><dd><p>Whether to use symmetry.  If given a string of point group
 name, the given point group symmetry will be used.</p>
-</dd>
-<dt>magmom<span class="classifier">list</span></dt><dd><p>Collinear spin of each atom. Default is [0.0,]*natm</p>
 </dd>
 </dl>
 </dd>
@@ -5059,7 +5058,7 @@ complete list of available 1-electron integral names</p>
 
 <dl class="py method">
 <dt id="id133">
-<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dump_input</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">parse_arg</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_memory</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">atom</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">basis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">nucmod</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ecp</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">charge</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">spin</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">symmetry</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">symmetry_subgroup</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cart</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">magmom</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#id133" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dump_input</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">parse_arg</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_memory</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">atom</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">basis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">unit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">nucmod</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ecp</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">charge</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">spin</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">symmetry</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">symmetry_subgroup</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cart</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#id133" title="Permalink to this definition">¶</a></dt>
 <dd><p>Setup moleclue and initialize some control parameters.  Whenever you
 change the value of the attributes of <a class="reference internal" href="#id0" title="pyscf.gto.mole.Mole"><code class="xref py py-class docutils literal notranslate"><span class="pre">Mole</span></code></a>, you need call
 this function to refresh the internal data of Mole.</p>
@@ -5091,8 +5090,6 @@ If given, overwrite <code class="xref py py-attr docutils literal notranslate"><
 </dd>
 <dt>symmetry<span class="classifier">bool or str</span></dt><dd><p>Whether to use symmetry.  If given a string of point group
 name, the given point group symmetry will be used.</p>
-</dd>
-<dt>magmom<span class="classifier">list</span></dt><dd><p>Collinear spin of each atom. Default is [0.0,]*natm</p>
 </dd>
 </dl>
 </dd>
@@ -5773,7 +5770,7 @@ range-separated Coulomb operator.</p>
 
 </div>
 <div class="section" id="module-pyscf.gto.moleintor">
-<span id="moleintor"></span><span id="gto-moleintor"></span><h3><span class="section-number">10.12.3.2. </span>moleintor<a class="headerlink" href="#module-pyscf.gto.moleintor" title="Permalink to this headline">¶</a></h3>
+<span id="moleintor"></span><span id="gto-moleintor"></span><h3>moleintor<a class="headerlink" href="#module-pyscf.gto.moleintor" title="Permalink to this headline">¶</a></h3>
 <p>A low level interface to libcint library. It’s recommended to use the
 Mole.intor method to drive the integral evaluation funcitons.</p>
 <dl class="py function">
@@ -6277,9 +6274,9 @@ Mole.intor method to drive the integral evaluation funcitons.</p>
 
 </div>
 <div class="section" id="basis">
-<span id="gto-basis"></span><h3><span class="section-number">10.12.3.3. </span>basis<a class="headerlink" href="#basis" title="Permalink to this headline">¶</a></h3>
+<span id="gto-basis"></span><h3>basis<a class="headerlink" href="#basis" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="internal-format">
-<h4><span class="section-number">10.12.3.3.1. </span>Internal format<a class="headerlink" href="#internal-format" title="Permalink to this headline">¶</a></h4>
+<h4>Internal format<a class="headerlink" href="#internal-format" title="Permalink to this headline">¶</a></h4>
 <p>This module loads basis set and ECP data from basis database and parse the basis
 (mostly in NWChem format) and finally convert to internal format.  The internal
 format of basis set is:</p>
@@ -6398,10 +6395,10 @@ Empty lines, or the lines started with #, or the lines of “BASIS SET” and
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="gw.html" class="btn btn-neutral float-right" title="10.13. gw — Molecular G0W0" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="gw.html" class="btn btn-neutral float-right" title="gw — Molecular G0W0" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="grad.html" class="btn btn-neutral float-left" title="10.11. grad — Analytical nuclear gradients" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="grad.html" class="btn btn-neutral float-left" title="grad — Analytical nuclear gradients" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>8. Miscellaneous &mdash; PySCF 1.7.5 documentation</title>
+  <title>Miscellaneous &mdash; PySCF 1.7.6 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="9. Interfaces" href="interface.html" />
-    <link rel="prev" title="7.12.3. Pseudopotentials" href="theory/pbc/pp.html" /> 
+    <link rel="next" title="Main modules" href="modules.html" />
+    <link rel="prev" title="Density functional theory (DFT)" href="develop/dft_developer.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,26 +86,34 @@
               
             
             
-              <ul class="current">
+              <p class="caption"><span class="caption-text">User documentation</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">1. An overview of PySCF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="version.html">2. Version history</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-rule.html">4. Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmark.html">5. Benchmark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html">6. Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="theory.html">7. Theoretical methods</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">8. Miscellaneous</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#decoration-pipe">8.1. Decoration pipe</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#scf">8.1.1. SCF</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#fci">8.1.2. FCI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#casscf">8.1.3. CASSCF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmark.html">4. Benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">5. Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theory.html">6. Theoretical methods</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="code-rule.html">Code standard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="develop/scf_developer.html">Self-consistent field (SCF) methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="develop/dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Miscellaneous</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#decoration-pipe">Decoration pipe</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#scf">SCF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fci">FCI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#casscf">CASSCF</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#customizing-hamiltonian">8.2. Customizing Hamiltonian</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="interface.html">9. Interfaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">10. Main modules</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Main modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interface.html">Interfaces</a></li>
 </ul>
 
             
@@ -152,7 +160,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li><span class="section-number">8. </span>Miscellaneous</li>
+      <li>Miscellaneous</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -172,11 +180,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="miscellaneous">
-<span id="advanced"></span><h1><span class="section-number">8. </span>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permalink to this headline">¶</a></h1>
+<span id="advanced"></span><h1>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="decoration-pipe">
-<h2><span class="section-number">8.1. </span>Decoration pipe<a class="headerlink" href="#decoration-pipe" title="Permalink to this headline">¶</a></h2>
+<h2>Decoration pipe<a class="headerlink" href="#decoration-pipe" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="scf">
-<h3><span class="section-number">8.1.1. </span>SCF<a class="headerlink" href="#scf" title="Permalink to this headline">¶</a></h3>
+<h3>SCF<a class="headerlink" href="#scf" title="Permalink to this headline">¶</a></h3>
 <p>There are three decoration function for Hartree-Fock class
 <code class="xref py py-func docutils literal notranslate"><span class="pre">density_fit()</span></code>, <code class="xref py py-func docutils literal notranslate"><span class="pre">sfx2c()</span></code>, <code class="xref py py-func docutils literal notranslate"><span class="pre">newton()</span></code> to apply density
 fitting, scalar relativistic correction and second order SCF.
@@ -298,13 +306,13 @@ effects.  For example</p>
 </div>
 </div>
 <div class="section" id="fci">
-<h3><span class="section-number">8.1.2. </span>FCI<a class="headerlink" href="#fci" title="Permalink to this headline">¶</a></h3>
+<h3>FCI<a class="headerlink" href="#fci" title="Permalink to this headline">¶</a></h3>
 <p>Direct FCI solver cannot guarantee the CI wave function to be the spin
 eigenfunction.  Decoration function <code class="xref py py-func docutils literal notranslate"><span class="pre">fci.addons.fix_spin_()</span></code> can
 fix this issue.</p>
 </div>
 <div class="section" id="casscf">
-<h3><span class="section-number">8.1.3. </span>CASSCF<a class="headerlink" href="#casscf" title="Permalink to this headline">¶</a></h3>
+<h3>CASSCF<a class="headerlink" href="#casscf" title="Permalink to this headline">¶</a></h3>
 <p><code class="xref py py-func docutils literal notranslate"><span class="pre">mcscf.density_fit()</span></code>, and <code class="xref py py-func docutils literal notranslate"><span class="pre">scf.sfx2c()</span></code> can be used to decorate
 CASSCF/CASCI class.  Like the ordering problem in SCF decoration
 operation, the density fitting for CASSCF solver only affect the CASSCF
@@ -368,116 +376,6 @@ Hamiltonian.  For example</p>
 </div>
 </div>
 </div>
-<div class="section" id="customizing-hamiltonian">
-<h2><span class="section-number">8.2. </span>Customizing Hamiltonian<a class="headerlink" href="#customizing-hamiltonian" title="Permalink to this headline">¶</a></h2>
-<p>PySCF supports user-defined Hamiltonian for many modules.  To customize
-Hamiltonian for Hartree-Fock, CASSCF, MP2, CCSD, etc, one need to replace the
-methods <code class="xref py py-func docutils literal notranslate"><span class="pre">get_hcore()</span></code>, <code class="xref py py-func docutils literal notranslate"><span class="pre">get_ovlp()</span></code> and attribute <code class="xref py py-attr docutils literal notranslate"><span class="pre">_eri</span></code> of SCF class for
-new Hamiltonian.  E.g. the user-defined
-Hamiltonian for Hartree-Fock</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
-<span class="c1">#</span>
-<span class="c1"># Author: Qiming Sun &lt;osirpt.sun@gmail.com&gt;</span>
-<span class="c1">#</span>
-
-<span class="kn">import</span> <span class="nn">numpy</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">ao2mo</span>
-
-<span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">Customizing Hamiltonian for SCF module.</span>
-
-<span class="sd">Three steps to define Hamiltonian for SCF:</span>
-<span class="sd">1. Specify the number of electrons. (Note mole object must be &quot;built&quot; before doing this step)</span>
-<span class="sd">2. Overwrite three attributes of scf object</span>
-<span class="sd">    .get_hcore</span>
-<span class="sd">    .get_ovlp</span>
-<span class="sd">    ._eri</span>
-<span class="sd">3. Specify initial guess (to overwrite the default atomic density initial guess)</span>
-
-<span class="sd">Note you will see warning message on the screen:</span>
-
-<span class="sd">        Overwritten attributes  get_ovlp get_hcore  of &lt;class &#39;pyscf.scf.hf.RHF&#39;&gt;</span>
-
-<span class="sd">&#39;&#39;&#39;</span>
-
-<span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">()</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">mol</span><span class="o">.</span><span class="n">nelectron</span> <span class="o">=</span> <span class="n">n</span>
-
-<span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
-<span class="n">h1</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">h1</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">h1</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span>
-<span class="n">h1</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">h1</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span>  <span class="c1"># PBC</span>
-<span class="n">eri</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">eri</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">4.0</span>
-
-<span class="n">mf</span><span class="o">.</span><span class="n">get_hcore</span> <span class="o">=</span> <span class="k">lambda</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">h1</span>
-<span class="n">mf</span><span class="o">.</span><span class="n">get_ovlp</span> <span class="o">=</span> <span class="k">lambda</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">numpy</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-<span class="c1"># ao2mo.restore(8, eri, n) to get 8-fold permutation symmetry of the integrals</span>
-<span class="c1"># ._eri only supports the two-electron integrals in 4-fold or 8-fold symmetry.</span>
-<span class="n">mf</span><span class="o">.</span><span class="n">_eri</span> <span class="o">=</span> <span class="n">ao2mo</span><span class="o">.</span><span class="n">restore</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="n">eri</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
-
-<span class="n">mf</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
-
-<span class="c1"># If you need to run post-HF calculations based on the customized Hamiltonian,</span>
-<span class="c1"># setting incore_anyway=True to ensure the customized Hamiltonian (the _eri</span>
-<span class="c1"># attribute) to be used.  Without this parameter, some post-HF method</span>
-<span class="c1"># (particularly in the MO integral transformation) may ignore the customized</span>
-<span class="c1"># Hamiltonian if memory is not enough.</span>
-<span class="n">mol</span><span class="o">.</span><span class="n">incore_anyway</span> <span class="o">=</span> <span class="kc">True</span>
-</pre></div>
-</div>
-<p>and the user-defined Hamiltonian for CASSCF</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
-<span class="c1">#</span>
-<span class="c1"># Author: Qiming Sun &lt;osirpt.sun@gmail.com&gt;</span>
-<span class="c1">#</span>
-
-<span class="kn">import</span> <span class="nn">numpy</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">ao2mo</span><span class="p">,</span> <span class="n">mcscf</span>
-
-<span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">User-defined Hamiltonian for CASSCF module.</span>
-
-<span class="sd">Defining Hamiltonian once for SCF object, the derivate post-HF method get the</span>
-<span class="sd">Hamiltonian automatically.</span>
-<span class="sd">&#39;&#39;&#39;</span>
-
-<span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">()</span>
-<span class="n">mol</span><span class="o">.</span><span class="n">nelectron</span> <span class="o">=</span> <span class="mi">6</span>
-
-<span class="c1"># incore_anyway=True ensures the customized Hamiltonian (the _eri attribute)</span>
-<span class="c1"># to be used.  Without this parameter, the MO integral transformation may</span>
-<span class="c1"># ignore the customized Hamiltonian if memory is not enough.</span>
-<span class="n">mol</span><span class="o">.</span><span class="n">incore_anyway</span> <span class="o">=</span> <span class="kc">True</span>
-
-<span class="c1">#</span>
-<span class="c1"># 1D anti-PBC Hubbard model at half filling</span>
-<span class="c1">#</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">12</span>
-
-<span class="n">h1</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">h1</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">h1</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span>
-<span class="n">h1</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">h1</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span>
-<span class="n">eri</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="n">eri</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">2.0</span>
-
-<span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
-<span class="n">mf</span><span class="o">.</span><span class="n">get_hcore</span> <span class="o">=</span> <span class="k">lambda</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">h1</span>
-<span class="n">mf</span><span class="o">.</span><span class="n">get_ovlp</span> <span class="o">=</span> <span class="k">lambda</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="n">numpy</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-<span class="n">mf</span><span class="o">.</span><span class="n">_eri</span> <span class="o">=</span> <span class="n">ao2mo</span><span class="o">.</span><span class="n">restore</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="n">eri</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
-<span class="n">mf</span><span class="o">.</span><span class="n">init_guess</span> <span class="o">=</span> <span class="s1">&#39;1e&#39;</span>
-<span class="n">mf</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
-
-<span class="n">mycas</span> <span class="o">=</span> <span class="n">mcscf</span><span class="o">.</span><span class="n">CASSCF</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">mycas</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
 </div>
 
 
@@ -488,10 +386,10 @@ Hamiltonian for Hartree-Fock</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="interface.html" class="btn btn-neutral float-right" title="9. Interfaces" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="modules.html" class="btn btn-neutral float-right" title="Main modules" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="theory/pbc/pp.html" class="btn btn-neutral float-left" title="7.12.3. Pseudopotentials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="develop/dft_developer.html" class="btn btn-neutral float-left" title="Density functional theory (DFT)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

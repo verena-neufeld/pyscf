@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>7.9. Time-dependent Hartree-Fock and Density Functional Theory &mdash; PySCF 1.7.5 documentation</title>
+  <title>6.9. Time-dependent Hartree-Fock and Density Functional Theory &mdash; PySCF 1.7.6 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="7.10. Real-time time-dependent density functional theory" href="rt.html" />
-    <link rel="prev" title="7.8. Multi-configurational self-consistent field (MCSCF)" href="mcscf.html" /> 
+    <link rel="next" title="6.10. Real-time time-dependent density functional theory" href="rt.html" />
+    <link rel="prev" title="6.8. Multi-configuration self-consistent field (MCSCF)" href="mcscf.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,44 +86,52 @@
               
             
             
-              <ul class="current">
+              <p class="caption"><span class="caption-text">User documentation</span></p>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">1. An overview of PySCF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../version.html">2. Version history</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../code-rule.html">4. Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../benchmark.html">5. Benchmark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">6. Tutorial</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../theory.html">7. Theoretical methods</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="scf.html">7.1. Self-consistent field (SCF) methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dft.html">7.2. Density functional theory (DFT)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mp.html">7.3. Second-Order Møller–Plesset Perturbation Theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gw.html">7.4. GW method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ci.html">7.5. Configuration interaction (CI)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cc.html">7.6. Coupled cluster (CC)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="adc.html">7.7. Algebraic diagrammatic construction (ADC) scheme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mcscf.html">7.8. Multi-configurational self-consistent field (MCSCF)</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">7.9. Time-dependent Hartree-Fock and Density Functional Theory</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#introduction">7.9.1. Introduction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#theory">7.9.2. Theory</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#methods">7.9.3. Methods</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#property-calculation">7.9.4. Property calculation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#oscillator-strengths">7.9.4.1. Oscillator strengths</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#transition-moments">7.9.4.2. Transition moments</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#nuclear-gradients">7.9.4.3. Nuclear gradients</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#natural-transition-orbital-analysis">7.9.4.4. Natural transition orbital analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../benchmark.html">4. Benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">5. Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../theory.html">6. Theoretical methods</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="scf.html">6.1. Self-consistent field (SCF) methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dft.html">6.2. Density functional theory (DFT)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mp.html">6.3. Second-Order Møller–Plesset Perturbation Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gw.html">6.4. GW methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci.html">6.5. Configuration interaction (CI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc.html">6.6. Coupled cluster Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adc.html">6.7. Algebraic diagrammatic construction (ADC) scheme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mcscf.html">6.8. Multi-configuration self-consistent field (MCSCF)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.9. Time-dependent Hartree-Fock and Density Functional Theory</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">6.9.1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#theory">6.9.2. Theory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#methods">6.9.3. Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#property-calculation">6.9.4. Property calculation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#oscillator-strengths">6.9.4.1. Oscillator strengths</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#transition-moments">6.9.4.2. Transition moments</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#nuclear-gradients">6.9.4.3. Nuclear gradients</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#natural-transition-orbital-analysis">6.9.4.4. Natural transition orbital analysis</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#references">7.9.5. References</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#references">6.9.5. References</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="rt.html">7.10. Real-time time-dependent density functional theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="eomcc.html">7.11. Equation-of-motion coupled cluster (EOM-CC)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pbc.html">7.12. Periodic boundary conditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rt.html">6.10. Real-time time-dependent density functional theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pbc.html">6.11. Periodic boundary conditions</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced.html">8. Miscellaneous</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../interface.html">9. Interfaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules.html">10. Main modules</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../code-rule.html">Code standard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop/scf_developer.html">Self-consistent field (SCF) methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop/dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced.html">Miscellaneous</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">Main modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interface.html">Interfaces</a></li>
 </ul>
 
             
@@ -170,9 +178,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../theory.html"><span class="section-number">7. </span>Theoretical methods</a> &raquo;</li>
+          <li><a href="../theory.html"><span class="section-number">6. </span>Theoretical methods</a> &raquo;</li>
         
-      <li><span class="section-number">7.9. </span>Time-dependent Hartree-Fock and Density Functional Theory</li>
+      <li><span class="section-number">6.9. </span>Time-dependent Hartree-Fock and Density Functional Theory</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -192,14 +200,15 @@
            <div itemprop="articleBody">
             
   <div class="section" id="time-dependent-hartree-fock-and-density-functional-theory">
-<span id="theory-tdscf"></span><h1><span class="section-number">7.9. </span>Time-dependent Hartree-Fock and Density Functional Theory<a class="headerlink" href="#time-dependent-hartree-fock-and-density-functional-theory" title="Permalink to this headline">¶</a></h1>
+<span id="theory-tdscf"></span><h1><span class="section-number">6.9. </span>Time-dependent Hartree-Fock and Density Functional Theory<a class="headerlink" href="#time-dependent-hartree-fock-and-density-functional-theory" title="Permalink to this headline">¶</a></h1>
 <p><em>Modules</em>: <a class="reference internal" href="../modules/tdscf.html#module-tdscf" title="tdscf: time-dependent Hartree-Fock and density functional theory"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tdscf</span></code></a>, <a class="reference internal" href="../modules/pbc/tdscf.html#module-pbc.tdscf" title="pbc.tdscf: TDHF and TDDFT with periodic boundary conditions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc.tdscf</span></code></a></p>
 <div class="section" id="introduction">
-<h2><span class="section-number">7.9.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.9.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>PySCF implements the time-dependent Hartree-Fock (TDHF) and
-time-dependent density fuctional theory (TDDFT) to compute excite-state energies
+time-dependent density functional theory (TDDFT) (frequency domain)
+linear response theories to compute excited-state energies
 and transition properties in the <a class="reference internal" href="../modules/tdscf.html#module-tdscf" title="tdscf: time-dependent Hartree-Fock and density functional theory"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tdscf</span></code></a> module.
-A minimal example of running a TDDFT calculation is as follows</p>
+A minimal example that runs a TDDFT calculation is as follows</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">dft</span><span class="p">,</span> <span class="n">tddft</span>
 <span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">()</span>
 <span class="n">mol</span><span class="o">.</span><span class="n">build</span><span class="p">(</span>
@@ -223,9 +232,9 @@ A minimal example of running a TDDFT calculation is as follows</p>
 and transition dipole moments of the ten lowest singlet exicted states.</p>
 </div>
 <div class="section" id="theory">
-<h2><span class="section-number">7.9.2. </span>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
-<p>By applying first-order time-dependent perturbation theory to the reference
-HF or KS-DFT state, one can derive the non-Hermitian TDHF or TDDFT equations
+<h2><span class="section-number">6.9.2. </span>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
+<p>Using first-order time-dependent perturbation theory within HF or KS theory,
+one obtains the non-Hermitian TDHF or TDDFT equations for the excitation energies
 <a class="bibtex reference internal" href="#drehea2005" id="id1">[1]</a>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\left(\!\!\begin{array}{ll}
@@ -243,24 +252,19 @@ HF or KS-DFT state, one can derive the non-Hermitian TDHF or TDDFT equations
     \mathbf{X} \\ \mathbf{Y}
 \end{array}\!\!\right) \;,\end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> are the orbital
-hessians which also appear in the stability analysis for reference states (see <a class="reference internal" href="scf.html#stability-analysis"><span class="std std-numref">Section 7.1.5</span></a>),
+hessians which also appear in the stability analysis for reference states (see <a class="reference internal" href="scf.html#stability-analysis"><span class="std std-numref">Section 6.1.5</span></a>),
 <span class="math notranslate nohighlight">\(\omega\)</span> is the excitation energy, and
 <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{Y}\)</span> represent the response of the density matrix.
-In the cases where the system possesses
-degenerate ground states or triplet instabilities, the algorithms used to solve the
+In cases where the system possesses
+a degenerate ground state or has triplet instabilities, the algorithms used to solve the
 above equations may be unstable. This can be solved by applying the Tamm-Dancoff approximation (TDA) <a class="bibtex reference internal" href="#hirhea1999" id="id2">[2]</a>,
 which simply neglects the <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{Y}\)</span> matrices and leads to a
 Hermitian eigenvalue problem</p>
 <div class="math notranslate nohighlight">
 \[\mathbf{AX} = \omega\mathbf{X} \;.\]</div>
-<p>Note that when TDA is applied, TDHF reduces to the same formalism as configuration interaction singles (CIS),
-because the Coulomb operator projected onto the space of singly-excited Slater determinants
-yields terms that are equivalent to the linear response of the HF exchange and Coulomb potentials.
-However, in the case of TDDFT, linear response of the exchange-correlation (XC) potential leads to 2nd order derivative of
-the XC functional, which does not appear in the ground-state DFT.</p>
 </div>
 <div class="section" id="methods">
-<h2><span class="section-number">7.9.3. </span>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.9.3. </span>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <p>For TDHF or TDDFT calculations,
 the reference state can be either restricted or unrestricted:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mytd</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">RKS</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span><span class="o">.</span><span class="n">TDDFT</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
@@ -274,23 +278,23 @@ attribute <code class="xref py py-attr docutils literal notranslate"><span class
 <span class="n">mytd</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>One can also perform symmety analysis by calling the <a class="reference internal" href="../modules/pbc/scf.html#pyscf.pbc.scf.khf.analyze" title="pyscf.pbc.scf.khf.analyze"><code class="xref py py-func docutils literal notranslate"><span class="pre">analyze()</span></code></a> method,
+<p>One can also perform symmetry analysis by calling the <a class="reference internal" href="../modules/pbc/scf.html#pyscf.pbc.scf.khf.analyze" title="pyscf.pbc.scf.khf.analyze"><code class="xref py py-func docutils literal notranslate"><span class="pre">analyze()</span></code></a> method,
 which also computes the oscillator strengths and dipole moments:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mytd</span><span class="o">.</span><span class="n">analyze</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="property-calculation">
-<h2><span class="section-number">7.9.4. </span>Property calculation<a class="headerlink" href="#property-calculation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.9.4. </span>Property calculation<a class="headerlink" href="#property-calculation" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="oscillator-strengths">
-<h3><span class="section-number">7.9.4.1. </span>Oscillator strengths<a class="headerlink" href="#oscillator-strengths" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.9.4.1. </span>Oscillator strengths<a class="headerlink" href="#oscillator-strengths" title="Permalink to this headline">¶</a></h3>
 <p>Oscillator strengths for each excited state can be computed in
 both length and velocity gauges:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mytd</span><span class="o">.</span><span class="n">oscillator_strength</span><span class="p">(</span><span class="n">gauge</span><span class="o">=</span><span class="s1">&#39;length&#39;</span><span class="p">)</span>
 <span class="n">mytd</span><span class="o">.</span><span class="n">oscillator_strength</span><span class="p">(</span><span class="n">gauge</span><span class="o">=</span><span class="s1">&#39;velocity&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Higer order corrections <a class="bibtex reference internal" href="#lesegili2015" id="id3">[3]</a>
+<p>Higher order corrections <a class="bibtex reference internal" href="#lesegili2015" id="id3">[3]</a>
 to the oscillator strength can also be included:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#include corrections due to magnetic dipole and electric quadruple</span>
 <span class="n">mytd</span><span class="o">.</span><span class="n">oscillator_strength</span><span class="p">(</span><span class="n">gauge</span><span class="o">=</span><span class="s1">&#39;velocity&#39;</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -300,7 +304,7 @@ to the oscillator strength can also be included:</p>
 </div>
 </div>
 <div class="section" id="transition-moments">
-<h3><span class="section-number">7.9.4.2. </span>Transition moments<a class="headerlink" href="#transition-moments" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.9.4.2. </span>Transition moments<a class="headerlink" href="#transition-moments" title="Permalink to this headline">¶</a></h3>
 <p>PySCF implements various types of transition moments between the reference SCF state and
 the TDHF or TDDFT excited states. These include:</p>
 <ul>
@@ -323,7 +327,7 @@ the TDHF or TDDFT excited states. These include:</p>
 </ul>
 </div>
 <div class="section" id="nuclear-gradients">
-<h3><span class="section-number">7.9.4.3. </span>Nuclear gradients<a class="headerlink" href="#nuclear-gradients" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.9.4.3. </span>Nuclear gradients<a class="headerlink" href="#nuclear-gradients" title="Permalink to this headline">¶</a></h3>
 <p>Analytic nuclear gradients are available for TDHF and TDDFT,
 and they can be computed as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">tdg</span> <span class="o">=</span> <span class="n">mytd</span><span class="o">.</span><span class="n">Gradients</span><span class="p">()</span>
@@ -334,7 +338,7 @@ and they can be computed as follows:</p>
 </div>
 </div>
 <div class="section" id="natural-transition-orbital-analysis">
-<h3><span class="section-number">7.9.4.4. </span>Natural transition orbital analysis<a class="headerlink" href="#natural-transition-orbital-analysis" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.9.4.4. </span>Natural transition orbital analysis<a class="headerlink" href="#natural-transition-orbital-analysis" title="Permalink to this headline">¶</a></h3>
 <p>Natural transition orbitals (NTOs) can be computed by
 singular value decomposition of the transition density matrix.
 In PySCF, these orbitals can be obtained as follows:</p>
@@ -346,7 +350,7 @@ and they are ordered as occupied orbitals followed by virtual orbitals.</p>
 </div>
 </div>
 <div class="section" id="references">
-<h2><span class="section-number">7.9.5. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.9.5. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <p id="bibtex-bibliography-theory/tddft-0"><dl class="citation">
 <dt class="bibtex label" id="drehea2005"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>Andreas Dreuw and Martin Head-Gordon. Single-reference ab initio methods for the calculation of excited states of large molecules. <em>Chemical reviews</em>, 105(11):4009–4037, 2005.</p>
@@ -370,10 +374,10 @@ and they are ordered as occupied orbitals followed by virtual orbitals.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="rt.html" class="btn btn-neutral float-right" title="7.10. Real-time time-dependent density functional theory" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="rt.html" class="btn btn-neutral float-right" title="6.10. Real-time time-dependent density functional theory" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="mcscf.html" class="btn btn-neutral float-left" title="7.8. Multi-configurational self-consistent field (MCSCF)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="mcscf.html" class="btn btn-neutral float-left" title="6.8. Multi-configuration self-consistent field (MCSCF)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

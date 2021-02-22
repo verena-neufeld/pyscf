@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>6. Tutorial &mdash; PySCF 1.7.5 documentation</title>
+  <title>5. Tutorial &mdash; PySCF 1.7.6 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="7. Theoretical methods" href="theory.html" />
-    <link rel="prev" title="5. Benchmark" href="benchmark.html" /> 
+    <link rel="next" title="6. Theoretical methods" href="theory.html" />
+    <link rel="prev" title="4. Benchmark" href="benchmark.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,49 +86,58 @@
               
             
             
-              <ul class="current">
+              <p class="caption"><span class="caption-text">User documentation</span></p>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="overview.html">1. An overview of PySCF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="version.html">2. Version history</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-rule.html">4. Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmark.html">5. Benchmark</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">6. Tutorial</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#quick-setup">6.1. Quick setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#a-simple-example">6.2. A simple example</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#initializing-a-molecule">6.3. Initializing a molecule</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#geometry">6.3.1. Geometry</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#basis-set">6.3.2. Basis set</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#other-parameters">6.3.3. Other parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmark.html">4. Benchmark</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">5. Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#quick-setup">5.1. Quick setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#a-simple-example">5.2. A simple example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#initializing-a-molecule">5.3. Initializing a molecule</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#geometry">5.3.1. Geometry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#basis-set">5.3.2. Basis set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#other-parameters">5.3.3. Other parameters</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#initializing-a-crystal">6.4. Initializing a crystal</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#d-and-2d-systems">6.4.1. 1D and 2D systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#initializing-a-crystal">5.4. Initializing a crystal</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#d-and-2d-systems">5.4.1. 1D and 2D systems</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#hf-mp2-mcscf">6.5. HF, MP2, MCSCF</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#hartree-fock">6.5.1. Hartree-Fock</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#mp2-and-mo-integral-transformation">6.5.2. MP2 and MO integral transformation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#casci-and-casscf">6.5.3. CASCI and CASSCF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hf-mp2-mcscf">5.5. HF, MP2, MCSCF</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hartree-fock">5.5.1. Hartree-Fock</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mp2-and-mo-integral-transformation">5.5.2. MP2 and MO integral transformation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#casci-and-casscf">5.5.3. CASCI and CASSCF</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#restore-an-old-calculation">6.6. Restore an old calculation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#access-ao-integrals">6.7. Access AO integrals</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#molecular-integrals">6.7.1. molecular integrals</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#pbc-ao-integrals">6.7.2. PBC AO integrals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#restore-an-old-calculation">5.6. Restore an old calculation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#access-ao-integrals">5.7. Access AO integrals</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#molecular-integrals">5.7.1. molecular integrals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pbc-ao-integrals">5.7.2. PBC AO integrals</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#other-features">6.8. Other features</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#density-fitting">6.8.1. Density fitting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#customizing-hamiltonian">6.8.2. Customizing Hamiltonian</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#symmetry-in-casscf">6.8.3. Symmetry in CASSCF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#other-features">5.8. Other features</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#density-fitting">5.8.1. Density fitting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#customizing-hamiltonian">5.8.2. Customizing Hamiltonian</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#symmetry-in-casscf">5.8.3. Symmetry in CASSCF</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="theory.html">7. Theoretical methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="advanced.html">8. Miscellaneous</a></li>
-<li class="toctree-l1"><a class="reference internal" href="interface.html">9. Interfaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">10. Main modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theory.html">6. Theoretical methods</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="code-rule.html">Code standard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="develop/scf_developer.html">Self-consistent field (SCF) methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="develop/dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Miscellaneous</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Main modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interface.html">Interfaces</a></li>
 </ul>
 
             
@@ -175,7 +184,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li><span class="section-number">6. </span>Tutorial</li>
+      <li><span class="section-number">5. </span>Tutorial</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -195,13 +204,13 @@
            <div itemprop="articleBody">
             
   <div class="section" id="tutorial">
-<span id="getting-started"></span><h1><span class="section-number">6. </span>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h1>
+<span id="getting-started"></span><h1><span class="section-number">5. </span>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h1>
 <p>This tutorial shows how to use PySCF package in the perspective of method
 development. It involves some knowledge of coding in Python.  An Ipython
 notebook of user-guide can be found in
 <a class="reference external" href="https://github.com/nmardirossian/PySCF_Tutorial">https://github.com/nmardirossian/PySCF_Tutorial</a>.</p>
 <div class="section" id="quick-setup">
-<h2><span class="section-number">6.1. </span>Quick setup<a class="headerlink" href="#quick-setup" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.1. </span>Quick setup<a class="headerlink" href="#quick-setup" title="Permalink to this headline">¶</a></h2>
 <p>You can install PySCF from github repo:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ sudo apt-get install python-h5py python-scipy cmake
 $ git clone https://github.com/sunqm/pyscf
@@ -226,7 +235,7 @@ Please see <a class="reference internal" href="install.html#installing"><span cl
 </div>
 </div>
 <div class="section" id="a-simple-example">
-<h2><span class="section-number">6.2. </span>A simple example<a class="headerlink" href="#a-simple-example" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.2. </span>A simple example<a class="headerlink" href="#a-simple-example" title="Permalink to this headline">¶</a></h2>
 <p>Here is an example to run HF calculation for hydrogen molecule:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;H 0 0 0; H 0 0 1.2&#39;</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;ccpvdz&#39;</span><span class="p">)</span>
@@ -238,7 +247,7 @@ Please see <a class="reference internal" href="install.html#installing"><span cl
 </div>
 </div>
 <div class="section" id="initializing-a-molecule">
-<h2><span class="section-number">6.3. </span>Initializing a molecule<a class="headerlink" href="#initializing-a-molecule" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.3. </span>Initializing a molecule<a class="headerlink" href="#initializing-a-molecule" title="Permalink to this headline">¶</a></h2>
 <p>There are three ways to define and initialize a molecule.  The first is to use
 the keyword arguments of <code class="xref py py-func docutils literal notranslate"><span class="pre">Mole.build()</span></code> to initialize a molecule:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span>
@@ -269,7 +278,7 @@ function pass all arguments to <code class="xref py py-func docutils literal not
 They are used to hold the molecular geometry and basis sets.</p>
 <p>For more examples, see <a class="reference internal" href="modules/gto.html#gto"><span class="std std-ref">gto — Molecular structure and GTO basis</span></a>.</p>
 <div class="section" id="geometry">
-<h3><span class="section-number">6.3.1. </span>Geometry<a class="headerlink" href="#geometry" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.3.1. </span>Geometry<a class="headerlink" href="#geometry" title="Permalink to this headline">¶</a></h3>
 <p>Molecular geometry can be input in Cartesian format:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span><span class="o">.</span><span class="n">atom</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;O 0, 0, 0</span>
@@ -300,7 +309,7 @@ specify different basis sets, or masses, or nuclear models for different atoms:<
 </div>
 </div>
 <div class="section" id="basis-set">
-<h3><span class="section-number">6.3.2. </span>Basis set<a class="headerlink" href="#basis-set" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.3.2. </span>Basis set<a class="headerlink" href="#basis-set" title="Permalink to this headline">¶</a></h3>
 <p>The simplest way is to assign a string of basis name to <code class="xref py py-attr docutils literal notranslate"><span class="pre">mol.basis</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mol</span><span class="o">.</span><span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;sto3g&#39;</span>
 </pre></div>
@@ -316,7 +325,7 @@ elements,  a python <code class="docutils literal notranslate"><span class="pre"
 <code class="file docutils literal notranslate"><span class="pre">examples/gto/04-input_basis.py</span></code>.</p>
 </div>
 <div class="section" id="other-parameters">
-<h3><span class="section-number">6.3.3. </span>Other parameters<a class="headerlink" href="#other-parameters" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.3.3. </span>Other parameters<a class="headerlink" href="#other-parameters" title="Permalink to this headline">¶</a></h3>
 <p>You can assign more informations to the molecular object:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mol</span><span class="o">.</span><span class="n">symmetry</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">mol</span><span class="o">.</span><span class="n">charge</span> <span class="o">=</span> <span class="mi">1</span>
@@ -355,7 +364,7 @@ line:</p>
 </div>
 </div>
 <div class="section" id="initializing-a-crystal">
-<h2><span class="section-number">6.4. </span>Initializing a crystal<a class="headerlink" href="#initializing-a-crystal" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.4. </span>Initializing a crystal<a class="headerlink" href="#initializing-a-crystal" title="Permalink to this headline">¶</a></h2>
 <p>Initialization a crystal unit cell is very similar to the initialization
 molecular object.  Here, <a class="reference internal" href="modules/pbc/gto.html#pyscf.pbc.gto.Cell" title="pyscf.pbc.gto.Cell"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.pbc.gto.Cell</span></code></a> class should be used
 instead of the <code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.gto.Mole</span></code> class:</p>
@@ -377,7 +386,7 @@ object.  The other attributes of <code class="xref py py-class docutils literal 
 More details of the crystal <code class="xref py py-class docutils literal notranslate"><span class="pre">Cell</span></code> object and the relevant input
 parameters are documented in <a class="reference internal" href="modules/pbc/gto.html#pbc-gto"><span class="std std-ref">pbc.gto — Crystal cell structure</span></a>.</p>
 <div class="section" id="d-and-2d-systems">
-<h3><span class="section-number">6.4.1. </span>1D and 2D systems<a class="headerlink" href="#d-and-2d-systems" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.4.1. </span>1D and 2D systems<a class="headerlink" href="#d-and-2d-systems" title="Permalink to this headline">¶</a></h3>
 <p>PySCF PBC module supports the low-dimensional PBC systems.  You can initialize
 the attribute <code class="xref py py-attr docutils literal notranslate"><span class="pre">cell.dimension</span></code> to specify the dimension of the system:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="kn">import</span> <span class="n">gto</span>
@@ -399,9 +408,9 @@ actually the same to the molecular system.</p>
 </div>
 </div>
 <div class="section" id="hf-mp2-mcscf">
-<h2><span class="section-number">6.5. </span>HF, MP2, MCSCF<a class="headerlink" href="#hf-mp2-mcscf" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.5. </span>HF, MP2, MCSCF<a class="headerlink" href="#hf-mp2-mcscf" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="hartree-fock">
-<h3><span class="section-number">6.5.1. </span>Hartree-Fock<a class="headerlink" href="#hartree-fock" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.5.1. </span>Hartree-Fock<a class="headerlink" href="#hartree-fock" title="Permalink to this headline">¶</a></h3>
 <p>Now we are ready to study electronic structure theory with pyscf.  Let’s
 take oxygen molecule as the first example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span>
@@ -495,7 +504,7 @@ function by assigning the number of alpha electrons and beta electrons
 <p>More informations of the calculation can be found in the output file <code class="docutils literal notranslate"><span class="pre">o2.log</span></code>.</p>
 </div>
 <div class="section" id="mp2-and-mo-integral-transformation">
-<h3><span class="section-number">6.5.2. </span>MP2 and MO integral transformation<a class="headerlink" href="#mp2-and-mo-integral-transformation" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.5.2. </span>MP2 and MO integral transformation<a class="headerlink" href="#mp2-and-mo-integral-transformation" title="Permalink to this headline">¶</a></h3>
 <p>Next, we compute the correlation energy with <code class="xref py py-mod docutils literal notranslate"><span class="pre">mp.mp2</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">mp</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mp2</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">MP2</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
@@ -577,7 +586,7 @@ analytical gradients of 2-electron integrals</p>
 </div>
 </div>
 <div class="section" id="casci-and-casscf">
-<h3><span class="section-number">6.5.3. </span>CASCI and CASSCF<a class="headerlink" href="#casci-and-casscf" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.5.3. </span>CASCI and CASSCF<a class="headerlink" href="#casci-and-casscf" title="Permalink to this headline">¶</a></h3>
 <p>The two classes <code class="xref py py-class docutils literal notranslate"><span class="pre">mcscf.CASCI</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">mcscf.CASSCF</span></code> provided
 by <code class="xref py py-mod docutils literal notranslate"><span class="pre">mcscf</span></code> have the same initialization interface:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">mcscf</span>
@@ -626,7 +635,7 @@ ROHF ground state, we have:</p>
 </div>
 </div>
 <div class="section" id="restore-an-old-calculation">
-<h2><span class="section-number">6.6. </span>Restore an old calculation<a class="headerlink" href="#restore-an-old-calculation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.6. </span>Restore an old calculation<a class="headerlink" href="#restore-an-old-calculation" title="Permalink to this headline">¶</a></h2>
 <p>There is no <cite>restart</cite> mechanism available in PySCF package.  Calculations can be
 “restarted” by the proper initial guess.  For SCF, the initial guess can be
 prepared in many ways.  One is to read the <code class="docutils literal notranslate"><span class="pre">chkpoint</span></code> file
@@ -718,9 +727,9 @@ both.  For example:</p>
 </div>
 </div>
 <div class="section" id="access-ao-integrals">
-<h2><span class="section-number">6.7. </span>Access AO integrals<a class="headerlink" href="#access-ao-integrals" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.7. </span>Access AO integrals<a class="headerlink" href="#access-ao-integrals" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="molecular-integrals">
-<h3><span class="section-number">6.7.1. </span>molecular integrals<a class="headerlink" href="#molecular-integrals" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.7.1. </span>molecular integrals<a class="headerlink" href="#molecular-integrals" title="Permalink to this headline">¶</a></h3>
 <p>PySCF uses <a class="reference external" href="https://github.com/sunqm/libcint">Libcint</a> library as the AO
 integral engine.  It provides simple interface function <code class="xref py py-func docutils literal notranslate"><span class="pre">getints_by_shell()</span></code>
 to evaluate integrals.  The following example evaluates 3-center 2-electron
@@ -810,7 +819,7 @@ two-electron integrals:</p>
 <p>There is a long list of supported AO integrals.  See <a class="reference internal" href="modules/gto.html#gto-moleintor"><span class="std std-ref">moleintor</span></a>.</p>
 </div>
 <div class="section" id="pbc-ao-integrals">
-<h3><span class="section-number">6.7.2. </span>PBC AO integrals<a class="headerlink" href="#pbc-ao-integrals" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.7.2. </span>PBC AO integrals<a class="headerlink" href="#pbc-ao-integrals" title="Permalink to this headline">¶</a></h3>
 <p><code class="xref py py-func docutils literal notranslate"><span class="pre">mol.intor()</span></code> can only be used to evaluate the integrals with open boundary
 conditions.  When the periodic boundary conditions of crystal systems are
 studied, you need to use <code class="xref py py-func docutils literal notranslate"><span class="pre">pbc.Cell.pbc_intor()</span></code> function to evaluate the
@@ -846,9 +855,9 @@ methods:</p>
 </div>
 </div>
 <div class="section" id="other-features">
-<h2><span class="section-number">6.8. </span>Other features<a class="headerlink" href="#other-features" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.8. </span>Other features<a class="headerlink" href="#other-features" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="density-fitting">
-<h3><span class="section-number">6.8.1. </span>Density fitting<a class="headerlink" href="#density-fitting" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.8.1. </span>Density fitting<a class="headerlink" href="#density-fitting" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 <span class="c1">#</span>
 <span class="c1"># Author: Qiming Sun &lt;osirpt.sun@gmail.com&gt;</span>
@@ -916,7 +925,7 @@ methods:</p>
 </div>
 </div>
 <div class="section" id="customizing-hamiltonian">
-<h3><span class="section-number">6.8.2. </span>Customizing Hamiltonian<a class="headerlink" href="#customizing-hamiltonian" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.8.2. </span>Customizing Hamiltonian<a class="headerlink" href="#customizing-hamiltonian" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 <span class="c1">#</span>
 <span class="c1"># Author: Qiming Sun &lt;osirpt.sun@gmail.com&gt;</span>
@@ -973,7 +982,7 @@ methods:</p>
 </div>
 </div>
 <div class="section" id="symmetry-in-casscf">
-<h3><span class="section-number">6.8.3. </span>Symmetry in CASSCF<a class="headerlink" href="#symmetry-in-casscf" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.8.3. </span>Symmetry in CASSCF<a class="headerlink" href="#symmetry-in-casscf" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 <span class="c1">#</span>
 <span class="c1"># Author: Qiming Sun &lt;osirpt.sun@gmail.com&gt;</span>
@@ -1017,10 +1026,10 @@ methods:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="theory.html" class="btn btn-neutral float-right" title="7. Theoretical methods" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="theory.html" class="btn btn-neutral float-right" title="6. Theoretical methods" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="benchmark.html" class="btn btn-neutral float-left" title="5. Benchmark" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="benchmark.html" class="btn btn-neutral float-left" title="4. Benchmark" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>3. Installation &mdash; PySCF 1.7.5 documentation</title>
+  <title>3. Installation &mdash; PySCF 1.7.6 documentation</title>
   
 
   
@@ -36,7 +36,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="4. Code standard" href="code-rule.html" />
+    <link rel="next" title="4. Benchmark" href="benchmark.html" />
     <link rel="prev" title="2. Version history" href="version.html" /> 
 </head>
 
@@ -86,7 +86,8 @@
               
             
             
-              <ul class="current">
+              <p class="caption"><span class="caption-text">User documentation</span></p>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="overview.html">1. An overview of PySCF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="version.html">2. Version history</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">3. Installation</a><ul>
@@ -102,20 +103,28 @@
 <li class="toctree-l3"><a class="reference internal" href="#nao">3.9.1. NAO</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#dmrg-solver">3.9.2. DMRG solver</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id1">3.9.3. Libxc</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">3.9.4. Xcfun</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">3.9.4. XCFun</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tblis">3.9.5. TBLIS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pyberny">3.9.6. Pyberny</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="code-rule.html">4. Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmark.html">5. Benchmark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html">6. Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="theory.html">7. Theoretical methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="advanced.html">8. Miscellaneous</a></li>
-<li class="toctree-l1"><a class="reference internal" href="interface.html">9. Interfaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">10. Main modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmark.html">4. Benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">5. Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theory.html">6. Theoretical methods</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="code-rule.html">Code standard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="develop/scf_developer.html">Self-consistent field (SCF) methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="develop/dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Miscellaneous</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Main modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interface.html">Interfaces</a></li>
 </ul>
 
             
@@ -234,13 +243,13 @@ environment, PySCF package can be installed with Conda cloud:</p>
 <h2><span class="section-number">3.3. </span>PySCF docker image<a class="headerlink" href="#pyscf-docker-image" title="Permalink to this headline">¶</a></h2>
 <p>The following command starts a container with the jupyter notebook server
 listening for HTTP connections on port 8888:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ docker run -it -p 8888:8888 pyscf/pyscf-1.5.0
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ docker run -it -p 8888:8888 pyscf/pyscf:latest
 </pre></div>
 </div>
 <p>Then visit <code class="docutils literal notranslate"><span class="pre">https://localhost:8888</span></code> with your browser to use notebook and
 pyscf.</p>
 <p>Another way to use PySCF in docker container is to start an Ipython shell:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ docker run -it pyscf/pyscf-1.5.0 start.sh ipython
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ docker run -it pyscf/pyscf:latest start.sh ipython
 </pre></div>
 </div>
 </div>
@@ -250,7 +259,7 @@ pyscf.</p>
 <a class="reference external" href="http://www.numpy.org/">numpy</a>, <a class="reference external" href="http://www.scipy.org/">scipy</a>
 and <a class="reference external" href="http://www.h5py.org/">h5py</a> libraries.
 You can download the latest PySCF (or the development branch) from github:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/sunqm/pyscf
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/pyscf/pyscf.git
 $ cd pyscf
 $ git checkout dev  # optional if you&#39;d like to try out the development branch
 </pre></div>
@@ -264,7 +273,7 @@ $ make
 </pre></div>
 </div>
 <p>This will automatically download the analytical GTO integral library <a class="reference external" href="https://github.com/sunqm/libcint.git">libcint</a> and the DFT exchange correlation
-functional libraries <a class="reference external" href="http://www.tddft.org/programs/Libxc">libxc</a> and <a class="reference external" href="https://github.com/dftlibs/xcfun.git">xcfun</a>.  Finally, to make Python find
+functional libraries <a class="reference external" href="http://www.tddft.org/programs/Libxc">Libxc</a> and <a class="reference external" href="https://github.com/dftlibs/xcfun.git">XCFun</a>.  Finally, to make Python find
 the <code class="code docutils literal notranslate"><span class="pre">pyscf</span></code> package, add the top-level <code class="code docutils literal notranslate"><span class="pre">pyscf</span></code> directory (not
 the <code class="code docutils literal notranslate"><span class="pre">pyscf/pyscf</span></code> subdirectory) to <code class="code docutils literal notranslate"><span class="pre">PYTHONPATH</span></code>.  For example, if
 <code class="code docutils literal notranslate"><span class="pre">pyscf</span></code> is installed in <code class="docutils literal notranslate"><span class="pre">/opt</span></code>, <code class="code docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> should be like:</p>
@@ -307,21 +316,16 @@ scratch directory.</p>
 <h2><span class="section-number">3.5. </span>Installation without network<a class="headerlink" href="#installation-without-network" title="Permalink to this headline">¶</a></h2>
 <p>If you have problems to download the external libraries on your computer, you can
 manually build the libraries, as shown in the following instructions.  First,
-you need to install libcint, libxc or xcfun libraries:</p>
+you need to install libcint, Libxc and XCFun libraries:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/sunqm/libcint.git
-$ cd libcint
-$ cd .. &amp;&amp; tar czf libcint.tar.gz libcint
+$ tar czf libcint.tar.gz libcint
 
-$ # PySCF depends on xcfun version 2.1.0
-$ git clone https://github.com/sunqm/xcfun.git
-$ cd xcfun
-$ # This branch downgrades the required cmake version from 3.14 to 3.5
-$ git checkout cmake-3.5
-$ cd .. &amp;&amp; tar czf xcfun.tar.gz xcfun
+$ wget https://gitlab.com/libxc/libxc/-/archive/4.3.4/libxc-4.3.4.tar.gz
+
+$ git clone https://github.com/dftlibs/xcfun.git
+$ tar czf xcfun.tar.gz xcfun
 </pre></div>
 </div>
-<p>libxc downloaded from
-<a class="reference external" href="http://sunqm.net/pyscf/files/src/libxc-4.3.4.tar.gz">here</a>.</p>
 <p>Assuming <code class="docutils literal notranslate"><span class="pre">/opt</span></code> is the place where these libraries will be installed, these
 packages should be compiled with the flags:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ tar xvzf libcint.tar.gz
@@ -469,15 +473,14 @@ the path where the DMRG solver was installed.</p>
 <div class="section" id="id1">
 <h3><span class="section-number">3.9.3. </span>Libxc<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>By default, building PySCF will automatically download and install
-<a class="reference external" href="http://www.tddft.org/programs/octopus/wiki/index.php/Libxc:download">Libxc 3.0.0</a>.
+<a class="reference external" href="https://www.tddft.org/programs/libxc/download/">Libxc 4.3.4</a>.
 <a class="reference internal" href="modules/dft.html#module-pyscf.dft.libxc" title="pyscf.dft.libxc"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyscf.dft.libxc</span></code></a> module provided a general interface to access Libxc functionals.</p>
 </div>
 <div class="section" id="id2">
-<h3><span class="section-number">3.9.4. </span>Xcfun<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.9.4. </span>XCFun<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>By default, building PySCF will automatically download and install
-latest xcfun code from <a class="reference external" href="https://github.com/dftlibs/xcfun">https://github.com/dftlibs/xcfun</a>.
-<a class="reference internal" href="modules/dft.html#module-pyscf.dft.xcfun" title="pyscf.dft.xcfun"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyscf.dft.xcfun</span></code></a> module provided a general interface to access Libxc
-functionals.</p>
+latest XCFun code from <a class="reference external" href="https://github.com/dftlibs/xcfun">https://github.com/dftlibs/xcfun</a>.
+<a class="reference internal" href="modules/dft.html#module-pyscf.dft.xcfun" title="pyscf.dft.xcfun"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyscf.dft.xcfun</span></code></a> module provided a general interface to access XCFun functionals.</p>
 </div>
 <div class="section" id="tblis">
 <h3><span class="section-number">3.9.5. </span>TBLIS<a class="headerlink" href="#tblis" title="Permalink to this headline">¶</a></h3>
@@ -521,7 +524,7 @@ wrapper function to simplify the geometry optimization setup:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="code-rule.html" class="btn btn-neutral float-right" title="4. Code standard" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="benchmark.html" class="btn btn-neutral float-right" title="4. Benchmark" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="version.html" class="btn btn-neutral float-left" title="2. Version history" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

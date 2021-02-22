@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>7.11. Equation-of-motion coupled cluster (EOM-CC) &mdash; PySCF 1.7.5 documentation</title>
+  <title>Full CI solver &mdash; PySCF 1.7.6 documentation</title>
   
 
   
@@ -35,9 +35,7 @@
 
     
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="7.12. Periodic boundary conditions" href="pbc.html" />
-    <link rel="prev" title="7.10. Real-time time-dependent density functional theory" href="rt.html" /> 
+    <link rel="search" title="Search" href="../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,31 +84,26 @@
               
             
             
-              <ul class="current">
+              <p class="caption"><span class="caption-text">User documentation</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">1. An overview of PySCF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../version.html">2. Version history</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../install.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../code-rule.html">4. Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../benchmark.html">5. Benchmark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">6. Tutorial</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../theory.html">7. Theoretical methods</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="scf.html">7.1. Self-consistent field (SCF) methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dft.html">7.2. Density functional theory (DFT)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mp.html">7.3. Second-Order Møller–Plesset Perturbation Theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gw.html">7.4. GW method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ci.html">7.5. Configuration interaction (CI)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cc.html">7.6. Coupled cluster (CC)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="adc.html">7.7. Algebraic diagrammatic construction (ADC) scheme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mcscf.html">7.8. Multi-configurational self-consistent field (MCSCF)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tddft.html">7.9. Time-dependent Hartree-Fock and Density Functional Theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rt.html">7.10. Real-time time-dependent density functional theory</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">7.11. Equation-of-motion coupled cluster (EOM-CC)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pbc.html">7.12. Periodic boundary conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../benchmark.html">4. Benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">5. Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../theory.html">6. Theoretical methods</a></li>
 </ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced.html">8. Miscellaneous</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../interface.html">9. Interfaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../modules.html">10. Main modules</a></li>
+<p class="caption"><span class="caption-text">Developer documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../code-rule.html">Code standard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scf_developer.html">Self-consistent field (SCF) methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced.html">Miscellaneous</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">Main modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interface.html">Interfaces</a></li>
 </ul>
 
             
@@ -157,15 +150,13 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../theory.html"><span class="section-number">7. </span>Theoretical methods</a> &raquo;</li>
-        
-      <li><span class="section-number">7.11. </span>Equation-of-motion coupled cluster (EOM-CC)</li>
+      <li>Full CI solver</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="../_sources/theory/eomcc.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/develop/fci_developer.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -178,8 +169,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="equation-of-motion-coupled-cluster-eom-cc">
-<h1><span class="section-number">7.11. </span>Equation-of-motion coupled cluster (EOM-CC)<a class="headerlink" href="#equation-of-motion-coupled-cluster-eom-cc" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="full-ci-solver">
+<span id="developer-fci"></span><h1>Full CI solver<a class="headerlink" href="#full-ci-solver" title="Permalink to this headline">¶</a></h1>
+<p><em>Modules</em>: <code class="xref py py-mod docutils literal notranslate"><span class="pre">fci</span></code></p>
 </div>
 
 
@@ -187,15 +179,6 @@
            
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="pbc.html" class="btn btn-neutral float-right" title="7.12. Periodic boundary conditions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="rt.html" class="btn btn-neutral float-left" title="7.10. Real-time time-dependent density functional theory" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>10.22.3. magnetizability — &mdash; PySCF 1.7.5 documentation</title>
+  <title>magnetizability — &mdash; PySCF 1.7.6 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="10.22.4. nsr —" href="nsr.html" />
-    <link rel="prev" title="10.22.2. prop.gtensor — EPR g tensors" href="gtensor.html" /> 
+    <link rel="next" title="nsr —" href="nsr.html" />
+    <link rel="prev" title="prop.gtensor — EPR g tensors" href="gtensor.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,71 +86,80 @@
               
             
             
-              <ul class="current">
+              <p class="caption"><span class="caption-text">User documentation</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../../overview.html">1. An overview of PySCF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../version.html">2. Version history</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../code-rule.html">4. Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../benchmark.html">5. Benchmark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">6. Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../theory.html">7. Theoretical methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../advanced.html">8. Miscellaneous</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../interface.html">9. Interfaces</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../modules.html">10. Main modules</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../adc.html">10.1. <code class="xref py py-mod docutils literal notranslate"><span class="pre">adc</span></code> — Algebraic diagrammatic construction (ADC) scheme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ao2mo.html">10.2. <code class="xref py py-mod docutils literal notranslate"><span class="pre">ao2mo</span></code> — Integral transformations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cc.html">10.3. <code class="xref py py-mod docutils literal notranslate"><span class="pre">cc</span></code> — Coupled cluster</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ccn.html">10.4. <code class="xref py py-mod docutils literal notranslate"><span class="pre">ccn</span></code> — Auto-generated coupled cluster of arbitrary order</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ci.html">10.5. <code class="xref py py-mod docutils literal notranslate"><span class="pre">ci</span></code> — Configuration interaction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../data.html">10.6. <code class="xref py py-mod docutils literal notranslate"><span class="pre">data</span></code> — Data for constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../df.html">10.7. <code class="xref py py-mod docutils literal notranslate"><span class="pre">df</span></code> — Density fitting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dft.html">10.8. <code class="xref py py-mod docutils literal notranslate"><span class="pre">dft</span></code> — Density functional theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../doci.html">10.9. <code class="xref py py-mod docutils literal notranslate"><span class="pre">doci</span></code> — Doubly occupied configuration interaction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../fci.html">10.10. <code class="xref py py-mod docutils literal notranslate"><span class="pre">fci</span></code> — Full configuration interaction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../grad.html">10.11. <code class="xref py py-mod docutils literal notranslate"><span class="pre">grad</span></code> — Analytical nuclear gradients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gto.html">10.12. <code class="xref py py-mod docutils literal notranslate"><span class="pre">gto</span></code> — Molecular structure and GTO basis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gw.html">10.13. <code class="xref py py-mod docutils literal notranslate"><span class="pre">gw</span></code> — Molecular G0W0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hci.html">10.14. <code class="xref py py-mod docutils literal notranslate"><span class="pre">hci</span></code> — Heat-bath selected CI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hessian.html">10.15. <code class="xref py py-mod docutils literal notranslate"><span class="pre">hessian</span></code> — Analytical nuclear Hessian</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lib.html">10.16. <code class="xref py py-mod docutils literal notranslate"><span class="pre">lib</span></code> — Helper functions, parameters, and C extensions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lo.html">10.17. <code class="xref py py-mod docutils literal notranslate"><span class="pre">lo</span></code> — Orbital localization and analysis tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../mcscf.html">10.18. <code class="xref py py-mod docutils literal notranslate"><span class="pre">mcscf</span></code> — Multi-configurational self-consistent field</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../mp.html">10.19. <code class="xref py py-mod docutils literal notranslate"><span class="pre">mp</span></code> — Second-Order Møller–Plesset Perturbation Theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../mrpt.html">10.20. <code class="xref py py-mod docutils literal notranslate"><span class="pre">mrpt</span></code> — Multi-reference perturbation theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../pbc.html">10.21. <code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc</span></code> — Periodic boundary conditions</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../prop.html">10.22. <code class="xref py py-mod docutils literal notranslate"><span class="pre">prop</span></code> — Molecular properties</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="efg.html">10.22.1. efg —</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gtensor.html">10.22.2. <code class="xref py py-mod docutils literal notranslate"><span class="pre">prop.gtensor</span></code> — EPR g tensors</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">10.22.3. magnetizability  —</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#examples">10.22.3.1. Examples</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.prop.magnetizability">10.22.3.2. Program reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../benchmark.html">4. Benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">5. Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../theory.html">6. Theoretical methods</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../code-rule.html">Code standard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../develop/scf_developer.html">Self-consistent field (SCF) methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../develop/dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced.html">Miscellaneous</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../modules.html">Main modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../adc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">adc</span></code> — Algebraic diagrammatic construction (ADC) scheme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ao2mo.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ao2mo</span></code> — Integral transformations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cc</span></code> — Coupled cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ccn.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ccn</span></code> — Auto-generated coupled cluster of arbitrary order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ci.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ci</span></code> — Configuration interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">data</span></code> — Data for constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../df.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">df</span></code> — Density fitting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dft.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dft</span></code> — Density functional theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../doci.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">doci</span></code> — Doubly occupied configuration interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fci.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fci</span></code> — Full configuration interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grad.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">grad</span></code> — Analytical nuclear gradients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gto</span></code> — Molecular structure and GTO basis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gw.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gw</span></code> — Molecular G0W0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hci.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hci</span></code> — Heat-bath selected CI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hessian.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hessian</span></code> — Analytical nuclear Hessian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lib.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">lib</span></code> — Helper functions, parameters, and C extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lo.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">lo</span></code> — Orbital localization and analysis tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mcscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mcscf</span></code> — Multi-configurational self-consistent field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mp</span></code> — Second-Order Møller–Plesset Perturbation Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mrpt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mrpt</span></code> — Multi-reference perturbation theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pbc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc</span></code> — Periodic boundary conditions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../prop.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">prop</span></code> — Molecular properties</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="efg.html">efg —</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gtensor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">prop.gtensor</span></code> — EPR g tensors</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">magnetizability  —</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#examples">Examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.prop.magnetizability">Program reference</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="nsr.html">10.22.4. nsr —</a></li>
-<li class="toctree-l3"><a class="reference internal" href="rotational_gtensor.html">10.22.5. rotational_gtensor —</a></li>
-<li class="toctree-l3"><a class="reference internal" href="zfs.html">10.22.6. zfs —</a></li>
-<li class="toctree-l3"><a class="reference internal" href="freq.html">10.22.7. <code class="xref py py-mod docutils literal notranslate"><span class="pre">prop.freq</span></code> — Vibrational frequencies and normal modes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="hfc.html">10.22.8. <code class="xref py py-mod docutils literal notranslate"><span class="pre">prop.hfc</span></code> — Hyperfine coupling tensor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="nmr.html">10.22.9. <code class="xref py py-mod docutils literal notranslate"><span class="pre">prop.nmr</span></code> — NMR shielding tensor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="polarizability.html">10.22.10. <code class="xref py py-mod docutils literal notranslate"><span class="pre">prop.polarizability</span></code> — Polarizabilities</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ssc.html">10.22.11. <code class="xref py py-mod docutils literal notranslate"><span class="pre">prop.ssc</span></code> — Spin-spin coulping</a></li>
-<li class="toctree-l3"><a class="reference internal" href="esr.html">10.22.12. <code class="xref py py-mod docutils literal notranslate"><span class="pre">prop.esr</span></code> — Electron spin-rotation coupling</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../prop.html#examples">10.22.13. Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nsr.html">nsr —</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rotational_gtensor.html">rotational_gtensor —</a></li>
+<li class="toctree-l3"><a class="reference internal" href="zfs.html">zfs —</a></li>
+<li class="toctree-l3"><a class="reference internal" href="freq.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">prop.freq</span></code> — Vibrational frequencies and normal modes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hfc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">prop.hfc</span></code> — Hyperfine coupling tensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nmr.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">prop.nmr</span></code> — NMR shielding tensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="polarizability.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">prop.polarizability</span></code> — Polarizabilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ssc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">prop.ssc</span></code> — Spin-spin coulping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="esr.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">prop.esr</span></code> — Electron spin-rotation coupling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../prop.html#examples">Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../qmmm.html">10.23. <code class="xref py py-mod docutils literal notranslate"><span class="pre">qmmm</span></code> — QM/MM interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../rt.html">10.24. <code class="xref py py-mod docutils literal notranslate"><span class="pre">rt</span></code> — Real-time time-dependent density functional theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../scf.html">10.25. <code class="xref py py-mod docutils literal notranslate"><span class="pre">scf</span></code> — Self-consistent field methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../semiempirical.html">10.26. <code class="xref py py-mod docutils literal notranslate"><span class="pre">semiempirical</span></code> — Semiempirical methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sgx.html">10.27. <code class="xref py py-mod docutils literal notranslate"><span class="pre">sgx</span></code> — Pseudo-spectral methods (COSX, PS, SN-K)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../solvent.html">10.28. <code class="xref py py-mod docutils literal notranslate"><span class="pre">solvent</span></code> — Solvent methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../soscf.html">10.29. <code class="xref py py-mod docutils literal notranslate"><span class="pre">soscf</span></code> — Second order SCF solver</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../symm.html">10.30. <code class="xref py py-mod docutils literal notranslate"><span class="pre">symm</span></code> – Point group symmetry and spin symmetry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tdscf.html">10.31. <code class="xref py py-mod docutils literal notranslate"><span class="pre">tdscf</span></code> — TDHF and TDDFT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tools.html">10.32. <code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> — Useful tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../x2c.html">10.33. <code class="xref py py-mod docutils literal notranslate"><span class="pre">x2c</span></code> — exact-two-component approach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qmmm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">qmmm</span></code> — QM/MM interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">rt</span></code> — Real-time time-dependent density functional theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scf</span></code> — Self-consistent field methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../semiempirical.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">semiempirical</span></code> — Semiempirical methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sgx.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sgx</span></code> — Pseudo-spectral methods (COSX, PS, SN-K)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solvent.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">solvent</span></code> — Solvent methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../soscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">soscf</span></code> — Second order SCF solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../symm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">symm</span></code> – Point group symmetry and spin symmetry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tdscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tdscf</span></code> — TDHF and TDDFT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> — Useful tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2c.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">x2c</span></code> — exact-two-component approach</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface.html">Interfaces</a></li>
 </ul>
 
             
@@ -197,11 +206,11 @@
     
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../../modules.html"><span class="section-number">10. </span>Main modules</a> &raquo;</li>
+          <li><a href="../../modules.html">Main modules</a> &raquo;</li>
         
-          <li><a href="../prop.html"><span class="section-number">10.22. </span><code class="xref py py-mod docutils literal notranslate"><span class="pre">prop</span></code> — Molecular properties</a> &raquo;</li>
+          <li><a href="../prop.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">prop</span></code> — Molecular properties</a> &raquo;</li>
         
-      <li><span class="section-number">10.22.3. </span>magnetizability  —</li>
+      <li>magnetizability  —</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -221,17 +230,17 @@
            <div itemprop="articleBody">
             
   <div class="section" id="magnetizability">
-<h1><span class="section-number">10.22.3. </span>magnetizability  —<a class="headerlink" href="#magnetizability" title="Permalink to this headline">¶</a></h1>
+<h1>magnetizability  —<a class="headerlink" href="#magnetizability" title="Permalink to this headline">¶</a></h1>
 <p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">magnetizability</span></code> module implements magetizabilities
 for mean-field wavefunctions.</p>
 <div class="section" id="examples">
-<h2><span class="section-number">10.22.3.1. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p>No example</p>
 </div>
 <div class="section" id="module-pyscf.prop.magnetizability">
-<span id="program-reference"></span><h2><span class="section-number">10.22.3.2. </span>Program reference<a class="headerlink" href="#module-pyscf.prop.magnetizability" title="Permalink to this headline">¶</a></h2>
+<span id="program-reference"></span><h2>Program reference<a class="headerlink" href="#module-pyscf.prop.magnetizability" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="module-pyscf.prop.magnetizability.rhf">
-<span id="rhf"></span><h3><span class="section-number">10.22.3.2.1. </span>rhf<a class="headerlink" href="#module-pyscf.prop.magnetizability.rhf" title="Permalink to this headline">¶</a></h3>
+<span id="rhf"></span><h3>rhf<a class="headerlink" href="#module-pyscf.prop.magnetizability.rhf" title="Permalink to this headline">¶</a></h3>
 <p>Non-relativistic magnetizability tensor for RHF
 (In testing)</p>
 <p>Refs:
@@ -318,7 +327,7 @@ given function is used to compute induced potential</p>
 
 </div>
 <div class="section" id="module-pyscf.prop.magnetizability.rks">
-<span id="rks"></span><h3><span class="section-number">10.22.3.2.2. </span>rks<a class="headerlink" href="#module-pyscf.prop.magnetizability.rks" title="Permalink to this headline">¶</a></h3>
+<span id="rks"></span><h3>rks<a class="headerlink" href="#module-pyscf.prop.magnetizability.rks" title="Permalink to this headline">¶</a></h3>
 <p>Non-relativistic magnetizability tensor for DFT</p>
 <p>Refs:
 [1] R. Cammi, J. Chem. Phys., 109, 3185 (1998)
@@ -336,7 +345,7 @@ given function is used to compute induced potential</p>
 
 </div>
 <div class="section" id="module-pyscf.prop.magnetizability.uhf">
-<span id="uhf"></span><h3><span class="section-number">10.22.3.2.3. </span>uhf<a class="headerlink" href="#module-pyscf.prop.magnetizability.uhf" title="Permalink to this headline">¶</a></h3>
+<span id="uhf"></span><h3>uhf<a class="headerlink" href="#module-pyscf.prop.magnetizability.uhf" title="Permalink to this headline">¶</a></h3>
 <p>Non-relativistic magnetizability tensor for UHF
 (In testing)</p>
 <p>Refs:
@@ -398,7 +407,7 @@ given function is used to compute induced potential</p>
 
 </div>
 <div class="section" id="module-pyscf.prop.magnetizability.uks">
-<span id="uks"></span><h3><span class="section-number">10.22.3.2.4. </span>uks<a class="headerlink" href="#module-pyscf.prop.magnetizability.uks" title="Permalink to this headline">¶</a></h3>
+<span id="uks"></span><h3>uks<a class="headerlink" href="#module-pyscf.prop.magnetizability.uks" title="Permalink to this headline">¶</a></h3>
 <p>Non-relativistic magnetizability tensor for UKS
 (In testing)</p>
 <p>Refs:
@@ -427,10 +436,10 @@ given function is used to compute induced potential</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="nsr.html" class="btn btn-neutral float-right" title="10.22.4. nsr —" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="nsr.html" class="btn btn-neutral float-right" title="nsr —" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="gtensor.html" class="btn btn-neutral float-left" title="10.22.2. prop.gtensor — EPR g tensors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="gtensor.html" class="btn btn-neutral float-left" title="prop.gtensor — EPR g tensors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

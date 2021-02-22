@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>7.12.2. Density fitting &mdash; PySCF 1.7.5 documentation</title>
+  <title>6.11.2. Density fitting &mdash; PySCF 1.7.6 documentation</title>
   
 
   
@@ -36,8 +36,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="7.12.3. Pseudopotentials" href="pp.html" />
-    <link rel="prev" title="7.12.1. Crystalline Gaussian-type atomic orbitals" href="gto.html" /> 
+    <link rel="next" title="6.11.3. Pseudopotentials" href="pp.html" />
+    <link rel="prev" title="6.11.1. Crystalline Gaussian-type atomic orbitals" href="gto.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,46 +86,55 @@
               
             
             
-              <ul class="current">
+              <p class="caption"><span class="caption-text">User documentation</span></p>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../overview.html">1. An overview of PySCF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../version.html">2. Version history</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../install.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../code-rule.html">4. Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../benchmark.html">5. Benchmark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">6. Tutorial</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../../theory.html">7. Theoretical methods</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../scf.html">7.1. Self-consistent field (SCF) methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dft.html">7.2. Density functional theory (DFT)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../mp.html">7.3. Second-Order Møller–Plesset Perturbation Theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gw.html">7.4. GW method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ci.html">7.5. Configuration interaction (CI)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cc.html">7.6. Coupled cluster (CC)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../adc.html">7.7. Algebraic diagrammatic construction (ADC) scheme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../mcscf.html">7.8. Multi-configurational self-consistent field (MCSCF)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tddft.html">7.9. Time-dependent Hartree-Fock and Density Functional Theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../rt.html">7.10. Real-time time-dependent density functional theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eomcc.html">7.11. Equation-of-motion coupled cluster (EOM-CC)</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../pbc.html">7.12. Periodic boundary conditions</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="gto.html">7.12.1. Crystalline Gaussian-type atomic orbitals</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">7.12.2. Density fitting</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#introduction">7.12.2.1. Introduction</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#fftdf-fast-fourier-transform-based-density-fitting">7.12.2.2. FFTDF — Fast Fourier transform based density fitting</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#aftdf-analytic-fourier-transform-based-density-fitting">7.12.2.3. AFTDF — Analytic Fourier transform based density fitting</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#gdf-gaussian-density-fitting">7.12.2.4. GDF — Gaussian density fitting</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#mdf-mixed-gaussian-and-plane-wave-density-fitting">7.12.2.5. MDF — Mixed Gaussian and plane-wave density fitting</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#all-electron-calculation">7.12.2.6. All-electron calculation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#low-dimension-system">7.12.2.7. Low-dimension system</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#interface-to-molecular-df-post-hf-methods">7.12.2.8. Interface to molecular DF-post-HF methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../benchmark.html">4. Benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">5. Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../theory.html">6. Theoretical methods</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../scf.html">6.1. Self-consistent field (SCF) methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dft.html">6.2. Density functional theory (DFT)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mp.html">6.3. Second-Order Møller–Plesset Perturbation Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gw.html">6.4. GW methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ci.html">6.5. Configuration interaction (CI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cc.html">6.6. Coupled cluster Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../adc.html">6.7. Algebraic diagrammatic construction (ADC) scheme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mcscf.html">6.8. Multi-configuration self-consistent field (MCSCF)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tddft.html">6.9. Time-dependent Hartree-Fock and Density Functional Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rt.html">6.10. Real-time time-dependent density functional theory</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pbc.html">6.11. Periodic boundary conditions</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="gto.html">6.11.1. Crystalline Gaussian-type atomic orbitals</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">6.11.2. Density fitting</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#introduction">6.11.2.1. Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fftdf-fast-fourier-transform-based-density-fitting">6.11.2.2. FFTDF — Fast Fourier transform based density fitting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#aftdf-analytic-fourier-transform-based-density-fitting">6.11.2.3. AFTDF — Analytic Fourier transform based density fitting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gdf-gaussian-density-fitting">6.11.2.4. GDF — Gaussian density fitting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mdf-mixed-gaussian-and-plane-wave-density-fitting">6.11.2.5. MDF — Mixed Gaussian and plane-wave density fitting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#all-electron-calculation">6.11.2.6. All-electron calculation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#low-dimension-system">6.11.2.7. Low-dimension system</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#interface-to-molecular-df-post-hf-methods">6.11.2.8. Interface to molecular DF-post-HF methods</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="pp.html">7.12.3. Pseudopotentials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pp.html">6.11.3. Pseudopotentials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mix_mol.html">6.11.4. Mixing PBC and molecular modules</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../advanced.html">8. Miscellaneous</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../interface.html">9. Interfaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../modules.html">10. Main modules</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../code-rule.html">Code standard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../develop/scf_developer.html">Self-consistent field (SCF) methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../develop/dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced.html">Miscellaneous</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">Main modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface.html">Interfaces</a></li>
 </ul>
 
             
@@ -172,11 +181,11 @@
     
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../../theory.html"><span class="section-number">7. </span>Theoretical methods</a> &raquo;</li>
+          <li><a href="../../theory.html"><span class="section-number">6. </span>Theoretical methods</a> &raquo;</li>
         
-          <li><a href="../pbc.html"><span class="section-number">7.12. </span>Periodic boundary conditions</a> &raquo;</li>
+          <li><a href="../pbc.html"><span class="section-number">6.11. </span>Periodic boundary conditions</a> &raquo;</li>
         
-      <li><span class="section-number">7.12.2. </span>Density fitting</li>
+      <li><span class="section-number">6.11.2. </span>Density fitting</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -196,9 +205,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="density-fitting">
-<span id="theory-pbc-df"></span><h1><span class="section-number">7.12.2. </span>Density fitting<a class="headerlink" href="#density-fitting" title="Permalink to this headline">¶</a></h1>
+<span id="theory-pbc-df"></span><h1><span class="section-number">6.11.2. </span>Density fitting<a class="headerlink" href="#density-fitting" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="introduction">
-<h2><span class="section-number">7.12.2.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.11.2.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>Density fitting (DF) techniques are useful to reduce the computational cost of
 two-electron repulsion integrals (ERIs), especially when periodic boundary conditions (PBCs) are applied.
 In PySCF, there are four types of DF methods available for PBC calculations:
@@ -263,7 +272,7 @@ The characters of these DF methods are summarized in the following table.</p>
 </table>
 </div>
 <div class="section" id="fftdf-fast-fourier-transform-based-density-fitting">
-<span id="fftdf"></span><h2><span class="section-number">7.12.2.2. </span>FFTDF — Fast Fourier transform based density fitting<a class="headerlink" href="#fftdf-fast-fourier-transform-based-density-fitting" title="Permalink to this headline">¶</a></h2>
+<span id="fftdf"></span><h2><span class="section-number">6.11.2.2. </span>FFTDF — Fast Fourier transform based density fitting<a class="headerlink" href="#fftdf-fast-fourier-transform-based-density-fitting" title="Permalink to this headline">¶</a></h2>
 <p>FFTDF represents the method to compute ERIs in
 reciprocal space with the Fourier transformed Coulomb kernel by using
 numerical fast Fourier transform (FFT), which is implmented in the
@@ -283,7 +292,7 @@ An <code class="xref py py-class docutils literal notranslate"><span class="pre"
 <p>As the default DF scheme of PBC calculations,
 an <code class="xref py py-class docutils literal notranslate"><span class="pre">FFTDF</span></code> object is created when initializing the PBC mean-field object and held in the attribute <code class="xref py py-attr docutils literal notranslate"><span class="pre">with_df</span></code>.</p>
 <div class="section" id="index-eri-tensor-and-integral-transformation">
-<h3><span class="section-number">7.12.2.2.1. </span>4-index ERI tensor and integral transformation<a class="headerlink" href="#index-eri-tensor-and-integral-transformation" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.11.2.2.1. </span>4-index ERI tensor and integral transformation<a class="headerlink" href="#index-eri-tensor-and-integral-transformation" title="Permalink to this headline">¶</a></h3>
 <p>For a general 4-index ERI, we have</p>
 <div class="math notranslate nohighlight">
 \[(i_{\mathbf{k}_i} j_{\mathbf{k}_j}|k_{\mathbf{k}_k} l_{\mathbf{k}_l}) =
@@ -326,7 +335,7 @@ returned integral tensor is reshaped to a 2D array:</p>
 </div>
 </div>
 <div class="section" id="coulomb-and-exchange-integrals">
-<h3><span class="section-number">7.12.2.2.2. </span>Coulomb and exchange integrals<a class="headerlink" href="#coulomb-and-exchange-integrals" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.11.2.2.2. </span>Coulomb and exchange integrals<a class="headerlink" href="#coulomb-and-exchange-integrals" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">FFTDF</span></code> class provides a method <code class="xref py py-func docutils literal notranslate"><span class="pre">FFTDF.get_jk()</span></code> to compute
 Hartree-Fock Coulomb matrix (J) and exchange matrix (K).  This method can take
 one density matrix or a list of density matrices as input and return the J and K
@@ -356,7 +365,7 @@ shape that matches the number of k points:</p>
 </div>
 </div>
 <div class="section" id="nuclear-type-integrals">
-<h3><span class="section-number">7.12.2.2.3. </span>Nuclear type integrals<a class="headerlink" href="#nuclear-type-integrals" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.11.2.2.3. </span>Nuclear type integrals<a class="headerlink" href="#nuclear-type-integrals" title="Permalink to this headline">¶</a></h3>
 <p>PBC nuclear-electron interaction and pseudo-potential (PP) integrals can be
 computed with the FFTDF methods <code class="xref py py-func docutils literal notranslate"><span class="pre">FFTDF.get_nuc()</span></code> and <code class="xref py py-func docutils literal notranslate"><span class="pre">FFTDF.get_pp()</span></code>.
 <code class="xref py py-func docutils literal notranslate"><span class="pre">FFTDF.get_nuc()</span></code> function only evaluates the integral of the point charge.
@@ -381,7 +390,7 @@ nuclear-type integrals of Gamma point:</p>
 </div>
 </div>
 <div class="section" id="kinetic-energy-cutoff">
-<h3><span class="section-number">7.12.2.2.4. </span>Kinetic energy cutoff<a class="headerlink" href="#kinetic-energy-cutoff" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.11.2.2.4. </span>Kinetic energy cutoff<a class="headerlink" href="#kinetic-energy-cutoff" title="Permalink to this headline">¶</a></h3>
 <p>The accuracy of FFTDF integrals are affected by the kinetic energy cutoff.  The
 default kinetic energy cutoff is a conservative estimation based on the basis
 set and the lattice parameter.  You can adjust the attribute <code class="xref py py-attr docutils literal notranslate"><span class="pre">FFTDF.mesh</span></code>
@@ -400,7 +409,7 @@ The overall computational error may be varied by 1 - 2 orders of magnitude.</p>
 </div>
 </div>
 <div class="section" id="aftdf-analytic-fourier-transform-based-density-fitting">
-<h2><span class="section-number">7.12.2.3. </span>AFTDF — Analytic Fourier transform based density fitting<a class="headerlink" href="#aftdf-analytic-fourier-transform-based-density-fitting" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.11.2.3. </span>AFTDF — Analytic Fourier transform based density fitting<a class="headerlink" href="#aftdf-analytic-fourier-transform-based-density-fitting" title="Permalink to this headline">¶</a></h2>
 <p>The AFTDF method implements the Fourier transform of the orbital pair density
 analytically instead of numerically in the FFTDF case.</p>
 <p>To enable AFTDF in the calculation, <code class="xref py py-class docutils literal notranslate"><span class="pre">AFTDF</span></code> object can be initialized
@@ -423,7 +432,7 @@ integrals and integral transformation can be computed with functions
 <code class="xref py py-func docutils literal notranslate"><span class="pre">AFTDF.get_eri()</span></code> and <code class="xref py py-func docutils literal notranslate"><span class="pre">AFTDF.ao2mo()</span></code> using the same calling APIs as the
 analogy functions in <a class="reference internal" href="#fftdf"><span class="std std-ref">FFTDF — Fast Fourier transform based density fitting</span></a>.</p>
 <div class="section" id="id1">
-<h3><span class="section-number">7.12.2.3.1. </span>Kinetic energy cutoff<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.11.2.3.1. </span>Kinetic energy cutoff<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p><code class="xref py py-class docutils literal notranslate"><span class="pre">AFTDF</span></code> also makes estimation on the kinetic energy cutoff.  When the
 any values of <code class="xref py py-attr docutils literal notranslate"><span class="pre">AFTDF.mesh</span></code> are too small for required accuracy
 <code class="xref py py-attr docutils literal notranslate"><span class="pre">cell.precision</span></code>, this class also outputs the
@@ -431,7 +440,7 @@ any values of <code class="xref py py-attr docutils literal notranslate"><span c
 </div>
 </div>
 <div class="section" id="gdf-gaussian-density-fitting">
-<span id="pbc-gdf"></span><h2><span class="section-number">7.12.2.4. </span>GDF — Gaussian density fitting<a class="headerlink" href="#gdf-gaussian-density-fitting" title="Permalink to this headline">¶</a></h2>
+<span id="pbc-gdf"></span><h2><span class="section-number">6.11.2.4. </span>GDF — Gaussian density fitting<a class="headerlink" href="#gdf-gaussian-density-fitting" title="Permalink to this headline">¶</a></h2>
 <p>GDF is an analogy of the conventional density fitting method with periodic
 boundary condition.  The auxiliary fitting basis in PBC GDF is periodic Gaussian
 function (To ensure the long range Coulomb integrals converging in the real
@@ -510,7 +519,7 @@ can be saved and loaded the same way as we did for the molecular DF method (see
 </pre></div>
 </div>
 <div class="section" id="auxiliary-gaussian-basis">
-<h3><span class="section-number">7.12.2.4.1. </span>Auxiliary Gaussian basis<a class="headerlink" href="#auxiliary-gaussian-basis" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.11.2.4.1. </span>Auxiliary Gaussian basis<a class="headerlink" href="#auxiliary-gaussian-basis" title="Permalink to this headline">¶</a></h3>
 <p>GDF method requires a set of Gaussian functions as the density fitting auxiliary basis.
 See also <a class="reference internal" href="../../modules/df.html#df-auxbasis"><span class="std std-ref">DF auxiliary basis</span></a> and <a class="reference internal" href="../../modules/df.html#df-etb-auxbasis"><span class="std std-ref">Even-tempered auxiliary Gaussian basis</span></a> for the choices of DF auxiliary
 basis in PySCF GDF code.  There are not many optimized auxiliary basis sets available
@@ -526,7 +535,7 @@ auxiliary basis in the PBC GDF method:</p>
 </div>
 </div>
 <div class="section" id="id2">
-<h3><span class="section-number">7.12.2.4.2. </span>Kinetic energy cutoff<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.11.2.4.2. </span>Kinetic energy cutoff<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>GDF method does not require the specification of kinetic energy cutoff.
 <code class="xref py py-attr docutils literal notranslate"><span class="pre">cell.ke_cutoff</span></code> and <code class="xref py py-attr docutils literal notranslate"><span class="pre">cell.mesh</span></code> are ignored in the <code class="xref py py-class docutils literal notranslate"><span class="pre">GDF</span></code>
 class.  Internally, a small set of planewaves is used in the GDF method to
@@ -585,7 +594,7 @@ evaluated</p>
 </div>
 </div>
 <div class="section" id="mdf-mixed-gaussian-and-plane-wave-density-fitting">
-<span id="pbc-mdf"></span><h2><span class="section-number">7.12.2.5. </span>MDF — Mixed Gaussian and plane-wave density fitting<a class="headerlink" href="#mdf-mixed-gaussian-and-plane-wave-density-fitting" title="Permalink to this headline">¶</a></h2>
+<span id="pbc-mdf"></span><h2><span class="section-number">6.11.2.5. </span>MDF — Mixed Gaussian and plane-wave density fitting<a class="headerlink" href="#mdf-mixed-gaussian-and-plane-wave-density-fitting" title="Permalink to this headline">¶</a></h2>
 <p>The MDF method combines the AFTDF and GDF methods in the same framework.
 The MDF auxiliary basis is Gaussian and plane-wave mixed basis.
 <code class="xref py py-class docutils literal notranslate"><span class="pre">MDF</span></code> object can be created in two ways:</p>
@@ -631,7 +640,7 @@ be cached in a file and loaded to <code class="xref py py-class docutils literal
 </div>
 </div>
 <div class="section" id="all-electron-calculation">
-<h2><span class="section-number">7.12.2.6. </span>All-electron calculation<a class="headerlink" href="#all-electron-calculation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.11.2.6. </span>All-electron calculation<a class="headerlink" href="#all-electron-calculation" title="Permalink to this headline">¶</a></h2>
 <p>All-electron calculations with FFTDF or AFTDF methods requires high energy cutoff
 for most elements.  It is recommended to use GDF or MDF methods in the
 all-electron calculations.  In fact, GDF and MDF can also be used in PP
@@ -639,7 +648,7 @@ calculations to reduce the number of planewave basis if steep functions are
 existed in the AO basis.</p>
 </div>
 <div class="section" id="low-dimension-system">
-<h2><span class="section-number">7.12.2.7. </span>Low-dimension system<a class="headerlink" href="#low-dimension-system" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.11.2.7. </span>Low-dimension system<a class="headerlink" href="#low-dimension-system" title="Permalink to this headline">¶</a></h2>
 <p><code class="xref py py-class docutils literal notranslate"><span class="pre">AFTDF</span></code> supports the systems with 0D (molecule), 1D and 2D periodic
 boundary conditions.  When computing the integrals of low-dimension systems, an
 infinite vacuum is placed on the free boundary.  You can set the
@@ -665,7 +674,7 @@ the low-dimension systems:</p>
 <p>See more examples in <code class="docutils literal notranslate"><span class="pre">examples/pbc/31-low_dimensional_pbc.py</span></code></p>
 </div>
 <div class="section" id="interface-to-molecular-df-post-hf-methods">
-<h2><span class="section-number">7.12.2.8. </span>Interface to molecular DF-post-HF methods<a class="headerlink" href="#interface-to-molecular-df-post-hf-methods" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.11.2.8. </span>Interface to molecular DF-post-HF methods<a class="headerlink" href="#interface-to-molecular-df-post-hf-methods" title="Permalink to this headline">¶</a></h2>
 <p>PBC DF object is compatible to the molecular DF object.  The
 <span class="math notranslate nohighlight">\(\Gamma\)</span>-point PBC SCF object can be directly passed to molecular DF
 post-HF methods for an electron correlation calculations in PBC:</p>
@@ -688,10 +697,10 @@ post-HF methods for an electron correlation calculations in PBC:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="pp.html" class="btn btn-neutral float-right" title="7.12.3. Pseudopotentials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="pp.html" class="btn btn-neutral float-right" title="6.11.3. Pseudopotentials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="gto.html" class="btn btn-neutral float-left" title="7.12.1. Crystalline Gaussian-type atomic orbitals" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="gto.html" class="btn btn-neutral float-left" title="6.11.1. Crystalline Gaussian-type atomic orbitals" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Index &mdash; PySCF 1.7.5 documentation</title>
+  <title>Index &mdash; PySCF 1.7.6 documentation</title>
   
 
   
@@ -84,17 +84,26 @@
               
             
             
-              <ul>
+              <p class="caption"><span class="caption-text">User documentation</span></p>
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">1. An overview of PySCF</a></li>
 <li class="toctree-l1"><a class="reference internal" href="version.html">2. Version history</a></li>
 <li class="toctree-l1"><a class="reference internal" href="install.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="code-rule.html">4. Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmark.html">5. Benchmark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html">6. Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="theory.html">7. Theoretical methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="advanced.html">8. Miscellaneous</a></li>
-<li class="toctree-l1"><a class="reference internal" href="interface.html">9. Interfaces</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">10. Main modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmark.html">4. Benchmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">5. Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="theory.html">6. Theoretical methods</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Developer documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="code-rule.html">Code standard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="develop/scf_developer.html">Self-consistent field (SCF) methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="develop/dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced.html">Miscellaneous</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Main modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interface.html">Interfaces</a></li>
 </ul>
 
             
@@ -270,7 +279,11 @@
 </li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.khf.KSCF.analyze">(pyscf.pbc.scf.khf.KSCF method)</a>
 </li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.krohf.KROHF.analyze">(pyscf.pbc.scf.krohf.KROHF method)</a>
+</li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.kuhf.KUHF.analyze">(pyscf.pbc.scf.kuhf.KUHF method)</a>
+</li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.rohf.ROHF.analyze">(pyscf.pbc.scf.rohf.ROHF method)</a>
 </li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.uhf.UHF.analyze">(pyscf.pbc.scf.uhf.UHF method)</a>
 </li>
@@ -555,6 +568,8 @@
       <li><a href="modules/mcscf.html#pyscf.mcscf.casci.canonicalize">canonicalize() (in module pyscf.mcscf.casci)</a>
 
       <ul>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.krohf.canonicalize">(in module pyscf.pbc.scf.krohf)</a>
+</li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.kuhf.canonicalize">(in module pyscf.pbc.scf.kuhf)</a>
 </li>
         <li><a href="modules/scf.html#pyscf.scf.ghf_symm.canonicalize">(in module pyscf.scf.ghf_symm)</a>
@@ -571,7 +586,11 @@
 </li>
         <li><a href="modules/mcscf.html#pyscf.mcscf.casci.CASCI.canonicalize">(pyscf.mcscf.casci.CASCI method)</a>
 </li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.krohf.KROHF.canonicalize">(pyscf.pbc.scf.krohf.KROHF method)</a>
+</li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.kuhf.KUHF.canonicalize">(pyscf.pbc.scf.kuhf.KUHF method)</a>
+</li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.rohf.ROHF.canonicalize">(pyscf.pbc.scf.rohf.ROHF method)</a>
 </li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.uhf.UHF.canonicalize">(pyscf.pbc.scf.uhf.UHF method)</a>
 </li>
@@ -724,10 +743,10 @@
       </ul></li>
       <li><a href="modules/pbc/cc.html#pyscf.pbc.cc.kccsd_rhf.RCCSD.ccsd_vector_desc">ccsd_vector_desc() (pyscf.pbc.cc.kccsd_rhf.RCCSD property)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="modules/pbc/dft.html#pyscf.pbc.dft.cdft.cdft">cdft() (in module pyscf.pbc.dft.cdft)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="modules/scf.html#pyscf.scf.diis.CDIIS">CDIIS (class in pyscf.scf.diis)</a>
 </li>
       <li><a href="modules/pbc/gto.html#pyscf.pbc.gto.Cell">Cell (class in pyscf.pbc.gto)</a>
@@ -859,12 +878,20 @@
       </ul></li>
       <li><a href="modules/fci.html#pyscf.fci.spin_op.contract_ss">contract_ss() (in module pyscf.fci.spin_op)</a>
 </li>
-      <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.hf.RHF.convert_from_">convert_from_() (pyscf.pbc.scf.hf.RHF method)</a>
+      <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.ghf.GHF.convert_from_">convert_from_() (pyscf.pbc.scf.ghf.GHF method)</a>
 
       <ul>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.hf.RHF.convert_from_">(pyscf.pbc.scf.hf.RHF method)</a>
+</li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.kghf.KGHF.convert_from_">(pyscf.pbc.scf.kghf.KGHF method)</a>
+</li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.khf.KRHF.convert_from_">(pyscf.pbc.scf.khf.KRHF method)</a>
 </li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.krohf.KROHF.convert_from_">(pyscf.pbc.scf.krohf.KROHF method)</a>
+</li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.kuhf.KUHF.convert_from_">(pyscf.pbc.scf.kuhf.KUHF method)</a>
+</li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.rohf.ROHF.convert_from_">(pyscf.pbc.scf.rohf.ROHF method)</a>
 </li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.uhf.UHF.convert_from_">(pyscf.pbc.scf.uhf.UHF method)</a>
 </li>
@@ -947,6 +974,8 @@
 </li>
       <li><a href="modules/solvent.html#pyscf.solvent.ddpcm.ddpcm_for_tdscf">ddpcm_for_tdscf() (in module pyscf.solvent.ddpcm)</a>
 </li>
+      <li><a href="interface/cornell_shci.html#pyscf.cornell_shci.shci.NpEncoder.default">default() (pyscf.cornell_shci.shci.NpEncoder method)</a>
+</li>
       <li><a href="modules/dft.html#pyscf.dft.libxc.define_xc">define_xc() (in module pyscf.dft.libxc)</a>
 
       <ul>
@@ -968,7 +997,11 @@
 </li>
       </ul></li>
       <li><a href="modules/df.html#pyscf.df.df_jk.density_fit">density_fit() (in module pyscf.df.df_jk)</a>
+
+      <ul>
+        <li><a href="modules/pbc/df.html#pyscf.pbc.df.df_jk.density_fit">(in module pyscf.pbc.df.df_jk)</a>
 </li>
+      </ul></li>
       <li><a href="modules/fci.html#pyscf.fci.addons.des_a">des_a() (in module pyscf.fci.addons)</a>
 </li>
       <li><a href="modules/fci.html#pyscf.fci.addons.des_b">des_b() (in module pyscf.fci.addons)</a>
@@ -1018,6 +1051,10 @@
         <li><a href="interface/dftd3.html#module-dftd3">module</a>
 </li>
       </ul></li>
+      <li><a href="interface/dftd3.html#pyscf.dftd3.itrf.dftd3">dftd3() (in module pyscf.dftd3.itrf)</a>
+</li>
+      <li><a href="interface/dftd3.html#pyscf.dftd3.itrf.DFTD3Dispersion">DFTD3Dispersion (class in pyscf.dftd3.itrf)</a>
+</li>
       <li><a href="modules/scf.html#pyscf.scf.dhf.DHF">DHF (class in pyscf.scf.dhf)</a>
 </li>
       <li><a href="modules/scf.html#pyscf.scf.DHF">DHF() (in module pyscf.scf)</a>
@@ -1093,7 +1130,11 @@
 </li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.khf.KSCF.dip_moment">(pyscf.pbc.scf.khf.KSCF method)</a>
 </li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.krohf.KROHF.dip_moment">(pyscf.pbc.scf.krohf.KROHF method)</a>
+</li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.kuhf.KUHF.dip_moment">(pyscf.pbc.scf.kuhf.KUHF method)</a>
+</li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.rohf.ROHF.dip_moment">(pyscf.pbc.scf.rohf.ROHF method)</a>
 </li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.uhf.UHF.dip_moment">(pyscf.pbc.scf.uhf.UHF method)</a>
 </li>
@@ -1116,6 +1157,10 @@
 </li>
       <li><a href="modules/symm.html#pyscf.symm.Dmatrix.dmatrix">dmatrix() (in module pyscf.symm.Dmatrix)</a>
 </li>
+      <li><a href="interface/dmrgscf.html#pyscf.dmrgscf.dmrgci.DMRGCI">DMRGCI (class in pyscf.dmrgscf.dmrgci)</a>
+</li>
+      <li><a href="interface/dmrgscf.html#pyscf.dmrgscf.dmrgci.DMRGSCF">DMRGSCF() (in module pyscf.dmrgscf.dmrgci)</a>
+</li>
       <li>
     doci
 
@@ -1131,6 +1176,12 @@
 
       <ul>
         <li><a href="modules/tdscf.html#pyscf.tdscf.uks.dRPA">(class in pyscf.tdscf.uks)</a>
+</li>
+      </ul></li>
+      <li><a href="interface/cornell_shci.html#pyscf.cornell_shci.shci.dryrun">dryrun() (in module pyscf.cornell_shci.shci)</a>
+
+      <ul>
+        <li><a href="interface/dmrgscf.html#pyscf.dmrgscf.dmrgci.dryrun">(in module pyscf.dmrgscf.dmrgci)</a>
 </li>
       </ul></li>
       <li><a href="modules/prop/ssc.html#pyscf.prop.ssc.rhf.dso_integral">dso_integral() (in module pyscf.prop.ssc.rhf)</a>
@@ -1248,7 +1299,11 @@
 </li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.khf.KSCF.eig">(pyscf.pbc.scf.khf.KSCF method)</a>
 </li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.krohf.KROHF.eig">(pyscf.pbc.scf.krohf.KROHF method)</a>
+</li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.kuhf.KUHF.eig">(pyscf.pbc.scf.kuhf.KUHF method)</a>
+</li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.rohf.ROHF.eig">(pyscf.pbc.scf.rohf.ROHF method)</a>
 </li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.uhf.UHF.eig">(pyscf.pbc.scf.uhf.UHF method)</a>
 </li>
@@ -1340,7 +1395,11 @@
 </li>
         <li><a href="modules/pbc/dft.html#pyscf.pbc.dft.rks.RKS.energy_elec">(pyscf.pbc.dft.rks.RKS method)</a>
 </li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.kghf.KGHF.energy_elec">(pyscf.pbc.scf.kghf.KGHF method)</a>
+</li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.khf.KSCF.energy_elec">(pyscf.pbc.scf.khf.KSCF method)</a>
+</li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.krohf.KROHF.energy_elec">(pyscf.pbc.scf.krohf.KROHF method)</a>
 </li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.kuhf.KUHF.energy_elec">(pyscf.pbc.scf.kuhf.KUHF method)</a>
 </li>
@@ -1787,9 +1846,11 @@
         <li><a href="modules/dft.html#pyscf.dft.gen_grid.Grids.gen_partition">(pyscf.dft.gen_grid.Grids method)</a>
 </li>
       </ul></li>
-      <li><a href="modules/scf.html#pyscf.scf.dhf.DHF.gen_response">gen_response() (pyscf.scf.dhf.DHF method)</a>
+      <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.kghf.KGHF.gen_response">gen_response() (pyscf.pbc.scf.kghf.KGHF method)</a>
 
       <ul>
+        <li><a href="modules/scf.html#pyscf.scf.dhf.DHF.gen_response">(pyscf.scf.dhf.DHF method)</a>
+</li>
         <li><a href="modules/scf.html#pyscf.scf.ghf.GHF.gen_response">(pyscf.scf.ghf.GHF method)</a>
 </li>
         <li><a href="modules/scf.html#pyscf.scf.hf.RHF.gen_response">(pyscf.scf.hf.RHF method)</a>
@@ -1910,11 +1971,17 @@
       <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.hf.get_bands">get_bands() (in module pyscf.pbc.scf.hf)</a>
 
       <ul>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.ghf.GHF.get_bands">(pyscf.pbc.scf.ghf.GHF method)</a>
+</li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.hf.SCF.get_bands">(pyscf.pbc.scf.hf.SCF method)</a>
+</li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.kghf.KGHF.get_bands">(pyscf.pbc.scf.kghf.KGHF method)</a>
 </li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.khf.KSCF.get_bands">(pyscf.pbc.scf.khf.KSCF method)</a>
 </li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.kuhf.KUHF.get_bands">(pyscf.pbc.scf.kuhf.KUHF method)</a>
+</li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.rohf.ROHF.get_bands">(pyscf.pbc.scf.rohf.ROHF method)</a>
 </li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.uhf.UHF.get_bands">(pyscf.pbc.scf.uhf.UHF method)</a>
 </li>
@@ -1979,6 +2046,8 @@
         <li><a href="modules/scf.html#pyscf.scf.hf.get_fock">(in module pyscf.scf.hf)</a>
 </li>
         <li><a href="modules/scf.html#pyscf.scf.rohf.get_fock">(in module pyscf.scf.rohf)</a>
+</li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.rohf.ROHF.get_fock">(pyscf.pbc.scf.rohf.ROHF method)</a>
 </li>
         <li><a href="modules/prop/esr.html#pyscf.prop.esr.uhf.ESR.get_fock">(pyscf.prop.esr.uhf.ESR method)</a>
 </li>
@@ -2076,9 +2145,17 @@
 </li>
         <li><a href="modules/mcscf.html#pyscf.mcscf.mc1step.CASSCF.get_grad">(pyscf.mcscf.mc1step.CASSCF method)</a>
 </li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.ghf.GHF.get_grad">(pyscf.pbc.scf.ghf.GHF method)</a>
+</li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.kghf.KGHF.get_grad">(pyscf.pbc.scf.kghf.KGHF method)</a>
+</li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.khf.KSCF.get_grad">(pyscf.pbc.scf.khf.KSCF method)</a>
 </li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.krohf.KROHF.get_grad">(pyscf.pbc.scf.krohf.KROHF method)</a>
+</li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.kuhf.KUHF.get_grad">(pyscf.pbc.scf.kuhf.KUHF method)</a>
+</li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.rohf.ROHF.get_grad">(pyscf.pbc.scf.rohf.ROHF method)</a>
 </li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.uhf.UHF.get_grad">(pyscf.pbc.scf.uhf.UHF method)</a>
 </li>
@@ -2154,6 +2231,8 @@
 </li>
         <li><a href="modules/x2c.html#pyscf.x2c.x2c.get_hcore">(in module pyscf.x2c.x2c)</a>
 </li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.kghf.KGHF.get_hcore">(pyscf.pbc.scf.kghf.KGHF method)</a>
+</li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.khf.KSCF.get_hcore">(pyscf.pbc.scf.khf.KSCF method)</a>
 </li>
         <li><a href="modules/pbc/x2c.html#pyscf.pbc.x2c.sfx2c1e.SpinFreeX2C.get_hcore">(pyscf.pbc.x2c.sfx2c1e.SpinFreeX2C method)</a>
@@ -2208,7 +2287,11 @@
       <ul>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.khf.get_j">(in module pyscf.pbc.scf.khf)</a>
 </li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.ghf.GHF.get_j">(pyscf.pbc.scf.ghf.GHF method)</a>
+</li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.hf.SCF.get_j">(pyscf.pbc.scf.hf.SCF method)</a>
+</li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.kghf.KGHF.get_j">(pyscf.pbc.scf.kghf.KGHF method)</a>
 </li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.khf.KSCF.get_j">(pyscf.pbc.scf.khf.KSCF method)</a>
 </li>
@@ -2224,6 +2307,8 @@
       <li><a href="modules/grad.html#pyscf.grad.rhf.get_jk">get_jk() (in module pyscf.grad.rhf)</a>
 
       <ul>
+        <li><a href="modules/pbc/df.html#pyscf.pbc.df.df_jk.get_jk">(in module pyscf.pbc.df.df_jk)</a>
+</li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.hf.get_jk">(in module pyscf.pbc.scf.hf)</a>
 </li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.khf.get_jk">(in module pyscf.pbc.scf.khf)</a>
@@ -2273,9 +2358,13 @@
 </li>
       <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.hf.SCF.get_jk_incore">get_jk_incore() (pyscf.pbc.scf.hf.SCF method)</a>
 </li>
-      <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.hf.SCF.get_k">get_k() (pyscf.pbc.scf.hf.SCF method)</a>
+      <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.ghf.GHF.get_k">get_k() (pyscf.pbc.scf.ghf.GHF method)</a>
 
       <ul>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.hf.SCF.get_k">(pyscf.pbc.scf.hf.SCF method)</a>
+</li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.kghf.KGHF.get_k">(pyscf.pbc.scf.kghf.KGHF method)</a>
+</li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.khf.KSCF.get_k">(pyscf.pbc.scf.khf.KSCF method)</a>
 </li>
         <li><a href="modules/rt.html#pyscf.rt.tdscf.RTTDSCF.get_k">(pyscf.rt.tdscf.RTTDSCF method)</a>
@@ -2289,12 +2378,12 @@
 </li>
       <li><a href="modules/pbc/ci.html#pyscf.pbc.ci.kcis_rhf.KCIS.get_kconserv_r">get_kconserv_r() (pyscf.pbc.ci.kcis_rhf.KCIS method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="modules/pbc/gto.html#pyscf.pbc.gto.Cell.get_kpts">get_kpts() (pyscf.pbc.gto.Cell method)</a>
 </li>
       <li><a href="modules/pbc/gto.html#pyscf.pbc.gto.Cell.get_lattice_Ls">get_lattice_Ls() (pyscf.pbc.gto.Cell method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="modules/ao2mo.html#pyscf.ao2mo.get_mo_eri">get_mo_eri() (in module pyscf.ao2mo)</a>
 
       <ul>
@@ -2365,18 +2454,28 @@
       </ul></li>
       <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.hf.get_nuc">get_nuc() (in module pyscf.pbc.scf.hf)</a>
 </li>
-      <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.khf.get_occ">get_occ() (in module pyscf.pbc.scf.khf)</a>
+      <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.kghf.get_occ">get_occ() (in module pyscf.pbc.scf.kghf)</a>
 
       <ul>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.khf.get_occ">(in module pyscf.pbc.scf.khf)</a>
+</li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.krohf.get_occ">(in module pyscf.pbc.scf.krohf)</a>
+</li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.kuhf.get_occ">(in module pyscf.pbc.scf.kuhf)</a>
 </li>
         <li><a href="modules/scf.html#pyscf.scf.hf.get_occ">(in module pyscf.scf.hf)</a>
 </li>
         <li><a href="modules/scf.html#pyscf.scf.rohf.get_occ">(in module pyscf.scf.rohf)</a>
 </li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.kghf.KGHF.get_occ">(pyscf.pbc.scf.kghf.KGHF method)</a>
+</li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.khf.KSCF.get_occ">(pyscf.pbc.scf.khf.KSCF method)</a>
 </li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.krohf.KROHF.get_occ">(pyscf.pbc.scf.krohf.KROHF method)</a>
+</li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.kuhf.KUHF.get_occ">(pyscf.pbc.scf.kuhf.KUHF method)</a>
+</li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.rohf.ROHF.get_occ">(pyscf.pbc.scf.rohf.ROHF method)</a>
 </li>
         <li><a href="modules/scf.html#pyscf.scf.atom_hf.AtomSphericAverageRHF.get_occ">(pyscf.scf.atom_hf.AtomSphericAverageRHF method)</a>
 </li>
@@ -2411,6 +2510,8 @@
         <li><a href="modules/prop/nmr.html#pyscf.prop.nmr.rhf.get_ovlp">(in module pyscf.prop.nmr.rhf)</a>
 </li>
         <li><a href="modules/scf.html#pyscf.scf.hf.get_ovlp">(in module pyscf.scf.hf)</a>
+</li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.kghf.KGHF.get_ovlp">(pyscf.pbc.scf.kghf.KGHF method)</a>
 </li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.khf.KSCF.get_ovlp">(pyscf.pbc.scf.khf.KSCF method)</a>
 </li>
@@ -2468,16 +2569,22 @@
 </li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.khf.KSCF.get_rho">(pyscf.pbc.scf.khf.KSCF method)</a>
 </li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.krohf.KROHF.get_rho">(pyscf.pbc.scf.krohf.KROHF method)</a>
+</li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.kuhf.KUHF.get_rho">(pyscf.pbc.scf.kuhf.KUHF method)</a>
+</li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.rohf.ROHF.get_rho">(pyscf.pbc.scf.rohf.ROHF method)</a>
 </li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.uhf.UHF.get_rho">(pyscf.pbc.scf.uhf.UHF method)</a>
 </li>
       </ul></li>
-      <li><a href="modules/scf.html#pyscf.scf.rohf.get_roothaan_fock">get_roothaan_fock() (in module pyscf.scf.rohf)</a>
+      <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.krohf.get_roothaan_fock">get_roothaan_fock() (in module pyscf.pbc.scf.krohf)</a>
+
+      <ul>
+        <li><a href="modules/scf.html#pyscf.scf.rohf.get_roothaan_fock">(in module pyscf.scf.rohf)</a>
 </li>
+      </ul></li>
       <li><a href="modules/pbc/gto.html#pyscf.pbc.gto.Cell.get_scaled_kpts">get_scaled_kpts() (pyscf.pbc.gto.Cell method)</a>
-</li>
-      <li><a href="modules/pbc/gto.html#pyscf.pbc.gto.Cell.get_scaled_positions">get_scaled_positions() (pyscf.pbc.gto.Cell method)</a>
 </li>
       <li><a href="modules/pbc/gto.html#pyscf.pbc.gto.Cell.get_SI">get_SI() (pyscf.pbc.gto.Cell method)</a>
 </li>
@@ -2507,6 +2614,8 @@
         <li><a href="modules/dft.html#pyscf.dft.gks.get_veff">(in module pyscf.dft.gks)</a>
 </li>
         <li><a href="modules/dft.html#pyscf.dft.rks.get_veff">(in module pyscf.dft.rks)</a>
+</li>
+        <li><a href="modules/dft.html#pyscf.dft.roks.get_veff">(in module pyscf.dft.roks)</a>
 </li>
         <li><a href="modules/dft.html#pyscf.dft.uks.get_veff">(in module pyscf.dft.uks)</a>
 </li>
@@ -2550,6 +2659,8 @@
 </li>
         <li><a href="modules/dft.html#pyscf.dft.rks_symm.SymAdaptedROKS.get_veff">(pyscf.dft.rks_symm.SymAdaptedROKS method)</a>
 </li>
+        <li><a href="modules/dft.html#pyscf.dft.roks.ROKS.get_veff">(pyscf.dft.roks.ROKS method)</a>
+</li>
         <li><a href="modules/dft.html#pyscf.dft.uks.UKS.get_veff">(pyscf.dft.uks.UKS method)</a>
 </li>
         <li><a href="modules/dft.html#pyscf.dft.uks_symm.SymAdaptedUKS.get_veff">(pyscf.dft.uks_symm.SymAdaptedUKS method)</a>
@@ -2576,11 +2687,19 @@
 </li>
         <li><a href="modules/pbc/dft.html#pyscf.pbc.dft.uks.UKS.get_veff">(pyscf.pbc.dft.uks.UKS method)</a>
 </li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.ghf.GHF.get_veff">(pyscf.pbc.scf.ghf.GHF method)</a>
+</li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.hf.SCF.get_veff">(pyscf.pbc.scf.hf.SCF method)</a>
+</li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.kghf.KGHF.get_veff">(pyscf.pbc.scf.kghf.KGHF method)</a>
 </li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.khf.KSCF.get_veff">(pyscf.pbc.scf.khf.KSCF method)</a>
 </li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.krohf.KROHF.get_veff">(pyscf.pbc.scf.krohf.KROHF method)</a>
+</li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.kuhf.KUHF.get_veff">(pyscf.pbc.scf.kuhf.KUHF method)</a>
+</li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.rohf.ROHF.get_veff">(pyscf.pbc.scf.rohf.ROHF method)</a>
 </li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.uhf.UHF.get_veff">(pyscf.pbc.scf.uhf.UHF method)</a>
 </li>
@@ -2612,6 +2731,8 @@
 </li>
         <li><a href="modules/dft.html#pyscf.dft.rks_symm.SymAdaptedROKS.get_vsap">(pyscf.dft.rks_symm.SymAdaptedROKS method)</a>
 </li>
+        <li><a href="modules/dft.html#pyscf.dft.roks.ROKS.get_vsap">(pyscf.dft.roks.ROKS method)</a>
+</li>
         <li><a href="modules/dft.html#pyscf.dft.uks.UKS.get_vsap">(pyscf.dft.uks.UKS method)</a>
 </li>
         <li><a href="modules/dft.html#pyscf.dft.uks_symm.SymAdaptedUKS.get_vsap">(pyscf.dft.uks_symm.SymAdaptedUKS method)</a>
@@ -2625,9 +2746,11 @@
 </li>
       <li><a href="modules/gto.html#pyscf.gto.moleintor.getints_by_shell">getints_by_shell() (in module pyscf.gto.moleintor)</a>
 </li>
-      <li><a href="modules/scf.html#pyscf.scf.ghf.GHF">GHF (class in pyscf.scf.ghf)</a>
+      <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.ghf.GHF">GHF (class in pyscf.pbc.scf.ghf)</a>
 
       <ul>
+        <li><a href="modules/scf.html#pyscf.scf.ghf.GHF">(class in pyscf.scf.ghf)</a>
+</li>
         <li><a href="modules/scf.html#pyscf.scf.ghf_symm.GHF">(class in pyscf.scf.ghf_symm)</a>
 </li>
       </ul></li>
@@ -2702,8 +2825,12 @@
         <li><a href="modules/semiempirical.html#pyscf.semiempirical.umindo3_grad.Grad">(in module pyscf.semiempirical.umindo3_grad)</a>
 </li>
       </ul></li>
-      <li><a href="modules/grad.html#pyscf.grad.rhf.GradientsMixin.grad">grad() (pyscf.grad.rhf.GradientsMixin method)</a>
+      <li><a href="interface/dftd3.html#pyscf.dftd3.itrf.grad">grad() (in module pyscf.dftd3.itrf)</a>
+
+      <ul>
+        <li><a href="modules/grad.html#pyscf.grad.rhf.GradientsMixin.grad">(pyscf.grad.rhf.GradientsMixin method)</a>
 </li>
+      </ul></li>
       <li><a href="modules/grad.html#pyscf.grad.rhf.grad_elec">grad_elec() (in module pyscf.grad.rhf)</a>
 
       <ul>
@@ -2795,6 +2922,8 @@
       <li><a href="modules/dft.html#pyscf.dft.rks_symm.SymAdaptedROKS.Gradients">Gradients() (pyscf.dft.rks_symm.SymAdaptedROKS method)</a>
 
       <ul>
+        <li><a href="modules/dft.html#pyscf.dft.roks.ROKS.Gradients">(pyscf.dft.roks.ROKS method)</a>
+</li>
         <li><a href="modules/mcscf.html#pyscf.mcscf.casci.CASCI.Gradients">(pyscf.mcscf.casci.CASCI method)</a>
 </li>
         <li><a href="modules/mcscf.html#pyscf.mcscf.mc1step.CASSCF.Gradients">(pyscf.mcscf.mc1step.CASSCF method)</a>
@@ -2903,9 +3032,17 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="modules/scf.html#pyscf.scf.hf.RHF.Hessian">Hessian() (pyscf.scf.hf.RHF method)</a>
+      <li><a href="modules/dft.html#pyscf.dft.rks.RKS.Hessian">Hessian() (pyscf.dft.rks.RKS method)</a>
 
       <ul>
+        <li><a href="modules/dft.html#pyscf.dft.rks_symm.SymAdaptedRKS.Hessian">(pyscf.dft.rks_symm.SymAdaptedRKS method)</a>
+</li>
+        <li><a href="modules/dft.html#pyscf.dft.uks.UKS.Hessian">(pyscf.dft.uks.UKS method)</a>
+</li>
+        <li><a href="modules/dft.html#pyscf.dft.uks_symm.SymAdaptedUKS.Hessian">(pyscf.dft.uks_symm.SymAdaptedUKS method)</a>
+</li>
+        <li><a href="modules/scf.html#pyscf.scf.hf.RHF.Hessian">(pyscf.scf.hf.RHF method)</a>
+</li>
         <li><a href="modules/scf.html#pyscf.scf.uhf.UHF.Hessian">(pyscf.scf.uhf.UHF method)</a>
 </li>
       </ul></li>
@@ -2970,6 +3107,8 @@
 </li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.kuhf.KUHF.init_guess_by_1e">(pyscf.pbc.scf.kuhf.KUHF method)</a>
 </li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.rohf.ROHF.init_guess_by_1e">(pyscf.pbc.scf.rohf.ROHF method)</a>
+</li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.uhf.UHF.init_guess_by_1e">(pyscf.pbc.scf.uhf.UHF method)</a>
 </li>
         <li><a href="modules/scf.html#pyscf.scf.hf.SCF.init_guess_by_1e">(pyscf.scf.hf.SCF method)</a>
@@ -2986,7 +3125,11 @@
 </li>
         <li><a href="modules/x2c.html#pyscf.x2c.x2c.init_guess_by_atom">(in module pyscf.x2c.x2c)</a>
 </li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.krohf.KROHF.init_guess_by_atom">(pyscf.pbc.scf.krohf.KROHF method)</a>
+</li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.kuhf.KUHF.init_guess_by_atom">(pyscf.pbc.scf.kuhf.KUHF method)</a>
+</li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.rohf.ROHF.init_guess_by_atom">(pyscf.pbc.scf.rohf.ROHF method)</a>
 </li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.uhf.UHF.init_guess_by_atom">(pyscf.pbc.scf.uhf.UHF method)</a>
 </li>
@@ -3024,7 +3167,11 @@
 </li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.khf.KSCF.init_guess_by_chkfile">(pyscf.pbc.scf.khf.KSCF method)</a>
 </li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.krohf.KROHF.init_guess_by_chkfile">(pyscf.pbc.scf.krohf.KROHF method)</a>
+</li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.kuhf.KUHF.init_guess_by_chkfile">(pyscf.pbc.scf.kuhf.KUHF method)</a>
+</li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.rohf.ROHF.init_guess_by_chkfile">(pyscf.pbc.scf.rohf.ROHF method)</a>
 </li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.uhf.UHF.init_guess_by_chkfile">(pyscf.pbc.scf.uhf.UHF method)</a>
 </li>
@@ -3046,7 +3193,11 @@
       <ul>
         <li><a href="modules/scf.html#pyscf.scf.hf.init_guess_by_huckel">(in module pyscf.scf.hf)</a>
 </li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.krohf.KROHF.init_guess_by_huckel">(pyscf.pbc.scf.krohf.KROHF method)</a>
+</li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.kuhf.KUHF.init_guess_by_huckel">(pyscf.pbc.scf.kuhf.KUHF method)</a>
+</li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.rohf.ROHF.init_guess_by_huckel">(pyscf.pbc.scf.rohf.ROHF method)</a>
 </li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.uhf.UHF.init_guess_by_huckel">(pyscf.pbc.scf.uhf.UHF method)</a>
 </li>
@@ -3072,7 +3223,11 @@
 </li>
         <li><a href="modules/x2c.html#pyscf.x2c.x2c.init_guess_by_minao">(in module pyscf.x2c.x2c)</a>
 </li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.krohf.KROHF.init_guess_by_minao">(pyscf.pbc.scf.krohf.KROHF method)</a>
+</li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.kuhf.KUHF.init_guess_by_minao">(pyscf.pbc.scf.kuhf.KUHF method)</a>
+</li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.rohf.ROHF.init_guess_by_minao">(pyscf.pbc.scf.rohf.ROHF method)</a>
 </li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.uhf.UHF.init_guess_by_minao">(pyscf.pbc.scf.uhf.UHF method)</a>
 </li>
@@ -3097,6 +3252,8 @@
         <li><a href="modules/dft.html#pyscf.dft.rks_symm.SymAdaptedRKS.init_guess_by_vsap">(pyscf.dft.rks_symm.SymAdaptedRKS method)</a>
 </li>
         <li><a href="modules/dft.html#pyscf.dft.rks_symm.SymAdaptedROKS.init_guess_by_vsap">(pyscf.dft.rks_symm.SymAdaptedROKS method)</a>
+</li>
+        <li><a href="modules/dft.html#pyscf.dft.roks.ROKS.init_guess_by_vsap">(pyscf.dft.roks.ROKS method)</a>
 </li>
         <li><a href="modules/dft.html#pyscf.dft.uks.UKS.init_guess_by_vsap">(pyscf.dft.uks.UKS method)</a>
 </li>
@@ -3242,9 +3399,15 @@
 </li>
         <li><a href="modules/ci.html#pyscf.ci.cisd.CISD.kernel">(pyscf.ci.cisd.CISD method)</a>
 </li>
+        <li><a href="interface/cornell_shci.html#pyscf.cornell_shci.shci.SHCI.kernel">(pyscf.cornell_shci.shci.SHCI method)</a>
+</li>
         <li><a href="modules/df.html#id1">(pyscf.df.df.DF method)</a>, <a href="modules/df.html#pyscf.df.df.DF.kernel">[1]</a>
 </li>
         <li><a href="modules/dft.html#pyscf.dft.gen_grid.Grids.kernel">(pyscf.dft.gen_grid.Grids method)</a>
+</li>
+        <li><a href="interface/dftd3.html#pyscf.dftd3.itrf.DFTD3Dispersion.kernel">(pyscf.dftd3.itrf.DFTD3Dispersion method)</a>
+</li>
+        <li><a href="interface/dmrgscf.html#pyscf.dmrgscf.dmrgci.DMRGCI.kernel">(pyscf.dmrgscf.dmrgci.DMRGCI method)</a>
 </li>
         <li><a href="modules/doci.html#pyscf.doci.doci_slow.DOCI.kernel">(pyscf.doci.doci_slow.DOCI method)</a>
 </li>
@@ -3407,6 +3570,8 @@
 </li>
       <li><a href="modules/pbc/cc.html#pyscf.pbc.cc.kccsd.KGCCSD">KGCCSD (in module pyscf.pbc.cc.kccsd)</a>
 </li>
+      <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.kghf.KGHF">KGHF (class in pyscf.pbc.scf.kghf)</a>
+</li>
       <li><a href="modules/pbc/dft.html#pyscf.pbc.dft.KKS">KKS() (in module pyscf.pbc.dft)</a>
 </li>
       <li><a href="modules/pbc/mp.html#id3">KMP2 (class in pyscf.pbc.mp.kmp2)</a>, <a href="modules/pbc/mp.html#pyscf.pbc.mp.kmp2.KMP2">[1]</a>
@@ -3430,6 +3595,8 @@
       <li><a href="modules/pbc/dft.html#pyscf.pbc.dft.krks.KRKS">KRKS (class in pyscf.pbc.dft.krks)</a>
 </li>
       <li><a href="modules/pbc/mp.html#pyscf.pbc.mp.kmp2.KRMP2">KRMP2 (in module pyscf.pbc.mp.kmp2)</a>
+</li>
+      <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.krohf.KROHF">KROHF (class in pyscf.pbc.scf.krohf)</a>
 </li>
       <li><a href="modules/pbc/dft.html#pyscf.pbc.dft.kroks.KROKS">KROKS (class in pyscf.pbc.dft.kroks)</a>
 </li>
@@ -3749,6 +3916,8 @@
 </li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.khf.make_rdm1">(in module pyscf.pbc.scf.khf)</a>
 </li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.krohf.make_rdm1">(in module pyscf.pbc.scf.krohf)</a>
+</li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.kuhf.make_rdm1">(in module pyscf.pbc.scf.kuhf)</a>
 </li>
         <li><a href="modules/scf.html#pyscf.scf.hf.make_rdm1">(in module pyscf.scf.hf)</a>
@@ -3791,7 +3960,11 @@
 </li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.khf.KSCF.make_rdm1">(pyscf.pbc.scf.khf.KSCF method)</a>
 </li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.krohf.KROHF.make_rdm1">(pyscf.pbc.scf.krohf.KROHF method)</a>
+</li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.kuhf.KUHF.make_rdm1">(pyscf.pbc.scf.kuhf.KUHF method)</a>
+</li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.rohf.ROHF.make_rdm1">(pyscf.pbc.scf.rohf.ROHF method)</a>
 </li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.uhf.UHF.make_rdm1">(pyscf.pbc.scf.uhf.UHF method)</a>
 </li>
@@ -4054,6 +4227,8 @@
 </li>
         <li><a href="modules/ci.html#module-pyscf.ci.ucisd">pyscf.ci.ucisd</a>
 </li>
+        <li><a href="interface/cornell_shci.html#module-pyscf.cornell_shci.shci">pyscf.cornell_shci.shci</a>
+</li>
         <li><a href="modules/data.html#module-pyscf.data">pyscf.data</a>
 </li>
         <li><a href="modules/df.html#module-pyscf.df.addons">pyscf.df.addons</a>
@@ -4104,6 +4279,8 @@
 </li>
         <li><a href="modules/dft.html#module-pyscf.dft.rks_symm">pyscf.dft.rks_symm</a>
 </li>
+        <li><a href="modules/dft.html#module-pyscf.dft.roks">pyscf.dft.roks</a>
+</li>
         <li><a href="modules/dft.html#module-pyscf.dft.uks">pyscf.dft.uks</a>
 </li>
         <li><a href="modules/dft.html#module-pyscf.dft.uks_symm">pyscf.dft.uks_symm</a>
@@ -4112,7 +4289,17 @@
 </li>
         <li><a href="modules/dft.html#module-pyscf.dft.xcfun">pyscf.dft.xcfun</a>
 </li>
+        <li><a href="interface/dftd3.html#module-pyscf.dftd3.itrf">pyscf.dftd3.itrf</a>
+</li>
+        <li><a href="interface/dmrgscf.html#module-pyscf.dmrgscf">pyscf.dmrgscf</a>
+</li>
+        <li><a href="interface/dmrgscf.html#module-pyscf.dmrgscf.chemps2">pyscf.dmrgscf.chemps2</a>
+</li>
         <li><a href="interface/dmrgscf.html#module-pyscf.dmrgscf.dmrg_sym">pyscf.dmrgscf.dmrg_sym</a>
+</li>
+        <li><a href="interface/dmrgscf.html#module-pyscf.dmrgscf.dmrgci">pyscf.dmrgscf.dmrgci</a>
+</li>
+        <li><a href="interface/dmrgscf.html#module-pyscf.dmrgscf.nevpt_mpi">pyscf.dmrgscf.nevpt_mpi</a>
 </li>
         <li><a href="modules/doci.html#module-pyscf.doci">pyscf.doci</a>
 </li>
@@ -4360,11 +4547,19 @@
 </li>
         <li><a href="modules/pbc/prop.html#module-pyscf.pbc.prop.efg.rhf">pyscf.pbc.prop.efg.rhf</a>
 </li>
+        <li><a href="modules/pbc/scf.html#module-pyscf.pbc.scf.ghf">pyscf.pbc.scf.ghf</a>
+</li>
         <li><a href="modules/pbc/scf.html#module-pyscf.pbc.scf.hf">pyscf.pbc.scf.hf</a>
+</li>
+        <li><a href="modules/pbc/scf.html#module-pyscf.pbc.scf.kghf">pyscf.pbc.scf.kghf</a>
 </li>
         <li><a href="modules/pbc/scf.html#module-pyscf.pbc.scf.khf">pyscf.pbc.scf.khf</a>
 </li>
+        <li><a href="modules/pbc/scf.html#module-pyscf.pbc.scf.krohf">pyscf.pbc.scf.krohf</a>
+</li>
         <li><a href="modules/pbc/scf.html#module-pyscf.pbc.scf.kuhf">pyscf.pbc.scf.kuhf</a>
+</li>
+        <li><a href="modules/pbc/scf.html#module-pyscf.pbc.scf.rohf">pyscf.pbc.scf.rohf</a>
 </li>
         <li><a href="modules/pbc/scf.html#module-pyscf.pbc.scf.uhf">pyscf.pbc.scf.uhf</a>
 </li>
@@ -4691,6 +4886,8 @@
       <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.khf.mulliken_meta">mulliken_meta() (in module pyscf.pbc.scf.khf)</a>
 
       <ul>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.krohf.mulliken_meta">(in module pyscf.pbc.scf.krohf)</a>
+</li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.kuhf.mulliken_meta">(in module pyscf.pbc.scf.kuhf)</a>
 </li>
         <li><a href="modules/scf.html#pyscf.scf.ghf.mulliken_meta">(in module pyscf.scf.ghf)</a>
@@ -4700,6 +4897,8 @@
         <li><a href="modules/scf.html#pyscf.scf.uhf.mulliken_meta">(in module pyscf.scf.uhf)</a>
 </li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.khf.KSCF.mulliken_meta">(pyscf.pbc.scf.khf.KSCF method)</a>
+</li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.krohf.KROHF.mulliken_meta">(pyscf.pbc.scf.krohf.KROHF method)</a>
 </li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.kuhf.KUHF.mulliken_meta">(pyscf.pbc.scf.kuhf.KUHF method)</a>
 </li>
@@ -4822,6 +5021,8 @@
 </li>
       <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.hf.normalize_dm_">normalize_dm_() (in module pyscf.pbc.scf.hf)</a>
 </li>
+      <li><a href="interface/cornell_shci.html#pyscf.cornell_shci.shci.NpEncoder">NpEncoder (class in pyscf.cornell_shci.shci)</a>
+</li>
       <li><a href="modules/gto.html#pyscf.gto.mole.npgto_nr">npgto_nr() (in module pyscf.gto.mole)</a>
 
       <ul>
@@ -4942,6 +5143,8 @@
         <li><a href="modules/dft.html#pyscf.dft.rks_symm.SymAdaptedRKS.nuc_grad_method">(pyscf.dft.rks_symm.SymAdaptedRKS method)</a>
 </li>
         <li><a href="modules/dft.html#pyscf.dft.rks_symm.SymAdaptedROKS.nuc_grad_method">(pyscf.dft.rks_symm.SymAdaptedROKS method)</a>
+</li>
+        <li><a href="modules/dft.html#pyscf.dft.roks.ROKS.nuc_grad_method">(pyscf.dft.roks.ROKS method)</a>
 </li>
         <li><a href="modules/dft.html#pyscf.dft.uks.UKS.nuc_grad_method">(pyscf.dft.uks.UKS method)</a>
 </li>
@@ -5369,6 +5572,13 @@
 </li>
       </ul></li>
       <li>
+    pyscf.cornell_shci.shci
+
+      <ul>
+        <li><a href="interface/cornell_shci.html#module-pyscf.cornell_shci.shci">module</a>
+</li>
+      </ul></li>
+      <li>
     pyscf.data
 
       <ul>
@@ -5544,6 +5754,13 @@
 </li>
       </ul></li>
       <li>
+    pyscf.dft.roks
+
+      <ul>
+        <li><a href="modules/dft.html#module-pyscf.dft.roks">module</a>
+</li>
+      </ul></li>
+      <li>
     pyscf.dft.uks
 
       <ul>
@@ -5572,10 +5789,45 @@
 </li>
       </ul></li>
       <li>
+    pyscf.dftd3.itrf
+
+      <ul>
+        <li><a href="interface/dftd3.html#module-pyscf.dftd3.itrf">module</a>
+</li>
+      </ul></li>
+      <li>
+    pyscf.dmrgscf
+
+      <ul>
+        <li><a href="interface/dmrgscf.html#module-pyscf.dmrgscf">module</a>
+</li>
+      </ul></li>
+      <li>
+    pyscf.dmrgscf.chemps2
+
+      <ul>
+        <li><a href="interface/dmrgscf.html#module-pyscf.dmrgscf.chemps2">module</a>
+</li>
+      </ul></li>
+      <li>
     pyscf.dmrgscf.dmrg_sym
 
       <ul>
         <li><a href="interface/dmrgscf.html#module-pyscf.dmrgscf.dmrg_sym">module</a>
+</li>
+      </ul></li>
+      <li>
+    pyscf.dmrgscf.dmrgci
+
+      <ul>
+        <li><a href="interface/dmrgscf.html#module-pyscf.dmrgscf.dmrgci">module</a>
+</li>
+      </ul></li>
+      <li>
+    pyscf.dmrgscf.nevpt_mpi
+
+      <ul>
+        <li><a href="interface/dmrgscf.html#module-pyscf.dmrgscf.nevpt_mpi">module</a>
 </li>
       </ul></li>
       <li>
@@ -6173,6 +6425,8 @@
         <li><a href="modules/pbc/cc.html#module-pyscf.pbc.cc.eom_kccsd_rhf_ip">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     pyscf.pbc.cc.eom_kccsd_uhf
 
@@ -6187,8 +6441,6 @@
         <li><a href="modules/pbc/cc.html#module-pyscf.pbc.cc.kccsd">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     pyscf.pbc.cc.kccsd_rhf
 
@@ -6442,10 +6694,24 @@
 </li>
       </ul></li>
       <li>
+    pyscf.pbc.scf.ghf
+
+      <ul>
+        <li><a href="modules/pbc/scf.html#module-pyscf.pbc.scf.ghf">module</a>
+</li>
+      </ul></li>
+      <li>
     pyscf.pbc.scf.hf
 
       <ul>
         <li><a href="modules/pbc/scf.html#module-pyscf.pbc.scf.hf">module</a>
+</li>
+      </ul></li>
+      <li>
+    pyscf.pbc.scf.kghf
+
+      <ul>
+        <li><a href="modules/pbc/scf.html#module-pyscf.pbc.scf.kghf">module</a>
 </li>
       </ul></li>
       <li>
@@ -6456,10 +6722,24 @@
 </li>
       </ul></li>
       <li>
+    pyscf.pbc.scf.krohf
+
+      <ul>
+        <li><a href="modules/pbc/scf.html#module-pyscf.pbc.scf.krohf">module</a>
+</li>
+      </ul></li>
+      <li>
     pyscf.pbc.scf.kuhf
 
       <ul>
         <li><a href="modules/pbc/scf.html#module-pyscf.pbc.scf.kuhf">module</a>
+</li>
+      </ul></li>
+      <li>
+    pyscf.pbc.scf.rohf
+
+      <ul>
+        <li><a href="modules/pbc/scf.html#module-pyscf.pbc.scf.rohf">module</a>
 </li>
       </ul></li>
       <li>
@@ -7483,6 +7763,8 @@
       <ul>
         <li><a href="modules/dft.html#pyscf.dft.gen_grid.Grids.reset">(pyscf.dft.gen_grid.Grids method)</a>
 </li>
+        <li><a href="interface/dftd3.html#pyscf.dftd3.itrf.DFTD3Dispersion.reset">(pyscf.dftd3.itrf.DFTD3Dispersion method)</a>
+</li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.hf.SCF.reset">(pyscf.pbc.scf.hf.SCF method)</a>
 </li>
         <li><a href="modules/scf.html#pyscf.scf.dhf.DHF.reset">(pyscf.scf.dhf.DHF method)</a>
@@ -7520,10 +7802,10 @@
         <li><a href="modules/x2c.html#pyscf.x2c.x2c.RHF">(in module pyscf.x2c.x2c)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="modules/scf.html#pyscf.scf.RHF">RHF() (in module pyscf.scf)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="modules/scf.html#pyscf.scf.stability.rhf_stability">rhf_stability() (in module pyscf.scf.stability)</a>
 </li>
       <li><a href="modules/dft.html#pyscf.dft.rks.RKS">RKS (class in pyscf.dft.rks)</a>
@@ -7552,9 +7834,11 @@
         <li><a href="modules/mp.html#pyscf.mp.mp2.RMP2">(in module pyscf.mp.mp2)</a>
 </li>
       </ul></li>
-      <li><a href="modules/scf.html#pyscf.scf.rohf.ROHF">ROHF (class in pyscf.scf.rohf)</a>
+      <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.rohf.ROHF">ROHF (class in pyscf.pbc.scf.rohf)</a>
 
       <ul>
+        <li><a href="modules/scf.html#pyscf.scf.rohf.ROHF">(class in pyscf.scf.rohf)</a>
+</li>
         <li><a href="modules/scf.html#pyscf.scf.hf_symm.ROHF">(in module pyscf.scf.hf_symm)</a>
 </li>
       </ul></li>
@@ -7562,9 +7846,11 @@
 </li>
       <li><a href="modules/scf.html#pyscf.scf.stability.rohf_stability">rohf_stability() (in module pyscf.scf.stability)</a>
 </li>
-      <li><a href="modules/pbc/dft.html#pyscf.pbc.dft.roks.ROKS">ROKS (class in pyscf.pbc.dft.roks)</a>
+      <li><a href="modules/dft.html#pyscf.dft.roks.ROKS">ROKS (class in pyscf.dft.roks)</a>
 
       <ul>
+        <li><a href="modules/pbc/dft.html#pyscf.pbc.dft.roks.ROKS">(class in pyscf.pbc.dft.roks)</a>
+</li>
         <li><a href="modules/dft.html#pyscf.dft.rks_symm.ROKS">(in module pyscf.dft.rks_symm)</a>
 </li>
       </ul></li>
@@ -7763,6 +8049,12 @@
 </li>
       <li><a href="modules/sgx.html#pyscf.sgx.sgx.sgx_fit">sgx_fit() (in module pyscf.sgx.sgx)</a>
 </li>
+      <li><a href="interface/cornell_shci.html#pyscf.cornell_shci.shci.SHCI">SHCI (class in pyscf.cornell_shci.shci)</a>
+</li>
+      <li><a href="interface/cornell_shci.html#pyscf.cornell_shci.shci.shci_client">shci_client (class in pyscf.cornell_shci.shci)</a>
+</li>
+      <li><a href="interface/cornell_shci.html#pyscf.cornell_shci.shci.SHCISCF">SHCISCF() (in module pyscf.cornell_shci.shci)</a>
+</li>
       <li><a href="modules/lo.html#pyscf.lo.ibo.shell_str">shell_str() (in module pyscf.lo.ibo)</a>
 </li>
       <li><a href="modules/scf.html#pyscf.scf.hf_symm.so2ao_mo_coeff">so2ao_mo_coeff() (in module pyscf.scf.hf_symm)</a>
@@ -7906,7 +8198,11 @@
 </li>
         <li><a href="modules/hci.html#pyscf.hci.hci.SelectedCI.spin_square">(pyscf.hci.hci.SelectedCI method)</a>
 </li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.krohf.KROHF.spin_square">(pyscf.pbc.scf.krohf.KROHF method)</a>
+</li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.kuhf.KUHF.spin_square">(pyscf.pbc.scf.kuhf.KUHF method)</a>
+</li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.rohf.ROHF.spin_square">(pyscf.pbc.scf.rohf.ROHF method)</a>
 </li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.uhf.UHF.spin_square">(pyscf.pbc.scf.uhf.UHF method)</a>
 </li>
@@ -7962,7 +8258,11 @@
       <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.hf.RHF.stability">stability() (pyscf.pbc.scf.hf.RHF method)</a>
 
       <ul>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.krohf.KROHF.stability">(pyscf.pbc.scf.krohf.KROHF method)</a>
+</li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.kuhf.KUHF.stability">(pyscf.pbc.scf.kuhf.KUHF method)</a>
+</li>
+        <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.rohf.ROHF.stability">(pyscf.pbc.scf.rohf.ROHF method)</a>
 </li>
         <li><a href="modules/pbc/scf.html#pyscf.pbc.scf.uhf.UHF.stability">(pyscf.pbc.scf.uhf.UHF method)</a>
 </li>
@@ -8655,12 +8955,18 @@
 <h2 id="Z">Z</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="modules/prop/zfs.html#pyscf.prop.zfs.uhf.ZeroFieldSplitting">ZeroFieldSplitting (class in pyscf.prop.zfs.uhf)</a>
+      <li><a href="modules/pbc/df.html#pyscf.pbc.df.df_jk.zdotCN">zdotCN() (in module pyscf.pbc.df.df_jk)</a>
 </li>
-      <li><a href="modules/prop/zfs.html#pyscf.prop.zfs.uhf.ZFS">ZFS (in module pyscf.prop.zfs.uhf)</a>
+      <li><a href="modules/pbc/df.html#pyscf.pbc.df.df_jk.zdotNC">zdotNC() (in module pyscf.pbc.df.df_jk)</a>
+</li>
+      <li><a href="modules/pbc/df.html#pyscf.pbc.df.df_jk.zdotNN">zdotNN() (in module pyscf.pbc.df.df_jk)</a>
+</li>
+      <li><a href="modules/prop/zfs.html#pyscf.prop.zfs.uhf.ZeroFieldSplitting">ZeroFieldSplitting (class in pyscf.prop.zfs.uhf)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/prop/zfs.html#pyscf.prop.zfs.uhf.ZFS">ZFS (in module pyscf.prop.zfs.uhf)</a>
+</li>
       <li><a href="modules/pbc/cc.html#pyscf.pbc.cc.kccsd_t_rhf.zip_kpoints">zip_kpoints() (in module pyscf.pbc.cc.kccsd_t_rhf)</a>
 </li>
       <li><a href="modules/gto.html#pyscf.gto.mole.zmat">zmat() (in module pyscf.gto.mole)</a>
