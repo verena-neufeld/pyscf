@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>gw — Molecular G0W0 &mdash; PySCF 1.7.6 documentation</title>
   
@@ -16,7 +16,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -51,7 +54,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> PySCF
+            <a href="../index.html" class="icon icon-home"> PySCF
           
 
           
@@ -98,8 +101,7 @@
 <p class="caption"><span class="caption-text">Developer documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../code-rule.html">Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../develop/scf_developer.html">Self-consistent field (SCF) methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../develop/dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop.html">Guidelines for module development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced.html">Miscellaneous</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API documentation</span></p>
@@ -189,6 +191,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -202,7 +206,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/modules/gw.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -233,7 +237,7 @@ implementation for eigenvalues.</p>
 <p>G0W0 approximation</p>
 <dl class="py class">
 <dt id="pyscf.gw.gw.GW">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.gw.gw.</code><code class="sig-name descname">GW</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em>, <em class="sig-param"><span class="n">tdmf</span></em>, <em class="sig-param"><span class="n">frozen</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/gw/gw.html#GW"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.gw.gw.GW" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.gw.gw.</span></code><code class="sig-name descname"><span class="pre">GW</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tdmf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frozen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/gw/gw.html#GW"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.gw.gw.GW" title="Permalink to this definition">¶</a></dt>
 <dd><p>non-relativistic restricted GW</p>
 <p>Saved results</p>
 <blockquote>
@@ -246,7 +250,7 @@ implementation for eigenvalues.</p>
 </div></blockquote>
 <dl class="py method">
 <dt id="pyscf.gw.gw.GW.get_frozen_mask">
-<code class="sig-name descname">get_frozen_mask</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.gw.gw.GW.get_frozen_mask" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_frozen_mask</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.gw.gw.GW.get_frozen_mask" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get boolean mask for the restricted reference orbitals.</p>
 <p>In the returned boolean (mask) array of frozen orbital indices, the
 element is False if it corresonds to the frozen orbital.</p>
@@ -254,7 +258,7 @@ element is False if it corresonds to the frozen orbital.</p>
 
 <dl class="py method">
 <dt id="pyscf.gw.gw.GW.kernel">
-<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mo_energy</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mo_coeff</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">td_e</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">td_xy</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">eris</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">orbs</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/gw/gw.html#GW.kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.gw.gw.GW.kernel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">kernel</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mo_energy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">td_e</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">td_xy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eris</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orbs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/gw/gw.html#GW.kernel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.gw.gw.GW.kernel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Kernel function is the main driver of a method.  Every method should
 define the kernel function as the entry of the calculation.  Note the
 return value of kernel function is not strictly defined.  It can be
@@ -266,7 +270,7 @@ the DFT mesh grids etc.).</p>
 
 <dl class="py function">
 <dt id="pyscf.gw.gw.kernel">
-<code class="sig-prename descclassname">pyscf.gw.gw.</code><code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">gw</span></em>, <em class="sig-param"><span class="n">mo_energy</span></em>, <em class="sig-param"><span class="n">mo_coeff</span></em>, <em class="sig-param"><span class="n">td_e</span></em>, <em class="sig-param"><span class="n">td_xy</span></em>, <em class="sig-param"><span class="n">eris</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">orbs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">3</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/gw/gw.html#kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.gw.gw.kernel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.gw.gw.</span></code><code class="sig-name descname"><span class="pre">kernel</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_energy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">td_e</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">td_xy</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eris</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orbs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/gw/gw.html#kernel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.gw.gw.kernel" title="Permalink to this definition">¶</a></dt>
 <dd><p>GW-corrected quasiparticle orbital energies</p>
 <dl class="simple">
 <dt>Returns:</dt><dd><p>A list :  converged, mo_energy, mo_coeff</p>
@@ -291,7 +295,7 @@ instead of sparse matrixes;</p></li>
 </div></blockquote>
 <dl class="py function">
 <dt id="pyscf.gw.gw_slow.corrected_moe">
-<code class="sig-prename descclassname">pyscf.gw.gw_slow.</code><code class="sig-name descname">corrected_moe</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">eri</span></em>, <em class="sig-param"><span class="n">p</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/gw/gw_slow.html#corrected_moe"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.gw.gw_slow.corrected_moe" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.gw.gw_slow.</span></code><code class="sig-name descname"><span class="pre">corrected_moe</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eri</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/gw/gw_slow.html#corrected_moe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.gw.gw_slow.corrected_moe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates the corrected orbital energy.
 Args:</p>
 <blockquote>
@@ -306,7 +310,7 @@ p (int): orbital;</p>
 
 <dl class="py function">
 <dt id="pyscf.gw.gw_slow.kernel">
-<code class="sig-prename descclassname">pyscf.gw.gw_slow.</code><code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">imds</span></em>, <em class="sig-param"><span class="n">orbs</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">linearized</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">eta</span><span class="o">=</span><span class="default_value">0.001</span></em>, <em class="sig-param"><span class="n">tol</span><span class="o">=</span><span class="default_value">1e-09</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'fallback'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/gw/gw_slow.html#kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.gw.gw_slow.kernel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.gw.gw_slow.</span></code><code class="sig-name descname"><span class="pre">kernel</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">imds</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orbs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">linearized</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-09</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'fallback'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/gw/gw_slow.html#kernel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.gw.gw_slow.kernel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates GW energies.
 Args:</p>
 <blockquote>
@@ -335,37 +339,29 @@ the correct one but, potentially, failing during iterations, or ‘fallback’ u
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="hci.html" class="btn btn-neutral float-right" title="hci — Heat-bath selected CI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="gto.html" class="btn btn-neutral float-left" title="gto — Molecular structure and GTO basis" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="hci.html" class="btn btn-neutral float-right" title="hci — Heat-bath selected CI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="gto.html" class="btn btn-neutral float-left" title="gto — Molecular structure and GTO basis" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2015-2021, The PySCF Developers
+        &#169; Copyright 2015-2021, The PySCF Developers.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

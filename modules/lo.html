@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>lo — Orbital localization and analysis tools &mdash; PySCF 1.7.6 documentation</title>
   
@@ -16,7 +16,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -29,7 +32,6 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -51,7 +53,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> PySCF
+            <a href="../index.html" class="icon icon-home"> PySCF
           
 
           
@@ -98,8 +100,7 @@
 <p class="caption"><span class="caption-text">Developer documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../code-rule.html">Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../develop/scf_developer.html">Self-consistent field (SCF) methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../develop/dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop.html">Guidelines for module development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced.html">Miscellaneous</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API documentation</span></p>
@@ -190,6 +191,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -203,7 +206,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/modules/lo.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -265,13 +268,13 @@ of the original atomic orbitals):</p>
 <p>Foster-Boys localization</p>
 <dl class="py attribute">
 <dt id="pyscf.lo.boys.BF">
-<code class="sig-prename descclassname">pyscf.lo.boys.</code><code class="sig-name descname">BF</code><a class="headerlink" href="#pyscf.lo.boys.BF" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.lo.boys.</span></code><code class="sig-name descname"><span class="pre">BF</span></code><a class="headerlink" href="#pyscf.lo.boys.BF" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#pyscf.lo.boys.Boys" title="pyscf.lo.boys.Boys"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.lo.boys.Boys</span></code></a></p>
 </dd></dl>
 
 <dl class="py class">
 <dt id="pyscf.lo.boys.Boys">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.lo.boys.</code><code class="sig-name descname">Boys</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">mo_coeff</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/boys.html#Boys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.lo.boys.Boys" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.lo.boys.</span></code><code class="sig-name descname"><span class="pre">Boys</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/boys.html#Boys"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.lo.boys.Boys" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Foster-Boys localization optimizer that maximizes the orbital dipole</p>
 <p>sum_i | &lt;i| r <a href="#id1"><span class="problematic" id="id2">|</span></a>i&gt; <a href="#id3"><span class="problematic" id="id4">|</span></a>^2</p>
 <dl>
@@ -325,7 +328,7 @@ is ‘atomic’</p>
 </div></blockquote>
 <dl class="py method">
 <dt id="pyscf.lo.boys.Boys.get_init_guess">
-<code class="sig-name descname">get_init_guess</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span><span class="o">=</span><span class="default_value">'atomic'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/boys.html#Boys.get_init_guess"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.lo.boys.Boys.get_init_guess" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_init_guess</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'atomic'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/boys.html#Boys.get_init_guess"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.lo.boys.Boys.get_init_guess" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate initial guess for localization.</p>
 <dl class="simple">
 <dt>Kwargs:</dt><dd><dl class="simple">
@@ -341,45 +344,45 @@ atomic orbitals. False</p>
 
 <dl class="py attribute">
 <dt id="pyscf.lo.boys.FB">
-<code class="sig-prename descclassname">pyscf.lo.boys.</code><code class="sig-name descname">FB</code><a class="headerlink" href="#pyscf.lo.boys.FB" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.lo.boys.</span></code><code class="sig-name descname"><span class="pre">FB</span></code><a class="headerlink" href="#pyscf.lo.boys.FB" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#pyscf.lo.boys.Boys" title="pyscf.lo.boys.Boys"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.lo.boys.Boys</span></code></a></p>
 </dd></dl>
 
 <span class="target" id="module-pyscf.lo.edmiston"></span><p>Edmiston-Ruedenberg localization</p>
 <dl class="py attribute">
 <dt id="pyscf.lo.edmiston.ER">
-<code class="sig-prename descclassname">pyscf.lo.edmiston.</code><code class="sig-name descname">ER</code><a class="headerlink" href="#pyscf.lo.edmiston.ER" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.lo.edmiston.</span></code><code class="sig-name descname"><span class="pre">ER</span></code><a class="headerlink" href="#pyscf.lo.edmiston.ER" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#pyscf.lo.edmiston.EdmistonRuedenberg" title="pyscf.lo.edmiston.EdmistonRuedenberg"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.lo.edmiston.EdmistonRuedenberg</span></code></a></p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt id="pyscf.lo.edmiston.Edmiston">
-<code class="sig-prename descclassname">pyscf.lo.edmiston.</code><code class="sig-name descname">Edmiston</code><a class="headerlink" href="#pyscf.lo.edmiston.Edmiston" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.lo.edmiston.</span></code><code class="sig-name descname"><span class="pre">Edmiston</span></code><a class="headerlink" href="#pyscf.lo.edmiston.Edmiston" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#pyscf.lo.edmiston.EdmistonRuedenberg" title="pyscf.lo.edmiston.EdmistonRuedenberg"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.lo.edmiston.EdmistonRuedenberg</span></code></a></p>
 </dd></dl>
 
 <dl class="py class">
 <dt id="pyscf.lo.edmiston.EdmistonRuedenberg">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.lo.edmiston.</code><code class="sig-name descname">EdmistonRuedenberg</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">mo_coeff</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/edmiston.html#EdmistonRuedenberg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.lo.edmiston.EdmistonRuedenberg" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.lo.edmiston.</span></code><code class="sig-name descname"><span class="pre">EdmistonRuedenberg</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/edmiston.html#EdmistonRuedenberg"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.lo.edmiston.EdmistonRuedenberg" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <span class="target" id="module-pyscf.lo.pipek"></span><p>Pipek-Mezey localization</p>
 <p>ref. JCTC 10, 642 (2014); DOI:10.1021/ct401016x</p>
 <dl class="py attribute">
 <dt id="pyscf.lo.pipek.PM">
-<code class="sig-prename descclassname">pyscf.lo.pipek.</code><code class="sig-name descname">PM</code><a class="headerlink" href="#pyscf.lo.pipek.PM" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.lo.pipek.</span></code><code class="sig-name descname"><span class="pre">PM</span></code><a class="headerlink" href="#pyscf.lo.pipek.PM" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#pyscf.lo.pipek.PipekMezey" title="pyscf.lo.pipek.PipekMezey"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.lo.pipek.PipekMezey</span></code></a></p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt id="pyscf.lo.pipek.Pipek">
-<code class="sig-prename descclassname">pyscf.lo.pipek.</code><code class="sig-name descname">Pipek</code><a class="headerlink" href="#pyscf.lo.pipek.Pipek" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.lo.pipek.</span></code><code class="sig-name descname"><span class="pre">Pipek</span></code><a class="headerlink" href="#pyscf.lo.pipek.Pipek" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#pyscf.lo.pipek.PipekMezey" title="pyscf.lo.pipek.PipekMezey"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.lo.pipek.PipekMezey</span></code></a></p>
 </dd></dl>
 
 <dl class="py class">
 <dt id="pyscf.lo.pipek.PipekMezey">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.lo.pipek.</code><code class="sig-name descname">PipekMezey</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">mo_coeff</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mf</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/pipek.html#PipekMezey"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.lo.pipek.PipekMezey" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.lo.pipek.</span></code><code class="sig-name descname"><span class="pre">PipekMezey</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/pipek.html#PipekMezey"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.lo.pipek.PipekMezey" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Pipek-Mezey localization optimizer that maximizes the orbital
 population</p>
 <dl>
@@ -446,7 +449,7 @@ basis set, and have a complete basis set limit [JCTC 10,
 </div></blockquote>
 <dl class="py method">
 <dt id="pyscf.lo.pipek.PipekMezey.atomic_pops">
-<code class="sig-name descname">atomic_pops</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">mo_coeff</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/pipek.html#PipekMezey.atomic_pops"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.lo.pipek.PipekMezey.atomic_pops" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">atomic_pops</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/pipek.html#PipekMezey.atomic_pops"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.lo.pipek.PipekMezey.atomic_pops" title="Permalink to this definition">¶</a></dt>
 <dd><dl>
 <dt>Kwargs:</dt><dd><dl class="simple">
 <dt>method<span class="classifier">string</span></dt><dd><p>The atomic population projection scheme. It can be mulliken,
@@ -470,7 +473,7 @@ localization of site-based population for hubbard model.</p>
 
 <dl class="py function">
 <dt id="pyscf.lo.pipek.atomic_pops">
-<code class="sig-prename descclassname">pyscf.lo.pipek.</code><code class="sig-name descname">atomic_pops</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">mo_coeff</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'meta_lowdin'</span></em>, <em class="sig-param"><span class="n">mf</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/pipek.html#atomic_pops"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.lo.pipek.atomic_pops" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.lo.pipek.</span></code><code class="sig-name descname"><span class="pre">atomic_pops</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'meta_lowdin'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/pipek.html#atomic_pops"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.lo.pipek.atomic_pops" title="Permalink to this definition">¶</a></dt>
 <dd><dl>
 <dt>Kwargs:</dt><dd><dl class="simple">
 <dt>method<span class="classifier">string</span></dt><dd><p>The atomic population projection scheme. It can be mulliken,
@@ -495,13 +498,13 @@ localization of site-based population for hubbard model.</p>
 <span id="meta-lowdin"></span><h2>Meta-Lowdin<a class="headerlink" href="#module-pyscf.lo.orth" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="pyscf.lo.orth.lowdin">
-<code class="sig-prename descclassname">pyscf.lo.orth.</code><code class="sig-name descname">lowdin</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/orth.html#lowdin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.lo.orth.lowdin" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.lo.orth.</span></code><code class="sig-name descname"><span class="pre">lowdin</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/orth.html#lowdin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.lo.orth.lowdin" title="Permalink to this definition">¶</a></dt>
 <dd><p>new basis is <a href="#id5"><span class="problematic" id="id6">|</span></a>mu&gt; c^{lowdin}_{mu i}</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="pyscf.lo.orth.orth_ao">
-<code class="sig-prename descclassname">pyscf.lo.orth.</code><code class="sig-name descname">orth_ao</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf_or_mol</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'meta_lowdin'</span></em>, <em class="sig-param"><span class="n">pre_orth_ao</span><span class="o">=</span><span class="default_value">'ANO'</span></em>, <em class="sig-param"><span class="n">s</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/orth.html#orth_ao"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.lo.orth.orth_ao" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.lo.orth.</span></code><code class="sig-name descname"><span class="pre">orth_ao</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mf_or_mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'meta_lowdin'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pre_orth_ao</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ANO'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/orth.html#orth_ao"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.lo.orth.orth_ao" title="Permalink to this definition">¶</a></dt>
 <dd><p>Orthogonalize AOs</p>
 <dl class="simple">
 <dt>Kwargs:</dt><dd><dl class="simple">
@@ -525,14 +528,14 @@ setting this variable to None.</p>
 
 <dl class="py function">
 <dt id="pyscf.lo.orth.pre_orth_ao">
-<code class="sig-prename descclassname">pyscf.lo.orth.</code><code class="sig-name descname">pre_orth_ao</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'ANO'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/orth.html#pre_orth_ao"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.lo.orth.pre_orth_ao" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.lo.orth.</span></code><code class="sig-name descname"><span class="pre">pre_orth_ao</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ANO'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/orth.html#pre_orth_ao"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.lo.orth.pre_orth_ao" title="Permalink to this definition">¶</a></dt>
 <dd><p>Restore AO characters.  Possible methods include the ANO/MINAO
 projection or fraction-averaged atomic RHF calculation</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="pyscf.lo.orth.pre_orth_project_ano">
-<code class="sig-prename descclassname">pyscf.lo.orth.</code><code class="sig-name descname">pre_orth_project_ano</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">ref_basis</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.lo.orth.pre_orth_project_ano" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.lo.orth.</span></code><code class="sig-name descname"><span class="pre">pre_orth_project_ano</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_basis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.lo.orth.pre_orth_project_ano" title="Permalink to this definition">¶</a></dt>
 <dd><p>projected AO = <a href="#id7"><span class="problematic" id="id8">|</span></a>bas&gt;&lt;bas|ANO&gt;</p>
 <dl class="simple">
 <dt>args:</dt><dd><dl class="simple">
@@ -545,7 +548,7 @@ projection or fraction-averaged atomic RHF calculation</p>
 
 <dl class="py function">
 <dt id="pyscf.lo.orth.project_to_atomic_orbitals">
-<code class="sig-prename descclassname">pyscf.lo.orth.</code><code class="sig-name descname">project_to_atomic_orbitals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">ref_basis</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/orth.html#project_to_atomic_orbitals"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.lo.orth.project_to_atomic_orbitals" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.lo.orth.</span></code><code class="sig-name descname"><span class="pre">project_to_atomic_orbitals</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_basis</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/orth.html#project_to_atomic_orbitals"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.lo.orth.project_to_atomic_orbitals" title="Permalink to this definition">¶</a></dt>
 <dd><p>projected AO = <a href="#id9"><span class="problematic" id="id10">|</span></a>bas&gt;&lt;bas|ANO&gt;</p>
 <dl class="simple">
 <dt>args:</dt><dd><dl class="simple">
@@ -558,26 +561,26 @@ projection or fraction-averaged atomic RHF calculation</p>
 
 <dl class="py function">
 <dt id="pyscf.lo.orth.restore_ao_character">
-<code class="sig-prename descclassname">pyscf.lo.orth.</code><code class="sig-name descname">restore_ao_character</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">method</span><span class="o">=</span><span class="default_value">'ANO'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.lo.orth.restore_ao_character" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.lo.orth.</span></code><code class="sig-name descname"><span class="pre">restore_ao_character</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ANO'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.lo.orth.restore_ao_character" title="Permalink to this definition">¶</a></dt>
 <dd><p>Restore AO characters.  Possible methods include the ANO/MINAO
 projection or fraction-averaged atomic RHF calculation</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="pyscf.lo.orth.vec_lowdin">
-<code class="sig-prename descclassname">pyscf.lo.orth.</code><code class="sig-name descname">vec_lowdin</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">c</span></em>, <em class="sig-param"><span class="n">s</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/orth.html#vec_lowdin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.lo.orth.vec_lowdin" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.lo.orth.</span></code><code class="sig-name descname"><span class="pre">vec_lowdin</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/orth.html#vec_lowdin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.lo.orth.vec_lowdin" title="Permalink to this definition">¶</a></dt>
 <dd><p>lowdin orth for the metric c.T*s*c and get x, then c*x</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="pyscf.lo.orth.vec_schmidt">
-<code class="sig-prename descclassname">pyscf.lo.orth.</code><code class="sig-name descname">vec_schmidt</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">c</span></em>, <em class="sig-param"><span class="n">s</span><span class="o">=</span><span class="default_value">1</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/orth.html#vec_schmidt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.lo.orth.vec_schmidt" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.lo.orth.</span></code><code class="sig-name descname"><span class="pre">vec_schmidt</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/orth.html#vec_schmidt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.lo.orth.vec_schmidt" title="Permalink to this definition">¶</a></dt>
 <dd><p>schmidt orth for the metric c.T*s*c and get x, then c*x</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="pyscf.lo.orth.weight_orth">
-<code class="sig-prename descclassname">pyscf.lo.orth.</code><code class="sig-name descname">weight_orth</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em>, <em class="sig-param"><span class="n">weight</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/orth.html#weight_orth"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.lo.orth.weight_orth" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.lo.orth.</span></code><code class="sig-name descname"><span class="pre">weight_orth</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/orth.html#weight_orth"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.lo.orth.weight_orth" title="Permalink to this definition">¶</a></dt>
 <dd><p>new basis is <a href="#id11"><span class="problematic" id="id12">|</span></a>mu&gt; c_{mu i}, c = w[(wsw)^{-1/2}]</p>
 </dd></dl>
 
@@ -593,7 +596,7 @@ Ref:</p>
 </div></blockquote>
 <dl class="py function">
 <dt id="pyscf.lo.nao.set_atom_conf">
-<code class="sig-prename descclassname">pyscf.lo.nao.</code><code class="sig-name descname">set_atom_conf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">element</span></em>, <em class="sig-param"><span class="n">description</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/nao.html#set_atom_conf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.lo.nao.set_atom_conf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.lo.nao.</span></code><code class="sig-name descname"><span class="pre">set_atom_conf</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">element</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/nao.html#set_atom_conf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.lo.nao.set_atom_conf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Change the default atomic core and valence configuration to the one
 given by “description”.
 See data/elements.py for the default configuration.</p>
@@ -622,7 +625,7 @@ See data/elements.py for the default configuration.</p>
 ref. JCTC, 9, 4834</p>
 <dl class="py function">
 <dt id="pyscf.lo.iao.fast_iao_mullikan_pop">
-<code class="sig-prename descclassname">pyscf.lo.iao.</code><code class="sig-name descname">fast_iao_mullikan_pop</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">dm</span></em>, <em class="sig-param"><span class="n">iaos</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">5</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/iao.html#fast_iao_mullikan_pop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.lo.iao.fast_iao_mullikan_pop" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.lo.iao.</span></code><code class="sig-name descname"><span class="pre">fast_iao_mullikan_pop</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iaos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/iao.html#fast_iao_mullikan_pop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.lo.iao.fast_iao_mullikan_pop" title="Permalink to this definition">¶</a></dt>
 <dd><dl>
 <dt>Args:</dt><dd><p>mol : the molecule or cell object</p>
 <dl class="simple">
@@ -637,7 +640,7 @@ ref. JCTC, 9, 4834</p>
 
 <dl class="py function">
 <dt id="pyscf.lo.iao.iao">
-<code class="sig-prename descclassname">pyscf.lo.iao.</code><code class="sig-name descname">iao</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">orbocc</span></em>, <em class="sig-param"><span class="n">minao</span><span class="o">=</span><span class="default_value">'minao'</span></em>, <em class="sig-param"><span class="n">kpts</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/iao.html#iao"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.lo.iao.iao" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.lo.iao.</span></code><code class="sig-name descname"><span class="pre">iao</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orbocc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minao</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'minao'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kpts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/iao.html#iao"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.lo.iao.iao" title="Permalink to this definition">¶</a></dt>
 <dd><p>Intrinsic Atomic Orbitals. [Ref. JCTC, 9, 4834]</p>
 <dl>
 <dt>Args:</dt><dd><p>mol : the molecule or cell object</p>
@@ -659,7 +662,7 @@ eg using <code class="xref py py-func docutils literal notranslate"><span class=
 
 <dl class="py function">
 <dt id="pyscf.lo.iao.reference_mol">
-<code class="sig-prename descclassname">pyscf.lo.iao.</code><code class="sig-name descname">reference_mol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">minao</span><span class="o">=</span><span class="default_value">'minao'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/iao.html#reference_mol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.lo.iao.reference_mol" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.lo.iao.</span></code><code class="sig-name descname"><span class="pre">reference_mol</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minao</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'minao'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/iao.html#reference_mol"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.lo.iao.reference_mol" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a molecule which uses reference minimal basis</p>
 </dd></dl>
 
@@ -673,14 +676,14 @@ much of the code below is adapted from code published freely on the website of G
 Ref: JCTC, 2013, 9, 4834-4843</p>
 <dl class="py function">
 <dt id="pyscf.lo.ibo.MakeAtomIbOffsets">
-<code class="sig-prename descclassname">pyscf.lo.ibo.</code><code class="sig-name descname">MakeAtomIbOffsets</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">Atoms</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/ibo.html#MakeAtomIbOffsets"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.lo.ibo.MakeAtomIbOffsets" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.lo.ibo.</span></code><code class="sig-name descname"><span class="pre">MakeAtomIbOffsets</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Atoms</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/ibo.html#MakeAtomIbOffsets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.lo.ibo.MakeAtomIbOffsets" title="Permalink to this definition">¶</a></dt>
 <dd><p>calcualte offset of first orbital of individual atoms
 in the valence minimal basis (IB)</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="pyscf.lo.ibo.PM">
-<code class="sig-prename descclassname">pyscf.lo.ibo.</code><code class="sig-name descname">PM</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">orbocc</span></em>, <em class="sig-param"><span class="n">iaos</span></em>, <em class="sig-param"><span class="n">s</span></em>, <em class="sig-param"><span class="n">exponent</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.lo.ibo.PM" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.lo.ibo.</span></code><code class="sig-name descname"><span class="pre">PM</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orbocc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iaos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exponent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.lo.ibo.PM" title="Permalink to this definition">¶</a></dt>
 <dd><p>Note this localization is slightly different to Knizia’s implementation.
 The localization here reserves orthogonormality during optimization.
 Orbitals are projected to IAO basis first and the Mulliken pop is
@@ -701,7 +704,7 @@ are all orthogonormal.</p>
 
 <dl class="py function">
 <dt id="pyscf.lo.ibo.Pipek">
-<code class="sig-prename descclassname">pyscf.lo.ibo.</code><code class="sig-name descname">Pipek</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">orbocc</span></em>, <em class="sig-param"><span class="n">iaos</span></em>, <em class="sig-param"><span class="n">s</span></em>, <em class="sig-param"><span class="n">exponent</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.lo.ibo.Pipek" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.lo.ibo.</span></code><code class="sig-name descname"><span class="pre">Pipek</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orbocc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iaos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exponent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.lo.ibo.Pipek" title="Permalink to this definition">¶</a></dt>
 <dd><p>Note this localization is slightly different to Knizia’s implementation.
 The localization here reserves orthogonormality during optimization.
 Orbitals are projected to IAO basis first and the Mulliken pop is
@@ -722,7 +725,7 @@ are all orthogonormal.</p>
 
 <dl class="py function">
 <dt id="pyscf.lo.ibo.PipekMezey">
-<code class="sig-prename descclassname">pyscf.lo.ibo.</code><code class="sig-name descname">PipekMezey</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">orbocc</span></em>, <em class="sig-param"><span class="n">iaos</span></em>, <em class="sig-param"><span class="n">s</span></em>, <em class="sig-param"><span class="n">exponent</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/ibo.html#PipekMezey"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.lo.ibo.PipekMezey" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.lo.ibo.</span></code><code class="sig-name descname"><span class="pre">PipekMezey</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orbocc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iaos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exponent</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/ibo.html#PipekMezey"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.lo.ibo.PipekMezey" title="Permalink to this definition">¶</a></dt>
 <dd><p>Note this localization is slightly different to Knizia’s implementation.
 The localization here reserves orthogonormality during optimization.
 Orbitals are projected to IAO basis first and the Mulliken pop is
@@ -743,7 +746,7 @@ are all orthogonormal.</p>
 
 <dl class="py function">
 <dt id="pyscf.lo.ibo.ibo">
-<code class="sig-prename descclassname">pyscf.lo.ibo.</code><code class="sig-name descname">ibo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">orbocc</span></em>, <em class="sig-param"><span class="n">locmethod</span><span class="o">=</span><span class="default_value">'IBO'</span></em>, <em class="sig-param"><span class="n">iaos</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">s</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">exponent</span><span class="o">=</span><span class="default_value">4</span></em>, <em class="sig-param"><span class="n">grad_tol</span><span class="o">=</span><span class="default_value">1e-08</span></em>, <em class="sig-param"><span class="n">max_iter</span><span class="o">=</span><span class="default_value">200</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">3</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/ibo.html#ibo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.lo.ibo.ibo" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.lo.ibo.</span></code><code class="sig-name descname"><span class="pre">ibo</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orbocc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">locmethod</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'IBO'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iaos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exponent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grad_tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/ibo.html#ibo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.lo.ibo.ibo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Intrinsic Bonding Orbitals</p>
 <p>This function serves as a wrapper to the underlying localization functions
 ibo_loc and PipekMezey to create IBOs.</p>
@@ -767,7 +770,7 @@ ibo_loc and PipekMezey to create IBOs.</p>
 
 <dl class="py function">
 <dt id="pyscf.lo.ibo.ibo_loc">
-<code class="sig-prename descclassname">pyscf.lo.ibo.</code><code class="sig-name descname">ibo_loc</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">orbocc</span></em>, <em class="sig-param"><span class="n">iaos</span></em>, <em class="sig-param"><span class="n">s</span></em>, <em class="sig-param"><span class="n">exponent</span></em>, <em class="sig-param"><span class="n">grad_tol</span></em>, <em class="sig-param"><span class="n">max_iter</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">3</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/ibo.html#ibo_loc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.lo.ibo.ibo_loc" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.lo.ibo.</span></code><code class="sig-name descname"><span class="pre">ibo_loc</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orbocc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iaos</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exponent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grad_tol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/ibo.html#ibo_loc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.lo.ibo.ibo_loc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Intrinsic Bonding Orbitals. [Ref. JCTC, 9, 4834]</p>
 <p>This implementation follows Knizia’s implementation execept that the
 resultant IBOs are symmetrically orthogonalized.  Note the IBOs of this
@@ -798,7 +801,7 @@ module was used to maximize the IAO Mulliken charges.</p>
 
 <dl class="py function">
 <dt id="pyscf.lo.ibo.shell_str">
-<code class="sig-prename descclassname">pyscf.lo.ibo.</code><code class="sig-name descname">shell_str</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">l</span></em>, <em class="sig-param"><span class="n">n_cor</span></em>, <em class="sig-param"><span class="n">n_val</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/ibo.html#shell_str"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.lo.ibo.shell_str" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.lo.ibo.</span></code><code class="sig-name descname"><span class="pre">shell_str</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">l</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_cor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_val</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/ibo.html#shell_str"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.lo.ibo.shell_str" title="Permalink to this definition">¶</a></dt>
 <dd><p>Help function to define core and valence shells for shell with different l</p>
 </dd></dl>
 
@@ -810,37 +813,29 @@ module was used to maximize the IAO Mulliken charges.</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="mcscf.html" class="btn btn-neutral float-right" title="mcscf — Multi-configurational self-consistent field" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="lib.html" class="btn btn-neutral float-left" title="lib — Helper functions, parameters, and C extensions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="mcscf.html" class="btn btn-neutral float-right" title="mcscf — Multi-configurational self-consistent field" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="lib.html" class="btn btn-neutral float-left" title="lib — Helper functions, parameters, and C extensions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2015-2021, The PySCF Developers
+        &#169; Copyright 2015-2021, The PySCF Developers.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

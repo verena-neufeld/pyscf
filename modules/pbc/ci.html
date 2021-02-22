@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>pbc.ci — CISD with PBCs &mdash; PySCF 1.7.6 documentation</title>
   
@@ -16,7 +16,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -29,7 +32,6 @@
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -51,7 +53,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> PySCF
+            <a href="../../index.html" class="icon icon-home"> PySCF
           
 
           
@@ -98,8 +100,7 @@
 <p class="caption"><span class="caption-text">Developer documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../code-rule.html">Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../develop/scf_developer.html">Self-consistent field (SCF) methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../develop/dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../develop.html">Guidelines for module development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../advanced.html">Miscellaneous</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API documentation</span></p>
@@ -201,6 +202,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -216,7 +219,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../../_sources/modules/pbc/ci.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -238,25 +241,25 @@ It is analogous to the <a class="reference internal" href="../ci.html#module-ci"
 <span id="program-reference"></span><h2>Program reference<a class="headerlink" href="#module-pyscf.pbc.ci" title="Permalink to this headline">¶</a></h2>
 <span class="target" id="module-pyscf.pbc.ci.cisd"></span><dl class="py class">
 <dt id="pyscf.pbc.ci.cisd.GCISD">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.pbc.ci.cisd.</code><code class="sig-name descname">GCISD</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em>, <em class="sig-param"><span class="n">frozen</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mo_coeff</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mo_occ</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/ci/cisd.html#GCISD"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.ci.cisd.GCISD" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.pbc.ci.cisd.</span></code><code class="sig-name descname"><span class="pre">GCISD</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frozen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_occ</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/ci/cisd.html#GCISD"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.pbc.ci.cisd.GCISD" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py class">
 <dt id="pyscf.pbc.ci.cisd.RCISD">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.pbc.ci.cisd.</code><code class="sig-name descname">RCISD</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em>, <em class="sig-param"><span class="n">frozen</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mo_coeff</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mo_occ</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/ci/cisd.html#RCISD"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.ci.cisd.RCISD" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.pbc.ci.cisd.</span></code><code class="sig-name descname"><span class="pre">RCISD</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frozen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_occ</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/ci/cisd.html#RCISD"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.pbc.ci.cisd.RCISD" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py class">
 <dt id="pyscf.pbc.ci.cisd.UCISD">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.pbc.ci.cisd.</code><code class="sig-name descname">UCISD</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em>, <em class="sig-param"><span class="n">frozen</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mo_coeff</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mo_occ</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/ci/cisd.html#UCISD"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.ci.cisd.UCISD" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.pbc.ci.cisd.</span></code><code class="sig-name descname"><span class="pre">UCISD</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frozen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_occ</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/ci/cisd.html#UCISD"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.pbc.ci.cisd.UCISD" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <span class="target" id="module-pyscf.pbc.ci.kcis_rhf"></span><dl class="py class">
 <dt id="pyscf.pbc.ci.kcis_rhf.KCIS">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.pbc.ci.kcis_rhf.</code><code class="sig-name descname">KCIS</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em>, <em class="sig-param"><span class="n">frozen</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mo_coeff</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mo_occ</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/ci/kcis_rhf.html#KCIS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.ci.kcis_rhf.KCIS" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.pbc.ci.kcis_rhf.</span></code><code class="sig-name descname"><span class="pre">KCIS</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frozen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_occ</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/ci/kcis_rhf.html#KCIS"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.pbc.ci.kcis_rhf.KCIS" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py method">
 <dt id="pyscf.pbc.ci.kcis_rhf.KCIS.get_diag">
-<code class="sig-name descname">get_diag</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">kshift</span></em>, <em class="sig-param"><span class="n">eris</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.pbc.ci.kcis_rhf.KCIS.get_diag" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_diag</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kshift</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eris</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.pbc.ci.kcis_rhf.KCIS.get_diag" title="Permalink to this definition">¶</a></dt>
 <dd><p>Diagonal elements of CIS Hamiltonian.</p>
 <dl>
 <dt>Arguments:</dt><dd><p>cis {KCIS} – A KCIS instance
@@ -280,7 +283,7 @@ electron repulsion integrals (default: {None})</p>
 
 <dl class="py method">
 <dt id="pyscf.pbc.ci.kcis_rhf.KCIS.get_frozen_mask">
-<code class="sig-name descname">get_frozen_mask</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.pbc.ci.kcis_rhf.KCIS.get_frozen_mask" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_frozen_mask</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.pbc.ci.kcis_rhf.KCIS.get_frozen_mask" title="Permalink to this definition">¶</a></dt>
 <dd><p>Boolean mask for orbitals in k-point post-HF method.</p>
 <p>Creates a boolean mask to remove frozen orbitals and keep other orbitals for post-HF
 calculations.</p>
@@ -294,7 +297,7 @@ calculations.</p>
 
 <dl class="py method">
 <dt id="pyscf.pbc.ci.kcis_rhf.KCIS.get_kconserv_r">
-<code class="sig-name descname">get_kconserv_r</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">kshift</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/ci/kcis_rhf.html#KCIS.get_kconserv_r"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.ci.kcis_rhf.KCIS.get_kconserv_r" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_kconserv_r</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kshift</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/ci/kcis_rhf.html#KCIS.get_kconserv_r"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.pbc.ci.kcis_rhf.KCIS.get_kconserv_r" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the momentum conservation array for a set of k-points.</p>
 <p>Given k-point index m the array kconserv_r1[m] returns the index n that
 satisfies momentum conservation,</p>
@@ -316,7 +319,7 @@ E.g. int from 0 to 7 can be chosen for a [2,2,2] grid.</p>
 
 <dl class="py method">
 <dt id="pyscf.pbc.ci.kcis_rhf.KCIS.get_nmo">
-<code class="sig-name descname">get_nmo</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">per_kpoint</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.pbc.ci.kcis_rhf.KCIS.get_nmo" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_nmo</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">per_kpoint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.pbc.ci.kcis_rhf.KCIS.get_nmo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of orbitals for k-point calculations.</p>
 <p>Number of orbitals for use in a calculation with k-points, taking into account
 frozen orbitals.</p>
@@ -341,7 +344,7 @@ per_kpoint (bool, optional): True returns the number of orbitals at each k-point
 
 <dl class="py method">
 <dt id="pyscf.pbc.ci.kcis_rhf.KCIS.get_nocc">
-<code class="sig-name descname">get_nocc</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">per_kpoint</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.pbc.ci.kcis_rhf.KCIS.get_nocc" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_nocc</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">per_kpoint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.pbc.ci.kcis_rhf.KCIS.get_nocc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number of occupied orbitals for k-point calculations.</p>
 <p>Number of occupied orbitals for use in a calculation with k-points, taking into
 account frozen orbitals.</p>
@@ -362,7 +365,7 @@ per_kpoint (bool, optional): True returns the number of occupied</p>
 
 <dl class="py method">
 <dt id="pyscf.pbc.ci.kcis_rhf.KCIS.kernel">
-<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">nroots</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">eris</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">kptlist</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.pbc.ci.kcis_rhf.KCIS.kernel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">kernel</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nroots</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eris</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kptlist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.pbc.ci.kcis_rhf.KCIS.kernel" title="Permalink to this definition">¶</a></dt>
 <dd><p>CIS excitation energy with k-point sampling.</p>
 <dl>
 <dt>Arguments:</dt><dd><p>cis {KCIS} – A KCIS instance</p>
@@ -388,7 +391,7 @@ will be computed. (default: {None})</p>
 
 <dl class="py method">
 <dt id="pyscf.pbc.ci.kcis_rhf.KCIS.matvec">
-<code class="sig-name descname">matvec</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">vector</span></em>, <em class="sig-param"><span class="n">kshift</span></em>, <em class="sig-param"><span class="n">eris</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.pbc.ci.kcis_rhf.KCIS.matvec" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">matvec</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vector</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kshift</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eris</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.pbc.ci.kcis_rhf.KCIS.matvec" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute matrix-vector product of the Hamiltonion matrix and a CIS c
 oefficient vector, in the space of single excitation.</p>
 <dl>
@@ -419,7 +422,7 @@ electron repulsion integrals (default: {None})</p>
 
 <dl class="py function">
 <dt id="pyscf.pbc.ci.kcis_rhf.cis_H">
-<code class="sig-prename descclassname">pyscf.pbc.ci.kcis_rhf.</code><code class="sig-name descname">cis_H</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cis</span></em>, <em class="sig-param"><span class="n">kshift</span></em>, <em class="sig-param"><span class="n">eris</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/ci/kcis_rhf.html#cis_H"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.ci.kcis_rhf.cis_H" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.pbc.ci.kcis_rhf.</span></code><code class="sig-name descname"><span class="pre">cis_H</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kshift</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eris</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/ci/kcis_rhf.html#cis_H"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.pbc.ci.kcis_rhf.cis_H" title="Permalink to this definition">¶</a></dt>
 <dd><p>Build full Hamiltonian matrix in the space of single excitation,
 i.e. CIS Hamiltonian.</p>
 <dl>
@@ -449,7 +452,7 @@ electron repulsion integrals (default: {None})</p>
 
 <dl class="py function">
 <dt id="pyscf.pbc.ci.kcis_rhf.cis_diag">
-<code class="sig-prename descclassname">pyscf.pbc.ci.kcis_rhf.</code><code class="sig-name descname">cis_diag</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cis</span></em>, <em class="sig-param"><span class="n">kshift</span></em>, <em class="sig-param"><span class="n">eris</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/ci/kcis_rhf.html#cis_diag"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.ci.kcis_rhf.cis_diag" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.pbc.ci.kcis_rhf.</span></code><code class="sig-name descname"><span class="pre">cis_diag</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kshift</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eris</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/ci/kcis_rhf.html#cis_diag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.pbc.ci.kcis_rhf.cis_diag" title="Permalink to this definition">¶</a></dt>
 <dd><p>Diagonal elements of CIS Hamiltonian.</p>
 <dl>
 <dt>Arguments:</dt><dd><p>cis {KCIS} – A KCIS instance
@@ -473,7 +476,7 @@ electron repulsion integrals (default: {None})</p>
 
 <dl class="py function">
 <dt id="pyscf.pbc.ci.kcis_rhf.cis_matvec_singlet">
-<code class="sig-prename descclassname">pyscf.pbc.ci.kcis_rhf.</code><code class="sig-name descname">cis_matvec_singlet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cis</span></em>, <em class="sig-param"><span class="n">vector</span></em>, <em class="sig-param"><span class="n">kshift</span></em>, <em class="sig-param"><span class="n">eris</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/ci/kcis_rhf.html#cis_matvec_singlet"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.ci.kcis_rhf.cis_matvec_singlet" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.pbc.ci.kcis_rhf.</span></code><code class="sig-name descname"><span class="pre">cis_matvec_singlet</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vector</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kshift</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eris</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/ci/kcis_rhf.html#cis_matvec_singlet"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.pbc.ci.kcis_rhf.cis_matvec_singlet" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute matrix-vector product of the Hamiltonion matrix and a CIS c
 oefficient vector, in the space of single excitation.</p>
 <dl>
@@ -502,7 +505,7 @@ electron repulsion integrals (default: {None})</p>
 
 <dl class="py function">
 <dt id="pyscf.pbc.ci.kcis_rhf.kernel">
-<code class="sig-prename descclassname">pyscf.pbc.ci.kcis_rhf.</code><code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cis</span></em>, <em class="sig-param"><span class="n">nroots</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">eris</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">kptlist</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/ci/kcis_rhf.html#kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.ci.kcis_rhf.kernel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.pbc.ci.kcis_rhf.</span></code><code class="sig-name descname"><span class="pre">kernel</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nroots</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eris</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kptlist</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/ci/kcis_rhf.html#kernel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.pbc.ci.kcis_rhf.kernel" title="Permalink to this definition">¶</a></dt>
 <dd><p>CIS excitation energy with k-point sampling.</p>
 <dl>
 <dt>Arguments:</dt><dd><p>cis {KCIS} – A KCIS instance</p>
@@ -534,37 +537,29 @@ will be computed. (default: {None})</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="cc.html" class="btn btn-neutral float-right" title="pbc.cc — Coupled cluster with PBCs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="mp.html" class="btn btn-neutral float-left" title="pbc.mp — MP2 with periodic boundary conditions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="cc.html" class="btn btn-neutral float-right" title="pbc.cc — Coupled cluster with PBCs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="mp.html" class="btn btn-neutral float-left" title="pbc.mp — MP2 with periodic boundary conditions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2015-2021, The PySCF Developers
+        &#169; Copyright 2015-2021, The PySCF Developers.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

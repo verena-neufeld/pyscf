@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>pyscf.prop.nmr.uks &mdash; PySCF 1.7.6 documentation</title>
   
@@ -16,7 +16,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -29,7 +32,6 @@
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
 
@@ -49,7 +51,7 @@
           
 
           
-            <a href="../../../../index.html" class="icon icon-home" alt="Documentation Home"> PySCF
+            <a href="../../../../index.html" class="icon icon-home"> PySCF
           
 
           
@@ -96,8 +98,7 @@
 <p class="caption"><span class="caption-text">Developer documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../code-rule.html">Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../develop/scf_developer.html">Self-consistent field (SCF) methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../develop/dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../develop.html">Guidelines for module development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../advanced.html">Miscellaneous</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API documentation</span></p>
@@ -129,6 +130,8 @@
         <div class="rst-content">
         
           
+
+
 
 
 
@@ -268,7 +271,7 @@
 
     <span class="k">return</span> <span class="n">vmat</span> <span class="o">-</span> <span class="n">vmat</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 
-<div class="viewcode-block" id="get_fock"><a class="viewcode-back" href="../../../../modules/prop/nmr.html#pyscf.prop.esr.uks.get_fock">[docs]</a><span class="k">def</span> <span class="nf">get_fock</span><span class="p">(</span><span class="n">nmrobj</span><span class="p">,</span> <span class="n">dm0</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">gauge_orig</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="get_fock"><a class="viewcode-back" href="../../../../modules/prop/nmr.html#pyscf.prop.nmr.uks.get_fock">[docs]</a><span class="k">def</span> <span class="nf">get_fock</span><span class="p">(</span><span class="n">nmrobj</span><span class="p">,</span> <span class="n">dm0</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">gauge_orig</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;First order Fock matrix wrt external magnetic field&#39;&#39;&#39;</span>
     <span class="k">if</span> <span class="n">dm0</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="n">dm0</span> <span class="o">=</span> <span class="n">nmrobj</span><span class="o">.</span><span class="n">_scf</span><span class="o">.</span><span class="n">make_rdm1</span><span class="p">()</span>
     <span class="k">if</span> <span class="n">gauge_orig</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="n">gauge_orig</span> <span class="o">=</span> <span class="n">nmrobj</span><span class="o">.</span><span class="n">gauge_orig</span>
@@ -325,7 +328,7 @@
                              <span class="n">h1</span><span class="p">,</span> <span class="n">s1</span><span class="p">,</span> <span class="n">with_cphf</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="NMR"><a class="viewcode-back" href="../../../../modules/prop/nmr.html#pyscf.prop.esr.uks.NMR">[docs]</a><span class="k">class</span> <span class="nc">NMR</span><span class="p">(</span><span class="n">uhf_nmr</span><span class="o">.</span><span class="n">NMR</span><span class="p">):</span>
+<div class="viewcode-block" id="NMR"><a class="viewcode-back" href="../../../../modules/prop/nmr.html#pyscf.prop.nmr.uks.NMR">[docs]</a><span class="k">class</span> <span class="nc">NMR</span><span class="p">(</span><span class="n">uhf_nmr</span><span class="o">.</span><span class="n">NMR</span><span class="p">):</span>
     <span class="n">get_fock</span> <span class="o">=</span> <span class="n">get_fock</span>
     <span class="n">solve_mo1</span> <span class="o">=</span> <span class="n">solve_mo1</span></div>
 
@@ -379,28 +382,25 @@
            
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2015-2021, The PySCF Developers
+        &#169; Copyright 2015-2021, The PySCF Developers.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

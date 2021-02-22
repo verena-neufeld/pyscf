@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>df — Density fitting &mdash; PySCF 1.7.6 documentation</title>
   
@@ -16,7 +16,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -51,7 +54,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> PySCF
+            <a href="../index.html" class="icon icon-home"> PySCF
           
 
           
@@ -98,8 +101,7 @@
 <p class="caption"><span class="caption-text">Developer documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../code-rule.html">Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../develop/scf_developer.html">Self-consistent field (SCF) methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../develop/dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop.html">Guidelines for module development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced.html">Miscellaneous</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API documentation</span></p>
@@ -208,6 +210,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -221,7 +225,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/modules/df.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -581,7 +585,7 @@ object.  The resultant SCF object is a DFHF object.  See more examples in
 <h3>DF class<a class="headerlink" href="#df-class" title="Permalink to this headline">¶</a></h3>
 <dl class="py class">
 <dt id="pyscf.df.df.DF">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.df.df.</code><code class="sig-name descname">DF</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">auxbasis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/df.html#DF"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.df.df.DF" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.df.df.</span></code><code class="sig-name descname"><span class="pre">DF</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auxbasis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/df.html#DF"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.df.df.DF" title="Permalink to this definition">¶</a></dt>
 <dd><p>Object to hold 3-index tensor</p>
 <dl class="simple">
 <dt>Attributes:</dt><dd><dl class="simple">
@@ -617,7 +621,7 @@ used to improve IO performance.</p>
 </dl>
 <dl class="py method">
 <dt id="pyscf.df.df.DF.kernel">
-<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/df.html#DF.kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.df.df.DF.kernel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">kernel</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/df.html#DF.kernel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.df.df.DF.kernel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Kernel function is the main driver of a method.  Every method should
 define the kernel function as the entry of the calculation.  Note the
 return value of kernel function is not strictly defined.  It can be
@@ -627,7 +631,7 @@ the DFT mesh grids etc.).</p>
 
 <dl class="py method">
 <dt id="pyscf.df.df.DF.reset">
-<code class="sig-name descname">reset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/df.html#DF.reset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.df.df.DF.reset" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">reset</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/df.html#DF.reset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.df.df.DF.reset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reset mol and clean up relevant attributes for scanner mode</p>
 </dd></dl>
 
@@ -638,7 +642,7 @@ the DFT mesh grids etc.).</p>
 <span id="df-incore"></span><h3>df.incore<a class="headerlink" href="#module-pyscf.df.incore" title="Permalink to this headline">¶</a></h3>
 <dl class="py function">
 <dt id="pyscf.df.incore.aux_e1">
-<code class="sig-prename descclassname">pyscf.df.incore.</code><code class="sig-name descname">aux_e1</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">auxmol_or_auxbasis</span></em>, <em class="sig-param"><span class="n">intor</span><span class="o">=</span><span class="default_value">'int3c2e'</span></em>, <em class="sig-param"><span class="n">aosym</span><span class="o">=</span><span class="default_value">'s1'</span></em>, <em class="sig-param"><span class="n">comp</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">out</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/incore.html#aux_e1"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.df.incore.aux_e1" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.df.incore.</span></code><code class="sig-name descname"><span class="pre">aux_e1</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auxmol_or_auxbasis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'int3c2e'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aosym</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'s1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/incore.html#aux_e1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.df.incore.aux_e1" title="Permalink to this definition">¶</a></dt>
 <dd><p>3-center 2-electron AO integrals (L|ij), where L is the auxiliary basis.</p>
 <p>Note aux_e1 is basically analogous to aux_e2 function. It can be viewed as
 the version of transposed aux_e2 tensor:
@@ -655,7 +659,7 @@ if comp == 1:</p>
 
 <dl class="py function">
 <dt id="pyscf.df.incore.aux_e2">
-<code class="sig-prename descclassname">pyscf.df.incore.</code><code class="sig-name descname">aux_e2</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">auxmol_or_auxbasis</span></em>, <em class="sig-param"><span class="n">intor</span><span class="o">=</span><span class="default_value">'int3c2e'</span></em>, <em class="sig-param"><span class="n">aosym</span><span class="o">=</span><span class="default_value">'s1'</span></em>, <em class="sig-param"><span class="n">comp</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">out</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">cintopt</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/incore.html#aux_e2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.df.incore.aux_e2" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.df.incore.</span></code><code class="sig-name descname"><span class="pre">aux_e2</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auxmol_or_auxbasis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'int3c2e'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aosym</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'s1'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cintopt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/incore.html#aux_e2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.df.incore.aux_e2" title="Permalink to this definition">¶</a></dt>
 <dd><p>3-center AO integrals (ij|L), where L is the auxiliary basis.</p>
 <dl>
 <dt>Kwargs:</dt><dd><dl>
@@ -670,7 +674,7 @@ reduce the overhead of cintopt initialization repeatedly.</p>
 
 <dl class="py function">
 <dt id="pyscf.df.incore.cholesky_eri">
-<code class="sig-prename descclassname">pyscf.df.incore.</code><code class="sig-name descname">cholesky_eri</code><span class="sig-paren">(</span><em class="sig-param">mol</em>, <em class="sig-param">auxbasis='weigend+etb'</em>, <em class="sig-param">auxmol=None</em>, <em class="sig-param">int3c='int3c2e'</em>, <em class="sig-param">aosym='s2ij'</em>, <em class="sig-param">int2c='int2c2e'</em>, <em class="sig-param">comp=1</em>, <em class="sig-param">max_memory=2000</em>, <em class="sig-param">verbose=0</em>, <em class="sig-param">fauxe2=&lt;function aux_e2&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/incore.html#cholesky_eri"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.df.incore.cholesky_eri" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.df.incore.</span></code><code class="sig-name descname"><span class="pre">cholesky_eri</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mol</span></em>, <em class="sig-param"><span class="pre">auxbasis='weigend+etb'</span></em>, <em class="sig-param"><span class="pre">auxmol=None</span></em>, <em class="sig-param"><span class="pre">int3c='int3c2e'</span></em>, <em class="sig-param"><span class="pre">aosym='s2ij'</span></em>, <em class="sig-param"><span class="pre">int2c='int2c2e'</span></em>, <em class="sig-param"><span class="pre">comp=1</span></em>, <em class="sig-param"><span class="pre">max_memory=2000</span></em>, <em class="sig-param"><span class="pre">verbose=0</span></em>, <em class="sig-param"><span class="pre">fauxe2=&lt;function</span> <span class="pre">aux_e2&gt;</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/incore.html#cholesky_eri"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.df.incore.cholesky_eri" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Returns:</dt><dd><p>2D array of (naux,nao*(nao+1)/2) in C-contiguous</p>
 </dd>
@@ -679,7 +683,7 @@ reduce the overhead of cintopt initialization repeatedly.</p>
 
 <dl class="py function">
 <dt id="pyscf.df.incore.cholesky_eri_debug">
-<code class="sig-prename descclassname">pyscf.df.incore.</code><code class="sig-name descname">cholesky_eri_debug</code><span class="sig-paren">(</span><em class="sig-param">mol</em>, <em class="sig-param">auxbasis='weigend+etb'</em>, <em class="sig-param">auxmol=None</em>, <em class="sig-param">int3c='int3c2e'</em>, <em class="sig-param">aosym='s2ij'</em>, <em class="sig-param">int2c='int2c2e'</em>, <em class="sig-param">comp=1</em>, <em class="sig-param">verbose=0</em>, <em class="sig-param">fauxe2=&lt;function aux_e2&gt;</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/incore.html#cholesky_eri_debug"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.df.incore.cholesky_eri_debug" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.df.incore.</span></code><code class="sig-name descname"><span class="pre">cholesky_eri_debug</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">mol</span></em>, <em class="sig-param"><span class="pre">auxbasis='weigend+etb'</span></em>, <em class="sig-param"><span class="pre">auxmol=None</span></em>, <em class="sig-param"><span class="pre">int3c='int3c2e'</span></em>, <em class="sig-param"><span class="pre">aosym='s2ij'</span></em>, <em class="sig-param"><span class="pre">int2c='int2c2e'</span></em>, <em class="sig-param"><span class="pre">comp=1</span></em>, <em class="sig-param"><span class="pre">verbose=0</span></em>, <em class="sig-param"><span class="pre">fauxe2=&lt;function</span> <span class="pre">aux_e2&gt;</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/incore.html#cholesky_eri_debug"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.df.incore.cholesky_eri_debug" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Returns:</dt><dd><p>2D array of (naux,nao*(nao+1)/2) in C-contiguous</p>
 </dd>
@@ -688,7 +692,7 @@ reduce the overhead of cintopt initialization repeatedly.</p>
 
 <dl class="py function">
 <dt id="pyscf.df.incore.fill_2c2e">
-<code class="sig-prename descclassname">pyscf.df.incore.</code><code class="sig-name descname">fill_2c2e</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">auxmol_or_auxbasis</span></em>, <em class="sig-param"><span class="n">intor</span><span class="o">=</span><span class="default_value">'int2c2e'</span></em>, <em class="sig-param"><span class="n">comp</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">hermi</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">out</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/incore.html#fill_2c2e"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.df.incore.fill_2c2e" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.df.incore.</span></code><code class="sig-name descname"><span class="pre">fill_2c2e</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auxmol_or_auxbasis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'int2c2e'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hermi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/incore.html#fill_2c2e"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.df.incore.fill_2c2e" title="Permalink to this definition">¶</a></dt>
 <dd><p>2-center 2-electron AO integrals for auxiliary basis (auxmol)</p>
 </dd></dl>
 
@@ -697,20 +701,20 @@ reduce the overhead of cintopt initialization repeatedly.</p>
 <span id="df-outcore"></span><h3>df.outcore<a class="headerlink" href="#module-pyscf.df.outcore" title="Permalink to this headline">¶</a></h3>
 <dl class="py function">
 <dt id="pyscf.df.outcore.cholesky_eri">
-<code class="sig-prename descclassname">pyscf.df.outcore.</code><code class="sig-name descname">cholesky_eri</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">erifile</span></em>, <em class="sig-param"><span class="n">auxbasis</span><span class="o">=</span><span class="default_value">'weigend+etb'</span></em>, <em class="sig-param"><span class="n">dataname</span><span class="o">=</span><span class="default_value">'j3c'</span></em>, <em class="sig-param"><span class="n">tmpdir</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">int3c</span><span class="o">=</span><span class="default_value">'int3c2e'</span></em>, <em class="sig-param"><span class="n">aosym</span><span class="o">=</span><span class="default_value">'s2ij'</span></em>, <em class="sig-param"><span class="n">int2c</span><span class="o">=</span><span class="default_value">'int2c2e'</span></em>, <em class="sig-param"><span class="n">comp</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">max_memory</span><span class="o">=</span><span class="default_value">2000</span></em>, <em class="sig-param"><span class="n">auxmol</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">3</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/outcore.html#cholesky_eri"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.df.outcore.cholesky_eri" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.df.outcore.</span></code><code class="sig-name descname"><span class="pre">cholesky_eri</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">erifile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auxbasis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'weigend+etb'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'j3c'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tmpdir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int3c</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'int3c2e'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aosym</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'s2ij'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int2c</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'int2c2e'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_memory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auxmol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/outcore.html#cholesky_eri"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.df.outcore.cholesky_eri" title="Permalink to this definition">¶</a></dt>
 <dd><p>3-index density-fitting tensor.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="pyscf.df.outcore.cholesky_eri_b">
-<code class="sig-prename descclassname">pyscf.df.outcore.</code><code class="sig-name descname">cholesky_eri_b</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">erifile</span></em>, <em class="sig-param"><span class="n">auxbasis</span><span class="o">=</span><span class="default_value">'weigend+etb'</span></em>, <em class="sig-param"><span class="n">dataname</span><span class="o">=</span><span class="default_value">'j3c'</span></em>, <em class="sig-param"><span class="n">int3c</span><span class="o">=</span><span class="default_value">'int3c2e'</span></em>, <em class="sig-param"><span class="n">aosym</span><span class="o">=</span><span class="default_value">'s2ij'</span></em>, <em class="sig-param"><span class="n">int2c</span><span class="o">=</span><span class="default_value">'int2c2e'</span></em>, <em class="sig-param"><span class="n">comp</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">max_memory</span><span class="o">=</span><span class="default_value">2000</span></em>, <em class="sig-param"><span class="n">auxmol</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">3</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/outcore.html#cholesky_eri_b"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.df.outcore.cholesky_eri_b" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.df.outcore.</span></code><code class="sig-name descname"><span class="pre">cholesky_eri_b</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">erifile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auxbasis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'weigend+etb'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'j3c'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int3c</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'int3c2e'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aosym</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'s2ij'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int2c</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'int2c2e'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_memory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auxmol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/outcore.html#cholesky_eri_b"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.df.outcore.cholesky_eri_b" title="Permalink to this definition">¶</a></dt>
 <dd><p>3-center 2-electron DF tensor. Similar to cholesky_eri while this
 function stores DF tensor in blocks.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="pyscf.df.outcore.general">
-<code class="sig-prename descclassname">pyscf.df.outcore.</code><code class="sig-name descname">general</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">mo_coeffs</span></em>, <em class="sig-param"><span class="n">erifile</span></em>, <em class="sig-param"><span class="n">auxbasis</span><span class="o">=</span><span class="default_value">'weigend+etb'</span></em>, <em class="sig-param"><span class="n">dataname</span><span class="o">=</span><span class="default_value">'eri_mo'</span></em>, <em class="sig-param"><span class="n">tmpdir</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">int3c</span><span class="o">=</span><span class="default_value">'int3c2e'</span></em>, <em class="sig-param"><span class="n">aosym</span><span class="o">=</span><span class="default_value">'s2ij'</span></em>, <em class="sig-param"><span class="n">int2c</span><span class="o">=</span><span class="default_value">'int2c2e'</span></em>, <em class="sig-param"><span class="n">comp</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">max_memory</span><span class="o">=</span><span class="default_value">2000</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">compact</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/outcore.html#general"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.df.outcore.general" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.df.outcore.</span></code><code class="sig-name descname"><span class="pre">general</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeffs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">erifile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auxbasis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'weigend+etb'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'eri_mo'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tmpdir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int3c</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'int3c2e'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aosym</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'s2ij'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">int2c</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'int2c2e'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_memory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compact</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/outcore.html#general"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.df.outcore.general" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transform ij of (ij|L) to MOs.</p>
 </dd></dl>
 
@@ -719,20 +723,20 @@ function stores DF tensor in blocks.</p>
 <span id="df-addons"></span><h3>df.addons<a class="headerlink" href="#module-pyscf.df.addons" title="Permalink to this headline">¶</a></h3>
 <dl class="py function">
 <dt id="pyscf.df.addons.aug_etb">
-<code class="sig-prename descclassname">pyscf.df.addons.</code><code class="sig-name descname">aug_etb</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">beta</span><span class="o">=</span><span class="default_value">2.0</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/addons.html#aug_etb"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.df.addons.aug_etb" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.df.addons.</span></code><code class="sig-name descname"><span class="pre">aug_etb</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/addons.html#aug_etb"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.df.addons.aug_etb" title="Permalink to this definition">¶</a></dt>
 <dd><p>To generate the even-tempered auxiliary Gaussian basis</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="pyscf.df.addons.aug_etb_for_dfbasis">
-<code class="sig-prename descclassname">pyscf.df.addons.</code><code class="sig-name descname">aug_etb_for_dfbasis</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">dfbasis</span><span class="o">=</span><span class="default_value">'weigend'</span></em>, <em class="sig-param"><span class="n">beta</span><span class="o">=</span><span class="default_value">2.0</span></em>, <em class="sig-param"><span class="n">start_at</span><span class="o">=</span><span class="default_value">36</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/addons.html#aug_etb_for_dfbasis"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.df.addons.aug_etb_for_dfbasis" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.df.addons.</span></code><code class="sig-name descname"><span class="pre">aug_etb_for_dfbasis</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dfbasis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'weigend'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_at</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">36</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/addons.html#aug_etb_for_dfbasis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.df.addons.aug_etb_for_dfbasis" title="Permalink to this definition">¶</a></dt>
 <dd><p>augment weigend basis with even-tempered gaussian basis
 exps = alpha*beta^i for i = 1..N</p>
 </dd></dl>
 
 <dl class="py class">
 <dt id="pyscf.df.addons.load">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.df.addons.</code><code class="sig-name descname">load</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">eri</span></em>, <em class="sig-param"><span class="n">dataname</span><span class="o">=</span><span class="default_value">'j3c'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/addons.html#load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.df.addons.load" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.df.addons.</span></code><code class="sig-name descname"><span class="pre">load</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eri</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'j3c'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/addons.html#load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.df.addons.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>load 3c2e integrals from hdf5 file. It can be used in the context
 manager:</p>
 <dl class="simple">
@@ -743,14 +747,14 @@ manager:</p>
 
 <dl class="py function">
 <dt id="pyscf.df.addons.make_auxbasis">
-<code class="sig-prename descclassname">pyscf.df.addons.</code><code class="sig-name descname">make_auxbasis</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">mp2fit</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/addons.html#make_auxbasis"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.df.addons.make_auxbasis" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.df.addons.</span></code><code class="sig-name descname"><span class="pre">make_auxbasis</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mp2fit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/addons.html#make_auxbasis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.df.addons.make_auxbasis" title="Permalink to this definition">¶</a></dt>
 <dd><p>Depending on the orbital basis, generating even-tempered Gaussians or
 the optimized auxiliary basis defined in DEFAULT_AUXBASIS</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="pyscf.df.addons.make_auxmol">
-<code class="sig-prename descclassname">pyscf.df.addons.</code><code class="sig-name descname">make_auxmol</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">auxbasis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/addons.html#make_auxmol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.df.addons.make_auxmol" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.df.addons.</span></code><code class="sig-name descname"><span class="pre">make_auxmol</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auxbasis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/addons.html#make_auxmol"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.df.addons.make_auxmol" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a fake Mole object which uses the density fitting auxbasis as
 the basis sets.  If auxbasis is not specified, the optimized auxiliary fitting
 basis set will be generated according to the rules recorded in
@@ -767,7 +771,7 @@ even-tempered Gaussian basis set will be generated.</p>
 <p>J-metric density fitting</p>
 <dl class="py class">
 <dt id="id0">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.df.df.</code><code class="sig-name descname">DF</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">auxbasis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/df.html#DF"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.df.df.</span></code><code class="sig-name descname"><span class="pre">DF</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auxbasis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/df.html#DF"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
 <dd><p>Object to hold 3-index tensor</p>
 <dl class="simple">
 <dt>Attributes:</dt><dd><dl class="simple">
@@ -803,7 +807,7 @@ used to improve IO performance.</p>
 </dl>
 <dl class="py method">
 <dt id="id1">
-<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/df.html#DF.kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id1" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">kernel</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/df.html#DF.kernel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id1" title="Permalink to this definition">¶</a></dt>
 <dd><p>Kernel function is the main driver of a method.  Every method should
 define the kernel function as the entry of the calculation.  Note the
 return value of kernel function is not strictly defined.  It can be
@@ -813,7 +817,7 @@ the DFT mesh grids etc.).</p>
 
 <dl class="py method">
 <dt id="id2">
-<code class="sig-name descname">reset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/df.html#DF.reset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id2" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">reset</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/df.html#DF.reset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reset mol and clean up relevant attributes for scanner mode</p>
 </dd></dl>
 
@@ -821,19 +825,19 @@ the DFT mesh grids etc.).</p>
 
 <dl class="py class">
 <dt id="pyscf.df.df.DF4C">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.df.df.</code><code class="sig-name descname">DF4C</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">auxbasis</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/df.html#DF4C"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.df.df.DF4C" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.df.df.</span></code><code class="sig-name descname"><span class="pre">DF4C</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auxbasis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/df.html#DF4C"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.df.df.DF4C" title="Permalink to this definition">¶</a></dt>
 <dd><p>Relativistic 4-component</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt id="pyscf.df.df.GDF">
-<code class="sig-prename descclassname">pyscf.df.df.</code><code class="sig-name descname">GDF</code><a class="headerlink" href="#pyscf.df.df.GDF" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.df.df.</span></code><code class="sig-name descname"><span class="pre">GDF</span></code><a class="headerlink" href="#pyscf.df.df.GDF" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#id0" title="pyscf.df.df.DF"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.df.df.DF</span></code></a></p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt id="pyscf.df.df.GDF4C">
-<code class="sig-prename descclassname">pyscf.df.df.</code><code class="sig-name descname">GDF4C</code><a class="headerlink" href="#pyscf.df.df.GDF4C" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.df.df.</span></code><code class="sig-name descname"><span class="pre">GDF4C</span></code><a class="headerlink" href="#pyscf.df.df.GDF4C" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#pyscf.df.df.DF4C" title="pyscf.df.df.DF4C"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.df.df.DF4C</span></code></a></p>
 </dd></dl>
 
@@ -842,7 +846,7 @@ the DFT mesh grids etc.).</p>
 <span id="df-df-jk"></span><h3>df.df_jk<a class="headerlink" href="#module-pyscf.df.df_jk" title="Permalink to this headline">¶</a></h3>
 <dl class="py function">
 <dt id="pyscf.df.df_jk.density_fit">
-<code class="sig-prename descclassname">pyscf.df.df_jk.</code><code class="sig-name descname">density_fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em>, <em class="sig-param"><span class="n">auxbasis</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">with_df</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">only_dfj</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/df_jk.html#density_fit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.df.df_jk.density_fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.df.df_jk.</span></code><code class="sig-name descname"><span class="pre">density_fit</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auxbasis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_df</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">only_dfj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/df_jk.html#density_fit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.df.df_jk.density_fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>For the given SCF object, update the J, K matrix constructor with
 corresponding density fitting integrals.</p>
 <dl class="simple">
@@ -880,7 +884,7 @@ fitting integrals to compute J and K</p>
 
 <dl class="py function">
 <dt id="pyscf.df.df_jk.r_get_jk">
-<code class="sig-prename descclassname">pyscf.df.df_jk.</code><code class="sig-name descname">r_get_jk</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dfobj</span></em>, <em class="sig-param"><span class="n">dms</span></em>, <em class="sig-param"><span class="n">hermi</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">with_j</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">with_k</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/df_jk.html#r_get_jk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.df.df_jk.r_get_jk" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.df.df_jk.</span></code><code class="sig-name descname"><span class="pre">r_get_jk</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dfobj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dms</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hermi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_j</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/df_jk.html#r_get_jk"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.df.df_jk.r_get_jk" title="Permalink to this definition">¶</a></dt>
 <dd><p>Relativistic density fitting JK</p>
 </dd></dl>
 
@@ -892,17 +896,17 @@ fitting integrals to compute J and K</p>
 <h3>df.grad.rhf<a class="headerlink" href="#df-grad-rhf" title="Permalink to this headline">¶</a></h3>
 <span class="target" id="module-pyscf.df.grad.rhf"></span><dl class="py attribute">
 <dt id="pyscf.df.grad.rhf.Grad">
-<code class="sig-prename descclassname">pyscf.df.grad.rhf.</code><code class="sig-name descname">Grad</code><a class="headerlink" href="#pyscf.df.grad.rhf.Grad" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.df.grad.rhf.</span></code><code class="sig-name descname"><span class="pre">Grad</span></code><a class="headerlink" href="#pyscf.df.grad.rhf.Grad" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#pyscf.df.grad.rhf.Gradients" title="pyscf.df.grad.rhf.Gradients"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.df.grad.rhf.Gradients</span></code></a></p>
 </dd></dl>
 
 <dl class="py class">
 <dt id="pyscf.df.grad.rhf.Gradients">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.df.grad.rhf.</code><code class="sig-name descname">Gradients</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/grad/rhf.html#Gradients"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.df.grad.rhf.Gradients" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.df.grad.rhf.</span></code><code class="sig-name descname"><span class="pre">Gradients</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mf</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/grad/rhf.html#Gradients"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.df.grad.rhf.Gradients" title="Permalink to this definition">¶</a></dt>
 <dd><p>Restricted density-fitting Hartree-Fock gradients</p>
 <dl class="py method">
 <dt id="pyscf.df.grad.rhf.Gradients.extra_force">
-<code class="sig-name descname">extra_force</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">atom_id</span></em>, <em class="sig-param"><span class="n">envs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/grad/rhf.html#Gradients.extra_force"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.df.grad.rhf.Gradients.extra_force" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">extra_force</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atom_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">envs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/grad/rhf.html#Gradients.extra_force"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.df.grad.rhf.Gradients.extra_force" title="Permalink to this definition">¶</a></dt>
 <dd><p>Hook for extra contributions in analytical gradients.</p>
 <p>Contributions like the response of auxiliary basis in density fitting
 method, the grid response in DFT numerical integration can be put in
@@ -916,17 +920,17 @@ this function.</p>
 <h3>df.grad.uhf<a class="headerlink" href="#df-grad-uhf" title="Permalink to this headline">¶</a></h3>
 <span class="target" id="module-pyscf.df.grad.uhf"></span><dl class="py attribute">
 <dt id="pyscf.df.grad.uhf.Grad">
-<code class="sig-prename descclassname">pyscf.df.grad.uhf.</code><code class="sig-name descname">Grad</code><a class="headerlink" href="#pyscf.df.grad.uhf.Grad" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.df.grad.uhf.</span></code><code class="sig-name descname"><span class="pre">Grad</span></code><a class="headerlink" href="#pyscf.df.grad.uhf.Grad" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#pyscf.df.grad.uhf.Gradients" title="pyscf.df.grad.uhf.Gradients"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.df.grad.uhf.Gradients</span></code></a></p>
 </dd></dl>
 
 <dl class="py class">
 <dt id="pyscf.df.grad.uhf.Gradients">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.df.grad.uhf.</code><code class="sig-name descname">Gradients</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/grad/uhf.html#Gradients"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.df.grad.uhf.Gradients" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.df.grad.uhf.</span></code><code class="sig-name descname"><span class="pre">Gradients</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mf</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/grad/uhf.html#Gradients"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.df.grad.uhf.Gradients" title="Permalink to this definition">¶</a></dt>
 <dd><p>Unrestricted density-fitting Hartree-Fock gradients</p>
 <dl class="py method">
 <dt id="pyscf.df.grad.uhf.Gradients.extra_force">
-<code class="sig-name descname">extra_force</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">atom_id</span></em>, <em class="sig-param"><span class="n">envs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/grad/uhf.html#Gradients.extra_force"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.df.grad.uhf.Gradients.extra_force" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">extra_force</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atom_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">envs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/grad/uhf.html#Gradients.extra_force"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.df.grad.uhf.Gradients.extra_force" title="Permalink to this definition">¶</a></dt>
 <dd><p>Hook for extra contributions in analytical gradients.</p>
 <p>Contributions like the response of auxiliary basis in density fitting
 method, the grid response in DFT numerical integration can be put in
@@ -940,16 +944,16 @@ this function.</p>
 <h3>df.grad.rks<a class="headerlink" href="#df-grad-rks" title="Permalink to this headline">¶</a></h3>
 <span class="target" id="module-pyscf.df.grad.rks"></span><dl class="py attribute">
 <dt id="pyscf.df.grad.rks.Grad">
-<code class="sig-prename descclassname">pyscf.df.grad.rks.</code><code class="sig-name descname">Grad</code><a class="headerlink" href="#pyscf.df.grad.rks.Grad" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.df.grad.rks.</span></code><code class="sig-name descname"><span class="pre">Grad</span></code><a class="headerlink" href="#pyscf.df.grad.rks.Grad" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#pyscf.df.grad.rks.Gradients" title="pyscf.df.grad.rks.Gradients"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.df.grad.rks.Gradients</span></code></a></p>
 </dd></dl>
 
 <dl class="py class">
 <dt id="pyscf.df.grad.rks.Gradients">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.df.grad.rks.</code><code class="sig-name descname">Gradients</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/grad/rks.html#Gradients"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.df.grad.rks.Gradients" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.df.grad.rks.</span></code><code class="sig-name descname"><span class="pre">Gradients</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mf</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/grad/rks.html#Gradients"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.df.grad.rks.Gradients" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py method">
 <dt id="pyscf.df.grad.rks.Gradients.extra_force">
-<code class="sig-name descname">extra_force</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">atom_id</span></em>, <em class="sig-param"><span class="n">envs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/grad/rks.html#Gradients.extra_force"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.df.grad.rks.Gradients.extra_force" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">extra_force</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atom_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">envs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/grad/rks.html#Gradients.extra_force"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.df.grad.rks.Gradients.extra_force" title="Permalink to this definition">¶</a></dt>
 <dd><p>Hook for extra contributions in analytical gradients.</p>
 <p>Contributions like the response of auxiliary basis in density fitting
 method, the grid response in DFT numerical integration can be put in
@@ -958,7 +962,7 @@ this function.</p>
 
 <dl class="py method">
 <dt id="pyscf.df.grad.rks.Gradients.get_veff">
-<code class="sig-name descname">get_veff</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dm</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.df.grad.rks.Gradients.get_veff" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_veff</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.df.grad.rks.Gradients.get_veff" title="Permalink to this definition">¶</a></dt>
 <dd><p>Coulomb + XC functional</p>
 </dd></dl>
 
@@ -966,7 +970,7 @@ this function.</p>
 
 <dl class="py function">
 <dt id="pyscf.df.grad.rks.get_veff">
-<code class="sig-prename descclassname">pyscf.df.grad.rks.</code><code class="sig-name descname">get_veff</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ks_grad</span></em>, <em class="sig-param"><span class="n">mol</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dm</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/grad/rks.html#get_veff"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.df.grad.rks.get_veff" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.df.grad.rks.</span></code><code class="sig-name descname"><span class="pre">get_veff</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ks_grad</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/grad/rks.html#get_veff"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.df.grad.rks.get_veff" title="Permalink to this definition">¶</a></dt>
 <dd><p>Coulomb + XC functional</p>
 </dd></dl>
 
@@ -975,16 +979,16 @@ this function.</p>
 <h3>df.grad.uks<a class="headerlink" href="#df-grad-uks" title="Permalink to this headline">¶</a></h3>
 <span class="target" id="module-pyscf.df.grad.uks"></span><dl class="py attribute">
 <dt id="pyscf.df.grad.uks.Grad">
-<code class="sig-prename descclassname">pyscf.df.grad.uks.</code><code class="sig-name descname">Grad</code><a class="headerlink" href="#pyscf.df.grad.uks.Grad" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.df.grad.uks.</span></code><code class="sig-name descname"><span class="pre">Grad</span></code><a class="headerlink" href="#pyscf.df.grad.uks.Grad" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#pyscf.df.grad.uks.Gradients" title="pyscf.df.grad.uks.Gradients"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.df.grad.uks.Gradients</span></code></a></p>
 </dd></dl>
 
 <dl class="py class">
 <dt id="pyscf.df.grad.uks.Gradients">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.df.grad.uks.</code><code class="sig-name descname">Gradients</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/grad/uks.html#Gradients"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.df.grad.uks.Gradients" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.df.grad.uks.</span></code><code class="sig-name descname"><span class="pre">Gradients</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mf</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/grad/uks.html#Gradients"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.df.grad.uks.Gradients" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py method">
 <dt id="pyscf.df.grad.uks.Gradients.extra_force">
-<code class="sig-name descname">extra_force</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">atom_id</span></em>, <em class="sig-param"><span class="n">envs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/grad/uks.html#Gradients.extra_force"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.df.grad.uks.Gradients.extra_force" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">extra_force</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">atom_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">envs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/grad/uks.html#Gradients.extra_force"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.df.grad.uks.Gradients.extra_force" title="Permalink to this definition">¶</a></dt>
 <dd><p>Hook for extra contributions in analytical gradients.</p>
 <p>Contributions like the response of auxiliary basis in density fitting
 method, the grid response in DFT numerical integration can be put in
@@ -993,7 +997,7 @@ this function.</p>
 
 <dl class="py method">
 <dt id="pyscf.df.grad.uks.Gradients.get_veff">
-<code class="sig-name descname">get_veff</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dm</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.df.grad.uks.Gradients.get_veff" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_veff</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.df.grad.uks.Gradients.get_veff" title="Permalink to this definition">¶</a></dt>
 <dd><p>Coulomb + XC functional</p>
 </dd></dl>
 
@@ -1001,7 +1005,7 @@ this function.</p>
 
 <dl class="py function">
 <dt id="pyscf.df.grad.uks.get_veff">
-<code class="sig-prename descclassname">pyscf.df.grad.uks.</code><code class="sig-name descname">get_veff</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ks_grad</span></em>, <em class="sig-param"><span class="n">mol</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dm</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/grad/uks.html#get_veff"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.df.grad.uks.get_veff" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.df.grad.uks.</span></code><code class="sig-name descname"><span class="pre">get_veff</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ks_grad</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/grad/uks.html#get_veff"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.df.grad.uks.get_veff" title="Permalink to this definition">¶</a></dt>
 <dd><p>Coulomb + XC functional</p>
 </dd></dl>
 
@@ -1018,7 +1022,7 @@ Kossmann, Ute Becker, Edward Valeev, Frank Neese. Mol. Phys. 113, 1961 (2015)</p
 </div></blockquote>
 <dl class="py class">
 <dt id="pyscf.df.hessian.rhf.Hessian">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.df.hessian.rhf.</code><code class="sig-name descname">Hessian</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/hessian/rhf.html#Hessian"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.df.hessian.rhf.Hessian" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.df.hessian.rhf.</span></code><code class="sig-name descname"><span class="pre">Hessian</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mf</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/hessian/rhf.html#Hessian"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.df.hessian.rhf.Hessian" title="Permalink to this definition">¶</a></dt>
 <dd><p>Non-relativistic restricted Hartree-Fock hessian</p>
 </dd></dl>
 
@@ -1028,7 +1032,7 @@ Kossmann, Ute Becker, Edward Valeev, Frank Neese. Mol. Phys. 113, 1961 (2015)</p
 <span class="target" id="module-pyscf.df.hessian.uhf"></span><p>Non-relativistic UHF analytical Hessian</p>
 <dl class="py class">
 <dt id="pyscf.df.hessian.uhf.Hessian">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.df.hessian.uhf.</code><code class="sig-name descname">Hessian</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/hessian/uhf.html#Hessian"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.df.hessian.uhf.Hessian" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.df.hessian.uhf.</span></code><code class="sig-name descname"><span class="pre">Hessian</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mf</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/hessian/uhf.html#Hessian"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.df.hessian.uhf.Hessian" title="Permalink to this definition">¶</a></dt>
 <dd><p>Non-relativistic UHF hessian</p>
 </dd></dl>
 
@@ -1038,7 +1042,7 @@ Kossmann, Ute Becker, Edward Valeev, Frank Neese. Mol. Phys. 113, 1961 (2015)</p
 <span class="target" id="module-pyscf.df.hessian.rks"></span><p>Non-relativistic RKS analytical Hessian</p>
 <dl class="py class">
 <dt id="pyscf.df.hessian.rks.Hessian">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.df.hessian.rks.</code><code class="sig-name descname">Hessian</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/hessian/rks.html#Hessian"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.df.hessian.rks.Hessian" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.df.hessian.rks.</span></code><code class="sig-name descname"><span class="pre">Hessian</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mf</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/hessian/rks.html#Hessian"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.df.hessian.rks.Hessian" title="Permalink to this definition">¶</a></dt>
 <dd><p>Non-relativistic RKS hessian</p>
 </dd></dl>
 
@@ -1048,7 +1052,7 @@ Kossmann, Ute Becker, Edward Valeev, Frank Neese. Mol. Phys. 113, 1961 (2015)</p
 <span class="target" id="module-pyscf.df.hessian.uks"></span><p>Non-relativistic UKS analytical Hessian</p>
 <dl class="py class">
 <dt id="pyscf.df.hessian.uks.Hessian">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.df.hessian.uks.</code><code class="sig-name descname">Hessian</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/hessian/uks.html#Hessian"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.df.hessian.uks.Hessian" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.df.hessian.uks.</span></code><code class="sig-name descname"><span class="pre">Hessian</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mf</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/df/hessian/uks.html#Hessian"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.df.hessian.uks.Hessian" title="Permalink to this definition">¶</a></dt>
 <dd><p>Non-relativistic RKS hessian</p>
 </dd></dl>
 
@@ -1061,37 +1065,29 @@ Kossmann, Ute Becker, Edward Valeev, Frank Neese. Mol. Phys. 113, 1961 (2015)</p
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="dft.html" class="btn btn-neutral float-right" title="dft — Density functional theory" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="data.html" class="btn btn-neutral float-left" title="data — Data for constants" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="dft.html" class="btn btn-neutral float-right" title="dft — Density functional theory" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="data.html" class="btn btn-neutral float-left" title="data — Data for constants" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2015-2021, The PySCF Developers
+        &#169; Copyright 2015-2021, The PySCF Developers.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

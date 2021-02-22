@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>soscf — Second order SCF solver &mdash; PySCF 1.7.6 documentation</title>
   
@@ -16,7 +16,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -29,7 +32,6 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -51,7 +53,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> PySCF
+            <a href="../index.html" class="icon icon-home"> PySCF
           
 
           
@@ -98,8 +100,7 @@
 <p class="caption"><span class="caption-text">Developer documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../code-rule.html">Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../develop/scf_developer.html">Self-consistent field (SCF) methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../develop/dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop.html">Guidelines for module development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced.html">Miscellaneous</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API documentation</span></p>
@@ -184,6 +185,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -197,7 +200,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/modules/soscf.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -219,7 +222,7 @@
 <p>Co-iterative augmented hessian second order SCF solver (CIAH-SOSCF)</p>
 <dl class="py function">
 <dt id="pyscf.soscf.newton_ah.newton">
-<code class="sig-prename descclassname">pyscf.soscf.newton_ah.</code><code class="sig-name descname">newton</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/soscf/newton_ah.html#newton"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.soscf.newton_ah.newton" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.soscf.newton_ah.</span></code><code class="sig-name descname"><span class="pre">newton</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mf</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/soscf/newton_ah.html#newton"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.soscf.newton_ah.newton" title="Permalink to this definition">¶</a></dt>
 <dd><p>Co-iterative augmented hessian (CIAH) second order SCF solver</p>
 <p>Examples:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;H 0 0 0; H 0 0 1.1&#39;</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;cc-pvdz&#39;</span><span class="p">)</span>
@@ -233,7 +236,7 @@
 
 <span class="target" id="module-pyscf.soscf.ciah"></span><dl class="py class">
 <dt id="pyscf.soscf.ciah.CIAHOptimizer">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.soscf.ciah.</code><code class="sig-name descname">CIAHOptimizer</code><a class="reference internal" href="../_modules/pyscf/soscf/ciah.html#CIAHOptimizer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.soscf.ciah.CIAHOptimizer" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.soscf.ciah.</span></code><code class="sig-name descname"><span class="pre">CIAHOptimizer</span></code><a class="reference internal" href="../_modules/pyscf/soscf/ciah.html#CIAHOptimizer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.soscf.ciah.CIAHOptimizer" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </div>
@@ -244,37 +247,29 @@
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="symm.html" class="btn btn-neutral float-right" title="symm – Point group symmetry and spin symmetry" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="solvent.html" class="btn btn-neutral float-left" title="solvent — Solvent methods" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="symm.html" class="btn btn-neutral float-right" title="symm – Point group symmetry and spin symmetry" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="solvent.html" class="btn btn-neutral float-left" title="solvent — Solvent methods" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2015-2021, The PySCF Developers
+        &#169; Copyright 2015-2021, The PySCF Developers.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

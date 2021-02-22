@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>ao2mo — Integral transformations &mdash; PySCF 1.7.6 documentation</title>
   
@@ -16,7 +16,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -29,7 +32,6 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -51,7 +53,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> PySCF
+            <a href="../index.html" class="icon icon-home"> PySCF
           
 
           
@@ -98,8 +100,7 @@
 <p class="caption"><span class="caption-text">Developer documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../code-rule.html">Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../develop/scf_developer.html">Self-consistent field (SCF) methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../develop/dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop.html">Guidelines for module development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced.html">Miscellaneous</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API documentation</span></p>
@@ -188,6 +189,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -201,7 +204,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/modules/ao2mo.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -244,7 +247,7 @@
 </div>
 <dl class="py function">
 <dt id="pyscf.ao2mo.full">
-<code class="sig-prename descclassname">pyscf.ao2mo.</code><code class="sig-name descname">full</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">eri_or_mol</span></em>, <em class="sig-param"><span class="n">mo_coeff</span></em>, <em class="sig-param"><span class="n">erifile</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dataname</span><span class="o">=</span><span class="default_value">'eri_mo'</span></em>, <em class="sig-param"><span class="n">intor</span><span class="o">=</span><span class="default_value">'int2e'</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/ao2mo.html#full"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.ao2mo.full" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.ao2mo.</span></code><code class="sig-name descname"><span class="pre">full</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eri_or_mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">erifile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'eri_mo'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'int2e'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/ao2mo.html#full"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.ao2mo.full" title="Permalink to this definition">¶</a></dt>
 <dd><p>MO integral transformation. The four indices (ij|kl) are transformed
 with the same set of orbitals.</p>
 <dl>
@@ -359,7 +362,7 @@ Otherwise, return the file/fileobject where the MO integrals are saved.</p>
 
 <dl class="py function">
 <dt id="pyscf.ao2mo.general">
-<code class="sig-prename descclassname">pyscf.ao2mo.</code><code class="sig-name descname">general</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">eri_or_mol</span></em>, <em class="sig-param"><span class="n">mo_coeffs</span></em>, <em class="sig-param"><span class="n">erifile</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dataname</span><span class="o">=</span><span class="default_value">'eri_mo'</span></em>, <em class="sig-param"><span class="n">intor</span><span class="o">=</span><span class="default_value">'int2e'</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/ao2mo.html#general"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.ao2mo.general" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.ao2mo.</span></code><code class="sig-name descname"><span class="pre">general</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eri_or_mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeffs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">erifile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'eri_mo'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'int2e'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/ao2mo.html#general"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.ao2mo.general" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given four sets of orbitals corresponding to the four MO indices,
 transfer arbitrary spherical AO integrals to MO integrals.</p>
 <dl>
@@ -508,13 +511,13 @@ Otherwise, return the file/fileobject where the MO integrals are saved.</p>
 
 <dl class="py function">
 <dt id="pyscf.ao2mo.get_ao_eri">
-<code class="sig-prename descclassname">pyscf.ao2mo.</code><code class="sig-name descname">get_ao_eri</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/ao2mo.html#get_ao_eri"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.ao2mo.get_ao_eri" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.ao2mo.</span></code><code class="sig-name descname"><span class="pre">get_ao_eri</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/ao2mo.html#get_ao_eri"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.ao2mo.get_ao_eri" title="Permalink to this definition">¶</a></dt>
 <dd><p>2-electron integrals in AO basis</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="pyscf.ao2mo.get_mo_eri">
-<code class="sig-prename descclassname">pyscf.ao2mo.</code><code class="sig-name descname">get_mo_eri</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">eri_or_mol</span></em>, <em class="sig-param"><span class="n">mo_coeffs</span></em>, <em class="sig-param"><span class="n">erifile</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dataname</span><span class="o">=</span><span class="default_value">'eri_mo'</span></em>, <em class="sig-param"><span class="n">intor</span><span class="o">=</span><span class="default_value">'int2e'</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.ao2mo.get_mo_eri" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.ao2mo.</span></code><code class="sig-name descname"><span class="pre">get_mo_eri</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eri_or_mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeffs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">erifile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'eri_mo'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'int2e'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.ao2mo.get_mo_eri" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transfer arbitrary spherical AO integrals to MO integrals, for given
 orbitals or four sets of orbitals.  See also <code class="xref py py-func docutils literal notranslate"><span class="pre">ao2mo.full()</span></code> and <code class="xref py py-func docutils literal notranslate"><span class="pre">ao2mo.general()</span></code>.</p>
 <dl>
@@ -695,7 +698,7 @@ Otherwise, return the file/fileobject where the MO integrals are saved.</p>
 
 <dl class="py function">
 <dt id="pyscf.ao2mo.kernel">
-<code class="sig-prename descclassname">pyscf.ao2mo.</code><code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">eri_or_mol</span></em>, <em class="sig-param"><span class="n">mo_coeffs</span></em>, <em class="sig-param"><span class="n">erifile</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dataname</span><span class="o">=</span><span class="default_value">'eri_mo'</span></em>, <em class="sig-param"><span class="n">intor</span><span class="o">=</span><span class="default_value">'int2e'</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/ao2mo.html#kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.ao2mo.kernel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.ao2mo.</span></code><code class="sig-name descname"><span class="pre">kernel</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eri_or_mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeffs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">erifile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'eri_mo'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'int2e'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/ao2mo.html#kernel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.ao2mo.kernel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transfer arbitrary spherical AO integrals to MO integrals, for given
 orbitals or four sets of orbitals.  See also <code class="xref py py-func docutils literal notranslate"><span class="pre">ao2mo.full()</span></code> and <code class="xref py py-func docutils literal notranslate"><span class="pre">ao2mo.general()</span></code>.</p>
 <dl>
@@ -877,7 +880,7 @@ Otherwise, return the file/fileobject where the MO integrals are saved.</p>
 </div>
 <span class="target" id="module-pyscf.ao2mo.incore"></span><dl class="py function">
 <dt id="pyscf.ao2mo.incore.full">
-<code class="sig-prename descclassname">pyscf.ao2mo.incore.</code><code class="sig-name descname">full</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">eri_ao</span></em>, <em class="sig-param"><span class="n">mo_coeff</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">compact</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/ao2mo/incore.html#full"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.ao2mo.incore.full" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.ao2mo.incore.</span></code><code class="sig-name descname"><span class="pre">full</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eri_ao</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compact</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/ao2mo/incore.html#full"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.ao2mo.incore.full" title="Permalink to this definition">¶</a></dt>
 <dd><p>MO integral transformation for the given orbital.</p>
 <dl class="simple">
 <dt>Args:</dt><dd><dl class="simple">
@@ -918,7 +921,7 @@ have the permutation symmetry (controlled by the kwargs compact)</p>
 
 <dl class="py function">
 <dt id="pyscf.ao2mo.incore.general">
-<code class="sig-prename descclassname">pyscf.ao2mo.incore.</code><code class="sig-name descname">general</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">eri_ao</span></em>, <em class="sig-param"><span class="n">mo_coeffs</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">0</span></em>, <em class="sig-param"><span class="n">compact</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/ao2mo/incore.html#general"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.ao2mo.incore.general" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.ao2mo.incore.</span></code><code class="sig-name descname"><span class="pre">general</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eri_ao</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeffs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compact</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/ao2mo/incore.html#general"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.ao2mo.incore.general" title="Permalink to this definition">¶</a></dt>
 <dd><p>For the given four sets of orbitals, transfer the 8-fold or 4-fold 2e
 AO integrals to MO integrals.</p>
 <dl class="simple">
@@ -977,7 +980,7 @@ MO integrals will at most have 4-fold symmetry.</p>
 
 <dl class="py function">
 <dt id="pyscf.ao2mo.incore.half_e1">
-<code class="sig-prename descclassname">pyscf.ao2mo.incore.</code><code class="sig-name descname">half_e1</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">eri_ao</span></em>, <em class="sig-param"><span class="n">mo_coeffs</span></em>, <em class="sig-param"><span class="n">compact</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/ao2mo/incore.html#half_e1"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.ao2mo.incore.half_e1" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.ao2mo.incore.</span></code><code class="sig-name descname"><span class="pre">half_e1</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eri_ao</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeffs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compact</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/ao2mo/incore.html#half_e1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.ao2mo.incore.half_e1" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given two set of orbitals, half transform the (ij| pair of 8-fold or
 4-fold AO integrals (ij|kl)</p>
 <dl class="simple">
@@ -1032,7 +1035,7 @@ intermediates in memory, this version uses less memory but performs slow due
 to IO overhead.</p>
 <dl class="py function">
 <dt id="pyscf.ao2mo.semi_incore.general">
-<code class="sig-prename descclassname">pyscf.ao2mo.semi_incore.</code><code class="sig-name descname">general</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">eri</span></em>, <em class="sig-param"><span class="n">mo_coeffs</span></em>, <em class="sig-param"><span class="n">erifile</span></em>, <em class="sig-param"><span class="n">dataname</span><span class="o">=</span><span class="default_value">'eri_mo'</span></em>, <em class="sig-param"><span class="n">ioblk_size</span><span class="o">=</span><span class="default_value">128</span></em>, <em class="sig-param"><span class="n">compact</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">3</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/ao2mo/semi_incore.html#general"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.ao2mo.semi_incore.general" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.ao2mo.semi_incore.</span></code><code class="sig-name descname"><span class="pre">general</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eri</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeffs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">erifile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'eri_mo'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ioblk_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compact</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/ao2mo/semi_incore.html#general"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.ao2mo.semi_incore.general" title="Permalink to this definition">¶</a></dt>
 <dd><p>For the given four sets of orbitals, transfer arbitrary spherical AO
 integrals to MO integrals on disk.
 Args:</p>
@@ -1120,7 +1123,7 @@ chunked 1x1, in which case IOBLK_SIZE needs to be increased.</p>
 
 <span class="target" id="module-pyscf.ao2mo.outcore"></span><dl class="py function">
 <dt id="pyscf.ao2mo.outcore.full">
-<code class="sig-prename descclassname">pyscf.ao2mo.outcore.</code><code class="sig-name descname">full</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">mo_coeff</span></em>, <em class="sig-param"><span class="n">erifile</span></em>, <em class="sig-param"><span class="n">dataname</span><span class="o">=</span><span class="default_value">'eri_mo'</span></em>, <em class="sig-param"><span class="n">intor</span><span class="o">=</span><span class="default_value">'int2e'</span></em>, <em class="sig-param"><span class="n">aosym</span><span class="o">=</span><span class="default_value">'s4'</span></em>, <em class="sig-param"><span class="n">comp</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_memory</span><span class="o">=</span><span class="default_value">2000</span></em>, <em class="sig-param"><span class="n">ioblk_size</span><span class="o">=</span><span class="default_value">256</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">compact</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/ao2mo/outcore.html#full"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.ao2mo.outcore.full" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.ao2mo.outcore.</span></code><code class="sig-name descname"><span class="pre">full</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">erifile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'eri_mo'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'int2e'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aosym</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'s4'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_memory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ioblk_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compact</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/ao2mo/outcore.html#full"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.ao2mo.outcore.full" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transfer arbitrary spherical AO integrals to MO integrals for given orbitals</p>
 <dl>
 <dt>Args:</dt><dd><dl>
@@ -1201,7 +1204,7 @@ and return the “plain” MO integrals</p>
 
 <dl class="py function">
 <dt id="pyscf.ao2mo.outcore.full_iofree">
-<code class="sig-prename descclassname">pyscf.ao2mo.outcore.</code><code class="sig-name descname">full_iofree</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">mo_coeff</span></em>, <em class="sig-param"><span class="n">intor</span><span class="o">=</span><span class="default_value">'int2e'</span></em>, <em class="sig-param"><span class="n">aosym</span><span class="o">=</span><span class="default_value">'s4'</span></em>, <em class="sig-param"><span class="n">comp</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_memory</span><span class="o">=</span><span class="default_value">2000</span></em>, <em class="sig-param"><span class="n">ioblk_size</span><span class="o">=</span><span class="default_value">256</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">compact</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/ao2mo/outcore.html#full_iofree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.ao2mo.outcore.full_iofree" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.ao2mo.outcore.</span></code><code class="sig-name descname"><span class="pre">full_iofree</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'int2e'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aosym</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'s4'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_memory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ioblk_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compact</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/ao2mo/outcore.html#full_iofree"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.ao2mo.outcore.full_iofree" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transfer arbitrary spherical AO integrals to MO integrals for given orbitals
 This function is a wrap for <code class="xref py py-func docutils literal notranslate"><span class="pre">ao2mo.outcore.general()</span></code>.  It’s not really
 IO free.  The returned MO integrals are held in memory.  For backward compatibility,
@@ -1285,7 +1288,7 @@ have 4-fold symmetry.</p>
 
 <dl class="py function">
 <dt id="pyscf.ao2mo.outcore.general">
-<code class="sig-prename descclassname">pyscf.ao2mo.outcore.</code><code class="sig-name descname">general</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">mo_coeffs</span></em>, <em class="sig-param"><span class="n">erifile</span></em>, <em class="sig-param"><span class="n">dataname</span><span class="o">=</span><span class="default_value">'eri_mo'</span></em>, <em class="sig-param"><span class="n">intor</span><span class="o">=</span><span class="default_value">'int2e'</span></em>, <em class="sig-param"><span class="n">aosym</span><span class="o">=</span><span class="default_value">'s4'</span></em>, <em class="sig-param"><span class="n">comp</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_memory</span><span class="o">=</span><span class="default_value">2000</span></em>, <em class="sig-param"><span class="n">ioblk_size</span><span class="o">=</span><span class="default_value">256</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">compact</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/ao2mo/outcore.html#general"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.ao2mo.outcore.general" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.ao2mo.outcore.</span></code><code class="sig-name descname"><span class="pre">general</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeffs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">erifile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'eri_mo'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'int2e'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aosym</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'s4'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_memory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ioblk_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compact</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/ao2mo/outcore.html#general"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.ao2mo.outcore.general" title="Permalink to this definition">¶</a></dt>
 <dd><p>For the given four sets of orbitals, transfer arbitrary spherical AO
 integrals to MO integrals on the fly.</p>
 <dl>
@@ -1380,7 +1383,7 @@ and return the “plain” MO integrals</p>
 
 <dl class="py function">
 <dt id="pyscf.ao2mo.outcore.general_iofree">
-<code class="sig-prename descclassname">pyscf.ao2mo.outcore.</code><code class="sig-name descname">general_iofree</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">mo_coeffs</span></em>, <em class="sig-param"><span class="n">intor</span><span class="o">=</span><span class="default_value">'int2e'</span></em>, <em class="sig-param"><span class="n">aosym</span><span class="o">=</span><span class="default_value">'s4'</span></em>, <em class="sig-param"><span class="n">comp</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">max_memory</span><span class="o">=</span><span class="default_value">2000</span></em>, <em class="sig-param"><span class="n">ioblk_size</span><span class="o">=</span><span class="default_value">256</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">compact</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/ao2mo/outcore.html#general_iofree"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.ao2mo.outcore.general_iofree" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.ao2mo.outcore.</span></code><code class="sig-name descname"><span class="pre">general_iofree</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeffs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'int2e'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aosym</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'s4'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_memory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ioblk_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compact</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/ao2mo/outcore.html#general_iofree"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.ao2mo.outcore.general_iofree" title="Permalink to this definition">¶</a></dt>
 <dd><p>For the given four sets of orbitals, transfer arbitrary spherical AO
 integrals to MO integrals on the fly.  This function is a wrap for
 <code class="xref py py-func docutils literal notranslate"><span class="pre">ao2mo.outcore.general()</span></code>.  It’s not really IO free.  The returned MO
@@ -1462,7 +1465,7 @@ have 4-fold symmetry.</p>
 
 <dl class="py function">
 <dt id="pyscf.ao2mo.outcore.half_e1">
-<code class="sig-prename descclassname">pyscf.ao2mo.outcore.</code><code class="sig-name descname">half_e1</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">mo_coeffs</span></em>, <em class="sig-param"><span class="n">swapfile</span></em>, <em class="sig-param"><span class="n">intor</span><span class="o">=</span><span class="default_value">'int2e'</span></em>, <em class="sig-param"><span class="n">aosym</span><span class="o">=</span><span class="default_value">'s4'</span></em>, <em class="sig-param"><span class="n">comp</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">max_memory</span><span class="o">=</span><span class="default_value">2000</span></em>, <em class="sig-param"><span class="n">ioblk_size</span><span class="o">=</span><span class="default_value">256</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">2</span></em>, <em class="sig-param"><span class="n">compact</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">ao2mopt</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/ao2mo/outcore.html#half_e1"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.ao2mo.outcore.half_e1" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.ao2mo.outcore.</span></code><code class="sig-name descname"><span class="pre">half_e1</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeffs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">swapfile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'int2e'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aosym</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'s4'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_memory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ioblk_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">256</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compact</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ao2mopt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/ao2mo/outcore.html#half_e1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.ao2mo.outcore.half_e1" title="Permalink to this definition">¶</a></dt>
 <dd><p>Half transform arbitrary spherical AO integrals to MO integrals
 for the given two sets of orbitals</p>
 <dl>
@@ -1519,7 +1522,7 @@ and return the “plain” MO integrals</p>
 
 <span class="target" id="module-pyscf.ao2mo.addons"></span><dl class="py class">
 <dt id="pyscf.ao2mo.addons.load">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.ao2mo.addons.</code><code class="sig-name descname">load</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">eri</span></em>, <em class="sig-param"><span class="n">dataname</span><span class="o">=</span><span class="default_value">'eri_mo'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/ao2mo/addons.html#load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.ao2mo.addons.load" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.ao2mo.addons.</span></code><code class="sig-name descname"><span class="pre">load</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eri</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'eri_mo'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/ao2mo/addons.html#load"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.ao2mo.addons.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>load 2e integrals from hdf5 file</p>
 <dl class="simple">
 <dt>Usage:</dt><dd><dl class="simple">
@@ -1532,7 +1535,7 @@ and return the “plain” MO integrals</p>
 
 <dl class="py function">
 <dt id="pyscf.ao2mo.addons.restore">
-<code class="sig-prename descclassname">pyscf.ao2mo.addons.</code><code class="sig-name descname">restore</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">symmetry</span></em>, <em class="sig-param"><span class="n">eri</span></em>, <em class="sig-param"><span class="n">norb</span></em>, <em class="sig-param"><span class="n">tao</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/ao2mo/addons.html#restore"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.ao2mo.addons.restore" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.ao2mo.addons.</span></code><code class="sig-name descname"><span class="pre">restore</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">symmetry</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eri</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tao</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/ao2mo/addons.html#restore"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.ao2mo.addons.restore" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert the 2e integrals (in Chemist’s notation) between different
 level of permutation symmetry (8-fold, 4-fold, or no symmetry)</p>
 <dl>
@@ -1591,37 +1594,29 @@ while (ij|kl) != (kl|ij) is not required.</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="cc.html" class="btn btn-neutral float-right" title="cc — Coupled cluster" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="adc.html" class="btn btn-neutral float-left" title="adc — Algebraic diagrammatic construction (ADC) scheme" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="cc.html" class="btn btn-neutral float-right" title="cc — Coupled cluster" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="adc.html" class="btn btn-neutral float-left" title="adc — Algebraic diagrammatic construction (ADC) scheme" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2015-2021, The PySCF Developers
+        &#169; Copyright 2015-2021, The PySCF Developers.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

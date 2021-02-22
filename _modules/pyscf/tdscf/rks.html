@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>pyscf.tdscf.rks &mdash; PySCF 1.7.6 documentation</title>
   
@@ -16,7 +16,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -29,7 +32,6 @@
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -49,7 +51,7 @@
           
 
           
-            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> PySCF
+            <a href="../../../index.html" class="icon icon-home"> PySCF
           
 
           
@@ -96,8 +98,7 @@
 <p class="caption"><span class="caption-text">Developer documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../code-rule.html">Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../develop/scf_developer.html">Self-consistent field (SCF) methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../develop/dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../develop.html">Guidelines for module development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../advanced.html">Miscellaneous</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API documentation</span></p>
@@ -129,6 +130,8 @@
         <div class="rst-content">
         
           
+
+
 
 
 
@@ -206,22 +209,22 @@
 <span class="n">POSTIVE_EIG_THRESHOLD</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">__config__</span><span class="p">,</span> <span class="s1">&#39;tdscf_rhf_TDDFT_positive_eig_threshold&#39;</span><span class="p">,</span> <span class="mf">1e-3</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="TDA"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.dft.rks.TDA">[docs]</a><span class="k">class</span> <span class="nc">TDA</span><span class="p">(</span><span class="n">rhf</span><span class="o">.</span><span class="n">TDA</span><span class="p">):</span>
+<div class="viewcode-block" id="TDA"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.tdscf.rks.TDA">[docs]</a><span class="k">class</span> <span class="nc">TDA</span><span class="p">(</span><span class="n">rhf</span><span class="o">.</span><span class="n">TDA</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">nuc_grad_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="kn">from</span> <span class="nn">pyscf.grad</span> <span class="kn">import</span> <span class="n">tdrks</span>
         <span class="k">return</span> <span class="n">tdrks</span><span class="o">.</span><span class="n">Gradients</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="TDDFT"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.dft.rks.TDDFT">[docs]</a><span class="k">class</span> <span class="nc">TDDFT</span><span class="p">(</span><span class="n">rhf</span><span class="o">.</span><span class="n">TDHF</span><span class="p">):</span>
+<div class="viewcode-block" id="TDDFT"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.tdscf.rks.TDDFT">[docs]</a><span class="k">class</span> <span class="nc">TDDFT</span><span class="p">(</span><span class="n">rhf</span><span class="o">.</span><span class="n">TDHF</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">nuc_grad_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="kn">from</span> <span class="nn">pyscf.grad</span> <span class="kn">import</span> <span class="n">tdrks</span>
         <span class="k">return</span> <span class="n">tdrks</span><span class="o">.</span><span class="n">Gradients</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
 
 <span class="n">RPA</span> <span class="o">=</span> <span class="n">TDRKS</span> <span class="o">=</span> <span class="n">TDDFT</span>
 
-<div class="viewcode-block" id="TDDFTNoHybrid"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.dft.rks.TDDFTNoHybrid">[docs]</a><span class="k">class</span> <span class="nc">TDDFTNoHybrid</span><span class="p">(</span><span class="n">TDA</span><span class="p">):</span>
+<div class="viewcode-block" id="TDDFTNoHybrid"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.tdscf.rks.TDDFTNoHybrid">[docs]</a><span class="k">class</span> <span class="nc">TDDFTNoHybrid</span><span class="p">(</span><span class="n">TDA</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39; Solve (A-B)(A+B)(X+Y) = (X+Y)w^2</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-<div class="viewcode-block" id="TDDFTNoHybrid.gen_vind"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.dft.rks.TDDFTNoHybrid.gen_vind">[docs]</a>    <span class="k">def</span> <span class="nf">gen_vind</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf</span><span class="p">):</span>
+<div class="viewcode-block" id="TDDFTNoHybrid.gen_vind"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.tdscf.rks.TDDFTNoHybrid.gen_vind">[docs]</a>    <span class="k">def</span> <span class="nf">gen_vind</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf</span><span class="p">):</span>
         <span class="n">wfnsym</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wfnsym</span>
         <span class="n">singlet</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">singlet</span>
 
@@ -272,7 +275,7 @@
 
         <span class="k">return</span> <span class="n">vind</span><span class="p">,</span> <span class="n">hdiag</span></div>
 
-<div class="viewcode-block" id="TDDFTNoHybrid.kernel"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.dft.rks.TDDFTNoHybrid.kernel">[docs]</a>    <span class="k">def</span> <span class="nf">kernel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nstates</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="TDDFTNoHybrid.kernel"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.tdscf.rks.TDDFTNoHybrid.kernel">[docs]</a>    <span class="k">def</span> <span class="nf">kernel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nstates</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;TDDFT diagonalization solver</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="n">cpu0</span> <span class="o">=</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">(),</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
@@ -337,7 +340,7 @@
         <span class="k">return</span> <span class="n">tdrks</span><span class="o">.</span><span class="n">Gradients</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="dRPA"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.dft.rks.dRPA">[docs]</a><span class="k">class</span> <span class="nc">dRPA</span><span class="p">(</span><span class="n">TDDFTNoHybrid</span><span class="p">):</span>
+<div class="viewcode-block" id="dRPA"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.tdscf.rks.dRPA">[docs]</a><span class="k">class</span> <span class="nc">dRPA</span><span class="p">(</span><span class="n">TDDFTNoHybrid</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">KohnShamDFT</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;direct RPA can only be applied with DFT; for HF+dRPA, use .xc=&#39;hf&#39;&quot;</span><span class="p">)</span>
@@ -350,7 +353,7 @@
 
 <span class="n">TDH</span> <span class="o">=</span> <span class="n">dRPA</span>
 
-<div class="viewcode-block" id="dTDA"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.dft.rks.dTDA">[docs]</a><span class="k">class</span> <span class="nc">dTDA</span><span class="p">(</span><span class="n">TDA</span><span class="p">):</span>
+<div class="viewcode-block" id="dTDA"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.tdscf.rks.dTDA">[docs]</a><span class="k">class</span> <span class="nc">dTDA</span><span class="p">(</span><span class="n">TDA</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf</span><span class="p">):</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">KohnShamDFT</span><span class="p">):</span>
             <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;direct TDA can only be applied with DFT; for HF+dTDA, use .xc=&#39;hf&#39;&quot;</span><span class="p">)</span>
@@ -362,7 +365,7 @@
         <span class="n">TDA</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="tddft"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.dft.rks.tddft">[docs]</a><span class="k">def</span> <span class="nf">tddft</span><span class="p">(</span><span class="n">mf</span><span class="p">):</span>
+<div class="viewcode-block" id="tddft"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.tdscf.rks.tddft">[docs]</a><span class="k">def</span> <span class="nf">tddft</span><span class="p">(</span><span class="n">mf</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Driver to create TDDFT or TDDFTNoHybrid object&#39;&#39;&#39;</span>
     <span class="k">if</span> <span class="n">mf</span><span class="o">.</span><span class="n">_numint</span><span class="o">.</span><span class="n">libxc</span><span class="o">.</span><span class="n">is_hybrid_xc</span><span class="p">(</span><span class="n">mf</span><span class="o">.</span><span class="n">xc</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">TDDFT</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span>
@@ -454,28 +457,25 @@
            
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2015-2021, The PySCF Developers
+        &#169; Copyright 2015-2021, The PySCF Developers.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

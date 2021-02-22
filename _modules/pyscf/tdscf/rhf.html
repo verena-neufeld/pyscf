@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>pyscf.tdscf.rhf &mdash; PySCF 1.7.6 documentation</title>
   
@@ -16,7 +16,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -29,7 +32,6 @@
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -49,7 +51,7 @@
           
 
           
-            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> PySCF
+            <a href="../../../index.html" class="icon icon-home"> PySCF
           
 
           
@@ -96,8 +98,7 @@
 <p class="caption"><span class="caption-text">Developer documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../code-rule.html">Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../develop/scf_developer.html">Self-consistent field (SCF) methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../develop/dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../develop.html">Guidelines for module development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../advanced.html">Miscellaneous</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API documentation</span></p>
@@ -129,6 +130,8 @@
         <div class="rst-content">
         
           
+
+
 
 
 
@@ -212,7 +215,7 @@
 <span class="n">POSTIVE_EIG_THRESHOLD</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">__config__</span><span class="p">,</span> <span class="s1">&#39;tdscf_rhf_TDDFT_positive_eig_threshold&#39;</span><span class="p">,</span> <span class="mf">1e-3</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="gen_tda_operation"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.scf.hf.gen_tda_operation">[docs]</a><span class="k">def</span> <span class="nf">gen_tda_operation</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">fock_ao</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">singlet</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">wfnsym</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="gen_tda_operation"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.tdscf.rhf.gen_tda_operation">[docs]</a><span class="k">def</span> <span class="nf">gen_tda_operation</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">fock_ao</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">singlet</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">wfnsym</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Generate function to compute (A+B)x</span>
 <span class="sd">    </span>
 <span class="sd">    Kwargs:</span>
@@ -277,7 +280,7 @@
     <span class="k">return</span> <span class="n">vind</span><span class="p">,</span> <span class="n">hdiag</span></div>
 <span class="n">gen_tda_hop</span> <span class="o">=</span> <span class="n">gen_tda_operation</span>
 
-<div class="viewcode-block" id="get_ab"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.scf.hf.get_ab">[docs]</a><span class="k">def</span> <span class="nf">get_ab</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">mo_energy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mo_occ</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="get_ab"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.tdscf.rhf.get_ab">[docs]</a><span class="k">def</span> <span class="nf">get_ab</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">mo_energy</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mo_occ</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sa">r</span><span class="sd">&#39;&#39;&#39;A and B matrices for TDDFT response function.</span>
 
 <span class="sd">    A[i,a,j,b] = \delta_{ab}\delta_{ij}(E_a - E_i) + (ia||bj)</span>
@@ -383,7 +386,7 @@
 
     <span class="k">return</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span></div>
 
-<div class="viewcode-block" id="get_nto"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.scf.hf.get_nto">[docs]</a><span class="k">def</span> <span class="nf">get_nto</span><span class="p">(</span><span class="n">tdobj</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="n">OUTPUT_THRESHOLD</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="get_nto"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.tdscf.rhf.get_nto">[docs]</a><span class="k">def</span> <span class="nf">get_nto</span><span class="p">(</span><span class="n">tdobj</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="n">OUTPUT_THRESHOLD</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sa">r</span><span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Natural transition orbital analysis.</span>
 
@@ -582,7 +585,7 @@
                      <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">m</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">m</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
     <span class="k">return</span> <span class="n">tdobj</span>
 
-<div class="viewcode-block" id="analyze_wfnsym"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.scf.hf.analyze_wfnsym">[docs]</a><span class="k">def</span> <span class="nf">analyze_wfnsym</span><span class="p">(</span><span class="n">tdobj</span><span class="p">,</span> <span class="n">x_sym</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+<div class="viewcode-block" id="analyze_wfnsym"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.tdscf.rhf.analyze_wfnsym">[docs]</a><span class="k">def</span> <span class="nf">analyze_wfnsym</span><span class="p">(</span><span class="n">tdobj</span><span class="p">,</span> <span class="n">x_sym</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Guess the wfn symmetry of TDDFT X amplitude&#39;&#39;&#39;</span>
     <span class="n">possible_sym</span> <span class="o">=</span> <span class="n">x_sym</span><span class="p">[(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mf">1e-7</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">x</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mf">1e-7</span><span class="p">)]</span>
     <span class="k">if</span> <span class="n">numpy</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">possible_sym</span> <span class="o">==</span> <span class="n">symm</span><span class="o">.</span><span class="n">MULTI_IRREPS</span><span class="p">):</span>
@@ -600,21 +603,21 @@
     <span class="k">return</span> <span class="n">wfnsym</span></div>
 
 
-<div class="viewcode-block" id="transition_dipole"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.scf.hf.transition_dipole">[docs]</a><span class="k">def</span> <span class="nf">transition_dipole</span><span class="p">(</span><span class="n">tdobj</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="transition_dipole"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.tdscf.rhf.transition_dipole">[docs]</a><span class="k">def</span> <span class="nf">transition_dipole</span><span class="p">(</span><span class="n">tdobj</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Transition dipole moments in the length gauge&#39;&#39;&#39;</span>
     <span class="n">mol</span> <span class="o">=</span> <span class="n">tdobj</span><span class="o">.</span><span class="n">mol</span>
     <span class="k">with</span> <span class="n">mol</span><span class="o">.</span><span class="n">with_common_orig</span><span class="p">(</span><span class="n">_charge_center</span><span class="p">(</span><span class="n">mol</span><span class="p">)):</span>
         <span class="n">ints</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">intor_symmetric</span><span class="p">(</span><span class="s1">&#39;int1e_r&#39;</span><span class="p">,</span> <span class="n">comp</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">tdobj</span><span class="o">.</span><span class="n">_contract_multipole</span><span class="p">(</span><span class="n">ints</span><span class="p">,</span> <span class="n">hermi</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="n">xy</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="transition_velocity_dipole"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.scf.hf.transition_velocity_dipole">[docs]</a><span class="k">def</span> <span class="nf">transition_velocity_dipole</span><span class="p">(</span><span class="n">tdobj</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="transition_velocity_dipole"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.tdscf.rhf.transition_velocity_dipole">[docs]</a><span class="k">def</span> <span class="nf">transition_velocity_dipole</span><span class="p">(</span><span class="n">tdobj</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Transition dipole moments in the velocity gauge (imaginary part only)</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="n">ints</span> <span class="o">=</span> <span class="n">tdobj</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">intor</span><span class="p">(</span><span class="s1">&#39;int1e_ipovlp&#39;</span><span class="p">,</span> <span class="n">comp</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">hermi</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">v</span> <span class="o">=</span> <span class="n">tdobj</span><span class="o">.</span><span class="n">_contract_multipole</span><span class="p">(</span><span class="n">ints</span><span class="p">,</span> <span class="n">hermi</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="n">xy</span><span class="p">)</span>
     <span class="k">return</span> <span class="o">-</span><span class="n">v</span></div>
 
-<div class="viewcode-block" id="transition_magnetic_dipole"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.scf.hf.transition_magnetic_dipole">[docs]</a><span class="k">def</span> <span class="nf">transition_magnetic_dipole</span><span class="p">(</span><span class="n">tdobj</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="transition_magnetic_dipole"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.tdscf.rhf.transition_magnetic_dipole">[docs]</a><span class="k">def</span> <span class="nf">transition_magnetic_dipole</span><span class="p">(</span><span class="n">tdobj</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Transition magnetic dipole moments (imaginary part only)&#39;&#39;&#39;</span>
     <span class="n">mol</span> <span class="o">=</span> <span class="n">tdobj</span><span class="o">.</span><span class="n">mol</span>
     <span class="k">with</span> <span class="n">mol</span><span class="o">.</span><span class="n">with_common_orig</span><span class="p">(</span><span class="n">_charge_center</span><span class="p">(</span><span class="n">mol</span><span class="p">)):</span>
@@ -622,7 +625,7 @@
     <span class="n">m_pol</span> <span class="o">=</span> <span class="n">tdobj</span><span class="o">.</span><span class="n">_contract_multipole</span><span class="p">(</span><span class="n">ints</span><span class="p">,</span> <span class="n">hermi</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="n">xy</span><span class="p">)</span>
     <span class="k">return</span> <span class="o">-</span><span class="n">m_pol</span></div>
 
-<div class="viewcode-block" id="transition_quadrupole"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.scf.hf.transition_quadrupole">[docs]</a><span class="k">def</span> <span class="nf">transition_quadrupole</span><span class="p">(</span><span class="n">tdobj</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="transition_quadrupole"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.tdscf.rhf.transition_quadrupole">[docs]</a><span class="k">def</span> <span class="nf">transition_quadrupole</span><span class="p">(</span><span class="n">tdobj</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Transition quadrupole moments in the length gauge&#39;&#39;&#39;</span>
     <span class="n">mol</span> <span class="o">=</span> <span class="n">tdobj</span><span class="o">.</span><span class="n">mol</span>
     <span class="n">nao</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">nao_nr</span><span class="p">()</span>
@@ -631,7 +634,7 @@
     <span class="n">quad</span> <span class="o">=</span> <span class="n">tdobj</span><span class="o">.</span><span class="n">_contract_multipole</span><span class="p">(</span><span class="n">ints</span><span class="p">,</span> <span class="n">hermi</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="n">xy</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">quad</span></div>
 
-<div class="viewcode-block" id="transition_velocity_quadrupole"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.scf.hf.transition_velocity_quadrupole">[docs]</a><span class="k">def</span> <span class="nf">transition_velocity_quadrupole</span><span class="p">(</span><span class="n">tdobj</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="transition_velocity_quadrupole"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.tdscf.rhf.transition_velocity_quadrupole">[docs]</a><span class="k">def</span> <span class="nf">transition_velocity_quadrupole</span><span class="p">(</span><span class="n">tdobj</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Transition quadrupole moments in the velocity gauge (imaginary part only)</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="n">mol</span> <span class="o">=</span> <span class="n">tdobj</span><span class="o">.</span><span class="n">mol</span>
@@ -642,7 +645,7 @@
     <span class="n">quad</span> <span class="o">=</span> <span class="n">tdobj</span><span class="o">.</span><span class="n">_contract_multipole</span><span class="p">(</span><span class="n">ints</span><span class="p">,</span> <span class="n">hermi</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="n">xy</span><span class="p">)</span>
     <span class="k">return</span> <span class="o">-</span><span class="n">quad</span></div>
 
-<div class="viewcode-block" id="transition_magnetic_quadrupole"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.scf.hf.transition_magnetic_quadrupole">[docs]</a><span class="k">def</span> <span class="nf">transition_magnetic_quadrupole</span><span class="p">(</span><span class="n">tdobj</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="transition_magnetic_quadrupole"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.tdscf.rhf.transition_magnetic_quadrupole">[docs]</a><span class="k">def</span> <span class="nf">transition_magnetic_quadrupole</span><span class="p">(</span><span class="n">tdobj</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Transition magnetic quadrupole moments (imaginary part only)&#39;&#39;&#39;</span>
     <span class="n">XX</span><span class="p">,</span> <span class="n">XY</span><span class="p">,</span> <span class="n">XZ</span><span class="p">,</span> <span class="n">YX</span><span class="p">,</span> <span class="n">YY</span><span class="p">,</span> <span class="n">YZ</span><span class="p">,</span> <span class="n">ZX</span><span class="p">,</span> <span class="n">ZY</span><span class="p">,</span> <span class="n">ZZ</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
     <span class="n">mol</span> <span class="o">=</span> <span class="n">tdobj</span><span class="o">.</span><span class="n">mol</span>
@@ -656,7 +659,7 @@
     <span class="n">m_quad</span> <span class="o">=</span> <span class="n">tdobj</span><span class="o">.</span><span class="n">_contract_multipole</span><span class="p">(</span><span class="n">m_ints</span><span class="p">,</span> <span class="n">hermi</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="n">xy</span><span class="p">)</span>
     <span class="k">return</span> <span class="o">-</span><span class="n">m_quad</span></div>
 
-<div class="viewcode-block" id="transition_octupole"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.scf.hf.transition_octupole">[docs]</a><span class="k">def</span> <span class="nf">transition_octupole</span><span class="p">(</span><span class="n">tdobj</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="transition_octupole"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.tdscf.rhf.transition_octupole">[docs]</a><span class="k">def</span> <span class="nf">transition_octupole</span><span class="p">(</span><span class="n">tdobj</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Transition octupole moments in the length gauge&#39;&#39;&#39;</span>
     <span class="n">mol</span> <span class="o">=</span> <span class="n">tdobj</span><span class="o">.</span><span class="n">mol</span>
     <span class="n">nao</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">nao_nr</span><span class="p">()</span>
@@ -665,7 +668,7 @@
     <span class="n">o_pol</span> <span class="o">=</span> <span class="n">tdobj</span><span class="o">.</span><span class="n">_contract_multipole</span><span class="p">(</span><span class="n">ints</span><span class="p">,</span> <span class="n">hermi</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="n">xy</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">o_pol</span></div>
 
-<div class="viewcode-block" id="transition_velocity_octupole"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.scf.hf.transition_velocity_octupole">[docs]</a><span class="k">def</span> <span class="nf">transition_velocity_octupole</span><span class="p">(</span><span class="n">tdobj</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="transition_velocity_octupole"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.tdscf.rhf.transition_velocity_octupole">[docs]</a><span class="k">def</span> <span class="nf">transition_velocity_octupole</span><span class="p">(</span><span class="n">tdobj</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Transition octupole moments in the velocity gauge (imaginary part only)</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="n">mol</span> <span class="o">=</span> <span class="n">tdobj</span><span class="o">.</span><span class="n">mol</span>
@@ -752,7 +755,7 @@
     <span class="k">return</span> <span class="n">f</span>
 
 
-<div class="viewcode-block" id="as_scanner"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.scf.hf.as_scanner">[docs]</a><span class="k">def</span> <span class="nf">as_scanner</span><span class="p">(</span><span class="n">td</span><span class="p">):</span>
+<div class="viewcode-block" id="as_scanner"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.tdscf.rhf.as_scanner">[docs]</a><span class="k">def</span> <span class="nf">as_scanner</span><span class="p">(</span><span class="n">td</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Generating a scanner/solver for TDA/TDHF/TDDFT PES.</span>
 
 <span class="sd">    The returned solver is a function. This function requires one argument</span>
@@ -801,7 +804,7 @@
     <span class="k">return</span> <span class="n">TD_Scanner</span><span class="p">(</span><span class="n">td</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="TDA"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.scf.hf.TDA">[docs]</a><span class="k">class</span> <span class="nc">TDA</span><span class="p">(</span><span class="n">lib</span><span class="o">.</span><span class="n">StreamObject</span><span class="p">):</span>
+<div class="viewcode-block" id="TDA"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.tdscf.rhf.TDA">[docs]</a><span class="k">class</span> <span class="nc">TDA</span><span class="p">(</span><span class="n">lib</span><span class="o">.</span><span class="n">StreamObject</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Tamm-Dancoff approximation</span>
 
 <span class="sd">    Attributes:</span>
@@ -884,7 +887,7 @@
             <span class="n">log</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;Ground state SCF is not converged&#39;</span><span class="p">)</span>
         <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 
-<div class="viewcode-block" id="TDA.check_sanity"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.scf.hf.TDA.check_sanity">[docs]</a>    <span class="k">def</span> <span class="nf">check_sanity</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="TDA.check_sanity"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.tdscf.rhf.TDA.check_sanity">[docs]</a>    <span class="k">def</span> <span class="nf">check_sanity</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_scf</span><span class="o">.</span><span class="n">mo_coeff</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;SCF object is not initialized&#39;</span><span class="p">)</span>
         <span class="n">lib</span><span class="o">.</span><span class="n">StreamObject</span><span class="o">.</span><span class="n">check_sanity</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
@@ -895,11 +898,11 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_scf</span><span class="o">.</span><span class="n">reset</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span>
 
-<div class="viewcode-block" id="TDA.gen_vind"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.scf.hf.TDA.gen_vind">[docs]</a>    <span class="k">def</span> <span class="nf">gen_vind</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf</span><span class="p">):</span>
+<div class="viewcode-block" id="TDA.gen_vind"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.tdscf.rhf.TDA.gen_vind">[docs]</a>    <span class="k">def</span> <span class="nf">gen_vind</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;Compute Ax&#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="n">gen_tda_hop</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">singlet</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">singlet</span><span class="p">,</span> <span class="n">wfnsym</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">wfnsym</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="TDA.get_ab"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.scf.hf.TDA.get_ab">[docs]</a>    <span class="nd">@lib</span><span class="o">.</span><span class="n">with_doc</span><span class="p">(</span><span class="n">get_ab</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
+<div class="viewcode-block" id="TDA.get_ab"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.tdscf.rhf.TDA.get_ab">[docs]</a>    <span class="nd">@lib</span><span class="o">.</span><span class="n">with_doc</span><span class="p">(</span><span class="n">get_ab</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">get_ab</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">mf</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span> <span class="n">mf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_scf</span>
         <span class="k">return</span> <span class="n">get_ab</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span></div>
@@ -943,7 +946,7 @@
             <span class="n">x0</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># Koopmans&#39; excitations</span>
         <span class="k">return</span> <span class="n">x0</span>
 
-<div class="viewcode-block" id="TDA.kernel"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.scf.hf.TDA.kernel">[docs]</a>    <span class="k">def</span> <span class="nf">kernel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nstates</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="TDA.kernel"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.tdscf.rhf.TDA.kernel">[docs]</a>    <span class="k">def</span> <span class="nf">kernel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nstates</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;TDA diagonalization solver</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="n">cpu0</span> <span class="o">=</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">(),</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
@@ -1010,7 +1013,7 @@
 <span class="n">CIS</span> <span class="o">=</span> <span class="n">TDA</span>
 
 
-<div class="viewcode-block" id="gen_tdhf_operation"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.scf.hf.gen_tdhf_operation">[docs]</a><span class="k">def</span> <span class="nf">gen_tdhf_operation</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">fock_ao</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">singlet</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">wfnsym</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="gen_tdhf_operation"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.tdscf.rhf.gen_tdhf_operation">[docs]</a><span class="k">def</span> <span class="nf">gen_tdhf_operation</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">fock_ao</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">singlet</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">wfnsym</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Generate function to compute</span>
 
 <span class="sd">    [ A  B][X]</span>
@@ -1086,7 +1089,7 @@
     <span class="k">return</span> <span class="n">vind</span><span class="p">,</span> <span class="n">hdiag</span></div>
 
 
-<div class="viewcode-block" id="TDHF"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.scf.hf.TDHF">[docs]</a><span class="k">class</span> <span class="nc">TDHF</span><span class="p">(</span><span class="n">TDA</span><span class="p">):</span>
+<div class="viewcode-block" id="TDHF"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.tdscf.rhf.TDHF">[docs]</a><span class="k">class</span> <span class="nc">TDHF</span><span class="p">(</span><span class="n">TDA</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Time-dependent Hartree-Fock</span>
 
 <span class="sd">    Attributes:</span>
@@ -1107,7 +1110,7 @@
 <span class="sd">            excited state.  (X,Y) are normalized to 1/2 in RHF/RKS methods and</span>
 <span class="sd">            normalized to 1 for UHF/UKS methods. In the TDA calculation, Y = 0.</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-<div class="viewcode-block" id="TDHF.gen_vind"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.scf.hf.TDHF.gen_vind">[docs]</a>    <span class="nd">@lib</span><span class="o">.</span><span class="n">with_doc</span><span class="p">(</span><span class="n">gen_tdhf_operation</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
+<div class="viewcode-block" id="TDHF.gen_vind"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.tdscf.rhf.TDHF.gen_vind">[docs]</a>    <span class="nd">@lib</span><span class="o">.</span><span class="n">with_doc</span><span class="p">(</span><span class="n">gen_tdhf_operation</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">gen_vind</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mf</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">gen_tdhf_operation</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">singlet</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">singlet</span><span class="p">,</span> <span class="n">wfnsym</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">wfnsym</span><span class="p">)</span></div>
 
@@ -1116,7 +1119,7 @@
         <span class="n">y0</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">numpy</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">x0</span><span class="p">,</span><span class="n">y0</span><span class="p">))</span>
 
-<div class="viewcode-block" id="TDHF.kernel"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.scf.hf.TDHF.kernel">[docs]</a>    <span class="k">def</span> <span class="nf">kernel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nstates</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="TDHF.kernel"><a class="viewcode-back" href="../../../modules/tdscf.html#pyscf.tdscf.rhf.TDHF.kernel">[docs]</a>    <span class="k">def</span> <span class="nf">kernel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nstates</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39;TDHF diagonalization with non-Hermitian eigenvalue solver</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="n">cpu0</span> <span class="o">=</span> <span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">(),</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
@@ -1224,28 +1227,25 @@
            
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2015-2021, The PySCF Developers
+        &#169; Copyright 2015-2021, The PySCF Developers.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

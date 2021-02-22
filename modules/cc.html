@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>cc — Coupled cluster &mdash; PySCF 1.7.6 documentation</title>
   
@@ -16,7 +16,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -29,7 +32,6 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -51,7 +53,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> PySCF
+            <a href="../index.html" class="icon icon-home"> PySCF
           
 
           
@@ -98,8 +100,7 @@
 <p class="caption"><span class="caption-text">Developer documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../code-rule.html">Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../develop/scf_developer.html">Self-consistent field (SCF) methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../develop/dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop.html">Guidelines for module development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced.html">Miscellaneous</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API documentation</span></p>
@@ -203,6 +204,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -216,7 +219,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/modules/cc.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -682,7 +685,7 @@ energy, <code class="docutils literal notranslate"><span class="pre">T1</span></
 This class supports the calculation of CCSD 1- and 2-particle density matrices.</p>
 <dl class="py class">
 <dt id="pyscf.cc.ccsd.CCSD">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.cc.ccsd.</code><code class="sig-name descname">CCSD</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em>, <em class="sig-param"><span class="n">frozen</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mo_coeff</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mo_occ</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/ccsd.html#CCSD"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.cc.ccsd.CCSD" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.cc.ccsd.</span></code><code class="sig-name descname"><span class="pre">CCSD</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frozen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_occ</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/ccsd.html#CCSD"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.cc.ccsd.CCSD" title="Permalink to this definition">¶</a></dt>
 <dd><p>restricted CCSD</p>
 <dl>
 <dt>Attributes:</dt><dd><dl>
@@ -747,13 +750,13 @@ occupied and virtual orbitals can be frozen in CC calculation.</p>
 (ij|kl) = (ji|kl) = (kl|ij) = …</p>
 <dl class="py attribute">
 <dt id="pyscf.cc.ccsd.CC">
-<code class="sig-prename descclassname">pyscf.cc.ccsd.</code><code class="sig-name descname">CC</code><a class="headerlink" href="#pyscf.cc.ccsd.CC" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.cc.ccsd.</span></code><code class="sig-name descname"><span class="pre">CC</span></code><a class="headerlink" href="#pyscf.cc.ccsd.CC" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#id0" title="pyscf.cc.ccsd.CCSD"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.cc.ccsd.CCSD</span></code></a></p>
 </dd></dl>
 
 <dl class="py class">
 <dt id="id0">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.cc.ccsd.</code><code class="sig-name descname">CCSD</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em>, <em class="sig-param"><span class="n">frozen</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mo_coeff</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mo_occ</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/ccsd.html#CCSD"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.cc.ccsd.</span></code><code class="sig-name descname"><span class="pre">CCSD</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frozen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_occ</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/ccsd.html#CCSD"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
 <dd><p>restricted CCSD</p>
 <dl>
 <dt>Attributes:</dt><dd><dl>
@@ -813,19 +816,19 @@ occupied and virtual orbitals can be frozen in CC calculation.</p>
 </div></blockquote>
 <dl class="py method">
 <dt id="pyscf.cc.ccsd.CCSD.EOMEA_Ta">
-<code class="sig-name descname">EOMEA_Ta</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.cc.ccsd.CCSD.EOMEA_Ta" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">EOMEA_Ta</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.cc.ccsd.CCSD.EOMEA_Ta" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class for EOM EACCSD(T)*(a) method by Matthews and Stanton.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="pyscf.cc.ccsd.CCSD.EOMIP_Ta">
-<code class="sig-name descname">EOMIP_Ta</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.cc.ccsd.CCSD.EOMIP_Ta" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">EOMIP_Ta</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.cc.ccsd.CCSD.EOMIP_Ta" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class for EOM IPCCSD(T)*(a) method by Matthews and Stanton.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="pyscf.cc.ccsd.CCSD.as_scanner">
-<code class="sig-name descname">as_scanner</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.cc.ccsd.CCSD.as_scanner" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">as_scanner</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.cc.ccsd.CCSD.as_scanner" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generating a scanner/solver for CCSD PES.</p>
 <p>The returned solver is a function. This function requires one argument
 “mol” as input and returns total CCSD energy.</p>
@@ -847,13 +850,13 @@ automatically applied in the solver.</p>
 
 <dl class="py method">
 <dt id="pyscf.cc.ccsd.CCSD.energy">
-<code class="sig-name descname">energy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t1</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">t2</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">eris</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.cc.ccsd.CCSD.energy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">energy</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eris</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.cc.ccsd.CCSD.energy" title="Permalink to this definition">¶</a></dt>
 <dd><p>CCSD correlation energy</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="pyscf.cc.ccsd.CCSD.get_frozen_mask">
-<code class="sig-name descname">get_frozen_mask</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.cc.ccsd.CCSD.get_frozen_mask" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_frozen_mask</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.cc.ccsd.CCSD.get_frozen_mask" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get boolean mask for the restricted reference orbitals.</p>
 <p>In the returned boolean (mask) array of frozen orbital indices, the
 element is False if it corresonds to the frozen orbital.</p>
@@ -861,7 +864,7 @@ element is False if it corresonds to the frozen orbital.</p>
 
 <dl class="py method">
 <dt id="pyscf.cc.ccsd.CCSD.kernel">
-<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t1</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">t2</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">eris</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/ccsd.html#CCSD.kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.cc.ccsd.CCSD.kernel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">kernel</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eris</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/ccsd.html#CCSD.kernel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.cc.ccsd.CCSD.kernel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Kernel function is the main driver of a method.  Every method should
 define the kernel function as the entry of the calculation.  Note the
 return value of kernel function is not strictly defined.  It can be
@@ -871,13 +874,13 @@ the DFT mesh grids etc.).</p>
 
 <dl class="py method">
 <dt id="pyscf.cc.ccsd.CCSD.make_rdm1">
-<code class="sig-name descname">make_rdm1</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t1</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">t2</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">l1</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">l2</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ao_repr</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/ccsd.html#CCSD.make_rdm1"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.cc.ccsd.CCSD.make_rdm1" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">make_rdm1</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ao_repr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/ccsd.html#CCSD.make_rdm1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.cc.ccsd.CCSD.make_rdm1" title="Permalink to this definition">¶</a></dt>
 <dd><p>Un-relaxed 1-particle density matrix in MO space</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="pyscf.cc.ccsd.CCSD.make_rdm2">
-<code class="sig-name descname">make_rdm2</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t1</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">t2</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">l1</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">l2</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ao_repr</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/ccsd.html#CCSD.make_rdm2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.cc.ccsd.CCSD.make_rdm2" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">make_rdm2</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ao_repr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/ccsd.html#CCSD.make_rdm2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.cc.ccsd.CCSD.make_rdm2" title="Permalink to this definition">¶</a></dt>
 <dd><p>2-particle density matrix in MO space.  The density matrix is
 stored as</p>
 <p>dm2[p,r,q,s] = &lt;p^+ q^+ s r&gt;</p>
@@ -885,7 +888,7 @@ stored as</p>
 
 <dl class="py method">
 <dt id="pyscf.cc.ccsd.CCSD.restore_from_diis_">
-<code class="sig-name descname">restore_from_diis_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">diis_file</span></em>, <em class="sig-param"><span class="n">inplace</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.cc.ccsd.CCSD.restore_from_diis_" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">restore_from_diis_</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">diis_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.cc.ccsd.CCSD.restore_from_diis_" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reuse an existed DIIS object in the CCSD calculation.</p>
 <p>The CCSD amplitudes will be restored from the DIIS object to generate t1
 and t2 amplitudes. The t1/t2 amplitudes of the CCSD object will be
@@ -897,13 +900,13 @@ and error vector will be reused in the CCSD calculation.</p>
 
 <dl class="py attribute">
 <dt id="pyscf.cc.ccsd.RCCSD">
-<code class="sig-prename descclassname">pyscf.cc.ccsd.</code><code class="sig-name descname">RCCSD</code><a class="headerlink" href="#pyscf.cc.ccsd.RCCSD" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.cc.ccsd.</span></code><code class="sig-name descname"><span class="pre">RCCSD</span></code><a class="headerlink" href="#pyscf.cc.ccsd.RCCSD" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#id0" title="pyscf.cc.ccsd.CCSD"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.cc.ccsd.CCSD</span></code></a></p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="pyscf.cc.ccsd.as_scanner">
-<code class="sig-prename descclassname">pyscf.cc.ccsd.</code><code class="sig-name descname">as_scanner</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cc</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/ccsd.html#as_scanner"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.cc.ccsd.as_scanner" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.cc.ccsd.</span></code><code class="sig-name descname"><span class="pre">as_scanner</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cc</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/ccsd.html#as_scanner"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.cc.ccsd.as_scanner" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generating a scanner/solver for CCSD PES.</p>
 <p>The returned solver is a function. This function requires one argument
 “mol” as input and returns total CCSD energy.</p>
@@ -925,20 +928,20 @@ automatically applied in the solver.</p>
 
 <dl class="py function">
 <dt id="pyscf.cc.ccsd.energy">
-<code class="sig-prename descclassname">pyscf.cc.ccsd.</code><code class="sig-name descname">energy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mycc</span></em>, <em class="sig-param"><span class="n">t1</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">t2</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">eris</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/ccsd.html#energy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.cc.ccsd.energy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.cc.ccsd.</span></code><code class="sig-name descname"><span class="pre">energy</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mycc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eris</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/ccsd.html#energy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.cc.ccsd.energy" title="Permalink to this definition">¶</a></dt>
 <dd><p>CCSD correlation energy</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="pyscf.cc.ccsd.get_d1_diagnostic">
-<code class="sig-prename descclassname">pyscf.cc.ccsd.</code><code class="sig-name descname">get_d1_diagnostic</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t1</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/ccsd.html#get_d1_diagnostic"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.cc.ccsd.get_d1_diagnostic" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.cc.ccsd.</span></code><code class="sig-name descname"><span class="pre">get_d1_diagnostic</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/ccsd.html#get_d1_diagnostic"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.cc.ccsd.get_d1_diagnostic" title="Permalink to this definition">¶</a></dt>
 <dd><p>D1 diagnostic given in</p>
 <p>Janssen, et. al Chem. Phys. Lett. 290 (1998) 423</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="pyscf.cc.ccsd.get_d2_diagnostic">
-<code class="sig-prename descclassname">pyscf.cc.ccsd.</code><code class="sig-name descname">get_d2_diagnostic</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t2</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/ccsd.html#get_d2_diagnostic"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.cc.ccsd.get_d2_diagnostic" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.cc.ccsd.</span></code><code class="sig-name descname"><span class="pre">get_d2_diagnostic</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t2</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/ccsd.html#get_d2_diagnostic"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.cc.ccsd.get_d2_diagnostic" title="Permalink to this definition">¶</a></dt>
 <dd><p>D2 diagnostic given in</p>
 <blockquote>
 <div><p>Nielsen, et. al Chem. Phys. Lett. 310 (1999) 568</p>
@@ -949,13 +952,13 @@ closed-shell systems.</p>
 
 <dl class="py function">
 <dt id="pyscf.cc.ccsd.get_t1_diagnostic">
-<code class="sig-prename descclassname">pyscf.cc.ccsd.</code><code class="sig-name descname">get_t1_diagnostic</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t1</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/ccsd.html#get_t1_diagnostic"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.cc.ccsd.get_t1_diagnostic" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.cc.ccsd.</span></code><code class="sig-name descname"><span class="pre">get_t1_diagnostic</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/ccsd.html#get_t1_diagnostic"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.cc.ccsd.get_t1_diagnostic" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the t1 amplitude norm, normalized by number of correlated electrons.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="pyscf.cc.ccsd.restore_from_diis_">
-<code class="sig-prename descclassname">pyscf.cc.ccsd.</code><code class="sig-name descname">restore_from_diis_</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mycc</span></em>, <em class="sig-param"><span class="n">diis_file</span></em>, <em class="sig-param"><span class="n">inplace</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/ccsd.html#restore_from_diis_"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.cc.ccsd.restore_from_diis_" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.cc.ccsd.</span></code><code class="sig-name descname"><span class="pre">restore_from_diis_</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mycc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">diis_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/ccsd.html#restore_from_diis_"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.cc.ccsd.restore_from_diis_" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reuse an existed DIIS object in the CCSD calculation.</p>
 <p>The CCSD amplitudes will be restored from the DIIS object to generate t1
 and t2 amplitudes. The t1/t2 amplitudes of the CCSD object will be
@@ -974,7 +977,7 @@ with complex integrals.  Another difference is that this class supports EOM-CCSD
 methods, including EOM-IP-CCSD, EOM-EA-CCSD, EOM-EE-CCSD, EOM-SF-CCSD.</p>
 <dl class="py class">
 <dt id="pyscf.cc.rccsd.RCCSD">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.cc.rccsd.</code><code class="sig-name descname">RCCSD</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em>, <em class="sig-param"><span class="n">frozen</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mo_coeff</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mo_occ</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/rccsd.html#RCCSD"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.cc.rccsd.RCCSD" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.cc.rccsd.</span></code><code class="sig-name descname"><span class="pre">RCCSD</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frozen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_occ</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/rccsd.html#RCCSD"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.cc.rccsd.RCCSD" title="Permalink to this definition">¶</a></dt>
 <dd><p>restricted CCSD with IP-EOM, EA-EOM, EE-EOM, and SF-EOM capabilities</p>
 <p>Ground-state CCSD is performed in optimized ccsd.CCSD and EOM is performed here.</p>
 </dd></dl>
@@ -986,12 +989,12 @@ This code is slower than the pyscf.cc.ccsd implementation.</p>
 <p>Ref: Hirata et al., J. Chem. Phys. 120, 2581 (2004)</p>
 <dl class="py class">
 <dt id="id1">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.cc.rccsd.</code><code class="sig-name descname">RCCSD</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em>, <em class="sig-param"><span class="n">frozen</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mo_coeff</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mo_occ</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/rccsd.html#RCCSD"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id1" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.cc.rccsd.</span></code><code class="sig-name descname"><span class="pre">RCCSD</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frozen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_occ</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/rccsd.html#RCCSD"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id1" title="Permalink to this definition">¶</a></dt>
 <dd><p>restricted CCSD with IP-EOM, EA-EOM, EE-EOM, and SF-EOM capabilities</p>
 <p>Ground-state CCSD is performed in optimized ccsd.CCSD and EOM is performed here.</p>
 <dl class="py method">
 <dt id="pyscf.cc.rccsd.RCCSD.ccsd">
-<code class="sig-name descname">ccsd</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t1</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">t2</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">eris</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mbpt2</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/rccsd.html#RCCSD.ccsd"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.cc.rccsd.RCCSD.ccsd" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">ccsd</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eris</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mbpt2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/rccsd.html#RCCSD.ccsd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.cc.rccsd.RCCSD.ccsd" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ground-state CCSD.</p>
 <dl class="simple">
 <dt>Kwargs:</dt><dd><dl class="simple">
@@ -1004,13 +1007,13 @@ This code is slower than the pyscf.cc.ccsd implementation.</p>
 
 <dl class="py method">
 <dt id="pyscf.cc.rccsd.RCCSD.energy">
-<code class="sig-name descname">energy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t1</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">t2</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">eris</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.cc.rccsd.RCCSD.energy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">energy</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eris</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.cc.rccsd.RCCSD.energy" title="Permalink to this definition">¶</a></dt>
 <dd><p>RCCSD correlation energy</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="pyscf.cc.rccsd.RCCSD.kernel">
-<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t1</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">t2</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">eris</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mbpt2</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/rccsd.html#RCCSD.kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.cc.rccsd.RCCSD.kernel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">kernel</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eris</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mbpt2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/rccsd.html#RCCSD.kernel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.cc.rccsd.RCCSD.kernel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Kernel function is the main driver of a method.  Every method should
 define the kernel function as the entry of the calculation.  Note the
 return value of kernel function is not strictly defined.  It can be
@@ -1022,7 +1025,7 @@ the DFT mesh grids etc.).</p>
 
 <dl class="py function">
 <dt id="pyscf.cc.rccsd.energy">
-<code class="sig-prename descclassname">pyscf.cc.rccsd.</code><code class="sig-name descname">energy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cc</span></em>, <em class="sig-param"><span class="n">t1</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">t2</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">eris</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/rccsd.html#energy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.cc.rccsd.energy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.cc.rccsd.</span></code><code class="sig-name descname"><span class="pre">energy</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eris</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/rccsd.html#energy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.cc.rccsd.energy" title="Permalink to this definition">¶</a></dt>
 <dd><p>RCCSD correlation energy</p>
 </dd></dl>
 
@@ -1036,22 +1039,22 @@ EOM-EA-CCSD, EOM-EE-CCSD are all available in this class.  Note this class does
 not support complex integrals.</p>
 <dl class="py class">
 <dt id="pyscf.cc.uccsd.UCCSD">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.cc.uccsd.</code><code class="sig-name descname">UCCSD</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em>, <em class="sig-param"><span class="n">frozen</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mo_coeff</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mo_occ</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/uccsd.html#UCCSD"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.cc.uccsd.UCCSD" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.cc.uccsd.</span></code><code class="sig-name descname"><span class="pre">UCCSD</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frozen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_occ</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/uccsd.html#UCCSD"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.cc.uccsd.UCCSD" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <span class="target" id="module-pyscf.cc.uccsd"></span><p>UCCSD with spatial integrals</p>
 <dl class="py attribute">
 <dt id="pyscf.cc.uccsd.CCSD">
-<code class="sig-prename descclassname">pyscf.cc.uccsd.</code><code class="sig-name descname">CCSD</code><a class="headerlink" href="#pyscf.cc.uccsd.CCSD" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.cc.uccsd.</span></code><code class="sig-name descname"><span class="pre">CCSD</span></code><a class="headerlink" href="#pyscf.cc.uccsd.CCSD" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#id2" title="pyscf.cc.uccsd.UCCSD"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.cc.uccsd.UCCSD</span></code></a></p>
 </dd></dl>
 
 <dl class="py class">
 <dt id="id2">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.cc.uccsd.</code><code class="sig-name descname">UCCSD</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em>, <em class="sig-param"><span class="n">frozen</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mo_coeff</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mo_occ</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/uccsd.html#UCCSD"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#id2" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.cc.uccsd.</span></code><code class="sig-name descname"><span class="pre">UCCSD</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frozen</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_occ</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/uccsd.html#UCCSD"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#id2" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py method">
 <dt id="pyscf.cc.uccsd.UCCSD.ccsd">
-<code class="sig-name descname">ccsd</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t1</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">t2</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">eris</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mbpt2</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/uccsd.html#UCCSD.ccsd"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.cc.uccsd.UCCSD.ccsd" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">ccsd</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eris</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mbpt2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/uccsd.html#UCCSD.ccsd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.cc.uccsd.UCCSD.ccsd" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ground-state unrestricted (U)CCSD.</p>
 <dl class="simple">
 <dt>Kwargs:</dt><dd><dl class="simple">
@@ -1064,13 +1067,13 @@ not support complex integrals.</p>
 
 <dl class="py method">
 <dt id="pyscf.cc.uccsd.UCCSD.energy">
-<code class="sig-name descname">energy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t1</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">t2</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">eris</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.cc.uccsd.UCCSD.energy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">energy</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eris</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.cc.uccsd.UCCSD.energy" title="Permalink to this definition">¶</a></dt>
 <dd><p>UCCSD correlation energy</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="pyscf.cc.uccsd.UCCSD.get_frozen_mask">
-<code class="sig-name descname">get_frozen_mask</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.cc.uccsd.UCCSD.get_frozen_mask" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_frozen_mask</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.cc.uccsd.UCCSD.get_frozen_mask" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get boolean mask for the unrestricted reference orbitals.</p>
 <p>In the returned boolean (mask) array of frozen orbital indices, the
 element is False if it corresonds to the frozen orbital.</p>
@@ -1078,7 +1081,7 @@ element is False if it corresonds to the frozen orbital.</p>
 
 <dl class="py method">
 <dt id="pyscf.cc.uccsd.UCCSD.kernel">
-<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t1</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">t2</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">eris</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">mbpt2</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/uccsd.html#UCCSD.kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.cc.uccsd.UCCSD.kernel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">kernel</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eris</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mbpt2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/uccsd.html#UCCSD.kernel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.cc.uccsd.UCCSD.kernel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Kernel function is the main driver of a method.  Every method should
 define the kernel function as the entry of the calculation.  Note the
 return value of kernel function is not strictly defined.  It can be
@@ -1088,7 +1091,7 @@ the DFT mesh grids etc.).</p>
 
 <dl class="py method">
 <dt id="pyscf.cc.uccsd.UCCSD.make_rdm1">
-<code class="sig-name descname">make_rdm1</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t1</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">t2</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">l1</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">l2</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ao_repr</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/uccsd.html#UCCSD.make_rdm1"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.cc.uccsd.UCCSD.make_rdm1" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">make_rdm1</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ao_repr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/uccsd.html#UCCSD.make_rdm1"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.cc.uccsd.UCCSD.make_rdm1" title="Permalink to this definition">¶</a></dt>
 <dd><p>Un-relaxed 1-particle density matrix in MO space</p>
 <dl class="simple">
 <dt>Returns:</dt><dd><p>dm1a, dm1b</p>
@@ -1098,7 +1101,7 @@ the DFT mesh grids etc.).</p>
 
 <dl class="py method">
 <dt id="pyscf.cc.uccsd.UCCSD.make_rdm2">
-<code class="sig-name descname">make_rdm2</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">t1</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">t2</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">l1</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">l2</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">ao_repr</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/uccsd.html#UCCSD.make_rdm2"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.cc.uccsd.UCCSD.make_rdm2" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">make_rdm2</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ao_repr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/uccsd.html#UCCSD.make_rdm2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.cc.uccsd.UCCSD.make_rdm2" title="Permalink to this definition">¶</a></dt>
 <dd><p>2-particle density matrix in spin-oribital basis.</p>
 </dd></dl>
 
@@ -1106,7 +1109,7 @@ the DFT mesh grids etc.).</p>
 
 <dl class="py function">
 <dt id="pyscf.cc.uccsd.energy">
-<code class="sig-prename descclassname">pyscf.cc.uccsd.</code><code class="sig-name descname">energy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cc</span></em>, <em class="sig-param"><span class="n">t1</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">t2</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">eris</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/uccsd.html#energy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.cc.uccsd.energy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.cc.uccsd.</span></code><code class="sig-name descname"><span class="pre">energy</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eris</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/uccsd.html#energy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.cc.uccsd.energy" title="Permalink to this definition">¶</a></dt>
 <dd><p>UCCSD correlation energy</p>
 </dd></dl>
 
@@ -1117,14 +1120,14 @@ the DFT mesh grids etc.).</p>
 <code class="xref py py-mod docutils literal notranslate"><span class="pre">cc.addons</span></code></p>
 <span class="target" id="module-pyscf.cc.addons"></span><dl class="py function">
 <dt id="pyscf.cc.addons.spatial2spin">
-<code class="sig-prename descclassname">pyscf.cc.addons.</code><code class="sig-name descname">spatial2spin</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tx</span></em>, <em class="sig-param"><span class="n">orbspin</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/addons.html#spatial2spin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.cc.addons.spatial2spin" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.cc.addons.</span></code><code class="sig-name descname"><span class="pre">spatial2spin</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orbspin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cc/addons.html#spatial2spin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.cc.addons.spatial2spin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert T1/T2 of spatial orbital representation to T1/T2 of
 spin-orbital representation</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="pyscf.cc.addons.spatial2spinorb">
-<code class="sig-prename descclassname">pyscf.cc.addons.</code><code class="sig-name descname">spatial2spinorb</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tx</span></em>, <em class="sig-param"><span class="n">orbspin</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.cc.addons.spatial2spinorb" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.cc.addons.</span></code><code class="sig-name descname"><span class="pre">spatial2spinorb</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orbspin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.cc.addons.spatial2spinorb" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert T1/T2 of spatial orbital representation to T1/T2 of
 spin-orbital representation</p>
 </dd></dl>
@@ -1145,37 +1148,29 @@ spin-orbital representation</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="ccn.html" class="btn btn-neutral float-right" title="ccn — Auto-generated coupled cluster of arbitrary order" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="ao2mo.html" class="btn btn-neutral float-left" title="ao2mo — Integral transformations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="ccn.html" class="btn btn-neutral float-right" title="ccn — Auto-generated coupled cluster of arbitrary order" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="ao2mo.html" class="btn btn-neutral float-left" title="ao2mo — Integral transformations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2015-2021, The PySCF Developers
+        &#169; Copyright 2015-2021, The PySCF Developers.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

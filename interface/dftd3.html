@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>dftd3 — DFT with D3 dispersion correction &mdash; PySCF 1.7.6 documentation</title>
   
@@ -16,7 +16,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -29,7 +32,6 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -51,7 +53,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> PySCF
+            <a href="../index.html" class="icon icon-home"> PySCF
           
 
           
@@ -98,8 +100,7 @@
 <p class="caption"><span class="caption-text">Developer documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../code-rule.html">Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../develop/scf_developer.html">Self-consistent field (SCF) methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../develop/dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop.html">Guidelines for module development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced.html">Miscellaneous</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API documentation</span></p>
@@ -160,6 +161,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -173,7 +176,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/interface/dftd3.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -206,10 +209,10 @@ environment variable DFTD3PATH to point to the directory where the shared
 object file libdftd3.so locates.</p>
 <dl class="py class">
 <dt id="pyscf.dftd3.itrf.DFTD3Dispersion">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.dftd3.itrf.</code><code class="sig-name descname">DFTD3Dispersion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/dftd3/itrf.html#DFTD3Dispersion"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.dftd3.itrf.DFTD3Dispersion" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.dftd3.itrf.</span></code><code class="sig-name descname"><span class="pre">DFTD3Dispersion</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/dftd3/itrf.html#DFTD3Dispersion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.dftd3.itrf.DFTD3Dispersion" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py method">
 <dt id="pyscf.dftd3.itrf.DFTD3Dispersion.kernel">
-<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/dftd3/itrf.html#DFTD3Dispersion.kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.dftd3.itrf.DFTD3Dispersion.kernel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">kernel</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/dftd3/itrf.html#DFTD3Dispersion.kernel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.dftd3.itrf.DFTD3Dispersion.kernel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Kernel function is the main driver of a method.  Every method should
 define the kernel function as the entry of the calculation.  Note the
 return value of kernel function is not strictly defined.  It can be
@@ -219,7 +222,7 @@ the DFT mesh grids etc.).</p>
 
 <dl class="py method">
 <dt id="pyscf.dftd3.itrf.DFTD3Dispersion.reset">
-<code class="sig-name descname">reset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/dftd3/itrf.html#DFTD3Dispersion.reset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.dftd3.itrf.DFTD3Dispersion.reset" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">reset</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/dftd3/itrf.html#DFTD3Dispersion.reset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.dftd3.itrf.DFTD3Dispersion.reset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reset mol and clean up relevant attributes for scanner mode</p>
 </dd></dl>
 
@@ -227,7 +230,7 @@ the DFT mesh grids etc.).</p>
 
 <dl class="py function">
 <dt id="pyscf.dftd3.itrf.dftd3">
-<code class="sig-prename descclassname">pyscf.dftd3.itrf.</code><code class="sig-name descname">dftd3</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scf_method</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/dftd3/itrf.html#dftd3"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.dftd3.itrf.dftd3" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.dftd3.itrf.</span></code><code class="sig-name descname"><span class="pre">dftd3</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scf_method</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/dftd3/itrf.html#dftd3"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.dftd3.itrf.dftd3" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply DFT-D3 corrections to SCF or MCSCF methods</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>scf_method : a HF or DFT object</p>
@@ -247,7 +250,7 @@ corrections</p>
 
 <dl class="py function">
 <dt id="pyscf.dftd3.itrf.grad">
-<code class="sig-prename descclassname">pyscf.dftd3.itrf.</code><code class="sig-name descname">grad</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">scf_grad</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/dftd3/itrf.html#grad"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.dftd3.itrf.grad" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.dftd3.itrf.</span></code><code class="sig-name descname"><span class="pre">grad</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scf_grad</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/dftd3/itrf.html#grad"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.dftd3.itrf.grad" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply DFT-D3 corrections to SCF or MCSCF nuclear gradients methods</p>
 <dl class="simple">
 <dt>Args:</dt><dd><dl class="simple">
@@ -281,37 +284,29 @@ post-HF calculations eg MP2, CCSD, MCSCF etc</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="geomopt.html" class="btn btn-neutral float-right" title="geomopt — Geometry optimization" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../interface.html" class="btn btn-neutral float-left" title="Interfaces" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="geomopt.html" class="btn btn-neutral float-right" title="geomopt — Geometry optimization" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../interface.html" class="btn btn-neutral float-left" title="Interfaces" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2015-2021, The PySCF Developers
+        &#169; Copyright 2015-2021, The PySCF Developers.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

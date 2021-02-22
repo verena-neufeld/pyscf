@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>solvent — Solvent methods &mdash; PySCF 1.7.6 documentation</title>
   
@@ -16,7 +16,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -29,7 +32,6 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -51,7 +53,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> PySCF
+            <a href="../index.html" class="icon icon-home"> PySCF
           
 
           
@@ -98,8 +100,7 @@
 <p class="caption"><span class="caption-text">Developer documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../code-rule.html">Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../develop/scf_developer.html">Self-consistent field (SCF) methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../develop/dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop.html">Guidelines for module development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced.html">Miscellaneous</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API documentation</span></p>
@@ -189,6 +190,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -202,7 +205,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/modules/solvent.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -260,10 +263,10 @@ JCP, 144, 054101
 JCP, 144, 160901</p>
 <dl class="py class">
 <dt id="pyscf.solvent.ddpcm.DDPCM">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.solvent.ddpcm.</code><code class="sig-name descname">DDPCM</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddpcm.html#DDPCM"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.solvent.ddpcm.DDPCM" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.solvent.ddpcm.</span></code><code class="sig-name descname"><span class="pre">DDPCM</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddpcm.html#DDPCM"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.solvent.ddpcm.DDPCM" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py method">
 <dt id="pyscf.solvent.ddpcm.DDPCM.nuc_grad_method">
-<code class="sig-name descname">nuc_grad_method</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">grad_method</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddpcm.html#DDPCM.nuc_grad_method"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.solvent.ddpcm.DDPCM.nuc_grad_method" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">nuc_grad_method</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grad_method</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddpcm.html#DDPCM.nuc_grad_method"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.solvent.ddpcm.DDPCM.nuc_grad_method" title="Permalink to this definition">¶</a></dt>
 <dd><p>For grad_method in vacuum, add nuclear gradients of solvent</p>
 </dd></dl>
 
@@ -271,7 +274,7 @@ JCP, 144, 160901</p>
 
 <dl class="py function">
 <dt id="pyscf.solvent.ddpcm.ddpcm_for_casci">
-<code class="sig-prename descclassname">pyscf.solvent.ddpcm.</code><code class="sig-name descname">ddpcm_for_casci</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mc</span></em>, <em class="sig-param"><span class="n">solvent_obj</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dm</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddpcm.html#ddpcm_for_casci"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.solvent.ddpcm.ddpcm_for_casci" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.solvent.ddpcm.</span></code><code class="sig-name descname"><span class="pre">ddpcm_for_casci</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solvent_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddpcm.html#ddpcm_for_casci"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.solvent.ddpcm.ddpcm_for_casci" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add solvent model to CASCI method.</p>
 <dl class="simple">
 <dt>Kwargs:</dt><dd><dl class="simple">
@@ -284,7 +287,7 @@ JCP, 144, 160901</p>
 
 <dl class="py function">
 <dt id="pyscf.solvent.ddpcm.ddpcm_for_casscf">
-<code class="sig-prename descclassname">pyscf.solvent.ddpcm.</code><code class="sig-name descname">ddpcm_for_casscf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mc</span></em>, <em class="sig-param"><span class="n">solvent_obj</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dm</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddpcm.html#ddpcm_for_casscf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.solvent.ddpcm.ddpcm_for_casscf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.solvent.ddpcm.</span></code><code class="sig-name descname"><span class="pre">ddpcm_for_casscf</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solvent_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddpcm.html#ddpcm_for_casscf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.solvent.ddpcm.ddpcm_for_casscf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add solvent model to CASSCF method.</p>
 <dl class="simple">
 <dt>Kwargs:</dt><dd><dl class="simple">
@@ -297,7 +300,7 @@ JCP, 144, 160901</p>
 
 <dl class="py function">
 <dt id="pyscf.solvent.ddpcm.ddpcm_for_post_scf">
-<code class="sig-prename descclassname">pyscf.solvent.ddpcm.</code><code class="sig-name descname">ddpcm_for_post_scf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method</span></em>, <em class="sig-param"><span class="n">solvent_obj</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dm</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddpcm.html#ddpcm_for_post_scf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.solvent.ddpcm.ddpcm_for_post_scf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.solvent.ddpcm.</span></code><code class="sig-name descname"><span class="pre">ddpcm_for_post_scf</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solvent_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddpcm.html#ddpcm_for_post_scf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.solvent.ddpcm.ddpcm_for_post_scf" title="Permalink to this definition">¶</a></dt>
 <dd><p>A wrapper of solvent model for post-SCF methods (CC, CI, MP etc.)</p>
 <p>NOTE: this implementation often causes (macro iteration) convergence issue</p>
 <dl class="simple">
@@ -311,7 +314,7 @@ JCP, 144, 160901</p>
 
 <dl class="py function">
 <dt id="pyscf.solvent.ddpcm.ddpcm_for_scf">
-<code class="sig-prename descclassname">pyscf.solvent.ddpcm.</code><code class="sig-name descname">ddpcm_for_scf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em>, <em class="sig-param"><span class="n">solvent_obj</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dm</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddpcm.html#ddpcm_for_scf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.solvent.ddpcm.ddpcm_for_scf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.solvent.ddpcm.</span></code><code class="sig-name descname"><span class="pre">ddpcm_for_scf</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solvent_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddpcm.html#ddpcm_for_scf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.solvent.ddpcm.ddpcm_for_scf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add solvent model to SCF (HF and DFT) method.</p>
 <dl class="simple">
 <dt>Kwargs:</dt><dd><dl class="simple">
@@ -324,7 +327,7 @@ JCP, 144, 160901</p>
 
 <dl class="py function">
 <dt id="pyscf.solvent.ddpcm.ddpcm_for_tdscf">
-<code class="sig-prename descclassname">pyscf.solvent.ddpcm.</code><code class="sig-name descname">ddpcm_for_tdscf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method</span></em>, <em class="sig-param"><span class="n">solvent_obj</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dm</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddpcm.html#ddpcm_for_tdscf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.solvent.ddpcm.ddpcm_for_tdscf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.solvent.ddpcm.</span></code><code class="sig-name descname"><span class="pre">ddpcm_for_tdscf</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solvent_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddpcm.html#ddpcm_for_tdscf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.solvent.ddpcm.ddpcm_for_tdscf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add solvent model in TDDFT calculations.</p>
 <dl class="simple">
 <dt>Kwargs:</dt><dd><dl class="simple">
@@ -337,7 +340,7 @@ JCP, 144, 160901</p>
 
 <dl class="py function">
 <dt id="pyscf.solvent.ddpcm.energy">
-<code class="sig-prename descclassname">pyscf.solvent.ddpcm.</code><code class="sig-name descname">energy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pcmobj</span></em>, <em class="sig-param"><span class="n">dm</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddpcm.html#energy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.solvent.ddpcm.energy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.solvent.ddpcm.</span></code><code class="sig-name descname"><span class="pre">energy</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcmobj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dm</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddpcm.html#energy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.solvent.ddpcm.energy" title="Permalink to this definition">¶</a></dt>
 <dd><p>ddPCM energy
 Es = 1/2 f(eps) int rho(r) W(r) dr</p>
 </dd></dl>
@@ -550,47 +553,47 @@ Xylene-mixture                         2.3879
 z-1,2-DiChloroEthene                   9.2</p>
 <dl class="py class">
 <dt id="pyscf.solvent.ddcosmo.DDCOSMO">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.solvent.ddcosmo.</code><code class="sig-name descname">DDCOSMO</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddcosmo.html#DDCOSMO"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.solvent.ddcosmo.DDCOSMO" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.solvent.ddcosmo.</span></code><code class="sig-name descname"><span class="pre">DDCOSMO</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddcosmo.html#DDCOSMO"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.solvent.ddcosmo.DDCOSMO" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py method">
 <dt id="pyscf.solvent.ddcosmo.DDCOSMO.as_solver">
-<code class="sig-name descname">as_solver</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.solvent.ddcosmo.DDCOSMO.as_solver" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">as_solver</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.solvent.ddcosmo.DDCOSMO.as_solver" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate ddcosmo function to compute energy and potential matrix</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="pyscf.solvent.ddcosmo.DDCOSMO.dm">
-<em class="property">property </em><code class="sig-name descname">dm</code><a class="headerlink" href="#pyscf.solvent.ddcosmo.DDCOSMO.dm" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">property</span> </em><code class="sig-name descname"><span class="pre">dm</span></code><a class="headerlink" href="#pyscf.solvent.ddcosmo.DDCOSMO.dm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Density matrix to generate the frozen ddCOSMO solvent potential.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="pyscf.solvent.ddcosmo.DDCOSMO.energy">
-<code class="sig-name descname">energy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dm</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.solvent.ddcosmo.DDCOSMO.energy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">energy</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.solvent.ddcosmo.DDCOSMO.energy" title="Permalink to this definition">¶</a></dt>
 <dd><p>ddCOSMO energy
 Es = 1/2 f(eps) int rho(r) W(r) dr</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="pyscf.solvent.ddcosmo.DDCOSMO.gen_solver">
-<code class="sig-name descname">gen_solver</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.solvent.ddcosmo.DDCOSMO.gen_solver" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">gen_solver</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.solvent.ddcosmo.DDCOSMO.gen_solver" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate ddcosmo function to compute energy and potential matrix</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="pyscf.solvent.ddcosmo.DDCOSMO.kernel">
-<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dm</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddcosmo.html#DDCOSMO.kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.solvent.ddcosmo.DDCOSMO.kernel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">kernel</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dm</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddcosmo.html#DDCOSMO.kernel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.solvent.ddcosmo.DDCOSMO.kernel" title="Permalink to this definition">¶</a></dt>
 <dd><p>A single shot solvent effects for given density matrix.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="pyscf.solvent.ddcosmo.DDCOSMO.nuc_grad_method">
-<code class="sig-name descname">nuc_grad_method</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">grad_method</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddcosmo.html#DDCOSMO.nuc_grad_method"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.solvent.ddcosmo.DDCOSMO.nuc_grad_method" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">nuc_grad_method</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grad_method</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddcosmo.html#DDCOSMO.nuc_grad_method"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.solvent.ddcosmo.DDCOSMO.nuc_grad_method" title="Permalink to this definition">¶</a></dt>
 <dd><p>For grad_method in vacuum, add nuclear gradients of solvent</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="pyscf.solvent.ddcosmo.DDCOSMO.reset">
-<code class="sig-name descname">reset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddcosmo.html#DDCOSMO.reset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.solvent.ddcosmo.DDCOSMO.reset" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">reset</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddcosmo.html#DDCOSMO.reset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.solvent.ddcosmo.DDCOSMO.reset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reset mol and clean up relevant attributes for scanner mode</p>
 </dd></dl>
 
@@ -598,7 +601,7 @@ Es = 1/2 f(eps) int rho(r) W(r) dr</p>
 
 <dl class="py function">
 <dt id="pyscf.solvent.ddcosmo.ddcosmo_for_casci">
-<code class="sig-prename descclassname">pyscf.solvent.ddcosmo.</code><code class="sig-name descname">ddcosmo_for_casci</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mc</span></em>, <em class="sig-param"><span class="n">solvent_obj</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dm</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddcosmo.html#ddcosmo_for_casci"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.solvent.ddcosmo.ddcosmo_for_casci" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.solvent.ddcosmo.</span></code><code class="sig-name descname"><span class="pre">ddcosmo_for_casci</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solvent_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddcosmo.html#ddcosmo_for_casci"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.solvent.ddcosmo.ddcosmo_for_casci" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add solvent model to CASCI method.</p>
 <dl class="simple">
 <dt>Kwargs:</dt><dd><dl class="simple">
@@ -611,7 +614,7 @@ Es = 1/2 f(eps) int rho(r) W(r) dr</p>
 
 <dl class="py function">
 <dt id="pyscf.solvent.ddcosmo.ddcosmo_for_casscf">
-<code class="sig-prename descclassname">pyscf.solvent.ddcosmo.</code><code class="sig-name descname">ddcosmo_for_casscf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mc</span></em>, <em class="sig-param"><span class="n">solvent_obj</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dm</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddcosmo.html#ddcosmo_for_casscf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.solvent.ddcosmo.ddcosmo_for_casscf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.solvent.ddcosmo.</span></code><code class="sig-name descname"><span class="pre">ddcosmo_for_casscf</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solvent_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddcosmo.html#ddcosmo_for_casscf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.solvent.ddcosmo.ddcosmo_for_casscf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add solvent model to CASSCF method.</p>
 <dl class="simple">
 <dt>Kwargs:</dt><dd><dl class="simple">
@@ -624,7 +627,7 @@ Es = 1/2 f(eps) int rho(r) W(r) dr</p>
 
 <dl class="py function">
 <dt id="pyscf.solvent.ddcosmo.ddcosmo_for_post_scf">
-<code class="sig-prename descclassname">pyscf.solvent.ddcosmo.</code><code class="sig-name descname">ddcosmo_for_post_scf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method</span></em>, <em class="sig-param"><span class="n">solvent_obj</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dm</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddcosmo.html#ddcosmo_for_post_scf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.solvent.ddcosmo.ddcosmo_for_post_scf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.solvent.ddcosmo.</span></code><code class="sig-name descname"><span class="pre">ddcosmo_for_post_scf</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solvent_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddcosmo.html#ddcosmo_for_post_scf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.solvent.ddcosmo.ddcosmo_for_post_scf" title="Permalink to this definition">¶</a></dt>
 <dd><p>A wrapper of solvent model for post-SCF methods (CC, CI, MP etc.)</p>
 <p>NOTE: this implementation often causes (macro iteration) convergence issue</p>
 <dl class="simple">
@@ -638,7 +641,7 @@ Es = 1/2 f(eps) int rho(r) W(r) dr</p>
 
 <dl class="py function">
 <dt id="pyscf.solvent.ddcosmo.ddcosmo_for_scf">
-<code class="sig-prename descclassname">pyscf.solvent.ddcosmo.</code><code class="sig-name descname">ddcosmo_for_scf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mf</span></em>, <em class="sig-param"><span class="n">solvent_obj</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dm</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddcosmo.html#ddcosmo_for_scf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.solvent.ddcosmo.ddcosmo_for_scf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.solvent.ddcosmo.</span></code><code class="sig-name descname"><span class="pre">ddcosmo_for_scf</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solvent_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddcosmo.html#ddcosmo_for_scf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.solvent.ddcosmo.ddcosmo_for_scf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add solvent model to SCF (HF and DFT) method.</p>
 <dl class="simple">
 <dt>Kwargs:</dt><dd><dl class="simple">
@@ -651,7 +654,7 @@ Es = 1/2 f(eps) int rho(r) W(r) dr</p>
 
 <dl class="py function">
 <dt id="pyscf.solvent.ddcosmo.ddcosmo_for_tdscf">
-<code class="sig-prename descclassname">pyscf.solvent.ddcosmo.</code><code class="sig-name descname">ddcosmo_for_tdscf</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method</span></em>, <em class="sig-param"><span class="n">solvent_obj</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">dm</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddcosmo.html#ddcosmo_for_tdscf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.solvent.ddcosmo.ddcosmo_for_tdscf" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.solvent.ddcosmo.</span></code><code class="sig-name descname"><span class="pre">ddcosmo_for_tdscf</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solvent_obj</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddcosmo.html#ddcosmo_for_tdscf"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.solvent.ddcosmo.ddcosmo_for_tdscf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add solvent model in TDDFT calculations.</p>
 <dl class="simple">
 <dt>Kwargs:</dt><dd><dl class="simple">
@@ -664,20 +667,20 @@ Es = 1/2 f(eps) int rho(r) W(r) dr</p>
 
 <dl class="py function">
 <dt id="pyscf.solvent.ddcosmo.energy">
-<code class="sig-prename descclassname">pyscf.solvent.ddcosmo.</code><code class="sig-name descname">energy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pcmobj</span></em>, <em class="sig-param"><span class="n">dm</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddcosmo.html#energy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.solvent.ddcosmo.energy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.solvent.ddcosmo.</span></code><code class="sig-name descname"><span class="pre">energy</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcmobj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dm</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddcosmo.html#energy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.solvent.ddcosmo.energy" title="Permalink to this definition">¶</a></dt>
 <dd><p>ddCOSMO energy
 Es = 1/2 f(eps) int rho(r) W(r) dr</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="pyscf.solvent.ddcosmo.gen_ddcosmo_solver">
-<code class="sig-prename descclassname">pyscf.solvent.ddcosmo.</code><code class="sig-name descname">gen_ddcosmo_solver</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pcmobj</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddcosmo.html#gen_ddcosmo_solver"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.solvent.ddcosmo.gen_ddcosmo_solver" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.solvent.ddcosmo.</span></code><code class="sig-name descname"><span class="pre">gen_ddcosmo_solver</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcmobj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddcosmo.html#gen_ddcosmo_solver"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.solvent.ddcosmo.gen_ddcosmo_solver" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate ddcosmo function to compute energy and potential matrix</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="pyscf.solvent.ddcosmo.make_phi">
-<code class="sig-prename descclassname">pyscf.solvent.ddcosmo.</code><code class="sig-name descname">make_phi</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pcmobj</span></em>, <em class="sig-param"><span class="n">dm</span></em>, <em class="sig-param"><span class="n">r_vdw</span></em>, <em class="sig-param"><span class="n">ui</span></em>, <em class="sig-param"><span class="n">ylm_1sph</span></em>, <em class="sig-param"><span class="n">with_nuc</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddcosmo.html#make_phi"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.solvent.ddcosmo.make_phi" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.solvent.ddcosmo.</span></code><code class="sig-name descname"><span class="pre">make_phi</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcmobj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_vdw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ui</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylm_1sph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_nuc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddcosmo.html#make_phi"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.solvent.ddcosmo.make_phi" title="Permalink to this definition">¶</a></dt>
 <dd><p>Induced potential of ddCOSMO model</p>
 <dl class="simple">
 <dt>Kwargs:</dt><dd><dl class="simple">
@@ -690,7 +693,7 @@ Es = 1/2 f(eps) int rho(r) W(r) dr</p>
 
 <dl class="py function">
 <dt id="pyscf.solvent.ddcosmo.make_psi_vmat">
-<code class="sig-prename descclassname">pyscf.solvent.ddcosmo.</code><code class="sig-name descname">make_psi_vmat</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pcmobj</span></em>, <em class="sig-param"><span class="n">dm</span></em>, <em class="sig-param"><span class="n">r_vdw</span></em>, <em class="sig-param"><span class="n">ui</span></em>, <em class="sig-param"><span class="n">ylm_1sph</span></em>, <em class="sig-param"><span class="n">cached_pol</span></em>, <em class="sig-param"><span class="n">Xvec</span></em>, <em class="sig-param"><span class="n">L</span></em>, <em class="sig-param"><span class="n">with_nuc</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddcosmo.html#make_psi_vmat"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.solvent.ddcosmo.make_psi_vmat" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.solvent.ddcosmo.</span></code><code class="sig-name descname"><span class="pre">make_psi_vmat</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pcmobj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_vdw</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ui</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ylm_1sph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cached_pol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Xvec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">L</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_nuc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddcosmo.html#make_psi_vmat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.solvent.ddcosmo.make_psi_vmat" title="Permalink to this definition">¶</a></dt>
 <dd><p>The first order derivative of E_ddCOSMO wrt density matrix</p>
 <dl class="simple">
 <dt>Kwargs:</dt><dd><dl class="simple">
@@ -713,7 +716,7 @@ J. Chem. Phys., 141, 184108 (2014)
 <a class="reference external" href="http://dx.doi.org/10.1063/1.4901304">http://dx.doi.org/10.1063/1.4901304</a></p>
 <dl class="py function">
 <dt id="pyscf.solvent.ddcosmo_grad.make_grad_object">
-<code class="sig-prename descclassname">pyscf.solvent.ddcosmo_grad.</code><code class="sig-name descname">make_grad_object</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">grad_method</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddcosmo_grad.html#make_grad_object"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.solvent.ddcosmo_grad.make_grad_object" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.solvent.ddcosmo_grad.</span></code><code class="sig-name descname"><span class="pre">make_grad_object</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grad_method</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/solvent/ddcosmo_grad.html#make_grad_object"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.solvent.ddcosmo_grad.make_grad_object" title="Permalink to this definition">¶</a></dt>
 <dd><p>For grad_method in vacuum, add nuclear gradients of solvent pcmobj</p>
 </dd></dl>
 
@@ -726,37 +729,29 @@ J. Chem. Phys., 141, 184108 (2014)
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="soscf.html" class="btn btn-neutral float-right" title="soscf — Second order SCF solver" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="sgx.html" class="btn btn-neutral float-left" title="sgx — Pseudo-spectral methods (COSX, PS, SN-K)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="soscf.html" class="btn btn-neutral float-right" title="soscf — Second order SCF solver" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="sgx.html" class="btn btn-neutral float-left" title="sgx — Pseudo-spectral methods (COSX, PS, SN-K)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2015-2021, The PySCF Developers
+        &#169; Copyright 2015-2021, The PySCF Developers.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

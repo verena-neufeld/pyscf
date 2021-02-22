@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>geomopt — Geometry optimization &mdash; PySCF 1.7.6 documentation</title>
   
@@ -16,7 +16,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -29,7 +32,6 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -51,7 +53,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> PySCF
+            <a href="../index.html" class="icon icon-home"> PySCF
           
 
           
@@ -98,8 +100,7 @@
 <p class="caption"><span class="caption-text">Developer documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../code-rule.html">Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../develop/scf_developer.html">Self-consistent field (SCF) methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../develop/dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop.html">Guidelines for module development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced.html">Miscellaneous</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API documentation</span></p>
@@ -160,6 +161,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -173,7 +176,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/interface/geomopt.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -222,12 +225,12 @@ The following example shows how to optimize the structure of N<sub>2</sub> molec
 <p>Interface to geometry optimizer pyberny <a class="reference external" href="https://github.com/jhrmnn/pyberny">https://github.com/jhrmnn/pyberny</a></p>
 <dl class="py class">
 <dt id="pyscf.geomopt.berny_solver.GeometryOptimizer">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.geomopt.berny_solver.</code><code class="sig-name descname">GeometryOptimizer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/geomopt/berny_solver.html#GeometryOptimizer"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.geomopt.berny_solver.GeometryOptimizer" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.geomopt.berny_solver.</span></code><code class="sig-name descname"><span class="pre">GeometryOptimizer</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/geomopt/berny_solver.html#GeometryOptimizer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.geomopt.berny_solver.GeometryOptimizer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Optimize the molecular geometry for the input method.</p>
 <p>Note the method.mol will be changed after calling .kernel() method.</p>
 <dl class="py method">
 <dt id="pyscf.geomopt.berny_solver.GeometryOptimizer.kernel">
-<code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">params</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/geomopt/berny_solver.html#GeometryOptimizer.kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.geomopt.berny_solver.GeometryOptimizer.kernel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">kernel</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/geomopt/berny_solver.html#GeometryOptimizer.kernel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.geomopt.berny_solver.GeometryOptimizer.kernel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Kernel function is the main driver of a method.  Every method should
 define the kernel function as the entry of the calculation.  Note the
 return value of kernel function is not strictly defined.  It can be
@@ -237,7 +240,7 @@ the DFT mesh grids etc.).</p>
 
 <dl class="py method">
 <dt id="pyscf.geomopt.berny_solver.GeometryOptimizer.optimize">
-<code class="sig-name descname">optimize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">params</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.geomopt.berny_solver.GeometryOptimizer.optimize" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">optimize</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.geomopt.berny_solver.GeometryOptimizer.optimize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Kernel function is the main driver of a method.  Every method should
 define the kernel function as the entry of the calculation.  Note the
 return value of kernel function is not strictly defined.  It can be
@@ -249,7 +252,7 @@ the DFT mesh grids etc.).</p>
 
 <dl class="py function">
 <dt id="pyscf.geomopt.berny_solver.kernel">
-<code class="sig-prename descclassname">pyscf.geomopt.berny_solver.</code><code class="sig-name descname">kernel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method</span></em>, <em class="sig-param"><span class="n">assert_convergence</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">include_ghost</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">callback</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/geomopt/berny_solver.html#kernel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.geomopt.berny_solver.kernel" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.geomopt.berny_solver.</span></code><code class="sig-name descname"><span class="pre">kernel</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assert_convergence</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_ghost</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/geomopt/berny_solver.html#kernel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.geomopt.berny_solver.kernel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Optimize geometry with pyberny for the given method.</p>
 <p>To adjust the convergence threshold, parameters can be set in kwargs as
 below:</p>
@@ -257,7 +260,7 @@ below:</p>
 
 <dl class="py function">
 <dt id="pyscf.geomopt.berny_solver.optimize">
-<code class="sig-prename descclassname">pyscf.geomopt.berny_solver.</code><code class="sig-name descname">optimize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">method</span></em>, <em class="sig-param"><span class="n">assert_convergence</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">include_ghost</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">callback</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/geomopt/berny_solver.html#optimize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.geomopt.berny_solver.optimize" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.geomopt.berny_solver.</span></code><code class="sig-name descname"><span class="pre">optimize</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assert_convergence</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_ghost</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/geomopt/berny_solver.html#optimize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.geomopt.berny_solver.optimize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Optimize geometry with pyberny for the given method.</p>
 <p>To adjust the convergence threshold, parameters can be set in kwargs as
 below:</p>
@@ -265,14 +268,14 @@ below:</p>
 
 <dl class="py function">
 <dt id="pyscf.geomopt.berny_solver.to_berny_log">
-<code class="sig-prename descclassname">pyscf.geomopt.berny_solver.</code><code class="sig-name descname">to_berny_log</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">pyscf_log</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/geomopt/berny_solver.html#to_berny_log"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.geomopt.berny_solver.to_berny_log" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.geomopt.berny_solver.</span></code><code class="sig-name descname"><span class="pre">to_berny_log</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pyscf_log</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/geomopt/berny_solver.html#to_berny_log"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.geomopt.berny_solver.to_berny_log" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adapter to allow pyberny to use pyscf.logger</p>
 </dd></dl>
 
 <span class="target" id="module-pyscf.geomopt.addons"></span><p>Helper functions for geometry optimizer</p>
 <dl class="py function">
 <dt id="pyscf.geomopt.addons.as_pyscf_method">
-<code class="sig-prename descclassname">pyscf.geomopt.addons.</code><code class="sig-name descname">as_pyscf_method</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">scan_function</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/geomopt/addons.html#as_pyscf_method"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.geomopt.addons.as_pyscf_method" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.geomopt.addons.</span></code><code class="sig-name descname"><span class="pre">as_pyscf_method</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scan_function</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/geomopt/addons.html#as_pyscf_method"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.geomopt.addons.as_pyscf_method" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creat an wrapper for the given scan_function, to make it work as a
 pyscf gradients scanner. The wrapper can be passed to <code class="xref py py-func docutils literal notranslate"><span class="pre">optimize()</span></code>.</p>
 <dl class="simple">
@@ -288,7 +291,7 @@ pyscf gradients scanner. The wrapper can be passed to <code class="xref py py-fu
 
 <dl class="py function">
 <dt id="pyscf.geomopt.addons.dump_mol_geometry">
-<code class="sig-prename descclassname">pyscf.geomopt.addons.</code><code class="sig-name descname">dump_mol_geometry</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">new_coords</span></em>, <em class="sig-param"><span class="n">log</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/geomopt/addons.html#dump_mol_geometry"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.geomopt.addons.dump_mol_geometry" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.geomopt.addons.</span></code><code class="sig-name descname"><span class="pre">dump_mol_geometry</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/geomopt/addons.html#dump_mol_geometry"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.geomopt.addons.dump_mol_geometry" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dump the molecular geometry (new_coords) and the displacement wrt old
 geometry.</p>
 <dl class="simple">
@@ -299,7 +302,7 @@ geometry.</p>
 
 <dl class="py function">
 <dt id="pyscf.geomopt.addons.symmetrize">
-<code class="sig-prename descclassname">pyscf.geomopt.addons.</code><code class="sig-name descname">symmetrize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">coords</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/geomopt/addons.html#symmetrize"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.geomopt.addons.symmetrize" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.geomopt.addons.</span></code><code class="sig-name descname"><span class="pre">symmetrize</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coords</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/geomopt/addons.html#symmetrize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.geomopt.addons.symmetrize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Symmetrize the structure of a molecule.</p>
 </dd></dl>
 
@@ -311,37 +314,29 @@ geometry.</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="dmrgscf.html" class="btn btn-neutral float-right" title="dmrgscf — DMRG and DMRG-SCF/CASSCF" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="dftd3.html" class="btn btn-neutral float-left" title="dftd3 — DFT with D3 dispersion correction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="dmrgscf.html" class="btn btn-neutral float-right" title="dmrgscf — DMRG and DMRG-SCF/CASSCF" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="dftd3.html" class="btn btn-neutral float-left" title="dftd3 — DFT with D3 dispersion correction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2015-2021, The PySCF Developers
+        &#169; Copyright 2015-2021, The PySCF Developers.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

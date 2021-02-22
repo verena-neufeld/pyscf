@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>hci — Heat-bath selected CI &mdash; PySCF 1.7.6 documentation</title>
   
@@ -16,7 +16,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -51,7 +54,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> PySCF
+            <a href="../index.html" class="icon icon-home"> PySCF
           
 
           
@@ -98,8 +101,7 @@
 <p class="caption"><span class="caption-text">Developer documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../code-rule.html">Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../develop/scf_developer.html">Self-consistent field (SCF) methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../develop/dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop.html">Guidelines for module development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced.html">Miscellaneous</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API documentation</span></p>
@@ -188,6 +190,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -201,7 +205,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/modules/hci.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -275,16 +279,16 @@ For example:</p>
 </div></blockquote>
 <dl class="py class">
 <dt id="pyscf.hci.hci.SelectedCI">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.hci.hci.</code><code class="sig-name descname">SelectedCI</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/hci/hci.html#SelectedCI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.hci.hci.SelectedCI" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.hci.hci.</span></code><code class="sig-name descname"><span class="pre">SelectedCI</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/hci/hci.html#SelectedCI"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.hci.hci.SelectedCI" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="py method">
 <dt id="pyscf.hci.hci.SelectedCI.absorb_h1e">
-<code class="sig-name descname">absorb_h1e</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">eri</span></em>, <em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/hci/hci.html#SelectedCI.absorb_h1e"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.hci.hci.SelectedCI.absorb_h1e" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">absorb_h1e</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eri</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/hci/hci.html#SelectedCI.absorb_h1e"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.hci.hci.SelectedCI.absorb_h1e" title="Permalink to this definition">¶</a></dt>
 <dd><p>Modify 2e Hamiltonian to include 1e Hamiltonian contribution.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="pyscf.hci.hci.SelectedCI.contract_2e">
-<code class="sig-name descname">contract_2e</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">h1_h2</span></em>, <em class="sig-param"><span class="n">civec</span></em>, <em class="sig-param"><span class="n">norb</span></em>, <em class="sig-param"><span class="n">nelec</span></em>, <em class="sig-param"><span class="n">hdiag</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/hci/hci.html#SelectedCI.contract_2e"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.hci.hci.SelectedCI.contract_2e" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">contract_2e</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h1_h2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">civec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nelec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hdiag</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/hci/hci.html#SelectedCI.contract_2e"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.hci.hci.SelectedCI.contract_2e" title="Permalink to this definition">¶</a></dt>
 <dd><p>Contract the 4-index tensor eri[pqrs] with a FCI vector</p>
 <div class="math notranslate nohighlight">
 \[ \begin{align}\begin{aligned}\begin{split}|output\rangle = E_{pq} E_{rs} eri_{pq,rs} |CI\rangle \\\end{split}\\\begin{split}E_{pq}E_{rs} = E_{pr,qs} + \delta_{qr} E_{ps} \\\end{split}\\E_{pq} = p^+ q + \bar{p}^+ \bar{q}\\E_{pr,qs} = p^+ r^+ s q + \bar{p}^+ r^+ s \bar{q} + ...\end{aligned}\end{align} \]</div>
@@ -306,13 +310,13 @@ spin-down orbitals.</p>
 
 <dl class="py method">
 <dt id="pyscf.hci.hci.SelectedCI.make_hdiag">
-<code class="sig-name descname">make_hdiag</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">h1e</span></em>, <em class="sig-param"><span class="n">eri</span></em>, <em class="sig-param"><span class="n">strs</span></em>, <em class="sig-param"><span class="n">norb</span></em>, <em class="sig-param"><span class="n">nelec</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/hci/hci.html#SelectedCI.make_hdiag"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.hci.hci.SelectedCI.make_hdiag" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">make_hdiag</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h1e</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eri</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nelec</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/hci/hci.html#SelectedCI.make_hdiag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.hci.hci.SelectedCI.make_hdiag" title="Permalink to this definition">¶</a></dt>
 <dd><p>Diagonal Hamiltonian for Davidson preconditioner</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="pyscf.hci.hci.SelectedCI.make_rdm12s">
-<code class="sig-name descname">make_rdm12s</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">civec</span></em>, <em class="sig-param"><span class="n">norb</span></em>, <em class="sig-param"><span class="n">nelec</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/hci/hci.html#SelectedCI.make_rdm12s"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.hci.hci.SelectedCI.make_rdm12s" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">make_rdm12s</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">civec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nelec</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/hci/hci.html#SelectedCI.make_rdm12s"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.hci.hci.SelectedCI.make_rdm12s" title="Permalink to this definition">¶</a></dt>
 <dd><p>Spin separated 1- and 2-particle density matrices.
 The return values include two lists, a list of 1-particle density matrices
 and a list of 2-particle density matrices.  The density matrices are:
@@ -328,7 +332,7 @@ where h1[p,q] = &lt;p|h|q&gt; and eri[p,q,r,s] = (pq|rs)</p>
 
 <dl class="py method">
 <dt id="pyscf.hci.hci.SelectedCI.spin_square">
-<code class="sig-name descname">spin_square</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">civec</span></em>, <em class="sig-param"><span class="n">norb</span></em>, <em class="sig-param"><span class="n">nelec</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/hci/hci.html#SelectedCI.spin_square"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.hci.hci.SelectedCI.spin_square" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">spin_square</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">civec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nelec</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/hci/hci.html#SelectedCI.spin_square"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.hci.hci.SelectedCI.spin_square" title="Permalink to this definition">¶</a></dt>
 <dd><p>Spin square for RHF-FCI CI wfn only (obtained from spin-degenerated
 Hamiltonian)</p>
 </dd></dl>
@@ -337,7 +341,7 @@ Hamiltonian)</p>
 
 <dl class="py function">
 <dt id="pyscf.hci.hci.fix_spin">
-<code class="sig-prename descclassname">pyscf.hci.hci.</code><code class="sig-name descname">fix_spin</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">myci</span></em>, <em class="sig-param"><span class="n">shift</span><span class="o">=</span><span class="default_value">0.2</span></em>, <em class="sig-param"><span class="n">ss</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/hci/hci.html#fix_spin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.hci.hci.fix_spin" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.hci.hci.</span></code><code class="sig-name descname"><span class="pre">fix_spin</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">myci</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ss</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/hci/hci.html#fix_spin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.hci.hci.fix_spin" title="Permalink to this definition">¶</a></dt>
 <dd><p>If Selected CI solver cannot stick on spin eigenfunction, modify the solver by
 adding a shift on spin square operator</p>
 <div class="math notranslate nohighlight">
@@ -359,7 +363,7 @@ adding a shift on spin square operator</p>
 
 <dl class="py function">
 <dt id="pyscf.hci.hci.make_rdm12s">
-<code class="sig-prename descclassname">pyscf.hci.hci.</code><code class="sig-name descname">make_rdm12s</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">civec</span></em>, <em class="sig-param"><span class="n">norb</span></em>, <em class="sig-param"><span class="n">nelec</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/hci/hci.html#make_rdm12s"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.hci.hci.make_rdm12s" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.hci.hci.</span></code><code class="sig-name descname"><span class="pre">make_rdm12s</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">civec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nelec</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/hci/hci.html#make_rdm12s"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.hci.hci.make_rdm12s" title="Permalink to this definition">¶</a></dt>
 <dd><p>Spin orbital 1- and 2-particle reduced density matrices (aa, bb, aaaa, aabb, bbbb)</p>
 </dd></dl>
 
@@ -372,37 +376,29 @@ adding a shift on spin square operator</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="hessian.html" class="btn btn-neutral float-right" title="hessian — Analytical nuclear Hessian" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="gw.html" class="btn btn-neutral float-left" title="gw — Molecular G0W0" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="hessian.html" class="btn btn-neutral float-right" title="hessian — Analytical nuclear Hessian" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="gw.html" class="btn btn-neutral float-left" title="gw — Molecular G0W0" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2015-2021, The PySCF Developers
+        &#169; Copyright 2015-2021, The PySCF Developers.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

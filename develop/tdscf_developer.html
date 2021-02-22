@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>&lt;no title&gt; &mdash; PySCF 1.7.6 documentation</title>
+  <title>Time-dependent SCF &mdash; PySCF 1.7.6 documentation</title>
   
 
   
@@ -16,7 +16,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -29,13 +32,14 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Full CI solver" href="fci_developer.html" />
+    <link rel="prev" title="Density functional theory (DFT)" href="dft_developer.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -49,7 +53,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> PySCF
+            <a href="../index.html" class="icon icon-home"> PySCF
           
 
           
@@ -94,10 +98,21 @@
 <li class="toctree-l1"><a class="reference internal" href="../theory.html">6. Theoretical methods</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Developer documentation</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../code-rule.html">Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="scf_developer.html">Self-consistent field (SCF) methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../develop.html">Guidelines for module development</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="scf_developer.html">Self-consistent field (SCF) methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Time-dependent SCF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fci_developer.html">Full CI solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc_developer.html">Coupled Cluster Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mcscf_developer.html">Multi-configuration SCF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soscf_developer.html">Second-order SCF solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ao2mo_developer.html">AO to MO transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="df_developer.html">Density fitting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pbc_developer.html">Periodic boundary conditions</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced.html">Miscellaneous</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API documentation</span></p>
@@ -144,18 +159,22 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>&lt;no title&gt;</li>
+          <li><a href="../develop.html">Guidelines for module development</a> &raquo;</li>
+        
+      <li>Time-dependent SCF</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/develop/tdscf_developer.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -169,38 +188,42 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <p>Describe the key path.</p>
+  <div class="section" id="time-dependent-scf">
+<h1>Time-dependent SCF<a class="headerlink" href="#time-dependent-scf" title="Permalink to this headline">¶</a></h1>
+<p>Describe the key path.</p>
 <p>It should be possible to repurpose CPHF for different
 types of perturbations, so how to do this can
 be described.</p>
+</div>
 
 
            </div>
            
           </div>
           <footer>
-  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="fci_developer.html" class="btn btn-neutral float-right" title="Full CI solver" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="dft_developer.html" class="btn btn-neutral float-left" title="Density functional theory (DFT)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2015-2021, The PySCF Developers
+        &#169; Copyright 2015-2021, The PySCF Developers.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

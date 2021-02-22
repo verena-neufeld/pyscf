@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>rt — Real-time time-dependent density functional theory &mdash; PySCF 1.7.6 documentation</title>
   
@@ -16,7 +16,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -29,7 +32,6 @@
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
@@ -51,7 +53,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> PySCF
+            <a href="../index.html" class="icon icon-home"> PySCF
           
 
           
@@ -98,8 +100,7 @@
 <p class="caption"><span class="caption-text">Developer documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../code-rule.html">Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../develop/scf_developer.html">Self-consistent field (SCF) methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../develop/dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop.html">Guidelines for module development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced.html">Miscellaneous</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API documentation</span></p>
@@ -184,6 +185,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -197,7 +200,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/modules/rt.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -218,7 +221,7 @@
 <span id="program-reference"></span><h2>Program reference<a class="headerlink" href="#module-pyscf.rt.tdscf" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="pyscf.rt.tdscf.RTTDSCF">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.rt.tdscf.</code><code class="sig-name descname">RTTDSCF</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ks</span></em>, <em class="sig-param"><span class="n">prm</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">output</span><span class="o">=</span><span class="default_value">'log.dat'</span></em>, <em class="sig-param"><span class="n">auxbas</span><span class="o">=</span><span class="default_value">'weigend'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdscf.html#RTTDSCF"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.rt.tdscf.RTTDSCF" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.rt.tdscf.</span></code><code class="sig-name descname"><span class="pre">RTTDSCF</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'log.dat'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auxbas</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'weigend'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdscf.html#RTTDSCF"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.rt.tdscf.RTTDSCF" title="Permalink to this definition">¶</a></dt>
 <dd><p>RT-TDSCF base object.
 Other types of propagations may inherit from this.
 Calling this class starts the propagation
@@ -244,7 +247,7 @@ Attributes:</p>
 </div></blockquote>
 <dl class="py method">
 <dt id="pyscf.rt.tdscf.RTTDSCF.auxmol_set">
-<code class="sig-name descname">auxmol_set</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">mol</span></em>, <em class="sig-param"><span class="n">auxbas</span><span class="o">=</span><span class="default_value">'weigend'</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdscf.html#RTTDSCF.auxmol_set"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.rt.tdscf.RTTDSCF.auxmol_set" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">auxmol_set</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auxbas</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'weigend'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdscf.html#RTTDSCF.auxmol_set"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.rt.tdscf.RTTDSCF.auxmol_set" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate 2c/3c electron integral (eri2c,eri3c)
 Generate ovlp matrix (S), and AO to Lowdin AO matrix transformation matrix (X)</p>
 <dl class="simple">
@@ -270,7 +273,7 @@ Generate ovlp matrix (S), and AO to Lowdin AO matrix transformation matrix (X)</
 
 <dl class="py method">
 <dt id="pyscf.rt.tdscf.RTTDSCF.dipole">
-<code class="sig-name descname">dipole</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rho</span></em>, <em class="sig-param"><span class="n">c_am</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdscf.html#RTTDSCF.dipole"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.rt.tdscf.RTTDSCF.dipole" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">dipole</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rho</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c_am</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdscf.html#RTTDSCF.dipole"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.rt.tdscf.RTTDSCF.dipole" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Args:</dt><dd><dl class="simple">
 <dt>c_am: float or complex</dt><dd><p>Transformation Matrix <a href="#id3"><span class="problematic" id="id4">|AO&gt;&lt;MO|</span></a></p>
@@ -289,7 +292,7 @@ Generate ovlp matrix (S), and AO to Lowdin AO matrix transformation matrix (X)</
 
 <dl class="py method">
 <dt id="pyscf.rt.tdscf.RTTDSCF.energy">
-<code class="sig-name descname">energy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dm_lao</span></em>, <em class="sig-param"><span class="n">fmat</span></em>, <em class="sig-param"><span class="n">jmat</span></em>, <em class="sig-param"><span class="n">kmat</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdscf.html#RTTDSCF.energy"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.rt.tdscf.RTTDSCF.energy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">energy</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dm_lao</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fmat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jmat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kmat</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdscf.html#RTTDSCF.energy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.rt.tdscf.RTTDSCF.energy" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Args:</dt><dd><dl class="simple">
 <dt>dm_lao: complex</dt><dd><p>Density in LAO basis.</p>
@@ -312,7 +315,7 @@ Generate ovlp matrix (S), and AO to Lowdin AO matrix transformation matrix (X)</
 
 <dl class="py method">
 <dt id="pyscf.rt.tdscf.RTTDSCF.fockbuild">
-<code class="sig-name descname">fockbuild</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dm_lao</span></em>, <em class="sig-param"><span class="n">it</span><span class="o">=</span><span class="default_value">- 1</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdscf.html#RTTDSCF.fockbuild"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.rt.tdscf.RTTDSCF.fockbuild" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">fockbuild</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dm_lao</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">it</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdscf.html#RTTDSCF.fockbuild"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.rt.tdscf.RTTDSCF.fockbuild" title="Permalink to this definition">¶</a></dt>
 <dd><p>Updates Fock matrix</p>
 <dl class="simple">
 <dt>Args:</dt><dd><dl class="simple">
@@ -336,7 +339,7 @@ Generate ovlp matrix (S), and AO to Lowdin AO matrix transformation matrix (X)</
 
 <dl class="py method">
 <dt id="pyscf.rt.tdscf.RTTDSCF.get_j">
-<code class="sig-name descname">get_j</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dm</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdscf.html#RTTDSCF.get_j"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.rt.tdscf.RTTDSCF.get_j" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_j</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dm</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdscf.html#RTTDSCF.get_j"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.rt.tdscf.RTTDSCF.get_j" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update Coulomb Matrix</p>
 <dl class="simple">
 <dt>Args:</dt><dd><dl class="simple">
@@ -354,7 +357,7 @@ Generate ovlp matrix (S), and AO to Lowdin AO matrix transformation matrix (X)</
 
 <dl class="py method">
 <dt id="pyscf.rt.tdscf.RTTDSCF.get_jk">
-<code class="sig-name descname">get_jk</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dm</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdscf.html#RTTDSCF.get_jk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.rt.tdscf.RTTDSCF.get_jk" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_jk</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dm</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdscf.html#RTTDSCF.get_jk"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.rt.tdscf.RTTDSCF.get_jk" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update Coulomb and Exact Exchange Matrix</p>
 <dl class="simple">
 <dt>Args:</dt><dd><dl class="simple">
@@ -374,7 +377,7 @@ Generate ovlp matrix (S), and AO to Lowdin AO matrix transformation matrix (X)</
 
 <dl class="py method">
 <dt id="pyscf.rt.tdscf.RTTDSCF.get_k">
-<code class="sig-name descname">get_k</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dm</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdscf.html#RTTDSCF.get_k"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.rt.tdscf.RTTDSCF.get_k" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_k</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dm</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdscf.html#RTTDSCF.get_k"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.rt.tdscf.RTTDSCF.get_k" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update Exact Exchange Matrix</p>
 <dl class="simple">
 <dt>Args:</dt><dd><dl class="simple">
@@ -392,7 +395,7 @@ Generate ovlp matrix (S), and AO to Lowdin AO matrix transformation matrix (X)</
 
 <dl class="py method">
 <dt id="pyscf.rt.tdscf.RTTDSCF.get_vxc">
-<code class="sig-name descname">get_vxc</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dm</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdscf.html#RTTDSCF.get_vxc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.rt.tdscf.RTTDSCF.get_vxc" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">get_vxc</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dm</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdscf.html#RTTDSCF.get_vxc"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.rt.tdscf.RTTDSCF.get_vxc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update exchange matrices and energy
 Args:</p>
 <blockquote>
@@ -416,7 +419,7 @@ Args:</p>
 
 <dl class="py method">
 <dt id="pyscf.rt.tdscf.RTTDSCF.initfockbuild">
-<code class="sig-name descname">initfockbuild</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdscf.html#RTTDSCF.initfockbuild"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.rt.tdscf.RTTDSCF.initfockbuild" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">initfockbuild</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdscf.html#RTTDSCF.initfockbuild"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.rt.tdscf.RTTDSCF.initfockbuild" title="Permalink to this definition">¶</a></dt>
 <dd><p>Using Roothan’s equation to build a Initial Fock matrix and
 Transformation Matrices</p>
 <dl class="simple">
@@ -434,7 +437,7 @@ Transformation Matrices</p>
 
 <dl class="py method">
 <dt id="pyscf.rt.tdscf.RTTDSCF.initialcondition">
-<code class="sig-name descname">initialcondition</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prm</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdscf.html#RTTDSCF.initialcondition"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.rt.tdscf.RTTDSCF.initialcondition" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">initialcondition</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prm</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdscf.html#RTTDSCF.initialcondition"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.rt.tdscf.RTTDSCF.initialcondition" title="Permalink to this definition">¶</a></dt>
 <dd><p>Prepare the variables/Matrices needed for propagation
 The SCF is done here to make matrices that are not accessable from pyscf.scf
 Args:</p>
@@ -461,7 +464,7 @@ Args:</p>
 
 <dl class="py method">
 <dt id="pyscf.rt.tdscf.RTTDSCF.loginstant">
-<code class="sig-name descname">loginstant</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rho</span></em>, <em class="sig-param"><span class="n">c_am</span></em>, <em class="sig-param"><span class="n">v_lm</span></em>, <em class="sig-param"><span class="n">fmat</span></em>, <em class="sig-param"><span class="n">jmat</span></em>, <em class="sig-param"><span class="n">kmat</span></em>, <em class="sig-param"><span class="n">tnow</span></em>, <em class="sig-param"><span class="n">it</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdscf.html#RTTDSCF.loginstant"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.rt.tdscf.RTTDSCF.loginstant" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">loginstant</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rho</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c_am</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_lm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fmat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jmat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kmat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tnow</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">it</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdscf.html#RTTDSCF.loginstant"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.rt.tdscf.RTTDSCF.loginstant" title="Permalink to this definition">¶</a></dt>
 <dd><p>time is logged in atomic units.
 Args:</p>
 <blockquote>
@@ -495,7 +498,7 @@ Args:</p>
 
 <dl class="py method">
 <dt id="pyscf.rt.tdscf.RTTDSCF.prop">
-<code class="sig-name descname">prop</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fmat</span></em>, <em class="sig-param"><span class="n">c_am</span></em>, <em class="sig-param"><span class="n">v_lm</span></em>, <em class="sig-param"><span class="n">rho</span></em>, <em class="sig-param"><span class="n">output</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdscf.html#RTTDSCF.prop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.rt.tdscf.RTTDSCF.prop" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">prop</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fmat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c_am</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_lm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdscf.html#RTTDSCF.prop"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.rt.tdscf.RTTDSCF.prop" title="Permalink to this definition">¶</a></dt>
 <dd><p>The main tdscf propagation loop.
 Args:</p>
 <blockquote>
@@ -523,7 +526,7 @@ Args:</p>
 
 <dl class="py method">
 <dt id="pyscf.rt.tdscf.RTTDSCF.readparams">
-<code class="sig-name descname">readparams</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">prm</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdscf.html#RTTDSCF.readparams"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.rt.tdscf.RTTDSCF.readparams" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">readparams</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prm</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdscf.html#RTTDSCF.readparams"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.rt.tdscf.RTTDSCF.readparams" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set Defaults, Read the file and fill the params dictionary</p>
 <dl class="simple">
 <dt>Args:</dt><dd><dl class="simple">
@@ -536,7 +539,7 @@ Args:</p>
 
 <dl class="py method">
 <dt id="pyscf.rt.tdscf.RTTDSCF.tddftstep">
-<code class="sig-name descname">tddftstep</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fmat</span></em>, <em class="sig-param"><span class="n">c_am</span></em>, <em class="sig-param"><span class="n">v_lm</span></em>, <em class="sig-param"><span class="n">rho</span></em>, <em class="sig-param"><span class="n">rhom12</span></em>, <em class="sig-param"><span class="n">tnow</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdscf.html#RTTDSCF.tddftstep"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.rt.tdscf.RTTDSCF.tddftstep" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">tddftstep</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fmat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c_am</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v_lm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rhom12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tnow</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdscf.html#RTTDSCF.tddftstep"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.rt.tdscf.RTTDSCF.tddftstep" title="Permalink to this definition">¶</a></dt>
 <dd><p>Take dt step in propagation
 updates matrices and rho to next timestep
 Args:</p>
@@ -585,13 +588,13 @@ n_c_am: complex</p>
 
 <dl class="py function">
 <dt id="pyscf.rt.tdscf.matrixpower">
-<code class="sig-prename descclassname">pyscf.rt.tdscf.</code><code class="sig-name descname">matrixpower</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">A</span></em>, <em class="sig-param"><span class="n">p</span></em>, <em class="sig-param"><span class="n">PrintCondition</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdscf.html#matrixpower"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.rt.tdscf.matrixpower" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.rt.tdscf.</span></code><code class="sig-name descname"><span class="pre">matrixpower</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PrintCondition</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdscf.html#matrixpower"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.rt.tdscf.matrixpower" title="Permalink to this definition">¶</a></dt>
 <dd><p>Raise a Hermitian Matrix to a possibly fractional power.</p>
 </dd></dl>
 
 <span class="target" id="module-pyscf.rt.tdfields"></span><dl class="py class">
 <dt id="pyscf.rt.tdfields.FIELDS">
-<em class="property">class </em><code class="sig-prename descclassname">pyscf.rt.tdfields.</code><code class="sig-name descname">FIELDS</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rt</span></em>, <em class="sig-param"><span class="n">prm</span></em>, <em class="sig-param"><span class="n">field_tol</span><span class="o">=</span><span class="default_value">1e-09</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdfields.html#FIELDS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.rt.tdfields.FIELDS" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.rt.tdfields.</span></code><code class="sig-name descname"><span class="pre">FIELDS</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-09</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdfields.html#FIELDS"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.rt.tdfields.FIELDS" title="Permalink to this definition">¶</a></dt>
 <dd><p>A class which manages field perturbations.</p>
 <dl class="simple">
 <dt>Attributes:</dt><dd><dl class="simple">
@@ -608,7 +611,7 @@ n_c_am: complex</p>
 </dl>
 <dl class="py method">
 <dt id="pyscf.rt.tdfields.FIELDS.applyfield">
-<code class="sig-name descname">applyfield</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">a_mat</span></em>, <em class="sig-param"><span class="n">c_am</span></em>, <em class="sig-param"><span class="n">tnow</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdfields.html#FIELDS.applyfield"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.rt.tdfields.FIELDS.applyfield" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">applyfield</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a_mat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c_am</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tnow</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdfields.html#FIELDS.applyfield"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.rt.tdfields.FIELDS.applyfield" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Args:</dt><dd><dl class="simple">
 <dt>a_mat: float or complex</dt><dd><p>an MO matrix</p>
@@ -631,7 +634,7 @@ n_c_am: complex</p>
 
 <dl class="py method">
 <dt id="pyscf.rt.tdfields.FIELDS.expectation">
-<code class="sig-name descname">expectation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rho</span></em>, <em class="sig-param"><span class="n">c_am</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdfields.html#FIELDS.expectation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.rt.tdfields.FIELDS.expectation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">expectation</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rho</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c_am</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdfields.html#FIELDS.expectation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.rt.tdfields.FIELDS.expectation" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
 <dt>Args:</dt><dd><dl class="simple">
 <dt>rho: float or complex</dt><dd><p>current MO density.</p>
@@ -650,7 +653,7 @@ n_c_am: complex</p>
 
 <dl class="py method">
 <dt id="pyscf.rt.tdfields.FIELDS.impulseamp">
-<code class="sig-name descname">impulseamp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tnow</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdfields.html#FIELDS.impulseamp"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.rt.tdfields.FIELDS.impulseamp" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">impulseamp</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tnow</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdfields.html#FIELDS.impulseamp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.rt.tdfields.FIELDS.impulseamp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply impulsive wave to the system
 Args:</p>
 <blockquote>
@@ -672,7 +675,7 @@ Args:</p>
 
 <dl class="py method">
 <dt id="pyscf.rt.tdfields.FIELDS.initializeexpectation">
-<code class="sig-name descname">initializeexpectation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">rho0</span></em>, <em class="sig-param"><span class="n">c_am</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdfields.html#FIELDS.initializeexpectation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.rt.tdfields.FIELDS.initializeexpectation" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">initializeexpectation</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rho0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c_am</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/rt/tdfields.html#FIELDS.initializeexpectation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.rt.tdfields.FIELDS.initializeexpectation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate the initial dipole moment</p>
 </dd></dl>
 
@@ -686,37 +689,29 @@ Args:</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="scf.html" class="btn btn-neutral float-right" title="scf — Self-consistent field methods" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="qmmm.html" class="btn btn-neutral float-left" title="qmmm — QM/MM interface" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="scf.html" class="btn btn-neutral float-right" title="scf — Self-consistent field methods" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="qmmm.html" class="btn btn-neutral float-left" title="qmmm — QM/MM interface" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2015-2021, The PySCF Developers
+        &#169; Copyright 2015-2021, The PySCF Developers.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

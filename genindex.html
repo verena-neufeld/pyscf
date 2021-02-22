@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Index &mdash; PySCF 1.7.6 documentation</title>
   
@@ -16,7 +16,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -29,7 +32,6 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -49,7 +51,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> PySCF
+            <a href="index.html" class="icon icon-home"> PySCF
           
 
           
@@ -96,8 +98,7 @@
 <p class="caption"><span class="caption-text">Developer documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="code-rule.html">Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="develop/scf_developer.html">Self-consistent field (SCF) methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="develop/dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="develop.html">Guidelines for module development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced.html">Miscellaneous</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API documentation</span></p>
@@ -144,6 +145,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -155,7 +158,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
         
       </li>
     
@@ -745,10 +748,10 @@
 </li>
       <li><a href="modules/pbc/dft.html#pyscf.pbc.dft.cdft.cdft">cdft() (in module pyscf.pbc.dft.cdft)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="modules/scf.html#pyscf.scf.diis.CDIIS">CDIIS (class in pyscf.scf.diis)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="modules/pbc/gto.html#pyscf.pbc.gto.Cell">Cell (class in pyscf.pbc.gto)</a>
 </li>
       <li><a href="modules/symm.html#pyscf.symm.cg.cg_spin">cg_spin() (in module pyscf.symm.cg)</a>
@@ -825,6 +828,10 @@
 </li>
       </ul></li>
       <li><a href="modules/ci.html#pyscf.ci.CISD">CISD() (in module pyscf.ci)</a>
+</li>
+      <li><a href="interface/shciscf.html#pyscf.shciscf.shci.SHCI.cleanup_dice_files">cleanup_dice_files() (pyscf.shciscf.shci.SHCI method)</a>
+</li>
+      <li><a href="interface/shciscf.html#pyscf.shciscf.shci.SHCI.clearSchedule">clearSchedule() (pyscf.shciscf.shci.SHCI method)</a>
 </li>
       <li><a href="modules/mrpt.html#pyscf.mrpt.nevpt2.NEVPT.compress_approx">compress_approx() (pyscf.mrpt.nevpt2.NEVPT method)</a>
 </li>
@@ -1182,6 +1189,8 @@
 
       <ul>
         <li><a href="interface/dmrgscf.html#pyscf.dmrgscf.dmrgci.dryrun">(in module pyscf.dmrgscf.dmrgci)</a>
+</li>
+        <li><a href="interface/shciscf.html#pyscf.shciscf.shci.dryrun">(in module pyscf.shciscf.shci)</a>
 </li>
       </ul></li>
       <li><a href="modules/prop/ssc.html#pyscf.prop.ssc.rhf.dso_integral">dso_integral() (in module pyscf.prop.ssc.rhf)</a>
@@ -3517,6 +3526,8 @@
 </li>
         <li><a href="modules/sgx.html#pyscf.sgx.sgx.SGX.kernel">(pyscf.sgx.sgx.SGX method)</a>
 </li>
+        <li><a href="interface/shciscf.html#pyscf.shciscf.shci.SHCI.kernel">(pyscf.shciscf.shci.SHCI method)</a>
+</li>
         <li><a href="modules/solvent.html#pyscf.solvent.ddcosmo.DDCOSMO.kernel">(pyscf.solvent.ddcosmo.DDCOSMO method)</a>
 </li>
         <li><a href="modules/tdscf.html#pyscf.tdscf.rhf.TDA.kernel">(pyscf.tdscf.rhf.TDA method)</a>
@@ -4029,6 +4040,8 @@
         <li><a href="modules/mcscf.html#pyscf.mcscf.casci.CASCI.make_rdm1s">(pyscf.mcscf.casci.CASCI method)</a>
 </li>
         <li><a href="modules/mcscf.html#pyscf.mcscf.ucasci.UCASCI.make_rdm1s">(pyscf.mcscf.ucasci.UCASCI method)</a>
+</li>
+        <li><a href="interface/shciscf.html#pyscf.shciscf.shci.SHCI.make_rdm1s">(pyscf.shciscf.shci.SHCI method)</a>
 </li>
       </ul></li>
       <li><a href="modules/ci.html#pyscf.ci.cisd.make_rdm2">make_rdm2() (in module pyscf.ci.cisd)</a>
@@ -4750,6 +4763,8 @@
         <li><a href="modules/sgx.html#module-pyscf.sgx.sgx_jk">pyscf.sgx.sgx_jk</a>
 </li>
         <li><a href="interface/shciscf.html#module-pyscf.shciscf">pyscf.shciscf</a>
+</li>
+        <li><a href="interface/shciscf.html#module-pyscf.shciscf.shci">pyscf.shciscf.shci</a>
 </li>
         <li><a href="modules/solvent.html#module-pyscf.solvent">pyscf.solvent</a>
 </li>
@@ -6425,8 +6440,6 @@
         <li><a href="modules/pbc/cc.html#module-pyscf.pbc.cc.eom_kccsd_rhf_ip">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     pyscf.pbc.cc.eom_kccsd_uhf
 
@@ -6434,6 +6447,8 @@
         <li><a href="modules/pbc/cc.html#module-pyscf.pbc.cc.eom_kccsd_uhf">module</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     pyscf.pbc.cc.kccsd
 
@@ -7408,6 +7423,13 @@
 </li>
       </ul></li>
       <li>
+    pyscf.shciscf.shci
+
+      <ul>
+        <li><a href="interface/shciscf.html#module-pyscf.shciscf.shci">module</a>
+</li>
+      </ul></li>
+      <li>
     pyscf.solvent
 
       <ul>
@@ -7730,6 +7752,10 @@
         <li><a href="modules/tools.html#pyscf.tools.molden.read">(in module pyscf.tools.molden)</a>
 </li>
       </ul></li>
+      <li><a href="interface/shciscf.html#pyscf.shciscf.shci.SHCI.read_Dice1RDM">read_Dice1RDM() (pyscf.shciscf.shci.SHCI method)</a>
+</li>
+      <li><a href="interface/shciscf.html#pyscf.shciscf.shci.SHCI.read_Dice_spin_1RDM">read_Dice_spin_1RDM() (pyscf.shciscf.shci.SHCI method)</a>
+</li>
       <li><a href="interface/fciqmcscf.html#pyscf.fciqmcscf.fciqmc.read_energy">read_energy() (in module pyscf.fciqmcscf.fciqmc)</a>
 </li>
       <li><a href="interface/fciqmcscf.html#pyscf.fciqmcscf.fciqmc.read_neci_1dms">read_neci_1dms() (in module pyscf.fciqmcscf.fciqmc)</a>
@@ -7802,10 +7828,10 @@
         <li><a href="modules/x2c.html#pyscf.x2c.x2c.RHF">(in module pyscf.x2c.x2c)</a>
 </li>
       </ul></li>
-      <li><a href="modules/scf.html#pyscf.scf.RHF">RHF() (in module pyscf.scf)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/scf.html#pyscf.scf.RHF">RHF() (in module pyscf.scf)</a>
+</li>
       <li><a href="modules/scf.html#pyscf.scf.stability.rhf_stability">rhf_stability() (in module pyscf.scf.stability)</a>
 </li>
       <li><a href="modules/dft.html#pyscf.dft.rks.RKS">RKS (class in pyscf.dft.rks)</a>
@@ -8050,11 +8076,19 @@
       <li><a href="modules/sgx.html#pyscf.sgx.sgx.sgx_fit">sgx_fit() (in module pyscf.sgx.sgx)</a>
 </li>
       <li><a href="interface/cornell_shci.html#pyscf.cornell_shci.shci.SHCI">SHCI (class in pyscf.cornell_shci.shci)</a>
+
+      <ul>
+        <li><a href="interface/shciscf.html#pyscf.shciscf.shci.SHCI">(class in pyscf.shciscf.shci)</a>
 </li>
+      </ul></li>
       <li><a href="interface/cornell_shci.html#pyscf.cornell_shci.shci.shci_client">shci_client (class in pyscf.cornell_shci.shci)</a>
 </li>
       <li><a href="interface/cornell_shci.html#pyscf.cornell_shci.shci.SHCISCF">SHCISCF() (in module pyscf.cornell_shci.shci)</a>
+
+      <ul>
+        <li><a href="interface/shciscf.html#pyscf.shciscf.shci.SHCISCF">(in module pyscf.shciscf.shci)</a>
 </li>
+      </ul></li>
       <li><a href="modules/lo.html#pyscf.lo.ibo.shell_str">shell_str() (in module pyscf.lo.ibo)</a>
 </li>
       <li><a href="modules/scf.html#pyscf.scf.hf_symm.so2ao_mo_coeff">so2ao_mo_coeff() (in module pyscf.scf.hf_symm)</a>
@@ -8982,28 +9016,25 @@
            
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2015-2021, The PySCF Developers
+        &#169; Copyright 2015-2021, The PySCF Developers.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

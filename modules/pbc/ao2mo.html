@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>pbc.ao2mo — Integral transformations for crystalline Gaussian type orbitals &mdash; PySCF 1.7.6 documentation</title>
   
@@ -16,7 +16,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -29,7 +32,6 @@
         <script src="../../_static/jquery.js"></script>
         <script src="../../_static/underscore.js"></script>
         <script src="../../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -51,7 +53,7 @@
           
 
           
-            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> PySCF
+            <a href="../../index.html" class="icon icon-home"> PySCF
           
 
           
@@ -98,8 +100,7 @@
 <p class="caption"><span class="caption-text">Developer documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../code-rule.html">Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../develop/scf_developer.html">Self-consistent field (SCF) methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../develop/dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../develop.html">Guidelines for module development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../advanced.html">Miscellaneous</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API documentation</span></p>
@@ -202,6 +203,8 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
@@ -217,7 +220,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../../_sources/modules/pbc/ao2mo.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -248,7 +251,7 @@ Gaussian type atomic orbitals replaced by the corresponding crystalline orbitals
 pyscf.pbc.df module to get 2e MO integrals</p>
 <dl class="py function">
 <dt id="pyscf.pbc.ao2mo.eris.assemble_eri">
-<code class="sig-prename descclassname">pyscf.pbc.ao2mo.eris.</code><code class="sig-name descname">assemble_eri</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cell</span></em>, <em class="sig-param"><span class="n">orb_pair_invG1</span></em>, <em class="sig-param"><span class="n">orb_pair_G2</span></em>, <em class="sig-param"><span class="n">q</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">4</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/ao2mo/eris.html#assemble_eri"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.ao2mo.eris.assemble_eri" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.pbc.ao2mo.eris.</span></code><code class="sig-name descname"><span class="pre">assemble_eri</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orb_pair_invG1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orb_pair_G2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/ao2mo/eris.html#assemble_eri"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.pbc.ao2mo.eris.assemble_eri" title="Permalink to this definition">¶</a></dt>
 <dd><p>Assemble 4-index electron repulsion integrals.
 Returns:</p>
 <blockquote>
@@ -258,19 +261,19 @@ Returns:</p>
 
 <dl class="py function">
 <dt id="pyscf.pbc.ao2mo.eris.general">
-<code class="sig-prename descclassname">pyscf.pbc.ao2mo.eris.</code><code class="sig-name descname">general</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cell</span></em>, <em class="sig-param"><span class="n">mo_coeffs</span></em>, <em class="sig-param"><span class="n">kpts</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">compact</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/ao2mo/eris.html#general"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.ao2mo.eris.general" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.pbc.ao2mo.eris.</span></code><code class="sig-name descname"><span class="pre">general</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeffs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kpts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compact</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/ao2mo/eris.html#general"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.pbc.ao2mo.eris.general" title="Permalink to this definition">¶</a></dt>
 <dd><p>pyscf-style wrapper to get MO 2-el integrals.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="pyscf.pbc.ao2mo.eris.get_ao_eri">
-<code class="sig-prename descclassname">pyscf.pbc.ao2mo.eris.</code><code class="sig-name descname">get_ao_eri</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cell</span></em>, <em class="sig-param"><span class="n">kpts</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/ao2mo/eris.html#get_ao_eri"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.ao2mo.eris.get_ao_eri" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.pbc.ao2mo.eris.</span></code><code class="sig-name descname"><span class="pre">get_ao_eri</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kpts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/ao2mo/eris.html#get_ao_eri"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.pbc.ao2mo.eris.get_ao_eri" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convenience function to return AO 2-el integrals.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="pyscf.pbc.ao2mo.eris.get_ao_pairs_G">
-<code class="sig-prename descclassname">pyscf.pbc.ao2mo.eris.</code><code class="sig-name descname">get_ao_pairs_G</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cell</span></em>, <em class="sig-param"><span class="n">kpts</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/ao2mo/eris.html#get_ao_pairs_G"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.ao2mo.eris.get_ao_pairs_G" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.pbc.ao2mo.eris.</span></code><code class="sig-name descname"><span class="pre">get_ao_pairs_G</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kpts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/ao2mo/eris.html#get_ao_pairs_G"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.pbc.ao2mo.eris.get_ao_pairs_G" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate forward (G|ij) and “inverse” (ij|G) FFT of all AO pairs.</p>
 <dl class="simple">
 <dt>Args:</dt><dd><p>cell : instance of <code class="xref py py-class docutils literal notranslate"><span class="pre">Cell</span></code></p>
@@ -285,13 +288,13 @@ Returns:</p>
 
 <dl class="py function">
 <dt id="pyscf.pbc.ao2mo.eris.get_mo_eri">
-<code class="sig-prename descclassname">pyscf.pbc.ao2mo.eris.</code><code class="sig-name descname">get_mo_eri</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cell</span></em>, <em class="sig-param"><span class="n">mo_coeffs</span></em>, <em class="sig-param"><span class="n">kpts</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/ao2mo/eris.html#get_mo_eri"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.ao2mo.eris.get_mo_eri" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.pbc.ao2mo.eris.</span></code><code class="sig-name descname"><span class="pre">get_mo_eri</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeffs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kpts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/ao2mo/eris.html#get_mo_eri"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.pbc.ao2mo.eris.get_mo_eri" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convenience function to return MO 2-el integrals.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt id="pyscf.pbc.ao2mo.eris.get_mo_pairs_G">
-<code class="sig-prename descclassname">pyscf.pbc.ao2mo.eris.</code><code class="sig-name descname">get_mo_pairs_G</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cell</span></em>, <em class="sig-param"><span class="n">mo_coeffs</span></em>, <em class="sig-param"><span class="n">kpts</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">q</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/ao2mo/eris.html#get_mo_pairs_G"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.ao2mo.eris.get_mo_pairs_G" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.pbc.ao2mo.eris.</span></code><code class="sig-name descname"><span class="pre">get_mo_pairs_G</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeffs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kpts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/ao2mo/eris.html#get_mo_pairs_G"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.pbc.ao2mo.eris.get_mo_pairs_G" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate forward (G|ij) FFT of all MO pairs.
 TODO: - Implement simplifications for real orbitals.
 Args:</p>
@@ -313,7 +316,7 @@ product <a href="#id1"><span class="problematic" id="id2">|</span></a>ij).</p>
 
 <dl class="py function">
 <dt id="pyscf.pbc.ao2mo.eris.get_mo_pairs_invG">
-<code class="sig-prename descclassname">pyscf.pbc.ao2mo.eris.</code><code class="sig-name descname">get_mo_pairs_invG</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">cell</span></em>, <em class="sig-param"><span class="n">mo_coeffs</span></em>, <em class="sig-param"><span class="n">kpts</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">q</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/ao2mo/eris.html#get_mo_pairs_invG"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyscf.pbc.ao2mo.eris.get_mo_pairs_invG" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">pyscf.pbc.ao2mo.eris.</span></code><code class="sig-name descname"><span class="pre">get_mo_pairs_invG</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cell</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeffs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kpts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/pyscf/pbc/ao2mo/eris.html#get_mo_pairs_invG"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.pbc.ao2mo.eris.get_mo_pairs_invG" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate “inverse” (ij|G) FFT of all MO pairs.
 TODO: - Implement simplifications for real orbitals.
 Args:</p>
@@ -341,37 +344,29 @@ product <a href="#id3"><span class="problematic" id="id4">|</span></a>ij).</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="scf.html" class="btn btn-neutral float-right" title="pbc.scf — Self-consistent field with periodic boundary conditions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="gto.html" class="btn btn-neutral float-left" title="pbc.gto — Crystal cell structure" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="scf.html" class="btn btn-neutral float-right" title="pbc.scf — Self-consistent field with periodic boundary conditions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="gto.html" class="btn btn-neutral float-left" title="pbc.gto — Crystal cell structure" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2015-2021, The PySCF Developers
+        &#169; Copyright 2015-2021, The PySCF Developers.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 

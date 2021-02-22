@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>pyscf.tools.fcidump &mdash; PySCF 1.7.6 documentation</title>
   
@@ -16,7 +16,10 @@
 
   
   
+
   
+  
+
   
 
   
@@ -29,7 +32,6 @@
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
         <script src="../../../_static/doctools.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="../../../_static/js/theme.js"></script>
 
@@ -49,7 +51,7 @@
           
 
           
-            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> PySCF
+            <a href="../../../index.html" class="icon icon-home"> PySCF
           
 
           
@@ -96,8 +98,7 @@
 <p class="caption"><span class="caption-text">Developer documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../code-rule.html">Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../develop/scf_developer.html">Self-consistent field (SCF) methods</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../develop/dft_developer.html">Density functional theory (DFT)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../develop.html">Guidelines for module development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../advanced.html">Miscellaneous</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API documentation</span></p>
@@ -129,6 +130,8 @@
         <div class="rst-content">
         
           
+
+
 
 
 
@@ -290,7 +293,7 @@
                 <span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">output_format</span> <span class="o">%</span> <span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">],</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
 
 
-<div class="viewcode-block" id="from_chkfile"><a class="viewcode-back" href="../../../modules/tools.html#pyscf.scf.hf.from_chkfile">[docs]</a><span class="k">def</span> <span class="nf">from_chkfile</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">chkfile</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="n">TOL</span><span class="p">,</span> <span class="n">float_format</span><span class="o">=</span><span class="n">DEFAULT_FLOAT_FORMAT</span><span class="p">,</span>
+<div class="viewcode-block" id="from_chkfile"><a class="viewcode-back" href="../../../modules/tools.html#pyscf.tools.fcidump.from_chkfile">[docs]</a><span class="k">def</span> <span class="nf">from_chkfile</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">chkfile</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="n">TOL</span><span class="p">,</span> <span class="n">float_format</span><span class="o">=</span><span class="n">DEFAULT_FLOAT_FORMAT</span><span class="p">,</span>
                  <span class="n">molpro_orbsym</span><span class="o">=</span><span class="n">MOLPRO_ORBSYM</span><span class="p">,</span> <span class="n">orbsym</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Read SCF results from PySCF chkfile and transform 1-electron,</span>
 <span class="sd">    2-electron integrals using the SCF orbitals.  The transformed integrals is</span>
@@ -317,7 +320,7 @@
             <span class="n">float_format</span><span class="o">=</span><span class="n">float_format</span><span class="p">,</span> <span class="n">molpro_orbsym</span><span class="o">=</span><span class="n">molpro_orbsym</span><span class="p">,</span>
             <span class="n">ms</span><span class="o">=</span><span class="n">mol</span><span class="o">.</span><span class="n">spin</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="from_integrals"><a class="viewcode-back" href="../../../modules/tools.html#pyscf.scf.hf.from_integrals">[docs]</a><span class="k">def</span> <span class="nf">from_integrals</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">h1e</span><span class="p">,</span> <span class="n">h2e</span><span class="p">,</span> <span class="n">nmo</span><span class="p">,</span> <span class="n">nelec</span><span class="p">,</span> <span class="n">nuc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">orbsym</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<div class="viewcode-block" id="from_integrals"><a class="viewcode-back" href="../../../modules/tools.html#pyscf.tools.fcidump.from_integrals">[docs]</a><span class="k">def</span> <span class="nf">from_integrals</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">h1e</span><span class="p">,</span> <span class="n">h2e</span><span class="p">,</span> <span class="n">nmo</span><span class="p">,</span> <span class="n">nelec</span><span class="p">,</span> <span class="n">nuc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">orbsym</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
                    <span class="n">tol</span><span class="o">=</span><span class="n">TOL</span><span class="p">,</span> <span class="n">float_format</span><span class="o">=</span><span class="n">DEFAULT_FLOAT_FORMAT</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Convert the given 1-electron and 2-electron integrals to FCIDUMP format&#39;&#39;&#39;</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fout</span><span class="p">:</span>
@@ -327,7 +330,7 @@
         <span class="n">output_format</span> <span class="o">=</span> <span class="n">float_format</span> <span class="o">+</span> <span class="s1">&#39;  0  0  0  0</span><span class="se">\n</span><span class="s1">&#39;</span>
         <span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">output_format</span> <span class="o">%</span> <span class="n">nuc</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="from_mo"><a class="viewcode-back" href="../../../modules/tools.html#pyscf.scf.hf.from_mo">[docs]</a><span class="k">def</span> <span class="nf">from_mo</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="p">,</span> <span class="n">orbsym</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<div class="viewcode-block" id="from_mo"><a class="viewcode-back" href="../../../modules/tools.html#pyscf.tools.fcidump.from_mo">[docs]</a><span class="k">def</span> <span class="nf">from_mo</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="p">,</span> <span class="n">orbsym</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
             <span class="n">tol</span><span class="o">=</span><span class="n">TOL</span><span class="p">,</span> <span class="n">float_format</span><span class="o">=</span><span class="n">DEFAULT_FLOAT_FORMAT</span><span class="p">,</span>
             <span class="n">molpro_orbsym</span><span class="o">=</span><span class="n">MOLPRO_ORBSYM</span><span class="p">,</span> <span class="n">ms</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Use the given MOs to transfrom the 1-electron and 2-electron integrals</span>
@@ -352,7 +355,7 @@
     <span class="n">from_integrals</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">h1e</span><span class="p">,</span> <span class="n">eri</span><span class="p">,</span> <span class="n">h1e</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">mol</span><span class="o">.</span><span class="n">nelec</span><span class="p">,</span> <span class="n">nuc</span><span class="p">,</span> <span class="n">ms</span><span class="p">,</span> <span class="n">orbsym</span><span class="p">,</span>
                    <span class="n">tol</span><span class="p">,</span> <span class="n">float_format</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="from_scf"><a class="viewcode-back" href="../../../modules/tools.html#pyscf.scf.hf.from_scf">[docs]</a><span class="k">def</span> <span class="nf">from_scf</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="n">TOL</span><span class="p">,</span> <span class="n">float_format</span><span class="o">=</span><span class="n">DEFAULT_FLOAT_FORMAT</span><span class="p">,</span>
+<div class="viewcode-block" id="from_scf"><a class="viewcode-back" href="../../../modules/tools.html#pyscf.tools.fcidump.from_scf">[docs]</a><span class="k">def</span> <span class="nf">from_scf</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="n">TOL</span><span class="p">,</span> <span class="n">float_format</span><span class="o">=</span><span class="n">DEFAULT_FLOAT_FORMAT</span><span class="p">,</span>
              <span class="n">molpro_orbsym</span><span class="o">=</span><span class="n">MOLPRO_ORBSYM</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Use the given SCF object to transfrom the 1-electron and 2-electron</span>
 <span class="sd">    integrals then dump them to FCIDUMP.</span>
@@ -382,7 +385,7 @@
                    <span class="n">tol</span><span class="p">,</span> <span class="n">float_format</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="read"><a class="viewcode-back" href="../../../modules/tools.html#pyscf.scf.hf.read">[docs]</a><span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">molpro_orbsym</span><span class="o">=</span><span class="n">MOLPRO_ORBSYM</span><span class="p">):</span>
+<div class="viewcode-block" id="read"><a class="viewcode-back" href="../../../modules/tools.html#pyscf.tools.fcidump.read">[docs]</a><span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">molpro_orbsym</span><span class="o">=</span><span class="n">MOLPRO_ORBSYM</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Parse FCIDUMP.  Return a dictionary to hold the integrals and</span>
 <span class="sd">    parameters with keys:  H1, H2, ECORE, NORB, NELEC, MS, ORBSYM, ISYM</span>
 
@@ -475,7 +478,7 @@
     <span class="n">finp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">result</span></div>
 
-<div class="viewcode-block" id="to_scf"><a class="viewcode-back" href="../../../modules/tools.html#pyscf.scf.hf.to_scf">[docs]</a><span class="k">def</span> <span class="nf">to_scf</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">molpro_orbsym</span><span class="o">=</span><span class="n">MOLPRO_ORBSYM</span><span class="p">,</span> <span class="n">mf</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<div class="viewcode-block" id="to_scf"><a class="viewcode-back" href="../../../modules/tools.html#pyscf.tools.fcidump.to_scf">[docs]</a><span class="k">def</span> <span class="nf">to_scf</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">molpro_orbsym</span><span class="o">=</span><span class="n">MOLPRO_ORBSYM</span><span class="p">,</span> <span class="n">mf</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Use the Hamiltonians defined by FCIDUMP to build an SCF object&#39;&#39;&#39;</span>
     <span class="n">ctx</span> <span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">molpro_orbsym</span><span class="p">)</span>
     <span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">()</span>
@@ -513,7 +516,7 @@
 
     <span class="k">return</span> <span class="n">mf</span></div>
 
-<div class="viewcode-block" id="scf_from_fcidump"><a class="viewcode-back" href="../../../modules/tools.html#pyscf.scf.hf.scf_from_fcidump">[docs]</a><span class="k">def</span> <span class="nf">scf_from_fcidump</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">molpro_orbsym</span><span class="o">=</span><span class="n">MOLPRO_ORBSYM</span><span class="p">):</span>
+<div class="viewcode-block" id="scf_from_fcidump"><a class="viewcode-back" href="../../../modules/tools.html#pyscf.tools.fcidump.scf_from_fcidump">[docs]</a><span class="k">def</span> <span class="nf">scf_from_fcidump</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">molpro_orbsym</span><span class="o">=</span><span class="n">MOLPRO_ORBSYM</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;Update the SCF object with the quantities defined in FCIDUMP file&#39;&#39;&#39;</span>
     <span class="k">return</span> <span class="n">to_scf</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">molpro_orbsym</span><span class="p">,</span> <span class="n">mf</span><span class="p">)</span></div>
 
@@ -534,28 +537,25 @@
            
           </div>
           <footer>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        
-        &copy; Copyright 2015-2021, The PySCF Developers
+        &#169; Copyright 2015-2021, The PySCF Developers.
 
     </p>
   </div>
     
     
     
-    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     
-    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
     
     provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
