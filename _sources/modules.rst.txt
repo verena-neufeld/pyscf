@@ -1,7 +1,7 @@
 .. _modules:
 
-Main modules
-************
+API documentation
+*****************
 
 .. This chapter lists all the modules included in the main body of the PySCF package.
 
@@ -9,6 +9,7 @@ Main modules
    :maxdepth: 1
 
    modules/adc.rst
+   modules/agf2.rst
    modules/ao2mo.rst
    modules/cc.rst
    modules/ccn.rst
@@ -41,3 +42,4 @@ Main modules
    modules/tdscf.rst
    modules/tools.rst
    modules/x2c.rst
+   modules/eph.rst

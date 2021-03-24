@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Code standard &mdash; PySCF 1.7.6 documentation</title>
+  <title>5.1. Code standard &mdash; PySCF 1.7.6 documentation</title>
   
 
   
@@ -38,8 +38,8 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Guidelines for module development" href="develop.html" />
-    <link rel="prev" title="6.13. QM/MM methods" href="theory/qmmm.html" /> 
+    <link rel="next" title="5.2. General designs" href="design.html" />
+    <link rel="prev" title="5. Developer documentation" href="develop.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,29 +88,35 @@
               
             
             
-              <p class="caption"><span class="caption-text">User documentation</span></p>
-<ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="overview.html">1. An overview of PySCF</a></li>
-<li class="toctree-l1"><a class="reference internal" href="version.html">2. Version history</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmark.html">4. Benchmark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html">5. Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="theory.html">6. Theoretical methods</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Developer documentation</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Code standard</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#name-convention">Name convention</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#api-convention">API convention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">3. Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html">4. User guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="develop.html">5. Developer documentation</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.1. Code standard</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#name-convention">5.1.1. Name convention</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#api-convention">5.1.2. API convention</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="develop.html">Guidelines for module development</a></li>
-<li class="toctree-l1"><a class="reference internal" href="advanced.html">Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="design.html">5.2. General designs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="develop/scf_developer.html">5.3. Self-consistent field (SCF) methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="develop/dft_developer.html">5.4. Density functional theory (DFT)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="develop/tdscf_developer.html">5.5. Time-dependent SCF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="develop/fci_developer.html">5.6. Full CI solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="develop/cc_developer.html">5.7. Coupled Cluster Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="develop/agf2_developer.html">5.8. Auxiliary second-order Green’s function perturbation theory (AGF2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="develop/mcscf_developer.html">5.9. Multi-configuration SCF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="develop/soscf_developer.html">5.10. Second-order SCF solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="develop/ao2mo_developer.html">5.11. AO to MO transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="develop/df_developer.html">5.12. Density fitting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="develop/pbc_developer.html">5.13. Periodic boundary conditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="develop/eph_developer.html">5.14. Electron Phonon Coupling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced.html">5.15. Miscellaneous</a></li>
 </ul>
-<p class="caption"><span class="caption-text">API documentation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">Main modules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="interface.html">Interfaces</a></li>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">6. API documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interface.html">7. Interfaces</a></li>
 </ul>
 
             
@@ -159,7 +165,9 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Code standard</li>
+          <li><a href="develop.html"><span class="section-number">5. </span>Developer documentation</a> &raquo;</li>
+        
+      <li><span class="section-number">5.1. </span>Code standard</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -179,7 +187,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="code-standard">
-<span id="code-stand"></span><h1>Code standard<a class="headerlink" href="#code-standard" title="Permalink to this headline">¶</a></h1>
+<span id="code-stand"></span><h1><span class="section-number">5.1. </span>Code standard<a class="headerlink" href="#code-standard" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
 <li><p>Code at least should work under python-2.7, gcc-4.8.</p></li>
 <li><p>90/10 functional/OOP, unless performance critical, functions are pure.</p></li>
@@ -210,7 +218,7 @@ have minimal effects on the other modules.</p></li>
 </li>
 </ul>
 <div class="section" id="name-convention">
-<h2>Name convention<a class="headerlink" href="#name-convention" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.1.1. </span>Name convention<a class="headerlink" href="#name-convention" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>The prefix or suffix underscore in the function names have special meanings</p>
 <ul>
@@ -226,7 +234,7 @@ members), or module definitions (global variables or functions) etc.</p></li>
 </ul>
 </div>
 <div class="section" id="api-convention">
-<h2>API convention<a class="headerlink" href="#api-convention" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.1.2. </span>API convention<a class="headerlink" href="#api-convention" title="Permalink to this headline">¶</a></h2>
 <ul>
 <li><p><code class="xref py py-class docutils literal notranslate"><span class="pre">gto.Mole</span></code> holds all global parameters, like the log level, the
 max memory usage etc.  They are used as the default value for all
@@ -289,8 +297,8 @@ object, a mean-field object, or a post-Hartree-Fock object.</p></li>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="develop.html" class="btn btn-neutral float-right" title="Guidelines for module development" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="theory/qmmm.html" class="btn btn-neutral float-left" title="6.13. QM/MM methods" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="design.html" class="btn btn-neutral float-right" title="5.2. General designs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="develop.html" class="btn btn-neutral float-left" title="5. Developer documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

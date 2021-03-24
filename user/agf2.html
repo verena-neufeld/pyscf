@@ -1,0 +1,489 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>4.9. Auxiliary second-order Green’s function perturbation theory (AGF2) &mdash; PySCF 1.7.6 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4.10. Multi-configuration self-consistent field (MCSCF)" href="mcscf.html" />
+    <link rel="prev" title="4.8. Algebraic diagrammatic construction (ADC) scheme" href="adc.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PySCF
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">1. An overview of PySCF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">3. Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user.html">4. User guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gto.html">4.1. Molecular structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scf.html">4.2. Self-consistent field (SCF) methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dft.html">4.3. Density functional theory (DFT)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mp.html">4.4. Second-Order Møller–Plesset Perturbation Theory (MP2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gw.html">4.5. GW approximation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci.html">4.6. Configuration interaction (CISD and FCI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc.html">4.7. Coupled-cluster theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adc.html">4.8. Algebraic diagrammatic construction (ADC) scheme</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.9. Auxiliary second-order Green’s function perturbation theory (AGF2)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">4.9.1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#theory">4.9.2. Theory</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#photoemission-spectra">4.9.3. Photoemission spectra</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#restart-a-calculation">4.9.4. Restart a calculation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#parallelisation">4.9.5. Parallelisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#references">4.9.6. References</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mcscf.html">4.10. Multi-configuration self-consistent field (MCSCF)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tddft.html">4.11. Time-dependent Hartree-Fock and Density Functional Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rt.html">4.12. Real-time time-dependent density functional theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="solvent.html">4.13. Solvation models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qmmm.html">4.14. QM/MM methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x2c.html">4.15. Relativistic calculations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="df.html">4.16. Density fitting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pbc.html">4.17. Periodic boundary conditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eph.html">4.18. Electron Phonon Matrix</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../develop.html">5. Developer documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">6. API documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interface.html">7. Interfaces</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PySCF</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../user.html"><span class="section-number">4. </span>User guide</a> &raquo;</li>
+        
+      <li><span class="section-number">4.9. </span>Auxiliary second-order Green’s function perturbation theory (AGF2)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/user/agf2.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="auxiliary-second-order-green-s-function-perturbation-theory-agf2">
+<span id="user-agf2"></span><h1><span class="section-number">4.9. </span>Auxiliary second-order Green’s function perturbation theory (AGF2)<a class="headerlink" href="#auxiliary-second-order-green-s-function-perturbation-theory-agf2" title="Permalink to this headline">¶</a></h1>
+<p><em>Modules</em>: <code class="xref py py-mod docutils literal notranslate"><span class="pre">agf2</span></code></p>
+<div class="section" id="introduction">
+<h2><span class="section-number">4.9.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Auxiliary second-order Green’s function perturbation theory (AGF2)
+<a class="bibtex reference internal" href="#backhouse2020a" id="id1">[1]</a><a class="bibtex reference internal" href="#backhouse2020b" id="id2">[2]</a> is an iterative, <span class="math notranslate nohighlight">\(\mathcal{O}[N^5]\)</span>
+scaling post-Hartree–Fock method primarily intended for the calculation of
+charged excitation spectra, ionisation potentials (IPs) and electron affinities
+(EAs), with energetics and single-particle static properties also available.
+It can also be considered loosely as an iterative approximate ADC(2) method.
+One advantage is that the entire spectrum of charged excitations is found
+simultaneously, as the full Green’s function is self-consistently optimised.
+AGF2 calculations can be performed with or without density fitting, and for
+restricted or unrestricted Hartree–Fock references, and is available with
+hybrid parallelism capabilities.</p>
+<p>Basic usage of AGF2 as given in <a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/agf2/00-simple_agf2.py">examples/agf2/00-simple_agf2.py</a>, as</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1">#</span>
+<span class="c1"># Author: Oliver J. Backhouse &lt;olbackhouse@gmail.com&gt;</span>
+<span class="c1">#         George H. Booth &lt;george.booth@kcl.ac.uk&gt;</span>
+<span class="c1">#</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">A simple example of restricted AGF2. AGF2 will compute correlation energies, one-particle</span>
+<span class="sd">properties and charged excitations / energy levels via an iterated, renormalized perturbation</span>
+<span class="sd">theory.</span>
+
+<span class="sd">Default AGF2 corresponds to the AGF2(1,0) method outlined in the papers:</span>
+<span class="sd">  - O. J. Backhouse, M. Nusspickel and G. H. Booth, J. Chem. Theory Comput., 16, 1090 (2020).</span>
+<span class="sd">  - O. J. Backhouse and G. H. Booth, J. Chem. Theory Comput., 16, 6294 (2020).</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">agf2</span>
+
+<span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;O 0 0 0; H 0 0 1; H 0 1 0&#39;</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;cc-pvdz&#39;</span><span class="p">)</span>
+
+<span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+<span class="n">mf</span><span class="o">.</span><span class="n">conv_tol</span> <span class="o">=</span> <span class="mf">1e-12</span>
+<span class="n">mf</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+<span class="c1"># Run an AGF2 calculation</span>
+<span class="n">gf2</span> <span class="o">=</span> <span class="n">agf2</span><span class="o">.</span><span class="n">AGF2</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span>
+<span class="n">gf2</span><span class="o">.</span><span class="n">conv_tol</span> <span class="o">=</span> <span class="mf">1e-7</span>
+<span class="n">gf2</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># Print the first 3 ionization potentials</span>
+<span class="c1"># Note that there is no additional cost to write out larger numbers of excitations.</span>
+<span class="n">gf2</span><span class="o">.</span><span class="n">ipagf2</span><span class="p">(</span><span class="n">nroots</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># Print the first 3 electron affinities</span>
+<span class="n">gf2</span><span class="o">.</span><span class="n">eaagf2</span><span class="p">(</span><span class="n">nroots</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="theory">
+<h2><span class="section-number">4.9.2. </span>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
+<p>In AGF2, one iteratively solves the Dyson equation</p>
+<div class="math notranslate nohighlight">
+\[G(\omega) = G_0(\omega) + G_0(\omega) \Sigma(\omega) G(\omega),\]</div>
+<p>using the self-energy correct through second-order perturbation theory, which
+can be written as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\Sigma_{xy}(\omega)
+&amp;= \sum_{ija} \frac{ (xi|ja) [ 2 (yi|ja) - (yj|ia) ] }
+                   { E_i + E_j - E_a } \\
+&amp;+ \sum_{abi} \frac{ (xa|bi) [ 2 (ya|bi) - (yb|ai) ] }
+                   { E_a + E_b - E_i }.\end{split}\]</div>
+<p>In AGF2, the first two spectral moments of the MP2 self-energy,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}T_{xy}^{(0)} &amp;= \sum_{ija} (xi|ja) [ 2 (yi|ja) - (yj|ia) ] \\
+             &amp;+ \sum_{abi} (xa|bi) [ 2 (ya|bi) - (yb|ai) ] \\
+T_{xy}^{(1)} &amp;= \sum_{ija} (xi|ja) [ 2 (yi|ja) - (yj|ia) ]
+                (E_i + E_j - E_a) \\
+             &amp;+ \sum_{abi} (xa|bi) [ 2 (ya|bi) - (yb|ai) ]
+                (E_a + E_b - E_i),\end{split}\]</div>
+<p>are used as a conserved quantity in order to coarse-grain this frequency
+dependence as a set of compressed and renormalized <span class="math notranslate nohighlight">\(2p1h\)</span> and <span class="math notranslate nohighlight">\(1p2h\)</span>
+states.
+These are used to form an effective single-particle Hamiltonian whose size now
+only scales with <span class="math notranslate nohighlight">\(\mathcal{O}[N]\)</span>, rather than <span class="math notranslate nohighlight">\(\mathcal{O}[N^3]\)</span> if
+the full frequency-dependence was maintained.
+This allows Dyson equation to be solved via the hermitian eigenvalue problem</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix} F &amp; v \\ v^\dagger &amp; \epsilon \end{pmatrix}
+\phi_{n} = \lambda_{n} \phi_{n},\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(F\)</span> is the Fock matrix, <span class="math notranslate nohighlight">\(\epsilon\)</span> the compressed states
+coupling to <span class="math notranslate nohighlight">\(F\)</span> with coupling strength <span class="math notranslate nohighlight">\(v\)</span>, and <span class="math notranslate nohighlight">\(\phi_n\)</span> are
+termed the <em>quasi-molecular orbitals</em> (QMOs), which represent the Dyson orbitals
+at each iteration, and span both the original MOs and these auxiliary functions.
+The QMOs can be reinserted into the self-energy in place of the <span class="math notranslate nohighlight">\(i,j,a\)</span>
+and <span class="math notranslate nohighlight">\(a,b,i\)</span> indices, permitting self-consistency to convergence in the
+Green’s function with this coarse-grained description of the
+frequency-dependence of the self-energy.</p>
+<p>Additionally, once projected into the physical space, the QMOs define a
+correlated (non-idempotent) density matrix, permitting a further
+self-consistency in the Fock matrix in a similar fashion to a Hartree–Fock
+calculation.
+The correct number of electrons remain in the physical space throughout this
+process via optimisation of a chemical potential <span class="math notranslate nohighlight">\(\mu\)</span>.
+Finally, we note that self-consistency based on higher-order spectral moments of
+either the self-energy or resulting Green’s function at each iteration is
+possible, with a limiting behaviour to the traditional second-order Green’s
+function method (GF2).
+However, numerical investigations have shown that this higher-order
+self-consistency leads to a deterioration of results, and therefore the
+consistency based on the  first two self-energy spectral moments is the default
+behaviour.</p>
+</div>
+<div class="section" id="photoemission-spectra">
+<h2><span class="section-number">4.9.3. </span>Photoemission spectra<a class="headerlink" href="#photoemission-spectra" title="Permalink to this headline">¶</a></h2>
+<p>The compression of the effective dynamics performed in AGF2 permits the
+calculation of the full spectrum of charged excitations, as no additional
+computational effort is required for this (in contrast to iterative eigensolvers
+of effective hamiltonians), and the computational effort is therefore
+independent of the number of excitations requested.
+An example of a calculation which provides the full spectral function can be
+found in <a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/agf2/03-photoemission_spectra.py">examples/agf2/03-photoemission_spectra.py</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1">#</span>
+<span class="c1"># Author: Oliver J. Backhouse &lt;olbackhouse@gmail.com&gt;</span>
+<span class="c1">#         George H. Booth &lt;george.booth@kcl.ac.uk&gt;</span>
+<span class="c1">#</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Use a converged AGF2 calculation to build the full photoemission (quasiparticle) spectrum</span>
+
+<span class="sd">Default AGF2 corresponds to the AGF2(1,0) method outlined in the papers:</span>
+<span class="sd">  - O. J. Backhouse, M. Nusspickel and G. H. Booth, J. Chem. Theory Comput., 16, 1090 (2020).</span>
+<span class="sd">  - O. J. Backhouse and G. H. Booth, J. Chem. Theory Comput., 16, 6294 (2020).</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">agf2</span>
+
+<span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;O 0 0 0; H 0 0 1; H 0 1 0&#39;</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;cc-pvdz&#39;</span><span class="p">)</span>
+
+<span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+<span class="n">mf</span><span class="o">.</span><span class="n">conv_tol</span> <span class="o">=</span> <span class="mf">1e-12</span>
+<span class="n">mf</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+<span class="c1"># Run an AGF2 calculation</span>
+<span class="n">gf2</span> <span class="o">=</span> <span class="n">agf2</span><span class="o">.</span><span class="n">AGF2</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span>
+<span class="n">gf2</span><span class="o">.</span><span class="n">conv_tol</span> <span class="o">=</span> <span class="mf">1e-7</span>
+<span class="n">gf2</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+<span class="c1"># Access the GreensFunction object and compute the spectrum</span>
+<span class="n">gf</span> <span class="o">=</span> <span class="n">gf2</span><span class="o">.</span><span class="n">gf</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">eta</span> <span class="o">=</span> <span class="mf">0.02</span>
+<span class="n">spectrum</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">real_freq_spectrum</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">eta</span><span class="o">=</span><span class="n">eta</span><span class="p">)</span>
+<span class="c1"># The array `spectrum` is now a length nfreq array of the</span>
+<span class="c1"># spectral function -1/pi * Tr[Im[G(\omega + i\eta)]].</span>
+<span class="c1"># Note that for UHF AGF2 calculations, the individual gf </span>
+<span class="c1"># elements can be passed to real_freq_spectrum in order </span>
+<span class="c1"># to obtain the spin-resolved spectra.</span>
+
+<span class="c1"># We can also build the self-energy on the real-frequency axis</span>
+<span class="c1"># by accessing the renormalized auxiliary states:</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">gf2</span><span class="o">.</span><span class="n">se</span><span class="o">.</span><span class="n">energy</span> <span class="o">-</span> <span class="n">gf2</span><span class="o">.</span><span class="n">se</span><span class="o">.</span><span class="n">chempot</span>
+<span class="n">v</span> <span class="o">=</span> <span class="n">gf2</span><span class="o">.</span><span class="n">se</span><span class="o">.</span><span class="n">coupling</span>
+<span class="n">denom</span> <span class="o">=</span> <span class="n">grid</span><span class="p">[:,</span><span class="kc">None</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="n">e</span> <span class="o">+</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="o">*</span><span class="n">eta</span><span class="o">*</span><span class="mf">1.0</span><span class="n">j</span><span class="p">)[</span><span class="kc">None</span><span class="p">]</span>
+<span class="n">se</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s1">&#39;xk,yk,wk-&gt;wxy&#39;</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">conj</span><span class="p">(),</span> <span class="mf">1.</span><span class="o">/</span><span class="n">denom</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Additionally, the Dyson orbitals corresponding to individual excitations are
+accessible directly from the method, which can be seen in
+<a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/agf2/10-dyson_orbitals.py">examples/agf2/10-dyson_orbitals.py</a>.</p>
+</div>
+<div class="section" id="restart-a-calculation">
+<h2><span class="section-number">4.9.4. </span>Restart a calculation<a class="headerlink" href="#restart-a-calculation" title="Permalink to this headline">¶</a></h2>
+<p>The contents of an AGF2 calculation can be dumped to the disk via the familiar
+PySCF <code class="docutils literal notranslate"><span class="pre">chkfile</span></code> utilities.
+By default, an AGF2 method will inherit the <code class="xref py py-attr docutils literal notranslate"><span class="pre">chkfile</span></code> attribute of the
+underlying Hartree–Fock reference object.
+An example of restoring an AGF2 calculation from a checkpoint file can be found
+in <a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/agf2/04-restart.py">examples/agf2/04-restart.py</a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1">#</span>
+<span class="c1"># Author: Oliver J. Backhouse &lt;olbackhouse@gmail.com&gt;</span>
+<span class="c1">#         George H. Booth &lt;george.booth@kcl.ac.uk&gt;</span>
+<span class="c1">#</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">An example of restarting an AGF2 calculation.</span>
+
+<span class="sd">The agf2.chkfile module provides similar functionality to the existing</span>
+<span class="sd">chkfile utilities in pyscf, but prevents failure during MPI runs.</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">agf2</span><span class="p">,</span> <span class="n">lib</span>
+
+<span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;O 0 0 0; H 0 0 1; H 0 1 0&#39;</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;cc-pvdz&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+<span class="n">mf</span><span class="o">.</span><span class="n">conv_tol</span> <span class="o">=</span> <span class="mf">1e-12</span>
+<span class="c1"># if we are using MPI, we only want pyscf to save a chkfile on the root process:</span>
+<span class="k">if</span> <span class="n">agf2</span><span class="o">.</span><span class="n">mpi_helper</span><span class="o">.</span><span class="n">rank</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">mf</span><span class="o">.</span><span class="n">chkfile</span> <span class="o">=</span> <span class="s1">&#39;agf2.chk&#39;</span>
+<span class="n">mf</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+<span class="c1"># Run an AGF2 calculation:</span>
+<span class="n">gf2</span> <span class="o">=</span> <span class="n">agf2</span><span class="o">.</span><span class="n">AGF2</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span>
+<span class="n">gf2</span><span class="o">.</span><span class="n">conv_tol</span> <span class="o">=</span> <span class="mf">1e-7</span>
+<span class="n">gf2</span><span class="o">.</span><span class="n">max_cycle</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">gf2</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+<span class="c1"># Restore the Mole and SCF first</span>
+<span class="n">mol</span> <span class="o">=</span> <span class="n">agf2</span><span class="o">.</span><span class="n">chkfile</span><span class="o">.</span><span class="n">load_mol</span><span class="p">(</span><span class="s1">&#39;agf2.chk&#39;</span><span class="p">)</span>
+<span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+<span class="n">mf</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">agf2</span><span class="o">.</span><span class="n">chkfile</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;agf2.chk&#39;</span><span class="p">,</span> <span class="s1">&#39;scf&#39;</span><span class="p">))</span>
+
+<span class="c1"># Restore the AGF2 calculation</span>
+<span class="n">gf2a</span> <span class="o">=</span> <span class="n">agf2</span><span class="o">.</span><span class="n">AGF2</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span>
+<span class="n">gf2a</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">agf2</span><span class="o">.</span><span class="n">chkfile</span><span class="o">.</span><span class="n">load_agf2</span><span class="p">(</span><span class="s1">&#39;agf2.chk&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">gf2a</span><span class="o">.</span><span class="n">max_cycle</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">gf2a</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="parallelisation">
+<h2><span class="section-number">4.9.5. </span>Parallelisation<a class="headerlink" href="#parallelisation" title="Permalink to this headline">¶</a></h2>
+<p>The AGF2 module supports both MPI an OpenMP parallelisation in an aim to provide
+a scalable method applicable to interesting problems in quantum chemistry.
+Furthermore, the dominant scaling step is embarrassingly parallel.
+Distribution of computational load is handled by the optional dependency
+<code class="docutils literal notranslate"><span class="pre">mpi4py</span></code>, and will run without MPI using OpenMP threads if an installation
+cannot be found.</p>
+</div>
+<div class="section" id="references">
+<h2><span class="section-number">4.9.6. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p id="bibtex-bibliography-user/agf2-0"><dl class="citation">
+<dt class="bibtex label" id="backhouse2020a"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Oliver J. Backhouse, Max Nusspickel, and George H. Booth. Wave function perspective and efficient truncation of renormalized second-order perturbation theory. <em>J. Chem. Theory Comput.</em>, 16(2):1090–1104, 2020. <a class="reference external" href="https://doi.org/10.1021/acs.jctc.9b01182">doi:10.1021/acs.jctc.9b01182</a>.</p>
+</dd>
+<dt class="bibtex label" id="backhouse2020b"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Oliver J. Backhouse and George H. Booth. Efficient excitations and spectra within a perturbative renormalization approach. <em>J. Chem. Theory Comput.</em>, 16(10):6294–6304, 2020. <a class="reference external" href="https://doi.org/10.1021/acs.jctc.0c00701">doi:10.1021/acs.jctc.0c00701</a>.</p>
+</dd>
+</dl>
+</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="mcscf.html" class="btn btn-neutral float-right" title="4.10. Multi-configuration self-consistent field (MCSCF)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="adc.html" class="btn btn-neutral float-left" title="4.8. Algebraic diagrammatic construction (ADC) scheme" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2015-2021, The PySCF Developers.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

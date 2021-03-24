@@ -86,25 +86,14 @@
               
             
             
-              <p class="caption"><span class="caption-text">User documentation</span></p>
-<ul>
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../overview.html">1. An overview of PySCF</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../version.html">2. Version history</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../install.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../benchmark.html">4. Benchmark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../tutorial.html">5. Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../theory.html">6. Theoretical methods</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Developer documentation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../code-rule.html">Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../develop.html">Guidelines for module development</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../advanced.html">Miscellaneous</a></li>
-</ul>
-<p class="caption"><span class="caption-text">API documentation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">Main modules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../interface.html">Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial.html">3. Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user.html">4. User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../develop.html">5. Developer documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">6. API documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface.html">7. Interfaces</a></li>
 </ul>
 
             
@@ -191,6 +180,7 @@
 <span class="sd">&#39;&#39;&#39;</span>
 
 <span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">copy</span>
 <span class="kn">import</span> <span class="nn">numpy</span>
 <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">lib</span>
 <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">ao2mo</span>
@@ -369,6 +359,16 @@
 
     <span class="n">make_rdm1</span> <span class="o">=</span> <span class="n">make_rdm1</span>
     <span class="n">make_rdm2</span> <span class="o">=</span> <span class="n">make_rdm2</span>
+
+    <span class="k">def</span> <span class="nf">density_fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">auxbasis</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">with_df</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="kn">from</span> <span class="nn">pyscf.mp</span> <span class="kn">import</span> <span class="n">dfgmp2</span>
+        <span class="n">mymp</span> <span class="o">=</span> <span class="n">dfgmp2</span><span class="o">.</span><span class="n">DFGMP2</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_scf</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">frozen</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mo_coeff</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mo_occ</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">with_df</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">mymp</span><span class="o">.</span><span class="n">with_df</span> <span class="o">=</span> <span class="n">with_df</span>
+        <span class="k">if</span> <span class="n">mymp</span><span class="o">.</span><span class="n">with_df</span><span class="o">.</span><span class="n">auxbasis</span> <span class="o">!=</span> <span class="n">auxbasis</span><span class="p">:</span>
+            <span class="n">mymp</span><span class="o">.</span><span class="n">with_df</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">mymp</span><span class="o">.</span><span class="n">with_df</span><span class="p">)</span>
+            <span class="n">mymp</span><span class="o">.</span><span class="n">with_df</span><span class="o">.</span><span class="n">auxbasis</span> <span class="o">=</span> <span class="n">auxbasis</span>
+        <span class="k">return</span> <span class="n">mymp</span>
 
     <span class="k">def</span> <span class="nf">nuc_grad_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">raise</span> <span class="ne">NotImplementedError</span>

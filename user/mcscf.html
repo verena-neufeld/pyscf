@@ -1,0 +1,315 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>4.10. Multi-configuration self-consistent field (MCSCF) &mdash; PySCF 1.7.6 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4.11. Time-dependent Hartree-Fock and Density Functional Theory" href="tddft.html" />
+    <link rel="prev" title="4.9. Auxiliary second-order Green’s function perturbation theory (AGF2)" href="agf2.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PySCF
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">1. An overview of PySCF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">3. Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user.html">4. User guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gto.html">4.1. Molecular structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scf.html">4.2. Self-consistent field (SCF) methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dft.html">4.3. Density functional theory (DFT)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mp.html">4.4. Second-Order Møller–Plesset Perturbation Theory (MP2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gw.html">4.5. GW approximation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci.html">4.6. Configuration interaction (CISD and FCI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc.html">4.7. Coupled-cluster theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adc.html">4.8. Algebraic diagrammatic construction (ADC) scheme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="agf2.html">4.9. Auxiliary second-order Green’s function perturbation theory (AGF2)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.10. Multi-configuration self-consistent field (MCSCF)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#symmetry-in-casscf">4.10.1. Symmetry in CASSCF</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tddft.html">4.11. Time-dependent Hartree-Fock and Density Functional Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rt.html">4.12. Real-time time-dependent density functional theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="solvent.html">4.13. Solvation models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qmmm.html">4.14. QM/MM methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x2c.html">4.15. Relativistic calculations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="df.html">4.16. Density fitting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pbc.html">4.17. Periodic boundary conditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eph.html">4.18. Electron Phonon Matrix</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../develop.html">5. Developer documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">6. API documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interface.html">7. Interfaces</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PySCF</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../user.html"><span class="section-number">4. </span>User guide</a> &raquo;</li>
+        
+      <li><span class="section-number">4.10. </span>Multi-configuration self-consistent field (MCSCF)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/user/mcscf.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="multi-configuration-self-consistent-field-mcscf">
+<span id="theory-mcscf"></span><h1><span class="section-number">4.10. </span>Multi-configuration self-consistent field (MCSCF)<a class="headerlink" href="#multi-configuration-self-consistent-field-mcscf" title="Permalink to this headline">¶</a></h1>
+<p><em>Modules</em>: <code class="xref py py-mod docutils literal notranslate"><span class="pre">mcscf</span></code></p>
+<div class="section" id="symmetry-in-casscf">
+<h2><span class="section-number">4.10.1. </span>Symmetry in CASSCF<a class="headerlink" href="#symmetry-in-casscf" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1">#</span>
+<span class="c1"># Author: Qiming Sun &lt;osirpt.sun@gmail.com&gt;</span>
+<span class="c1">#</span>
+
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">mcscf</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Symmetry is not immutable</span>
+
+<span class="sd">In PySCF, symmetry is not built-in data structure.  Orbitals are stored in C1</span>
+<span class="sd">symmetry.  The irreps and symmetry information are generated on the fly.</span>
+<span class="sd">We can switch on symmetry for CASSCF solver even the Hartree-Fock is not</span>
+<span class="sd">optimized with symmetry.</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">()</span>
+<span class="n">mol</span><span class="o">.</span><span class="n">build</span><span class="p">(</span>
+    <span class="n">atom</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;O&#39;</span> <span class="p">,</span> <span class="p">(</span><span class="mf">0.</span> <span class="p">,</span> <span class="mf">0.</span>     <span class="p">,</span> <span class="mf">0.</span><span class="p">)],</span>
+            <span class="p">[</span><span class="mi">1</span>   <span class="p">,</span> <span class="p">(</span><span class="mf">0.</span> <span class="p">,</span> <span class="o">-</span><span class="mf">0.757</span> <span class="p">,</span> <span class="mf">0.587</span><span class="p">)],</span>
+            <span class="p">[</span><span class="mi">1</span>   <span class="p">,</span> <span class="p">(</span><span class="mf">0.</span> <span class="p">,</span> <span class="mf">0.757</span>  <span class="p">,</span> <span class="mf">0.587</span><span class="p">)]],</span>
+    <span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;cc-pvdz&#39;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+<span class="n">mf</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
+
+<span class="n">mol</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">symmetry</span> <span class="o">=</span> <span class="s1">&#39;C2v&#39;</span><span class="p">)</span>
+<span class="n">mc</span> <span class="o">=</span> <span class="n">mcscf</span><span class="o">.</span><span class="n">CASSCF</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="n">mc</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>To restart a CASSCF calculation, you need prepare either CASSCF orbitals
+or CI coefficients (not that useful unless doing a DMRG-CASSCF calculation) or
+both.  For example:</p>
+<p>fourth argument is the number of electrons.  By default, the CAS
+solver determines the alpha-electron number and beta-electron number
+based on the attribute <code class="xref py py-attr docutils literal notranslate"><span class="pre">Mole.spin</span></code>.  In the above example, the
+number of alpha electrons is equal to the number of beta electrons,
+since the <code class="docutils literal notranslate"><span class="pre">mol</span></code> object is initialized with <code class="docutils literal notranslate"><span class="pre">spin=0</span></code>.  The spin
+multiplicity of the CASSCF/CASCI solver can be changed by the fourth
+argument:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span> <span class="o">=</span> <span class="n">mcscf</span><span class="o">.</span><span class="n">CASSCF</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;E(CASSCF) = </span><span class="si">%.9g</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">mc</span><span class="o">.</span><span class="n">kernel</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+<span class="go">E(CASSCF) = -149.609461</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;S^2 = </span><span class="si">%.7f</span><span class="s1">, 2S+1 = </span><span class="si">%.7f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">mcscf</span><span class="o">.</span><span class="n">spin_square</span><span class="p">(</span><span class="n">mc</span><span class="p">))</span>
+<span class="go">S^2 = 2.0000000, 2S+1 = 3.0000000</span>
+</pre></div>
+</div>
+<p>The two integers in the tuple represent the number of alpha and beta electrons.
+Although it is a triplet state, the solution might not be correct since the
+CASSCF is based on the incorrect singlet HF ground state.  Starting from the
+ROHF ground state, we have:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span> <span class="o">=</span> <span class="n">mcscf</span><span class="o">.</span><span class="n">CASSCF</span><span class="p">(</span><span class="n">rhf3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;E(CASSCF) = </span><span class="si">%.9g</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">mc</span><span class="o">.</span><span class="n">kernel</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+<span class="go">E(CASSCF) = -149.646746</span>
+</pre></div>
+</div>
+<p>The energy is lower than the RHF initial guess.
+.. We can also use the UHF ground
+.. state to start a CASSCF calculation::
+..
+..   &gt;&gt;&gt; mc = mcscf.CASSCF(uhf3, 4, 6)
+..   &gt;&gt;&gt; print(‘E(CASSCF) = %.9g’ % mc.kernel()[0])
+..   E(CASSCF) = -149.661324
+..   &gt;&gt;&gt; print(‘S^2 = %.7f, 2S+1 = %.7f’ % mcscf.spin_square(mc))
+..   S^2 = 3.9713105, 2S+1 = 4.1091656
+..
+.. Woo, the total energy is even lower.  But the spin is contaminated.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="tddft.html" class="btn btn-neutral float-right" title="4.11. Time-dependent Hartree-Fock and Density Functional Theory" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="agf2.html" class="btn btn-neutral float-left" title="4.9. Auxiliary second-order Green’s function perturbation theory (AGF2)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2015-2021, The PySCF Developers.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

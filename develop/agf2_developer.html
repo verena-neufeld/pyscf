@@ -1,0 +1,479 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>5.8. Auxiliary second-order Green’s function perturbation theory (AGF2) &mdash; PySCF 1.7.6 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="5.9. Multi-configuration SCF" href="mcscf_developer.html" />
+    <link rel="prev" title="5.7. Coupled Cluster Methods" href="cc_developer.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PySCF
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">1. An overview of PySCF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">3. Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user.html">4. User guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../develop.html">5. Developer documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../code-rule.html">5.1. Code standard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design.html">5.2. General designs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scf_developer.html">5.3. Self-consistent field (SCF) methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dft_developer.html">5.4. Density functional theory (DFT)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tdscf_developer.html">5.5. Time-dependent SCF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fci_developer.html">5.6. Full CI solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc_developer.html">5.7. Coupled Cluster Methods</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.8. Auxiliary second-order Green’s function perturbation theory (AGF2)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">5.8.1. Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#auxiliary-space-objects">5.8.2. Auxiliary space objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fock-loop">5.8.3. Fock loop</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#memory-requirements">5.8.4. Memory requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#arbitrary-order-moment-calculations">5.8.5. Arbitrary order moment calculations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#references">5.8.6. References</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mcscf_developer.html">5.9. Multi-configuration SCF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soscf_developer.html">5.10. Second-order SCF solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ao2mo_developer.html">5.11. AO to MO transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="df_developer.html">5.12. Density fitting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pbc_developer.html">5.13. Periodic boundary conditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eph_developer.html">5.14. Electron Phonon Coupling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced.html">5.15. Miscellaneous</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">6. API documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interface.html">7. Interfaces</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PySCF</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../develop.html"><span class="section-number">5. </span>Developer documentation</a> &raquo;</li>
+        
+      <li><span class="section-number">5.8. </span>Auxiliary second-order Green’s function perturbation theory (AGF2)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/develop/agf2_developer.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="auxiliary-second-order-green-s-function-perturbation-theory-agf2">
+<span id="developer-agf2"></span><h1><span class="section-number">5.8. </span>Auxiliary second-order Green’s function perturbation theory (AGF2)<a class="headerlink" href="#auxiliary-second-order-green-s-function-perturbation-theory-agf2" title="Permalink to this headline">¶</a></h1>
+<p><em>Modules</em>: <code class="xref py py-mod docutils literal notranslate"><span class="pre">agf2</span></code></p>
+<div class="section" id="overview">
+<h2><span class="section-number">5.8.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The function <code class="xref py py-func docutils literal notranslate"><span class="pre">pyscf.agf2.AGF2()</span></code> will direct the method to one of the
+following classes, depending on the nature of the Hartree–Fock object passed as
+an argument</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 52%" />
+<col style="width: 48%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.agf2.ragf2.RAGF2</span></code></p></td>
+<td><p>RHF</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.agf2.uagf2.UAGF2</span></code></p></td>
+<td><p>UHF</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.agf2.dfragf2.DFRAGF2</span></code></p></td>
+<td><p>RHF with density fitting</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.agf2.dfuagf2.DFUAGF2</span></code></p></td>
+<td><p>UHF with density fitting</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.agf2.ragf2_slow.RAGF2</span></code></p></td>
+<td><p>RHF with arbitrary moment orders</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.agf2.uagf2_slow.UAGF2</span></code></p></td>
+<td><p>UHF with arbitrary moment orders</p></td>
+</tr>
+</tbody>
+</table>
+<p>The key attributes of the AGF2 classes include</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 46%" />
+<col style="width: 54%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">mo_coeff</span></code></p></td>
+<td><p>saved MO coefficients</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">mo_energy</span></code></p></td>
+<td><p>saved MO energies</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">mo_occ</span></code></p></td>
+<td><p>saved MO occupations</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">diis</span></code></p></td>
+<td><p>DIIS method</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">se</span></code></p></td>
+<td><p>SelfEnergy object</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">gf</span></code></p></td>
+<td><p>GreensFunction object</p></td>
+</tr>
+</tbody>
+</table>
+<p>The AGF2 calculation is dispatched via the <code class="xref py py-func docutils literal notranslate"><span class="pre">kernel()</span></code> function, which
+carries out the following steps:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>generate the MO basis integrals – <a class="reference internal" href="../modules/ao2mo.html#module-ao2mo" title="ao2mo: transformations from AO to MO integrals for various permutational and spin symmetries."><code class="xref py py-func docutils literal notranslate"><span class="pre">ao2mo()</span></code></a></p></li>
+<li><p>build the zeroth-order Green’s function via the Hartree–Fock states – <code class="xref py py-func docutils literal notranslate"><span class="pre">init_gf()</span></code></p></li>
+<li><p>build the MP2 self-energy – <code class="xref py py-func docutils literal notranslate"><span class="pre">build_se()</span></code></p></li>
+<li><p>run the Fock loop (updates the self-energy and Green’s function) – <code class="xref py py-func docutils literal notranslate"><span class="pre">fock_loop()</span></code></p></li>
+<li><p>update the 1-body energy – <code class="xref py py-func docutils literal notranslate"><span class="pre">energy_1body()</span></code></p></li>
+<li><p>update the self-energy – <code class="xref py py-func docutils literal notranslate"><span class="pre">build_se()</span></code></p></li>
+<li><p>update the 2-body energy – <code class="xref py py-func docutils literal notranslate"><span class="pre">energy_2body()</span></code></p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="auxiliary-space-objects">
+<h2><span class="section-number">5.8.2. </span>Auxiliary space objects<a class="headerlink" href="#auxiliary-space-objects" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="xref py py-attr docutils literal notranslate"><span class="pre">se</span></code> and <code class="xref py py-attr docutils literal notranslate"><span class="pre">gf</span></code> attributes are both derived from the
+<code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.agf2.aux.AuxiliarySpace</span></code> object, and are used as
+containers for the poles and residues of the self-energy and Green’s function.
+The classes contained in <a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/pyscf/agf2/aux.py">pyscf/agf2/aux.py</a> are</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 55%" />
+<col style="width: 45%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.agf2.aux.AuxiliarySpace</span></code></p></td>
+<td><p>base class for auxiliary spaces</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.agf2.aux.SelfEnergy</span></code></p></td>
+<td><p>self-energy</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.agf2.aux.GreensFunction</span></code></p></td>
+<td><p>Green’s function</p></td>
+</tr>
+</tbody>
+</table>
+<p><code class="xref py py-class docutils literal notranslate"><span class="pre">AuxiliarySpace</span></code> contains most of the attributes and functions
+common to both <code class="xref py py-class docutils literal notranslate"><span class="pre">SelfEnergy</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">GreensFunction</span></code>. The key
+attributes are</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 76%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">energy</span></code></p></td>
+<td><p>array of energies (positions) of the poles</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">coupling</span></code></p></td>
+<td><p>array of couplings of the poles to a physical space</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">chempot</span></code></p></td>
+<td><p>position of the Fermi energy</p></td>
+</tr>
+</tbody>
+</table>
+<p>Key methods are</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 83%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">get_occupied</span></code></p></td>
+<td><p>get a copy of the object with only occupied poles</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">get_virtual</span></code></p></td>
+<td><p>get a copy of the object with only virtual poles</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">get_array</span></code></p></td>
+<td><p>get a dense representation of the Hamiltonian coupling to a physical space</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">dot</span></code></p></td>
+<td><p>perform a dot-product of the result of <code class="xref py py-attr docutils literal notranslate"><span class="pre">get_array</span></code> with a vector via the sparse representation</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">moment</span></code></p></td>
+<td><p>return the <span class="math notranslate nohighlight">\(n\)</span>-th spectral moment of the auxiliaries</p></td>
+</tr>
+</tbody>
+</table>
+<p>Methods specific to the <code class="xref py py-class docutils literal notranslate"><span class="pre">SelfEnergy</span></code> are</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 77%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">compress</span></code></p></td>
+<td><p>compress the self-energy via the AGF2 compression algorithms</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">get_greens_function</span></code></p></td>
+<td><p>diagonalise the self-energy along with a physical space matrix to get a <code class="xref py py-attr docutils literal notranslate"><span class="pre">GreensFunction</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>Methods specific to the <code class="xref py py-class docutils literal notranslate"><span class="pre">GreensFunction</span></code> are</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 79%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">make_rdm1</span></code></p></td>
+<td><p>get the associated one-particle reduced density matrix</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">real_freq_spectrum</span></code></p></td>
+<td><p>express the Green’s function as a spectrum on a real-valued frequency grid, with a broadening factor</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="fock-loop">
+<h2><span class="section-number">5.8.3. </span>Fock loop<a class="headerlink" href="#fock-loop" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="xref py py-func docutils literal notranslate"><span class="pre">fock_loop()</span></code> function is used to solve the self-consistent
+Hartree–Fock-like iterations on the correlated density matrix.
+This step also simultaneously ensures that there is a correct number of electrons in the
+physical space.
+The chemical potential is first optimised by minimising the metric (in the
+restricted case)</p>
+<div class="math notranslate nohighlight">
+\[x(\mu) = \Big( N_\mathrm{elec} -
+               2 \sum_{p}^{n_\mathrm{MO}}
+                 \sum_{i}^{n_\mathrm{QMO}^\mathrm{occ}}
+                 \phi_{pi} \phi_{pi}^*
+         \Big)^{2},\]</div>
+<p>where the chemical potential (<span class="math notranslate nohighlight">\(\mu\)</span>) adjusts the positions of the poles of
+the self-energy before diagonalisation, thereby adjusting the weight of the
+occupied QMOs on the physical space and in turn the trace of the one-particle
+density matrix.
+The gradient of <span class="math notranslate nohighlight">\(x\)</span> with respect to the chemical potential
+<span class="math notranslate nohighlight">\(\frac{\partial x(\mu)}{\partial \mu}\)</span> is also implemented such that a
+truncated Newton algorithm can be used via <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.minimize()</span></code>.
+The functions required to handle this step are contained in
+<a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/pyscf/agf2/chempot.py">pyscf/agf2/chempot.py</a>.</p>
+</div>
+<div class="section" id="memory-requirements">
+<h2><span class="section-number">5.8.4. </span>Memory requirements<a class="headerlink" href="#memory-requirements" title="Permalink to this headline">¶</a></h2>
+<p>Due to the renormalisation of the second-order diagrams, the MO basis integrals
+must be transformed into the QMO basis at subsequent iterations.
+This requires the combinations <span class="math notranslate nohighlight">\((xo|ov)\)</span> and <span class="math notranslate nohighlight">\((xv|vo)\)</span>, where
+<span class="math notranslate nohighlight">\(x\)</span> are general MOs, <span class="math notranslate nohighlight">\(o\)</span> are occupied QMOs and <span class="math notranslate nohighlight">\(v\)</span> are virtual
+QMOs.
+The occupied QMOs number <span class="math notranslate nohighlight">\(n_\mathrm{MO} + n_\mathrm{MO}^\mathrm{occ}\)</span>, and
+virtual <span class="math notranslate nohighlight">\(n_\mathrm{MO} + n_\mathrm{MO}^\mathrm{vir}\)</span>, and so these arrays
+become prohibitively expensive with increasing system size.
+This necessitates the use of density fitting for large system sizes, which
+provides lower scaling memory requirements.
+The density fitting implementation still requires the four-centre integrals to
+be built in order to compute the moments of the self-energy, but they may be
+computed block-wise in order that the memory overhead remains low.</p>
+</div>
+<div class="section" id="arbitrary-order-moment-calculations">
+<h2><span class="section-number">5.8.5. </span>Arbitrary order moment calculations<a class="headerlink" href="#arbitrary-order-moment-calculations" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.agf2.ragf2_slow.RAGF2</span></code> and
+<code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.agf2.uagf2_slow.UAGF2</span></code> classes support AGF2 calculations beyond
+the standard efficient AGF2(1,0) implementation.
+These classes are largely unoptimised and do not support density fitting, and
+are intended for developmental use only.
+For a discussion of the order of the moments required as parameters to these
+methods, please refer to our paper <a class="bibtex reference internal" href="../user/agf2.html#backhouse2020a" id="id1">[1]</a>.
+An example of higher-order AGF2 calculations can be found in
+<a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/pyscf/examples/agf2/05-agf2_moments.py">pyscf/examples/agf2/05-agf2_moments.py</a>, with a connection to the
+algebraic diagrammatic construction method.</p>
+</div>
+<div class="section" id="references">
+<h2><span class="section-number">5.8.6. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p id="bibtex-bibliography-develop/agf2_developer-0"><dl class="citation">
+<dt class="bibtex label" id="backhouse2020a"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Oliver J. Backhouse, Max Nusspickel, and George H. Booth. Wave function perspective and efficient truncation of renormalized second-order perturbation theory. <em>J. Chem. Theory Comput.</em>, 16(2):1090–1104, 2020. <a class="reference external" href="https://doi.org/10.1021/acs.jctc.9b01182">doi:10.1021/acs.jctc.9b01182</a>.</p>
+</dd>
+</dl>
+</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="mcscf_developer.html" class="btn btn-neutral float-right" title="5.9. Multi-configuration SCF" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="cc_developer.html" class="btn btn-neutral float-left" title="5.7. Coupled Cluster Methods" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2015-2021, The PySCF Developers.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

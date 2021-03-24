@@ -1,0 +1,329 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>4.17.4. Mixing PBC and molecular modules &mdash; PySCF 1.7.6 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="4.18. Electron Phonon Matrix" href="../eph.html" />
+    <link rel="prev" title="4.17.3. Density fitting for crystalline calculations" href="df.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> PySCF
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../overview.html">1. An overview of PySCF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">3. Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../user.html">4. User guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../gto.html">4.1. Molecular structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scf.html">4.2. Self-consistent field (SCF) methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dft.html">4.3. Density functional theory (DFT)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mp.html">4.4. Second-Order Møller–Plesset Perturbation Theory (MP2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gw.html">4.5. GW approximation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ci.html">4.6. Configuration interaction (CISD and FCI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cc.html">4.7. Coupled-cluster theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../adc.html">4.8. Algebraic diagrammatic construction (ADC) scheme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../agf2.html">4.9. Auxiliary second-order Green’s function perturbation theory (AGF2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mcscf.html">4.10. Multi-configuration self-consistent field (MCSCF)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tddft.html">4.11. Time-dependent Hartree-Fock and Density Functional Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rt.html">4.12. Real-time time-dependent density functional theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solvent.html">4.13. Solvation models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qmmm.html">4.14. QM/MM methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2c.html">4.15. Relativistic calculations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../df.html">4.16. Density fitting</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pbc.html">4.17. Periodic boundary conditions</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="gto.html">4.17.1. Crystal structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scf.html">4.17.2. SCF and DFT methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="df.html">4.17.3. Density fitting for crystalline calculations</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">4.17.4. Mixing PBC and molecular modules</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#examples">4.17.4.1. Examples</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../eph.html">4.18. Electron Phonon Matrix</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../develop.html">5. Developer documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">6. API documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface.html">7. Interfaces</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PySCF</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../user.html"><span class="section-number">4. </span>User guide</a> &raquo;</li>
+        
+          <li><a href="../pbc.html"><span class="section-number">4.17. </span>Periodic boundary conditions</a> &raquo;</li>
+        
+      <li><span class="section-number">4.17.4. </span>Mixing PBC and molecular modules</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/user/pbc/mix_mol.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mixing-pbc-and-molecular-modules">
+<span id="mix-mol"></span><h1><span class="section-number">4.17.4. </span>Mixing PBC and molecular modules<a class="headerlink" href="#mixing-pbc-and-molecular-modules" title="Permalink to this headline">¶</a></h1>
+<p>Post-HF methods, as standalone numerical solvers, do not require
+knowledge of the boundary conditions.  Calculations on finite-sized systems
+and extended systems are distinguished by the boundary conditions of the integrals (and
+basis).  The same post-HF solver can thus be used for both finite-size problems
+and the periodic boundary problems if they have a compatible Hamiltonian
+structure.</p>
+<p>In PySCF, many molecular post-HF solvers have two implementations: an incore and
+outcore version.  These differ by the treatment of the 2-electron
+integrals.  The incore solver takes the <code class="xref py py-attr docutils literal notranslate"><span class="pre">_eri</span></code> (or <code class="xref py py-attr docutils literal notranslate"><span class="pre">with_df</span></code>, see
+<a class="reference internal" href="../../modules/df.html#mol-df"><span class="std std-ref">df — Density fitting</span></a>) from the underlying mean-field object as the two-electron
+interaction part of the Hamiltonian while the outcore solver generates the
+2-electron integrals (with free boundary conditions) on the fly.
+To use the molecular post-HF solvers in PBC code, we need to ensure that the incore
+version solver is called.</p>
+<p>Generating <code class="xref py py-attr docutils literal notranslate"><span class="pre">_eri</span></code> in a mean-field object is the straightforward way to
+trigger the incore post-HF solver.  If the allowed memory is large enough to
+hold the entire 2-electron integral array, the Gamma point HF solver always
+generates and holds this array.  A second choice is to set <code class="xref py py-attr docutils literal notranslate"><span class="pre">incore_anyway</span></code>
+in <code class="docutils literal notranslate"><span class="pre">cell</span></code> which forces the program to generate and hold <code class="xref py py-attr docutils literal notranslate"><span class="pre">_eri</span></code> in
+the mean-field object.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the problem is big, <code class="xref py py-attr docutils literal notranslate"><span class="pre">incore_anyway</span></code> may overflow the available
+physical memory.</p>
+</div>
+<p>Holding the full integral array <code class="xref py py-attr docutils literal notranslate"><span class="pre">_eri</span></code> in memory limits the problem size
+one can treat.  Using the density fitting object <code class="xref py py-attr docutils literal notranslate"><span class="pre">with_df</span></code> to hold the
+integrals can overcome this problem.  This architecture has been bound to PBC
+and molecular mean-field modules. Not all post-HF methods are available with density fitting.</p>
+<p>Aside from the 2-electron integrals, there are some attributes and methods
+required by the post-HF solver.  They are <code class="xref py py-meth docutils literal notranslate"><span class="pre">get_hcore()</span></code>, and
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">get_ovlp()</span></code> for 1-electron integrals, <code class="xref py py-attr docutils literal notranslate"><span class="pre">_numint</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">grids</span></code> for
+the numerical integration of DFT exchange-correlation functionals.  These are all
+overloaded in the PBC mean-field object to produce the PBC integrals.</p>
+<div class="section" id="examples">
+<h2><span class="section-number">4.17.4.1. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Gamma point post-HF calculation needs only real integrals.</span>
+<span class="sd">Methods implemented in finite-size system can be directly used here without</span>
+<span class="sd">any modification.</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span>
+
+<span class="n">cell</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="mf">3.5668</span><span class="p">,</span>
+    <span class="n">atom</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;C     0.      0.      0.    </span>
+<span class="s1">              C     0.8917  0.8917  0.8917</span>
+<span class="s1">              C     1.7834  1.7834  0.    </span>
+<span class="s1">              C     2.6751  2.6751  0.8917</span>
+<span class="s1">              C     1.7834  0.      1.7834</span>
+<span class="s1">              C     2.6751  0.8917  2.6751</span>
+<span class="s1">              C     0.      1.7834  1.7834</span>
+<span class="s1">              C     0.8917  2.6751  2.6751&#39;&#39;&#39;</span><span class="p">,</span>
+    <span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;6-31g&#39;</span><span class="p">,</span>
+    <span class="n">verbose</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">cell</span><span class="p">)</span><span class="o">.</span><span class="n">density_fit</span><span class="p">()</span>
+<span class="n">mf</span><span class="o">.</span><span class="n">with_df</span><span class="o">.</span><span class="n">mesh</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">*</span><span class="mi">3</span>
+<span class="n">mf</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
+
+<span class="c1">#</span>
+<span class="c1"># Import CC, TDDFT module from the molecular implementations</span>
+<span class="c1">#</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">cc</span><span class="p">,</span> <span class="n">tddft</span>
+<span class="n">mycc</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">CCSD</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span>
+<span class="n">mycc</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
+
+<span class="n">mytd</span> <span class="o">=</span> <span class="n">tddft</span><span class="o">.</span><span class="n">TDHF</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span>
+<span class="n">mytd</span><span class="o">.</span><span class="n">nstates</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">mytd</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../eph.html" class="btn btn-neutral float-right" title="4.18. Electron Phonon Matrix" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="df.html" class="btn btn-neutral float-left" title="4.17.3. Density fitting for crystalline calculations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2015-2021, The PySCF Developers.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

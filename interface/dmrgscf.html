@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>dmrgscf — DMRG and DMRG-SCF/CASSCF &mdash; PySCF 1.7.6 documentation</title>
+  <title>7.3. dmrgscf — DMRG and DMRG-SCF/CASSCF &mdash; PySCF 1.7.6 documentation</title>
   
 
   
@@ -38,8 +38,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="fciqmcscf — Full configuration interaction quantum Monte Carlo (FCIQMC)" href="fciqmcscf.html" />
-    <link rel="prev" title="geomopt — Geometry optimization" href="geomopt.html" /> 
+    <link rel="next" title="7.4. fciqmcscf — Full configuration interaction quantum Monte Carlo (FCIQMC)" href="fciqmcscf.html" />
+    <link rel="prev" title="7.2. geomopt — Geometry optimization" href="geomopt.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,41 +88,26 @@
               
             
             
-              <p class="caption"><span class="caption-text">User documentation</span></p>
-<ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">1. An overview of PySCF</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../version.html">2. Version history</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../install.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../benchmark.html">4. Benchmark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">5. Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../theory.html">6. Theoretical methods</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Developer documentation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../code-rule.html">Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../develop.html">Guidelines for module development</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced.html">Miscellaneous</a></li>
-</ul>
-<p class="caption"><span class="caption-text">API documentation</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../modules.html">Main modules</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../interface.html">Interfaces</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="dftd3.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dftd3</span></code> — DFT with D3 dispersion correction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="geomopt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">geomopt</span></code> — Geometry optimization</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dmrgscf</span></code> — DMRG and DMRG-SCF/CASSCF</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.dmrgscf">Program Reference</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id3">Block</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id4">CheMPS2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">3. Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user.html">4. User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop.html">5. Developer documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">6. API documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../interface.html">7. Interfaces</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dftd3.html">7.1. <code class="xref py py-mod docutils literal notranslate"><span class="pre">dftd3</span></code> — DFT with D3 dispersion correction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geomopt.html">7.2. <code class="xref py py-mod docutils literal notranslate"><span class="pre">geomopt</span></code> — Geometry optimization</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7.3. <code class="xref py py-mod docutils literal notranslate"><span class="pre">dmrgscf</span></code> — DMRG and DMRG-SCF/CASSCF</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#examples">7.3.1. Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.dmrgscf.dmrg_sym">7.3.2. Program Reference</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="fciqmcscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fciqmcscf</span></code> — Full configuration interaction quantum Monte Carlo (FCIQMC)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cornell_shci.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cornell_shci</span></code> — Semistochastic heat-bath configuration interaction (SHCI)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="shciscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">shciscf</span></code> — Semistochastic heat bath configuration interaction (SHCI)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="icmpspt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">icmpspt</span></code> — Internal-contracted MPS perturbation method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nao.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nao</span></code> — Numerical Atomic Orbitals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fciqmcscf.html">7.4. <code class="xref py py-mod docutils literal notranslate"><span class="pre">fciqmcscf</span></code> — Full configuration interaction quantum Monte Carlo (FCIQMC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cornell_shci.html">7.5. <code class="xref py py-mod docutils literal notranslate"><span class="pre">cornell_shci</span></code> — Semistochastic heat-bath configuration interaction (SHCI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shciscf.html">7.6. <code class="xref py py-mod docutils literal notranslate"><span class="pre">shciscf</span></code> — Semistochastic heat bath configuration interaction (SHCI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="icmpspt.html">7.7. <code class="xref py py-mod docutils literal notranslate"><span class="pre">icmpspt</span></code> — Internal-contracted MPS perturbation method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nao.html">7.8. <code class="xref py py-mod docutils literal notranslate"><span class="pre">nao</span></code> — Numerical Atomic Orbitals</a></li>
 </ul>
 </li>
 </ul>
@@ -173,9 +158,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../interface.html">Interfaces</a> &raquo;</li>
+          <li><a href="../interface.html"><span class="section-number">7. </span>Interfaces</a> &raquo;</li>
         
-      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">dmrgscf</span></code> — DMRG and DMRG-SCF/CASSCF</li>
+      <li><span class="section-number">7.3. </span><code class="xref py py-mod docutils literal notranslate"><span class="pre">dmrgscf</span></code> — DMRG and DMRG-SCF/CASSCF</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -195,7 +180,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="dmrgscf-dmrg-and-dmrg-scf-casscf">
-<span id="dmrgscf"></span><h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">dmrgscf</span></code> — DMRG and DMRG-SCF/CASSCF<a class="headerlink" href="#dmrgscf-dmrg-and-dmrg-scf-casscf" title="Permalink to this headline">¶</a></h1>
+<span id="dmrgscf"></span><h1><span class="section-number">7.3. </span><code class="xref py py-mod docutils literal notranslate"><span class="pre">dmrgscf</span></code> — DMRG and DMRG-SCF/CASSCF<a class="headerlink" href="#dmrgscf-dmrg-and-dmrg-scf-casscf" title="Permalink to this headline">¶</a></h1>
 <p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">dmrgscf</span></code> module interfaces PySCF with external DMRG solvers, such as
 <a class="reference external" href="https://sanshar.github.io/Block">Block</a>,
 <a class="reference external" href="https://github.com/sanshar/StackBlock">StackBlock</a> and
@@ -234,7 +219,7 @@ and set the correct path for the DMRG solver, and then run <em>e.g.</em>,</p>
 </pre></div>
 </div>
 <div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.3.1. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/dmrg/01-dmrg_casscf_with_block.py">examples/dmrg/01-dmrg_casscf_with_block.py</a></p></li>
 <li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/dmrg/01-dmrg_casscf_with_stackblock.py">examples/dmrg/01-dmrg_casscf_with_stackblock.py</a></p></li>
@@ -247,183 +232,9 @@ and set the correct path for the DMRG solver, and then run <em>e.g.</em>,</p>
 <li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/dmrg/32-dmrg_casscf_nevpt2_for_FeS.py">examples/dmrg/32-dmrg_casscf_nevpt2_for_FeS.py</a></p></li>
 </ul>
 </div>
-<div class="section" id="module-pyscf.dmrgscf">
-<span id="program-reference"></span><h2>Program Reference<a class="headerlink" href="#module-pyscf.dmrgscf" title="Permalink to this headline">¶</a></h2>
-<p>DMRG program interface.</p>
-<p>There are two DMRG program interfaces available:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p><a class="reference external" href="https://github.com/sanshar/Block">Block</a> interface provided the
-features including the DMRG-CASCI, the 1-step and 2-step DMRG-CASSCF, second
-order pertubation for dynamic correlation.  1-, 2- and 3-particle density
-matrices.</p></li>
-<li><p><a class="reference external" href="https://github.com/SebWouters/CheMPS2">CheMPS2</a> interface provided the
-DMRG-CASCI and 2-step DMRG-CASSCF.</p></li>
-</ul>
-</div></blockquote>
-<p>Simple usage:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">mcscf</span><span class="p">,</span> <span class="n">dmrgscf</span><span class="p">,</span> <span class="n">mrpt</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;C 0 0 0; C 0 0 1&#39;</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;631g&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span> <span class="o">=</span> <span class="n">dmrgscf</span><span class="o">.</span><span class="n">DMRGSCF</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
-<span class="go">-75.3374492511669</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mrpt</span><span class="o">.</span><span class="n">NEVPT</span><span class="p">(</span><span class="n">mc</span><span class="p">)</span><span class="o">.</span><span class="n">compress_approx</span><span class="p">()</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
-<span class="go">-0.10474250075684</span>
-
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span> <span class="o">=</span> <span class="n">mcscf</span><span class="o">.</span><span class="n">CASSCF</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span><span class="o">.</span><span class="n">fcisolver</span> <span class="o">=</span> <span class="n">dmrgscf</span><span class="o">.</span><span class="n">CheMPS2</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
-<span class="go">-75.3374492511669</span>
-</pre></div>
-</div>
-<p>Note a few configurations in <code class="docutils literal notranslate"><span class="pre">/path/to/dmrgscf/settings.py</span></code> needs to be made
-before using the DMRG interface code.</p>
-<div class="section" id="id3">
-<h3>Block<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<p><code class="xref py py-class docutils literal notranslate"><span class="pre">DMRGCI</span></code> is the main object to hold Block input parameters and results.
-<code class="xref py py-func docutils literal notranslate"><span class="pre">DMRGSCF()</span></code> is a shortcut function quickly setup DMRG-CASSCF calculation.
-<code class="xref py py-func docutils literal notranslate"><span class="pre">compress_approx()</span></code> initializes the compressed MPS perturber for NEVPT2
-calculation.</p>
-<p>In DMRGCI object, you can set the following attributes to control Block program:</p>
-<blockquote>
-<div><dl class="simple">
-<dt>outputlevel<span class="classifier">int</span></dt><dd><p>Noise level for Block program output.</p>
-</dd>
-<dt>maxIter<span class="classifier">int</span></dt><dd><p>Max DMRG sweeps</p>
-</dd>
-<dt>approx_maxIter<span class="classifier">int</span></dt><dd><p>To control the DMRG-CASSCF approximate DMRG solver accuracy.</p>
-</dd>
-<dt>twodot_to_onedot<span class="classifier">int</span></dt><dd><p>When to switch from two-dot algroithm to one-dot algroithm.</p>
-</dd>
-<dt>nroots<span class="classifier">int</span></dt><dd><p>Number of states in the same irreducible representation to compute.</p>
-</dd>
-<dt>weights<span class="classifier">list of floats</span></dt><dd><p>Use this attribute with “nroots” attribute to set state-average calculation.</p>
-</dd>
-<dt>restart<span class="classifier">bool</span></dt><dd><p>To control whether to restart a DMRG calculation.</p>
-</dd>
-<dt>tol<span class="classifier">float</span></dt><dd><p>DMRG convergence tolerence</p>
-</dd>
-<dt>maxM<span class="classifier">int</span></dt><dd><p>Bond dimension</p>
-</dd>
-<dt>scheduleSweeps, scheduleMaxMs, scheduleTols, scheduleNoises<span class="classifier">list</span></dt><dd><p>DMRG sweep scheduler.  See also Block documentation</p>
-</dd>
-<dt>wfnsym<span class="classifier">str or int</span></dt><dd><p>Wave function irrep label or irrep ID</p>
-</dd>
-<dt>orbsym<span class="classifier">list of int</span></dt><dd><p>irrep IDs of each orbital</p>
-</dd>
-<dt>groupname<span class="classifier">str</span></dt><dd><p>groupname, orbsym together can control whether to employ symmetry in
-the calculation.  “groupname = None and orbsym = []” requires the
-Block program using C1 symmetry.</p>
-</dd>
-</dl>
-</div></blockquote>
-</div>
-<div class="section" id="id4">
-<h3>CheMPS2<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<p>In <code class="xref py py-class docutils literal notranslate"><span class="pre">CheMPS2</span></code>, DMRG calculation can be controlled by:</p>
-<blockquote>
-<div><div class="line-block">
-<div class="line">wfn_irrep</div>
-<div class="line">dmrg_states</div>
-<div class="line">dmrg_noise</div>
-<div class="line">dmrg_e_convergence</div>
-<div class="line">dmrg_noise_factor</div>
-<div class="line">dmrg_maxiter_noise</div>
-<div class="line">dmrg_maxiter_silent</div>
-</div>
-</div></blockquote>
-<p>See <a class="reference external" href="http://sebwouters.github.io/CheMPS2/index.html">http://sebwouters.github.io/CheMPS2/index.html</a> for more detail usages of
-these keywords.</p>
-</div>
-<span class="target" id="module-pyscf.dmrgscf.chemps2"></span><span class="target" id="module-pyscf.dmrgscf.dmrgci"></span><p>DMRG solver for CASCI and CASSCF.</p>
-<dl class="py class">
-<dt id="pyscf.dmrgscf.dmrgci.DMRGCI">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.dmrgscf.dmrgci.</span></code><code class="sig-name descname"><span class="pre">DMRGCI</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxM</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_thrds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/dmrgscf/dmrgci.html#DMRGCI"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.dmrgscf.dmrgci.DMRGCI" title="Permalink to this definition">¶</a></dt>
-<dd><p>Block program interface and the object to hold Block program input parameters.</p>
-<dl>
-<dt>Attributes:</dt><dd><dl class="simple">
-<dt>outputlevel<span class="classifier">int</span></dt><dd><p>Noise level for Block program output.</p>
-</dd>
-</dl>
-<p>maxIter : int
-hf_occ : str</p>
-<blockquote>
-<div><p>The initial HF wave function occupancies, in spin orbital.</p>
-</div></blockquote>
-<dl class="simple">
-<dt>approx_maxIter<span class="classifier">int</span></dt><dd><p>To control the DMRG-CASSCF approximate DMRG solver accuracy.</p>
-</dd>
-<dt>twodot_to_onedot<span class="classifier">int</span></dt><dd><p>When to switch from two-dot algroithm to one-dot algroithm.</p>
-</dd>
-</dl>
-<p>nroots : int</p>
-<dl class="simple">
-<dt>weights<span class="classifier">list of floats</span></dt><dd><p>Use this attribute with “nroots” attribute to set state-average calculation.</p>
-</dd>
-<dt>restart<span class="classifier">bool</span></dt><dd><p>To control whether to restart a DMRG calculation.</p>
-</dd>
-<dt>tol<span class="classifier">float</span></dt><dd><p>DMRG convergence tolerence</p>
-</dd>
-<dt>maxM<span class="classifier">int</span></dt><dd><p>Bond dimension</p>
-</dd>
-<dt>scheduleSweeps, scheduleMaxMs, scheduleTols, scheduleNoises<span class="classifier">list</span></dt><dd><p>DMRG sweep scheduler.  See also Block documentation</p>
-</dd>
-<dt>wfnsym<span class="classifier">str or int</span></dt><dd><p>Wave function irrep label or irrep ID</p>
-</dd>
-<dt>orbsym<span class="classifier">list of int</span></dt><dd><p>irrep IDs of each orbital</p>
-</dd>
-<dt>groupname<span class="classifier">str</span></dt><dd><p>groupname, orbsym together can control whether to employ symmetry in
-the calculation.  “groupname = None and orbsym = []” requires the
-Block program using C1 symmetry.</p>
-</dd>
-</dl>
-</dd>
-</dl>
-<p>Examples:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;C 0 0 0; C 0 0 1&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span> <span class="o">=</span> <span class="n">mcscf</span><span class="o">.</span><span class="n">CASCI</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span><span class="o">.</span><span class="n">fcisolver</span> <span class="o">=</span> <span class="n">DMRGCI</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
-<span class="go">-74.379770619390698</span>
-</pre></div>
-</div>
-<dl class="py method">
-<dt id="pyscf.dmrgscf.dmrgci.DMRGCI.kernel">
-<code class="sig-name descname"><span class="pre">kernel</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h1e</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eri</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nelec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fciRestart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecore</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/dmrgscf/dmrgci.html#DMRGCI.kernel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.dmrgscf.dmrgci.DMRGCI.kernel" title="Permalink to this definition">¶</a></dt>
-<dd><p>Kernel function is the main driver of a method.  Every method should
-define the kernel function as the entry of the calculation.  Note the
-return value of kernel function is not strictly defined.  It can be
-anything related to the method (such as the energy, the wave-function,
-the DFT mesh grids etc.).</p>
-</dd></dl>
-
-</dd></dl>
-
+<div class="section" id="module-pyscf.dmrgscf.dmrg_sym">
+<span id="program-reference"></span><h2><span class="section-number">7.3.2. </span>Program Reference<a class="headerlink" href="#module-pyscf.dmrgscf.dmrg_sym" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
-<dt id="pyscf.dmrgscf.dmrgci.DMRGSCF">
-<code class="sig-prename descclassname"><span class="pre">pyscf.dmrgscf.dmrgci.</span></code><code class="sig-name descname"><span class="pre">DMRGSCF</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nelec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxM</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/dmrgscf/dmrgci.html#DMRGSCF"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.dmrgscf.dmrgci.DMRGSCF" title="Permalink to this definition">¶</a></dt>
-<dd><p>Shortcut function to setup CASSCF using the DMRG solver.  The DMRG
-solver is properly initialized in this function so that the 1-step
-algorithm can be applied with DMRG-CASSCF.</p>
-<p>Examples:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;C 0 0 0; C 0 0 1&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span> <span class="o">=</span> <span class="n">DMRGSCF</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
-<span class="go">-74.414908818611522</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py function">
-<dt id="pyscf.dmrgscf.dmrgci.dryrun">
-<code class="sig-prename descclassname"><span class="pre">pyscf.dmrgscf.dmrgci.</span></code><code class="sig-name descname"><span class="pre">dryrun</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/dmrgscf/dmrgci.html#dryrun"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.dmrgscf.dmrgci.dryrun" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate FCIDUMP and dmrg config file</p>
-</dd></dl>
-
-<span class="target" id="module-pyscf.dmrgscf.nevpt_mpi"></span><span class="target" id="module-pyscf.dmrgscf.dmrg_sym"></span><dl class="py function">
 <dt id="pyscf.dmrgscf.dmrg_sym.convert_lzsym">
 <code class="sig-prename descclassname"><span class="pre">pyscf.dmrgscf.dmrg_sym.</span></code><code class="sig-name descname"><span class="pre">convert_lzsym</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gpname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orbsym</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/dmrgscf/dmrg_sym.html#convert_lzsym"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.dmrgscf.dmrg_sym.convert_lzsym" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert orbital symmetry irrep_id to Block internal irrep_id</p>
@@ -444,8 +255,8 @@ algorithm can be applied with DMRG-CASSCF.</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="fciqmcscf.html" class="btn btn-neutral float-right" title="fciqmcscf — Full configuration interaction quantum Monte Carlo (FCIQMC)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="geomopt.html" class="btn btn-neutral float-left" title="geomopt — Geometry optimization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="fciqmcscf.html" class="btn btn-neutral float-right" title="7.4. fciqmcscf — Full configuration interaction quantum Monte Carlo (FCIQMC)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="geomopt.html" class="btn btn-neutral float-left" title="7.2. geomopt — Geometry optimization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

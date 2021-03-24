@@ -1,0 +1,391 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>4.4. Second-Order Møller–Plesset Perturbation Theory (MP2) &mdash; PySCF 1.7.6 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4.5. GW approximation" href="gw.html" />
+    <link rel="prev" title="4.3. Density functional theory (DFT)" href="dft.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PySCF
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">1. An overview of PySCF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">3. Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user.html">4. User guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gto.html">4.1. Molecular structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scf.html">4.2. Self-consistent field (SCF) methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dft.html">4.3. Density functional theory (DFT)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.4. Second-Order Møller–Plesset Perturbation Theory (MP2)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">4.4.1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#spin-symmetry">4.4.2. Spin symmetry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#properties">4.4.3. Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#frozen-orbitals">4.4.4. Frozen orbitals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#job-control">4.4.5. Job control</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#avoid-t2-storage">4.4.5.1. Avoid t2 storage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#references">4.4.6. References</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="gw.html">4.5. GW approximation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci.html">4.6. Configuration interaction (CISD and FCI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc.html">4.7. Coupled-cluster theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adc.html">4.8. Algebraic diagrammatic construction (ADC) scheme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="agf2.html">4.9. Auxiliary second-order Green’s function perturbation theory (AGF2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mcscf.html">4.10. Multi-configuration self-consistent field (MCSCF)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tddft.html">4.11. Time-dependent Hartree-Fock and Density Functional Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rt.html">4.12. Real-time time-dependent density functional theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="solvent.html">4.13. Solvation models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qmmm.html">4.14. QM/MM methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x2c.html">4.15. Relativistic calculations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="df.html">4.16. Density fitting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pbc.html">4.17. Periodic boundary conditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eph.html">4.18. Electron Phonon Matrix</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../develop.html">5. Developer documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">6. API documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interface.html">7. Interfaces</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PySCF</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../user.html"><span class="section-number">4. </span>User guide</a> &raquo;</li>
+        
+      <li><span class="section-number">4.4. </span>Second-Order Møller–Plesset Perturbation Theory (MP2)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/user/mp.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="second-order-mollerplesset-perturbation-theory-mp2">
+<span id="user-mp2"></span><h1><span class="section-number">4.4. </span>Second-Order Møller–Plesset Perturbation Theory (MP2)<a class="headerlink" href="#second-order-mollerplesset-perturbation-theory-mp2" title="Permalink to this headline">¶</a></h1>
+<p><em>Modules</em>: <a class="reference internal" href="../modules/mp.html#module-mp" title="mp: MP2"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mp</span></code></a>, <a class="reference internal" href="../modules/pbc/mp.html#module-pbc.mp" title="pbc.mp: MP2 with periodic boundary conditions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc.mp</span></code></a></p>
+<p>The MP2 and coupled-cluster functionalities of PySCF are similar.  See
+also <a class="reference internal" href="cc.html#user-cc"><span class="std std-numref">Section 4.7</span></a>.</p>
+<div class="section" id="introduction">
+<h2><span class="section-number">4.4.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Second-order Møller–Plesset perturbation theory (MP2) <a class="bibtex reference internal" href="#moller1934" id="id1">[1]</a>
+is a post-Hartree–Fock method.
+MP2 calculations can be performed with or without density fitting,
+depending on the initial SCF calculation.</p>
+<p>A simple example (see <a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/mp/00-simple_mp2.py">examples/mp/00-simple_mp2.py</a>) of running
+an MP2 calculation is</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1">#</span>
+<span class="c1"># Author: Qiming Sun &lt;osirpt.sun@gmail.com&gt;</span>
+<span class="c1">#</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">A simple example to run MP2 calculation.</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="kn">import</span> <span class="nn">pyscf</span>
+
+<span class="n">mol</span> <span class="o">=</span> <span class="n">pyscf</span><span class="o">.</span><span class="n">M</span><span class="p">(</span>
+    <span class="n">atom</span> <span class="o">=</span> <span class="s1">&#39;H 0 0 0; F 0 0 1.1&#39;</span><span class="p">,</span>
+    <span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;ccpvdz&#39;</span><span class="p">)</span>
+
+<span class="n">mf</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">RHF</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+<span class="n">mf</span><span class="o">.</span><span class="n">MP2</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+</pre></div>
+</div>
+<p>which outputs</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">converged</span> <span class="n">SCF</span> <span class="n">energy</span> <span class="o">=</span> <span class="o">-</span><span class="mf">99.9873974403487</span>
+<span class="n">E</span><span class="p">(</span><span class="n">MP2</span><span class="p">)</span> <span class="o">=</span> <span class="o">-</span><span class="mf">100.198764900659</span>  <span class="n">E_corr</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.211367460310054</span>
+</pre></div>
+</div>
+<p>namely, the Hartree–Fock energy, the MP2 energy and their difference, the
+MP2 correlation energy.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The last line in the code example above could have been replaced by</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pyscf</span><span class="o">.</span><span class="n">mp</span><span class="o">.</span><span class="n">MP2</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pyscf</span><span class="o">.</span><span class="n">mp</span><span class="o">.</span><span class="n">MP2</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>for the same result.</p>
+</div>
+</div>
+<div class="section" id="spin-symmetry">
+<h2><span class="section-number">4.4.2. </span>Spin symmetry<a class="headerlink" href="#spin-symmetry" title="Permalink to this headline">¶</a></h2>
+<p>The MP2 module in PySCF supports a number of reference wavefunctions with
+broken spin symmetry.  In particular, MP2 can be performed with a
+spin-restricted, spin-unrestricted, and general (spin-mixed) Hartree-Fock
+solution, leading to the RMP2, UMP2, and GMP2 methods.</p>
+<p>The module-level <code class="docutils literal notranslate"><span class="pre">mp.MP2(mf)</span></code> constructor can infer the correct method based
+on the level of symmetry-breaking in the mean-field argument.  For more explicit
+control or inspection, the respective classes and functions can be found in
+<code class="docutils literal notranslate"><span class="pre">mp2.py</span></code> (restricted), <code class="docutils literal notranslate"><span class="pre">ump2.py</span></code> (unrestricted), and <code class="docutils literal notranslate"><span class="pre">gmp2.py</span></code>
+(general).</p>
+<p>For example, a spin-unrestricted calculation on triplet oxygen can be performed
+as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">mp</span>
+<span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span>
+    <span class="n">atom</span> <span class="o">=</span> <span class="s1">&#39;O 0 0 0; O 0 0 1.2&#39;</span><span class="p">,</span>  <span class="c1"># in Angstrom</span>
+    <span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;ccpvdz&#39;</span><span class="p">,</span>
+    <span class="n">spin</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="p">)</span>
+<span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">HF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span> <span class="c1"># this is UHF</span>
+<span class="n">mymp</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">MP2</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span> <span class="c1"># this is UMP2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;UMP2 total energy = &#39;</span><span class="p">,</span> <span class="n">mymp</span><span class="o">.</span><span class="n">e_tot</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="properties">
+<h2><span class="section-number">4.4.3. </span>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<p>A number of properties are available at the MP2 level.</p>
+<p>Unrelaxed 1- and 2-electron reduced density matrices can be calculated.
+They are returned in the MO basis:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dm1</span> <span class="o">=</span> <span class="n">mymp</span><span class="o">.</span><span class="n">make_rdm1</span><span class="p">()</span>
+<span class="n">dm2</span> <span class="o">=</span> <span class="n">mymp</span><span class="o">.</span><span class="n">make_rdm2</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Analytical nuclear gradients can be calculated <a class="bibtex reference internal" href="#pople1979" id="id2">[2]</a><a class="bibtex reference internal" href="#handy1985" id="id3">[3]</a><a class="bibtex reference internal" href="#yamaguchi2011m" id="id4">[4]</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mygrad</span> <span class="o">=</span> <span class="n">mymp</span><span class="o">.</span><span class="n">nuc_grad_method</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="frozen-orbitals">
+<h2><span class="section-number">4.4.4. </span>Frozen orbitals<a class="headerlink" href="#frozen-orbitals" title="Permalink to this headline">¶</a></h2>
+<p>By default, MP2 calculations in PySCF correlate all electrons in all available
+orbitals. To freeze the lowest-energy core orbitals, use
+the <code class="docutils literal notranslate"><span class="pre">frozen</span></code> keyword argument:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mymp</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">MP2</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>To freeze occupied and/or unoccupied orbitals with finer control, a
+list of 0-based orbital indices can be provided as the <code class="docutils literal notranslate"><span class="pre">frozen</span></code>
+keyword argument:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># freeze 2 core orbitals</span>
+<span class="n">mymp</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">MP2</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="c1"># freeze 2 core orbitals and 3 unoccupied orbitals</span>
+<span class="n">mymp</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">MP2</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">18</span><span class="p">])</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="job-control">
+<h2><span class="section-number">4.4.5. </span>Job control<a class="headerlink" href="#job-control" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="avoid-t2-storage">
+<h3><span class="section-number">4.4.5.1. </span>Avoid t2 storage<a class="headerlink" href="#avoid-t2-storage" title="Permalink to this headline">¶</a></h3>
+<p>If the t2 amplitudes are not required after the MP2 calculation, they
+don’t need to be saved in memory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mymp</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">MP2</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span>
+<span class="c1"># by default, with_t2=True</span>
+<span class="n">mymp</span><span class="o">.</span><span class="n">kernel</span><span class="p">(</span><span class="n">with_t2</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="references">
+<h2><span class="section-number">4.4.6. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p id="bibtex-bibliography-user/mp-0"><dl class="citation">
+<dt class="bibtex label" id="moller1934"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>C. Møller and M. S. Plesset. Note on an approximation treatment for many-electron systems. <em>Phys. Rev.</em>, 46:618, Oct 1934. <a class="reference external" href="https://doi.org/10.1103/PhysRev.46.618">doi:10.1103/PhysRev.46.618</a>.</p>
+</dd>
+<dt class="bibtex label" id="pople1979"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>J. A. Pople, R. Krishnan, H. B. Schlegel, and J. S. Binkley. Derivative studies in hartree-fock and møller-plesset theories. <em>Int. J. Quantum Chem.</em>, 16:225, 1979. <a class="reference external" href="https://doi.org/10.1002/qua.560160825">doi:10.1002/qua.560160825</a>.</p>
+</dd>
+<dt class="bibtex label" id="handy1985"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>N. C. Handy, R. D. Amos, J. F. Gaw, J. E. Rice, and E. D. Simandiras. The elimination of singularities in derivative calculations. <em>Chem. Phys. Lett.</em>, pages 151, 1985. <a class="reference external" href="https://doi.org/10.1016/0009-2614(85)87031-7">doi:10.1016/0009-2614(85)87031-7</a>.</p>
+</dd>
+<dt class="bibtex label" id="yamaguchi2011m"><span class="brackets"><a class="fn-backref" href="#id4">4</a></span></dt>
+<dd><p>Y. Yamaguchi and H. F. Schaefer III. <em>Analytic Derivative Methods in Molecular Electronic Structure Theory: A New Dimension to Quantum Chemistry and its Applications to Spectroscopy</em>, chapter Fundamentals and Theory, pages 325. John Wiley &amp; Sons, Ltd., 2011. <a class="reference external" href="https://doi.org/10.1002/9780470749593.hrs006">doi:10.1002/9780470749593.hrs006</a>.</p>
+</dd>
+</dl>
+</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="gw.html" class="btn btn-neutral float-right" title="4.5. GW approximation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="dft.html" class="btn btn-neutral float-left" title="4.3. Density functional theory (DFT)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2015-2021, The PySCF Developers.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

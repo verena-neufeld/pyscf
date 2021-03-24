@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>lo — Orbital localization and analysis tools &mdash; PySCF 1.7.6 documentation</title>
+  <title>6.17. lo — Orbital localization and analysis tools &mdash; PySCF 1.7.6 documentation</title>
   
 
   
@@ -38,8 +38,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="mcscf — Multi-configurational self-consistent field" href="mcscf.html" />
-    <link rel="prev" title="lib — Helper functions, parameters, and C extensions" href="lib.html" /> 
+    <link rel="next" title="6.18. mcscf — Multi-configurational self-consistent field" href="mcscf.html" />
+    <link rel="prev" title="6.16. lib — Helper functions, parameters, and C extensions" href="lib.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,69 +88,59 @@
               
             
             
-              <p class="caption"><span class="caption-text">User documentation</span></p>
-<ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">1. An overview of PySCF</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../version.html">2. Version history</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../install.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../benchmark.html">4. Benchmark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">5. Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../theory.html">6. Theoretical methods</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Developer documentation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../code-rule.html">Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../develop.html">Guidelines for module development</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced.html">Miscellaneous</a></li>
-</ul>
-<p class="caption"><span class="caption-text">API documentation</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../modules.html">Main modules</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="adc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">adc</span></code> — Algebraic diagrammatic construction (ADC) scheme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ao2mo.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ao2mo</span></code> — Integral transformations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cc</span></code> — Coupled cluster</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ccn.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ccn</span></code> — Auto-generated coupled cluster of arbitrary order</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ci.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ci</span></code> — Configuration interaction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">data</span></code> — Data for constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="df.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">df</span></code> — Density fitting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dft.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dft</span></code> — Density functional theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="doci.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">doci</span></code> — Doubly occupied configuration interaction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fci.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fci</span></code> — Full configuration interaction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="grad.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">grad</span></code> — Analytical nuclear gradients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gto</span></code> — Molecular structure and GTO basis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gw.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gw</span></code> — Molecular G0W0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hci.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hci</span></code> — Heat-bath selected CI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hessian.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hessian</span></code> — Analytical nuclear Hessian</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lib.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">lib</span></code> — Helper functions, parameters, and C extensions</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">lo</span></code> — Orbital localization and analysis tools</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.lo">Program reference</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.lo.boys">Foster-Boys, Edmiston-Ruedenberg, Pipek-Mezey localization</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.lo.orth">Meta-Lowdin</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.lo.nao">Natural atomic orbitals</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.lo.iao">Intrinsic Atomic Orbitals</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.lo.ibo">Intrinsic Bond Orbitals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">3. Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user.html">4. User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop.html">5. Developer documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../modules.html">6. API documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="adc.html">6.1. <code class="xref py py-mod docutils literal notranslate"><span class="pre">adc</span></code> — Algebraic diagrammatic construction (ADC) scheme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ao2mo.html">6.2. <code class="xref py py-mod docutils literal notranslate"><span class="pre">ao2mo</span></code> — Integral transformations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc.html">6.3. <code class="xref py py-mod docutils literal notranslate"><span class="pre">cc</span></code> — Coupled cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ccn.html">6.4. <code class="xref py py-mod docutils literal notranslate"><span class="pre">ccn</span></code> — Auto-generated coupled cluster of arbitrary order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci.html">6.5. <code class="xref py py-mod docutils literal notranslate"><span class="pre">ci</span></code> — Configuration interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data.html">6.6. <code class="xref py py-mod docutils literal notranslate"><span class="pre">data</span></code> — Data for constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="df.html">6.7. <code class="xref py py-mod docutils literal notranslate"><span class="pre">df</span></code> — Density fitting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dft.html">6.8. <code class="xref py py-mod docutils literal notranslate"><span class="pre">dft</span></code> — Density functional theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doci.html">6.9. <code class="xref py py-mod docutils literal notranslate"><span class="pre">doci</span></code> — Doubly occupied configuration interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fci.html">6.10. <code class="xref py py-mod docutils literal notranslate"><span class="pre">fci</span></code> — Full configuration interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grad.html">6.11. <code class="xref py py-mod docutils literal notranslate"><span class="pre">grad</span></code> — Analytical nuclear gradients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gto.html">6.12. <code class="xref py py-mod docutils literal notranslate"><span class="pre">gto</span></code> — Molecular structure and GTO basis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gw.html">6.13. <code class="xref py py-mod docutils literal notranslate"><span class="pre">gw</span></code> — Molecular G0W0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hci.html">6.14. <code class="xref py py-mod docutils literal notranslate"><span class="pre">hci</span></code> — Heat-bath selected CI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hessian.html">6.15. <code class="xref py py-mod docutils literal notranslate"><span class="pre">hessian</span></code> — Analytical nuclear Hessian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.html">6.16. <code class="xref py py-mod docutils literal notranslate"><span class="pre">lib</span></code> — Helper functions, parameters, and C extensions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.17. <code class="xref py py-mod docutils literal notranslate"><span class="pre">lo</span></code> — Orbital localization and analysis tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#examples">6.17.1. Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.lo">6.17.2. Program reference</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.lo.boys">6.17.3. Foster-Boys, Edmiston-Ruedenberg, Pipek-Mezey localization</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.lo.orth">6.17.4. Meta-Lowdin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.lo.nao">6.17.5. Natural atomic orbitals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.lo.iao">6.17.6. Intrinsic Atomic Orbitals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.lo.ibo">6.17.7. Intrinsic Bond Orbitals</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="mcscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mcscf</span></code> — Multi-configurational self-consistent field</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mp</span></code> — Second-Order Møller–Plesset Perturbation Theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mrpt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mrpt</span></code> — Multi-reference perturbation theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pbc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc</span></code> — Periodic boundary conditions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="prop.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">prop</span></code> — Molecular properties</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qmmm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">qmmm</span></code> — QM/MM interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">rt</span></code> — Real-time time-dependent density functional theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="scf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scf</span></code> — Self-consistent field methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="semiempirical.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">semiempirical</span></code> — Semiempirical methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sgx.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sgx</span></code> — Pseudo-spectral methods (COSX, PS, SN-K)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="solvent.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">solvent</span></code> — Solvent methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="soscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">soscf</span></code> — Second order SCF solver</a></li>
-<li class="toctree-l2"><a class="reference internal" href="symm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">symm</span></code> – Point group symmetry and spin symmetry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tdscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tdscf</span></code> — TDHF and TDDFT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tools.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> — Useful tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="x2c.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">x2c</span></code> — exact-two-component approach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mcscf.html">6.18. <code class="xref py py-mod docutils literal notranslate"><span class="pre">mcscf</span></code> — Multi-configurational self-consistent field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mp.html">6.19. <code class="xref py py-mod docutils literal notranslate"><span class="pre">mp</span></code> — Second-Order Møller–Plesset Perturbation Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mrpt.html">6.20. <code class="xref py py-mod docutils literal notranslate"><span class="pre">mrpt</span></code> — Multi-reference perturbation theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pbc.html">6.21. <code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc</span></code> — Periodic boundary conditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prop.html">6.22. <code class="xref py py-mod docutils literal notranslate"><span class="pre">prop</span></code> — Molecular properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qmmm.html">6.23. <code class="xref py py-mod docutils literal notranslate"><span class="pre">qmmm</span></code> — QM/MM interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rt.html">6.24. <code class="xref py py-mod docutils literal notranslate"><span class="pre">rt</span></code> — Real-time time-dependent density functional theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scf.html">6.25. <code class="xref py py-mod docutils literal notranslate"><span class="pre">scf</span></code> — Self-consistent field methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="semiempirical.html">6.26. <code class="xref py py-mod docutils literal notranslate"><span class="pre">semiempirical</span></code> — Semiempirical methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sgx.html">6.27. <code class="xref py py-mod docutils literal notranslate"><span class="pre">sgx</span></code> — Pseudo-spectral methods (COSX, PS, SN-K)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="solvent.html">6.28. <code class="xref py py-mod docutils literal notranslate"><span class="pre">solvent</span></code> — Solvent methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soscf.html">6.29. <code class="xref py py-mod docutils literal notranslate"><span class="pre">soscf</span></code> — Second order SCF solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symm.html">6.30. <code class="xref py py-mod docutils literal notranslate"><span class="pre">symm</span></code> – Point group symmetry and spin symmetry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tdscf.html">6.31. <code class="xref py py-mod docutils literal notranslate"><span class="pre">tdscf</span></code> — TDHF and TDDFT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html">6.32. <code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> — Useful tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x2c.html">6.33. <code class="xref py py-mod docutils literal notranslate"><span class="pre">x2c</span></code> — exact-two-component approach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eph.html">6.34. <code class="xref py py-mod docutils literal notranslate"><span class="pre">eph</span></code> — First order electron phonon coupling matrix</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../interface.html">Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interface.html">7. Interfaces</a></li>
 </ul>
 
             
@@ -199,9 +189,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../modules.html">Main modules</a> &raquo;</li>
+          <li><a href="../modules.html"><span class="section-number">6. </span>API documentation</a> &raquo;</li>
         
-      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">lo</span></code> — Orbital localization and analysis tools</li>
+      <li><span class="section-number">6.17. </span><code class="xref py py-mod docutils literal notranslate"><span class="pre">lo</span></code> — Orbital localization and analysis tools</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -221,7 +211,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="lo-orbital-localization-and-analysis-tools">
-<span id="lo"></span><h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">lo</span></code> — Orbital localization and analysis tools<a class="headerlink" href="#lo-orbital-localization-and-analysis-tools" title="Permalink to this headline">¶</a></h1>
+<span id="lo"></span><h1><span class="section-number">6.17. </span><code class="xref py py-mod docutils literal notranslate"><span class="pre">lo</span></code> — Orbital localization and analysis tools<a class="headerlink" href="#lo-orbital-localization-and-analysis-tools" title="Permalink to this headline">¶</a></h1>
 <p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">lo</span></code> module implements various orbital localizations, such
 as intrinsic atomic orbitals and natural atomic orbitals.</p>
 <p>For example, to obtain the natural atomic orbital coefficients (in terms
@@ -243,7 +233,7 @@ of the original atomic orbitals):</p>
 </pre></div>
 </div>
 <div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.17.1. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/local_orb/01-pop_with_meta_lowdin.py">examples/local_orb/01-pop_with_meta_lowdin.py</a></p></li>
 <li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/local_orb/01-pop_with_nao.py">examples/local_orb/01-pop_with_nao.py</a></p></li>
@@ -261,10 +251,10 @@ of the original atomic orbitals):</p>
 </ul>
 </div>
 <div class="section" id="module-pyscf.lo">
-<span id="program-reference"></span><h2>Program reference<a class="headerlink" href="#module-pyscf.lo" title="Permalink to this headline">¶</a></h2>
+<span id="program-reference"></span><h2><span class="section-number">6.17.2. </span>Program reference<a class="headerlink" href="#module-pyscf.lo" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="module-pyscf.lo.boys">
-<span id="foster-boys-edmiston-ruedenberg-pipek-mezey-localization"></span><h2>Foster-Boys, Edmiston-Ruedenberg, Pipek-Mezey localization<a class="headerlink" href="#module-pyscf.lo.boys" title="Permalink to this headline">¶</a></h2>
+<span id="foster-boys-edmiston-ruedenberg-pipek-mezey-localization"></span><h2><span class="section-number">6.17.3. </span>Foster-Boys, Edmiston-Ruedenberg, Pipek-Mezey localization<a class="headerlink" href="#module-pyscf.lo.boys" title="Permalink to this headline">¶</a></h2>
 <p>Foster-Boys localization</p>
 <dl class="py attribute">
 <dt id="pyscf.lo.boys.BF">
@@ -495,7 +485,7 @@ localization of site-based population for hubbard model.</p>
 
 </div>
 <div class="section" id="module-pyscf.lo.orth">
-<span id="meta-lowdin"></span><h2>Meta-Lowdin<a class="headerlink" href="#module-pyscf.lo.orth" title="Permalink to this headline">¶</a></h2>
+<span id="meta-lowdin"></span><h2><span class="section-number">6.17.4. </span>Meta-Lowdin<a class="headerlink" href="#module-pyscf.lo.orth" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="pyscf.lo.orth.lowdin">
 <code class="sig-prename descclassname"><span class="pre">pyscf.lo.orth.</span></code><code class="sig-name descname"><span class="pre">lowdin</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/lo/orth.html#lowdin"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.lo.orth.lowdin" title="Permalink to this definition">¶</a></dt>
@@ -586,7 +576,7 @@ projection or fraction-averaged atomic RHF calculation</p>
 
 </div>
 <div class="section" id="module-pyscf.lo.nao">
-<span id="natural-atomic-orbitals"></span><h2>Natural atomic orbitals<a class="headerlink" href="#module-pyscf.lo.nao" title="Permalink to this headline">¶</a></h2>
+<span id="natural-atomic-orbitals"></span><h2><span class="section-number">6.17.5. </span>Natural atomic orbitals<a class="headerlink" href="#module-pyscf.lo.nao" title="Permalink to this headline">¶</a></h2>
 <p>Natural atomic orbitals
 Ref:</p>
 <blockquote>
@@ -620,7 +610,7 @@ See data/elements.py for the default configuration.</p>
 
 </div>
 <div class="section" id="module-pyscf.lo.iao">
-<span id="intrinsic-atomic-orbitals"></span><h2>Intrinsic Atomic Orbitals<a class="headerlink" href="#module-pyscf.lo.iao" title="Permalink to this headline">¶</a></h2>
+<span id="intrinsic-atomic-orbitals"></span><h2><span class="section-number">6.17.6. </span>Intrinsic Atomic Orbitals<a class="headerlink" href="#module-pyscf.lo.iao" title="Permalink to this headline">¶</a></h2>
 <p>Intrinsic Atomic Orbitals
 ref. JCTC, 9, 4834</p>
 <dl class="py function">
@@ -668,7 +658,7 @@ eg using <code class="xref py py-func docutils literal notranslate"><span class=
 
 </div>
 <div class="section" id="module-pyscf.lo.ibo">
-<span id="intrinsic-bond-orbitals"></span><h2>Intrinsic Bond Orbitals<a class="headerlink" href="#module-pyscf.lo.ibo" title="Permalink to this headline">¶</a></h2>
+<span id="intrinsic-bond-orbitals"></span><h2><span class="section-number">6.17.7. </span>Intrinsic Bond Orbitals<a class="headerlink" href="#module-pyscf.lo.ibo" title="Permalink to this headline">¶</a></h2>
 <p>Intrinsic Bonding Orbitals
 ref. JCTC, 9, 4834</p>
 <p>Below here is work done by Paul Robinson.
@@ -814,8 +804,8 @@ module was used to maximize the IAO Mulliken charges.</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="mcscf.html" class="btn btn-neutral float-right" title="mcscf — Multi-configurational self-consistent field" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="lib.html" class="btn btn-neutral float-left" title="lib — Helper functions, parameters, and C extensions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="mcscf.html" class="btn btn-neutral float-right" title="6.18. mcscf — Multi-configurational self-consistent field" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="lib.html" class="btn btn-neutral float-left" title="6.16. lib — Helper functions, parameters, and C extensions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

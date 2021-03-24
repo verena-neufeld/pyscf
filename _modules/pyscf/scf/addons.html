@@ -86,25 +86,14 @@
               
             
             
-              <p class="caption"><span class="caption-text">User documentation</span></p>
-<ul>
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../overview.html">1. An overview of PySCF</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../version.html">2. Version history</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../install.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../benchmark.html">4. Benchmark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../tutorial.html">5. Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../theory.html">6. Theoretical methods</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Developer documentation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../code-rule.html">Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../develop.html">Guidelines for module development</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../advanced.html">Miscellaneous</a></li>
-</ul>
-<p class="caption"><span class="caption-text">API documentation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">Main modules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../interface.html">Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial.html">3. Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user.html">4. User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../develop.html">5. Developer documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">6. API documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface.html">7. Interfaces</a></li>
 </ul>
 
             
@@ -207,6 +196,7 @@
 <span class="n">CHOLESKY_THRESHOLD</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">__config__</span><span class="p">,</span> <span class="s1">&#39;scf_addons_cholesky_threshold&#39;</span><span class="p">,</span> <span class="mf">1e-10</span><span class="p">)</span>
 <span class="n">LINEAR_DEP_TRIGGER</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">__config__</span><span class="p">,</span> <span class="s1">&#39;scf_addons_remove_linear_dep_trigger&#39;</span><span class="p">,</span> <span class="mf">1e-10</span><span class="p">)</span>
 
+
 <div class="viewcode-block" id="frac_occ_"><a class="viewcode-back" href="../../../modules/scf.html#pyscf.scf.addons.frac_occ_">[docs]</a><span class="k">def</span> <span class="nf">frac_occ_</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Addons for SCF methods to assign fractional occupancy for degenerated</span>
@@ -222,16 +212,21 @@
     <span class="n">mol</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">mol</span>
 
     <span class="k">def</span> <span class="nf">guess_occ</span><span class="p">(</span><span class="n">mo_energy</span><span class="p">,</span> <span class="n">nocc</span><span class="p">):</span>
-        <span class="n">sorted_idx</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">mo_energy</span><span class="p">)</span>
-        <span class="n">homo</span> <span class="o">=</span> <span class="n">mo_energy</span><span class="p">[</span><span class="n">sorted_idx</span><span class="p">[</span><span class="n">nocc</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
-        <span class="n">lumo</span> <span class="o">=</span> <span class="n">mo_energy</span><span class="p">[</span><span class="n">sorted_idx</span><span class="p">[</span><span class="n">nocc</span><span class="p">]]</span>
-        <span class="n">frac_occ_lst</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">mo_energy</span> <span class="o">-</span> <span class="n">homo</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">tol</span>
-        <span class="n">integer_occ_lst</span> <span class="o">=</span> <span class="p">(</span><span class="n">mo_energy</span> <span class="o">&lt;=</span> <span class="n">homo</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="o">~</span><span class="n">frac_occ_lst</span><span class="p">)</span>
         <span class="n">mo_occ</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">mo_energy</span><span class="p">)</span>
-        <span class="n">mo_occ</span><span class="p">[</span><span class="n">integer_occ_lst</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-        <span class="n">degen</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">frac_occ_lst</span><span class="p">)</span>
-        <span class="n">frac</span> <span class="o">=</span> <span class="n">nocc</span> <span class="o">-</span> <span class="n">numpy</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">integer_occ_lst</span><span class="p">)</span>
-        <span class="n">mo_occ</span><span class="p">[</span><span class="n">frac_occ_lst</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">frac</span><span class="p">)</span> <span class="o">/</span> <span class="n">degen</span>
+        <span class="k">if</span> <span class="n">nocc</span><span class="p">:</span>
+            <span class="n">sorted_idx</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">mo_energy</span><span class="p">)</span>
+            <span class="n">homo</span> <span class="o">=</span> <span class="n">mo_energy</span><span class="p">[</span><span class="n">sorted_idx</span><span class="p">[</span><span class="n">nocc</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+            <span class="n">lumo</span> <span class="o">=</span> <span class="n">mo_energy</span><span class="p">[</span><span class="n">sorted_idx</span><span class="p">[</span><span class="n">nocc</span><span class="p">]]</span>
+            <span class="n">frac_occ_lst</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">mo_energy</span> <span class="o">-</span> <span class="n">homo</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">tol</span>
+            <span class="n">integer_occ_lst</span> <span class="o">=</span> <span class="p">(</span><span class="n">mo_energy</span> <span class="o">&lt;=</span> <span class="n">homo</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="o">~</span><span class="n">frac_occ_lst</span><span class="p">)</span>
+            <span class="n">mo_occ</span><span class="p">[</span><span class="n">integer_occ_lst</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="n">degen</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">frac_occ_lst</span><span class="p">)</span>
+            <span class="n">frac</span> <span class="o">=</span> <span class="n">nocc</span> <span class="o">-</span> <span class="n">numpy</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">integer_occ_lst</span><span class="p">)</span>
+            <span class="n">mo_occ</span><span class="p">[</span><span class="n">frac_occ_lst</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">frac</span><span class="p">)</span> <span class="o">/</span> <span class="n">degen</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">homo</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="n">lumo</span> <span class="o">=</span> <span class="mf">0.0</span>
+            <span class="n">frac_occ_lst</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">mo_energy</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">mo_occ</span><span class="p">,</span> <span class="n">numpy</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">frac_occ_lst</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">homo</span><span class="p">,</span> <span class="n">lumo</span>
 
     <span class="n">get_grad</span> <span class="o">=</span> <span class="kc">None</span>
@@ -244,14 +239,20 @@
 
             <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">homoa</span> <span class="o">-</span> <span class="n">lumoa</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">tol</span> <span class="ow">or</span> <span class="nb">abs</span><span class="p">(</span><span class="n">homob</span> <span class="o">-</span> <span class="n">lumob</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">tol</span><span class="p">:</span>
                 <span class="n">mo_occ</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">mo_occa</span><span class="p">,</span> <span class="n">mo_occb</span><span class="p">])</span>
-                <span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="s1">&#39;fraction occ = </span><span class="si">%6g</span><span class="s1"> for alpha orbitals </span><span class="si">%s</span><span class="s1">  &#39;</span>
-                            <span class="s1">&#39;</span><span class="si">%6g</span><span class="s1"> for beta orbitals </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span>
-                            <span class="n">mo_occa</span><span class="p">[</span><span class="n">frac_lsta</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">frac_lsta</span><span class="p">,</span>
-                            <span class="n">mo_occb</span><span class="p">[</span><span class="n">frac_lstb</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">frac_lstb</span><span class="p">)</span>
-                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="s1">&#39;  alpha HOMO = </span><span class="si">%.12g</span><span class="s1">  LUMO = </span><span class="si">%.12g</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">homoa</span><span class="p">,</span> <span class="n">lumoa</span><span class="p">)</span>
-                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="s1">&#39;  beta  HOMO = </span><span class="si">%.12g</span><span class="s1">  LUMO = </span><span class="si">%.12g</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">homob</span><span class="p">,</span> <span class="n">lumob</span><span class="p">)</span>
-                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="s1">&#39;  alpha mo_energy = </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">mo_energy</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="s1">&#39;  beta  mo_energy = </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">mo_energy</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">frac_lstb</span><span class="p">):</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="s1">&#39;fraction occ = </span><span class="si">%6g</span><span class="s1"> for alpha orbitals </span><span class="si">%s</span><span class="s1">  &#39;</span>
+                                <span class="s1">&#39;</span><span class="si">%6g</span><span class="s1"> for beta orbitals </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span>
+                                <span class="n">mo_occa</span><span class="p">[</span><span class="n">frac_lsta</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">frac_lsta</span><span class="p">,</span>
+                                <span class="n">mo_occb</span><span class="p">[</span><span class="n">frac_lstb</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">frac_lstb</span><span class="p">)</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="s1">&#39;  alpha HOMO = </span><span class="si">%.12g</span><span class="s1">  LUMO = </span><span class="si">%.12g</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">homoa</span><span class="p">,</span> <span class="n">lumoa</span><span class="p">)</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="s1">&#39;  beta  HOMO = </span><span class="si">%.12g</span><span class="s1">  LUMO = </span><span class="si">%.12g</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">homob</span><span class="p">,</span> <span class="n">lumob</span><span class="p">)</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="s1">&#39;  alpha mo_energy = </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">mo_energy</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="s1">&#39;  beta  mo_energy = </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">mo_energy</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="s1">&#39;fraction occ = </span><span class="si">%6g</span><span class="s1"> for alpha orbitals </span><span class="si">%s</span><span class="s1">  &#39;</span><span class="p">,</span>
+                                <span class="n">mo_occa</span><span class="p">[</span><span class="n">frac_lsta</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">frac_lsta</span><span class="p">)</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="s1">&#39;  alpha HOMO = </span><span class="si">%.12g</span><span class="s1">  LUMO = </span><span class="si">%.12g</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">homoa</span><span class="p">,</span> <span class="n">lumoa</span><span class="p">)</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="s1">&#39;  alpha mo_energy = </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">mo_energy</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">mo_occ</span> <span class="o">=</span> <span class="n">old_get_occ</span><span class="p">(</span><span class="n">mo_energy</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">mo_occ</span>
@@ -264,12 +265,18 @@
 
             <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">homoa</span> <span class="o">-</span> <span class="n">lumoa</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">tol</span> <span class="ow">or</span> <span class="nb">abs</span><span class="p">(</span><span class="n">homob</span> <span class="o">-</span> <span class="n">lumob</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">tol</span><span class="p">:</span>
                 <span class="n">mo_occ</span> <span class="o">=</span> <span class="n">mo_occa</span> <span class="o">+</span> <span class="n">mo_occb</span>
-                <span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="s1">&#39;fraction occ = </span><span class="si">%6g</span><span class="s1"> for alpha orbitals </span><span class="si">%s</span><span class="s1">  &#39;</span>
-                            <span class="s1">&#39;</span><span class="si">%6g</span><span class="s1"> for beta orbitals </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span>
-                            <span class="n">mo_occa</span><span class="p">[</span><span class="n">frac_lsta</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">frac_lsta</span><span class="p">,</span>
-                            <span class="n">mo_occb</span><span class="p">[</span><span class="n">frac_lstb</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">frac_lstb</span><span class="p">)</span>
-                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="s1">&#39;  HOMO = </span><span class="si">%.12g</span><span class="s1">  LUMO = </span><span class="si">%.12g</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">homoa</span><span class="p">,</span> <span class="n">lumoa</span><span class="p">)</span>
-                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="s1">&#39;  mo_energy = </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">mo_energy</span><span class="p">)</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">frac_lstb</span><span class="p">):</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="s1">&#39;fraction occ = </span><span class="si">%6g</span><span class="s1"> for alpha orbitals </span><span class="si">%s</span><span class="s1">  &#39;</span>
+                                <span class="s1">&#39;</span><span class="si">%6g</span><span class="s1"> for beta orbitals </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span>
+                                <span class="n">mo_occa</span><span class="p">[</span><span class="n">frac_lsta</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">frac_lsta</span><span class="p">,</span>
+                                <span class="n">mo_occb</span><span class="p">[</span><span class="n">frac_lstb</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">frac_lstb</span><span class="p">)</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="s1">&#39;  HOMO = </span><span class="si">%.12g</span><span class="s1">  LUMO = </span><span class="si">%.12g</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">homoa</span><span class="p">,</span> <span class="n">lumoa</span><span class="p">)</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="s1">&#39;  mo_energy = </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">mo_energy</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="s1">&#39;fraction occ = </span><span class="si">%6g</span><span class="s1"> for alpha orbitals </span><span class="si">%s</span><span class="s1">  &#39;</span><span class="p">,</span>
+                                <span class="n">mo_occa</span><span class="p">[</span><span class="n">frac_lsta</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">frac_lsta</span><span class="p">)</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="s1">&#39;  HOMO = </span><span class="si">%.12g</span><span class="s1">  LUMO = </span><span class="si">%.12g</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">homoa</span><span class="p">,</span> <span class="n">lumoa</span><span class="p">)</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="s1">&#39;  mo_energy = </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">mo_energy</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">mo_occ</span> <span class="o">=</span> <span class="n">old_get_occ</span><span class="p">(</span><span class="n">mo_energy</span><span class="p">,</span> <span class="n">mo_coeff</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">mo_occ</span>

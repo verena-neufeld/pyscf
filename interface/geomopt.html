@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>geomopt — Geometry optimization &mdash; PySCF 1.7.6 documentation</title>
+  <title>7.2. geomopt — Geometry optimization &mdash; PySCF 1.7.6 documentation</title>
   
 
   
@@ -38,8 +38,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="dmrgscf — DMRG and DMRG-SCF/CASSCF" href="dmrgscf.html" />
-    <link rel="prev" title="dftd3 — DFT with D3 dispersion correction" href="dftd3.html" /> 
+    <link rel="next" title="7.3. dmrgscf — DMRG and DMRG-SCF/CASSCF" href="dmrgscf.html" />
+    <link rel="prev" title="7.1. dftd3 — DFT with D3 dispersion correction" href="dftd3.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,37 +88,26 @@
               
             
             
-              <p class="caption"><span class="caption-text">User documentation</span></p>
-<ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">1. An overview of PySCF</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../version.html">2. Version history</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../install.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../benchmark.html">4. Benchmark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">5. Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../theory.html">6. Theoretical methods</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Developer documentation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../code-rule.html">Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../develop.html">Guidelines for module development</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced.html">Miscellaneous</a></li>
-</ul>
-<p class="caption"><span class="caption-text">API documentation</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../modules.html">Main modules</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../interface.html">Interfaces</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="dftd3.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dftd3</span></code> — DFT with D3 dispersion correction</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">geomopt</span></code> — Geometry optimization</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.geomopt.berny_solver">Program reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">3. Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user.html">4. User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop.html">5. Developer documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">6. API documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../interface.html">7. Interfaces</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dftd3.html">7.1. <code class="xref py py-mod docutils literal notranslate"><span class="pre">dftd3</span></code> — DFT with D3 dispersion correction</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7.2. <code class="xref py py-mod docutils literal notranslate"><span class="pre">geomopt</span></code> — Geometry optimization</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#examples">7.2.1. Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.geomopt.berny_solver">7.2.2. Program reference</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="dmrgscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dmrgscf</span></code> — DMRG and DMRG-SCF/CASSCF</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fciqmcscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fciqmcscf</span></code> — Full configuration interaction quantum Monte Carlo (FCIQMC)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cornell_shci.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cornell_shci</span></code> — Semistochastic heat-bath configuration interaction (SHCI)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="shciscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">shciscf</span></code> — Semistochastic heat bath configuration interaction (SHCI)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="icmpspt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">icmpspt</span></code> — Internal-contracted MPS perturbation method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nao.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nao</span></code> — Numerical Atomic Orbitals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dmrgscf.html">7.3. <code class="xref py py-mod docutils literal notranslate"><span class="pre">dmrgscf</span></code> — DMRG and DMRG-SCF/CASSCF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fciqmcscf.html">7.4. <code class="xref py py-mod docutils literal notranslate"><span class="pre">fciqmcscf</span></code> — Full configuration interaction quantum Monte Carlo (FCIQMC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cornell_shci.html">7.5. <code class="xref py py-mod docutils literal notranslate"><span class="pre">cornell_shci</span></code> — Semistochastic heat-bath configuration interaction (SHCI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shciscf.html">7.6. <code class="xref py py-mod docutils literal notranslate"><span class="pre">shciscf</span></code> — Semistochastic heat bath configuration interaction (SHCI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="icmpspt.html">7.7. <code class="xref py py-mod docutils literal notranslate"><span class="pre">icmpspt</span></code> — Internal-contracted MPS perturbation method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nao.html">7.8. <code class="xref py py-mod docutils literal notranslate"><span class="pre">nao</span></code> — Numerical Atomic Orbitals</a></li>
 </ul>
 </li>
 </ul>
@@ -169,9 +158,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../interface.html">Interfaces</a> &raquo;</li>
+          <li><a href="../interface.html"><span class="section-number">7. </span>Interfaces</a> &raquo;</li>
         
-      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">geomopt</span></code> — Geometry optimization</li>
+      <li><span class="section-number">7.2. </span><code class="xref py py-mod docutils literal notranslate"><span class="pre">geomopt</span></code> — Geometry optimization</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -191,7 +180,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="geomopt-geometry-optimization">
-<span id="geomopt"></span><h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">geomopt</span></code> — Geometry optimization<a class="headerlink" href="#geomopt-geometry-optimization" title="Permalink to this headline">¶</a></h1>
+<span id="geomopt"></span><h1><span class="section-number">7.2. </span><code class="xref py py-mod docutils literal notranslate"><span class="pre">geomopt</span></code> — Geometry optimization<a class="headerlink" href="#geomopt-geometry-optimization" title="Permalink to this headline">¶</a></h1>
 <p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">geomopt</span></code> module implements geometry optimization via
 interfaces to <a class="reference external" href="https://github.com/leeping/geomeTRIC">geomeTRIC</a>
 and <a class="reference external" href="https://github.com/jhrmnn/pyberny">PyBerny</a>.
@@ -205,7 +194,7 @@ The following example shows how to optimize the structure of N<sub>2</sub> molec
 </pre></div>
 </div>
 <div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.2.1. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/geomopt/01-geomeTRIC.py">examples/geomopt/01-geomeTRIC.py</a></p></li>
 <li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/geomopt/01-pyberny.py">examples/geomopt/01-pyberny.py</a></p></li>
@@ -221,7 +210,7 @@ The following example shows how to optimize the structure of N<sub>2</sub> molec
 </ul>
 </div>
 <div class="section" id="module-pyscf.geomopt.berny_solver">
-<span id="program-reference"></span><h2>Program reference<a class="headerlink" href="#module-pyscf.geomopt.berny_solver" title="Permalink to this headline">¶</a></h2>
+<span id="program-reference"></span><h2><span class="section-number">7.2.2. </span>Program reference<a class="headerlink" href="#module-pyscf.geomopt.berny_solver" title="Permalink to this headline">¶</a></h2>
 <p>Interface to geometry optimizer pyberny <a class="reference external" href="https://github.com/jhrmnn/pyberny">https://github.com/jhrmnn/pyberny</a></p>
 <dl class="py class">
 <dt id="pyscf.geomopt.berny_solver.GeometryOptimizer">
@@ -315,8 +304,8 @@ geometry.</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="dmrgscf.html" class="btn btn-neutral float-right" title="dmrgscf — DMRG and DMRG-SCF/CASSCF" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="dftd3.html" class="btn btn-neutral float-left" title="dftd3 — DFT with D3 dispersion correction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="dmrgscf.html" class="btn btn-neutral float-right" title="7.3. dmrgscf — DMRG and DMRG-SCF/CASSCF" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="dftd3.html" class="btn btn-neutral float-left" title="7.1. dftd3 — DFT with D3 dispersion correction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

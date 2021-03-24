@@ -89,25 +89,14 @@
               
             
             
-              <p class="caption"><span class="caption-text">User documentation</span></p>
-<ul>
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">1. An overview of PySCF</a></li>
-<li class="toctree-l1"><a class="reference internal" href="version.html">2. Version history</a></li>
-<li class="toctree-l1"><a class="reference internal" href="install.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmark.html">4. Benchmark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tutorial.html">5. Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="theory.html">6. Theoretical methods</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Developer documentation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="code-rule.html">Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="develop.html">Guidelines for module development</a></li>
-<li class="toctree-l1"><a class="reference internal" href="advanced.html">Miscellaneous</a></li>
-</ul>
-<p class="caption"><span class="caption-text">API documentation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">Main modules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="interface.html">Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">3. Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user.html">4. User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="develop.html">5. Developer documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">6. API documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interface.html">7. Interfaces</a></li>
 </ul>
 
             
@@ -178,6 +167,7 @@
    <a href="#cap-a"><strong>a</strong></a> | 
    <a href="#cap-c"><strong>c</strong></a> | 
    <a href="#cap-d"><strong>d</strong></a> | 
+   <a href="#cap-e"><strong>e</strong></a> | 
    <a href="#cap-g"><strong>g</strong></a> | 
    <a href="#cap-l"><strong>l</strong></a> | 
    <a href="#cap-m"><strong>m</strong></a> | 
@@ -225,7 +215,7 @@ various permutational and spin symmetries.</em></td></tr>
      <tr>
        <td></td>
        <td>
-       <a href="modules/df.html#module-df"><code class="xref">df</code></a></td><td>
+       <a href="user/df.html#module-df"><code class="xref">df</code></a></td><td>
        <em>Density fitting and RI approximation</em></td></tr>
      <tr>
        <td></td>
@@ -243,6 +233,14 @@ various permutational and spin symmetries.</em></td></tr>
        <a href="modules/doci.html#module-doci"><code class="xref">doci</code></a></td><td>
        <em></em></td></tr>
      <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
+     <tr class="cap" id="cap-e"><td></td><td>
+       <strong>e</strong></td><td></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="modules/eph.html#module-eph"><code class="xref">eph</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
      <tr class="cap" id="cap-g"><td></td><td>
        <strong>g</strong></td><td></td></tr>
      <tr>
@@ -250,6 +248,11 @@ various permutational and spin symmetries.</em></td></tr>
        <td>
        <a href="modules/grad.html#module-grad"><code class="xref">grad</code></a></td><td>
        <em></em></td></tr>
+     <tr>
+       <td></td>
+       <td>
+       <a href="modules/gto.html#module-gto"><code class="xref">gto</code></a></td><td>
+       <em>Molecular structure and GTO basis</em></td></tr>
      <tr>
        <td></td>
        <td>
@@ -290,6 +293,11 @@ various permutational and spin symmetries.</em></td></tr>
        <td>&#160;&#160;&#160;
        <a href="modules/pbc/dft.html#module-pbc.dft"><code class="xref">pbc.dft</code></a></td><td>
        <em>Density functional theory with periodic boundary conditions</em></td></tr>
+     <tr class="cg-1">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="modules/pbc/gto.html#module-pbc.gto"><code class="xref">pbc.gto</code></a></td><td>
+       <em>Crystal cell structure and crystalline GTO integration</em></td></tr>
      <tr class="cg-1">
        <td></td>
        <td>&#160;&#160;&#160;
@@ -405,11 +413,6 @@ various permutational and spin symmetries.</em></td></tr>
        <td></td>
        <td>&#160;&#160;&#160;
        <a href="modules/ci.html#module-pyscf.ci.ucisd"><code class="xref">pyscf.ci.ucisd</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-2">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="interface/cornell_shci.html#module-pyscf.cornell_shci.shci"><code class="xref">pyscf.cornell_shci.shci</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-2">
        <td></td>
@@ -564,32 +567,7 @@ various permutational and spin symmetries.</em></td></tr>
      <tr class="cg-2">
        <td></td>
        <td>&#160;&#160;&#160;
-       <a href="interface/dftd3.html#module-pyscf.dftd3.itrf"><code class="xref">pyscf.dftd3.itrf</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-2">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="interface/dmrgscf.html#module-pyscf.dmrgscf"><code class="xref">pyscf.dmrgscf</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-2">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="interface/dmrgscf.html#module-pyscf.dmrgscf.chemps2"><code class="xref">pyscf.dmrgscf.chemps2</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-2">
-       <td></td>
-       <td>&#160;&#160;&#160;
        <a href="interface/dmrgscf.html#module-pyscf.dmrgscf.dmrg_sym"><code class="xref">pyscf.dmrgscf.dmrg_sym</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-2">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="interface/dmrgscf.html#module-pyscf.dmrgscf.dmrgci"><code class="xref">pyscf.dmrgscf.dmrgci</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-2">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="interface/dmrgscf.html#module-pyscf.dmrgscf.nevpt_mpi"><code class="xref">pyscf.dmrgscf.nevpt_mpi</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-2">
        <td></td>
@@ -605,6 +583,36 @@ various permutational and spin symmetries.</em></td></tr>
        <td></td>
        <td>&#160;&#160;&#160;
        <a href="modules/doci.html#module-pyscf.doci.doci_slow"><code class="xref">pyscf.doci.doci_slow</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-2">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="modules/eph.html#module-pyscf.eph"><code class="xref">pyscf.eph</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-2">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="modules/eph.html#module-pyscf.eph.eph_fd"><code class="xref">pyscf.eph.eph_fd</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-2">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="modules/eph.html#module-pyscf.eph.rhf"><code class="xref">pyscf.eph.rhf</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-2">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="modules/eph.html#module-pyscf.eph.rks"><code class="xref">pyscf.eph.rks</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-2">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="modules/eph.html#module-pyscf.eph.uhf"><code class="xref">pyscf.eph.uhf</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-2">
+       <td></td>
+       <td>&#160;&#160;&#160;
+       <a href="modules/eph.html#module-pyscf.eph.uks"><code class="xref">pyscf.eph.uks</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-2">
        <td></td>
@@ -1179,6 +1187,11 @@ various permutational and spin symmetries.</em></td></tr>
      <tr class="cg-2">
        <td></td>
        <td>&#160;&#160;&#160;
+       <a href="modules/pbc/gto.html#module-pyscf.pbc.gto.eval_gto"><code class="xref">pyscf.pbc.gto.eval_gto</code></a></td><td>
+       <em></em></td></tr>
+     <tr class="cg-2">
+       <td></td>
+       <td>&#160;&#160;&#160;
        <a href="modules/pbc/gw.html#module-pyscf.pbc.gw.kgw_slow"><code class="xref">pyscf.pbc.gw.kgw_slow</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-2">
@@ -1715,11 +1728,6 @@ various permutational and spin symmetries.</em></td></tr>
        <td></td>
        <td>&#160;&#160;&#160;
        <a href="interface/shciscf.html#module-pyscf.shciscf"><code class="xref">pyscf.shciscf</code></a></td><td>
-       <em></em></td></tr>
-     <tr class="cg-2">
-       <td></td>
-       <td>&#160;&#160;&#160;
-       <a href="interface/shciscf.html#module-pyscf.shciscf.shci"><code class="xref">pyscf.shciscf.shci</code></a></td><td>
        <em></em></td></tr>
      <tr class="cg-2">
        <td></td>

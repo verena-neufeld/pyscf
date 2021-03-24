@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>cornell_shci — Semistochastic heat-bath configuration interaction (SHCI) &mdash; PySCF 1.7.6 documentation</title>
+  <title>7.5. cornell_shci — Semistochastic heat-bath configuration interaction (SHCI) &mdash; PySCF 1.7.6 documentation</title>
   
 
   
@@ -38,8 +38,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="shciscf — Semistochastic heat bath configuration interaction (SHCI)" href="shciscf.html" />
-    <link rel="prev" title="fciqmcscf — Full configuration interaction quantum Monte Carlo (FCIQMC)" href="fciqmcscf.html" /> 
+    <link rel="next" title="7.6. shciscf — Semistochastic heat bath configuration interaction (SHCI)" href="shciscf.html" />
+    <link rel="prev" title="7.4. fciqmcscf — Full configuration interaction quantum Monte Carlo (FCIQMC)" href="fciqmcscf.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,36 +88,25 @@
               
             
             
-              <p class="caption"><span class="caption-text">User documentation</span></p>
-<ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">1. An overview of PySCF</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../version.html">2. Version history</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../install.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../benchmark.html">4. Benchmark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">5. Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../theory.html">6. Theoretical methods</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Developer documentation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../code-rule.html">Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../develop.html">Guidelines for module development</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced.html">Miscellaneous</a></li>
-</ul>
-<p class="caption"><span class="caption-text">API documentation</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../modules.html">Main modules</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../interface.html">Interfaces</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="dftd3.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dftd3</span></code> — DFT with D3 dispersion correction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="geomopt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">geomopt</span></code> — Geometry optimization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dmrgscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dmrgscf</span></code> — DMRG and DMRG-SCF/CASSCF</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fciqmcscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fciqmcscf</span></code> — Full configuration interaction quantum Monte Carlo (FCIQMC)</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cornell_shci</span></code> — Semistochastic heat-bath configuration interaction (SHCI)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.cornell_shci.shci">Program reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">3. Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user.html">4. User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop.html">5. Developer documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">6. API documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../interface.html">7. Interfaces</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dftd3.html">7.1. <code class="xref py py-mod docutils literal notranslate"><span class="pre">dftd3</span></code> — DFT with D3 dispersion correction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geomopt.html">7.2. <code class="xref py py-mod docutils literal notranslate"><span class="pre">geomopt</span></code> — Geometry optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dmrgscf.html">7.3. <code class="xref py py-mod docutils literal notranslate"><span class="pre">dmrgscf</span></code> — DMRG and DMRG-SCF/CASSCF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fciqmcscf.html">7.4. <code class="xref py py-mod docutils literal notranslate"><span class="pre">fciqmcscf</span></code> — Full configuration interaction quantum Monte Carlo (FCIQMC)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7.5. <code class="xref py py-mod docutils literal notranslate"><span class="pre">cornell_shci</span></code> — Semistochastic heat-bath configuration interaction (SHCI)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#program-reference">7.5.1. Program reference</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="shciscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">shciscf</span></code> — Semistochastic heat bath configuration interaction (SHCI)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="icmpspt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">icmpspt</span></code> — Internal-contracted MPS perturbation method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nao.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nao</span></code> — Numerical Atomic Orbitals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shciscf.html">7.6. <code class="xref py py-mod docutils literal notranslate"><span class="pre">shciscf</span></code> — Semistochastic heat bath configuration interaction (SHCI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="icmpspt.html">7.7. <code class="xref py py-mod docutils literal notranslate"><span class="pre">icmpspt</span></code> — Internal-contracted MPS perturbation method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nao.html">7.8. <code class="xref py py-mod docutils literal notranslate"><span class="pre">nao</span></code> — Numerical Atomic Orbitals</a></li>
 </ul>
 </li>
 </ul>
@@ -168,9 +157,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../interface.html">Interfaces</a> &raquo;</li>
+          <li><a href="../interface.html"><span class="section-number">7. </span>Interfaces</a> &raquo;</li>
         
-      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">cornell_shci</span></code> — Semistochastic heat-bath configuration interaction (SHCI)</li>
+      <li><span class="section-number">7.5. </span><code class="xref py py-mod docutils literal notranslate"><span class="pre">cornell_shci</span></code> — Semistochastic heat-bath configuration interaction (SHCI)</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -190,104 +179,13 @@
            <div itemprop="articleBody">
             
   <div class="section" id="cornell-shci-semistochastic-heat-bath-configuration-interaction-shci">
-<span id="cornell-shci"></span><h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">cornell_shci</span></code> — Semistochastic heat-bath configuration interaction (SHCI)<a class="headerlink" href="#cornell-shci-semistochastic-heat-bath-configuration-interaction-shci" title="Permalink to this headline">¶</a></h1>
+<span id="cornell-shci"></span><h1><span class="section-number">7.5. </span><code class="xref py py-mod docutils literal notranslate"><span class="pre">cornell_shci</span></code> — Semistochastic heat-bath configuration interaction (SHCI)<a class="headerlink" href="#cornell-shci-semistochastic-heat-bath-configuration-interaction-shci" title="Permalink to this headline">¶</a></h1>
 <p>An interface to the Cornell Arrow program:
 <a class="reference external" href="https://github.com/QMC-Cornell/shci">Fast Semistochastic Heat Bath Configuration Interaction (SHCI)</a>.
 To perform a SHCI calculation, one needs to first modify pyscf/cornell_shci/settings.py
 to specify the SHCI program excutable.</p>
-<div class="section" id="module-pyscf.cornell_shci.shci">
-<span id="program-reference"></span><h2>Program reference<a class="headerlink" href="#module-pyscf.cornell_shci.shci" title="Permalink to this headline">¶</a></h2>
-<p>SHCI solver for CASCI and CASSCF.</p>
-<p>Cornell SHCI program Arrow is developed by Cyrus Umrigar, Junhao Li.  You’ll
-need to contact Cyrus Umrigar to get the program.</p>
-<dl class="py class">
-<dt id="pyscf.cornell_shci.shci.NpEncoder">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.cornell_shci.shci.</span></code><code class="sig-name descname"><span class="pre">NpEncoder</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skipkeys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ensure_ascii</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">check_circular</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_nan</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separators</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cornell_shci/shci.html#NpEncoder"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.cornell_shci.shci.NpEncoder" title="Permalink to this definition">¶</a></dt>
-<dd><p>Used for dump numpy objects in python3.</p>
-<dl class="py method">
-<dt id="pyscf.cornell_shci.shci.NpEncoder.default">
-<code class="sig-name descname"><span class="pre">default</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cornell_shci/shci.html#NpEncoder.default"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.cornell_shci.shci.NpEncoder.default" title="Permalink to this definition">¶</a></dt>
-<dd><p>Implement this method in a subclass such that it returns
-a serializable object for <code class="docutils literal notranslate"><span class="pre">o</span></code>, or calls the base implementation
-(to raise a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>).</p>
-<p>For example, to support arbitrary iterators, you could
-implement default like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">o</span><span class="p">):</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">iterable</span> <span class="o">=</span> <span class="nb">iter</span><span class="p">(</span><span class="n">o</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
-        <span class="k">pass</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">iterable</span><span class="p">)</span>
-    <span class="c1"># Let the base class default method raise the TypeError</span>
-    <span class="k">return</span> <span class="n">JSONEncoder</span><span class="o">.</span><span class="n">default</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">o</span><span class="p">)</span>
-</pre></div>
-</div>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py class">
-<dt id="pyscf.cornell_shci.shci.SHCI">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.cornell_shci.shci.</span></code><code class="sig-name descname"><span class="pre">SHCI</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cornell_shci/shci.html#SHCI"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.cornell_shci.shci.SHCI" title="Permalink to this definition">¶</a></dt>
-<dd><p>SHCI program interface and object to hold SHCI program input
-parameters.</p>
-<p>See also the homepage of the SHCI program.
-<a class="reference external" href="https://github.com/jl2922/shci">https://github.com/jl2922/shci</a></p>
-<p>Attributes:</p>
-<p>Examples:</p>
-<dl class="py method">
-<dt id="pyscf.cornell_shci.shci.SHCI.kernel">
-<code class="sig-name descname"><span class="pre">kernel</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h1e</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eri</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nelec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ci0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecore</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cornell_shci/shci.html#SHCI.kernel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.cornell_shci.shci.SHCI.kernel" title="Permalink to this definition">¶</a></dt>
-<dd><p>Kernel function is the main driver of a method.  Every method should
-define the kernel function as the entry of the calculation.  Note the
-return value of kernel function is not strictly defined.  It can be
-anything related to the method (such as the energy, the wave-function,
-the DFT mesh grids etc.).</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py function">
-<dt id="pyscf.cornell_shci.shci.SHCISCF">
-<code class="sig-prename descclassname"><span class="pre">pyscf.cornell_shci.shci.</span></code><code class="sig-name descname"><span class="pre">SHCISCF</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">norb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nelec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cornell_shci/shci.html#SHCISCF"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.cornell_shci.shci.SHCISCF" title="Permalink to this definition">¶</a></dt>
-<dd><p>Shortcut function to setup CASSCF using the SHCI solver.  The SHCI
-solver is properly initialized in this function so that the 1-step
-algorithm can be applied with SHCI-CASSCF.</p>
-<p>Examples:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf.cornell_shci</span> <span class="kn">import</span> <span class="n">shci</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;C 0 0 0; C 0 0 1&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span> <span class="o">=</span> <span class="n">shci</span><span class="o">.</span><span class="n">SHCISCF</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py function">
-<dt id="pyscf.cornell_shci.shci.dryrun">
-<code class="sig-prename descclassname"><span class="pre">pyscf.cornell_shci.shci.</span></code><code class="sig-name descname"><span class="pre">dryrun</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cornell_shci/shci.html#dryrun"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.cornell_shci.shci.dryrun" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate FCIDUMP and SHCI config file</p>
-</dd></dl>
-
-<dl class="py class">
-<dt id="pyscf.cornell_shci.shci.shci_client">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.cornell_shci.shci.</span></code><code class="sig-name descname"><span class="pre">shci_client</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shciobj</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/cornell_shci/shci.html#shci_client"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.cornell_shci.shci.shci_client" title="Permalink to this definition">¶</a></dt>
-<dd><p>Run SHCI in client mode for matrix-vector operation H*c</p>
-<p>Examples:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf.cornell_shci</span> <span class="kn">import</span> <span class="n">shci</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;C 0 0 0; C 0 0 1&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span> <span class="o">=</span> <span class="n">mcscf</span><span class="o">.</span><span class="n">CASCI</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span><span class="o">.</span><span class="n">fcisolver</span> <span class="o">=</span> <span class="n">shci</span><span class="o">.</span><span class="n">SHCI</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mc</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">shci</span><span class="o">.</span><span class="n">shci_client</span><span class="p">(</span><span class="n">mc</span><span class="o">.</span><span class="n">fcisolver</span><span class="p">)</span> <span class="k">as</span> <span class="n">sc</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="n">civec</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">getCoefs</span><span class="p">()</span>
-<span class="gp">... </span>    <span class="n">hc</span> <span class="o">=</span> <span class="n">sc</span><span class="o">.</span><span class="n">Hc</span><span class="p">(</span><span class="n">civec</span><span class="p">)</span>
-</pre></div>
-</div>
-</dd></dl>
-
+<div class="section" id="program-reference">
+<h2><span class="section-number">7.5.1. </span>Program reference<a class="headerlink" href="#program-reference" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -297,8 +195,8 @@ algorithm can be applied with SHCI-CASSCF.</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="shciscf.html" class="btn btn-neutral float-right" title="shciscf — Semistochastic heat bath configuration interaction (SHCI)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="fciqmcscf.html" class="btn btn-neutral float-left" title="fciqmcscf — Full configuration interaction quantum Monte Carlo (FCIQMC)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="shciscf.html" class="btn btn-neutral float-right" title="7.6. shciscf — Semistochastic heat bath configuration interaction (SHCI)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="fciqmcscf.html" class="btn btn-neutral float-left" title="7.4. fciqmcscf — Full configuration interaction quantum Monte Carlo (FCIQMC)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

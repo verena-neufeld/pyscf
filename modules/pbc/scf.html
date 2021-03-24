@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>pbc.scf — Self-consistent field with periodic boundary conditions &mdash; PySCF 1.7.6 documentation</title>
+  <title>6.21.3. pbc.scf — Self-consistent field with periodic boundary conditions &mdash; PySCF 1.7.6 documentation</title>
   
 
   
@@ -39,8 +39,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="pbc.dft — DFT with PBCs" href="dft.html" />
-    <link rel="prev" title="pbc.ao2mo — Integral transformations for crystalline Gaussian type orbitals" href="ao2mo.html" /> 
+    <link rel="next" title="6.21.4. pbc.dft — DFT with PBCs" href="dft.html" />
+    <link rel="prev" title="6.21.2. pbc.ao2mo — Integral transformations for crystalline Gaussian type orbitals" href="ao2mo.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -89,84 +89,74 @@
               
             
             
-              <p class="caption"><span class="caption-text">User documentation</span></p>
-<ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../overview.html">1. An overview of PySCF</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../version.html">2. Version history</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../install.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../benchmark.html">4. Benchmark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">5. Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../theory.html">6. Theoretical methods</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Developer documentation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../code-rule.html">Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../develop.html">Guidelines for module development</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../advanced.html">Miscellaneous</a></li>
-</ul>
-<p class="caption"><span class="caption-text">API documentation</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../../modules.html">Main modules</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../adc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">adc</span></code> — Algebraic diagrammatic construction (ADC) scheme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ao2mo.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ao2mo</span></code> — Integral transformations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../cc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cc</span></code> — Coupled cluster</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ccn.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ccn</span></code> — Auto-generated coupled cluster of arbitrary order</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ci.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ci</span></code> — Configuration interaction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../data.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">data</span></code> — Data for constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../df.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">df</span></code> — Density fitting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../dft.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dft</span></code> — Density functional theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../doci.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">doci</span></code> — Doubly occupied configuration interaction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../fci.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fci</span></code> — Full configuration interaction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../grad.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">grad</span></code> — Analytical nuclear gradients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gto</span></code> — Molecular structure and GTO basis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gw.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gw</span></code> — Molecular G0W0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hci.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hci</span></code> — Heat-bath selected CI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../hessian.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hessian</span></code> — Analytical nuclear Hessian</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lib.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">lib</span></code> — Helper functions, parameters, and C extensions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../lo.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">lo</span></code> — Orbital localization and analysis tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../mcscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mcscf</span></code> — Multi-configurational self-consistent field</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../mp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mp</span></code> — Second-Order Møller–Plesset Perturbation Theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../mrpt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mrpt</span></code> — Multi-reference perturbation theory</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../pbc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc</span></code> — Periodic boundary conditions</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="gto.html">pbc.gto — Crystal cell structure</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ao2mo.html">pbc.ao2mo — Integral transformations for crystalline Gaussian type orbitals</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc.scf</span></code> — Self-consistent field with periodic boundary conditions</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#gamma-point-and-single-k-point-calculation">Gamma point and single k-point calculation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#k-point-sampling">k-point sampling</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#exchange-divergence-treatment">Exchange divergence treatment</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#gaussian-density-fitting">Gaussian density fitting</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.pbc.scf.hf">Program reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tutorial.html">3. Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user.html">4. User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../develop.html">5. Developer documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../modules.html">6. API documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../adc.html">6.1. <code class="xref py py-mod docutils literal notranslate"><span class="pre">adc</span></code> — Algebraic diagrammatic construction (ADC) scheme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ao2mo.html">6.2. <code class="xref py py-mod docutils literal notranslate"><span class="pre">ao2mo</span></code> — Integral transformations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cc.html">6.3. <code class="xref py py-mod docutils literal notranslate"><span class="pre">cc</span></code> — Coupled cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ccn.html">6.4. <code class="xref py py-mod docutils literal notranslate"><span class="pre">ccn</span></code> — Auto-generated coupled cluster of arbitrary order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ci.html">6.5. <code class="xref py py-mod docutils literal notranslate"><span class="pre">ci</span></code> — Configuration interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data.html">6.6. <code class="xref py py-mod docutils literal notranslate"><span class="pre">data</span></code> — Data for constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../df.html">6.7. <code class="xref py py-mod docutils literal notranslate"><span class="pre">df</span></code> — Density fitting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dft.html">6.8. <code class="xref py py-mod docutils literal notranslate"><span class="pre">dft</span></code> — Density functional theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../doci.html">6.9. <code class="xref py py-mod docutils literal notranslate"><span class="pre">doci</span></code> — Doubly occupied configuration interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../fci.html">6.10. <code class="xref py py-mod docutils literal notranslate"><span class="pre">fci</span></code> — Full configuration interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../grad.html">6.11. <code class="xref py py-mod docutils literal notranslate"><span class="pre">grad</span></code> — Analytical nuclear gradients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gto.html">6.12. <code class="xref py py-mod docutils literal notranslate"><span class="pre">gto</span></code> — Molecular structure and GTO basis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gw.html">6.13. <code class="xref py py-mod docutils literal notranslate"><span class="pre">gw</span></code> — Molecular G0W0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hci.html">6.14. <code class="xref py py-mod docutils literal notranslate"><span class="pre">hci</span></code> — Heat-bath selected CI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hessian.html">6.15. <code class="xref py py-mod docutils literal notranslate"><span class="pre">hessian</span></code> — Analytical nuclear Hessian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lib.html">6.16. <code class="xref py py-mod docutils literal notranslate"><span class="pre">lib</span></code> — Helper functions, parameters, and C extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lo.html">6.17. <code class="xref py py-mod docutils literal notranslate"><span class="pre">lo</span></code> — Orbital localization and analysis tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mcscf.html">6.18. <code class="xref py py-mod docutils literal notranslate"><span class="pre">mcscf</span></code> — Multi-configurational self-consistent field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mp.html">6.19. <code class="xref py py-mod docutils literal notranslate"><span class="pre">mp</span></code> — Second-Order Møller–Plesset Perturbation Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mrpt.html">6.20. <code class="xref py py-mod docutils literal notranslate"><span class="pre">mrpt</span></code> — Multi-reference perturbation theory</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../pbc.html">6.21. <code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc</span></code> — Periodic boundary conditions</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="gto.html">6.21.1. <code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc.gto</span></code> — Crystal cell structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ao2mo.html">6.21.2. pbc.ao2mo — Integral transformations for crystalline Gaussian type orbitals</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">6.21.3. <code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc.scf</span></code> — Self-consistent field with periodic boundary conditions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#gamma-point-and-single-k-point-calculation">6.21.3.1. Gamma point and single k-point calculation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#k-point-sampling">6.21.3.2. k-point sampling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exchange-divergence-treatment">6.21.3.3. Exchange divergence treatment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gaussian-density-fitting">6.21.3.4. Gaussian density fitting</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.pbc.scf.hf">6.21.3.5. Program reference</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="dft.html">pbc.dft  — DFT with PBCs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="df.html">pbc.df — PBC denisty fitting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tdscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc.tdscf</span></code> — TDHF and TDDFT with periodic boundary conditions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mp.html">pbc.mp — MP2 with periodic boundary conditions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ci.html">pbc.ci — CISD with PBCs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="cc.html">pbc.cc — Coupled cluster with PBCs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="mpicc.html">pbc.mpicc — PBC coupled cluster for MPI</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tools.html">pbc.tools — PBC tools</a></li>
-<li class="toctree-l3"><a class="reference internal" href="prop.html">pbc.prop — PBC property</a></li>
-<li class="toctree-l3"><a class="reference internal" href="gw.html">pbc.gw — GW with PBC</a></li>
-<li class="toctree-l3"><a class="reference internal" href="x2c.html">pbc.x2c — Exact Two-Component Method</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../pbc.html#examples">Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dft.html">6.21.4. pbc.dft  — DFT with PBCs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="df.html">6.21.5. pbc.df — PBC denisty fitting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tdscf.html">6.21.6. <code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc.tdscf</span></code> — TDHF and TDDFT with periodic boundary conditions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mp.html">6.21.7. pbc.mp — MP2 with periodic boundary conditions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ci.html">6.21.8. pbc.ci — CISD with PBCs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cc.html">6.21.9. pbc.cc — Coupled cluster with PBCs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mpicc.html">6.21.10. pbc.mpicc — PBC coupled cluster for MPI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tools.html">6.21.11. pbc.tools — PBC tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="prop.html">6.21.12. pbc.prop — PBC property</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gw.html">6.21.13. pbc.gw — GW with PBC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="x2c.html">6.21.14. pbc.x2c — Exact Two-Component Method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pbc.html#examples">6.21.15. Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../prop.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">prop</span></code> — Molecular properties</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../qmmm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">qmmm</span></code> — QM/MM interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../rt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">rt</span></code> — Real-time time-dependent density functional theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../scf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scf</span></code> — Self-consistent field methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../semiempirical.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">semiempirical</span></code> — Semiempirical methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sgx.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sgx</span></code> — Pseudo-spectral methods (COSX, PS, SN-K)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../solvent.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">solvent</span></code> — Solvent methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../soscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">soscf</span></code> — Second order SCF solver</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../symm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">symm</span></code> – Point group symmetry and spin symmetry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tdscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tdscf</span></code> — TDHF and TDDFT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tools.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> — Useful tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../x2c.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">x2c</span></code> — exact-two-component approach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../prop.html">6.22. <code class="xref py py-mod docutils literal notranslate"><span class="pre">prop</span></code> — Molecular properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qmmm.html">6.23. <code class="xref py py-mod docutils literal notranslate"><span class="pre">qmmm</span></code> — QM/MM interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../rt.html">6.24. <code class="xref py py-mod docutils literal notranslate"><span class="pre">rt</span></code> — Real-time time-dependent density functional theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scf.html">6.25. <code class="xref py py-mod docutils literal notranslate"><span class="pre">scf</span></code> — Self-consistent field methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../semiempirical.html">6.26. <code class="xref py py-mod docutils literal notranslate"><span class="pre">semiempirical</span></code> — Semiempirical methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sgx.html">6.27. <code class="xref py py-mod docutils literal notranslate"><span class="pre">sgx</span></code> — Pseudo-spectral methods (COSX, PS, SN-K)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../solvent.html">6.28. <code class="xref py py-mod docutils literal notranslate"><span class="pre">solvent</span></code> — Solvent methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../soscf.html">6.29. <code class="xref py py-mod docutils literal notranslate"><span class="pre">soscf</span></code> — Second order SCF solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../symm.html">6.30. <code class="xref py py-mod docutils literal notranslate"><span class="pre">symm</span></code> – Point group symmetry and spin symmetry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tdscf.html">6.31. <code class="xref py py-mod docutils literal notranslate"><span class="pre">tdscf</span></code> — TDHF and TDDFT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools.html">6.32. <code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> — Useful tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../x2c.html">6.33. <code class="xref py py-mod docutils literal notranslate"><span class="pre">x2c</span></code> — exact-two-component approach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eph.html">6.34. <code class="xref py py-mod docutils literal notranslate"><span class="pre">eph</span></code> — First order electron phonon coupling matrix</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../interface.html">Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../interface.html">7. Interfaces</a></li>
 </ul>
 
             
@@ -215,11 +205,11 @@
     
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../../modules.html">Main modules</a> &raquo;</li>
+          <li><a href="../../modules.html"><span class="section-number">6. </span>API documentation</a> &raquo;</li>
         
-          <li><a href="../pbc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc</span></code> — Periodic boundary conditions</a> &raquo;</li>
+          <li><a href="../pbc.html"><span class="section-number">6.21. </span><code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc</span></code> — Periodic boundary conditions</a> &raquo;</li>
         
-      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc.scf</span></code> — Self-consistent field with periodic boundary conditions</li>
+      <li><span class="section-number">6.21.3. </span><code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc.scf</span></code> — Self-consistent field with periodic boundary conditions</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -239,11 +229,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="module-pbc.scf">
-<span id="pbc-scf-self-consistent-field-with-periodic-boundary-conditions"></span><span id="pbc-scf"></span><h1><a class="reference internal" href="#module-pbc.scf" title="pbc.scf: Hartree-Fock methods with periodic boundary conditions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc.scf</span></code></a> — Self-consistent field with periodic boundary conditions<a class="headerlink" href="#module-pbc.scf" title="Permalink to this headline">¶</a></h1>
+<span id="pbc-scf-self-consistent-field-with-periodic-boundary-conditions"></span><span id="pbc-scf"></span><h1><span class="section-number">6.21.3. </span><a class="reference internal" href="#module-pbc.scf" title="pbc.scf: Hartree-Fock methods with periodic boundary conditions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc.scf</span></code></a> — Self-consistent field with periodic boundary conditions<a class="headerlink" href="#module-pbc.scf" title="Permalink to this headline">¶</a></h1>
 <p>This module is constructed to be analogous to the molecular <a class="reference internal" href="../scf.html#module-scf" title="scf: restricted and unrestricted, closed shell and open shell Hartree-Fock methods"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scf</span></code></a> module to handle
 mean-field calculations with periodic boundary conditions.</p>
 <div class="section" id="gamma-point-and-single-k-point-calculation">
-<h2>Gamma point and single k-point calculation<a class="headerlink" href="#gamma-point-and-single-k-point-calculation" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.21.3.1. </span>Gamma point and single k-point calculation<a class="headerlink" href="#gamma-point-and-single-k-point-calculation" title="Permalink to this headline">¶</a></h2>
 <p>The usage of the Gamma point Hartree-Fock program is very close to that of the
 molecular program.  In a PBC Gamma point calculation, one needs to initialize the
 <code class="xref py py-class docutils literal notranslate"><span class="pre">Cell</span></code> object and the corresponding <a class="reference internal" href="#pyscf.pbc.scf.hf.RHF" title="pyscf.pbc.scf.hf.RHF"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.pbc.scf.hf.RHF</span></code></a> class:</p>
@@ -292,7 +282,7 @@ Hartree-Fock, all-electron, and post-Hartree-Fock calculations, is
 Gaussian density fitting. This can be used by setting the <code class="xref py py-attr docutils literal notranslate"><span class="pre">with_df</span></code> attribute (see <a class="reference internal" href="df.html#pbc-df"><span class="std std-ref">pbc.df — PBC denisty fitting</span></a>) or, conveniently, by using the <code class="xref py py-func docutils literal notranslate"><span class="pre">density_fit()</span></code> function (see <a class="reference internal" href="#pbc-density-fit"><span class="std std-ref">Gaussian density fitting</span></a>). For</p></li>
 </ul>
 <dl class="simple">
-<dt>higher accuracy, you may wish to use</dt><dd><p>mixed density fitting (MDF) (see <a class="reference internal" href="../../theory/pbc/df.html#pbc-mdf"><span class="std std-ref">MDF — Mixed Gaussian and plane-wave density fitting</span></a>).  Here is an example to update <code class="xref py py-attr docutils literal notranslate"><span class="pre">with_df</span></code></p>
+<dt>higher accuracy, you may wish to use</dt><dd><p>mixed density fitting (MDF) (see <a class="reference internal" href="df.html#pbc-mdf"><span class="std std-ref">MDF — mixed density fitting</span></a>).  Here is an example to update <code class="xref py py-attr docutils literal notranslate"><span class="pre">with_df</span></code></p>
 </dd>
 </dl>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
@@ -372,7 +362,7 @@ Gaussian density fitting. This can be used by setting the <code class="xref py p
 </pre></div>
 </div>
 <div class="section" id="mixing-with-molecular-program-for-post-hf-methods">
-<span id="mix-to-mol"></span><h3>Mixing with molecular program for post-HF methods<a class="headerlink" href="#mixing-with-molecular-program-for-post-hf-methods" title="Permalink to this headline">¶</a></h3>
+<span id="mix-to-mol"></span><h3><span class="section-number">6.21.3.1.1. </span>Mixing with molecular program for post-HF methods<a class="headerlink" href="#mixing-with-molecular-program-for-post-hf-methods" title="Permalink to this headline">¶</a></h3>
 <p>The Gamma point HF code adopts the same code structure, function and
 method names and argument’ conventions as the molecular SCF code.
 This desgin allows one to mix PBC HF objects with the existing molecular post-HF
@@ -402,12 +392,12 @@ PBC HF object:</p>
 <code class="docutils literal notranslate"><span class="pre">scf</span></code> module to import.  With the system-specific mean-field object, one
 can carry out various post-HF methods (MP2, Coupled cluster, CISD, TDHF,
 TDDFT, …) using the same code for finite-size and extended systems.
-See <a class="reference internal" href="../../theory/pbc/mix_mol.html#mix-mol"><span class="std std-ref">Mixing PBC and molecular modules</span></a> for more details of the interface between PBC and molecular
+See <a class="reference internal" href="../../user/pbc/mix_mol.html#mix-mol"><span class="std std-ref">Mixing PBC and molecular modules</span></a> for more details of the interface between PBC and molecular
 modules.</p>
 </div>
 </div>
 <div class="section" id="k-point-sampling">
-<h2>k-point sampling<a class="headerlink" href="#k-point-sampling" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.21.3.2. </span>k-point sampling<a class="headerlink" href="#k-point-sampling" title="Permalink to this headline">¶</a></h2>
 <p>An example demonstrating the use of k-points for a KRHF, KRKS calculation, and using the Newton (second-order SCF) solver.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
 
@@ -459,7 +449,7 @@ modules.</p>
 </pre></div>
 </div>
 <div class="section" id="smearing">
-<h3>Smearing<a class="headerlink" href="#smearing" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.21.3.2.1. </span>Smearing<a class="headerlink" href="#smearing" title="Permalink to this headline">¶</a></h3>
 <p>In many periodic systems, the HOMO-LUMO gap may become very small. In such a case, one needs to use occupation number smearing
 to converge the SCF calculation, as illustrated here:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span>
@@ -488,7 +478,7 @@ to converge the SCF calculation, as illustrated here:</p>
 </div>
 </div>
 <div class="section" id="exchange-divergence-treatment">
-<span id="exxdiv"></span><h2>Exchange divergence treatment<a class="headerlink" href="#exchange-divergence-treatment" title="Permalink to this headline">¶</a></h2>
+<span id="exxdiv"></span><h2><span class="section-number">6.21.3.3. </span>Exchange divergence treatment<a class="headerlink" href="#exchange-divergence-treatment" title="Permalink to this headline">¶</a></h2>
 <p>The attribute <code class="xref py py-attr docutils literal notranslate"><span class="pre">exxdiv</span></code> controls the handling of the slow convergence
 of the HF exchange integrals.
 Generally, <code class="xref py py-attr docutils literal notranslate"><span class="pre">exxdiv</span></code> leads to a shift in the total energy that
@@ -500,7 +490,7 @@ the occupied orbitals. When a Gamma-point PBC mean-field calculation is mixed wi
 SCF calculation (i.e. redoing self-consistency at each k point).</p>
 </div>
 <div class="section" id="gaussian-density-fitting">
-<span id="pbc-density-fit"></span><h2>Gaussian density fitting<a class="headerlink" href="#gaussian-density-fitting" title="Permalink to this headline">¶</a></h2>
+<span id="pbc-density-fit"></span><h2><span class="section-number">6.21.3.4. </span>Gaussian density fitting<a class="headerlink" href="#gaussian-density-fitting" title="Permalink to this headline">¶</a></h2>
 <p>This example uses the <code class="xref py py-func docutils literal notranslate"><span class="pre">density_fit()</span></code> function to enable Gaussian density fitting:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span> <span class="k">as</span> <span class="n">mol_gto</span>
@@ -532,7 +522,7 @@ SCF calculation (i.e. redoing self-consistency at each k point).</p>
 </div>
 </div>
 <div class="section" id="module-pyscf.pbc.scf.hf">
-<span id="program-reference"></span><h2>Program reference<a class="headerlink" href="#module-pyscf.pbc.scf.hf" title="Permalink to this headline">¶</a></h2>
+<span id="program-reference"></span><h2><span class="section-number">6.21.3.5. </span>Program reference<a class="headerlink" href="#module-pyscf.pbc.scf.hf" title="Permalink to this headline">¶</a></h2>
 <p>Hartree-Fock for periodic systems at a single k-point</p>
 <dl class="simple">
 <dt>See Also:</dt><dd><p>pyscf.pbc.scf.khf.py : Hartree-Fock for periodic systems with k-point sampling</p>
@@ -2821,8 +2811,8 @@ See <code class="xref py py-func docutils literal notranslate"><span class="pre"
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="dft.html" class="btn btn-neutral float-right" title="pbc.dft — DFT with PBCs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="ao2mo.html" class="btn btn-neutral float-left" title="pbc.ao2mo — Integral transformations for crystalline Gaussian type orbitals" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="dft.html" class="btn btn-neutral float-right" title="6.21.4. pbc.dft — DFT with PBCs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="ao2mo.html" class="btn btn-neutral float-left" title="6.21.2. pbc.ao2mo — Integral transformations for crystalline Gaussian type orbitals" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

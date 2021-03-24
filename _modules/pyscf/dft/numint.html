@@ -86,25 +86,14 @@
               
             
             
-              <p class="caption"><span class="caption-text">User documentation</span></p>
-<ul>
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../overview.html">1. An overview of PySCF</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../version.html">2. Version history</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../install.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../benchmark.html">4. Benchmark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../tutorial.html">5. Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../theory.html">6. Theoretical methods</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Developer documentation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../code-rule.html">Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../develop.html">Guidelines for module development</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../advanced.html">Miscellaneous</a></li>
-</ul>
-<p class="caption"><span class="caption-text">API documentation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">Main modules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../interface.html">Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial.html">3. Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user.html">4. User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../develop.html">5. Developer documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">6. API documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface.html">7. Interfaces</a></li>
 </ul>
 
             
@@ -754,7 +743,7 @@
     <span class="sd">&#39;&#39;&#39;return numpy.dot(ao, dm)&#39;&#39;&#39;</span>
     <span class="n">ngrids</span><span class="p">,</span> <span class="n">nao</span> <span class="o">=</span> <span class="n">ao</span><span class="o">.</span><span class="n">shape</span>
     <span class="k">if</span> <span class="n">nao</span> <span class="o">&lt;</span> <span class="n">SWITCH_SIZE</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">lib</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">dm</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">ao</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+        <span class="k">return</span> <span class="n">lib</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">dm</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s1">&#39;C&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">ao</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">ao</span><span class="o">.</span><span class="n">flags</span><span class="o">.</span><span class="n">f_contiguous</span><span class="p">:</span>
         <span class="n">ao</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">ao</span><span class="p">)</span>

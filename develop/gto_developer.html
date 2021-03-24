@@ -1,0 +1,1499 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Molecules and crystals &mdash; PySCF 1.7.6 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PySCF
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">1. An overview of PySCF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">3. Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user.html">4. User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop.html">5. Developer documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">6. API documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interface.html">7. Interfaces</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PySCF</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Molecules and crystals</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/develop/gto_developer.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="molecules-and-crystals">
+<span id="developer-gto"></span><h1>Molecules and crystals<a class="headerlink" href="#molecules-and-crystals" title="Permalink to this headline">¶</a></h1>
+<p><em>Modules</em>: <a class="reference internal" href="../modules/gto.html#module-gto" title="gto: Molecular structure and GTO basis"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gto</span></code></a>, <a class="reference internal" href="../modules/pbc/gto.html#module-pbc.gto" title="pbc.gto: Crystal cell structure and crystalline GTO integration"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc.gto</span></code></a></p>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="input">
+<h2>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="geometry">
+<h3>Geometry<a class="headerlink" href="#geometry" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="input-basis">
+<h3>Input Basis<a class="headerlink" href="#input-basis" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="ecp">
+<h3>ECP<a class="headerlink" href="#ecp" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="symmetry">
+<h3>Symmetry<a class="headerlink" href="#symmetry" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="section" id="pbc-gto-crystal-cell-structure">
+<h1>pbc.gto — Crystal cell structure<a class="headerlink" href="#pbc-gto-crystal-cell-structure" title="Permalink to this headline">¶</a></h1>
+<p>This module provides functions to setup the basic information of a PBC calculation.  The
+<code class="xref py py-mod docutils literal notranslate"><span class="pre">pyscf.pbc.gto</span></code> module is analogous to the basic molecular <code class="xref py py-mod docutils literal notranslate"><span class="pre">pyscf.gto</span></code> module.
+The <code class="xref py py-class docutils literal notranslate"><span class="pre">Cell</span></code> class for crystal structure unit cells is defined in this module and is
+analogous to the basic molecular <code class="xref py py-class docutils literal notranslate"><span class="pre">Mole</span></code> class.  Amongst other details, the basis set
+and pseudopotentials are parsed in this module.</p>
+<div class="section" id="cell-class">
+<h2><code class="xref py py-class docutils literal notranslate"><span class="pre">Cell</span></code> class<a class="headerlink" href="#cell-class" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="../modules/pbc/gto.html#pyscf.pbc.gto.Cell" title="pyscf.pbc.gto.Cell"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cell</span></code></a> class is defined as an extension of the molecular
+<a class="reference internal" href="../modules/gto.html#id0" title="pyscf.gto.mole.Mole"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.gto.mole.Mole</span></code></a> class.  The <code class="xref py py-class docutils literal notranslate"><span class="pre">Cell</span></code> object offers much of the same
+functionality as the <code class="xref py py-class docutils literal notranslate"><span class="pre">Mole</span></code> object.  For example, one can use the <code class="xref py py-class docutils literal notranslate"><span class="pre">Cell</span></code>
+object to access the atomic structure, basis functions, pseudopotentials, and certain
+analytical periodic integrals.</p>
+<p>Similar to the input of a molecular calculation, one first creates a <code class="xref py py-class docutils literal notranslate"><span class="pre">Cell</span></code> object.
+After assigning the crystal parameters, one calls <code class="xref py py-func docutils literal notranslate"><span class="pre">build()</span></code> to fully initialize the
+<code class="xref py py-class docutils literal notranslate"><span class="pre">Cell</span></code> object.  A shortcut function <code class="xref py py-func docutils literal notranslate"><span class="pre">M()</span></code> is available at the module level to
+simplify the input.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span>
+<span class="kn">import</span> <span class="nn">pyscf.lib</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="kn">import</span> <span class="n">gto</span>
+
+<span class="c1">#</span>
+<span class="c1"># Simliar to the initialization of &quot;Mole&quot; object, here we need create a &quot;Cell&quot;</span>
+<span class="c1"># object for periodic boundary systems.</span>
+<span class="c1">#</span>
+<span class="n">cell</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">Cell</span><span class="p">()</span>
+<span class="n">cell</span><span class="o">.</span><span class="n">atom</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;C     0.      0.      0.    </span>
+<span class="s1">              C     0.8917  0.8917  0.8917</span>
+<span class="s1">              C     1.7834  1.7834  0.    </span>
+<span class="s1">              C     2.6751  2.6751  0.8917</span>
+<span class="s1">              C     1.7834  0.      1.7834</span>
+<span class="s1">              C     2.6751  0.8917  2.6751</span>
+<span class="s1">              C     0.      1.7834  1.7834</span>
+<span class="s1">              C     0.8917  2.6751  2.6751&#39;&#39;&#39;</span>
+<span class="n">cell</span><span class="o">.</span><span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;gth-szv&#39;</span>
+<span class="n">cell</span><span class="o">.</span><span class="n">pseudo</span> <span class="o">=</span> <span class="s1">&#39;gth-pade&#39;</span>
+<span class="c1">#</span>
+<span class="c1"># Note the extra attribute &quot;.a&quot; in the &quot;cell&quot; initialization.</span>
+<span class="c1"># .a is a matrix for lattice vectors.  Each row of .a is a primitive vector.</span>
+<span class="c1">#</span>
+<span class="n">cell</span><span class="o">.</span><span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="mf">3.5668</span>
+<span class="n">cell</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
+
+<span class="c1">#</span>
+<span class="c1"># pbc.gto module provided a shortcut initialization function &quot;gto.M&quot;, like the</span>
+<span class="c1"># one of finite size problem</span>
+<span class="c1">#</span>
+<span class="n">cell</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span>
+    <span class="n">atom</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;C     0.      0.      0.    </span>
+<span class="s1">              C     0.8917  0.8917  0.8917</span>
+<span class="s1">              C     1.7834  1.7834  0.    </span>
+<span class="s1">              C     2.6751  2.6751  0.8917</span>
+<span class="s1">              C     1.7834  0.      1.7834</span>
+<span class="s1">              C     2.6751  0.8917  2.6751</span>
+<span class="s1">              C     0.      1.7834  1.7834</span>
+<span class="s1">              C     0.8917  2.6751  2.6751&#39;&#39;&#39;</span><span class="p">,</span>
+    <span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;gth-szv&#39;</span><span class="p">,</span>
+    <span class="n">pseudo</span> <span class="o">=</span> <span class="s1">&#39;gth-pade&#39;</span><span class="p">,</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="mf">3.5668</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<p>Beyond the basic parameters <code class="xref py py-attr docutils literal notranslate"><span class="pre">atom</span></code> and <code class="xref py py-attr docutils literal notranslate"><span class="pre">basis</span></code>, one needs to set the unit cell
+lattice vectors <code class="xref py py-attr docutils literal notranslate"><span class="pre">a</span></code> (a 3x3 array, where each row is a real-space primitive vector)
+and the numbers of grid points in the FFT-mesh in each positive direction <code class="xref py py-attr docutils literal notranslate"><span class="pre">mesh</span></code> (a
+length-3 list or 1x3 array).</p>
+<p>In the <code class="xref py py-class docutils literal notranslate"><span class="pre">Cell</span></code> class, many parameters are determined automatically according to
+the attribute <code class="xref py py-attr docutils literal notranslate"><span class="pre">precision</span></code>, which likewise can be set manually or left to its default
+value (1e-8). The parameters determined by <code class="xref py py-attr docutils literal notranslate"><span class="pre">precision</span></code> include <code class="xref py py-attr docutils literal notranslate"><span class="pre">ke_cutoff</span></code>,
+<code class="xref py py-attr docutils literal notranslate"><span class="pre">mesh</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">rcut</span></code>, <code class="xref py py-attr docutils literal notranslate"><span class="pre">ew_cut</span></code> and <code class="xref py py-attr docutils literal notranslate"><span class="pre">ew_eta</span></code>. These parameters can also be
+set manually by the user.</p>
+<p>In certain cases, it is convenient to choose the FFT-mesh density based on the kinetic
+energy cutoff.  The <code class="xref py py-class docutils literal notranslate"><span class="pre">Cell</span></code> class offers an alternative attribute
+<code class="xref py py-attr docutils literal notranslate"><span class="pre">ke_cutoff</span></code> that can be used to set the FFT-mesh.  If <code class="xref py py-attr docutils literal notranslate"><span class="pre">ke_cutoff</span></code> is set and
+<code class="xref py py-attr docutils literal notranslate"><span class="pre">mesh</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code>, the <code class="xref py py-class docutils literal notranslate"><span class="pre">Cell</span></code> initialization function will convert the
+<code class="xref py py-attr docutils literal notranslate"><span class="pre">ke_cutoff</span></code> to the equivalent FFT-mesh
+according to the relation <span class="math notranslate nohighlight">\(\mathbf{g} = \frac{\sqrt{2E_{\mathrm{cut}}}}{2\pi}\mathbf{a}^T\)</span>
+and will overwrite the <code class="xref py py-attr docutils literal notranslate"><span class="pre">mesh</span></code> attribute.</p>
+<p>Many PBC calculations are best performed using pseudopotentials, which are set via
+the <code class="xref py py-attr docutils literal notranslate"><span class="pre">pseudo</span></code> attribute.  Pseudopotentials alleviate the need for impractically
+dense FFT-meshes, although they represent a potentially uncontrolled source of error.
+See <a class="reference internal" href="#pseudo"><span class="std std-ref">Pseudo potential</span></a> for further details and a list of available pseudopotentials.</p>
+<p>The input parameters <code class="docutils literal notranslate"><span class="pre">.a</span></code> and <code class="docutils literal notranslate"><span class="pre">.pseudo</span></code> are immutable in the <code class="xref py py-class docutils literal notranslate"><span class="pre">Cell</span></code> object.  We
+emphasize that the input format might be different from the internal format used by PySCF.
+Similar to the convention in <code class="xref py py-class docutils literal notranslate"><span class="pre">Mole</span></code>, an internal Python data layer is created to
+hold the formatted <code class="docutils literal notranslate"><span class="pre">.a</span></code> and <code class="docutils literal notranslate"><span class="pre">.pseudo</span></code> parameters used as input.</p>
+<dl class="simple">
+<dt>_pseudo</dt><dd><p>The internal format to hold PBC pseudo potential parameters.  It is
+represented with nested Python lists only.</p>
+</dd>
+</dl>
+<p>Nuclear-nuclear interaction energies are evaluated by means of Ewald summation, which
+depends on three parameters: the truncation radius for real-space lattice sums
+<code class="xref py py-attr docutils literal notranslate"><span class="pre">rcut</span></code>, the Gaussian model charge <code class="xref py py-attr docutils literal notranslate"><span class="pre">ew_eta</span></code>, and the energy cutoff
+<code class="xref py py-attr docutils literal notranslate"><span class="pre">ew_cut</span></code>.</p>
+<p>Besides the methods and parameters provided by <code class="xref py py-class docutils literal notranslate"><span class="pre">Mole</span></code> class (see Chapter
+<span class="xref std std-ref">gto</span>), there are some parameters frequently used in the code to access the
+information of the crystal.</p>
+<dl>
+<dt>kpts</dt><dd><p>The scaled or absolute k-points (nkpts x 3 array). This variable is not held as an
+attribute in <code class="xref py py-class docutils literal notranslate"><span class="pre">Cell</span></code> object; instead, the <code class="xref py py-class docutils literal notranslate"><span class="pre">Cell</span></code> object provides functions
+to generate the k-points and convert the k-points between the scaled (fractional) value
+and absolute value:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generate k-points</span>
+<span class="n">n_kpts_each_direction</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">abs_kpts</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">make_kpts</span><span class="p">(</span><span class="n">n_kpts_each_direction</span><span class="p">)</span>
+
+<span class="c1"># Convert k-points between two convention, the scaled and the absoulte values</span>
+<span class="n">scaled_kpts</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">get_scaled_kpts</span><span class="p">(</span><span class="n">abs_kpts</span><span class="p">)</span>
+<span class="n">abs_kpts</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">get_abs_kpts</span><span class="p">(</span><span class="n">scaled_kpts</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd>
+<dt>Gv</dt><dd><p>The (N x 3) array of plane waves associated to <code class="xref py py-attr docutils literal notranslate"><span class="pre">mesh</span></code>.  <code class="xref py py-attr docutils literal notranslate"><span class="pre">mesh</span></code> defines
+the number of FFT grids in each direction.  <code class="xref py py-meth docutils literal notranslate"><span class="pre">Cell.Gv()</span></code> or <code class="xref py py-meth docutils literal notranslate"><span class="pre">get_Gv()</span></code>
+convert the FFT-mesh to the plane waves.  <code class="docutils literal notranslate"><span class="pre">Gv</span></code> are the the plane wave bases
+of 3D-FFT transformation.  Given <code class="docutils literal notranslate"><span class="pre">mesh</span> <span class="pre">=</span> <span class="pre">[nx,ny,nz]</span></code>, the number of vectors in
+<code class="docutils literal notranslate"><span class="pre">Gv</span></code> is <code class="docutils literal notranslate"><span class="pre">nx*ny*nz</span></code>.</p>
+</dd>
+<dt>vol</dt><dd><p><code class="xref py py-attr docutils literal notranslate"><span class="pre">Cell.vol</span></code> gives the volume of the unit cell (in atomic unit).</p>
+</dd>
+<dt>reciprocal_vectors</dt><dd><p>A 3x3 array.  Each row is a reciprocal space primitive vector.</p>
+</dd>
+<dt>energy_nuc</dt><dd><p>Similar to the <code class="xref py py-func docutils literal notranslate"><span class="pre">energy_nuc()</span></code> provided by <code class="xref py py-class docutils literal notranslate"><span class="pre">Mole</span></code> class, this
+function also return the energy associated to the nuclear repulsion.  The
+nuclear repulsion energy is computed with Ewald summation technique.  The
+background contribution is removed from the nuclear repulsion energy otherwise
+this term is divergent.</p>
+</dd>
+<dt>pbc_intor</dt><dd><p>PBC analytic integral driver.  It allows user to compute the PBC integral
+array in bulk, for given integral descriptor <code class="docutils literal notranslate"><span class="pre">intor</span></code> (see also
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">Mole.intor()</span></code> function <a class="reference internal" href="../modules/gto.html#gto-moleintor"><span class="std std-ref">AO integration</span></a>).  In the <code class="xref py py-class docutils literal notranslate"><span class="pre">Cell</span></code> object,
+we didn’t overload the <code class="xref py py-meth docutils literal notranslate"><span class="pre">intor()</span></code> method.  So one can access both the
+periodic integrals and free-boundary integrals within the <code class="xref py py-class docutils literal notranslate"><span class="pre">Cell</span></code>
+object.  It allows you to input the cell object into the molecule program to
+run the free-boundary calculation (see <a class="reference internal" href="#cell-to-mol"><span class="std std-ref">Connection to Mole class</span></a>).</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="xref py py-meth docutils literal notranslate"><span class="pre">pbc_intor()</span></code> does not support Coulomb type integrals.  Calling pbc_intor
+with Coulomb type integral descriptor such as <code class="docutils literal notranslate"><span class="pre">cint1e_nuc_sph</span></code> leads to
+divergent integrals.  The Coulomb type PBC integrals should be evaluated with
+density fitting technique (see Chapter <a class="reference internal" href="../modules/pbc/df.html#pbc-df"><span class="std std-ref">pbc.df — PBC denisty fitting</span></a>).</p>
+</div>
+<div class="section" id="attributes-and-methods">
+<h3>Attributes and methods<a class="headerlink" href="#attributes-and-methods" title="Permalink to this headline">¶</a></h3>
+<dl class="py class">
+<dt id="pyscf.pbc.gto.Cell">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.pbc.gto.</span></code><code class="sig-name descname"><span class="pre">Cell</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/pbc/gto/cell.html#Cell"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.pbc.gto.Cell" title="Permalink to this definition">¶</a></dt>
+<dd><p>A Cell object holds the basic information of a crystal.</p>
+<dl>
+<dt>Attributes:</dt><dd><dl class="simple">
+<dt>a<span class="classifier">(3,3) ndarray</span></dt><dd><p>Lattice primitive vectors. Each row represents a lattice vector
+Reciprocal lattice vectors are given by  b1,b2,b3 = 2 pi inv(a).T</p>
+</dd>
+<dt>mesh<span class="classifier">(3,) list of ints</span></dt><dd><p>The number G-vectors along each direction.
+The default value is estimated based on <code class="xref py py-attr docutils literal notranslate"><span class="pre">precision</span></code></p>
+</dd>
+<dt>pseudo<span class="classifier">dict or str</span></dt><dd><p>To define pseudopotential.</p>
+</dd>
+<dt>precision<span class="classifier">float</span></dt><dd><p>To control Ewald sums and lattice sums accuracy</p>
+</dd>
+<dt>rcut<span class="classifier">float</span></dt><dd><p>Cutoff radius (unit Bohr) in lattice summation. The default value
+is estimated based on the required <code class="xref py py-attr docutils literal notranslate"><span class="pre">precision</span></code>.</p>
+</dd>
+<dt>ke_cutoff<span class="classifier">float</span></dt><dd><p>If set, defines a spherical cutoff of planewaves, with .5 * G**2 &lt; ke_cutoff
+The default value is estimated based on <code class="xref py py-attr docutils literal notranslate"><span class="pre">precision</span></code></p>
+</dd>
+<dt>dimension<span class="classifier">int</span></dt><dd><p>Periodic dimensions. Default is 3</p>
+</dd>
+<dt>low_dim_ft_type<span class="classifier">str</span></dt><dd><p>For semi-empirical periodic systems, whether to calculate
+integrals at the non-PBC dimension using the sampled mesh grids in
+infinity vacuum (inf_vacuum) or truncated Coulomb potential
+(analytic_2d_1). Unless explicitly specified, analytic_2d_1 is
+used for 2D system and inf_vacuum is assumed for 1D and 0D.</p>
+</dd>
+</dl>
+<p>** Following attributes (for experts) are automatically generated. **</p>
+<dl class="simple">
+<dt>ew_eta, ew_cut<span class="classifier">float</span></dt><dd><p>The Ewald ‘eta’ and ‘cut’ parameters.  See <a class="reference internal" href="../modules/pbc/gto.html#pyscf.pbc.gto.Cell.get_ewald_params" title="pyscf.pbc.gto.Cell.get_ewald_params"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_ewald_params()</span></code></a></p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>(See other attributes in <code class="xref py py-class docutils literal notranslate"><span class="pre">Mole</span></code>)</p>
+<p>Examples:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">Mole</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;H^2 0 0 0; H 0 0 1.1&#39;</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;sto3g&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cl</span> <span class="o">=</span> <span class="n">Cell</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cl</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="s1">&#39;3 0 0; 0 3 0; 0 0 3&#39;</span><span class="p">,</span> <span class="n">atom</span><span class="o">=</span><span class="s1">&#39;C 1 1 1&#39;</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;sto3g&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">cl</span><span class="o">.</span><span class="n">atom_symbol</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="go">C</span>
+</pre></div>
+</div>
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.ao2mo">
+<code class="sig-name descname"><span class="pre">ao2mo</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mo_coeffs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'int2e'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">erifile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'eri_mo'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/pbc/gto/cell.html#Cell.ao2mo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.pbc.gto.Cell.ao2mo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Integral transformation for arbitrary orbitals and arbitrary
+integrals.  See more detalied documentation in func:<cite>ao2mo.kernel</cite>.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>mo_coeffs (an np array or a list of arrays)<span class="classifier">A matrix of orbital</span></dt><dd><p>coefficients if it is a numpy ndarray, or four sets of orbital
+coefficients, corresponding to the four indices of (ij|kl).</p>
+</dd>
+</dl>
+</dd>
+<dt>Kwargs:</dt><dd><dl class="simple">
+<dt>erifile (str or h5py File or h5py Group object)<span class="classifier">The file/object</span></dt><dd><p>to store the transformed integrals.  If not given, the return
+value is an array (in memory) of the transformed integrals.</p>
+</dd>
+<dt>dataname<span class="classifier">str</span></dt><dd><p><em>Note</em> this argument is effective if erifile is given.
+The dataset name in the erifile (ref the hierarchy of HDF5 format
+<a class="reference external" href="http://www.hdfgroup.org/HDF5/doc1.6/UG/09_Groups.html">http://www.hdfgroup.org/HDF5/doc1.6/UG/09_Groups.html</a>).  By assigning
+different dataname, the existed integral file can be reused.  If
+the erifile contains the specified dataname, the old integrals
+will be replaced by the new one under the key dataname.</p>
+</dd>
+<dt>intor (str)<span class="classifier">integral name Name of the 2-electron integral.  Ref</span></dt><dd><p>to <code class="xref py py-func docutils literal notranslate"><span class="pre">getints_by_shell()</span></code>
+for the complete list of available 2-electron integral names</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>An array of transformed integrals if erifile is not given.
+Otherwise, return the file/fileobject if erifile is assigned.</p>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyscf</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">pyscf</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;O 0 0 0; H 0 1 0; H 0 0 1&#39;</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;sto3g&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mo1</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="n">mol</span><span class="o">.</span><span class="n">nao_nr</span><span class="p">(),</span> <span class="mi">10</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mo2</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="n">mol</span><span class="o">.</span><span class="n">nao_nr</span><span class="p">(),</span> <span class="mi">8</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">eri1</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">ao2mo</span><span class="p">(</span><span class="n">mo1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">eri1</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="go">(55, 55)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">eri1</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">ao2mo</span><span class="p">(</span><span class="n">mo1</span><span class="p">,</span> <span class="n">compact</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">eri1</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="go">(100, 100)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">eri1</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">ao2mo</span><span class="p">(</span><span class="n">eri</span><span class="p">,</span> <span class="p">(</span><span class="n">mo1</span><span class="p">,</span><span class="n">mo2</span><span class="p">,</span><span class="n">mo2</span><span class="p">,</span><span class="n">mo2</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">eri1</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="go">(80, 36)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">eri1</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">ao2mo</span><span class="p">(</span><span class="n">eri</span><span class="p">,</span> <span class="p">(</span><span class="n">mo1</span><span class="p">,</span><span class="n">mo2</span><span class="p">,</span><span class="n">mo2</span><span class="p">,</span><span class="n">mo2</span><span class="p">),</span> <span class="n">erifile</span><span class="o">=</span><span class="s1">&#39;water.h5&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.bas_rcut">
+<code class="sig-name descname"><span class="pre">bas_rcut</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bas_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.pbc.gto.Cell.bas_rcut" title="Permalink to this definition">¶</a></dt>
+<dd><p>Estimate the largest distance between the function and its image to
+reach the precision in overlap</p>
+<p>precision ~ int g(r-0) g(r-Rcut)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.build">
+<code class="sig-name descname"><span class="pre">build</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dump_input</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parse_arg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mesh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ke_cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nimgs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ew_eta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ew_cut</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pseudo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rcut</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">low_dim_ft_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/pbc/gto/cell.html#Cell.build"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.pbc.gto.Cell.build" title="Permalink to this definition">¶</a></dt>
+<dd><p>Setup Mole molecule and Cell and initialize some control parameters.
+Whenever you change the value of the attributes of <a class="reference internal" href="../modules/pbc/gto.html#pyscf.pbc.gto.Cell" title="pyscf.pbc.gto.Cell"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cell</span></code></a>,
+you need call this function to refresh the internal data of Cell.</p>
+<dl class="simple">
+<dt>Kwargs:</dt><dd><dl class="simple">
+<dt>a<span class="classifier">(3,3) ndarray</span></dt><dd><p>The real-space unit cell lattice vectors. Each row represents
+a lattice vector.</p>
+</dd>
+<dt>mesh<span class="classifier">(3,) ndarray of ints</span></dt><dd><p>The number of <em>positive</em> G-vectors along each direction.</p>
+</dd>
+<dt>ke_cutoff<span class="classifier">float</span></dt><dd><p>If set, defines a spherical cutoff of planewaves, with .5 * G**2 &lt; ke_cutoff
+The default value is estimated based on <code class="xref py py-attr docutils literal notranslate"><span class="pre">precision</span></code></p>
+</dd>
+<dt>precision<span class="classifier">float</span></dt><dd><p>To control Ewald sums and lattice sums accuracy</p>
+</dd>
+<dt>nimgs<span class="classifier">(3,) ndarray of ints</span></dt><dd><p>Number of repeated images in lattice summation to produce
+periodicity. This value can be estimated based on the required
+precision.  It’s recommended NOT making changes to this value.</p>
+</dd>
+<dt>rcut<span class="classifier">float</span></dt><dd><p>Cutoff radius (unit Bohr) in lattice summation to produce
+periodicity. The value can be estimated based on the required
+precision.  It’s recommended NOT making changes to this value.</p>
+</dd>
+<dt>ew_eta, ew_cut<span class="classifier">float</span></dt><dd><p>Parameters eta and cut to converge Ewald summation.
+See <a class="reference internal" href="../modules/pbc/gto.html#pyscf.pbc.gto.Cell.get_ewald_params" title="pyscf.pbc.gto.Cell.get_ewald_params"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_ewald_params()</span></code></a></p>
+</dd>
+<dt>pseudo<span class="classifier">dict or str</span></dt><dd><p>To define pseudopotential.</p>
+</dd>
+<dt>ecp<span class="classifier">dict or str</span></dt><dd><p>To define ECP type pseudopotential.</p>
+</dd>
+<dt>h<span class="classifier">(3,3) ndarray</span></dt><dd><p>a.T. Deprecated</p>
+</dd>
+<dt>dimension<span class="classifier">int</span></dt><dd><p>Default is 3</p>
+</dd>
+<dt>low_dim_ft_type<span class="classifier">str</span></dt><dd><p>For semi-empirical periodic systems, whether to calculate
+integrals at the non-PBC dimension using the sampled mesh grids in
+infinity vacuum (inf_vacuum) or truncated Coulomb potential
+(analytic_2d_1). Unless explicitly specified, analytic_2d_1 is
+used for 2D system and inf_vacuum is assumed for 1D and 0D.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.copy">
+<code class="sig-name descname"><span class="pre">copy</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/pbc/gto/cell.html#Cell.copy"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.pbc.gto.Cell.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deepcopy of the given <code class="xref py py-class docutils literal notranslate"><span class="pre">Mole</span></code> object</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.dumps">
+<code class="sig-name descname"><span class="pre">dumps</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.pbc.gto.Cell.dumps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serialize Cell object to a JSON formatted str.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.energy_nuc">
+<code class="sig-name descname"><span class="pre">energy_nuc</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ew_eta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ew_cut</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.pbc.gto.Cell.energy_nuc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform real (R) and reciprocal (G) space Ewald sum for the energy.</p>
+<p>Formulation of Martin, App. F2.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>float</dt><dd><p>The Ewald energy consisting of overlap, self, and G-space sum.</p>
+</dd>
+</dl>
+</dd>
+<dt>See Also:</dt><dd><p>pyscf.pbc.gto.get_ewald_params</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.eval_ao">
+<code class="sig-name descname"><span class="pre">eval_ao</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eval_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kpts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kpt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shls_slice</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">non0tab</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ao_loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.pbc.gto.Cell.eval_ao" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate PBC-AO function value on the given grids,</p>
+<dl>
+<dt>Args:</dt><dd><p>eval_name : str</p>
+<blockquote>
+<div><table class="docutils align-default">
+<colgroup>
+<col style="width: 49%" />
+<col style="width: 51%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Expression</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>“GTOval_sph”</p></td>
+<td><p>sum_T exp(ik*T) <a href="#id1"><span class="problematic" id="id2">|</span></a>AO&gt;</p></td>
+</tr>
+<tr class="row-odd"><td><p>“GTOval_ip_sph”</p></td>
+<td><p>nabla sum_T exp(ik*T) <a href="#id3"><span class="problematic" id="id4">|</span></a>AO&gt;</p></td>
+</tr>
+<tr class="row-even"><td><p>“GTOval_cart”</p></td>
+<td><p>sum_T exp(ik*T) <a href="#id5"><span class="problematic" id="id6">|</span></a>AO&gt;</p></td>
+</tr>
+<tr class="row-odd"><td><p>“GTOval_ip_cart”</p></td>
+<td><p>nabla sum_T exp(ik*T) <a href="#id7"><span class="problematic" id="id8">|</span></a>AO&gt;</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<dl class="simple">
+<dt>atm<span class="classifier">int32 ndarray</span></dt><dd><p>libcint integral function argument</p>
+</dd>
+<dt>bas<span class="classifier">int32 ndarray</span></dt><dd><p>libcint integral function argument</p>
+</dd>
+<dt>env<span class="classifier">float64 ndarray</span></dt><dd><p>libcint integral function argument</p>
+</dd>
+<dt>coords<span class="classifier">2D array, shape (N,3)</span></dt><dd><p>The coordinates of the grids.</p>
+</dd>
+</dl>
+</dd>
+<dt>Kwargs:</dt><dd><dl class="simple">
+<dt>shls_slice<span class="classifier">2-element list</span></dt><dd><p>(shl_start, shl_end).
+If given, only part of AOs (shl_start &lt;= shell_id &lt; shl_end) are
+evaluated.  By default, all shells defined in cell will be evaluated.</p>
+</dd>
+<dt>non0tab<span class="classifier">2D bool array</span></dt><dd><p>mask array to indicate whether the AO values are zero.  The mask
+array can be obtained by calling <code class="xref py py-func docutils literal notranslate"><span class="pre">dft.gen_grid.make_mask()</span></code></p>
+</dd>
+<dt>out<span class="classifier">ndarray</span></dt><dd><p>If provided, results are written into this array.</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>A list of 2D (or 3D) arrays to hold the AO values on grids.  Each
+element of the list corresponds to a k-point and it has the shape
+(N,nao) Or shape (*,N,nao).</p>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span> <span class="o">=</span> <span class="n">pbc</span><span class="o">.</span><span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="mi">4</span><span class="p">,</span> <span class="n">atom</span><span class="o">=</span><span class="s1">&#39;He 1 1 1&#39;</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;6-31g&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">coords</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">get_uniform_grids</span><span class="p">([</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">kpts</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">make_kpts</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ao_value</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">pbc_eval_gto</span><span class="p">(</span><span class="s2">&quot;GTOval_sph&quot;</span><span class="p">,</span> <span class="n">coords</span><span class="p">,</span> <span class="n">kpts</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">ao_value</span><span class="p">)</span>
+<span class="go">27</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ao_value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
+<span class="go">(100, 2)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ao_value</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">pbc_eval_gto</span><span class="p">(</span><span class="s2">&quot;GTOval_ig_sph&quot;</span><span class="p">,</span> <span class="n">coords</span><span class="p">,</span> <span class="n">kpts</span><span class="p">,</span> <span class="n">comp</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ao_value</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">ao_value</span><span class="p">)</span>
+<span class="go">27</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ao_value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
+<span class="go">(3, 100, 2)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.eval_gto">
+<code class="sig-name descname"><span class="pre">eval_gto</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eval_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kpts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kpt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shls_slice</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">non0tab</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ao_loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/pbc/gto/cell.html#Cell.eval_gto"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.pbc.gto.Cell.eval_gto" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate PBC-AO function value on the given grids,</p>
+<dl>
+<dt>Args:</dt><dd><p>eval_name : str</p>
+<blockquote>
+<div><table class="docutils align-default">
+<colgroup>
+<col style="width: 49%" />
+<col style="width: 51%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Expression</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>“GTOval_sph”</p></td>
+<td><p>sum_T exp(ik*T) <a href="#id9"><span class="problematic" id="id10">|</span></a>AO&gt;</p></td>
+</tr>
+<tr class="row-odd"><td><p>“GTOval_ip_sph”</p></td>
+<td><p>nabla sum_T exp(ik*T) <a href="#id11"><span class="problematic" id="id12">|</span></a>AO&gt;</p></td>
+</tr>
+<tr class="row-even"><td><p>“GTOval_cart”</p></td>
+<td><p>sum_T exp(ik*T) <a href="#id13"><span class="problematic" id="id14">|</span></a>AO&gt;</p></td>
+</tr>
+<tr class="row-odd"><td><p>“GTOval_ip_cart”</p></td>
+<td><p>nabla sum_T exp(ik*T) <a href="#id15"><span class="problematic" id="id16">|</span></a>AO&gt;</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<dl class="simple">
+<dt>atm<span class="classifier">int32 ndarray</span></dt><dd><p>libcint integral function argument</p>
+</dd>
+<dt>bas<span class="classifier">int32 ndarray</span></dt><dd><p>libcint integral function argument</p>
+</dd>
+<dt>env<span class="classifier">float64 ndarray</span></dt><dd><p>libcint integral function argument</p>
+</dd>
+<dt>coords<span class="classifier">2D array, shape (N,3)</span></dt><dd><p>The coordinates of the grids.</p>
+</dd>
+</dl>
+</dd>
+<dt>Kwargs:</dt><dd><dl class="simple">
+<dt>shls_slice<span class="classifier">2-element list</span></dt><dd><p>(shl_start, shl_end).
+If given, only part of AOs (shl_start &lt;= shell_id &lt; shl_end) are
+evaluated.  By default, all shells defined in cell will be evaluated.</p>
+</dd>
+<dt>non0tab<span class="classifier">2D bool array</span></dt><dd><p>mask array to indicate whether the AO values are zero.  The mask
+array can be obtained by calling <code class="xref py py-func docutils literal notranslate"><span class="pre">dft.gen_grid.make_mask()</span></code></p>
+</dd>
+<dt>out<span class="classifier">ndarray</span></dt><dd><p>If provided, results are written into this array.</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>A list of 2D (or 3D) arrays to hold the AO values on grids.  Each
+element of the list corresponds to a k-point and it has the shape
+(N,nao) Or shape (*,N,nao).</p>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span> <span class="o">=</span> <span class="n">pbc</span><span class="o">.</span><span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="mi">4</span><span class="p">,</span> <span class="n">atom</span><span class="o">=</span><span class="s1">&#39;He 1 1 1&#39;</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;6-31g&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">coords</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">get_uniform_grids</span><span class="p">([</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">kpts</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">make_kpts</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ao_value</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">pbc_eval_gto</span><span class="p">(</span><span class="s2">&quot;GTOval_sph&quot;</span><span class="p">,</span> <span class="n">coords</span><span class="p">,</span> <span class="n">kpts</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">ao_value</span><span class="p">)</span>
+<span class="go">27</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ao_value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
+<span class="go">(100, 2)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ao_value</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">pbc_eval_gto</span><span class="p">(</span><span class="s2">&quot;GTOval_ig_sph&quot;</span><span class="p">,</span> <span class="n">coords</span><span class="p">,</span> <span class="n">kpts</span><span class="p">,</span> <span class="n">comp</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ao_value</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">ao_value</span><span class="p">)</span>
+<span class="go">27</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ao_value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
+<span class="go">(3, 100, 2)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.ewald">
+<code class="sig-name descname"><span class="pre">ewald</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ew_eta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ew_cut</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.pbc.gto.Cell.ewald" title="Permalink to this definition">¶</a></dt>
+<dd><p>Perform real (R) and reciprocal (G) space Ewald sum for the energy.</p>
+<p>Formulation of Martin, App. F2.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>float</dt><dd><p>The Ewald energy consisting of overlap, self, and G-space sum.</p>
+</dd>
+</dl>
+</dd>
+<dt>See Also:</dt><dd><p>pyscf.pbc.gto.get_ewald_params</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.format_basis">
+<code class="sig-name descname"><span class="pre">format_basis</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">basis_tab</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/pbc/gto/cell.html#Cell.format_basis"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.pbc.gto.Cell.format_basis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the input <code class="xref py py-attr docutils literal notranslate"><span class="pre">Cell.basis</span></code> to the internal data format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="n">atom</span><span class="p">:</span> <span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">kappa</span><span class="p">,</span> <span class="p">((</span><span class="o">-</span><span class="n">exp</span><span class="p">,</span> <span class="n">c_1</span><span class="p">,</span> <span class="n">c_2</span><span class="p">,</span> <span class="o">..</span><span class="p">),</span> <span class="n">nprim</span><span class="p">,</span> <span class="n">nctr</span><span class="p">,</span> <span class="n">ptr</span><span class="o">-</span><span class="n">exps</span><span class="p">,</span> <span class="n">ptr</span><span class="o">-</span><span class="n">contraction</span><span class="o">-</span><span class="n">coeff</span><span class="p">)),</span> <span class="o">...</span> <span class="p">}</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>basis_tab<span class="classifier">dict</span></dt><dd><p>Similar to <code class="xref py py-attr docutils literal notranslate"><span class="pre">Cell.basis</span></code>, it <strong>cannot</strong> be a str</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>Formated <code class="xref py py-attr docutils literal notranslate"><span class="pre">basis</span></code></p>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pbc</span><span class="o">.</span><span class="n">format_basis</span><span class="p">({</span><span class="s1">&#39;H&#39;</span><span class="p">:</span><span class="s1">&#39;gth-szv&#39;</span><span class="p">})</span>
+<span class="go">{&#39;H&#39;: [[0,</span>
+<span class="go">    (8.3744350009, -0.0283380461),</span>
+<span class="go">    (1.8058681460, -0.1333810052),</span>
+<span class="go">    (0.4852528328, -0.3995676063),</span>
+<span class="go">    (0.1658236932, -0.5531027541)]]}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.format_pseudo">
+<code class="sig-name descname"><span class="pre">format_pseudo</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pseudo_tab</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/pbc/gto/cell.html#Cell.format_pseudo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.pbc.gto.Cell.format_pseudo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the input <code class="xref py py-attr docutils literal notranslate"><span class="pre">Cell.pseudo</span></code> (dict) to the internal data format:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span> <span class="n">atom</span><span class="p">:</span> <span class="p">(</span> <span class="p">(</span><span class="n">nelec_s</span><span class="p">,</span> <span class="n">nele_p</span><span class="p">,</span> <span class="n">nelec_d</span><span class="p">,</span> <span class="o">...</span><span class="p">),</span>
+         <span class="n">rloc</span><span class="p">,</span> <span class="n">nexp</span><span class="p">,</span> <span class="p">(</span><span class="n">cexp_1</span><span class="p">,</span> <span class="n">cexp_2</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">cexp_nexp</span><span class="p">),</span>
+         <span class="n">nproj_types</span><span class="p">,</span>
+         <span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">nproj1</span><span class="p">,</span> <span class="p">(</span> <span class="p">(</span><span class="n">hproj1</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">hproj1</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="o">...</span><span class="p">,</span> <span class="n">hproj1</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="n">nproj1</span><span class="p">]),</span>
+                        <span class="p">(</span><span class="n">hproj1</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">hproj1</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="o">...</span><span class="p">,</span> <span class="n">hproj1</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="n">nproj1</span><span class="p">]),</span>
+                        <span class="o">...</span>
+                        <span class="p">(</span><span class="n">hproj1</span><span class="p">[</span><span class="n">nproj1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">hproj1</span><span class="p">[</span><span class="n">nproj1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="o">...</span>        <span class="p">)</span> <span class="p">)),</span>
+         <span class="p">(</span><span class="n">r2</span><span class="p">,</span> <span class="n">nproj2</span><span class="p">,</span> <span class="p">(</span> <span class="p">(</span><span class="n">hproj2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="n">hproj2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="o">...</span><span class="p">,</span> <span class="n">hproj2</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="n">nproj1</span><span class="p">]),</span>
+         <span class="o">...</span> <span class="p">)</span> <span class="p">)</span>
+         <span class="p">)</span>
+ <span class="o">...</span> <span class="p">}</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>pseudo_tab<span class="classifier">dict</span></dt><dd><p>Similar to <code class="xref py py-attr docutils literal notranslate"><span class="pre">Cell.pseudo</span></code> (a dict), it <strong>cannot</strong> be a str</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>Formatted <code class="xref py py-attr docutils literal notranslate"><span class="pre">pseudo</span></code></p>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pbc</span><span class="o">.</span><span class="n">format_pseudo</span><span class="p">({</span><span class="s1">&#39;H&#39;</span><span class="p">:</span><span class="s1">&#39;gth-blyp&#39;</span><span class="p">,</span> <span class="s1">&#39;He&#39;</span><span class="p">:</span> <span class="s1">&#39;gth-pade&#39;</span><span class="p">})</span>
+<span class="go">{&#39;H&#39;: [[1],</span>
+<span class="go">    0.2, 2, [-4.19596147, 0.73049821], 0],</span>
+<span class="go"> &#39;He&#39;: [[2],</span>
+<span class="go">    0.2, 2, [-9.1120234, 1.69836797], 0]}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.from_ase">
+<code class="sig-name descname"><span class="pre">from_ase</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ase_atom</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/pbc/gto/cell.html#Cell.from_ase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.pbc.gto.Cell.from_ase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update cell based on given ase atom object</p>
+<p>Examples:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ase.lattice</span> <span class="kn">import</span> <span class="n">bulk</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span><span class="o">.</span><span class="n">from_ase</span><span class="p">(</span><span class="n">bulk</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;diamond&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="n">LATTICE_CONST</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.gen_uniform_grids">
+<code class="sig-name descname"><span class="pre">gen_uniform_grids</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mesh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.pbc.gto.Cell.gen_uniform_grids" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a uniform real-space grid consistent w/ samp thm; see MH (3.19).</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>cell : instance of <a class="reference internal" href="../modules/pbc/gto.html#pyscf.pbc.gto.Cell" title="pyscf.pbc.gto.Cell"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cell</span></code></a></p>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>coords<span class="classifier">(ngx*ngy*ngz, 3) ndarray</span></dt><dd><p>The real-space grid point coordinates.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.get_Gv">
+<code class="sig-name descname"><span class="pre">get_Gv</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mesh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.pbc.gto.Cell.get_Gv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate three-dimensional G-vectors for the cell; see MH (3.8).</p>
+<p>Indices along each direction go as [0…N-1, -N…-1] to follow FFT convention.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>cell : instance of <a class="reference internal" href="../modules/pbc/gto.html#pyscf.pbc.gto.Cell" title="pyscf.pbc.gto.Cell"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cell</span></code></a></p>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>Gv<span class="classifier">(ngrids, 3) ndarray of floats</span></dt><dd><p>The array of G-vectors.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.get_Gv_weights">
+<code class="sig-name descname"><span class="pre">get_Gv_weights</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mesh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.pbc.gto.Cell.get_Gv_weights" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate G-vectors and weights.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>Gv<span class="classifier">(ngris, 3) ndarray of floats</span></dt><dd><p>The array of G-vectors.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.get_SI">
+<code class="sig-name descname"><span class="pre">get_SI</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Gv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.pbc.gto.Cell.get_SI" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the structure factor (0D, 1D, 2D, 3D) for all atoms; see MH (3.34).</p>
+<dl>
+<dt>Args:</dt><dd><p>cell : instance of <a class="reference internal" href="../modules/pbc/gto.html#pyscf.pbc.gto.Cell" title="pyscf.pbc.gto.Cell"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cell</span></code></a></p>
+<dl class="simple">
+<dt>Gv<span class="classifier">(N,3) array</span></dt><dd><p>G vectors</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>SI<span class="classifier">(natm, ngrids) ndarray, dtype=np.complex128</span></dt><dd><p>The structure factor for each atom at each G-vector.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.get_abs_kpts">
+<code class="sig-name descname"><span class="pre">get_abs_kpts</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scaled_kpts</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/pbc/gto/cell.html#Cell.get_abs_kpts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.pbc.gto.Cell.get_abs_kpts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get absolute k-points (in 1/Bohr), given “scaled” k-points in
+fractions of lattice vectors.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>scaled_kpts : (nkpts, 3) ndarray of floats</p>
+</dd>
+<dt>Returns:</dt><dd><p>abs_kpts : (nkpts, 3) ndarray of floats</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.get_bounding_sphere">
+<code class="sig-name descname"><span class="pre">get_bounding_sphere</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rcut</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.pbc.gto.Cell.get_bounding_sphere" title="Permalink to this definition">¶</a></dt>
+<dd><p>Finds all the lattice points within a sphere of radius rcut.</p>
+<p>Defines a parallelipiped given by -N_x &lt;= n_x &lt;= N_x, with x in [1,3]
+See Martin p. 85</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>rcut<span class="classifier">number</span></dt><dd><p>real space cut-off for interaction</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>cut : ndarray of 3 ints defining N_x</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.get_ewald_params">
+<code class="sig-name descname"><span class="pre">get_ewald_params</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mesh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.pbc.gto.Cell.get_ewald_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Choose a reasonable value of Ewald ‘eta’ and ‘cut’ parameters.
+eta^2 is the exponent coefficient of the model Gaussian charge for nucleus
+at R:  frac{eta^3}{pi^1.5} e^{-eta^2 (r-R)^2}</p>
+<p>Choice is based on largest G vector and desired relative precision.</p>
+<p>The relative error in the G-space sum is given by</p>
+<blockquote>
+<div><p>precision ~ 4pi Gmax^2 e^{(-Gmax^2)/(4 eta^2)}</p>
+</div></blockquote>
+<p>which determines eta. Then, real-space cutoff is determined by (exp.
+factors only)</p>
+<blockquote>
+<div><p>precision ~ erfc(eta*rcut) / rcut ~ e^{(-eta**2 rcut*2)}</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>ew_eta, ew_cut<span class="classifier">float</span></dt><dd><p>The Ewald ‘eta’ and ‘cut’ parameters.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.get_kpts">
+<code class="sig-name descname"><span class="pre">get_kpts</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wrap_around</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_gamma_point</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scaled_center</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.pbc.gto.Cell.get_kpts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given number of kpoints along x,y,z , generate kpoints</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>nks : (3,) ndarray</p>
+</dd>
+<dt>Kwargs:</dt><dd><dl class="simple">
+<dt>wrap_around<span class="classifier">bool</span></dt><dd><p>To ensure all kpts are in first Brillouin zone.</p>
+</dd>
+<dt>with_gamma_point<span class="classifier">bool</span></dt><dd><p>Whether to shift Monkhorst-pack grid to include gamma-point.</p>
+</dd>
+<dt>scaled_center<span class="classifier">(3,) array</span></dt><dd><p>Shift all points in the Monkhorst-pack grid to be centered on
+scaled_center, given as the zeroth index of the returned kpts.
+Scaled meaning that the k-points are scaled to a grid from 
+[-1,1] x [-1,1] x [-1,1]</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>kpts in absolute value (unit 1/Bohr).  Gamma point is placed at the
+first place in the k-points list</p>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span><span class="o">.</span><span class="n">make_kpts</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.get_lattice_Ls">
+<code class="sig-name descname"><span class="pre">get_lattice_Ls</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nimgs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rcut</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">discard</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.pbc.gto.Cell.get_lattice_Ls" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the (Cartesian, unitful) lattice translation vectors for nearby images.
+The translation vectors can be used for the lattice summation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.get_nimgs">
+<code class="sig-name descname"><span class="pre">get_nimgs</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.pbc.gto.Cell.get_nimgs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Choose number of basis function images in lattice sums
+to include for given precision in overlap, using</p>
+<p>precision ~ int r^l e^{-alpha r^2} (r-rcut)^l e^{-alpha (r-rcut)^2}
+~ (rcut^2/(2alpha))^l e^{alpha/2 rcut^2}</p>
+<p>where alpha is the smallest exponent in the basis. Note
+that assumes an isolated exponent in the middle of the box, so
+it adds one additional lattice vector to be safe.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.get_scaled_kpts">
+<code class="sig-name descname"><span class="pre">get_scaled_kpts</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">abs_kpts</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/pbc/gto/cell.html#Cell.get_scaled_kpts"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.pbc.gto.Cell.get_scaled_kpts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get scaled k-points, given absolute k-points in 1/Bohr.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>abs_kpts : (nkpts, 3) ndarray of floats</p>
+</dd>
+<dt>Returns:</dt><dd><p>scaled_kpts : (nkpts, 3) ndarray of floats</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.get_uniform_grids">
+<code class="sig-name descname"><span class="pre">get_uniform_grids</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mesh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.pbc.gto.Cell.get_uniform_grids" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a uniform real-space grid consistent w/ samp thm; see MH (3.19).</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>cell : instance of <a class="reference internal" href="../modules/pbc/gto.html#pyscf.pbc.gto.Cell" title="pyscf.pbc.gto.Cell"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cell</span></code></a></p>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>coords<span class="classifier">(ngx*ngy*ngz, 3) ndarray</span></dt><dd><p>The real-space grid point coordinates.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.has_ecp">
+<code class="sig-name descname"><span class="pre">has_ecp</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/pbc/gto/cell.html#Cell.has_ecp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.pbc.gto.Cell.has_ecp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether pseudo potential is used in the system.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.kernel">
+<code class="sig-name descname"><span class="pre">kernel</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dump_input</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parse_arg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mesh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ke_cutoff</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nimgs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ew_eta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ew_cut</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pseudo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">basis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimension</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rcut</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">low_dim_ft_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.pbc.gto.Cell.kernel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Setup Mole molecule and Cell and initialize some control parameters.
+Whenever you change the value of the attributes of <a class="reference internal" href="../modules/pbc/gto.html#pyscf.pbc.gto.Cell" title="pyscf.pbc.gto.Cell"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cell</span></code></a>,
+you need call this function to refresh the internal data of Cell.</p>
+<dl class="simple">
+<dt>Kwargs:</dt><dd><dl class="simple">
+<dt>a<span class="classifier">(3,3) ndarray</span></dt><dd><p>The real-space unit cell lattice vectors. Each row represents
+a lattice vector.</p>
+</dd>
+<dt>mesh<span class="classifier">(3,) ndarray of ints</span></dt><dd><p>The number of <em>positive</em> G-vectors along each direction.</p>
+</dd>
+<dt>ke_cutoff<span class="classifier">float</span></dt><dd><p>If set, defines a spherical cutoff of planewaves, with .5 * G**2 &lt; ke_cutoff
+The default value is estimated based on <code class="xref py py-attr docutils literal notranslate"><span class="pre">precision</span></code></p>
+</dd>
+<dt>precision<span class="classifier">float</span></dt><dd><p>To control Ewald sums and lattice sums accuracy</p>
+</dd>
+<dt>nimgs<span class="classifier">(3,) ndarray of ints</span></dt><dd><p>Number of repeated images in lattice summation to produce
+periodicity. This value can be estimated based on the required
+precision.  It’s recommended NOT making changes to this value.</p>
+</dd>
+<dt>rcut<span class="classifier">float</span></dt><dd><p>Cutoff radius (unit Bohr) in lattice summation to produce
+periodicity. The value can be estimated based on the required
+precision.  It’s recommended NOT making changes to this value.</p>
+</dd>
+<dt>ew_eta, ew_cut<span class="classifier">float</span></dt><dd><p>Parameters eta and cut to converge Ewald summation.
+See <a class="reference internal" href="../modules/pbc/gto.html#pyscf.pbc.gto.Cell.get_ewald_params" title="pyscf.pbc.gto.Cell.get_ewald_params"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_ewald_params()</span></code></a></p>
+</dd>
+<dt>pseudo<span class="classifier">dict or str</span></dt><dd><p>To define pseudopotential.</p>
+</dd>
+<dt>ecp<span class="classifier">dict or str</span></dt><dd><p>To define ECP type pseudopotential.</p>
+</dd>
+<dt>h<span class="classifier">(3,3) ndarray</span></dt><dd><p>a.T. Deprecated</p>
+</dd>
+<dt>dimension<span class="classifier">int</span></dt><dd><p>Default is 3</p>
+</dd>
+<dt>low_dim_ft_type<span class="classifier">str</span></dt><dd><p>For semi-empirical periodic systems, whether to calculate
+integrals at the non-PBC dimension using the sampled mesh grids in
+infinity vacuum (inf_vacuum) or truncated Coulomb potential
+(analytic_2d_1). Unless explicitly specified, analytic_2d_1 is
+used for 2D system and inf_vacuum is assumed for 1D and 0D.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.lattice_vectors">
+<code class="sig-name descname"><span class="pre">lattice_vectors</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/pbc/gto/cell.html#Cell.lattice_vectors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.pbc.gto.Cell.lattice_vectors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the primitive lattice vectors.</p>
+<p>Return 3x3 array in which each row represents one direction of the
+lattice vectors (unit in Bohr)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.loads">
+<code class="sig-name descname"><span class="pre">loads</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">molstr</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/pbc/gto/cell.html#Cell.loads"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.pbc.gto.Cell.loads" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deserialize a str containing a JSON document to a Cell object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.make_ecp_env">
+<code class="sig-name descname"><span class="pre">make_ecp_env</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_atm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_ecp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pre_env</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/pbc/gto/cell.html#Cell.make_ecp_env"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.pbc.gto.Cell.make_ecp_env" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the input arguments _ecpbas for ECP integrals</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.make_kpts">
+<code class="sig-name descname"><span class="pre">make_kpts</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nks</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wrap_around</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_gamma_point</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scaled_center</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.pbc.gto.Cell.make_kpts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given number of kpoints along x,y,z , generate kpoints</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>nks : (3,) ndarray</p>
+</dd>
+<dt>Kwargs:</dt><dd><dl class="simple">
+<dt>wrap_around<span class="classifier">bool</span></dt><dd><p>To ensure all kpts are in first Brillouin zone.</p>
+</dd>
+<dt>with_gamma_point<span class="classifier">bool</span></dt><dd><p>Whether to shift Monkhorst-pack grid to include gamma-point.</p>
+</dd>
+<dt>scaled_center<span class="classifier">(3,) array</span></dt><dd><p>Shift all points in the Monkhorst-pack grid to be centered on
+scaled_center, given as the zeroth index of the returned kpts.
+Scaled meaning that the k-points are scaled to a grid from 
+[-1,1] x [-1,1] x [-1,1]</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>kpts in absolute value (unit 1/Bohr).  Gamma point is placed at the
+first place in the k-points list</p>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span><span class="o">.</span><span class="n">make_kpts</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.pack">
+<code class="sig-name descname"><span class="pre">pack</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.pbc.gto.Cell.pack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pack the input args of <a class="reference internal" href="../modules/pbc/gto.html#pyscf.pbc.gto.Cell" title="pyscf.pbc.gto.Cell"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cell</span></code></a> to a dict, which can be serialized
+with <code class="xref py py-mod docutils literal notranslate"><span class="pre">pickle</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.pbc_eval_ao">
+<code class="sig-name descname"><span class="pre">pbc_eval_ao</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eval_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kpts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kpt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shls_slice</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">non0tab</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ao_loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.pbc.gto.Cell.pbc_eval_ao" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate PBC-AO function value on the given grids,</p>
+<dl>
+<dt>Args:</dt><dd><p>eval_name : str</p>
+<blockquote>
+<div><table class="docutils align-default">
+<colgroup>
+<col style="width: 49%" />
+<col style="width: 51%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Expression</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>“GTOval_sph”</p></td>
+<td><p>sum_T exp(ik*T) <a href="#id17"><span class="problematic" id="id18">|</span></a>AO&gt;</p></td>
+</tr>
+<tr class="row-odd"><td><p>“GTOval_ip_sph”</p></td>
+<td><p>nabla sum_T exp(ik*T) <a href="#id19"><span class="problematic" id="id20">|</span></a>AO&gt;</p></td>
+</tr>
+<tr class="row-even"><td><p>“GTOval_cart”</p></td>
+<td><p>sum_T exp(ik*T) <a href="#id21"><span class="problematic" id="id22">|</span></a>AO&gt;</p></td>
+</tr>
+<tr class="row-odd"><td><p>“GTOval_ip_cart”</p></td>
+<td><p>nabla sum_T exp(ik*T) <a href="#id23"><span class="problematic" id="id24">|</span></a>AO&gt;</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<dl class="simple">
+<dt>atm<span class="classifier">int32 ndarray</span></dt><dd><p>libcint integral function argument</p>
+</dd>
+<dt>bas<span class="classifier">int32 ndarray</span></dt><dd><p>libcint integral function argument</p>
+</dd>
+<dt>env<span class="classifier">float64 ndarray</span></dt><dd><p>libcint integral function argument</p>
+</dd>
+<dt>coords<span class="classifier">2D array, shape (N,3)</span></dt><dd><p>The coordinates of the grids.</p>
+</dd>
+</dl>
+</dd>
+<dt>Kwargs:</dt><dd><dl class="simple">
+<dt>shls_slice<span class="classifier">2-element list</span></dt><dd><p>(shl_start, shl_end).
+If given, only part of AOs (shl_start &lt;= shell_id &lt; shl_end) are
+evaluated.  By default, all shells defined in cell will be evaluated.</p>
+</dd>
+<dt>non0tab<span class="classifier">2D bool array</span></dt><dd><p>mask array to indicate whether the AO values are zero.  The mask
+array can be obtained by calling <code class="xref py py-func docutils literal notranslate"><span class="pre">dft.gen_grid.make_mask()</span></code></p>
+</dd>
+<dt>out<span class="classifier">ndarray</span></dt><dd><p>If provided, results are written into this array.</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>A list of 2D (or 3D) arrays to hold the AO values on grids.  Each
+element of the list corresponds to a k-point and it has the shape
+(N,nao) Or shape (*,N,nao).</p>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span> <span class="o">=</span> <span class="n">pbc</span><span class="o">.</span><span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="mi">4</span><span class="p">,</span> <span class="n">atom</span><span class="o">=</span><span class="s1">&#39;He 1 1 1&#39;</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;6-31g&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">coords</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">get_uniform_grids</span><span class="p">([</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">kpts</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">make_kpts</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ao_value</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">pbc_eval_gto</span><span class="p">(</span><span class="s2">&quot;GTOval_sph&quot;</span><span class="p">,</span> <span class="n">coords</span><span class="p">,</span> <span class="n">kpts</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">ao_value</span><span class="p">)</span>
+<span class="go">27</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ao_value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
+<span class="go">(100, 2)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ao_value</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">pbc_eval_gto</span><span class="p">(</span><span class="s2">&quot;GTOval_ig_sph&quot;</span><span class="p">,</span> <span class="n">coords</span><span class="p">,</span> <span class="n">kpts</span><span class="p">,</span> <span class="n">comp</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ao_value</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">ao_value</span><span class="p">)</span>
+<span class="go">27</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ao_value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
+<span class="go">(3, 100, 2)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.pbc_eval_gto">
+<code class="sig-name descname"><span class="pre">pbc_eval_gto</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">eval_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kpts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kpt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shls_slice</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">non0tab</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ao_loc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/pbc/gto/cell.html#Cell.pbc_eval_gto"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.pbc.gto.Cell.pbc_eval_gto" title="Permalink to this definition">¶</a></dt>
+<dd><p>Evaluate PBC-AO function value on the given grids,</p>
+<dl>
+<dt>Args:</dt><dd><p>eval_name : str</p>
+<blockquote>
+<div><table class="docutils align-default">
+<colgroup>
+<col style="width: 49%" />
+<col style="width: 51%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Function</p></th>
+<th class="head"><p>Expression</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>“GTOval_sph”</p></td>
+<td><p>sum_T exp(ik*T) <a href="#id25"><span class="problematic" id="id26">|</span></a>AO&gt;</p></td>
+</tr>
+<tr class="row-odd"><td><p>“GTOval_ip_sph”</p></td>
+<td><p>nabla sum_T exp(ik*T) <a href="#id27"><span class="problematic" id="id28">|</span></a>AO&gt;</p></td>
+</tr>
+<tr class="row-even"><td><p>“GTOval_cart”</p></td>
+<td><p>sum_T exp(ik*T) <a href="#id29"><span class="problematic" id="id30">|</span></a>AO&gt;</p></td>
+</tr>
+<tr class="row-odd"><td><p>“GTOval_ip_cart”</p></td>
+<td><p>nabla sum_T exp(ik*T) <a href="#id31"><span class="problematic" id="id32">|</span></a>AO&gt;</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<dl class="simple">
+<dt>atm<span class="classifier">int32 ndarray</span></dt><dd><p>libcint integral function argument</p>
+</dd>
+<dt>bas<span class="classifier">int32 ndarray</span></dt><dd><p>libcint integral function argument</p>
+</dd>
+<dt>env<span class="classifier">float64 ndarray</span></dt><dd><p>libcint integral function argument</p>
+</dd>
+<dt>coords<span class="classifier">2D array, shape (N,3)</span></dt><dd><p>The coordinates of the grids.</p>
+</dd>
+</dl>
+</dd>
+<dt>Kwargs:</dt><dd><dl class="simple">
+<dt>shls_slice<span class="classifier">2-element list</span></dt><dd><p>(shl_start, shl_end).
+If given, only part of AOs (shl_start &lt;= shell_id &lt; shl_end) are
+evaluated.  By default, all shells defined in cell will be evaluated.</p>
+</dd>
+<dt>non0tab<span class="classifier">2D bool array</span></dt><dd><p>mask array to indicate whether the AO values are zero.  The mask
+array can be obtained by calling <code class="xref py py-func docutils literal notranslate"><span class="pre">dft.gen_grid.make_mask()</span></code></p>
+</dd>
+<dt>out<span class="classifier">ndarray</span></dt><dd><p>If provided, results are written into this array.</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>A list of 2D (or 3D) arrays to hold the AO values on grids.  Each
+element of the list corresponds to a k-point and it has the shape
+(N,nao) Or shape (*,N,nao).</p>
+</dd>
+</dl>
+<p>Examples:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cell</span> <span class="o">=</span> <span class="n">pbc</span><span class="o">.</span><span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="mi">4</span><span class="p">,</span> <span class="n">atom</span><span class="o">=</span><span class="s1">&#39;He 1 1 1&#39;</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;6-31g&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">coords</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">get_uniform_grids</span><span class="p">([</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">kpts</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">make_kpts</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ao_value</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">pbc_eval_gto</span><span class="p">(</span><span class="s2">&quot;GTOval_sph&quot;</span><span class="p">,</span> <span class="n">coords</span><span class="p">,</span> <span class="n">kpts</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">ao_value</span><span class="p">)</span>
+<span class="go">27</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ao_value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
+<span class="go">(100, 2)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ao_value</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">pbc_eval_gto</span><span class="p">(</span><span class="s2">&quot;GTOval_ig_sph&quot;</span><span class="p">,</span> <span class="n">coords</span><span class="p">,</span> <span class="n">kpts</span><span class="p">,</span> <span class="n">comp</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ao_value</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">ao_value</span><span class="p">)</span>
+<span class="go">27</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ao_value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
+<span class="go">(3, 100, 2)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.pbc_intor">
+<code class="sig-name descname"><span class="pre">pbc_intor</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">intor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">comp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hermi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kpts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kpt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shls_slice</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/pbc/gto/cell.html#Cell.pbc_intor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.pbc.gto.Cell.pbc_intor" title="Permalink to this definition">¶</a></dt>
+<dd><p>One-electron integrals with PBC.</p>
+<div class="math notranslate nohighlight">
+\[\sum_T \int \mu(r) * [intor] * \nu (r-T) dr\]</div>
+<p>See also Mole.intor</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.reciprocal_vectors">
+<code class="sig-name descname"><span class="pre">reciprocal_vectors</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">norm_to</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6.283185307179586</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/pbc/gto/cell.html#Cell.reciprocal_vectors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.pbc.gto.Cell.reciprocal_vectors" title="Permalink to this definition">¶</a></dt>
+<dd><div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\mathbf{b_1} &amp;= 2\pi \frac{\mathbf{a_2} \times \mathbf{a_3}}{\mathbf{a_1} \cdot (\mathbf{a_2} \times \mathbf{a_3})} \\
+\mathbf{b_2} &amp;= 2\pi \frac{\mathbf{a_3} \times \mathbf{a_1}}{\mathbf{a_2} \cdot (\mathbf{a_3} \times \mathbf{a_1})} \\
+\mathbf{b_3} &amp;= 2\pi \frac{\mathbf{a_1} \times \mathbf{a_2}}{\mathbf{a_3} \cdot (\mathbf{a_1} \times \mathbf{a_2})}
+\end{align}\end{split}\]</div>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.to_mol">
+<code class="sig-name descname"><span class="pre">to_mol</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/pbc/gto/cell.html#Cell.to_mol"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.pbc.gto.Cell.to_mol" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a Mole object using the same atoms and basis functions as
+the Cell object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.tot_electrons">
+<code class="sig-name descname"><span class="pre">tot_electrons</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nkpts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyscf.pbc.gto.Cell.tot_electrons" title="Permalink to this definition">¶</a></dt>
+<dd><p>Total number of electrons</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pyscf.pbc.gto.Cell.unpack">
+<code class="sig-name descname"><span class="pre">unpack</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">moldic</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/pbc/gto/cell.html#Cell.unpack"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.pbc.gto.Cell.unpack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the packed dict to a <a class="reference internal" href="../modules/pbc/gto.html#pyscf.pbc.gto.Cell" title="pyscf.pbc.gto.Cell"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cell</span></code></a> object, to generate the
+input arguments for <a class="reference internal" href="../modules/pbc/gto.html#pyscf.pbc.gto.Cell" title="pyscf.pbc.gto.Cell"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cell</span></code></a> object.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="connection-to-mole-class">
+<span id="cell-to-mol"></span><h3>Connection to <code class="xref py py-class docutils literal notranslate"><span class="pre">Mole</span></code> class<a class="headerlink" href="#connection-to-mole-class" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference internal" href="../modules/pbc/gto.html#pyscf.pbc.gto.Cell" title="pyscf.pbc.gto.Cell"><code class="xref py py-class docutils literal notranslate"><span class="pre">Cell</span></code></a> class is compatible with the molecule
+<a class="reference internal" href="../modules/gto.html#id0" title="pyscf.gto.mole.Mole"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyscf.gto.mole.Mole</span></code></a> class.  They shared most data structure and
+methods.  It gives the freedom to mix the finite size calculation and the PBC
+calculation.  If you feed the cell object to molecule module/functions, the
+molecule program will not check whether the given <code class="xref py py-class docutils literal notranslate"><span class="pre">Mole</span></code> object is the
+true <code class="xref py py-class docutils literal notranslate"><span class="pre">Mole</span></code> or not.  It simply treats the <code class="xref py py-class docutils literal notranslate"><span class="pre">Cell</span></code> object as the
+<code class="xref py py-class docutils literal notranslate"><span class="pre">Mole</span></code> object and run the finite size calculations.  Because the same
+module names were used in PBC program and molecule program, you should be
+careful with the imported modules since no error message will be raised if you
+by mistake input the <code class="xref py py-class docutils literal notranslate"><span class="pre">Cell</span></code> object into the molecule program.</p>
+<p>Although we reserve the flexibility to mix the <code class="xref py py-class docutils literal notranslate"><span class="pre">Cell</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">Mole</span></code>
+objects in the same code, it should be noted that the serialization methods of
+the two objects are not completely compatible.  When you dumps/loads the cell
+object in the molecule program, informations of the <code class="xref py py-class docutils literal notranslate"><span class="pre">Cell</span></code> object or the
+faked <code class="xref py py-class docutils literal notranslate"><span class="pre">Mole</span></code> object may be lost.</p>
+</div>
+<div class="section" id="serialization">
+<h3>Serialization<a class="headerlink" href="#serialization" title="Permalink to this headline">¶</a></h3>
+<p><code class="xref py py-class docutils literal notranslate"><span class="pre">Cell</span></code> class has two set of functions to serialize Cell object in
+different formats.</p>
+<ul class="simple">
+<li><p>JSON format is the default serialization format used by <code class="xref py py-mod docutils literal notranslate"><span class="pre">pyscf.lib.chkfile</span></code>
+module.  It can be serialized by <code class="xref py py-func docutils literal notranslate"><span class="pre">Cell.dumps()</span></code> function and deserialized
+by <code class="xref py py-func docutils literal notranslate"><span class="pre">Cell.loads()</span></code> function.</p></li>
+<li><p>In the old version, <code class="xref py py-func docutils literal notranslate"><span class="pre">Mole.pack()</span></code> and <code class="xref py py-func docutils literal notranslate"><span class="pre">Mole.unpack()</span></code> functions are
+used to convert the <code class="xref py py-class docutils literal notranslate"><span class="pre">Mole</span></code> object to and from Python dict.  The Python
+dict is then serialized by pickle module.  This serialization method is not
+used anymore in the new PySCF code.  To keep the backward compatibility, the
+two methods are defined in <code class="xref py py-class docutils literal notranslate"><span class="pre">Cell</span></code> class.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="basis-set">
+<h2>Basis set<a class="headerlink" href="#basis-set" title="Permalink to this headline">¶</a></h2>
+<p>The pbc module supports all-electron calculation.  The all-electron basis sets
+developed by quantum chemistry community can be directly used in the pbc
+calculation.  The <code class="xref py py-class docutils literal notranslate"><span class="pre">Cell</span></code> class supports to mix the QC all-electron basis
+and PBC basis in the same calculation.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Basis can be input the same way as the finite-size system.</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="c1">#</span>
+<span class="c1"># Note pbc.gto.parse does not support NWChem format.  To parse NWChem format</span>
+<span class="c1"># basis string, you need the molecule gto.parse function.</span>
+<span class="c1">#</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="kn">import</span> <span class="n">gto</span> <span class="k">as</span> <span class="n">pgto</span>
+<span class="n">cell</span> <span class="o">=</span> <span class="n">pgto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span>
+    <span class="n">atom</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;C     0.      0.      0.    </span>
+<span class="s1">              C     0.8917  0.8917  0.8917</span>
+<span class="s1">              C     1.7834  1.7834  0.    </span>
+<span class="s1">              C     2.6751  2.6751  0.8917</span>
+<span class="s1">              C     1.7834  0.      1.7834</span>
+<span class="s1">              C     2.6751  0.8917  2.6751</span>
+<span class="s1">              C     0.      1.7834  1.7834</span>
+<span class="s1">              C     0.8917  2.6751  2.6751&#39;&#39;&#39;</span><span class="p">,</span>
+    <span class="n">basis</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="n">gto</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1"># Parse NWChem format basis string (see https://bse.pnl.gov/bse/portal).</span>
+<span class="s1"># Comment lines are ignored</span>
+<span class="s1">#BASIS SET: (6s,3p) -&gt; [2s,1p]</span>
+<span class="s1">O    S</span>
+<span class="s1">    130.7093200              0.15432897       </span>
+<span class="s1">     23.8088610              0.53532814       </span>
+<span class="s1">      6.4436083              0.44463454       </span>
+<span class="s1">O    SP</span>
+<span class="s1">      5.0331513             -0.09996723             0.15591627       </span>
+<span class="s1">      1.1695961              0.39951283             0.60768372       </span>
+<span class="s1">      0.3803890              0.70011547             0.39195739       </span>
+<span class="s1">                                &#39;&#39;&#39;</span><span class="p">)},</span>
+    <span class="n">pseudo</span> <span class="o">=</span> <span class="s1">&#39;gth-pade&#39;</span><span class="p">,</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="mf">3.5668</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default PBC Coulomb type integrals are computed using FFT transformation.
+If the all-electron basis are used, you might need very high energy cutoff to
+converge the integrals.  It is recommended to use mixed density fitting
+technique (<a class="reference internal" href="../modules/pbc/df.html#pbc-df"><span class="std std-ref">pbc.df — PBC denisty fitting</span></a>) to handle the all-electron calculations.</p>
+</div>
+</div>
+<div class="section" id="pseudo-potential">
+<span id="pseudo"></span><h2>Pseudo potential<a class="headerlink" href="#pseudo-potential" title="Permalink to this headline">¶</a></h2>
+<p>Quantum chemistry community developed a wide range of pseudo potentials (which
+are called ECP, effective core potential) for heavy elements.  ECP works quite
+successful in finite system.  It has high flexibility to choose different core
+size and relevant basis sets to satisfy different requirements on accuracy,
+efficiency in different simulation scenario.  Extending ECP to PBC code enriches
+the pseudo potential database.  PySCF PBC program supports both the PBC
+conventional pseudo potential and ECP and the mix of the two kinds of potentials
+in the same calculation.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Input pseudo potential using functions pbc.gto.pseudo.parse and pbc.gto.pseudo.load</span>
+
+<span class="sd">It is allowed to mix the Quantum chemistry effective core potentail (ECP) with</span>
+<span class="sd">crystal pseudo potential (PP).  Input ECP with .ecp attribute and PP with</span>
+<span class="sd">.pseudo attribute.</span>
+
+<span class="sd">See also</span>
+<span class="sd">pyscf/pbc/gto/pseudo/GTH_POTENTIALS for the GTH-potential format</span>
+<span class="sd">pyscf/examples/gto/05-input_ecp.py for quantum chemistry ECP format</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span>
+<span class="kn">from</span> <span class="nn">pyscf.pbc</span> <span class="kn">import</span> <span class="n">gto</span>
+
+<span class="n">cell</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">Si1 0 0 0</span>
+<span class="s1">Si2 1 1 1&#39;&#39;&#39;</span><span class="p">,</span>
+             <span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;3    0    0</span>
+<span class="s1">                    0    3    0</span>
+<span class="s1">                    0    0    3&#39;&#39;&#39;</span><span class="p">,</span>
+             <span class="n">basis</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Si1&#39;</span><span class="p">:</span> <span class="s1">&#39;gth-szv&#39;</span><span class="p">,</span>  <span class="c1"># Goedecker, Teter and Hutter single zeta basis</span>
+                      <span class="s1">&#39;Si2&#39;</span><span class="p">:</span> <span class="s1">&#39;lanl2dz&#39;</span><span class="p">},</span>
+             <span class="n">pseudo</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Si1&#39;</span><span class="p">:</span> <span class="n">gto</span><span class="o">.</span><span class="n">pseudo</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+<span class="s1">Si</span>
+<span class="s1">    2    2</span>
+<span class="s1">     0.44000000    1    -6.25958674</span>
+<span class="s1">    2</span>
+<span class="s1">     0.44465247    2     8.31460936    -2.33277947</span>
+<span class="s1">                                        3.01160535</span>
+<span class="s1">     0.50279207    1     2.33241791</span>
+<span class="s1">&#39;&#39;&#39;</span><span class="p">)},</span>
+             <span class="n">ecp</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Si2&#39;</span><span class="p">:</span> <span class="s1">&#39;lanl2dz&#39;</span><span class="p">},</span>  <span class="c1"># ECP for second Si atom</span>
+            <span class="p">)</span>
+
+<span class="c1">#</span>
+<span class="c1"># Some elements have multiple PP definitions in GTH database.  Add suffix in</span>
+<span class="c1"># the basis name to load the specific PP.</span>
+<span class="c1">#</span>
+<span class="n">cell</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">atom</span> <span class="o">=</span> <span class="s1">&#39;Mg1 0 0 0; Mg2 0 0 1&#39;</span><span class="p">,</span>
+    <span class="n">pseudo</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Mg1&#39;</span><span class="p">:</span> <span class="s1">&#39;gth-lda-q2&#39;</span><span class="p">,</span> <span class="s1">&#39;Mg2&#39;</span><span class="p">:</span> <span class="s1">&#39;gth-lda-q10&#39;</span><span class="p">})</span>
+
+<span class="c1">#</span>
+<span class="c1"># Allow mixing quantum chemistry ECP (or BFD PP) and crystal PP in the same calculation.</span>
+<span class="c1">#</span>
+<span class="n">cell</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;4    0    0</span>
+<span class="s1">           0    4    0</span>
+<span class="s1">           0    0    4&#39;&#39;&#39;</span><span class="p">,</span>
+    <span class="n">atom</span> <span class="o">=</span> <span class="s1">&#39;Cl 0 0 1; Na 0 1 0&#39;</span><span class="p">,</span>
+    <span class="n">basis</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;na&#39;</span><span class="p">:</span> <span class="s1">&#39;gth-szv&#39;</span><span class="p">,</span> <span class="s1">&#39;Cl&#39;</span><span class="p">:</span> <span class="s1">&#39;bfd-vdz&#39;</span><span class="p">},</span>
+    <span class="n">ecp</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Cl&#39;</span><span class="p">:</span> <span class="s1">&#39;bfd-pp&#39;</span><span class="p">},</span>
+    <span class="n">pseudo</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Na&#39;</span><span class="p">:</span> <span class="s1">&#39;gthbp&#39;</span><span class="p">})</span>
+
+<span class="c1">#</span>
+<span class="c1"># ECP can be input in the attribute .pseudo</span>
+<span class="c1">#</span>
+<span class="n">cell</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;4    0    0</span>
+<span class="s1">           0    4    0</span>
+<span class="s1">           0    0    4&#39;&#39;&#39;</span><span class="p">,</span>
+    <span class="n">atom</span> <span class="o">=</span> <span class="s1">&#39;Cl 0 0 1; Na 0 1 0&#39;</span><span class="p">,</span>
+    <span class="n">basis</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;na&#39;</span><span class="p">:</span> <span class="s1">&#39;gth-szv&#39;</span><span class="p">,</span> <span class="s1">&#39;Cl&#39;</span><span class="p">:</span> <span class="s1">&#39;bfd-vdz&#39;</span><span class="p">},</span>
+    <span class="n">pseudo</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Na&#39;</span><span class="p">:</span> <span class="s1">&#39;gthbp&#39;</span><span class="p">,</span> <span class="s1">&#39;Cl&#39;</span><span class="p">:</span> <span class="s1">&#39;bfd-pp&#39;</span><span class="p">})</span>
+
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2015-2021, The PySCF Developers.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

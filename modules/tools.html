@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>tools — Useful tools &mdash; PySCF 1.7.6 documentation</title>
+  <title>6.32. tools — Useful tools &mdash; PySCF 1.7.6 documentation</title>
   
 
   
@@ -38,8 +38,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="x2c — exact-two-component approach" href="x2c.html" />
-    <link rel="prev" title="tdscf — TDHF and TDDFT" href="tdscf.html" /> 
+    <link rel="next" title="6.33. x2c — exact-two-component approach" href="x2c.html" />
+    <link rel="prev" title="6.31. tdscf — TDHF and TDDFT" href="tdscf.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,76 +88,66 @@
               
             
             
-              <p class="caption"><span class="caption-text">User documentation</span></p>
-<ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">1. An overview of PySCF</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../version.html">2. Version history</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../install.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../benchmark.html">4. Benchmark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">5. Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../theory.html">6. Theoretical methods</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Developer documentation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../code-rule.html">Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../develop.html">Guidelines for module development</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced.html">Miscellaneous</a></li>
-</ul>
-<p class="caption"><span class="caption-text">API documentation</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../modules.html">Main modules</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="adc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">adc</span></code> — Algebraic diagrammatic construction (ADC) scheme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ao2mo.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ao2mo</span></code> — Integral transformations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cc</span></code> — Coupled cluster</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ccn.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ccn</span></code> — Auto-generated coupled cluster of arbitrary order</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ci.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ci</span></code> — Configuration interaction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">data</span></code> — Data for constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="df.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">df</span></code> — Density fitting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dft.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dft</span></code> — Density functional theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="doci.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">doci</span></code> — Doubly occupied configuration interaction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fci.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fci</span></code> — Full configuration interaction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="grad.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">grad</span></code> — Analytical nuclear gradients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gto</span></code> — Molecular structure and GTO basis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gw.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gw</span></code> — Molecular G0W0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hci.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hci</span></code> — Heat-bath selected CI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hessian.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hessian</span></code> — Analytical nuclear Hessian</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lib.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">lib</span></code> — Helper functions, parameters, and C extensions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lo.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">lo</span></code> — Orbital localization and analysis tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mcscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mcscf</span></code> — Multi-configurational self-consistent field</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mp</span></code> — Second-Order Møller–Plesset Perturbation Theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mrpt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mrpt</span></code> — Multi-reference perturbation theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pbc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc</span></code> — Periodic boundary conditions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="prop.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">prop</span></code> — Molecular properties</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qmmm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">qmmm</span></code> — QM/MM interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">rt</span></code> — Real-time time-dependent density functional theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="scf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scf</span></code> — Self-consistent field methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="semiempirical.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">semiempirical</span></code> — Semiempirical methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sgx.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sgx</span></code> — Pseudo-spectral methods (COSX, PS, SN-K)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="solvent.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">solvent</span></code> — Solvent methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="soscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">soscf</span></code> — Second order SCF solver</a></li>
-<li class="toctree-l2"><a class="reference internal" href="symm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">symm</span></code> – Point group symmetry and spin symmetry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tdscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tdscf</span></code> — TDHF and TDDFT</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> — Useful tools</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.tools">Program reference</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.tools.fcidump">FCIDUMP</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.tools.molden">Molden</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.tools.wfn_format">GAMESS WFN</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.tools.cubegen">Cubegen</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.tools.dump_mat">Print Matrix</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.tools.chgcar">VASP CHGCAR</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.tools.Molpro2Pyscf">Molpro to PySCF</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.tools.chkfile_util">chkfile</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.tools.mo_mapping">MO mapping</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#augmented-hessian-newton-raphson">Augmented Hessian Newton-Raphson</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.tools.ring">ring</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.tools.c60struct">c60struct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">3. Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user.html">4. User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop.html">5. Developer documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../modules.html">6. API documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="adc.html">6.1. <code class="xref py py-mod docutils literal notranslate"><span class="pre">adc</span></code> — Algebraic diagrammatic construction (ADC) scheme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ao2mo.html">6.2. <code class="xref py py-mod docutils literal notranslate"><span class="pre">ao2mo</span></code> — Integral transformations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc.html">6.3. <code class="xref py py-mod docutils literal notranslate"><span class="pre">cc</span></code> — Coupled cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ccn.html">6.4. <code class="xref py py-mod docutils literal notranslate"><span class="pre">ccn</span></code> — Auto-generated coupled cluster of arbitrary order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci.html">6.5. <code class="xref py py-mod docutils literal notranslate"><span class="pre">ci</span></code> — Configuration interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data.html">6.6. <code class="xref py py-mod docutils literal notranslate"><span class="pre">data</span></code> — Data for constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="df.html">6.7. <code class="xref py py-mod docutils literal notranslate"><span class="pre">df</span></code> — Density fitting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dft.html">6.8. <code class="xref py py-mod docutils literal notranslate"><span class="pre">dft</span></code> — Density functional theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doci.html">6.9. <code class="xref py py-mod docutils literal notranslate"><span class="pre">doci</span></code> — Doubly occupied configuration interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fci.html">6.10. <code class="xref py py-mod docutils literal notranslate"><span class="pre">fci</span></code> — Full configuration interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grad.html">6.11. <code class="xref py py-mod docutils literal notranslate"><span class="pre">grad</span></code> — Analytical nuclear gradients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gto.html">6.12. <code class="xref py py-mod docutils literal notranslate"><span class="pre">gto</span></code> — Molecular structure and GTO basis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gw.html">6.13. <code class="xref py py-mod docutils literal notranslate"><span class="pre">gw</span></code> — Molecular G0W0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hci.html">6.14. <code class="xref py py-mod docutils literal notranslate"><span class="pre">hci</span></code> — Heat-bath selected CI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hessian.html">6.15. <code class="xref py py-mod docutils literal notranslate"><span class="pre">hessian</span></code> — Analytical nuclear Hessian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.html">6.16. <code class="xref py py-mod docutils literal notranslate"><span class="pre">lib</span></code> — Helper functions, parameters, and C extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lo.html">6.17. <code class="xref py py-mod docutils literal notranslate"><span class="pre">lo</span></code> — Orbital localization and analysis tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mcscf.html">6.18. <code class="xref py py-mod docutils literal notranslate"><span class="pre">mcscf</span></code> — Multi-configurational self-consistent field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mp.html">6.19. <code class="xref py py-mod docutils literal notranslate"><span class="pre">mp</span></code> — Second-Order Møller–Plesset Perturbation Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mrpt.html">6.20. <code class="xref py py-mod docutils literal notranslate"><span class="pre">mrpt</span></code> — Multi-reference perturbation theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pbc.html">6.21. <code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc</span></code> — Periodic boundary conditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prop.html">6.22. <code class="xref py py-mod docutils literal notranslate"><span class="pre">prop</span></code> — Molecular properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qmmm.html">6.23. <code class="xref py py-mod docutils literal notranslate"><span class="pre">qmmm</span></code> — QM/MM interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rt.html">6.24. <code class="xref py py-mod docutils literal notranslate"><span class="pre">rt</span></code> — Real-time time-dependent density functional theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scf.html">6.25. <code class="xref py py-mod docutils literal notranslate"><span class="pre">scf</span></code> — Self-consistent field methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="semiempirical.html">6.26. <code class="xref py py-mod docutils literal notranslate"><span class="pre">semiempirical</span></code> — Semiempirical methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sgx.html">6.27. <code class="xref py py-mod docutils literal notranslate"><span class="pre">sgx</span></code> — Pseudo-spectral methods (COSX, PS, SN-K)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="solvent.html">6.28. <code class="xref py py-mod docutils literal notranslate"><span class="pre">solvent</span></code> — Solvent methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soscf.html">6.29. <code class="xref py py-mod docutils literal notranslate"><span class="pre">soscf</span></code> — Second order SCF solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symm.html">6.30. <code class="xref py py-mod docutils literal notranslate"><span class="pre">symm</span></code> – Point group symmetry and spin symmetry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tdscf.html">6.31. <code class="xref py py-mod docutils literal notranslate"><span class="pre">tdscf</span></code> — TDHF and TDDFT</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.32. <code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> — Useful tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#examples">6.32.1. Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.tools">6.32.2. Program reference</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.tools.fcidump">6.32.3. FCIDUMP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.tools.molden">6.32.4. Molden</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.tools.wfn_format">6.32.5. GAMESS WFN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.tools.cubegen">6.32.6. Cubegen</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.tools.dump_mat">6.32.7. Print Matrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.tools.chgcar">6.32.8. VASP CHGCAR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.tools.Molpro2Pyscf">6.32.9. Molpro to PySCF</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.tools.chkfile_util">6.32.10. chkfile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.tools.mo_mapping">6.32.11. MO mapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#augmented-hessian-newton-raphson">6.32.12. Augmented Hessian Newton-Raphson</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.tools.ring">6.32.13. ring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.tools.c60struct">6.32.14. c60struct</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="x2c.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">x2c</span></code> — exact-two-component approach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x2c.html">6.33. <code class="xref py py-mod docutils literal notranslate"><span class="pre">x2c</span></code> — exact-two-component approach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eph.html">6.34. <code class="xref py py-mod docutils literal notranslate"><span class="pre">eph</span></code> — First order electron phonon coupling matrix</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../interface.html">Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interface.html">7. Interfaces</a></li>
 </ul>
 
             
@@ -206,9 +196,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../modules.html">Main modules</a> &raquo;</li>
+          <li><a href="../modules.html"><span class="section-number">6. </span>API documentation</a> &raquo;</li>
         
-      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> — Useful tools</li>
+      <li><span class="section-number">6.32. </span><code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> — Useful tools</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -228,7 +218,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="module-tools">
-<span id="tools-useful-tools"></span><span id="tools"></span><h1><a class="reference internal" href="#module-tools" title="tools"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code></a> — Useful tools<a class="headerlink" href="#module-tools" title="Permalink to this headline">¶</a></h1>
+<span id="tools-useful-tools"></span><span id="tools"></span><h1><span class="section-number">6.32. </span><a class="reference internal" href="#module-tools" title="tools"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code></a> — Useful tools<a class="headerlink" href="#module-tools" title="Permalink to this headline">¶</a></h1>
 <p>The <a class="reference internal" href="#module-tools" title="tools"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code></a> module contains useful tools to dump out integrals,
 orbital densities, cube files, and other things to interface with
 external utilities.</p>
@@ -272,7 +262,7 @@ external utilities.</p>
 </pre></div>
 </div>
 <div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.32.1. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/tools/01-fcidump.py">examples/tools/01-fcidump.py</a></p></li>
 <li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/tools/02-molden.py">examples/tools/02-molden.py</a></p></li>
@@ -285,10 +275,10 @@ external utilities.</p>
 </ul>
 </div>
 <div class="section" id="module-pyscf.tools">
-<span id="program-reference"></span><h2>Program reference<a class="headerlink" href="#module-pyscf.tools" title="Permalink to this headline">¶</a></h2>
+<span id="program-reference"></span><h2><span class="section-number">6.32.2. </span>Program reference<a class="headerlink" href="#module-pyscf.tools" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="module-pyscf.tools.fcidump">
-<span id="fcidump"></span><h2>FCIDUMP<a class="headerlink" href="#module-pyscf.tools.fcidump" title="Permalink to this headline">¶</a></h2>
+<span id="fcidump"></span><h2><span class="section-number">6.32.3. </span>FCIDUMP<a class="headerlink" href="#module-pyscf.tools.fcidump" title="Permalink to this headline">¶</a></h2>
 <p>FCIDUMP functions (write, read) for real Hamiltonian</p>
 <dl class="py function">
 <dt id="pyscf.tools.fcidump.from_chkfile">
@@ -372,7 +362,7 @@ In return, orbsym is converted to pyscf symmetry convention</p>
 
 </div>
 <div class="section" id="module-pyscf.tools.molden">
-<span id="molden"></span><h2>Molden<a class="headerlink" href="#module-pyscf.tools.molden" title="Permalink to this headline">¶</a></h2>
+<span id="molden"></span><h2><span class="section-number">6.32.4. </span>Molden<a class="headerlink" href="#module-pyscf.tools.molden" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="pyscf.tools.molden.from_mo">
 <code class="sig-prename descclassname"><span class="pre">pyscf.tools.molden.</span></code><code class="sig-name descname"><span class="pre">from_mo</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">spin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Alpha'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">symm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ene</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">occ</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignore_h</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tools/molden.html#from_mo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.tools.molden.from_mo" title="Permalink to this definition">¶</a></dt>
@@ -420,11 +410,11 @@ tool will complain about the orbital normalization error.</p>
 
 </div>
 <div class="section" id="module-pyscf.tools.wfn_format">
-<span id="gamess-wfn"></span><h2>GAMESS WFN<a class="headerlink" href="#module-pyscf.tools.wfn_format" title="Permalink to this headline">¶</a></h2>
+<span id="gamess-wfn"></span><h2><span class="section-number">6.32.5. </span>GAMESS WFN<a class="headerlink" href="#module-pyscf.tools.wfn_format" title="Permalink to this headline">¶</a></h2>
 <p>GAMESS WFN File format</p>
 </div>
 <div class="section" id="module-pyscf.tools.cubegen">
-<span id="cubegen"></span><h2>Cubegen<a class="headerlink" href="#module-pyscf.tools.cubegen" title="Permalink to this headline">¶</a></h2>
+<span id="cubegen"></span><h2><span class="section-number">6.32.6. </span>Cubegen<a class="headerlink" href="#module-pyscf.tools.cubegen" title="Permalink to this headline">¶</a></h2>
 <p>Gaussian cube file format.  Reference:
 <a class="reference external" href="http://paulbourke.net/dataformats/cube/">http://paulbourke.net/dataformats/cube/</a>
 <a class="reference external" href="https://h5cube-spec.readthedocs.io/en/latest/cubeformat.html">https://h5cube-spec.readthedocs.io/en/latest/cubeformat.html</a>
@@ -583,7 +573,7 @@ size.</p>
 
 </div>
 <div class="section" id="module-pyscf.tools.dump_mat">
-<span id="print-matrix"></span><h2>Print Matrix<a class="headerlink" href="#module-pyscf.tools.dump_mat" title="Permalink to this headline">¶</a></h2>
+<span id="print-matrix"></span><h2><span class="section-number">6.32.7. </span>Print Matrix<a class="headerlink" href="#module-pyscf.tools.dump_mat" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="pyscf.tools.dump_mat.dump_mo">
 <code class="sig-prename descclassname"><span class="pre">pyscf.tools.dump_mat.</span></code><code class="sig-name descname"><span class="pre">dump_mo</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ncol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">digits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tools/dump_mat.html#dump_mo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.tools.dump_mat.dump_mo" title="Permalink to this definition">¶</a></dt>
@@ -728,7 +718,7 @@ mol.stdout if mol is an object initialized from <code class="xref py py-class do
 
 </div>
 <div class="section" id="module-pyscf.tools.chgcar">
-<span id="vasp-chgcar"></span><h2>VASP CHGCAR<a class="headerlink" href="#module-pyscf.tools.chgcar" title="Permalink to this headline">¶</a></h2>
+<span id="vasp-chgcar"></span><h2><span class="section-number">6.32.8. </span>VASP CHGCAR<a class="headerlink" href="#module-pyscf.tools.chgcar" title="Permalink to this headline">¶</a></h2>
 <p>Vasp CHGCAR file format</p>
 <p>See also
 <a class="reference external" href="https://cms.mpi.univie.ac.at/vasp/vasp/CHGCAR_file.html">https://cms.mpi.univie.ac.at/vasp/vasp/CHGCAR_file.html</a></p>
@@ -840,10 +830,10 @@ many other softwares</p>
 
 </div>
 <div class="section" id="module-pyscf.tools.Molpro2Pyscf">
-<span id="molpro-to-pyscf"></span><h2>Molpro to PySCF<a class="headerlink" href="#module-pyscf.tools.Molpro2Pyscf" title="Permalink to this headline">¶</a></h2>
+<span id="molpro-to-pyscf"></span><h2><span class="section-number">6.32.9. </span>Molpro to PySCF<a class="headerlink" href="#module-pyscf.tools.Molpro2Pyscf" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="module-pyscf.tools.chkfile_util">
-<span id="chkfile"></span><h2>chkfile<a class="headerlink" href="#module-pyscf.tools.chkfile_util" title="Permalink to this headline">¶</a></h2>
+<span id="chkfile"></span><h2><span class="section-number">6.32.10. </span>chkfile<a class="headerlink" href="#module-pyscf.tools.chkfile_util" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="pyscf.tools.chkfile_util.dump_mo">
 <code class="sig-prename descclassname"><span class="pre">pyscf.tools.chkfile_util.</span></code><code class="sig-name descname"><span class="pre">dump_mo</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'scf'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tools/chkfile_util.html#dump_mo"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.tools.chkfile_util.dump_mo" title="Permalink to this definition">¶</a></dt>
@@ -867,7 +857,7 @@ analysis for the density matrix</p>
 
 </div>
 <div class="section" id="module-pyscf.tools.mo_mapping">
-<span id="mo-mapping"></span><h2>MO mapping<a class="headerlink" href="#module-pyscf.tools.mo_mapping" title="Permalink to this headline">¶</a></h2>
+<span id="mo-mapping"></span><h2><span class="section-number">6.32.11. </span>MO mapping<a class="headerlink" href="#module-pyscf.tools.mo_mapping" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="pyscf.tools.mo_mapping.mo_1to1map">
 <code class="sig-prename descclassname"><span class="pre">pyscf.tools.mo_mapping.</span></code><code class="sig-name descname"><span class="pre">mo_1to1map</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/tools/mo_mapping.html#mo_1to1map"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.tools.mo_mapping.mo_1to1map" title="Permalink to this definition">¶</a></dt>
@@ -941,13 +931,13 @@ overlap value.</p>
 
 </div>
 <div class="section" id="augmented-hessian-newton-raphson">
-<h2>Augmented Hessian Newton-Raphson<a class="headerlink" href="#augmented-hessian-newton-raphson" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.32.12. </span>Augmented Hessian Newton-Raphson<a class="headerlink" href="#augmented-hessian-newton-raphson" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="module-pyscf.tools.ring">
-<span id="ring"></span><h2>ring<a class="headerlink" href="#module-pyscf.tools.ring" title="Permalink to this headline">¶</a></h2>
+<span id="ring"></span><h2><span class="section-number">6.32.13. </span>ring<a class="headerlink" href="#module-pyscf.tools.ring" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="module-pyscf.tools.c60struct">
-<span id="c60struct"></span><h2>c60struct<a class="headerlink" href="#module-pyscf.tools.c60struct" title="Permalink to this headline">¶</a></h2>
+<span id="c60struct"></span><h2><span class="section-number">6.32.14. </span>c60struct<a class="headerlink" href="#module-pyscf.tools.c60struct" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -957,8 +947,8 @@ overlap value.</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="x2c.html" class="btn btn-neutral float-right" title="x2c — exact-two-component approach" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="tdscf.html" class="btn btn-neutral float-left" title="tdscf — TDHF and TDDFT" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="x2c.html" class="btn btn-neutral float-right" title="6.33. x2c — exact-two-component approach" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="tdscf.html" class="btn btn-neutral float-left" title="6.31. tdscf — TDHF and TDDFT" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

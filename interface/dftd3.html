@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>dftd3 — DFT with D3 dispersion correction &mdash; PySCF 1.7.6 documentation</title>
+  <title>7.1. dftd3 — DFT with D3 dispersion correction &mdash; PySCF 1.7.6 documentation</title>
   
 
   
@@ -38,8 +38,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="geomopt — Geometry optimization" href="geomopt.html" />
-    <link rel="prev" title="Interfaces" href="../interface.html" /> 
+    <link rel="next" title="7.2. geomopt — Geometry optimization" href="geomopt.html" />
+    <link rel="prev" title="7. Interfaces" href="../interface.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,37 +88,26 @@
               
             
             
-              <p class="caption"><span class="caption-text">User documentation</span></p>
-<ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">1. An overview of PySCF</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../version.html">2. Version history</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../install.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../benchmark.html">4. Benchmark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">5. Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../theory.html">6. Theoretical methods</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Developer documentation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../code-rule.html">Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../develop.html">Guidelines for module development</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced.html">Miscellaneous</a></li>
-</ul>
-<p class="caption"><span class="caption-text">API documentation</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../modules.html">Main modules</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../interface.html">Interfaces</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dftd3</span></code> — DFT with D3 dispersion correction</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.dftd3.itrf">Program reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">3. Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user.html">4. User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop.html">5. Developer documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">6. API documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../interface.html">7. Interfaces</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7.1. <code class="xref py py-mod docutils literal notranslate"><span class="pre">dftd3</span></code> — DFT with D3 dispersion correction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#examples">7.1.1. Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#program-reference">7.1.2. Program reference</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="geomopt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">geomopt</span></code> — Geometry optimization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dmrgscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dmrgscf</span></code> — DMRG and DMRG-SCF/CASSCF</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fciqmcscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fciqmcscf</span></code> — Full configuration interaction quantum Monte Carlo (FCIQMC)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cornell_shci.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cornell_shci</span></code> — Semistochastic heat-bath configuration interaction (SHCI)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="shciscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">shciscf</span></code> — Semistochastic heat bath configuration interaction (SHCI)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="icmpspt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">icmpspt</span></code> — Internal-contracted MPS perturbation method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nao.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nao</span></code> — Numerical Atomic Orbitals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geomopt.html">7.2. <code class="xref py py-mod docutils literal notranslate"><span class="pre">geomopt</span></code> — Geometry optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dmrgscf.html">7.3. <code class="xref py py-mod docutils literal notranslate"><span class="pre">dmrgscf</span></code> — DMRG and DMRG-SCF/CASSCF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fciqmcscf.html">7.4. <code class="xref py py-mod docutils literal notranslate"><span class="pre">fciqmcscf</span></code> — Full configuration interaction quantum Monte Carlo (FCIQMC)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cornell_shci.html">7.5. <code class="xref py py-mod docutils literal notranslate"><span class="pre">cornell_shci</span></code> — Semistochastic heat-bath configuration interaction (SHCI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shciscf.html">7.6. <code class="xref py py-mod docutils literal notranslate"><span class="pre">shciscf</span></code> — Semistochastic heat bath configuration interaction (SHCI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="icmpspt.html">7.7. <code class="xref py py-mod docutils literal notranslate"><span class="pre">icmpspt</span></code> — Internal-contracted MPS perturbation method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nao.html">7.8. <code class="xref py py-mod docutils literal notranslate"><span class="pre">nao</span></code> — Numerical Atomic Orbitals</a></li>
 </ul>
 </li>
 </ul>
@@ -169,9 +158,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../interface.html">Interfaces</a> &raquo;</li>
+          <li><a href="../interface.html"><span class="section-number">7. </span>Interfaces</a> &raquo;</li>
         
-      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">dftd3</span></code> — DFT with D3 dispersion correction</li>
+      <li><span class="section-number">7.1. </span><code class="xref py py-mod docutils literal notranslate"><span class="pre">dftd3</span></code> — DFT with D3 dispersion correction</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -191,91 +180,16 @@
            <div itemprop="articleBody">
             
   <div class="section" id="module-dftd3">
-<span id="dftd3-dft-with-d3-dispersion-correction"></span><span id="dftd3"></span><h1><a class="reference internal" href="#module-dftd3" title="dftd3: DFT-D3"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dftd3</span></code></a> — DFT with D3 dispersion correction<a class="headerlink" href="#module-dftd3" title="Permalink to this headline">¶</a></h1>
+<span id="dftd3-dft-with-d3-dispersion-correction"></span><span id="dftd3"></span><h1><span class="section-number">7.1. </span><a class="reference internal" href="#module-dftd3" title="dftd3: DFT-D3"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dftd3</span></code></a> — DFT with D3 dispersion correction<a class="headerlink" href="#module-dftd3" title="Permalink to this headline">¶</a></h1>
 <p>An interface to <a class="reference external" href="https://github.com/cuanto/libdftd3">libdftd3</a>.</p>
 <div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.1.1. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/dftd3/00-hf_with_dftd3.py">examples/dftd3/00-hf_with_dftd3.py</a></p></li>
 </ul>
 </div>
-<div class="section" id="module-pyscf.dftd3.itrf">
-<span id="program-reference"></span><h2>Program reference<a class="headerlink" href="#module-pyscf.dftd3.itrf" title="Permalink to this headline">¶</a></h2>
-<p>DFT-D3 interface.</p>
-<p>This interface is based on the open source project
-<a class="reference external" href="https://github.com/cuanto/libdftd3">https://github.com/cuanto/libdftd3</a></p>
-<p>After compiling the libdftd3 library, you need to update the settings.py or
-environment variable DFTD3PATH to point to the directory where the shared
-object file libdftd3.so locates.</p>
-<dl class="py class">
-<dt id="pyscf.dftd3.itrf.DFTD3Dispersion">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.dftd3.itrf.</span></code><code class="sig-name descname"><span class="pre">DFTD3Dispersion</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/dftd3/itrf.html#DFTD3Dispersion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.dftd3.itrf.DFTD3Dispersion" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="py method">
-<dt id="pyscf.dftd3.itrf.DFTD3Dispersion.kernel">
-<code class="sig-name descname"><span class="pre">kernel</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/dftd3/itrf.html#DFTD3Dispersion.kernel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.dftd3.itrf.DFTD3Dispersion.kernel" title="Permalink to this definition">¶</a></dt>
-<dd><p>Kernel function is the main driver of a method.  Every method should
-define the kernel function as the entry of the calculation.  Note the
-return value of kernel function is not strictly defined.  It can be
-anything related to the method (such as the energy, the wave-function,
-the DFT mesh grids etc.).</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="pyscf.dftd3.itrf.DFTD3Dispersion.reset">
-<code class="sig-name descname"><span class="pre">reset</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/dftd3/itrf.html#DFTD3Dispersion.reset"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.dftd3.itrf.DFTD3Dispersion.reset" title="Permalink to this definition">¶</a></dt>
-<dd><p>Reset mol and clean up relevant attributes for scanner mode</p>
-</dd></dl>
-
-</dd></dl>
-
-<dl class="py function">
-<dt id="pyscf.dftd3.itrf.dftd3">
-<code class="sig-prename descclassname"><span class="pre">pyscf.dftd3.itrf.</span></code><code class="sig-name descname"><span class="pre">dftd3</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scf_method</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/dftd3/itrf.html#dftd3"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.dftd3.itrf.dftd3" title="Permalink to this definition">¶</a></dt>
-<dd><p>Apply DFT-D3 corrections to SCF or MCSCF methods</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>scf_method : a HF or DFT object</p>
-</dd>
-<dt>Returns:</dt><dd><p>Same method object as the input scf_method with DFT-D3 energy
-corrections</p>
-</dd>
-</dl>
-<p>Examples:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;H 0 0 0; F 0 0 1&#39;</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;ccpvdz&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mf</span> <span class="o">=</span> <span class="n">dftd3</span><span class="p">(</span><span class="n">dft</span><span class="o">.</span><span class="n">RKS</span><span class="p">(</span><span class="n">mol</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mf</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
-<span class="go">-101.940495711284</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py function">
-<dt id="pyscf.dftd3.itrf.grad">
-<code class="sig-prename descclassname"><span class="pre">pyscf.dftd3.itrf.</span></code><code class="sig-name descname"><span class="pre">grad</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scf_grad</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/dftd3/itrf.html#grad"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.dftd3.itrf.grad" title="Permalink to this definition">¶</a></dt>
-<dd><p>Apply DFT-D3 corrections to SCF or MCSCF nuclear gradients methods</p>
-<dl class="simple">
-<dt>Args:</dt><dd><dl class="simple">
-<dt>scf_grad<span class="classifier">a HF or DFT gradient object (grad.HF or grad.RKS etc)</span></dt><dd><p>Once this function is applied on the SCF object, it affects all
-post-HF calculations eg MP2, CCSD, MCSCF etc</p>
-</dd>
-</dl>
-</dd>
-<dt>Returns:</dt><dd><p>Same gradeints method object as the input scf_grad method</p>
-</dd>
-</dl>
-<p>Examples:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">grad</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;H 0 0 0; F 0 0 1&#39;</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;ccpvdz&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mf</span> <span class="o">=</span> <span class="n">mm_charge</span><span class="p">(</span><span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mol</span><span class="p">),</span> <span class="p">[(</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.6</span><span class="p">,</span><span class="mf">0.8</span><span class="p">)],</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.3</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">mf</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
-<span class="go">-101.940495711284</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">hfg</span> <span class="o">=</span> <span class="n">mm_charge_grad</span><span class="p">(</span><span class="n">grad</span><span class="o">.</span><span class="n">hf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mf</span><span class="p">),</span> <span class="n">coords</span><span class="p">,</span> <span class="n">charges</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">hfg</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
-<span class="go">[[-0.25912357 -0.29235976 -0.38245077]</span>
-<span class="go"> [-1.70497052 -1.89423883  1.2794798 ]]</span>
-</pre></div>
-</div>
-</dd></dl>
-
+<div class="section" id="program-reference">
+<h2><span class="section-number">7.1.2. </span>Program reference<a class="headerlink" href="#program-reference" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -285,8 +199,8 @@ post-HF calculations eg MP2, CCSD, MCSCF etc</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="geomopt.html" class="btn btn-neutral float-right" title="geomopt — Geometry optimization" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="../interface.html" class="btn btn-neutral float-left" title="Interfaces" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="geomopt.html" class="btn btn-neutral float-right" title="7.2. geomopt — Geometry optimization" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../interface.html" class="btn btn-neutral float-left" title="7. Interfaces" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

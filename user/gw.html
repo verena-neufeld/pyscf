@@ -1,0 +1,326 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>4.5. GW approximation &mdash; PySCF 1.7.6 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4.6. Configuration interaction (CISD and FCI)" href="ci.html" />
+    <link rel="prev" title="4.4. Second-Order Møller–Plesset Perturbation Theory (MP2)" href="mp.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PySCF
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">1. An overview of PySCF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">3. Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user.html">4. User guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gto.html">4.1. Molecular structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scf.html">4.2. Self-consistent field (SCF) methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dft.html">4.3. Density functional theory (DFT)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mp.html">4.4. Second-Order Møller–Plesset Perturbation Theory (MP2)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.5. GW approximation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">4.5.1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#frequency-integration">4.5.2. Frequency integration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#analytic-continuation">4.5.2.1. Analytic continuation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#contour-deformation">4.5.2.2. Contour deformation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exact">4.5.2.3. Exact</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ci.html">4.6. Configuration interaction (CISD and FCI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc.html">4.7. Coupled-cluster theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adc.html">4.8. Algebraic diagrammatic construction (ADC) scheme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="agf2.html">4.9. Auxiliary second-order Green’s function perturbation theory (AGF2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mcscf.html">4.10. Multi-configuration self-consistent field (MCSCF)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tddft.html">4.11. Time-dependent Hartree-Fock and Density Functional Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rt.html">4.12. Real-time time-dependent density functional theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="solvent.html">4.13. Solvation models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qmmm.html">4.14. QM/MM methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x2c.html">4.15. Relativistic calculations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="df.html">4.16. Density fitting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pbc.html">4.17. Periodic boundary conditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eph.html">4.18. Electron Phonon Matrix</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../develop.html">5. Developer documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">6. API documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interface.html">7. Interfaces</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PySCF</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../user.html"><span class="section-number">4. </span>User guide</a> &raquo;</li>
+        
+      <li><span class="section-number">4.5. </span>GW approximation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/user/gw.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="gw-approximation">
+<span id="theory-gw"></span><h1><span class="section-number">4.5. </span>GW approximation<a class="headerlink" href="#gw-approximation" title="Permalink to this headline">¶</a></h1>
+<p><em>Modules</em>: <a class="reference internal" href="../modules/gw.html#module-gw" title="gw"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gw</span></code></a>, <code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc.gw</span></code></p>
+<div class="section" id="introduction">
+<h2><span class="section-number">4.5.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The GW approximation is a Green’s function-based method that calculates charged
+excitation energies, i.e. ionizations potentials (IPs) and electron affinities
+(EAs).  PySCF implements the G<sub>0</sub>W<sub>0</sub> approximation, in which the
+self-energy is built with mean-field orbitals and orbital energies.  Therefore,
+the results depend on the mean-field starting point, which can be Hartree-Fock
+or density functional theory.  As described below, PySCF has three
+implementations of the GW approximation, all of which are “full-frequency”.</p>
+<p>An example GW calculation is shown below:</p>
+<p>In this example, the <code class="docutils literal notranslate"><span class="pre">orbs</span></code> keyword argument is
+provided to select which GW orbital energies are requested.  By default,
+all orbital energies (occupied and unoccupied) will be calculated, which
+will increase the cost and may have errors, depending on the method
+of frequency integration.</p>
+</div>
+<div class="section" id="frequency-integration">
+<h2><span class="section-number">4.5.2. </span>Frequency integration<a class="headerlink" href="#frequency-integration" title="Permalink to this headline">¶</a></h2>
+<p>The frequency integration needed for the GW approximation can be done in three
+ways, controlled by the <code class="docutils literal notranslate"><span class="pre">freq_int</span></code> keyword argument: by analytic continuation
+(AC, <code class="docutils literal notranslate"><span class="pre">freq_int='ac'</span></code>), contour deformation (CD, <code class="docutils literal notranslate"><span class="pre">freq_int='cd'</span></code>), or
+exactly (Exact, <code class="docutils literal notranslate"><span class="pre">freq_int='exact'</span></code>).  The first two are much more affordable
+and typically provide sufficient accuracy.  GW-AC supports spin-restricted and
+spin-unrestricted calculations; GW-CD and GW-Exact only support spin-restricted
+calculations.</p>
+<div class="section" id="analytic-continuation">
+<h3><span class="section-number">4.5.2.1. </span>Analytic continuation<a class="headerlink" href="#analytic-continuation" title="Permalink to this headline">¶</a></h3>
+<p>Integration via analytic continuation is implemented in the <code class="docutils literal notranslate"><span class="pre">GWAC</span></code> module
+that is accessed with <code class="docutils literal notranslate"><span class="pre">freq_int='ac'</span></code>, which is also
+the default <code class="docutils literal notranslate"><span class="pre">GW</span></code> module.  GW-AC has <span class="math notranslate nohighlight">\(N^4\)</span> scaling and is recommended for
+valence states only.
+The analytic continuation can be done using a Pade
+approximation (default, more reliable) or a two-pole model, controlled by the <code class="docutils literal notranslate"><span class="pre">ac</span></code>
+attribute.
+GW-AC supports frozen core orbitals for reducing computational cost,
+controlled by the <code class="docutils literal notranslate"><span class="pre">frozen</span></code> attribute (number of frozen core MOs neglected in GW-AC
+calculation). Frozen core orbitals are not supported by other GW methods currently.
+There are two ways to compute GW orbital energies, controlled by the <code class="docutils literal notranslate"><span class="pre">linearized</span></code> attribute:
+<code class="docutils literal notranslate"><span class="pre">linearized=False</span></code> (default) solves the quasiparticle equation through a Newton solver
+self-consistently, while <code class="docutils literal notranslate"><span class="pre">linearized=True</span></code> employs a linearization approximation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mygw</span> <span class="o">=</span> <span class="n">gw</span><span class="o">.</span><span class="n">GW</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span> <span class="c1"># same as freq_int=&#39;ac&#39; or GWAC module</span>
+<span class="c1"># mygw.ac = &#39;pade&#39; # default</span>
+<span class="n">mygw</span><span class="o">.</span><span class="n">ac</span> <span class="o">=</span> <span class="s1">&#39;twopole&#39;</span>
+<span class="n">mygw</span><span class="o">.</span><span class="n">frozen</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># default is None</span>
+<span class="n">mygw</span><span class="o">.</span><span class="n">linearized</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1"># default</span>
+<span class="n">mygw</span><span class="o">.</span><span class="n">kernel</span><span class="p">(</span><span class="n">orbs</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="n">nocc</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="n">nocc</span><span class="o">+</span><span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="contour-deformation">
+<h3><span class="section-number">4.5.2.2. </span>Contour deformation<a class="headerlink" href="#contour-deformation" title="Permalink to this headline">¶</a></h3>
+<p>Integration via contour deformation is implemented in the <code class="docutils literal notranslate"><span class="pre">GWCD</span></code> module
+that is accessed with <code class="docutils literal notranslate"><span class="pre">freq_int='cd'</span></code>.
+GW-CD has <span class="math notranslate nohighlight">\(N^4\)</span> scaling and is slower, but more robust, than GW-AC.
+GW-CD is particularly recommended for accurate core and high-energy states:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mygw</span> <span class="o">=</span> <span class="n">gw</span><span class="o">.</span><span class="n">GW</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">freq_int</span><span class="o">=</span><span class="s1">&#39;cd&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">orbs</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="exact">
+<h3><span class="section-number">4.5.2.3. </span>Exact<a class="headerlink" href="#exact" title="Permalink to this headline">¶</a></h3>
+<p>Exact frequency integration can be carried out analytically and is implemented
+in the <code class="docutils literal notranslate"><span class="pre">GWExact</span></code> module that is accessed with <code class="docutils literal notranslate"><span class="pre">freq_int='exact'</span></code>.  Exact integration
+requires complete diagonalization of the RPA matrix, which has <span class="math notranslate nohighlight">\(N^6\)</span>
+scaling.  However, all orbital energies can be readily obtained without error:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mygw</span> <span class="o">=</span> <span class="n">gw</span><span class="o">.</span><span class="n">GW</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">freq_int</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>By default, GW-Exact, like the other GW implementations, use the direct random-phase
+approximation (dRPA) to screen the Coulomb interaction.
+Within GW-Exact, any alternative time-dependent mean-field theory (TDHF, TDDFT, etc.) can
+be also used.  The instance of an executed <code class="docutils literal notranslate"><span class="pre">tdscf</span></code> method can be provided as a
+keyword argument:</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="ci.html" class="btn btn-neutral float-right" title="4.6. Configuration interaction (CISD and FCI)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="mp.html" class="btn btn-neutral float-left" title="4.4. Second-Order Møller–Plesset Perturbation Theory (MP2)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2015-2021, The PySCF Developers.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

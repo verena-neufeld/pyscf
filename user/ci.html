@@ -1,0 +1,457 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>4.6. Configuration interaction (CISD and FCI) &mdash; PySCF 1.7.6 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4.7. Coupled-cluster theory" href="cc.html" />
+    <link rel="prev" title="4.5. GW approximation" href="gw.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> PySCF
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">1. An overview of PySCF</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">3. Tutorial</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../user.html">4. User guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gto.html">4.1. Molecular structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scf.html">4.2. Self-consistent field (SCF) methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dft.html">4.3. Density functional theory (DFT)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mp.html">4.4. Second-Order Møller–Plesset Perturbation Theory (MP2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gw.html">4.5. GW approximation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.6. Configuration interaction (CISD and FCI)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">4.6.1. Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration-interaction-singles-and-doubles-cisd">4.6.2. Configuration interaction singles and doubles (CISD)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#spin-symmetry">4.6.2.1. Spin symmetry</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#properties">4.6.2.2. Properties</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#frozen-orbitals">4.6.2.3. Frozen orbitals</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#wavefunction-overlap">4.6.2.4. Wavefunction overlap</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#references">4.6.3. References</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="cc.html">4.7. Coupled-cluster theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="adc.html">4.8. Algebraic diagrammatic construction (ADC) scheme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="agf2.html">4.9. Auxiliary second-order Green’s function perturbation theory (AGF2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mcscf.html">4.10. Multi-configuration self-consistent field (MCSCF)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tddft.html">4.11. Time-dependent Hartree-Fock and Density Functional Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rt.html">4.12. Real-time time-dependent density functional theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="solvent.html">4.13. Solvation models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qmmm.html">4.14. QM/MM methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x2c.html">4.15. Relativistic calculations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="df.html">4.16. Density fitting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pbc.html">4.17. Periodic boundary conditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eph.html">4.18. Electron Phonon Matrix</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../develop.html">5. Developer documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">6. API documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interface.html">7. Interfaces</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">PySCF</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../user.html"><span class="section-number">4. </span>User guide</a> &raquo;</li>
+        
+      <li><span class="section-number">4.6. </span>Configuration interaction (CISD and FCI)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/user/ci.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="configuration-interaction-cisd-and-fci">
+<span id="theory-ci"></span><h1><span class="section-number">4.6. </span>Configuration interaction (CISD and FCI)<a class="headerlink" href="#configuration-interaction-cisd-and-fci" title="Permalink to this headline">¶</a></h1>
+<p><em>Modules</em>: <a class="reference internal" href="../modules/ci.html#module-ci" title="ci: CI energy and properties"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ci</span></code></a>, <code class="xref py py-mod docutils literal notranslate"><span class="pre">fci</span></code>, <code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc.ci</span></code></p>
+<p>PySCF has separate molecular implementations for configuration
+interaction singles and doubles (CISD) (<a class="reference internal" href="../modules/ci.html#module-ci" title="ci: CI energy and properties"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ci</span></code></a>) and full
+configuration interaction (FCI) (<code class="xref py py-mod docutils literal notranslate"><span class="pre">fci</span></code>). The functionalities of the
+CISD implementation are similar to the functionalities of MP2
+(<a class="reference internal" href="mp.html#user-mp2"><span class="std std-ref">Second-Order Møller–Plesset Perturbation Theory (MP2)</span></a>) and CCSD (<a class="reference internal" href="cc.html#user-cc"><span class="std std-ref">Coupled-cluster theory</span></a>) in PySCF.</p>
+<div class="section" id="introduction">
+<h2><span class="section-number">4.6.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>Configuration interaction is a post-Hartree–Fock method, diagonalising
+the many-electron Hamiltonian matrix. FCI includes all Slater determinants of
+appropriate symmetry in the eigenvector basis. CISD includes only those
+that differ from the Hartree–Fock determinant by at most two occupied
+spinorbitals.</p>
+</div>
+<div class="section" id="configuration-interaction-singles-and-doubles-cisd">
+<h2><span class="section-number">4.6.2. </span>Configuration interaction singles and doubles (CISD)<a class="headerlink" href="#configuration-interaction-singles-and-doubles-cisd" title="Permalink to this headline">¶</a></h2>
+<p>A simple example (see <a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/ci/00-simple_cisd.py">examples/ci/00-simple_cisd.py</a>) of running
+a restricted and an unrestricted CISD calculation is</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1">#</span>
+<span class="c1"># Author: Qiming Sun &lt;osirpt.sun@gmail.com&gt;</span>
+<span class="c1">#</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">A simple example to run CISD calculation.</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="kn">import</span> <span class="nn">pyscf</span>
+
+<span class="n">mol</span> <span class="o">=</span> <span class="n">pyscf</span><span class="o">.</span><span class="n">M</span><span class="p">(</span>
+    <span class="n">atom</span> <span class="o">=</span> <span class="s1">&#39;H 0 0 0; F 0 0 1.1&#39;</span><span class="p">,</span>
+    <span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;ccpvdz&#39;</span><span class="p">)</span>
+
+<span class="n">mf</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">HF</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">mycc</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">CISD</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RCISD correlation energy&#39;</span><span class="p">,</span> <span class="n">mycc</span><span class="o">.</span><span class="n">e_corr</span><span class="p">)</span>
+
+<span class="n">mf</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">UHF</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">mycc</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">CISD</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;UCISD correlation energy&#39;</span><span class="p">,</span> <span class="n">mycc</span><span class="o">.</span><span class="n">e_corr</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<p>which outputs</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">converged</span> <span class="n">SCF</span> <span class="n">energy</span> <span class="o">=</span> <span class="o">-</span><span class="mf">99.9873974403488</span>
+<span class="n">E</span><span class="p">(</span><span class="n">RCISD</span><span class="p">)</span> <span class="o">=</span> <span class="o">-</span><span class="mf">100.196182975762</span>  <span class="n">E_corr</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.2087855354132202</span>
+<span class="n">RCISD</span> <span class="n">correlation</span> <span class="n">energy</span> <span class="o">-</span><span class="mf">0.2087855354132202</span>
+</pre></div>
+</div>
+<p>namely, the (restricted) Hartree–Fock energy, the RCISD energy and their
+difference, the RCISD correlation energy, as well as</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">converged</span> <span class="n">SCF</span> <span class="n">energy</span> <span class="o">=</span> <span class="o">-</span><span class="mf">99.9873974403486</span>  <span class="o">&lt;</span><span class="n">S</span><span class="o">^</span><span class="mi">2</span><span class="o">&gt;</span> <span class="o">=</span> <span class="mf">5.3734794e-13</span>  <span class="mi">2</span><span class="n">S</span><span class="o">+</span><span class="mi">1</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">E</span><span class="p">(</span><span class="n">UCISD</span><span class="p">)</span> <span class="o">=</span> <span class="o">-</span><span class="mf">100.196182975774</span>  <span class="n">E_corr</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.2087855354254317</span>
+<span class="n">UCISD</span> <span class="n">correlation</span> <span class="n">energy</span> <span class="o">-</span><span class="mf">0.20878553542543174</span>
+</pre></div>
+</div>
+<p>namely, the (unrestricted) Hartree–Fock energy, the UCISD energy and
+their difference, the UCISD correlation energy.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mycc</span> <span class="o">=</span> <span class="n">mf</span><span class="o">.</span><span class="n">CISD</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>could have been replaced by</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">myci</span> <span class="o">=</span> <span class="n">pyscf</span><span class="o">.</span><span class="n">ci</span><span class="o">.</span><span class="n">CISD</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span>
+<span class="n">myci</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">myci</span> <span class="o">=</span> <span class="n">pyscf</span><span class="o">.</span><span class="n">ci</span><span class="o">.</span><span class="n">CISD</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>for the same result.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Density fitting is not implemented for CISD.</p>
+</div>
+<div class="section" id="spin-symmetry">
+<h3><span class="section-number">4.6.2.1. </span>Spin symmetry<a class="headerlink" href="#spin-symmetry" title="Permalink to this headline">¶</a></h3>
+<p>The CISD module in PySCF supports a number of reference wavefunctions with
+broken spin symmetry.  In particular, CISD can be performed with a
+spin-restricted, spin-unrestricted, and general (spin-mixed) Hartree-Fock
+solution, leading to the RCISD, UCISD, and GCISD methods. The small
+example above shows this for RCISD and UCISD.</p>
+<p>The module-level <code class="docutils literal notranslate"><span class="pre">ci.CISD(mf)</span></code> constructor can infer the correct method based
+on the level of symmetry-breaking in the mean-field argument.  For more explicit
+control or inspection, the respective classes and functions can be found in
+<code class="docutils literal notranslate"><span class="pre">cisd.py</span></code> (restricted), <code class="docutils literal notranslate"><span class="pre">ucisd.py</span></code> (unrestricted), and <code class="docutils literal notranslate"><span class="pre">gcisd.py</span></code>
+(general).</p>
+<p>For example, a spin-unrestricted calculation on triplet oxygen can be performed
+as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">ci</span>
+<span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span>
+    <span class="n">atom</span> <span class="o">=</span> <span class="s1">&#39;O 0 0 0; O 0 0 1.2&#39;</span><span class="p">,</span>  <span class="c1"># in Angstrom</span>
+    <span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;ccpvdz&#39;</span><span class="p">,</span>
+    <span class="n">spin</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="p">)</span>
+<span class="n">mf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">HF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span> <span class="c1"># this is UHF</span>
+<span class="n">myci</span> <span class="o">=</span> <span class="n">ci</span><span class="o">.</span><span class="n">CISD</span><span class="p">(</span><span class="n">mf</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span> <span class="c1"># this is UCISD</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;UCISD total energy = &#39;</span><span class="p">,</span> <span class="n">myci</span><span class="o">.</span><span class="n">e_tot</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="properties">
+<h3><span class="section-number">4.6.2.2. </span>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h3>
+<p>A number of properties are available at the CISD level.</p>
+<p>Unrelaxed 1- and 2-electron reduced density matrices can be calculated.
+They are returned in the MO basis:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dm1</span> <span class="o">=</span> <span class="n">myci</span><span class="o">.</span><span class="n">make_rdm1</span><span class="p">()</span>
+<span class="n">dm2</span> <span class="o">=</span> <span class="n">myci</span><span class="o">.</span><span class="n">make_rdm2</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Analytical nuclear gradients can be calculated
+(see <a class="bibtex reference internal" href="#osamura1987" id="id1">[1]</a><a class="bibtex reference internal" href="#yamaguchi2011" id="id2">[2]</a> and references therein):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mygrad</span> <span class="o">=</span> <span class="n">myci</span><span class="o">.</span><span class="n">nuc_grad_method</span><span class="p">()</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="frozen-orbitals">
+<h3><span class="section-number">4.6.2.3. </span>Frozen orbitals<a class="headerlink" href="#frozen-orbitals" title="Permalink to this headline">¶</a></h3>
+<p>By default, CISD calculations in PySCF correlate all electrons in all available
+orbitals. To freeze the lowest-energy core orbitals,
+use the <code class="docutils literal notranslate"><span class="pre">frozen</span></code> keyword argument:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">myci</span> <span class="o">=</span> <span class="n">ci</span><span class="o">.</span><span class="n">CISD</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>To freeze occupied and/or unoccupied orbitals with finer control, a list of
+0-based orbital indices can be provided as the <code class="docutils literal notranslate"><span class="pre">frozen</span></code> keyword argument:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># freeze 2 core orbitals</span>
+<span class="n">myci</span> <span class="o">=</span> <span class="n">ci</span><span class="o">.</span><span class="n">CISD</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="c1"># freeze 2 core orbitals and 3 unoccupied orbitals</span>
+<span class="n">myci</span> <span class="o">=</span> <span class="n">ci</span><span class="o">.</span><span class="n">CISD</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">frozen</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">18</span><span class="p">])</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="wavefunction-overlap">
+<h3><span class="section-number">4.6.2.4. </span>Wavefunction overlap<a class="headerlink" href="#wavefunction-overlap" title="Permalink to this headline">¶</a></h3>
+<p>The following example shows how to evaluate the overlap of two different
+CISD wavefunctions.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1">#</span>
+<span class="c1"># Author: Qiming Sun &lt;osirpt.sun@gmail.com&gt;</span>
+<span class="c1">#</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Overlap of two CISD wave functions (they can be obtained from different</span>
+<span class="sd">geometries).</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span>
+<span class="kn">import</span> <span class="nn">numpy</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">ci</span>
+
+<span class="c1">#</span>
+<span class="c1"># RCISD wavefunction overlap</span>
+<span class="c1">#</span>
+<span class="n">myhf1</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;H 0 0 0; F 0 0 1.1&#39;</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;6-31g&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">ci1</span> <span class="o">=</span> <span class="n">ci</span><span class="o">.</span><span class="n">CISD</span><span class="p">(</span><span class="n">myhf1</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CISD energy of mol1&#39;</span><span class="p">,</span> <span class="n">ci1</span><span class="o">.</span><span class="n">e_tot</span><span class="p">)</span>
+
+<span class="n">myhf2</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;H 0 0 0; F 0 0 1.2&#39;</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;6-31g&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">ci2</span> <span class="o">=</span> <span class="n">ci</span><span class="o">.</span><span class="n">CISD</span><span class="p">(</span><span class="n">myhf2</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CISD energy of mol2&#39;</span><span class="p">,</span> <span class="n">ci2</span><span class="o">.</span><span class="n">e_tot</span><span class="p">)</span>
+
+<span class="n">s12</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">intor_cross</span><span class="p">(</span><span class="s1">&#39;cint1e_ovlp_sph&#39;</span><span class="p">,</span> <span class="n">myhf1</span><span class="o">.</span><span class="n">mol</span><span class="p">,</span> <span class="n">myhf2</span><span class="o">.</span><span class="n">mol</span><span class="p">)</span>
+<span class="n">s12</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">dot</span><span class="p">,</span> <span class="p">(</span><span class="n">myhf1</span><span class="o">.</span><span class="n">mo_coeff</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">s12</span><span class="p">,</span> <span class="n">myhf2</span><span class="o">.</span><span class="n">mo_coeff</span><span class="p">))</span>
+<span class="n">nmo</span> <span class="o">=</span> <span class="n">myhf2</span><span class="o">.</span><span class="n">mo_energy</span><span class="o">.</span><span class="n">size</span>
+<span class="n">nocc</span> <span class="o">=</span> <span class="n">myhf2</span><span class="o">.</span><span class="n">mol</span><span class="o">.</span><span class="n">nelectron</span> <span class="o">//</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&lt;CISD-mol1|CISD-mol2&gt; = &#39;</span><span class="p">,</span> <span class="n">ci</span><span class="o">.</span><span class="n">cisd</span><span class="o">.</span><span class="n">overlap</span><span class="p">(</span><span class="n">ci1</span><span class="o">.</span><span class="n">ci</span><span class="p">,</span> <span class="n">ci2</span><span class="o">.</span><span class="n">ci</span><span class="p">,</span> <span class="n">nmo</span><span class="p">,</span> <span class="n">nocc</span><span class="p">,</span> <span class="n">s12</span><span class="p">))</span>
+
+<span class="c1">#</span>
+<span class="c1"># UCISD wavefunction overlap</span>
+<span class="c1">#</span>
+<span class="n">myhf1</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;H 0 0 0; F 0 0 1.1&#39;</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;6-31g&#39;</span><span class="p">,</span> <span class="n">spin</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">scf</span><span class="o">.</span><span class="n">UHF</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">ci1</span> <span class="o">=</span> <span class="n">ci</span><span class="o">.</span><span class="n">UCISD</span><span class="p">(</span><span class="n">myhf1</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CISD energy of mol1&#39;</span><span class="p">,</span> <span class="n">ci1</span><span class="o">.</span><span class="n">e_tot</span><span class="p">)</span>
+
+<span class="n">myhf2</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;H 0 0 0; F 0 0 1.2&#39;</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;6-31g&#39;</span><span class="p">,</span> <span class="n">spin</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">scf</span><span class="o">.</span><span class="n">UHF</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="n">ci2</span> <span class="o">=</span> <span class="n">ci</span><span class="o">.</span><span class="n">UCISD</span><span class="p">(</span><span class="n">myhf2</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CISD energy of mol2&#39;</span><span class="p">,</span> <span class="n">ci2</span><span class="o">.</span><span class="n">e_tot</span><span class="p">)</span>
+
+<span class="n">s12</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">intor_cross</span><span class="p">(</span><span class="s1">&#39;cint1e_ovlp_sph&#39;</span><span class="p">,</span> <span class="n">myhf1</span><span class="o">.</span><span class="n">mol</span><span class="p">,</span> <span class="n">myhf2</span><span class="o">.</span><span class="n">mol</span><span class="p">)</span>
+<span class="n">mo1a</span><span class="p">,</span> <span class="n">mo1b</span> <span class="o">=</span> <span class="n">myhf1</span><span class="o">.</span><span class="n">mo_coeff</span>
+<span class="n">mo2a</span><span class="p">,</span> <span class="n">mo2b</span> <span class="o">=</span> <span class="n">myhf2</span><span class="o">.</span><span class="n">mo_coeff</span>
+<span class="n">s12</span> <span class="o">=</span> <span class="p">(</span><span class="n">reduce</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">dot</span><span class="p">,</span> <span class="p">(</span><span class="n">mo1a</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">s12</span><span class="p">,</span> <span class="n">mo2a</span><span class="p">)),</span>
+       <span class="n">reduce</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">dot</span><span class="p">,</span> <span class="p">(</span><span class="n">mo1b</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">s12</span><span class="p">,</span> <span class="n">mo2b</span><span class="p">)))</span>
+<span class="n">nmo</span> <span class="o">=</span> <span class="p">(</span><span class="n">myhf2</span><span class="o">.</span><span class="n">mo_energy</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">myhf2</span><span class="o">.</span><span class="n">mo_energy</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+<span class="n">nocc</span> <span class="o">=</span> <span class="n">myhf2</span><span class="o">.</span><span class="n">nelec</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&lt;CISD-mol1|CISD-mol2&gt; = &#39;</span><span class="p">,</span> <span class="n">ci</span><span class="o">.</span><span class="n">ucisd</span><span class="o">.</span><span class="n">overlap</span><span class="p">(</span><span class="n">ci1</span><span class="o">.</span><span class="n">ci</span><span class="p">,</span> <span class="n">ci2</span><span class="o">.</span><span class="n">ci</span><span class="p">,</span> <span class="n">nmo</span><span class="p">,</span> <span class="n">nocc</span><span class="p">,</span> <span class="n">s12</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="references">
+<h2><span class="section-number">4.6.3. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p id="bibtex-bibliography-user/ci-0"><dl class="citation">
+<dt class="bibtex label" id="osamura1987"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Y. Osamura, Y. Yamaguchi, and H. F. Schaefer III. Generalization of analytic energy derivatives for configuration interaction wave functions. <em>Theoret. Chim. Acta</em>, 72(2):71, 1987. <a class="reference external" href="https://doi.org/10.1007/BF00528133">doi:10.1007/BF00528133</a>.</p>
+</dd>
+<dt class="bibtex label" id="yamaguchi2011"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Y. Yamaguchi and H. F. Schaefer III. <em>Analytic Derivative Methods in Molecular Electronic Structure Theory: A New Dimension to Quantum Chemistry and its Applications to Spectroscopy</em>, chapter Fundamentals and Theory, pages 325. John Wiley &amp; Sons, Ltd., 2011. <a class="reference external" href="https://doi.org/10.1002/9780470749593.hrs006">doi:10.1002/9780470749593.hrs006</a>.</p>
+</dd>
+</dl>
+</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="cc.html" class="btn btn-neutral float-right" title="4.7. Coupled-cluster theory" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="gw.html" class="btn btn-neutral float-left" title="4.5. GW approximation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2015-2021, The PySCF Developers.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

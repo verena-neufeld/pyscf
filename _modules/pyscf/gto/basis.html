@@ -86,25 +86,14 @@
               
             
             
-              <p class="caption"><span class="caption-text">User documentation</span></p>
-<ul>
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../overview.html">1. An overview of PySCF</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../version.html">2. Version history</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../install.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../benchmark.html">4. Benchmark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../tutorial.html">5. Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../theory.html">6. Theoretical methods</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Developer documentation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../code-rule.html">Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../develop.html">Guidelines for module development</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../advanced.html">Miscellaneous</a></li>
-</ul>
-<p class="caption"><span class="caption-text">API documentation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">Main modules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../interface.html">Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../tutorial.html">3. Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user.html">4. User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../develop.html">5. Developer documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">6. API documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../interface.html">7. Interfaces</a></li>
 </ul>
 
             
@@ -598,9 +587,11 @@
                                      <span class="n">segm</span><span class="p">[:][</span><span class="mi">1</span><span class="p">:]]</span>
                         <span class="n">contr_b</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">l</span><span class="p">]</span> <span class="o">+</span> <span class="n">save_segm</span><span class="p">)</span>
                         <span class="n">n_saved</span> <span class="o">+=</span> <span class="n">n_save</span>
-            <span class="k">assert</span> <span class="n">n_saved</span> <span class="o">==</span> <span class="n">n_keep</span><span class="p">,</span> <span class="s1">&#39;Only &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n_saved</span><span class="p">)</span> <span class="o">+</span>\
-                <span class="s1">&#39; l=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">l</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; functions available for &#39;</span> <span class="o">+</span>\
-                <span class="n">symb</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">split_name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;, cannot truncate to &#39;</span> <span class="o">+</span> <span class="n">split_name</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">assert</span> <span class="n">n_saved</span> <span class="o">==</span> <span class="n">n_keep</span><span class="p">,</span> <span class="p">(</span><span class="s2">&quot;@</span><span class="si">{}</span><span class="s2"> implies </span><span class="si">{}</span><span class="s2"> l=</span><span class="si">{}</span><span class="s2"> function(s), but&quot;</span> <span class="o">+</span>
+                                       <span class="s2">&quot;only </span><span class="si">{}</span><span class="s2"> in </span><span class="si">{}</span><span class="s2">:</span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">split_name</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+                                                                  <span class="n">contr_scheme</span><span class="p">[</span><span class="n">l</span><span class="p">],</span>
+                                                                  <span class="n">l</span><span class="p">,</span> <span class="n">n_saved</span><span class="p">,</span> <span class="n">symb</span><span class="p">,</span>
+                                                                  <span class="n">split_name</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
     <span class="k">return</span> <span class="n">contr_b</span>
 
 <span class="n">optimize_contraction</span> <span class="o">=</span> <span class="n">parse_nwchem</span><span class="o">.</span><span class="n">optimize_contraction</span>
@@ -624,22 +615,25 @@
 <span class="sd">    &gt;&gt;&gt; mol.basis = {&#39;O&#39;: load(&#39;sto-3g&#39;, &#39;C&#39;)}</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="n">symb</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">symb</span> <span class="k">if</span> <span class="n">i</span><span class="o">.</span><span class="n">isalpha</span><span class="p">()])</span>
+    <span class="k">if</span> <span class="s1">&#39;@&#39;</span> <span class="ow">in</span> <span class="n">filename_or_basisname</span><span class="p">:</span>
+        <span class="n">split_name</span> <span class="o">=</span> <span class="n">filename_or_basisname</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;@&#39;</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">split_name</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
+        <span class="n">filename_or_basisname</span> <span class="o">=</span> <span class="n">split_name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">contr_scheme</span> <span class="o">=</span> <span class="n">_convert_contraction</span><span class="p">(</span><span class="n">split_name</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">contr_scheme</span> <span class="o">=</span> <span class="s1">&#39;Full&#39;</span>
     <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">filename_or_basisname</span><span class="p">):</span>
         <span class="c1"># read basis from given file</span>
         <span class="k">try</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">parse_nwchem</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">filename_or_basisname</span><span class="p">,</span> <span class="n">symb</span><span class="p">,</span> <span class="n">optimize</span><span class="p">)</span>
+            <span class="n">b</span> <span class="o">=</span> <span class="n">parse_nwchem</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">filename_or_basisname</span><span class="p">,</span> <span class="n">symb</span><span class="p">,</span> <span class="n">optimize</span><span class="p">)</span>
         <span class="k">except</span> <span class="n">BasisNotFoundError</span><span class="p">:</span>
             <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename_or_basisname</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fin</span><span class="p">:</span>
-                <span class="k">return</span> <span class="n">parse_nwchem</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">fin</span><span class="o">.</span><span class="n">read</span><span class="p">(),</span> <span class="n">symb</span><span class="p">)</span>
+                <span class="n">b</span> <span class="o">=</span>  <span class="n">parse_nwchem</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">fin</span><span class="o">.</span><span class="n">read</span><span class="p">(),</span> <span class="n">symb</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">contr_scheme</span> <span class="o">!=</span> <span class="s1">&#39;Full&#39;</span><span class="p">:</span>
+            <span class="n">b</span> <span class="o">=</span> <span class="n">_truncate</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">contr_scheme</span><span class="p">,</span> <span class="n">symb</span><span class="p">,</span> <span class="n">split_name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">b</span>
 
     <span class="n">name</span> <span class="o">=</span> <span class="n">_format_basis_name</span><span class="p">(</span><span class="n">filename_or_basisname</span><span class="p">)</span>
-    <span class="k">if</span> <span class="s1">&#39;@&#39;</span> <span class="ow">in</span> <span class="n">name</span><span class="p">:</span>
-        <span class="n">split_name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;@&#39;</span><span class="p">)</span>
-        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">split_name</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
-        <span class="n">name</span> <span class="o">=</span> <span class="n">split_name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">contr_scheme</span> <span class="o">=</span> <span class="n">_convert_contraction</span><span class="p">(</span><span class="n">split_name</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">contr_scheme</span> <span class="o">=</span> <span class="s1">&#39;Full&#39;</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">name</span> <span class="ow">in</span> <span class="n">ALIAS</span> <span class="ow">or</span> <span class="n">_is_pople_basis</span><span class="p">(</span><span class="n">name</span><span class="p">)):</span>
         <span class="k">try</span><span class="p">:</span>

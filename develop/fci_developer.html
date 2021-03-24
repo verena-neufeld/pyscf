@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Full CI solver &mdash; PySCF 1.7.6 documentation</title>
+  <title>5.6. Full CI solver &mdash; PySCF 1.7.6 documentation</title>
   
 
   
@@ -38,8 +38,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Coupled Cluster Methods" href="cc_developer.html" />
-    <link rel="prev" title="Time-dependent SCF" href="tdscf_developer.html" /> 
+    <link rel="next" title="5.7. Coupled Cluster Methods" href="cc_developer.html" />
+    <link rel="prev" title="5.5. Time-dependent SCF" href="tdscf_developer.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,37 +88,31 @@
               
             
             
-              <p class="caption"><span class="caption-text">User documentation</span></p>
-<ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">1. An overview of PySCF</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../version.html">2. Version history</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../install.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../benchmark.html">4. Benchmark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">5. Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../theory.html">6. Theoretical methods</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Developer documentation</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../code-rule.html">Code standard</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../develop.html">Guidelines for module development</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="scf_developer.html">Self-consistent field (SCF) methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dft_developer.html">Density functional theory (DFT)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tdscf_developer.html">Time-dependent SCF</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Full CI solver</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cc_developer.html">Coupled Cluster Methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mcscf_developer.html">Multi-configuration SCF</a></li>
-<li class="toctree-l2"><a class="reference internal" href="soscf_developer.html">Second-order SCF solver</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ao2mo_developer.html">AO to MO transformation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="df_developer.html">Density fitting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pbc_developer.html">Periodic boundary conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">3. Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user.html">4. User guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../develop.html">5. Developer documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../code-rule.html">5.1. Code standard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../design.html">5.2. General designs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scf_developer.html">5.3. Self-consistent field (SCF) methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dft_developer.html">5.4. Density functional theory (DFT)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tdscf_developer.html">5.5. Time-dependent SCF</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">5.6. Full CI solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc_developer.html">5.7. Coupled Cluster Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="agf2_developer.html">5.8. Auxiliary second-order Green’s function perturbation theory (AGF2)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mcscf_developer.html">5.9. Multi-configuration SCF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soscf_developer.html">5.10. Second-order SCF solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ao2mo_developer.html">5.11. AO to MO transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="df_developer.html">5.12. Density fitting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pbc_developer.html">5.13. Periodic boundary conditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eph_developer.html">5.14. Electron Phonon Coupling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced.html">5.15. Miscellaneous</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced.html">Miscellaneous</a></li>
-</ul>
-<p class="caption"><span class="caption-text">API documentation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../modules.html">Main modules</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../interface.html">Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">6. API documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interface.html">7. Interfaces</a></li>
 </ul>
 
             
@@ -167,9 +161,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../develop.html">Guidelines for module development</a> &raquo;</li>
+          <li><a href="../develop.html"><span class="section-number">5. </span>Developer documentation</a> &raquo;</li>
         
-      <li>Full CI solver</li>
+      <li><span class="section-number">5.6. </span>Full CI solver</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -189,7 +183,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="full-ci-solver">
-<span id="developer-fci"></span><h1>Full CI solver<a class="headerlink" href="#full-ci-solver" title="Permalink to this headline">¶</a></h1>
+<span id="developer-fci"></span><h1><span class="section-number">5.6. </span>Full CI solver<a class="headerlink" href="#full-ci-solver" title="Permalink to this headline">¶</a></h1>
 <p><em>Modules</em>: <code class="xref py py-mod docutils literal notranslate"><span class="pre">fci</span></code></p>
 </div>
 
@@ -199,8 +193,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="cc_developer.html" class="btn btn-neutral float-right" title="Coupled Cluster Methods" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="tdscf_developer.html" class="btn btn-neutral float-left" title="Time-dependent SCF" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cc_developer.html" class="btn btn-neutral float-right" title="5.7. Coupled Cluster Methods" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="tdscf_developer.html" class="btn btn-neutral float-left" title="5.5. Time-dependent SCF" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

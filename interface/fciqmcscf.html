@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>fciqmcscf — Full configuration interaction quantum Monte Carlo (FCIQMC) &mdash; PySCF 1.7.6 documentation</title>
+  <title>7.4. fciqmcscf — Full configuration interaction quantum Monte Carlo (FCIQMC) &mdash; PySCF 1.7.6 documentation</title>
   
 
   
@@ -38,8 +38,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="cornell_shci — Semistochastic heat-bath configuration interaction (SHCI)" href="cornell_shci.html" />
-    <link rel="prev" title="dmrgscf — DMRG and DMRG-SCF/CASSCF" href="dmrgscf.html" /> 
+    <link rel="next" title="7.5. cornell_shci — Semistochastic heat-bath configuration interaction (SHCI)" href="cornell_shci.html" />
+    <link rel="prev" title="7.3. dmrgscf — DMRG and DMRG-SCF/CASSCF" href="dmrgscf.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,36 +88,25 @@
               
             
             
-              <p class="caption"><span class="caption-text">User documentation</span></p>
-<ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">1. An overview of PySCF</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../version.html">2. Version history</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../install.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../benchmark.html">4. Benchmark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">5. Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../theory.html">6. Theoretical methods</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Developer documentation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../code-rule.html">Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../develop.html">Guidelines for module development</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced.html">Miscellaneous</a></li>
-</ul>
-<p class="caption"><span class="caption-text">API documentation</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../modules.html">Main modules</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../interface.html">Interfaces</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="dftd3.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dftd3</span></code> — DFT with D3 dispersion correction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="geomopt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">geomopt</span></code> — Geometry optimization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dmrgscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dmrgscf</span></code> — DMRG and DMRG-SCF/CASSCF</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fciqmcscf</span></code> — Full configuration interaction quantum Monte Carlo (FCIQMC)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.fciqmcscf.fciqmc">Program reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">3. Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user.html">4. User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop.html">5. Developer documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules.html">6. API documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../interface.html">7. Interfaces</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="dftd3.html">7.1. <code class="xref py py-mod docutils literal notranslate"><span class="pre">dftd3</span></code> — DFT with D3 dispersion correction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="geomopt.html">7.2. <code class="xref py py-mod docutils literal notranslate"><span class="pre">geomopt</span></code> — Geometry optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dmrgscf.html">7.3. <code class="xref py py-mod docutils literal notranslate"><span class="pre">dmrgscf</span></code> — DMRG and DMRG-SCF/CASSCF</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">7.4. <code class="xref py py-mod docutils literal notranslate"><span class="pre">fciqmcscf</span></code> — Full configuration interaction quantum Monte Carlo (FCIQMC)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.fciqmcscf.fciqmc">7.4.1. Program reference</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="cornell_shci.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cornell_shci</span></code> — Semistochastic heat-bath configuration interaction (SHCI)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="shciscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">shciscf</span></code> — Semistochastic heat bath configuration interaction (SHCI)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="icmpspt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">icmpspt</span></code> — Internal-contracted MPS perturbation method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="nao.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">nao</span></code> — Numerical Atomic Orbitals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cornell_shci.html">7.5. <code class="xref py py-mod docutils literal notranslate"><span class="pre">cornell_shci</span></code> — Semistochastic heat-bath configuration interaction (SHCI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shciscf.html">7.6. <code class="xref py py-mod docutils literal notranslate"><span class="pre">shciscf</span></code> — Semistochastic heat bath configuration interaction (SHCI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="icmpspt.html">7.7. <code class="xref py py-mod docutils literal notranslate"><span class="pre">icmpspt</span></code> — Internal-contracted MPS perturbation method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nao.html">7.8. <code class="xref py py-mod docutils literal notranslate"><span class="pre">nao</span></code> — Numerical Atomic Orbitals</a></li>
 </ul>
 </li>
 </ul>
@@ -168,9 +157,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../interface.html">Interfaces</a> &raquo;</li>
+          <li><a href="../interface.html"><span class="section-number">7. </span>Interfaces</a> &raquo;</li>
         
-      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">fciqmcscf</span></code> — Full configuration interaction quantum Monte Carlo (FCIQMC)</li>
+      <li><span class="section-number">7.4. </span><code class="xref py py-mod docutils literal notranslate"><span class="pre">fciqmcscf</span></code> — Full configuration interaction quantum Monte Carlo (FCIQMC)</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -190,12 +179,12 @@
            <div itemprop="articleBody">
             
   <div class="section" id="fciqmcscf-full-configuration-interaction-quantum-monte-carlo-fciqmc">
-<span id="fciqmcscf"></span><h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">fciqmcscf</span></code> — Full configuration interaction quantum Monte Carlo (FCIQMC)<a class="headerlink" href="#fciqmcscf-full-configuration-interaction-quantum-monte-carlo-fciqmc" title="Permalink to this headline">¶</a></h1>
+<span id="fciqmcscf"></span><h1><span class="section-number">7.4. </span><code class="xref py py-mod docutils literal notranslate"><span class="pre">fciqmcscf</span></code> — Full configuration interaction quantum Monte Carlo (FCIQMC)<a class="headerlink" href="#fciqmcscf-full-configuration-interaction-quantum-monte-carlo-fciqmc" title="Permalink to this headline">¶</a></h1>
 <p>An interface to the <a class="reference external" href="https://github.com/ghb24/NECI_STABLE">NECI</a> FCIQMC solver.
 To use NECI, you need create a config file
 <code class="docutils literal notranslate"><span class="pre">pyscf/fciqmcscf/settings.py</span></code> to store the path where NECI was installed.</p>
 <div class="section" id="module-pyscf.fciqmcscf.fciqmc">
-<span id="program-reference"></span><h2>Program reference<a class="headerlink" href="#module-pyscf.fciqmcscf.fciqmc" title="Permalink to this headline">¶</a></h2>
+<span id="program-reference"></span><h2><span class="section-number">7.4.1. </span>Program reference<a class="headerlink" href="#module-pyscf.fciqmcscf.fciqmc" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt id="pyscf.fciqmcscf.fciqmc.add_inactive_space_to_rdm">
 <code class="sig-prename descclassname"><span class="pre">pyscf.fciqmcscf.fciqmc.</span></code><code class="sig-name descname"><span class="pre">add_inactive_space_to_rdm</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mo_coeff</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">one_pdm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">two_pdm</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/fciqmcscf/fciqmc.html#add_inactive_space_to_rdm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.fciqmcscf.fciqmc.add_inactive_space_to_rdm" title="Permalink to this definition">¶</a></dt>
@@ -467,8 +456,8 @@ note that ordering is abababa…</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="cornell_shci.html" class="btn btn-neutral float-right" title="cornell_shci — Semistochastic heat-bath configuration interaction (SHCI)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="dmrgscf.html" class="btn btn-neutral float-left" title="dmrgscf — DMRG and DMRG-SCF/CASSCF" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="cornell_shci.html" class="btn btn-neutral float-right" title="7.5. cornell_shci — Semistochastic heat-bath configuration interaction (SHCI)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="dmrgscf.html" class="btn btn-neutral float-left" title="7.3. dmrgscf — DMRG and DMRG-SCF/CASSCF" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

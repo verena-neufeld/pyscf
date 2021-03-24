@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>grad — Analytical nuclear gradients &mdash; PySCF 1.7.6 documentation</title>
+  <title>6.11. grad — Analytical nuclear gradients &mdash; PySCF 1.7.6 documentation</title>
   
 
   
@@ -38,8 +38,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="gto — Molecular structure and GTO basis" href="gto.html" />
-    <link rel="prev" title="fci — Full configuration interaction" href="fci.html" /> 
+    <link rel="next" title="6.12. gto — Molecular structure and GTO basis" href="gto.html" />
+    <link rel="prev" title="6.10. fci — Full configuration interaction" href="fci.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -88,90 +88,80 @@
               
             
             
-              <p class="caption"><span class="caption-text">User documentation</span></p>
-<ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../overview.html">1. An overview of PySCF</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../version.html">2. Version history</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../install.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../benchmark.html">4. Benchmark</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">5. Tutorial</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../theory.html">6. Theoretical methods</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Developer documentation</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../code-rule.html">Code standard</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../develop.html">Guidelines for module development</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../advanced.html">Miscellaneous</a></li>
-</ul>
-<p class="caption"><span class="caption-text">API documentation</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../modules.html">Main modules</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="adc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">adc</span></code> — Algebraic diagrammatic construction (ADC) scheme</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ao2mo.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ao2mo</span></code> — Integral transformations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cc</span></code> — Coupled cluster</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ccn.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ccn</span></code> — Auto-generated coupled cluster of arbitrary order</a></li>
-<li class="toctree-l2"><a class="reference internal" href="ci.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ci</span></code> — Configuration interaction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">data</span></code> — Data for constants</a></li>
-<li class="toctree-l2"><a class="reference internal" href="df.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">df</span></code> — Density fitting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="dft.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">dft</span></code> — Density functional theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="doci.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">doci</span></code> — Doubly occupied configuration interaction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fci.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fci</span></code> — Full configuration interaction</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">grad</span></code> — Analytical nuclear gradients</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.grad">Program reference</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#analytical-nuclear-gradients">Analytical nuclear gradients</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.casci">casci</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.casscf">casscf</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.ccsd">ccsd</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.ccsd_slow">ccsd_slow</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.ccsd_t">ccsd_t</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.cisd">cisd</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.dhf">dhf</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.mp2">mp2</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.rhf">rhf</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.rks">rks</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.rohf">rohf</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.roks">roks</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.tdrhf">tdrhf</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#tdrhf-slow">tdrhf_slow</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.tdrks">tdrks</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.tduhf">tduhf</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.tduks">tduks</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.uccsd">uccsd</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.uccsd_t">uccsd_t</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.ucisd">ucisd</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.uhf">uhf</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#uks">uks</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ump2">ump2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">3. Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user.html">4. User guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../develop.html">5. Developer documentation</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../modules.html">6. API documentation</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="adc.html">6.1. <code class="xref py py-mod docutils literal notranslate"><span class="pre">adc</span></code> — Algebraic diagrammatic construction (ADC) scheme</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ao2mo.html">6.2. <code class="xref py py-mod docutils literal notranslate"><span class="pre">ao2mo</span></code> — Integral transformations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cc.html">6.3. <code class="xref py py-mod docutils literal notranslate"><span class="pre">cc</span></code> — Coupled cluster</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ccn.html">6.4. <code class="xref py py-mod docutils literal notranslate"><span class="pre">ccn</span></code> — Auto-generated coupled cluster of arbitrary order</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ci.html">6.5. <code class="xref py py-mod docutils literal notranslate"><span class="pre">ci</span></code> — Configuration interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data.html">6.6. <code class="xref py py-mod docutils literal notranslate"><span class="pre">data</span></code> — Data for constants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="df.html">6.7. <code class="xref py py-mod docutils literal notranslate"><span class="pre">df</span></code> — Density fitting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dft.html">6.8. <code class="xref py py-mod docutils literal notranslate"><span class="pre">dft</span></code> — Density functional theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doci.html">6.9. <code class="xref py py-mod docutils literal notranslate"><span class="pre">doci</span></code> — Doubly occupied configuration interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fci.html">6.10. <code class="xref py py-mod docutils literal notranslate"><span class="pre">fci</span></code> — Full configuration interaction</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">6.11. <code class="xref py py-mod docutils literal notranslate"><span class="pre">grad</span></code> — Analytical nuclear gradients</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#examples">6.11.1. Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-pyscf.grad">6.11.2. Program reference</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#analytical-nuclear-gradients">6.11.2.1. Analytical nuclear gradients</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.casci">6.11.2.2. casci</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.casscf">6.11.2.3. casscf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.ccsd">6.11.2.4. ccsd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.ccsd_slow">6.11.2.5. ccsd_slow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.ccsd_t">6.11.2.6. ccsd_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.cisd">6.11.2.7. cisd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.dhf">6.11.2.8. dhf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.mp2">6.11.2.9. mp2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.rhf">6.11.2.10. rhf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.rks">6.11.2.11. rks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.rohf">6.11.2.12. rohf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.roks">6.11.2.13. roks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.tdrhf">6.11.2.14. tdrhf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#tdrhf-slow">6.11.2.15. tdrhf_slow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.tdrks">6.11.2.16. tdrks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.tduhf">6.11.2.17. tduhf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.tduks">6.11.2.18. tduks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.uccsd">6.11.2.19. uccsd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.uccsd_t">6.11.2.20. uccsd_t</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.ucisd">6.11.2.21. ucisd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-pyscf.grad.uhf">6.11.2.22. uhf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#uks">6.11.2.23. uks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ump2">6.11.2.24. ump2</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="gto.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gto</span></code> — Molecular structure and GTO basis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gw.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gw</span></code> — Molecular G0W0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hci.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hci</span></code> — Heat-bath selected CI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="hessian.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">hessian</span></code> — Analytical nuclear Hessian</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lib.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">lib</span></code> — Helper functions, parameters, and C extensions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lo.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">lo</span></code> — Orbital localization and analysis tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mcscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mcscf</span></code> — Multi-configurational self-consistent field</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mp.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mp</span></code> — Second-Order Møller–Plesset Perturbation Theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mrpt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mrpt</span></code> — Multi-reference perturbation theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="pbc.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc</span></code> — Periodic boundary conditions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="prop.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">prop</span></code> — Molecular properties</a></li>
-<li class="toctree-l2"><a class="reference internal" href="qmmm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">qmmm</span></code> — QM/MM interface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rt.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">rt</span></code> — Real-time time-dependent density functional theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="scf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scf</span></code> — Self-consistent field methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="semiempirical.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">semiempirical</span></code> — Semiempirical methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sgx.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sgx</span></code> — Pseudo-spectral methods (COSX, PS, SN-K)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="solvent.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">solvent</span></code> — Solvent methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="soscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">soscf</span></code> — Second order SCF solver</a></li>
-<li class="toctree-l2"><a class="reference internal" href="symm.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">symm</span></code> – Point group symmetry and spin symmetry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tdscf.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tdscf</span></code> — TDHF and TDDFT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tools.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> — Useful tools</a></li>
-<li class="toctree-l2"><a class="reference internal" href="x2c.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">x2c</span></code> — exact-two-component approach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gto.html">6.12. <code class="xref py py-mod docutils literal notranslate"><span class="pre">gto</span></code> — Molecular structure and GTO basis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gw.html">6.13. <code class="xref py py-mod docutils literal notranslate"><span class="pre">gw</span></code> — Molecular G0W0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hci.html">6.14. <code class="xref py py-mod docutils literal notranslate"><span class="pre">hci</span></code> — Heat-bath selected CI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hessian.html">6.15. <code class="xref py py-mod docutils literal notranslate"><span class="pre">hessian</span></code> — Analytical nuclear Hessian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lib.html">6.16. <code class="xref py py-mod docutils literal notranslate"><span class="pre">lib</span></code> — Helper functions, parameters, and C extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lo.html">6.17. <code class="xref py py-mod docutils literal notranslate"><span class="pre">lo</span></code> — Orbital localization and analysis tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mcscf.html">6.18. <code class="xref py py-mod docutils literal notranslate"><span class="pre">mcscf</span></code> — Multi-configurational self-consistent field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mp.html">6.19. <code class="xref py py-mod docutils literal notranslate"><span class="pre">mp</span></code> — Second-Order Møller–Plesset Perturbation Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mrpt.html">6.20. <code class="xref py py-mod docutils literal notranslate"><span class="pre">mrpt</span></code> — Multi-reference perturbation theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pbc.html">6.21. <code class="xref py py-mod docutils literal notranslate"><span class="pre">pbc</span></code> — Periodic boundary conditions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prop.html">6.22. <code class="xref py py-mod docutils literal notranslate"><span class="pre">prop</span></code> — Molecular properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="qmmm.html">6.23. <code class="xref py py-mod docutils literal notranslate"><span class="pre">qmmm</span></code> — QM/MM interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rt.html">6.24. <code class="xref py py-mod docutils literal notranslate"><span class="pre">rt</span></code> — Real-time time-dependent density functional theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scf.html">6.25. <code class="xref py py-mod docutils literal notranslate"><span class="pre">scf</span></code> — Self-consistent field methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="semiempirical.html">6.26. <code class="xref py py-mod docutils literal notranslate"><span class="pre">semiempirical</span></code> — Semiempirical methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sgx.html">6.27. <code class="xref py py-mod docutils literal notranslate"><span class="pre">sgx</span></code> — Pseudo-spectral methods (COSX, PS, SN-K)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="solvent.html">6.28. <code class="xref py py-mod docutils literal notranslate"><span class="pre">solvent</span></code> — Solvent methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="soscf.html">6.29. <code class="xref py py-mod docutils literal notranslate"><span class="pre">soscf</span></code> — Second order SCF solver</a></li>
+<li class="toctree-l2"><a class="reference internal" href="symm.html">6.30. <code class="xref py py-mod docutils literal notranslate"><span class="pre">symm</span></code> – Point group symmetry and spin symmetry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tdscf.html">6.31. <code class="xref py py-mod docutils literal notranslate"><span class="pre">tdscf</span></code> — TDHF and TDDFT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html">6.32. <code class="xref py py-mod docutils literal notranslate"><span class="pre">tools</span></code> — Useful tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="x2c.html">6.33. <code class="xref py py-mod docutils literal notranslate"><span class="pre">x2c</span></code> — exact-two-component approach</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eph.html">6.34. <code class="xref py py-mod docutils literal notranslate"><span class="pre">eph</span></code> — First order electron phonon coupling matrix</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../interface.html">Interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interface.html">7. Interfaces</a></li>
 </ul>
 
             
@@ -220,9 +210,9 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../modules.html">Main modules</a> &raquo;</li>
+          <li><a href="../modules.html"><span class="section-number">6. </span>API documentation</a> &raquo;</li>
         
-      <li><code class="xref py py-mod docutils literal notranslate"><span class="pre">grad</span></code> — Analytical nuclear gradients</li>
+      <li><span class="section-number">6.11. </span><code class="xref py py-mod docutils literal notranslate"><span class="pre">grad</span></code> — Analytical nuclear gradients</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -242,7 +232,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="module-grad">
-<span id="grad-analytical-nuclear-gradients"></span><span id="grad"></span><h1><a class="reference internal" href="#module-grad" title="grad"><code class="xref py py-mod docutils literal notranslate"><span class="pre">grad</span></code></a> — Analytical nuclear gradients<a class="headerlink" href="#module-grad" title="Permalink to this headline">¶</a></h1>
+<span id="grad-analytical-nuclear-gradients"></span><span id="grad"></span><h1><span class="section-number">6.11. </span><a class="reference internal" href="#module-grad" title="grad"><code class="xref py py-mod docutils literal notranslate"><span class="pre">grad</span></code></a> — Analytical nuclear gradients<a class="headerlink" href="#module-grad" title="Permalink to this headline">¶</a></h1>
 <p>The <a class="reference internal" href="#module-grad" title="grad"><code class="xref py py-mod docutils literal notranslate"><span class="pre">grad</span></code></a> module provides gradients for mean-field and correlated methods.
 For example, the RHF gradient can be computed by:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span>
@@ -259,7 +249,7 @@ For example, the RHF gradient can be computed by:</p>
 </pre></div>
 </div>
 <div class="section" id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.11.1. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/grad/01-scf_grad.py">examples/grad/01-scf_grad.py</a></p></li>
 <li><p><a class="reference external" href="https://github.com/pyscf/pyscf/tree/master/examples/grad/02-dft_grad.py">examples/grad/02-dft_grad.py</a></p></li>
@@ -273,9 +263,9 @@ For example, the RHF gradient can be computed by:</p>
 </ul>
 </div>
 <div class="section" id="module-pyscf.grad">
-<span id="program-reference"></span><h2>Program reference<a class="headerlink" href="#module-pyscf.grad" title="Permalink to this headline">¶</a></h2>
+<span id="program-reference"></span><h2><span class="section-number">6.11.2. </span>Program reference<a class="headerlink" href="#module-pyscf.grad" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="analytical-nuclear-gradients">
-<h3>Analytical nuclear gradients<a class="headerlink" href="#analytical-nuclear-gradients" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.11.2.1. </span>Analytical nuclear gradients<a class="headerlink" href="#analytical-nuclear-gradients" title="Permalink to this headline">¶</a></h3>
 <p>Simple usage:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">gto</span><span class="p">,</span> <span class="n">scf</span><span class="p">,</span> <span class="n">grad</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mol</span> <span class="o">=</span> <span class="n">gto</span><span class="o">.</span><span class="n">M</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s1">&#39;N 0 0 0; N 0 0 1&#39;</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;ccpvdz&#39;</span><span class="p">)</span>
@@ -285,7 +275,7 @@ For example, the RHF gradient can be computed by:</p>
 </div>
 </div>
 <div class="section" id="module-pyscf.grad.casci">
-<span id="casci"></span><h3>casci<a class="headerlink" href="#module-pyscf.grad.casci" title="Permalink to this headline">¶</a></h3>
+<span id="casci"></span><h3><span class="section-number">6.11.2.2. </span>casci<a class="headerlink" href="#module-pyscf.grad.casci" title="Permalink to this headline">¶</a></h3>
 <p>CASCI analytical nuclear gradients</p>
 <p>Ref.
 J. Comput. Chem., 5, 589</p>
@@ -357,7 +347,7 @@ automatically applied in the solver.</p>
 
 </div>
 <div class="section" id="module-pyscf.grad.casscf">
-<span id="casscf"></span><h3>casscf<a class="headerlink" href="#module-pyscf.grad.casscf" title="Permalink to this headline">¶</a></h3>
+<span id="casscf"></span><h3><span class="section-number">6.11.2.3. </span>casscf<a class="headerlink" href="#module-pyscf.grad.casscf" title="Permalink to this headline">¶</a></h3>
 <p>CASSCF analytical nuclear gradients</p>
 <p>Ref.
 J. Comput. Chem., 5, 589</p>
@@ -433,7 +423,7 @@ automatically applied in the solver.</p>
 
 </div>
 <div class="section" id="module-pyscf.grad.ccsd">
-<span id="ccsd"></span><h3>ccsd<a class="headerlink" href="#module-pyscf.grad.ccsd" title="Permalink to this headline">¶</a></h3>
+<span id="ccsd"></span><h3><span class="section-number">6.11.2.4. </span>ccsd<a class="headerlink" href="#module-pyscf.grad.ccsd" title="Permalink to this headline">¶</a></h3>
 <p>CCSD analytical nuclear gradients</p>
 <dl class="py attribute">
 <dt id="pyscf.grad.ccsd.Grad">
@@ -502,12 +492,12 @@ automatically applied in the solver.</p>
 
 </div>
 <div class="section" id="module-pyscf.grad.ccsd_slow">
-<span id="ccsd-slow"></span><h3>ccsd_slow<a class="headerlink" href="#module-pyscf.grad.ccsd_slow" title="Permalink to this headline">¶</a></h3>
+<span id="ccsd-slow"></span><h3><span class="section-number">6.11.2.5. </span>ccsd_slow<a class="headerlink" href="#module-pyscf.grad.ccsd_slow" title="Permalink to this headline">¶</a></h3>
 <p>RCCSD</p>
 <p>Ref: JCP 90, 1752 (1989); DOI:10.1063/1.456069</p>
 </div>
 <div class="section" id="module-pyscf.grad.ccsd_t">
-<span id="ccsd-t"></span><h3>ccsd_t<a class="headerlink" href="#module-pyscf.grad.ccsd_t" title="Permalink to this headline">¶</a></h3>
+<span id="ccsd-t"></span><h3><span class="section-number">6.11.2.6. </span>ccsd_t<a class="headerlink" href="#module-pyscf.grad.ccsd_t" title="Permalink to this headline">¶</a></h3>
 <dl class="py class">
 <dt id="pyscf.grad.ccsd_t.Gradients">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.grad.ccsd_t.</span></code><code class="sig-name descname"><span class="pre">Gradients</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/grad/ccsd_t.html#Gradients"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.grad.ccsd_t.Gradients" title="Permalink to this definition">¶</a></dt>
@@ -515,7 +505,7 @@ automatically applied in the solver.</p>
 
 </div>
 <div class="section" id="module-pyscf.grad.cisd">
-<span id="cisd"></span><h3>cisd<a class="headerlink" href="#module-pyscf.grad.cisd" title="Permalink to this headline">¶</a></h3>
+<span id="cisd"></span><h3><span class="section-number">6.11.2.7. </span>cisd<a class="headerlink" href="#module-pyscf.grad.cisd" title="Permalink to this headline">¶</a></h3>
 <p>CISD analytical nuclear gradients</p>
 <dl class="py attribute">
 <dt id="pyscf.grad.cisd.Grad">
@@ -584,7 +574,7 @@ automatically applied in the solver.</p>
 
 </div>
 <div class="section" id="module-pyscf.grad.dhf">
-<span id="dhf"></span><h3>dhf<a class="headerlink" href="#module-pyscf.grad.dhf" title="Permalink to this headline">¶</a></h3>
+<span id="dhf"></span><h3><span class="section-number">6.11.2.8. </span>dhf<a class="headerlink" href="#module-pyscf.grad.dhf" title="Permalink to this headline">¶</a></h3>
 <p>Relativistic Dirac-Hartree-Fock</p>
 <dl class="py attribute">
 <dt id="pyscf.grad.dhf.Grad">
@@ -659,7 +649,7 @@ the DFT mesh grids etc.).</p>
 
 </div>
 <div class="section" id="module-pyscf.grad.mp2">
-<span id="mp2"></span><h3>mp2<a class="headerlink" href="#module-pyscf.grad.mp2" title="Permalink to this headline">¶</a></h3>
+<span id="mp2"></span><h3><span class="section-number">6.11.2.9. </span>mp2<a class="headerlink" href="#module-pyscf.grad.mp2" title="Permalink to this headline">¶</a></h3>
 <p>MP2 analytical nuclear gradients</p>
 <dl class="py attribute">
 <dt id="pyscf.grad.mp2.Grad">
@@ -728,7 +718,7 @@ applied in the solver.</p>
 
 </div>
 <div class="section" id="module-pyscf.grad.rhf">
-<span id="rhf"></span><h3>rhf<a class="headerlink" href="#module-pyscf.grad.rhf" title="Permalink to this headline">¶</a></h3>
+<span id="rhf"></span><h3><span class="section-number">6.11.2.10. </span>rhf<a class="headerlink" href="#module-pyscf.grad.rhf" title="Permalink to this headline">¶</a></h3>
 <p>Non-relativistic Hartree-Fock analytical nuclear gradients</p>
 <dl class="py attribute">
 <dt id="pyscf.grad.rhf.Grad">
@@ -902,7 +892,7 @@ K = ((-nabla i) j| kl) D_jk</p>
 
 </div>
 <div class="section" id="module-pyscf.grad.rks">
-<span id="rks"></span><h3>rks<a class="headerlink" href="#module-pyscf.grad.rks" title="Permalink to this headline">¶</a></h3>
+<span id="rks"></span><h3><span class="section-number">6.11.2.11. </span>rks<a class="headerlink" href="#module-pyscf.grad.rks" title="Permalink to this headline">¶</a></h3>
 <p>Non-relativistic RKS analytical nuclear gradients</p>
 <dl class="py attribute">
 <dt id="pyscf.grad.rks.Grad">
@@ -952,7 +942,7 @@ this function.</p>
 
 </div>
 <div class="section" id="module-pyscf.grad.rohf">
-<span id="rohf"></span><h3>rohf<a class="headerlink" href="#module-pyscf.grad.rohf" title="Permalink to this headline">¶</a></h3>
+<span id="rohf"></span><h3><span class="section-number">6.11.2.12. </span>rohf<a class="headerlink" href="#module-pyscf.grad.rohf" title="Permalink to this headline">¶</a></h3>
 <p>Non-relativistic ROHF analytical nuclear gradients</p>
 <dl class="py attribute">
 <dt id="pyscf.grad.rohf.Grad">
@@ -1000,7 +990,7 @@ this function.</p>
 
 </div>
 <div class="section" id="module-pyscf.grad.roks">
-<span id="roks"></span><h3>roks<a class="headerlink" href="#module-pyscf.grad.roks" title="Permalink to this headline">¶</a></h3>
+<span id="roks"></span><h3><span class="section-number">6.11.2.13. </span>roks<a class="headerlink" href="#module-pyscf.grad.roks" title="Permalink to this headline">¶</a></h3>
 <p>Non-relativistic ROKS analytical nuclear gradients</p>
 <dl class="py attribute">
 <dt id="pyscf.grad.roks.Grad">
@@ -1042,7 +1032,7 @@ this function.</p>
 
 </div>
 <div class="section" id="module-pyscf.grad.tdrhf">
-<span id="tdrhf"></span><h3>tdrhf<a class="headerlink" href="#module-pyscf.grad.tdrhf" title="Permalink to this headline">¶</a></h3>
+<span id="tdrhf"></span><h3><span class="section-number">6.11.2.14. </span>tdrhf<a class="headerlink" href="#module-pyscf.grad.tdrhf" title="Permalink to this headline">¶</a></h3>
 <dl class="py attribute">
 <dt id="pyscf.grad.tdrhf.Grad">
 <code class="sig-prename descclassname"><span class="pre">pyscf.grad.tdrhf.</span></code><code class="sig-name descname"><span class="pre">Grad</span></code><a class="headerlink" href="#pyscf.grad.tdrhf.Grad" title="Permalink to this definition">¶</a></dt>
@@ -1142,10 +1132,10 @@ TDA energy gradients.</p>
 
 </div>
 <div class="section" id="tdrhf-slow">
-<h3>tdrhf_slow<a class="headerlink" href="#tdrhf-slow" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.11.2.15. </span>tdrhf_slow<a class="headerlink" href="#tdrhf-slow" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="module-pyscf.grad.tdrks">
-<span id="tdrks"></span><h3>tdrks<a class="headerlink" href="#module-pyscf.grad.tdrks" title="Permalink to this headline">¶</a></h3>
+<span id="tdrks"></span><h3><span class="section-number">6.11.2.16. </span>tdrks<a class="headerlink" href="#module-pyscf.grad.tdrks" title="Permalink to this headline">¶</a></h3>
 <dl class="py attribute">
 <dt id="pyscf.grad.tdrks.Grad">
 <code class="sig-prename descclassname"><span class="pre">pyscf.grad.tdrks.</span></code><code class="sig-name descname"><span class="pre">Grad</span></code><a class="headerlink" href="#pyscf.grad.tdrks.Grad" title="Permalink to this definition">¶</a></dt>
@@ -1189,7 +1179,7 @@ TDA energy gradients.</p>
 
 </div>
 <div class="section" id="module-pyscf.grad.tduhf">
-<span id="tduhf"></span><h3>tduhf<a class="headerlink" href="#module-pyscf.grad.tduhf" title="Permalink to this headline">¶</a></h3>
+<span id="tduhf"></span><h3><span class="section-number">6.11.2.17. </span>tduhf<a class="headerlink" href="#module-pyscf.grad.tduhf" title="Permalink to this headline">¶</a></h3>
 <dl class="py attribute">
 <dt id="pyscf.grad.tduhf.Grad">
 <code class="sig-prename descclassname"><span class="pre">pyscf.grad.tduhf.</span></code><code class="sig-name descname"><span class="pre">Grad</span></code><a class="headerlink" href="#pyscf.grad.tduhf.Grad" title="Permalink to this definition">¶</a></dt>
@@ -1233,7 +1223,7 @@ TDA energy gradients.</p>
 
 </div>
 <div class="section" id="module-pyscf.grad.tduks">
-<span id="tduks"></span><h3>tduks<a class="headerlink" href="#module-pyscf.grad.tduks" title="Permalink to this headline">¶</a></h3>
+<span id="tduks"></span><h3><span class="section-number">6.11.2.18. </span>tduks<a class="headerlink" href="#module-pyscf.grad.tduks" title="Permalink to this headline">¶</a></h3>
 <dl class="py attribute">
 <dt id="pyscf.grad.tduks.Grad">
 <code class="sig-prename descclassname"><span class="pre">pyscf.grad.tduks.</span></code><code class="sig-name descname"><span class="pre">Grad</span></code><a class="headerlink" href="#pyscf.grad.tduks.Grad" title="Permalink to this definition">¶</a></dt>
@@ -1277,7 +1267,7 @@ TDA energy gradients.</p>
 
 </div>
 <div class="section" id="module-pyscf.grad.uccsd">
-<span id="uccsd"></span><h3>uccsd<a class="headerlink" href="#module-pyscf.grad.uccsd" title="Permalink to this headline">¶</a></h3>
+<span id="uccsd"></span><h3><span class="section-number">6.11.2.19. </span>uccsd<a class="headerlink" href="#module-pyscf.grad.uccsd" title="Permalink to this headline">¶</a></h3>
 <p>UCCSD analytical nuclear gradients</p>
 <dl class="py attribute">
 <dt id="pyscf.grad.uccsd.Grad">
@@ -1292,7 +1282,7 @@ TDA energy gradients.</p>
 
 </div>
 <div class="section" id="module-pyscf.grad.uccsd_t">
-<span id="uccsd-t"></span><h3>uccsd_t<a class="headerlink" href="#module-pyscf.grad.uccsd_t" title="Permalink to this headline">¶</a></h3>
+<span id="uccsd-t"></span><h3><span class="section-number">6.11.2.20. </span>uccsd_t<a class="headerlink" href="#module-pyscf.grad.uccsd_t" title="Permalink to this headline">¶</a></h3>
 <dl class="py class">
 <dt id="pyscf.grad.uccsd_t.Gradients">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyscf.grad.uccsd_t.</span></code><code class="sig-name descname"><span class="pre">Gradients</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/pyscf/grad/uccsd_t.html#Gradients"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyscf.grad.uccsd_t.Gradients" title="Permalink to this definition">¶</a></dt>
@@ -1300,7 +1290,7 @@ TDA energy gradients.</p>
 
 </div>
 <div class="section" id="module-pyscf.grad.ucisd">
-<span id="ucisd"></span><h3>ucisd<a class="headerlink" href="#module-pyscf.grad.ucisd" title="Permalink to this headline">¶</a></h3>
+<span id="ucisd"></span><h3><span class="section-number">6.11.2.21. </span>ucisd<a class="headerlink" href="#module-pyscf.grad.ucisd" title="Permalink to this headline">¶</a></h3>
 <p>UCISD analytical nuclear gradients</p>
 <dl class="py attribute">
 <dt id="pyscf.grad.ucisd.Grad">
@@ -1315,7 +1305,7 @@ TDA energy gradients.</p>
 
 </div>
 <div class="section" id="module-pyscf.grad.uhf">
-<span id="uhf"></span><h3>uhf<a class="headerlink" href="#module-pyscf.grad.uhf" title="Permalink to this headline">¶</a></h3>
+<span id="uhf"></span><h3><span class="section-number">6.11.2.22. </span>uhf<a class="headerlink" href="#module-pyscf.grad.uhf" title="Permalink to this headline">¶</a></h3>
 <p>Non-relativistic unrestricted Hartree-Fock analytical nuclear gradients</p>
 <dl class="py attribute">
 <dt id="pyscf.grad.uhf.Grad">
@@ -1367,10 +1357,10 @@ TDA energy gradients.</p>
 
 </div>
 <div class="section" id="uks">
-<h3>uks<a class="headerlink" href="#uks" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.11.2.23. </span>uks<a class="headerlink" href="#uks" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="ump2">
-<h3>ump2<a class="headerlink" href="#ump2" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.11.2.24. </span>ump2<a class="headerlink" href="#ump2" title="Permalink to this headline">¶</a></h3>
 </div>
 </div>
 </div>
@@ -1381,8 +1371,8 @@ TDA energy gradients.</p>
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="gto.html" class="btn btn-neutral float-right" title="gto — Molecular structure and GTO basis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="fci.html" class="btn btn-neutral float-left" title="fci — Full configuration interaction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="gto.html" class="btn btn-neutral float-right" title="6.12. gto — Molecular structure and GTO basis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="fci.html" class="btn btn-neutral float-left" title="6.10. fci — Full configuration interaction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
