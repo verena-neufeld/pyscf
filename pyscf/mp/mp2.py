@@ -409,6 +409,24 @@ def get_e_hf(mp, mo_coeff=None):
     vhf = mp._scf.get_veff(mp._scf.mol, dm)
     return mp._scf.energy_tot(dm=dm, vhf=vhf)
 
+def trans_ao2mo(eri, mos):
+    naoi, nmoi = mos[0].shape
+    naoj, nmoj = mos[1].shape
+    naok, nmok = mos[2].shape
+    naol, nmol = mos[3].shape
+    eri1 = numpy.dot(mos[0].T.conj(), eri.reshape(naoi,-1))
+    eri1 = eri1.reshape(nmoi,naoj,naok,naol)
+
+    eri1 = numpy.dot(mos[1].T, eri1.transpose(1,0,2,3).reshape(naoj,-1))
+    eri1 = eri1.reshape(nmoj,nmoi,naok,naol).transpose(1,0,2,3)
+
+    eri1 = numpy.dot(eri1.transpose(0,1,3,2).reshape(-1,naok), mos[2].conj())
+    eri1 = eri1.reshape(nmoi,nmoj,naol,nmok).transpose(0,1,3,2)
+
+    eri1 = numpy.dot(eri1.reshape(-1,naol), mos[3])
+    eri1 = eri1.reshape(nmoi,nmoj,nmok,nmol)
+    return eri1
+
 
 def as_scanner(mp):
     '''Generating a scanner/solver for MP2 PES.
@@ -691,6 +709,9 @@ class MP2Base(lib.StreamObject):
 
 class RMP2(MP2Base):
 
+    def ao2mo_kernel(self, mol, kernel, mos, shls_slice=None, sla_zeta=1.0):
+        return ao2mo_kernel(mol, kernel, mos, shls_slice=shls_slice, sla_zeta=sla_zeta)
+
     make_rdm1 = make_rdm1
     make_fno = make_fno
     make_rdm2 = make_rdm2
@@ -725,6 +746,17 @@ from pyscf import scf
 scf.hf.RHF.MP2 = lib.class_as_method(MP2)
 scf.rohf.ROHF.MP2 = None
 
+def ao2mo_kernel(mol, kernel, mos, shls_slice=None, sla_zeta=1.0):
+    reset_mol = False
+    if kernel.startswith("2"):
+        mol.set_f12_zeta(sla_zeta*2)
+        kernel = kernel[1:]
+        reset_mol = True
+    R = mol.intor(kernel, shls_slice=shls_slice)
+    R = R.reshape(mos[0].shape[0], mos[1].shape[0], mos[2].shape[0], mos[3].shape[0])
+    if reset_mol:
+        mol.set_f12_zeta(sla_zeta)
+    return trans_ao2mo(R, mos)
 
 def _mo_energy_without_core(mp, mo_energy):
     return mo_energy[get_frozen_mask(mp)]

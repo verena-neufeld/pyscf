@@ -4,6 +4,9 @@
 
 Python-based Simulations of Chemistry Framework
 -----------------------------------------------
+
+WARNING: mp2f12 needs to be tested for bugs. Don't use without extensive testing.
+
 [![Build Status](https://github.com/pyscf/pyscf/workflows/CI/badge.svg)](https://github.com/pyscf/pyscf/actions?query=workflow%3ACI)
 [![codecov](https://codecov.io/gh/pyscf/pyscf/branch/master/graph/badge.svg)](https://codecov.io/gh/pyscf/pyscf)
 
